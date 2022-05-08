@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tikka</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <div class="site-header__start">
+          <a href="index.html" class="brand"><img src="images/logo.svg" alt="Tikka Logo" /></a>
+        </div>
+        <div class="site-header__middle">
+          <nav class="nav">
+            <button class="nav__toggle" aria-expanded="false" type="button">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="nav__wrapper">
+              <li class="nav__item">
+                <a href="live.html"><img src="images/m1.svg" alt="直播" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="competition.html"><img src="images/m2.svg" alt="競賽" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="products.html"><img src="images/m3.svg" alt="商品" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="ranking.html"><img src="images/m4.svg" alt="榜單" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="topup.html"><img src="images/m5.svg" alt="儲值" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="search.html"><img src="images/m6.svg" alt="搜尋主播" /></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="site-header__end">
+          <a class="button" href="login.html">
+            <span class="icon"><img src="images/login-icon.svg" alt="登入" /></span>
+            <span><img src="images/login-btn.svg" alt="登入" /></span>
+          </a>
+          <a class="button" href="#">
+            <span class="icon">
+              <span class="cart-amount">1</span>
+              <img class="icon" src="images/cart-icon.svg" alt="購物車" />
+            </span>
+            <span><img src="images/cart-btn.svg" alt="購物車" /></span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+    <main class="member">
+      <h1>會員註冊</h1>
+      <form action="" class="register">
+        <label for="register-account">帳號*</label>
+        <input
+          required
+          type="text"
+          name="register-account"
+          id="register-account"
+          placeholder="請輸入帳號"
+        />
+        <label for="register-password">密碼*</label>
+        <input
+          required
+          type="password"
+          name="register-password"
+          id="register-password"
+          placeholder="請輸入密碼"
+        />
+        <span class="tip">*密碼至少須設置8位字元</span>
+        <label for="register-password">確認密碼*</label>
+        <input
+          required
+          type="password"
+          name="register-password"
+          id="register-password"
+          placeholder="請再次輸入密碼"
+        />
+        <label for="register-name">姓名*</label>
+        <input
+          required
+          type="text"
+          name="register-name"
+          id="register-name"
+          placeholder="請輸入姓名"
+        />
+        <label for="register-email">電子郵件*</label>
+        <input
+          required
+          type="text"
+          name="register-email"
+          id="register-email"
+          placeholder="請輸入電子郵件"
+        />
+        <label for="register-gender">性別*</label>
+        <div class="flex-row radio-group">
+          <div class="flex-row">
+            <input required type="radio" name="register-gender" id="register-male" />
+            <p>男</p>
+          </div>
+          <div class="flex-row">
+            <input required type="radio" name="register-gender" id="register-female" />
+            <p>女</p>
+          </div>
+        </div>
+        <button type="submit" class="confirm">註冊</button>
+        <a class="form-action" href="register.html">會員註冊</a>
+      </form>
+    </main>
+    <footer>
+      <div class="footer-content flex-row">
+        <nav class="flex-row">
+          <a href="#" class="line-icon"><img src="images/line.png" alt="line" /></a>
+          <ul>
+            <li>
+              <a href="contact.html">聯絡我們</a>
+            </li>
+            <li>
+              <a href="about.html">關於我們</a>
+            </li>
+            <li>
+              <a href="policy.html">服務條款</a>
+            </li>
+          </ul>
+        </nav>
+        <p class="copyright">
+          <span>Copyright© 2022 by Tikka版權所有</span>
+          <span>Copyright© 2022 Tikka. All rights reserved.</span>
+        </p>
+      </div>
+    </footer>
+    <script src="js/header.js"></script>
+  </body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tikka</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/slideshow.css" />
+    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <!-- Required Core Stylesheet -->
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <div class="site-header__start">
+          <a href="index.html" class="brand"><img src="images/logo.svg" alt="Tikka Logo" /></a>
+        </div>
+        <div class="site-header__middle">
+          <nav class="nav">
+            <button class="nav__toggle" aria-expanded="false" type="button">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="nav__wrapper">
+              <li class="nav__item">
+                <a href="live.html"><img src="images/m1.svg" alt="直播" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="competition.html"><img src="images/m2.svg" alt="競賽" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="products.html"><img src="images/m3.svg" alt="商品" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="ranking.html"><img src="images/m4.svg" alt="榜單" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="topup.html"><img src="images/m5.svg" alt="儲值" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="search.html"><img src="images/m6.svg" alt="搜尋主播" /></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="site-header__end">
+          <a class="button" href="login.html">
+            <span class="icon"><img src="images/login-icon.svg" alt="登入" /></span>
+            <span><img src="images/login-btn.svg" alt="登入" /></span>
+          </a>
+          <a class="button" href="#">
+            <span class="icon">
+              <span class="cart-amount">1</span>
+              <img class="icon" src="images/cart-icon.svg" alt="購物車" />
+            </span>
+            <span><img src="images/cart-btn.svg" alt="購物車" /></span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!--Main-->
+    <main class="index">
+      <section class="glide single-slides" id="main-slides" aria-label="glide Basic HTML Example">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__list glide__slides">
+            <li class="glide__slide">
+              <img src="images/s2.jpg" alt="img1" />
+            </li>
+            <li class="glide__slide">
+              <img src="images/s6.jpg" alt="img1" />
+            </li>
+            <li class="glide__slide">
+              <img src="images/s4.jpg" alt="img1" />
+            </li>
+          </ul>
+          <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0"></button>
+            <button class="glide__bullet" data-glide-dir="=1"></button>
+            <button class="glide__bullet" data-glide-dir="=2"></button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="ranking-slides-wrap">
+          <div class="ranking-slides-title">
+            <h1>熱門排行榜</h1>
+          </div>
+          <div class="glide" id="ranking-slides" aria-label="glide Basic HTML Example">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__list glide__slides">
+                <li class="glide__slide">
+                  <div class="number"><span class="no1">1</span></div>
+                  <div class="img-wrap">
+                    <span class="name">小希</span
+                    ><img
+                      src="https://files.tikka.tw/streamer/c97f3478115342cfb344f43ea844c9ec.png"
+                      alt="img1"
+                    />
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="number"><span class="no2">2</span></div>
+                  <div class="img-wrap">
+                    <span class="name">小希</span
+                    ><img
+                      src="https://files.tikka.tw/streamer/c97f3478115342cfb344f43ea844c9ec.png"
+                      alt="img1"
+                    />
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="number"><span class="no3">3</span></div>
+                  <div class="img-wrap">
+                    <span class="name">小希</span
+                    ><img
+                      src="https://files.tikka.tw/streamer/27188bb99c544a75ba8129e37115ce7c.png"
+                      alt="img1"
+                    />
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="number"><span>4</span></div>
+                  <div class="img-wrap">
+                    <span class="name">小希</span
+                    ><img
+                      src="https://files.tikka.tw/streamer/82b8a5b3b1cb49898573c954bbcf552a.png"
+                      alt="img1"
+                    />
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="number"><span>5</span></div>
+                  <div class="img-wrap">
+                    <span class="name">小希</span
+                    ><img
+                      src="https://files.tikka.tw/streamer/ee69a07409554f8991936a22f28e16cb.png"
+                      alt="img1"
+                    />
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="number"><span>6</span></div>
+                  <div class="img-wrap">
+                    <span class="name">小希</span
+                    ><img
+                      src="https://files.tikka.tw/streamer/ee69a07409554f8991936a22f28e16cb.png"
+                      alt="img1"
+                    />
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="number"><span>7</span></div>
+                  <div class="img-wrap">
+                    <span class="name">小希</span
+                    ><img
+                      src="https://files.tikka.tw/streamer/82b8a5b3b1cb49898573c954bbcf552a.png"
+                      alt="img1"
+                    />
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="number"><span>8</span></div>
+                  <div class="img-wrap">
+                    <span class="name">小希</span
+                    ><img
+                      src="https://files.tikka.tw/streamer/27188bb99c544a75ba8129e37115ce7c.png"
+                      alt="img1"
+                    />
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="number"><span>9</span></div>
+                  <div class="img-wrap">
+                    <span class="name">小希</span
+                    ><img
+                      src="https://files.tikka.tw/streamer/27188bb99c544a75ba8129e37115ce7c.png"
+                      alt="img1"
+                    />
+                  </div>
+                </li>
+              </ul>
+              <div class="glide__arrow" data-glide-el="controls">
+                <button data-glide-dir="<" class="prev">
+                  <span class="material-icons">&#xE5CB;</span>
+                </button>
+                <button data-glide-dir=">" class="next">
+                   <span class="material-icons">&#xE5CC;</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="live">
+        <div class="live-title">
+          <img src="images/live.svg" alt="熱門直播標題" />
+          <a href="#"><img src="images/more.svg" alt="看更多" /></a>
+        </div>
+        <div class="live-list glide" id="live-slides">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__list glide__slides">
+              <li class="glide__slide">
+                <div class="img-wrap">
+                  <img src="images/s1.jpg" alt="" />
+                </div>
+                <span class="live-chip pink">LIVE</span>
+                <span class="count">99999</span>
+                <p class="live-info">
+                  <span class="name">小希</span>
+                  <span class="time">每週一到每週六21:00-22:00</span>
+                </p>
+              </li>
+              <li class="glide__slide">
+                <div class="img-wrap">
+                  <img src="images/s1.jpg" alt="" />
+                </div>
+                <span class="live-chip">LIVE</span>
+                <span class="count">99999</span>
+                <p class="live-info">
+                  <span class="name">小希</span>
+                  <span class="time">每週一到每週六21:00-22:00</span>
+                </p>
+              </li>
+              <li class="glide__slide">
+                <div class="img-wrap">
+                  <img src="images/s1.jpg" alt="" />
+                </div>
+                <span class="live-chip">LIVE</span>
+                <span class="count">99999</span>
+                <p class="live-info">
+                  <span class="name">小希</span>
+                  <span class="time">每週一到每週六21:00-22:00</span>
+                </p>
+              </li>
+              <li class="glide__slide">
+                <div class="img-wrap">
+                  <img src="images/s1.jpg" alt="" />
+                </div>
+                <span class="live-chip">LIVE</span>
+                <span class="count">99999</span>
+                <p class="live-info">
+                  <span class="name">小希</span>
+                  <span class="time">每週一到每週六21:00-22:00</span>
+                </p>
+              </li>
+              <li class="glide__slide">
+                <div class="img-wrap">
+                  <img src="images/s1.jpg" alt="" />
+                </div>
+                <span class="live-chip">LIVE</span>
+                <span class="count">99999</span>
+                <p class="live-info">
+                  <span class="name">小希</span>
+                  <span class="time">每週一到每週六21:00-22:00</span>
+                </p>
+              </li>
+              <li class="glide__slide">
+                <div class="img-wrap">
+                  <img src="images/s1.jpg" alt="" />
+                </div>
+                <span class="live-chip">LIVE</span>
+                <span class="count">99999</span>
+                <p class="live-info">
+                  <span class="name">小希</span>
+                  <span class="time">每週一到每週六21:00-22:00</span>
+                </p>
+              </li>
+            </ul>
+            <div class="glide__arrow" data-glide-el="controls">
+              <button data-glide-dir="<" class="prev">
+                <span class="material-icons">&#xE5CB;</span>
+              </button>
+              <button data-glide-dir=">" class="next">
+                 <span class="material-icons">&#xE5CC;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="glide single-slides"
+        id="product-slides"
+        aria-label="glide Basic HTML Example"
+      >
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__list glide__slides">
+            <li class="glide__slide">
+              <img src="images/s4.jpg" alt="img1" />
+            </li>
+            <li class="glide__slide">
+              <img src="images/s5.jpg" alt="img1" />
+            </li>
+            <li class="glide__slide">
+              <img src="images/s6.jpg" alt="img1" />
+            </li>
+          </ul>
+          <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0"></button>
+            <button class="glide__bullet" data-glide-dir="=1"></button>
+            <button class="glide__bullet" data-glide-dir="=2"></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="products">
+        <div class="products-title">
+          <img src="images/products.svg" alt="熱銷商品標題" />
+          <a href="#"><img src="images/more-2.svg" alt="看更多" /></a>
+        </div>
+        <div class="glide" id="products-slides" aria-label="glide Basic HTML Example">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__list glide__slides">
+              <li class="glide__slide">
+                <div class="product">
+                  <div class="img-wrap"><img src="images/c1.png" alt="img1" /></div>
+                  <p>
+                    <span class="name">線雕緊緻精華噴霧</span>
+                    <span class="point"><span class="value">15,000</span>點數</span>
+                  </p>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <div class="product">
+                  <div class="img-wrap"><img src="images/c1.png" alt="img1" /></div>
+                  <p>
+                    <span class="name">線雕緊緻精華噴霧</span>
+                    <span class="point"><span class="value">15,000</span>點數</span>
+                  </p>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <div class="product">
+                  <div class="img-wrap"><img src="images/c1.png" alt="img1" /></div>
+                  <p>
+                    <span class="name">線雕緊緻精華噴霧</span>
+                    <span class="point"><span class="value">15,000</span>點數</span>
+                  </p>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <div class="product">
+                  <div class="img-wrap"><img src="images/c1.png" alt="img1" /></div>
+                  <p>
+                    <span class="name">線雕緊緻精華噴霧</span>
+                    <span class="point"><span class="value">15,000</span>點數</span>
+                  </p>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <div class="product">
+                  <div class="img-wrap"><img src="images/c1.png" alt="img1" /></div>
+                  <p>
+                    <span class="name">線雕緊緻精華噴霧</span>
+                    <span class="point"><span class="value">15,000</span>點數</span>
+                  </p>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <div class="product">
+                  <div class="img-wrap"><img src="images/c1.png" alt="img1" /></div>
+                  <p>
+                    <span class="name">線雕緊緻精華噴霧</span>
+                    <span class="point"><span class="value">15,000</span>點數</span>
+                  </p>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <div class="product">
+                  <div class="img-wrap"><img src="images/c1.png" alt="img1" /></div>
+                  <p>
+                    <span class="name">線雕緊緻精華噴霧</span>
+                    <span class="point"><span class="value">15,000</span>點數</span>
+                  </p>
+                </div>
+              </li>
+            </ul>
+            <div class="glide__arrow" data-glide-el="controls">
+              <button data-glide-dir="<" class="prev">
+                <span class="material-icons">&#xE5CB;</span>
+              </button>
+              <button data-glide-dir=">" class="next">
+                 <span class="material-icons">&#xE5CC;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content flex-row">
+        <nav class="flex-row">
+          <a href="#" class="line-icon"><img src="images/line.png" alt="line" /></a>
+          <ul>
+            <li>
+              <a href="contact.html">聯絡我們</a>
+            </li>
+            <li>
+              <a href="about.html">關於我們</a>
+            </li>
+            <li>
+              <a href="policy.html">服務條款</a>
+            </li>
+          </ul>
+        </nav>
+        <p class="copyright">
+          <span>Copyright© 2022 by Tikka版權所有</span>
+          <span>Copyright© 2022 Tikka. All rights reserved.</span>
+        </p>
+      </div>
+    </footer>
+    <script>
+      new Glide("#main-slides", { type: "carousel" }).mount();
+      new Glide("#product-slides", { type: "carousel" }).mount();
+      new Glide("#live-slides", {
+        type: "carousel",
+        perView: 5,
+        autoplay: 8000,
+        animationDuration: 800,
+        breakpoints: {
+          1024: {
+            perView: 4,
+          },
+          900: {
+            perView: 3,
+          },
+          768: {
+            perView: 2,
+          },
+          425: {
+            perView: 1,
+            type: "slider",
+          },
+        },
+      }).mount();
+      new Glide("#products-slides", {
+        type: "carousel",
+        perView: 5,
+        autoplay: 8000,
+        animationDuration: 800,
+        breakpoints: {
+          1024: {
+            perView: 4,
+          },
+          900: {
+            perView: 3,
+          },
+          768: {
+            perView: 2,
+            type: "slider",
+          },
+          425: {
+            perView: 1,
+            type: "slider",
+          },
+        },
+      }).mount();
+
+      new Glide("#ranking-slides", {
+        type: "carousel",
+        perView: 3,
+        autoplay: 8000,
+        animationDuration: 800,
+        breakpoints: {
+          1024: {
+            perView: 2,
+          },
+          660: {
+            perView: 1,
+          },
+        },
+      }).mount();
+    </script>
+    <script src="js/header.js"></script>
+  </body>
+</html>

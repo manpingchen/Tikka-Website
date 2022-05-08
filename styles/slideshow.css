@@ -1,0 +1,154 @@
+.single-slides ul.glide__list li.glide__slide {
+  position: relative;
+  padding-top: 8%; /*Img Ratio*/
+}
+
+.single-slides ul.glide__list li img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.glide__arrow {
+  opacity: 0.5;
+  background: none !important;
+  display: flex;
+  width: 110%;
+  margin: 0 -5%;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+}
+
+.glide__bullets {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  text-align: center;
+}
+
+.glide__bullets button {
+  border: none;
+  width: 10px;
+  margin: 0 5px;
+  height: 10px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0;
+  box-shadow: 0 0 5px #aaa;
+}
+
+button.glide__bullet--active {
+  background: #e9528e;
+}
+
+@media screen and (max-width: 1024px) {
+  .glide__arrow {
+    width: 120%;
+    margin: 0 -10%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .glide__arrow {
+    width: 130%;
+    margin: 0 -15%;
+    margin-top: -15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .glide__arrow {
+    width: 110%;
+    margin: 0 -5%;
+    margin-top: -15px;
+  }
+
+  .glide__arrow button {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+  }
+}
+
+.glide__arrow button {
+  border: none;
+}
+.glide__arrow button .material-symbols-outlined {
+  font-size: 30px !important;
+  color: #e9528e;
+}
+
+.glide:hover .glide__arrow {
+  opacity: 1;
+}
+
+.glide__pagination {
+  bottom: 1.5rem !important;
+}
+
+.glide__pagination__page {
+  background: #fff !important;
+  box-shadow: 0 0 5px #00000012 !important;
+  width: 10px !important;
+  height: 10px !important;
+  opacity: 1 !important;
+}
+
+.glide__pagination__page.is-active {
+  transform: none !important;
+  background: #e9528e !important;
+}
+
+#ranking-slides .glide__arrow--prev,
+#ranking-slides .glide__arrow--next {
+  border-radius: 0 !important;
+  width: 50px;
+  height: 90px;
+  opacity: 1;
+}
+
+#ranking-slides .glide__arrow--prev > svg,
+#ranking-slides .glide__arrow--next > svg {
+  fill: #e9528e !important;
+}
+
+#ranking-slides .glide__arrow--prev {
+  left: -40px;
+}
+
+#ranking-slides .glide__arrow--next {
+  right: -40px;
+}
+
+#ranking-slides .glide__arrow svg {
+  fill: white;
+}
+
+@media screen and (max-width: 1024px) {
+  #ranking-slides .glide__arrow--next {
+    right: 10px;
+  }
+  #ranking-slides .glide__arrow--prev {
+    left: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #ranking-slides .glide__arrow--next {
+    right: 0;
+  }
+  #ranking-slides .glide__arrow--prev {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #ranking-slides .glide__arrow--next {
+    right: 0;
+  }
+  #ranking-slides .glide__arrow--prev {
+    left: 0;
+  }
+}
