@@ -505,15 +505,29 @@ section.products .products-title img {
   height: 50px;
 }
 
-section.live .live-list ul li {
+section.live .live-list ul li,
+main.live a.live-item {
   position: relative;
   border-radius: 15px;
   width: 100%;
   padding: 5px;
   color: #fff;
+  display: block;
+  overflow: hidden;
 }
 
-section.live .live-list ul li div.img-wrap {
+main.live div.live-items a.live-item {
+  display: flex;
+  padding: 0;
+  border-radius: 20px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 10px solid #ffdfec;
+}
+
+section.live .live-list ul li div.img-wrap,
+main.live a.live-item div.img-wrap {
   width: 100%;
   padding-top: 100%;
   position: relative;
@@ -522,13 +536,23 @@ section.live .live-list ul li div.img-wrap {
   /* border: 10px solid #ffc1db; */
 }
 
-section.live .live-list ul li div.img-wrap img {
+main.live a.live-item div.img-wrap {
+  border-radius: 0;
+}
+
+section.live .live-list ul li div.img-wrap img,
+main.live a.live-item div.img-wrap img {
   position: absolute;
   top: 0;
   width: 100%;
 }
 
-section.live .live-list ul li p.live-info {
+main.live a.live-item div.img-wrap img {
+  left: 0;
+}
+
+section.live .live-list ul li p.live-info,
+main.live a.live-item p.live-info {
   position: absolute;
   bottom: 15px;
   left: 15px;
@@ -538,20 +562,29 @@ section.live .live-list ul li p.live-info {
   background: rgba(0, 0, 0, 0.3);
 }
 
+main.live a.live-item p.live-info {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
 section.live .live-list ul li p.live-info span.name,
-section.live .live-list ul li p.live-info span.time {
+section.live .live-list ul li p.live-info span.time,
+main.live a.live-item p.live-info span.name,
+main.live a.live-item p.live-info span.time {
   display: flex;
   flex-direction: row;
 }
 
-section.live .live-list ul li p.live-info span.name {
+section.live .live-list ul li p.live-info span.name,
+main.live a.live-item p.live-info span.name {
   align-self: center;
   background: url("../images/heart-icon.svg") left center no-repeat;
   background-size: 10px;
   padding-left: 16px;
 }
 
-section.live .live-list ul li p.live-info span.time {
+section.live .live-list ul li p.live-info span.time,
+main.live a.live-item p.live-info span.time {
   font-size: 0.7rem;
   background: url("../images/clock-icon.svg") left 17% no-repeat;
   background-size: 10px;
@@ -560,13 +593,16 @@ section.live .live-list ul li p.live-info span.time {
 }
 
 section.live .live-list ul li span.live-chip,
-section.live .live-list ul li span.count {
+section.live .live-list ul li span.count,
+main.live a.live-item span.live-chip,
+main.live a.live-item span.count {
   position: absolute;
   top: 25px;
   font-size: 0.8rem;
 }
 
-section.live .live-list ul li span.live-chip {
+section.live .live-list ul li span.live-chip,
+main.live a.live-item span.live-chip {
   border-radius: 25px;
   left: 25px;
   padding: 0.2rem 0.5rem;
@@ -574,8 +610,17 @@ section.live .live-list ul li span.live-chip {
   background: linear-gradient(#d5d5d5, #555555);
 }
 
-section.live .live-list ul li span.live-chip.pink {
-  background: linear-gradient(#ffc1db, #f03282);
+main.live a.live-item span.live-chip {
+  top: 10px;
+  left: 10px;
+}
+main.live a.live-item span.count {
+  top: 10px;
+  right: 10px;
+}
+
+span.live-chip.pink {
+  background: linear-gradient(#ffc1db, #f03282) !important;
 }
 section.live .live-list ul li span.count {
   right: 25px;
@@ -939,9 +984,12 @@ main.live {
 }
 
 main.live h1 {
-  color: #c40761;
   text-align: center;
   margin-bottom: 2rem;
+}
+
+main.live h1 img {
+  height: 50px;
 }
 
 main.live div.live-items {
@@ -968,60 +1016,11 @@ main.live div.live-items {
   }
 }
 
-main.live div.live-items a.live-item {
-  position: relative;
-  padding-top: 100%;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-main.live div.live-items a.live-item img.live-image {
-  position: absolute;
-  top: 0;
-  height: 100%;
-}
-
-main.live div.live-items a.live-item:hover img.live-image {
-  filter: contrast(1);
+main.live a.live-item:hover img {
+  filter: none !important;
   transform: scale(1.1);
 }
 
-main.live div.live-items a.live-item span.name,
-main.live div.live-items a.live-item div.live-info {
-  position: absolute;
-  z-index: 2;
-}
-
-main.live div.live-items a.live-item span.name {
-  top: 10px;
-  left: 10px;
-  background: url(../images/heart-icon.svg) 10px 7px no-repeat rgb(241 158 194 / 64%);
-  background-size: 10px;
-}
-
-main.live div.live-items a.live-item div.live-info {
-  bottom: 0;
-  padding: 0.5rem 1rem;
-  color: #fff;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.3);
-}
-main.live div.live-items a.live-item div.live-info p {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.8rem;
-  padding: 2px 0;
-}
-main.live div.live-items a.live-item div.live-info p span.material-icons {
-  font-size: 0.8rem;
-}
 main.live-on {
   border: 0;
   padding: 2rem 0;
