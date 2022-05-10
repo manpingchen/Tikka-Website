@@ -79,8 +79,8 @@
             </div>
           </div>
           <div class="btns">
-            <button type="button" class="follow-btn">
-              <img src="images/heart-icon.svg" alt="heart icon" />追蹤
+            <button type="button" class="follow-btn" id="follow" onclick="handleFollow()">
+              <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text">追蹤</span>
             </button>
             <button type="button" class="profile-btn">
               <img src="images/house.svg" alt="heart icon" />主頁
@@ -424,11 +424,11 @@
             <button type="button"><img src="images/treasure.svg" alt="" />百寶箱</button>
           </div>
           <div class="detail-links">
-            <a href="#">All</a>
+            <a href="#" onclick="showAll()">All</a>
             <span class="border"></span>
-            <a href="#">熱門</a>
+            <a href="#" onclick="showPopular()">熱門</a>
           </div>
-          <div class="reward-items">
+          <div class="reward-items" id="rewards-all">
             <div class="reward-item">
               <img src="images/diamond.png" alt="" />
               <span class="point flex-row">2740000</span>
@@ -495,6 +495,76 @@
             </div>
             <div class="reward-item">
               <img src="images/diamond.png" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+          </div>
+          <div class="reward-items hide" id="rewards-popular">
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/mission.svg" alt="" />
               <span class="point flex-row">2740000</span>
             </div>
           </div>
@@ -540,6 +610,23 @@
         autoplay: 8000,
         animationDuration: 800,
       }).mount();
+
+      //handle follow button
+      function handleFollow() {
+        const element = document.getElementById("follow-text");
+        element.innerText = "已追蹤";
+      }
+
+      //切換 禮物牆 all 及 熱門
+      function showPopular() {
+        document.getElementById("rewards-all").classList.add("hide");
+        document.getElementById("rewards-popular").classList.remove("hide");
+      }
+
+      function showAll() {
+        document.getElementById("rewards-popular").classList.add("hide");
+        document.getElementById("rewards-all").classList.remove("hide");
+      }
     </script>
     <script src="js/header.js"></script>
   </body>
