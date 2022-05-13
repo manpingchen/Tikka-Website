@@ -172,6 +172,14 @@ a:hover img {
   flex-direction: column;
 }
 
+div.img-wrap {
+  overflow: hidden;
+}
+
+div.img-wrap img {
+  display: block;
+}
+
 /*Topup*/
 
 .topup section {
@@ -528,7 +536,7 @@ section.products .products-title img {
 }
 
 section.live .live-list ul li,
-main.live a.live-item {
+a.live-item {
   position: relative;
   border-radius: 15px;
   width: 100%;
@@ -538,7 +546,7 @@ main.live a.live-item {
   overflow: hidden;
 }
 
-main.live div.live-items a.live-item {
+div.live-items a.live-item {
   display: flex;
   padding: 0;
   border-radius: 20px;
@@ -549,7 +557,7 @@ main.live div.live-items a.live-item {
 }
 
 section.live .live-list ul li div.img-wrap,
-main.live a.live-item div.img-wrap {
+a.live-item div.img-wrap {
   width: 100%;
   padding-top: 100%;
   position: relative;
@@ -558,23 +566,23 @@ main.live a.live-item div.img-wrap {
   /* border: 10px solid #ffc1db; */
 }
 
-main.live a.live-item div.img-wrap {
+a.live-item div.img-wrap {
   border-radius: 0;
 }
 
 section.live .live-list ul li div.img-wrap img,
-main.live a.live-item div.img-wrap img {
+a.live-item div.img-wrap img {
   position: absolute;
   top: 0;
   width: 100%;
 }
 
-main.live a.live-item div.img-wrap img {
+a.live-item div.img-wrap img {
   left: 0;
 }
 
 section.live .live-list ul li p.live-info,
-main.live a.live-item p.live-info {
+a.live-item p.live-info {
   position: absolute;
   bottom: 15px;
   left: 15px;
@@ -584,21 +592,21 @@ main.live a.live-item p.live-info {
   background: rgba(0, 0, 0, 0.3);
 }
 
-main.live a.live-item p.live-info {
+a.live-item p.live-info {
   bottom: 0;
   left: 0;
   width: 100%;
 }
 section.live .live-list ul li p.live-info span.name,
 section.live .live-list ul li p.live-info span.time,
-main.live a.live-item p.live-info span.name,
-main.live a.live-item p.live-info span.time {
+a.live-item p.live-info span.name,
+a.live-item p.live-info span.time {
   display: flex;
   flex-direction: row;
 }
 
 section.live .live-list ul li p.live-info span.name,
-main.live a.live-item p.live-info span.name {
+a.live-item p.live-info span.name {
   align-self: center;
   background: url("../images/heart-icon.svg") left center no-repeat;
   background-size: 10px;
@@ -606,25 +614,26 @@ main.live a.live-item p.live-info span.name {
 }
 
 section.live .live-list ul li p.live-info span.time,
-main.live a.live-item p.live-info span.time {
+a.live-item p.live-info span.time {
   font-size: 0.7rem;
   background: url("../images/clock-icon.svg") left 17% no-repeat;
   background-size: 10px;
   padding-left: 16px;
   align-items: baseline;
+  text-align: left;
 }
 
 section.live .live-list ul li span.live-chip,
 section.live .live-list ul li span.count,
-main.live a.live-item span.live-chip,
-main.live a.live-item span.count {
+a.live-item span.live-chip,
+a.live-item span.count {
   position: absolute;
   top: 25px;
   font-size: 0.8rem;
 }
 
 section.live .live-list ul li span.live-chip,
-main.live a.live-item span.live-chip {
+a.live-item span.live-chip {
   border-radius: 25px;
   left: 25px;
   padding: 0.2rem 0.5rem;
@@ -632,11 +641,11 @@ main.live a.live-item span.live-chip {
   background: linear-gradient(#d5d5d5, #555555);
 }
 
-main.live a.live-item span.live-chip {
+a.live-item span.live-chip {
   top: 10px;
   left: 10px;
 }
-main.live a.live-item span.count {
+a.live-item span.count {
   top: 10px;
   right: 10px;
 }
@@ -1014,31 +1023,31 @@ main.live h1 img {
   height: 50px;
 }
 
-main.live div.live-items {
+div.live-items {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(5, 1fr);
 }
 
 @media screen and (max-width: 1024px) {
-  main.live div.live-items {
+  div.live-items {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media screen and (max-width: 768px) {
-  main.live div.live-items {
+  div.live-items {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 480px) {
-  main.live div.live-items {
+  div.live-items {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 
-main.live a.live-item:hover img {
+a.live-item:hover img {
   filter: none !important;
   transform: scale(1.1);
 }
@@ -1279,8 +1288,28 @@ main.live-on .iframe {
   left: 0;
   height: 100%;
   width: 100%;
-  background: url("../images/s2.jpg") no-repeat center center;
-  background-size: cover;
+  border: none;
+}
+
+main.live-on iframe {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+main.live-on div.videoDiv {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+main.live-on div.videoDiv video {
+  height: 100%;
+  width: 100%;
 }
 
 main.live-on div.gift-mission {
@@ -1480,7 +1509,7 @@ main.live-on div.reward-items {
   height: 300px;
   overflow-y: scroll;
 }
-main.live-on div.reward-items.hide{
+main.live-on div.reward-items.hide {
   display: none;
 }
 main.live-on div.reward-item {
@@ -1756,7 +1785,7 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-body div.chat-item {
     padding-left: 24px;
     padding-right: 10px;
   }
-  main.live-on div.frame-bottom-bar.mobile-only div.chat-body{
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-body {
     height: 180px;
   }
 }
@@ -1783,7 +1812,7 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-body div.chat-item {
   main.live-on div.frame-bottom-bar.mobile-only div.chat-field input {
     width: 250px;
   }
-  main.live-on div.frame-bottom-bar.mobile-only div.chat-body{
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-body {
     height: 180px;
     bottom: 110px;
   }
@@ -1832,7 +1861,464 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-body div.chat-item {
     margin-left: 0;
   }
 
-  main.live-on div.frame-bottom-bar.mobile-only div.chat-body div.chat-item{
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-body div.chat-item {
     padding: 5px 10px;
+  }
+}
+
+main.live-on div.profile.mobile-only div.btns button img#follow-icon {
+  filter: grayscale(1);
+}
+
+main.account {
+  padding-top: 50px;
+  border: none;
+  text-align: center;
+}
+
+main.account h1 img {
+  height: 30px;
+  margin-bottom: 1rem;
+}
+
+div.upload {
+  background: url("../images/upload-avatar-bg.svg") no-repeat center center;
+  width: 180px;
+  height: 186px;
+  margin: 0 auto 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.upload .custom-input-field {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: block;
+
+  width: 180px;
+  height: 186px;
+}
+
+div.upload .custom-input-field input {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+div.upload .custom-input-field span.placeholder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background: url("../images/upload-avatar-bg.svg") no-repeat center center;
+  color: rgb(107, 107, 107);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.upload .custom-input-field img#uploadedImage {
+  position: absolute;
+  left: 8%;
+  top: 8%;
+  border-radius: 50%;
+  width: 82%;
+  height: 80%;
+  z-index: 1;
+  display: none;
+}
+
+div.upload .custom-input-field span.grey-round {
+  background: rgb(211, 211, 211);
+  position: absolute;
+  left: 8%;
+  top: 8%;
+  border-radius: 50%;
+  width: 82%;
+  height: 80%;
+}
+
+main.account h4.name {
+  font-size: 2.1rem;
+  margin-bottom: 1rem;
+}
+
+main.account div.point {
+  background: url("../images/coin.png") left center no-repeat #f75193;
+  background-size: 60px;
+  color: #fff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 40px;
+  min-width: 150px;
+  max-width: 200px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto 30px;
+  font-size: 1.3rem;
+  padding: 0 50px;
+}
+
+main.account ul.opions {
+  width: 300px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 374px) {
+  main.account ul.opions {
+    width: 240px;
+  }
+}
+
+main.account ul.opions li a {
+  display: flex;
+  padding: 15px 10px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #e60672;
+  font-size: 1.1rem;
+  text-decoration: none;
+  position: relative;
+}
+
+main.account ul.opions li a img {
+  display: block;
+  width: 20px;
+}
+
+main.account ul.opions li a span.just-style {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #e60672;
+  bottom: 0;
+}
+
+main.account ul.opions li a span.just-style::before,
+main.account ul.opions li a span.just-style::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e60672;
+  display: block;
+  bottom: -5px;
+  left: 0;
+  position: absolute;
+}
+
+main.account ul.opions li a span.just-style::after {
+  left: initial;
+  right: 0;
+}
+main.follow {
+  border: none;
+  padding-top: 40px;
+}
+
+main.follow h1 {
+  margin-bottom: 2rem;
+}
+
+main.follow h1.left {
+  text-align: left;
+}
+
+main.follow h1 img {
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+}
+
+main.follow h1.left img {
+  margin: 0;
+}
+
+main.follow div.live-items {
+  margin-bottom: 2rem;
+}
+
+main.follow a.live-item {
+  overflow: visible;
+  margin-bottom: 70px;
+}
+
+main.follow a.live-item div.img-wrap {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main.follow a.live-item div.img-wrap img {
+  height: 100%;
+  width: auto !important;
+  left: auto;
+}
+
+main.follow a.live-item p.live-info {
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  overflow: hidden;
+}
+main.follow button.follow-btn {
+  position: absolute;
+  bottom: -50px;
+  width: 90px;
+  font-size: 0.875rem;
+  padding: 5px;
+  color: #fff;
+  background: linear-gradient(#ffc1db, #f03282);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+main.follow button.follow-btn img {
+  height: 16px;
+}
+
+main.follow button.follow-btn:hover {
+  filter: contrast(1.9);
+}
+
+@media screen and (min-width: 769px) {
+  main.follow div.live-items.mobile-only {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  main.follow div.live-items.desktop-only {
+    display: none !important;
+  }
+  main.follow div.live-items.mobile-only {
+    display: block !important;
+  }
+  main.follow {
+    width: 100%;
+    top: 70px;
+    padding: 2rem 0;
+  }
+  main.follow h1 {
+    padding-left: 2rem;
+  }
+  main.follow .glide__arrow {
+    width: 96%;
+    margin: 0 2%;
+    margin-top: -40px;
+  }
+}
+
+div.recommend-items {
+  display: flex;
+  width: 600px;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+div.recommend-item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 2rem;
+}
+
+div.recommend-item p.number {
+  width: 30px;
+  height: 30px;
+  background: #fdc9e1;
+  border-radius: 50%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 30px;
+}
+
+div.recommend-item > div.img-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid #fdc9e1;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.recommend-item > div.img-wrap img {
+  height: 100%;
+}
+
+div.recommend-item div.info {
+  color: #717171;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  width: 150px;
+}
+
+div.recommend-item ul.photos li {
+  width: 80px;
+  height: 130px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #fdc9e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+div.recommend-item ul.photos div.img-wrap {
+  width: 70px;
+  height: 90px;
+  position: absolute;
+  top: calc(50% - 45px);
+  left: calc(50% - 35px);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.recommend-item ul.photos div.img-wrap img {
+  height: 100%;
+}
+
+div.recommend-item ul.photos {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+}
+
+div.recommend-item ul.photos div.bg ul.white-boxes {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  position: absolute;
+  width: 70px;
+  top: 5px;
+  left: 10px;
+}
+
+div.recommend-item ul.photos div.bg ul.white-boxes li {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 0;
+}
+
+div.recommend-item ul.photos div.bg ul.bottom-boxes {
+  bottom: 5px !important;
+  top: initial;
+}
+
+@media screen and (max-width: 660px) {
+  div.recommend-items {
+    width: 300px;
+    flex-wrap: wrap;
+  }
+  div.recommend-item {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+main.account-table-data {
+  padding-top: 50px;
+  border: none;
+  text-align: center;
+}
+
+main.account-table-data h1 img {
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+div.table-wrapper {
+  border-radius: 10px;
+  border: 1px solid #e588b2;
+  overflow: hidden;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 5px 5px rgb(183, 183, 183);
+}
+
+table.account-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+}
+
+table.account-table thead,
+table.account-table tfoot {
+  background: #fcb3d2;
+  color: #fff;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+}
+
+table.account-table tr td,
+table.account-table tr th {
+  padding: 15px 10px;
+}
+
+table.account-table tbody {
+  vertical-align: baseline;
+}
+
+table.account-table tbody tr td {
+  color: #777;
+  padding: 12px 10px;
+}
+
+@media screen and (max-width: 425px) {
+  main.account-table-data {
+    width: 90%;
+    padding: 1rem;
+    top: 100px;
+    margin-bottom: 10px;
+  }
+  table.account-table tr td,
+  table.account-table tr th {
+    font-size: 0.875rem;
+    padding: 12px 5px;
   }
 }

@@ -182,11 +182,11 @@
           </div>
           <span class="name">小愛</span>
           <div class="btns flex-row">
-            <button type="button" class="follow-btn">
-              <img src="images/heart-pink.svg" alt="heart icon" />
+            <button type="button" class="follow-btn" onclick="handleFollowIcon()">
+              <img src="images/heart-pink.svg" id="follow-icon" alt="heart icon" />
             </button>
             <button type="button" class="profile-btn">
-              <img src="images/house-pink.svg" alt="heart icon" />
+              <img src="images/house-pink.svg" alt="house icon" />
             </button>
           </div>
         </div>
@@ -312,8 +312,13 @@
             </button>
           </div>
         </div>
-        <!-- this should be changed to <iframe> -->
-        <div class="iframe"></div>
+        <div class="iframe">
+          <div class="videoDiv">
+            <video id="rtc_media_player" autoplay playsinline controls ></video>
+          </div>
+          <iframe id="giftAdmin" src="" scrolling="no" frameBorder="0" />
+        </iframe>
+      </div>
       </section>
       <section class="right-column desktop-only">
         <div class="gift-mission">
@@ -615,6 +620,12 @@
       function handleFollow() {
         const element = document.getElementById("follow-text");
         element.innerText = "已追蹤";
+      }
+
+      //handle follow button
+      function handleFollowIcon() {
+        const element = document.getElementById("follow-icon");
+        element.style["filter"] = "grayscale(0)";
       }
 
       //切換 禮物牆 all 及 熱門
