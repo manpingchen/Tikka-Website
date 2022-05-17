@@ -312,13 +312,6 @@ main.index div.ranking-slides-wrap {
   margin-bottom: 30px;
 }
 
-main.index div.ranking-slides-title h1 {
-  color: #f75193;
-  text-align: center;
-  font-size: 2rem;
-  letter-spacing: 0.2rem;
-}
-
 main.index div.ranking-slides-title ul.lines {
   display: flex;
   flex-direction: row;
@@ -376,6 +369,23 @@ div.ranking-slides-wrap div#ranking-slides {
   margin: 20px auto 40px;
 }
 
+main.index section.live .live-list ul li {
+  padding: 0;
+}
+main.index section.live .live-list ul li p.live-info {
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+main.index section.live .live-list ul li span.live-chip {
+  left: 10px;
+  top: 10px;
+}
+main.index section.live .live-list ul li span.count {
+  top: 10px;
+  right: 10px;
+}
+
 @media screen and (min-width: 769px) {
   main {
     width: 90%;
@@ -393,6 +403,22 @@ div.ranking-slides-wrap div#ranking-slides {
     padding-bottom: 0 !important;
     margin-bottom: 0 !important;
   }
+  main.index section.live .live-list ul li {
+    padding: 0;
+  }
+  main.index section.live .live-list ul li p.live-info {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+  main.index section.live .live-list ul li span.live-chip {
+    left: 10px;
+    top: 10px;
+  }
+  main.index section.live .live-list ul li span.count {
+    top: 10px;
+    right: 10px;
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -406,7 +432,57 @@ div.ranking-slides-wrap div#ranking-slides {
   }
   main.index {
     top: -20px;
+    width: 100%;
+    overflow: hidden;
     padding-bottom: 0 !important;
+  }
+  #main-slides,
+  #product-slides {
+    width: 90%;
+    margin: 0 auto;
+  }
+  main.index div#ranking-slides li.glide__slide {
+    padding-left: 0 !important;
+    overflow: visible !important;
+  }
+  main.index div#ranking-slides li.glide__slide div.number {
+    left: -20px !important;
+    bottom: -23px !important;
+  }
+  main.index div#ranking-slides li.glide__slide div.number span {
+    font-size: 120px !important;
+  }
+  .glide__arrow {
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  section.products .glide__arrow {
+    width: 100% !important;
+    margin: -20px auto 0 !important;
+  }
+
+  section.live .live-title,
+  section.products .products-title,
+  .ranking-slides-title {
+    width: 90% !important;
+    margin-left: 5% !important;
+  }
+
+  section.live .live-list ul li,
+  a.live-item {
+    padding: 0 !important;
+  }
+
+  main.index section.live .live-list ul li p.live-info {
+    padding: 5px;
+  }
+
+  #products-slides li.glide__slide p span.name {
+    margin-bottom: 4px;
+  }
+  main.index section.live .live-list ul li p.live-info span.name {
+    font-size: 0.8rem !important;
   }
 }
 
@@ -521,7 +597,8 @@ main.index div#ranking-slides .glide__pagination {
 }
 
 section.live .live-title,
-section.products .products-title {
+section.products .products-title,
+.ranking-slides-title {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -531,7 +608,8 @@ section.products .products-title {
 }
 
 section.live .live-title img,
-section.products .products-title img {
+section.products .products-title img,
+.ranking-slides-title img {
   height: 50px;
 }
 
@@ -663,13 +741,40 @@ section.live .live-list ul li span.count {
   position: relative;
 }
 
+@media screen and (max-width: 768px) {
+  #products-slides li.glide__slide {
+    padding: 4px;
+  }
+  #products-slides li.glide__slide p > span {
+    font-size: 0.8rem !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  #products-slides li.glide__slide div.img-wrap {
+    width: 84% !important;
+    left: 8% !important;
+    top: 8% !important;
+  }
+  #products-slides li.glide__slide p {
+    bottom: 6% !important;
+  }
+  #products-slides li.glide__slide p span.name {
+    padding: 3.5px 5px 3.5px 18px;
+    height: 23px;
+    background: url(../images/heart-icon.svg) 7px 6px no-repeat rgba(0, 0, 0, 0.3);
+    background-size: 9px;
+    margin-bottom: 6px;
+  }
+}
+
 #products-slides li.glide__slide div.product {
   border-radius: 15px;
   position: relative;
   padding-top: 100%;
   overflow: hidden;
   top: 0;
-  box-shadow: 0 0 10px 0px #aaa;
+  box-shadow: 0 0 5px 0px rgb(205, 205, 205);
 }
 
 #products-slides li.glide__slide div.img-wrap {
@@ -1009,17 +1114,20 @@ main.topup {
   }
 }
 
-main.live {
+main.live,
+main.ranking {
   border: 0;
   padding: 2rem 0;
 }
 
-main.live h1 {
+main.live h1,
+main.ranking h1 {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-main.live h1 img {
+main.live h1 img,
+main.ranking h1 img {
   height: 50px;
 }
 
@@ -2192,7 +2300,7 @@ div.recommend-item div.info {
   width: 150px;
 }
 
-div.recommend-item ul.photos li {
+ul.photos li {
   width: 80px;
   height: 130px;
   overflow: hidden;
@@ -2204,7 +2312,7 @@ div.recommend-item ul.photos li {
   position: relative;
 }
 
-div.recommend-item ul.photos div.img-wrap {
+ul.photos div.img-wrap {
   width: 70px;
   height: 90px;
   position: absolute;
@@ -2216,17 +2324,17 @@ div.recommend-item ul.photos div.img-wrap {
   justify-content: center;
 }
 
-div.recommend-item ul.photos div.img-wrap img {
+ul.photos div.img-wrap img {
   height: 100%;
 }
 
-div.recommend-item ul.photos {
+ul.photos {
   display: flex;
   flex-direction: row;
   gap: 14px;
 }
 
-div.recommend-item ul.photos div.bg ul.white-boxes {
+ul.photos div.bg ul.white-boxes {
   display: flex;
   flex-direction: row;
   gap: 14px;
@@ -2236,14 +2344,14 @@ div.recommend-item ul.photos div.bg ul.white-boxes {
   left: 10px;
 }
 
-div.recommend-item ul.photos div.bg ul.white-boxes li {
+ul.photos div.bg ul.white-boxes li {
   width: 10px;
   height: 10px;
   background: #fff;
   border-radius: 0;
 }
 
-div.recommend-item ul.photos div.bg ul.bottom-boxes {
+ul.photos div.bg ul.bottom-boxes {
   bottom: 5px !important;
   top: initial;
 }
@@ -2321,4 +2429,223 @@ table.account-table tbody tr td {
     font-size: 0.875rem;
     padding: 12px 5px;
   }
+}
+
+main.ranking div.sub-nav {
+  margin-bottom: 2rem;
+}
+
+main.ranking div.sub-nav ul,
+main.ranking div.calendar-nav ul {
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+main.ranking div.calendar-nav ul::before {
+  position: absolute;
+  width: 120%;
+  height: 40px;
+  background: #fff;
+  content: "";
+  display: block;
+  z-index: 1;
+  left: -10%;
+  top: calc(24% + 20px);
+}
+
+main.ranking div.calendar-nav ul::after {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  top: calc(24% + 10px);
+  content: "";
+  display: block;
+  z-index: -1;
+  box-shadow: 0 10px 10px #000;
+}
+
+main.ranking div.sub-nav ul li a {
+  width: 150px;
+  display: block;
+}
+
+main.ranking div.calendar-nav ul li {
+  display: flex;
+  width: 33.33%;
+  z-index: 2;
+}
+
+main.ranking div.calendar-nav ul li a {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+main.ranking div.calendar-nav ul li a img {
+  width: 100%;
+  display: block;
+}
+
+main.ranking section.top-three {
+  margin-bottom: 3rem;
+}
+
+main.ranking li.glide__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+main.ranking li.glide__slide > div.wrapper {
+  padding: 3px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  box-shadow: 0 0 10px #e9528e;
+  border: 1px solid #f19ec2;
+}
+main.ranking li.glide__slide > div.wrapper > div.bg {
+  background: #ffdcf5;
+  border: 1px solid #f19ec2;
+  width: 100%;
+  border-radius: 26px;
+  padding: 1rem;
+  position: relative;
+}
+
+main.ranking li.glide__slide > div.wrapper > div.bg > div.img-wrap {
+  padding-top: 145%;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 26px;
+  box-shadow: 0 0 10px #f19ec2;
+  margin-bottom: 1rem;
+}
+main.ranking li.glide__slide > div.wrapper > div.bg > div.img-wrap img {
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+main.ranking li.glide__slide > div.wrapper > div.bg div.trophy {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  z-index: 9;
+  border-radius: 50%;
+  box-shadow: 0 5px 5px #aaa;
+}
+
+main.ranking li.glide__slide > div.wrapper > div.bg div.trophy img {
+  width: 100%;
+}
+
+main.ranking section.top-three ul.photos {
+  gap: initial;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+main.ranking section.top-three ul.photos > li {
+  background: #fff;
+  width: 30%;
+  height: initial;
+  padding-top: 45%;
+}
+
+main.ranking section.top-three ul.photos li ul.white-boxes {
+  width: 80%;
+  left: 10%;
+  justify-content: space-around;
+}
+
+main.ranking section.top-three ul.photos li ul.white-boxes li {
+  background: #ffdcf5;
+  padding-top: 13%;
+  height: 0;
+}
+
+main.ranking section.top-three ul.photos div.img-wrap {
+  width: 80%;
+  height: 68%;
+  left: 10%;
+  top: 16%;
+}
+
+main.ranking section.top-three .glide__arrow {
+  display: none;
+}
+
+main.ranking section.top-three ul.glide__list > li {
+  transform: scale(0.8);
+}
+main.ranking section.top-three ul.glide__list > li.glide__slide--active {
+  transform: scale(1);
+}
+
+@media screen and (max-width: 768px) {
+  main.ranking {
+    width: 100%;
+    margin: 0;
+  }
+  main.ranking section.top-three .glide__arrow {
+    display: flex;
+  }
+  main.ranking .glide__arrow {
+    width: 100%;
+    margin: 0 auto;
+  }
+  main.ranking div.sub-nav ul {
+    width: 420px;
+    gap: 20px;
+  }
+  main.ranking div.calendar-nav ul {
+    gap: 0px;
+    width: 420px;
+  }
+  main.ranking div.sub-nav ul li a {
+    width: 100px;
+  }
+  main.ranking div.calendar-nav ul li a img {
+    width: 120%;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main.ranking div.sub-nav ul,
+  main.ranking div.calendar-nav ul {
+    width: 300px;
+  }
+  main.ranking div.calendar-nav ul::before {
+    top: calc(17% + 20px);
+  }
+}
+
+main.ranking section.top-three div.info {
+  line-height: 1.5rem;
+  color: #e9528e;
+  font-size: 1.1rem;
+  padding: 0 5px;
+}
+
+main.ranking section.top-three div.info .name {
+  font-size: 1.2rem;
+  font-weight: bold;
 }

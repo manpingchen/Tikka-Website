@@ -1,6 +1,6 @@
 .single-slides ul.glide__list li.glide__slide {
   position: relative;
-  padding-top: 8%; /*Img Ratio*/
+  padding-top: 8.14%; /*Img Ratio*/
 }
 
 .single-slides ul.glide__list li img {
@@ -8,6 +8,16 @@
   top: 0;
   left: 0;
   width: 100%;
+}
+
+.single-slides .glide__bullets {
+  bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .single-slides .glide__bullets {
+    bottom: 10px;
+  }
 }
 
 .glide__arrow {
@@ -44,11 +54,8 @@ button.glide__bullet--active {
   background: #e9528e;
 }
 
-@media screen and (max-width: 1024px) {
-  .glide__arrow {
-    width: 120%;
-    margin: 0 -10%;
-  }
+.glide__arrow button {
+  background: none !important;
 }
 
 @media screen and (max-width: 768px) {
