@@ -92,11 +92,51 @@
             <a href="#"><img src="images/gift.svg" alt="gift icon" />禮物貢獻榜</a>
           </div>
         </div>
-        <div class="chat">
-          <div class="chat-title"><img src="images/dialog.svg" />聊聊</div>
-          <div class="chat-body">
+        <div class="gift-mission">
+          <a href="#" class="gift"><img src="images/diamond.png" alt="" /><span>每日領取</span></a>
+          <a href="#" class="mission"
+            ><img src="images/mission.svg" alt="" /><span>活動任務</span></a
+          >
+        </div>
+
+        <div class="chat-sticker-wrap">
+          <div class="chat-sticker" id="sticker-panel">
+            <div class="sticker-title"><img src="images/my-sticker.svg" alt="我的貼圖" /></div>
+            <div class="sticker-body">
+              <button class="sticker-item add-sticker">
+                <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
+              </button>
+              <button class="sticker-item" onclick="handleAddStickerToChat()">
+                <span class="img-wrap"> <img src="images/sticker.png" alt="" /></span>
+              </button>
+              <button class="sticker-item" onclick="handleAddStickerToChat()">
+                <span class="img-wrap"> <img src="images/sticker2.png" alt="" /></span>
+              </button>
+              <button class="sticker-item" onclick="handleAddStickerToChat()">
+                <span class="img-wrap"> <img src="images/sticker.png" alt="" /> </span>
+              </button>
+              <button class="sticker-item" onclick="handleAddStickerToChat()">
+                <span class="img-wrap"> <img src="images/sticker2.png" alt="" /> </span>
+              </button>
+              <button class="sticker-item" onclick="handleAddStickerToChat()">
+                <span class="img-wrap"> <img src="images/sticker.png" alt="" /></span>
+              </button>
+              <button class="sticker-item" onclick="handleAddStickerToChat()">
+                <span class="img-wrap"> <img src="images/sticker2.png" alt="" /></span>
+              </button>
+              <button class="sticker-item" onclick="handleAddStickerToChat()">
+                <span class="img-wrap"> <img src="images/sticker.png" alt="" /> </span>
+              </button>
+            </div>
+            <div class="sticker-footer">
+              <button type="button" class="sumbit-btn" onclick="handleCloseStickerPanel()">送出</button>
+            </div>
+          </div>
+          <div class="chat">
+          <div class="chat-title"><img src="images/dialog.svg" />跟主播聊聊</div>
+          <div class="chat-body" id="chat-items-desktop">
             <div class="chat-item">
-              <span class="chat-name">小愛：</span>
+              <span class="chat-name">第一筆留言者：</span>
               <span class="chat-content">12345678</span>
             </div>
             <div class="chat-item">
@@ -169,9 +209,11 @@
             </div>
           </div>
           <div class="chat-footer">
-            <input type="text" placeholder="請輸入文字..." />
-            <button type="button" class="face-btn"><img src="images/face.svg" /></button>
-            <button type="submit" class="sent-btn"><img src="images/fat-arrow.svg" /></button>
+              <input type="text" id="new-chat-input-desktop" placeholder="請輸入文字..." />
+              <button type="button" class="face-btn" onclick="handleOpenStickerPanel()">
+                <img src="images/face.svg" />
+              </button>
+              <button type="submit" class="sent-btn" onclick="handleAddTextToChat('desktop')"><img src="images/fat-arrow.svg" /></button>
           </div>
         </div>
       </section>
@@ -217,9 +259,9 @@
           </button>
         </div>
         <div class="frame-bottom-bar mobile-only flex-row">
-          <div class="chat-body">
+          <div class="chat-body" id="chat-items-mobile">
             <div class="chat-item">
-              <span class="chat-name">小愛：</span>
+              <span class="chat-name">第一筆留言者：</span>
               <span class="chat-content">12345678</span>
             </div>
             <div class="chat-item">
@@ -294,9 +336,9 @@
           <div class="chat-field flex-row">
             <div class="flex-row">
               <img class="chat-icon" src="images/dialog.svg" alt="" />
-              <input placeholder="跟主播聊聊..." />
+              <input type="text" placeholder="跟主播聊聊..." id="new-chat-input-mobile" />
             </div>
-            <button><img src="images/fat-arrow.svg" alt="送出" /></button>
+            <button type="button" onclick="handleAddTextToChat('mobile')"><img src="images/fat-arrow.svg" alt="送出" /></button>
           </div>
           <div class="btns">
             <button class="icon pink"><img src="images/gift.svg" /></button>
@@ -313,20 +355,27 @@
           </div>
         </div>
         <div class="iframe">
-          <div class="videoDiv">
-            <video id="rtc_media_player" autoplay playsinline controls ></video>
+          <div class="coming-soon" id="coming-soon" style="display: none">
+            <div class="title flex-row">
+              <button class="close" onclick="handleCloseComingSoon()">
+                <img src="images/close-icon.svg" alt="close" />
+              </button>
+              <p class="flex-row">
+                <span class="line"></span>此功能正在建構中 <span class="line"></span>
+              </p>
+            </div>
+            <div class="content">
+              <p class="coming-soon-text">敬請期待</p>
+              <img src="images/coming-soon.png" alt="敬請期待" />
+            </div>
           </div>
-          <iframe id="giftAdmin" src="" scrolling="no" frameBorder="0" />
-        </iframe>
-      </div>
+          <div class="videoDiv">
+            <video id="rtc_media_player" autoplay playsinline controls></video>
+          </div>
+          <iframe id="giftAdmin" src="" scrolling="no" frameborder="0"></iframe>
+        </div>
       </section>
       <section class="right-column desktop-only">
-        <div class="gift-mission">
-          <a href="#" class="gift"><img src="images/diamond.png" alt="" /><span>每日領取</span></a>
-          <a href="#" class="mission"
-            ><img src="images/mission.svg" alt="" /><span>活動任務</span></a
-          >
-        </div>
         <div class="slides">
           <div class="btns">
             <button type="button"><img src="images/heart-icon.svg" />追蹤最愛</button>
@@ -640,5 +689,77 @@
       }
     </script>
     <script src="js/header.js"></script>
+    <script>
+      function handleCloseComingSoon() {
+        document.getElementById("coming-soon").classList.add("hide");
+      }
+      /*貼圖區塊控制*/
+      function handleOpenStickerPanel() {
+        document.getElementById("sticker-panel").classList.add("show-from-left-side");
+      }
+      function handleCloseStickerPanel() {
+        document.getElementById("sticker-panel").classList.remove("show-from-left-side");
+      }
+      /*加貼圖至對話框*/
+      function handleAddStickerToChat(e){
+        const imgElement = event.target.outerHTML;
+        
+        const newElement = document.createElement("div");
+        newElement.classList.add("chat-item", "sticker-content");
+        
+        const nameElement = document.createElement("span");
+        nameElement.classList.add("chat-name");
+        nameElement.innerHTML = "貼圖發送者：";
+        
+        const contentElement = document.createElement("span");
+        contentElement.classList.add("chat-content");
+        contentElement.innerHTML = imgElement;
+
+        console.log({newElement})
+        
+        newElement.append(nameElement);
+        newElement.append(contentElement);
+        
+        document.getElementById("chat-items-mobile").appendChild(newElement);
+        document.getElementById("chat-items-desktop").appendChild(newElement);
+        handleCloseStickerPanel();
+        locateScrollbar();
+      }
+      /*加對話至對話框*/
+      function handleAddTextToChat(device){
+        
+        let id = "new-chat-input-" + device;
+        const chatText = document.getElementById(id).value;
+        if(chatText) {
+
+          const newElement = document.createElement("div");
+          newElement.classList.add("chat-item");
+        
+          const nameElement = document.createElement("span");
+          nameElement.classList.add("chat-name");
+          nameElement.innerHTML = "貼圖發送者：";
+          
+          const contentElement = document.createElement("span");
+          contentElement.classList.add("chat-content");
+          contentElement.innerHTML = chatText;
+
+          newElement.append(nameElement);
+          newElement.append(contentElement);
+
+          document.getElementById("chat-items-mobile").appendChild(newElement);
+          document.getElementById("chat-items-desktop").appendChild(newElement);
+          document.getElementById(id).value = "";
+          locateScrollbar();
+        }
+      }
+
+      /*確保聊天視窗滾輪對齊最下方*/
+      function locateScrollbar(){
+        const chatBody = document.querySelector('.chat-body');
+        chatBody.scrollTop = chatBody.scrollHeight - chatBody.clientHeight;
+      }
+      
+      locateScrollbar();
+    </script>
   </body>
 </html>

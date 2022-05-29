@@ -74,15 +74,34 @@
         </ul>
       </section>
       <section class="login-section">
-        <a href="login.html">
-          <img src="images/login-icon-grey.svg" alt="登入" class="login-icon" />
-          登入帳戶
-          <span>Go</span>
-        </a>
+        <div class="login">
+          <a href="login.html">
+            <img src="images/login-icon-grey.svg" alt="登入" class="login-icon" />
+            登入帳戶
+            <span>Go</span>
+          </a>
+        </div>
+        <div class="logged-in flex-row" style="display: none">
+          <div class="avatar flex-row">
+            <div class="img-wrap">
+              <img src="images/s1.jpg" alt="avatar image" />
+            </div>
+            <p>會員名稱</p>
+          </div>
+          <div class="my-flower flex-row">
+            <span class="point flex-row">我的捧花</span>
+            <span class="cost">2,390</span>
+          </div>
+        </div>
       </section>
       <section class="method-options">
         <h4>儲值方式選擇</h4>
-        <button type="button" class="outlined secondary">NewebPay藍新金流</button>
+        <div class="options">
+          <button type="button" class="outlined secondary">NewebPay藍新金流</button>
+          <button type="button" class="outlined secondary">紅陽 - 信用卡</button>
+          <button type="button" class="outlined secondary">紅陽 - ATM轉帳</button>
+          <button type="button" class="outlined secondary">紅陽 - 超市代碼</button>
+        </div>
       </section>
 
       <section class="amount-options">
@@ -90,85 +109,113 @@
         <ul>
           <li>
             <button type="button">
-              <span class="point"><span>2,040<span>（贈送15）</span></span></span>
+              <span class="point"
+                ><span>2,040<span>（贈送15）</span></span></span
+              >
               <span class="cost">TWD.150</span>
             </button>
           </li>
           <li>
             <button type="button">
-              <span class="point"><span>4,080<span>（贈送30）</span></span></span>
+              <span class="point"
+                ><span>4,080<span>（贈送30）</span></span></span
+              >
               <span class="cost">TWD.300</span>
             </button>
           </li>
           <li>
             <button type="button">
-              <span class="point"><span>6,800<span>（贈送50）</span></span></span>
+              <span class="point"
+                ><span>6,800<span>（贈送50）</span></span></span
+              >
               <span class="cost">TWD.500</span>
             </button>
           </li>
           <li>
             <button type="button">
-              <span class="point"><span>13,600<span>（贈送200）</span></span></span>
+              <span class="point"
+                ><span>13,600<span>（贈送200）</span></span></span
+              >
               <span class="cost">TWD.1,000</span>
             </button>
           </li>
           <li>
             <button type="button">
-              <span class="point"><span>20,400<span>（贈送300）</span></span></span>
+              <span class="point"
+                ><span>20,400<span>（贈送300）</span></span></span
+              >
               <span class="cost">TWD.1,500</span>
             </button>
           </li>
           <li>
             <button type="button">
-              <span class="point"><span>40,800<span>（贈送600）</span></span></span>
+              <span class="point"
+                ><span>40,800<span>（贈送600）</span></span></span
+              >
               <span class="cost">TWD.3,000</span>
             </button>
           </li>
           <li>
             <button type="button">
-              <span class="point"><span>69,400<span>（贈送1,000）</span></span></span>
+              <span class="point"
+                ><span>69,400<span>（贈送1,000）</span></span></span
+              >
               <span class="cost">TWD.5,000</span>
             </button>
           </li>
           <li>
             <button type="button">
-              <span class="point"><span>139,800<span>（贈送2,000）</span></span></span>
+              <span class="point"
+                ><span>139,800<span>（贈送2,000）</span></span></span
+              >
               <span class="cost">TWD.10,000</span>
             </button>
           </li>
           <li>
             <button type="button">
-              <span class="point"><span>278,000<span>（贈送4,000）</span></span></span>
+              <span class="point"
+                ><span>278,000<span>（贈送4,000）</span></span></span
+              >
               <span class="cost">TWD.20,000</span>
             </button>
           </li>
           <li>
             <button type="button">
-              <span class="point"><span>700,000<span>（贈送21,000）</span></span></span>
+              <span class="point"
+                ><span>700,000<span>（贈送21,000）</span></span></span
+              >
               <span class="cost">TWD.50,000</span>
             </button>
           </li>
           <li>
             <button type="button">
-              <span class="point"><span>1,400,000<span>（贈送50,000）</span></span></span>
+              <span class="point"
+                ><span>1,400,000<span>（贈送50,000）</span></span></span
+              >
               <span class="cost">TWD.100,000</span>
             </button>
           </li>
           <li>
             <button type="button">
-              <span class="point"><span>2,820,000<span>（贈送120,000）</span></span></span>
+              <span class="point"
+                ><span>2,820,000<span>（贈送120,000）</span></span></span
+              >
               <span class="cost">TWD.200,000</span>
             </button>
           </li>
           <li>
             <button type="button">
-              <span class="point"><span>7,050,000<span>（贈送350,000）</span></span></span>
+              <span class="point"
+                ><span>7,050,000<span>（贈送350,000）</span></span></span
+              >
               <span class="cost">TWD.500,000</span>
             </button>
           </li>
           <li>
             <button type="button">
-              <span class="point"><span>14,500,000<span>（贈送500,000）</span></span></span>
+              <span class="point"
+                ><span>14,500,000<span>（贈送500,000）</span></span></span
+              >
               <span class="cost">TWD.1,000,000</span>
             </button>
           </li>

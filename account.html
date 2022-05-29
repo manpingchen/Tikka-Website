@@ -121,13 +121,29 @@
             <span class="just-style"></span>
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="logou.html">
             <img src="images/log-out-icon.svg" alt="" />
             <p>Logout</p>
             <span class="just-style"></span>
           </a>
-        </li>
+        </li> -->
+        <form action="/logout/index" method="post">
+          <li class="logout">
+            <div class="logout-wrap">
+              <img src="images/log-out-icon.svg" alt="" />
+              <input
+                type="submit"
+                class="dropdown-item navbar-light color-light"
+                name="Submit"
+                value="登出"
+                style="margin-top: 15px; font-size: 1.1rem"
+                id="Submit"
+              />
+              <span class="just-style"></span>
+            </div>
+          </li>
+        </form>
       </ul>
     </main>
     <footer>

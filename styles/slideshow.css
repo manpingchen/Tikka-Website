@@ -3,6 +3,15 @@
   padding-top: 8.14%; /*Img Ratio*/
 }
 
+.single-slides#highlighted-products-slides{
+  margin-bottom: 2rem;
+}
+
+.single-slides#highlighted-products-slides ul.glide__list li.glide__slide {
+  position: relative;
+  padding-top: 6.25%; /*Img Ratio*/
+}
+
 .single-slides ul.glide__list li img {
   position: absolute;
   top: 0;
