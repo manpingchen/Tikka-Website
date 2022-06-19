@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/header.css" />
@@ -557,10 +560,16 @@
       }
 
       function goToRight() {
-        console.log("go right");
-        var current = listImageArea.querySelector(".current-image-list");
-        current.parentElement.nextElementSibling.children[0].classList.add("current-image-list");
+        let current = listImageArea.querySelector(".current-image-list");
         current.classList.remove("current-image-list");
+
+        const nextElementSibling = current.parentElement.nextElementSibling?.children[0];
+        if (nextElementSibling) {
+          nextElementSibling.classList.add("current-image-list");
+        } else {
+          listImageArea.children[0].querySelector("img").classList.add("current-image-list");
+        }
+
         current = listImageArea.querySelector(".current-image-list");
         listImageArea.scrollLeft = current.offsetLeft;
         currentImage.attributes.src.value = current.attributes.src.value;
@@ -571,11 +580,19 @@
       }
 
       function goToLeft() {
-        var current = listImageArea.querySelector(".current-image-list");
-        current.parentElement.previousElementSibling.children[0].classList.add(
-          "current-image-list"
-        );
+        let current = listImageArea.querySelector(".current-image-list");
+        const lastIndex = listImageArea.children.length - 1;
         current.classList.remove("current-image-list");
+
+        const previousElementSibling = current.parentElement.previousElementSibling?.children[0];
+        if (previousElementSibling) {
+          previousElementSibling.classList.add("current-image-list");
+        } else {
+          listImageArea.children[lastIndex]
+            .querySelector("img")
+            .classList.add("current-image-list");
+        }
+
         current = listImageArea.querySelector(".current-image-list");
         listImageArea.scrollLeft = current.offsetLeft;
         currentImage.attributes.src.value = current.attributes.src.value;
@@ -585,17 +602,20 @@
         }, 500);
       }
 
-      function changeCurrentImage(newImage) {
-        currentImage.classList.add("fadeIn");
+      function changeCurrentImage(newImage, newImageIndex) {
+        // Fade in effect
+        newImage.classList.add("fadeIn");
         setTimeout(function () {
-          currentImage.classList.remove("fadeIn");
+          newImage.classList.remove("fadeIn");
         }, 500);
-        currentImage.attributes.src.value = this.attributes.src.value;
-        //listOfImages.forEach(image => image.classList.remove('current-image-list'));
-        listOfImages.forEach(function (image) {
-          image.classList.remove("current-image-list");
+        // Update classname
+        listOfImages.forEach((image, index) => {
+          index === newImageIndex
+            ? image.classList.add("current-image-list")
+            : image.classList.remove("current-image-list");
         });
-        this.add("current-image-list");
+        //Update main img src value
+        currentImage.attributes.src.value = newImage.attributes.src.value;
       }
 
       styleList();
@@ -612,10 +632,9 @@
         NodeList.prototype.forEach = Array.prototype.forEach;
       })();
 
-      //listOfImages.forEach(image => image.addEventListener('click', changeCurrentImage));
-      listOfImages.forEach(function (image) {
-        image.addEventListener("click", changeCurrentImage);
-      });
+      listOfImages.forEach((image, index) =>
+        image.addEventListener("click", () => changeCurrentImage(image, index))
+      );
 
       /* 追蹤按鈕文字 */
       function handleFollow(element) {
