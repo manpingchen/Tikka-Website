@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/slideshow.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
@@ -93,10 +94,12 @@
           </div>
         </div>
         <div class="gift-mission">
-          <a href="#" class="gift"><img src="images/diamond.png" alt="" /><span>每日領取</span></a>
-          <a href="#" class="mission"
-            ><img src="images/mission.svg" alt="" /><span>活動任務</span></a
-          >
+          <a href="#" class="gift" onclick="handleOpenComingSoon()">
+            <img src="images/diamond.png" alt="" /><span>每日領取</span>
+          </a>
+          <a href="#" class="mission" onclick="handleOpenComingSoon()">
+            <img src="images/mission.svg" alt="" /><span>活動任務</span>
+          </a>
         </div>
 
         <div class="chat-sticker-wrap">
@@ -129,91 +132,96 @@
               </button>
             </div>
             <div class="sticker-footer">
-              <button type="button" class="sumbit-btn" onclick="handleCloseStickerPanel()">送出</button>
+              <button type="button" class="sumbit-btn" onclick="handleCloseStickerPanel()">
+                送出
+              </button>
             </div>
           </div>
           <div class="chat">
-          <div class="chat-title"><img src="images/dialog.svg" />跟主播聊聊</div>
-          <div class="chat-body" id="chat-items-desktop">
-            <div class="chat-item">
-              <span class="chat-name">第一筆留言者：</span>
-              <span class="chat-content">12345678</span>
+            <div class="chat-title"><img src="images/dialog.svg" />跟主播聊聊</div>
+            <div class="chat-body" id="chat-items-desktop">
+              <div class="chat-item">
+                <span class="chat-name">第一筆留言者：</span>
+                <span class="chat-content">12345678</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">小小小馬馬馬：</span>
+                <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">姓名：</span>
+                <span class="chat-content">聊天文字內容</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">姓名：</span>
+                <span class="chat-content">聊天文字內容</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">姓名：</span>
+                <span class="chat-content">聊天文字內容</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">姓名：</span>
+                <span class="chat-content">聊天文字內容</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">姓名：</span>
+                <span class="chat-content">聊天文字內容</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">姓名：</span>
+                <span class="chat-content">聊天文字內容</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">姓名：</span>
+                <span class="chat-content">聊天文字內容</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">小愛：</span>
+                <span class="chat-content">12345678</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">小小小馬馬馬：</span>
+                <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">姓名：</span>
+                <span class="chat-content">聊天文字內容</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">小愛：</span>
+                <span class="chat-content">12345678</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">小小小馬馬馬：</span>
+                <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">姓名：</span>
+                <span class="chat-content">聊天文字內容</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">小愛：</span>
+                <span class="chat-content">12345678</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">小小小馬馬馬：</span>
+                <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
+              </div>
+              <div class="chat-item">
+                <span class="chat-name">姓名：</span>
+                <span class="chat-content">聊天文字內容</span>
+              </div>
             </div>
-            <div class="chat-item">
-              <span class="chat-name">小小小馬馬馬：</span>
-              <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">姓名：</span>
-              <span class="chat-content">聊天文字內容</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">姓名：</span>
-              <span class="chat-content">聊天文字內容</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">姓名：</span>
-              <span class="chat-content">聊天文字內容</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">姓名：</span>
-              <span class="chat-content">聊天文字內容</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">姓名：</span>
-              <span class="chat-content">聊天文字內容</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">姓名：</span>
-              <span class="chat-content">聊天文字內容</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">姓名：</span>
-              <span class="chat-content">聊天文字內容</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">小愛：</span>
-              <span class="chat-content">12345678</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">小小小馬馬馬：</span>
-              <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">姓名：</span>
-              <span class="chat-content">聊天文字內容</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">小愛：</span>
-              <span class="chat-content">12345678</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">小小小馬馬馬：</span>
-              <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">姓名：</span>
-              <span class="chat-content">聊天文字內容</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">小愛：</span>
-              <span class="chat-content">12345678</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">小小小馬馬馬：</span>
-              <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
-            </div>
-            <div class="chat-item">
-              <span class="chat-name">姓名：</span>
-              <span class="chat-content">聊天文字內容</span>
-            </div>
-          </div>
-          <div class="chat-footer">
+            <div class="chat-footer">
               <input type="text" id="new-chat-input-desktop" placeholder="請輸入文字..." />
               <button type="button" class="face-btn" onclick="handleOpenStickerPanel()">
                 <img src="images/face.svg" />
               </button>
-              <button type="submit" class="sent-btn" onclick="handleAddTextToChat('desktop')"><img src="images/fat-arrow.svg" /></button>
+              <button type="submit" class="sent-btn" onclick="handleAddTextToChat('desktop')">
+                <img src="images/fat-arrow.svg" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -233,12 +241,20 @@
           </div>
         </div>
         <div class="frame-top-bar flex-row">
-          <div class="flex-row">
-            <div class="earning flex-row">
+          <div class="flex-row" id="revenue-viewer-tabs">
+            <div
+              class="revenue-tab flex-row"
+              id="revenue-tab"
+              onclick="handleOpenMobileRevenueViewerPanel(this.id, 'revenue-overlay-mobile')"
+            >
               <span class="icon"><img src="images/gift.svg" alt="" /></span>
               <span class="value">999,999,999</span>
             </div>
-            <div class="view flex-row">
+            <div
+              class="viewer-tab flex-row"
+              id="viewer-tab"
+              onclick="handleOpenMobileRevenueViewerPanel(this.id, 'viewer-overlay-mobile')"
+            >
               <span class="icon"><img src="images/eye.svg" alt="" /></span>
               <span class="value">999,999,999</span>
             </div>
@@ -338,11 +354,17 @@
               <img class="chat-icon" src="images/dialog.svg" alt="" />
               <input type="text" placeholder="跟主播聊聊..." id="new-chat-input-mobile" />
             </div>
-            <button type="button" onclick="handleAddTextToChat('mobile')"><img src="images/fat-arrow.svg" alt="送出" /></button>
+            <button type="button" onclick="handleAddTextToChat('mobile')">
+              <img src="images/fat-arrow.svg" alt="送出" />
+            </button>
           </div>
           <div class="btns">
-            <button class="icon pink"><img src="images/gift.svg" /></button>
-            <button class="icon pink"><img src="images/mission.svg" /></button>
+            <button class="icon pink" onclick="handleShowMobileRewardWall()">
+              <img src="images/gift.svg" />
+            </button>
+            <button class="icon pink" onclick="handleOpenComingSoon()">
+              <img src="images/mission.svg" />
+            </button>
             <button class="icon">
               <img src="images/social.svg" alt="" />
             </button>
@@ -355,7 +377,8 @@
           </div>
         </div>
         <div class="iframe">
-          <div class="coming-soon" id="coming-soon" style="display: none">
+          <!-- 敬請期待 -->
+          <div class="coming-soon overlay" id="coming-soon" style="display: none">
             <div class="title flex-row">
               <button class="close" onclick="handleCloseComingSoon()">
                 <img src="images/close-icon.svg" alt="close" />
@@ -369,53 +392,305 @@
               <img src="images/coming-soon.png" alt="敬請期待" />
             </div>
           </div>
+
+          <!-- 捧花不足 -->
+          <div class="overlay" id="top-up-overlay" style="display: none">
+            <div class="title flex-row">
+              <button class="close" onclick="handleCloseTopUp()">
+                <img src="images/close-icon.svg" alt="close" />
+              </button>
+              <p class="flex-row"><span class="line"></span>捧花不足 <span class="line"></span></p>
+            </div>
+            <div class="content">
+              <a href="topup.html" class="topup-btn"><img src="images/coin.png" />請儲值</a>
+            </div>
+            <div class="footer">
+              <span class="point">59</span>
+            </div>
+          </div>
+
+          <!-- 手機版禮物牆 -->
+          <div class="overlay rewards" id="rewards-overlay-mobile" style="display: none">
+            <div class="content">
+              <button class="close" onclick="handleCloseRewardOverlay()">
+                <img src="images/close-icon.svg" alt="close" />
+              </button>
+              <div class="wrapper reward-btns-mobile">
+                <div class="btns" id="reward-title-buttons-mobile">
+                  <button
+                    id="reward-gift-mobile"
+                    type="button"
+                    class="active"
+                    onclick="handleRewardTitleClick(this.id,'reward-title-buttons-mobile')"
+                  >
+                    <img src="images/gift.svg" alt="" />禮物
+                  </button>
+                  <button
+                    id="reward-product-mobile"
+                    type="button"
+                    onclick="handleRewardTitleClick(this.id,'reward-title-buttons-mobile')"
+                  >
+                    <img src="images/arrow-cart.svg" alt="" />商品
+                  </button>
+                  <button
+                    id="reward-box-mobile"
+                    type="button"
+                    onclick="handleRewardTitleClick(this.id,'reward-title-buttons-mobile')"
+                  >
+                    <img src="images/treasure.svg" alt="" />百寶箱
+                  </button>
+                </div>
+              </div>
+
+              <div class="wrapper">
+                <div class="detail-links reward-gift" id="gift-details-mobile">
+                  <a
+                    href="#"
+                    id="gift-all-mobile"
+                    onclick="showRewardDetail(this.id, 'gift-details-mobile')"
+                    >All</a
+                  >
+                  <span class="border"></span>
+                  <a
+                    href="#"
+                    id="gift-popular-mobile"
+                    onclick="showRewardDetail(this.id, 'gift-details-mobile')"
+                    >熱門</a
+                  >
+                  <span class="border"></span>
+                  <a
+                    href="#"
+                    id="gift-favourite-mobile"
+                    onclick="showRewardDetail(this.id, 'gift-details-mobile')"
+                    >女神最愛</a
+                  >
+                  <span class="border"></span>
+                  <a
+                    href="#"
+                    id="gift-romantic-mobile"
+                    onclick="showRewardDetail(this.id, 'gift-details-mobile')"
+                    >浪漫禮物</a
+                  >
+                </div>
+
+              <div
+                class="detail-links reward-gift"
+                id="product-details-mobile"
+                style="display: none"
+              >
+                <a
+                  href="#"
+                  id="product-all-mobile"
+                  onclick="showRewardDetail(this.id, 'product-details-mobile')"
+                  >All</a
+                >
+                <span class="border"></span>
+                <a
+                  href="#"
+                  id="product-popular-mobile"
+                  onclick="showRewardDetail(this.id, 'product-details-mobile')"
+                  >熱銷</a
+                >
+              </div>
+              <div class="detail-links reward-gift" id="box-details-mobile" style="display: none">
+                <a
+                  href="#"
+                  id="box-all-mobile"
+                  onclick="showRewardDetail(this.id, 'box-details-mobile')"
+                  >All</a
+                >
+              </div>
+              <div class="reward-items reward-gift" id="rewards-wall-mobile">
+                <!-- <div class="reward-item">
+                  <img src="images/diamond.png" alt="" />
+                  <span class="point flex-row">2740000</span>
+                </div> -->
+              </div>
+            </div>
+            <div class="footer">
+              <div class="send-gift flex-row">
+                <span class="point flex-row">2740000</span>
+                <button id="buy-button" type="button" onclick="handleBuy(this.id)">購買</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 手機版當日營收 -->
+          <div class="overlay revenue" id="revenue-overlay-mobile" style="display: none">
+            <div class="title flex-row">
+              <button class="close" onclick="handleCloseRevenueOverlay()">
+                <img src="images/close-icon.svg" alt="close" />
+              </button>
+              <p class="flex-row"><img src="images/gift.svg" alt="禮物icon" />送禮物排行榜</p>
+            </div>
+            <div class="content">
+              <ul class="revenue-list">
+                <li>
+                  <div class="badge"><img src="images/r1.svg" /></div>
+                  <div class="img-wrap">
+                    <img src="images/s2.jpg" alt="" />
+                  </div>
+                  <div class="name">送禮者姓名</div>
+                  <div class="value">990,000,000</div>
+                </li>
+                <li>
+                  <div class="badge"><img src="images/r2.svg" /></div>
+                  <div class="img-wrap">
+                    <img src="images/s2.jpg" alt="" />
+                  </div>
+                  <div class="name">送禮者姓名</div>
+                  <div class="value">990,000,000</div>
+                </li>
+                <li>
+                  <div class="badge"><img src="images/r3.svg" /></div>
+                  <div class="img-wrap">
+                    <img src="images/s2.jpg" alt="" />
+                  </div>
+                  <div class="name">送禮者姓名</div>
+                  <div class="value">980,000,000</div>
+                </li>
+                <li>
+                  <div class="badge"><img src="images/r4.svg" /></div>
+                  <div class="img-wrap">
+                    <img src="images/s2.jpg" alt="" />
+                  </div>
+                  <div class="name">送禮者姓名</div>
+                  <div class="value">970,000,000</div>
+                </li>
+                <li>
+                  <div class="badge"><img src="images/r5.svg" /></div>
+                  <div class="img-wrap">
+                    <img src="images/s2.jpg" alt="" />
+                  </div>
+                  <div class="name">送禮者姓名</div>
+                  <div class="value">900,000,000</div>
+                </li>
+                <li>
+                  <div class="badge"><img src="images/r6.svg" /></div>
+                  <div class="img-wrap">
+                    <img src="images/s2.jpg" alt="" />
+                  </div>
+                  <div class="name">送禮者姓名</div>
+                  <div class="value">900,000,000</div>
+                </li>
+                <li>
+                  <div class="badge"><img src="images/r7.svg" /></div>
+                  <div class="img-wrap">
+                    <img src="images/s2.jpg" alt="" />
+                  </div>
+                  <div class="name">送禮者姓名</div>
+                  <div class="value">900,000,000</div>
+                </li>
+                <li>
+                  <div class="badge"><img src="images/r8.svg" /></div>
+                  <div class="img-wrap">
+                    <img src="images/s2.jpg" alt="" />
+                  </div>
+                  <div class="name">送禮者姓名</div>
+                  <div class="value">900,000,000</div>
+                </li>
+                <li>
+                  <div class="badge"><img src="images/r9.svg" /></div>
+                  <div class="img-wrap">
+                    <img src="images/s2.jpg" alt="" />
+                  </div>
+                  <div class="name">送禮者姓名</div>
+                  <div class="value">900,000,000</div>
+                </li>
+              </ul>
+            </div>
+            <div class="footer"></div>
+          </div>
+
+          <!-- 手機版誰來觀看 -->
+          <div class="overlay viewer" id="viewer-overlay-mobile" style="display: none">
+            <div class="title flex-column">
+              <button class="close" onclick="handleCloseViewerOverlay()">
+                <img src="images/close-icon.svg" alt="close" />
+              </button>
+              <p class="flex-row"><img src="images/gift.svg" alt="禮物icon" />觀眾席</p>
+              <div class="detail-links" id="viewer-tabs">
+                <a href="#" id="general-viewer" onclick="switchViewerList(this.id, 'viewer-tabs')"
+                  >小觀眾</a
+                >
+                <span class="border"></span>
+                <a href="#" id="vip-viewer" onclick="switchViewerList(this.id, 'viewer-tabs')"
+                  >VIP</a
+                >
+              </div>
+            </div>
+            <div class="content">
+              <ul class="viewer-list" id="viewer-list">
+                <li>
+                  <div class="img-wrap">
+                    <img src="images/s2.jpg" alt="" />
+                  </div>
+                  <div class="name">觀看者姓名</div>
+                </li>
+              </ul>
+            </div>
+            <div class="footer"></div>
+          </div>
+
+          <!-- 下方禮物送出框 -->
+          <div class="gift-sent-overlay" style="display: none" id="gift-sent">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" class="avatar" alt="name" />
+            </div>
+            <div class="info">
+              <span class="name">小愛</span>
+              <div class="gift-name marquee-wall" id="marquee-gift-wall">
+                <span class="gift-text" id="marquee-gift-text"> 送了 名字短的名稱 </span>
+              </div>
+            </div>
+            <div class="gift-img-wrapper">
+              <img src="images/gift2.png" alt="禮物小圖" />
+            </div>
+          </div>
+
+          <!-- 滿版禮物圖 -->
+          <div class="gift-full-overlay" style="display: none" id="gift-full-overlay">
+            <img src="images/gift2.png" alt="" />
+          </div>
+
           <div class="videoDiv">
             <video id="rtc_media_player" autoplay playsinline controls></video>
           </div>
           <iframe id="giftAdmin" src="" scrolling="no" frameborder="0"></iframe>
         </div>
       </section>
+
+      <!-- //////  網頁版 右邊欄位 //////  -->
       <section class="right-column desktop-only">
         <div class="slides">
           <div class="btns">
-            <button type="button"><img src="images/heart-icon.svg" />追蹤最愛</button>
-            <button type="button"><img src="images/microphone.svg" />熱推主播</button>
+            <div class="flex-row" id="follow-popular-btns">
+              <button
+                id="follow-btn"
+                class="active"
+                type="button"
+                onclick="showInfluencerList('follow-popular-btns', this.id )"
+              >
+                <img src="images/heart-icon.svg" />追蹤最愛
+              </button>
+              <button
+                id="popular-btn"
+                type="button"
+                onclick="showInfluencerList('follow-popular-btns', this.id )"
+              >
+                <img src="images/microphone.svg" />熱推主播
+              </button>
+            </div>
           </div>
-          <div class="slides-list glide" id="people-slides-A">
+          <div class="slides-list glide" id="people-slides">
             <div class="glide__track" data-glide-el="track">
-              <ul class="glide__list glide__slides">
-                <li class="glide__slide">
-                  <div class="img-wrap">
-                    <img src="images/s2.jpg" alt="" />
-                  </div>
-                </li>
-                <li class="glide__slide">
-                  <div class="img-wrap">
-                    <img src="images/s2.jpg" alt="" />
-                  </div>
-                </li>
-                <li class="glide__slide">
-                  <div class="img-wrap">
-                    <img src="images/s2.jpg" alt="" />
-                  </div>
-                </li>
-                <li class="glide__slide">
-                  <div class="img-wrap">
-                    <img src="images/s2.jpg" alt="" />
-                  </div>
-                </li>
-                <li class="glide__slide">
-                  <div class="img-wrap">
-                    <img src="images/s2.jpg" alt="" />
-                  </div>
-                </li>
-              </ul>
+              <ul class="glide__list glide__slides"></ul>
             </div>
             <div class="glide__arrow" data-glide-el="controls">
-              <button data-glide-dir="<" class="prev">
+              <button data-glide-dir="<" class="prev" id="revenue-prev">
                 <span class="material-icons">&#xE5CB;</span>
               </button>
-              <button data-glide-dir=">" class="next">
+              <button data-glide-dir=">" class="next" id="revenue-next">
                 <span class="material-icons">&#xE5CC;</span>
               </button>
             </div>
@@ -424,47 +699,98 @@
 
         <div class="slides light-pink">
           <div class="btns">
-            <div class="flex-row">
-              <button type="button"><img src="images/eye-pink.svg" />觀眾</button>
-              <button type="button"><img src="images/star.svg" />VIP</button>
+            <div class="flex-row" id="revenue-btns">
+              <button
+                id="general-btn"
+                type="button"
+                class="active"
+                onclick="handleSwitchRevenue('revenue-btns', this.id)"
+              >
+                <img src="images/eye-pink.svg" />觀眾
+              </button>
+              <button
+                id="vip-btn"
+                onclick="handleSwitchRevenue('revenue-btns',this.id)"
+                type="button"
+              >
+                <img src="images/star.svg" />VIP
+              </button>
             </div>
             <button type="button" class="icon"><img src="images/reload.svg" alt="reload" /></button>
           </div>
-          <div class="slides-list glide" id="people-slides-B">
+          <div class="slides-list glide" id="slides-revenue">
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__list glide__slides">
                 <li class="glide__slide">
+                  <div class="badge"><img src="images/r1.svg" /></div>
                   <div class="img-wrap">
                     <img src="images/s2.jpg" alt="" />
                   </div>
+                  <div class="value">99K</div>
                 </li>
                 <li class="glide__slide">
+                  <div class="badge"><img src="images/r2.svg" /></div>
                   <div class="img-wrap">
                     <img src="images/s2.jpg" alt="" />
                   </div>
+                  <div class="value">99K</div>
                 </li>
                 <li class="glide__slide">
+                  <div class="badge"><img src="images/r3.svg" /></div>
                   <div class="img-wrap">
                     <img src="images/s2.jpg" alt="" />
                   </div>
+                  <div class="value">98K</div>
                 </li>
                 <li class="glide__slide">
+                  <div class="badge"><img src="images/r4.svg" /></div>
                   <div class="img-wrap">
                     <img src="images/s2.jpg" alt="" />
                   </div>
+                  <div class="value">97K</div>
                 </li>
                 <li class="glide__slide">
+                  <div class="badge"><img src="images/r5.svg" /></div>
                   <div class="img-wrap">
                     <img src="images/s2.jpg" alt="" />
                   </div>
+                  <div class="value">90K</div>
+                </li>
+                <li class="glide__slide">
+                  <div class="badge"><img src="images/r6.svg" /></div>
+                  <div class="img-wrap">
+                    <img src="images/s2.jpg" alt="" />
+                  </div>
+                  <div class="value">90K</div>
+                </li>
+                <li class="glide__slide">
+                  <div class="badge"><img src="images/r7.svg" /></div>
+                  <div class="img-wrap">
+                    <img src="images/s2.jpg" alt="" />
+                  </div>
+                  <div class="value">90K</div>
+                </li>
+                <li class="glide__slide">
+                  <div class="badge"><img src="images/r8.svg" /></div>
+                  <div class="img-wrap">
+                    <img src="images/s2.jpg" alt="" />
+                  </div>
+                  <div class="value">90K</div>
+                </li>
+                <li class="glide__slide">
+                  <div class="badge"><img src="images/r9.svg" /></div>
+                  <div class="img-wrap">
+                    <img src="images/s2.jpg" alt="" />
+                  </div>
+                  <div class="value">90K</div>
                 </li>
               </ul>
             </div>
             <div class="glide__arrow" data-glide-el="controls">
-              <button data-glide-dir="<" class="prev">
+              <button data-glide-dir="<" class="prev" id="revenue-prev">
                 <span class="material-icons">&#xE5CB;</span>
               </button>
-              <button data-glide-dir=">" class="next">
+              <button data-glide-dir=">" class="next" id="revenue-next">
                 <span class="material-icons">&#xE5CC;</span>
               </button>
             </div>
@@ -472,164 +798,125 @@
         </div>
 
         <div class="rewards">
-          <div class="btns">
-            <button type="button"><img src="images/gift.svg" alt="" />禮物</button>
-            <button type="button"><img src="images/arrow-cart.svg" alt="" />商品</button>
-            <button type="button"><img src="images/treasure.svg" alt="" />百寶箱</button>
+          <div class="btns" id="reward-title-buttons">
+            <button
+              id="reward-gift"
+              type="button"
+              class="active"
+              onclick="handleRewardTitleClick(this.id, 'reward-title-buttons')"
+            >
+              <img src="images/gift.svg" alt="" />禮物
+            </button>
+            <button
+              id="reward-product"
+              type="button"
+              onclick="handleRewardTitleClick(this.id, 'reward-title-buttons')"
+            >
+              <img src="images/arrow-cart.svg" alt="" />商品
+            </button>
+            <button
+              id="reward-box"
+              type="button"
+              onclick="handleRewardTitleClick(this.id, 'reward-title-buttons')"
+            >
+              <img src="images/treasure.svg" alt="" />百寶箱
+            </button>
           </div>
-          <div class="detail-links">
-            <a href="#" onclick="showAll()">All</a>
-            <span class="border"></span>
-            <a href="#" onclick="showPopular()">熱門</a>
+            <div class="glide detail-links reward-gift" id="gift-details">
+              <div class="glide__track" data-glide-el="track">
+                <ul class="glide__list glide__slides" id="products-detail-tabs">
+                  <li class="glide__slide p1-btn">
+                    <a href="#" id="gift-all" onclick="showRewardDetail(this.id, 'gift-details')"
+                      >All</a
+                    >
+                  </li>
+                  <li class="glide__slide p2-btn">
+                    <a
+                      href="#"
+                      id="gift-popular"
+                      onclick="showRewardDetail(this.id, 'gift-details')"
+                      >熱門</a
+                    >
+                  </li>
+                  <li class="glide__slide p3-btn">
+                    <a
+                      href="#"
+                      id="gift-favourite"
+                      onclick="showRewardDetail(this.id, 'gift-details')"
+                      >女神最愛</a
+                    >
+                  </li>
+                  <li class="glide__slide p4-btn">
+                    <a
+                      href="#"
+                      id="gift-romantic"
+                      onclick="showRewardDetail(this.id, 'gift-details')"
+                      >浪漫禮物</a
+                    >
+                  </li>
+                  <li class="glide__slide p5-btn">
+                    <a href="javascript:void(0)" onclick="setActiveClass('p5-btn')">時尚服飾</a>
+                  </li>
+                  <li class="glide__slide p6-btn">
+                    <a href="javascript:void(0)" onclick="setActiveClass('p6-btn')">居家生活</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="glide__arrow" data-glide-el="controls">
+                <button data-glide-dir="<" class="prev">
+                  <span class="material-icons">&#xE5CB;</span>
+                </button>
+                <button data-glide-dir=">" class="next">
+                  <span class="material-icons">&#xE5CC;</span>
+                </button>
+              </div>
+            </div>
+            <!-- <div class="detail-links reward-gift" id="gift-details">
+              <a href="#" id="gift-all" onclick="showRewardDetail(this.id, 'gift-details')">All</a>
+              <span class="border"></span>
+              <a href="#" id="gift-popular" onclick="showRewardDetail(this.id, 'gift-details')"
+                >熱門</a
+              >
+              <span class="border"></span>
+              <a href="#" id="gift-favourite" onclick="showRewardDetail(this.id, 'gift-details')"
+                >女神最愛</a
+              >
+              <span class="border"></span>
+              <a href="#" id="gift-romantic" onclick="showRewardDetail(this.id, 'gift-details')"
+                >浪漫禮物</a
+              >
+            </div> -->
+            <div class="detail-links reward-gift" id="product-details" style="display: none">
+              <a href="#" id="product-all" onclick="showRewardDetail(this.id, 'product-details')"
+                >All</a
+              >
+              <span class="border"></span>
+              <a
+                href="#"
+                id="product-popular"
+                onclick="showRewardDetail(this.id, 'product-details')"
+                >熱銷</a
+              >
+            </div>
+            <div class="detail-links reward-gift" id="box-details" style="display: none">
+              <a href="#" id="box-all" onclick="showRewardDetail(this.id, 'box-details')">All</a>
+            </div>
+
+          <div class="reward-items reward-gift" id="rewards-wall">
+            <!-- <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div> -->
           </div>
-          <div class="reward-items" id="rewards-all">
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-          </div>
-          <div class="reward-items hide" id="rewards-popular">
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-            <div class="reward-item">
-              <img src="images/mission.svg" alt="" />
-              <span class="point flex-row">2740000</span>
-            </div>
-          </div>
+
           <div class="send-gift flex-row">
             <span class="point flex-row">2740000</span>
-            <button type="button">贈送</button>
+            <button id="buy-button" type="button" onclick="handleBuy(this.id)">購買</button>
           </div>
         </div>
       </section>
     </main>
-    <footer>
+    <footer class="desktop-only">
       <div class="footer-content flex-row">
         <nav class="flex-row">
           <a href="#" class="line-icon"><img src="images/line.png" alt="line" /></a>
@@ -651,94 +938,114 @@
         </p>
       </div>
     </footer>
+    <script src="js/header.js"></script>
+    <script src="js/fakeData.js"></script>
+    <script src="js/main.js"></script>
     <script>
-      new Glide("#people-slides-A", {
-        type: "carousel",
-        perView: 3,
-        autoplay: 8000,
-        animationDuration: 800,
-      }).mount();
-      new Glide("#people-slides-B", {
-        type: "carousel",
-        perView: 3,
-        autoplay: 8000,
-        animationDuration: 800,
-      }).mount();
-
-      //handle follow button
+      /* 追蹤按鈕文字 */
       function handleFollow() {
         const element = document.getElementById("follow-text");
         element.innerText = "已追蹤";
       }
 
-      //handle follow button
+      /* 追蹤按鈕樣式 */
       function handleFollowIcon() {
         const element = document.getElementById("follow-icon");
         element.style["filter"] = "grayscale(0)";
       }
 
-      //切換 禮物牆 all 及 熱門
-      function showPopular() {
-        document.getElementById("rewards-all").classList.add("hide");
-        document.getElementById("rewards-popular").classList.remove("hide");
-      }
+      /* 切換 禮物牆 all 及 熱門 */
+      function showRewardDetail(id = "gift-all", parentId = "gift-details") {
+        if (window.innerWidth <= 990) {
+          let parentId = "gift-details-mobile";
+        }
+        const data = () => {
+          if (parentId.includes("gift-details")) {
+            if (id.includes("gift-all")) return allGifts;
+            if (id.includes("gift-popular")) return popularGifts;
+            if (id.includes("gift-favourite")) return favouriteGifts;
+            if (id.includes("gift-romantic")) return romanticGifts;
+          }
+          if (parentId.includes("product-details")) {
+            if (id.includes("product-all")) return allProducts;
+            if (id.includes("product-popular")) return popularProducts;
+          }
+          if (parentId.includes("box-details")) {
+            return boxGifts;
+          }
+        };
 
-      function showAll() {
-        document.getElementById("rewards-popular").classList.add("hide");
-        document.getElementById("rewards-all").classList.remove("hide");
+        setActiveStatus(parentId, id);
+
+        const containerId = parentId.includes("mobile") ? "rewards-wall-mobile" : "rewards-wall";
+        const containerElement = document.getElementById(containerId);
+        containerElement.innerHTML = "";
+
+        data().forEach((item, i) => {
+          const newElement = document.createElement("div");
+          newElement.classList.add("reward-item");
+          newElement.id = data()[i].name + i;
+
+          const imgWrapElement = document.createElement("div");
+          imgWrapElement.classList.add("img-wrap");
+
+          const imgElement = document.createElement("img");
+          imgElement.src = data()[i].imgUrl;
+          const pointElement = document.createElement("span");
+          pointElement.innerText = data()[i].value;
+
+          const nameElement = document.createElement("span");
+          nameElement.innerText = data()[i].name;
+
+          pointElement.classList.add("point", "flex-row");
+          nameElement.classList.add("name", "flex-row");
+
+          imgWrapElement.append(imgElement);
+          newElement.append(imgWrapElement, nameElement, pointElement);
+          newElement.onclick = function () {
+            setActiveStatus(containerId, newElement.id);
+          };
+          containerElement.appendChild(newElement);
+        });
       }
-    </script>
-    <script src="js/header.js"></script>
-    <script>
-      function handleCloseComingSoon() {
-        document.getElementById("coming-soon").classList.add("hide");
-      }
-      /*貼圖區塊控制*/
-      function handleOpenStickerPanel() {
-        document.getElementById("sticker-panel").classList.add("show-from-left-side");
-      }
-      function handleCloseStickerPanel() {
-        document.getElementById("sticker-panel").classList.remove("show-from-left-side");
-      }
+      showRewardDetail();
+
       /*加貼圖至對話框*/
-      function handleAddStickerToChat(e){
+      function handleAddStickerToChat(e) {
         const imgElement = event.target.outerHTML;
-        
+
         const newElement = document.createElement("div");
         newElement.classList.add("chat-item", "sticker-content");
-        
+
         const nameElement = document.createElement("span");
         nameElement.classList.add("chat-name");
         nameElement.innerHTML = "貼圖發送者：";
-        
+
         const contentElement = document.createElement("span");
         contentElement.classList.add("chat-content");
         contentElement.innerHTML = imgElement;
 
-        console.log({newElement})
-        
         newElement.append(nameElement);
         newElement.append(contentElement);
-        
+
         document.getElementById("chat-items-mobile").appendChild(newElement);
         document.getElementById("chat-items-desktop").appendChild(newElement);
         handleCloseStickerPanel();
         locateScrollbar();
       }
+
       /*加對話至對話框*/
-      function handleAddTextToChat(device){
-        
+      function handleAddTextToChat(device) {
         let id = "new-chat-input-" + device;
         const chatText = document.getElementById(id).value;
-        if(chatText) {
-
+        if (chatText) {
           const newElement = document.createElement("div");
           newElement.classList.add("chat-item");
-        
+
           const nameElement = document.createElement("span");
           nameElement.classList.add("chat-name");
           nameElement.innerHTML = "貼圖發送者：";
-          
+
           const contentElement = document.createElement("span");
           contentElement.classList.add("chat-content");
           contentElement.innerHTML = chatText;
@@ -754,12 +1061,146 @@
       }
 
       /*確保聊天視窗滾輪對齊最下方*/
-      function locateScrollbar(){
-        const chatBody = document.querySelector('.chat-body');
-        chatBody.scrollTop = chatBody.scrollHeight - chatBody.clientHeight;
-      }
-      
       locateScrollbar();
+
+      /*點擊購買按鈕變色 及 (＊＊＊供示意：顯示 捧花不足遮罩 、 隱藏 送出之禮物）*/
+      function handleBuy(id) {
+        document.getElementById(id).classList.add("active");
+        document.getElementById("top-up-overlay").style.display = "block";
+        document.getElementById("gift-sent").style.display = "none";
+        document.getElementById("gift-full-overlay").style.display = "none";
+      }
+
+      /* 手機版禮物牆顯示 */
+      function handleShowMobileRewardWall() {
+        document.getElementById("rewards-overlay-mobile").style.display = "block";
+        showRewardDetail("gift-all-mobile", "gift-details-mobile");
+      }
+
+      /* 切換手機版觀眾席 */
+      function switchViewerList(tabId, tabParentId) {
+        /* 控制tab點擊樣式 */
+        setActiveStatus(tabParentId, tabId);
+
+        showViewerList(tabId, tabParentId);
+      }
+
+      /* 手機版 顯示小觀眾或VIP資料 */
+      function showViewerList(tabId, tabParentId) {
+        /* 讀取vip或小觀眾資料 */
+        const data = () => {
+          if (tabId.includes("vip")) {
+            return vipViewers;
+          }
+          if (tabId.includes("general")) {
+            return generalViewers;
+          }
+        };
+
+        const containerElement = document.getElementById("viewer-list");
+        containerElement.innerHTML = "";
+
+        data().forEach((item, i) => {
+          const newElement = document.createElement("li");
+          newElement.classList.add("viewer-item");
+
+          const imgWrapElement = document.createElement("div");
+          imgWrapElement.classList.add("img-wrap");
+
+          const imgElement = document.createElement("img");
+          imgElement.src = data()[i].imgUrl;
+
+          const nameElement = document.createElement("div");
+          nameElement.innerText = data()[i].name;
+          nameElement.classList.add("name");
+
+          imgWrapElement.append(imgElement);
+          newElement.append(imgWrapElement, nameElement);
+          newElement.onclick = function () {
+            console.log("點擊", { newElement });
+          };
+          containerElement.appendChild(newElement);
+        });
+      }
+      showViewerList("general-viewer", "viewer-tabs");
+
+      /* 桌面版 顯示追蹤最愛或熱推主播 Slides */
+      const influencerSlides = () =>
+        new Glide("#people-slides", {
+          type: "carousel",
+          perView: 3,
+          autoplay: 8000,
+          animationDuration: 800,
+        }).mount();
+
+      /* 桌面版 顯示追蹤最愛或熱推主播  */
+      function showInfluencerList(parentId, activeElementId) {
+        setActiveStatus(parentId, activeElementId);
+
+        /* 顯示追蹤最愛或熱推主播 */
+        const data = () => {
+          if (activeElementId.includes("follow")) {
+            return following;
+          }
+          if (activeElementId.includes("popular")) {
+            return popular;
+          }
+        };
+
+        const containerElement = document.querySelector("#people-slides ul.glide__list");
+        containerElement.innerHTML = "";
+
+        data().forEach((item, i) => {
+          const newElement = document.createElement("li");
+          if (i === 0) {
+            newElement.classList.add("glide__slide", "first");
+          } else if (i === 1) {
+            newElement.classList.add("glide__slide", "second");
+          } else {
+            newElement.classList.add("glide__slide");
+          }
+
+          const badgeWrapElement = document.createElement("div");
+          badgeWrapElement.classList.add("badge");
+
+          const badgeImgElement = document.createElement("img");
+          badgeImgElement.src = "images/heart-icon.svg";
+
+          const imgWrapElement = document.createElement("div");
+          imgWrapElement.classList.add("img-wrap");
+
+          const imgElement = document.createElement("img");
+          imgElement.src = data()[i].imgUrl;
+
+          const nameElement = document.createElement("div");
+          nameElement.innerText = data()[i].name;
+          nameElement.classList.add("name");
+
+          badgeWrapElement.append(badgeImgElement);
+          imgWrapElement.append(imgElement);
+          newElement.append(badgeWrapElement, imgWrapElement, nameElement);
+          containerElement.appendChild(newElement);
+        });
+
+        influencerSlides();
+      }
+
+      showInfluencerList("follow-popular-btns", "follow-btn");
+
+      /* 桌面版 當日營收 Slides */
+      const RevenueSlides = new Glide("#slides-revenue", {
+        type: "carousel",
+        perView: 3,
+        autoplay: 8000,
+        animationDuration: 800,
+      }).mount();
+
+      /* 桌面版 禮物連結*/
+      new Glide("#gift-details", {
+        type: "carousel",
+        perView: 2,
+        peek: { before: 20, after: 50 },
+      }).mount();
     </script>
   </body>
 </html>

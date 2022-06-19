@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/header.css" />
@@ -66,401 +66,326 @@
     </header>
     <!-- Header End -->
     <main class="follow">
-      <div class="search-container">
-        <input type="text" placeholder="請輸入關鍵字" name="search" />
-        <div class="search-controls">
-          <button
-            type="button"
-            class="clear-search-button"
-            onclick="handleClearSearchValue(event, this)"
-          >
-            <span class="material-icons">&#xE5CD;</span>
-          </button>
-          <button type="submit"><span class="material-icons">&#xE8B6;</span></button>
+      <form action="/portal/index/form" method="get" name="form" id="form" class="search-form">
+        <div class="search-container">
+          <input type="text" placeholder="請輸入關鍵字" name="search" />
+          <div class="search-controls">
+            <button
+              type="button"
+              class="clear-search-button"
+              onclick="handleClearSearchValue(event, this)"
+            >
+              <span class="material-icons">&#xE5CD;</span>
+            </button>
+            <button type="submit"><span class="material-icons">&#xE8B6;</span></button>
+          </div>
         </div>
-      </div>
+      </form>
+
       <div class="live-items desktop-only">
-        <a class="live-item">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-          <span class="live-chip pink">LIVE</span>
-          <span class="count">99999</span>
-          <p class="live-info">
-            <span class="name">小希</span>
-            <span class="time">每週一到每週六21:00-22:00</span>
-          </p>
+        <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
           <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
           </button>
-        </a>
-        <a class="live-item">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-          <span class="live-chip pink">LIVE</span>
-          <span class="count">99999</span>
-          <p class="live-info">
-            <span class="name">小希</span>
-            <span class="time">每週一到每週六21:00-22:00</span>
-          </p>
+        </div>
+        <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
           <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
           </button>
-        </a>
-        <a class="live-item">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-          <span class="live-chip pink">LIVE</span>
-          <span class="count">99999</span>
-          <p class="live-info">
-            <span class="name">小希</span>
-            <span class="time">每週一到每週六21:00-22:00</span>
-          </p>
+        </div>
+        <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
           <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
           </button>
-        </a>
-        <a class="live-item">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-          <span class="live-chip">LIVE</span>
-          <span class="count">99999</span>
-          <p class="live-info">
-            <span class="name">小希</span>
-            <span class="time">每週一到每週六21:00-22:00</span>
-          </p>
+        </div>
+        <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
           <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
           </button>
-        </a>
-        <a class="live-item">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-          <span class="live-chip">LIVE</span>
-          <span class="count">99999</span>
-          <p class="live-info">
-            <span class="name">小希</span>
-            <span class="time">每週一到每週六21:00-22:00</span>
-          </p>
+        </div>
+        <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
           <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
           </button>
-        </a>
-        <a class="live-item">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-          <span class="live-chip pink">LIVE</span>
-          <span class="count">99999</span>
-          <p class="live-info">
-            <span class="name">小希</span>
-            <span class="time">每週一到每週六21:00-22:00</span>
-          </p>
+        </div>
+        <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
           <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
           </button>
-        </a>
-        <a class="live-item">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-          <span class="live-chip pink">LIVE</span>
-          <span class="count">99999</span>
-          <p class="live-info">
-            <span class="name">小希</span>
-            <span class="time">每週一到每週六21:00-22:00</span>
-          </p>
+        </div>
+        <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
           <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
           </button>
-        </a>
-        <a class="live-item">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-          <span class="live-chip pink">LIVE</span>
-          <span class="count">99999</span>
-          <p class="live-info">
-            <span class="name">小希</span>
-            <span class="time">每週一到每週六21:00-22:00</span>
-          </p>
+        </div>
+        <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
           <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
           </button>
-        </a>
-        <a class="live-item">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-          <span class="live-chip">LIVE</span>
-          <span class="count">99999</span>
-          <p class="live-info">
-            <span class="name">小希</span>
-            <span class="time">每週一到每週六21:00-22:00</span>
-          </p>
+        </div>
+        <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
           <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
           </button>
-        </a>
-        <a class="live-item">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-          <span class="live-chip">LIVE</span>
-          <span class="count">99999</span>
-          <p class="live-info">
-            <span class="name">小希</span>
-            <span class="time">每週一到每週六21:00-22:00</span>
-          </p>
+        </div>
+        <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
           <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
           </button>
-        </a>
-        <a class="live-item">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-          <span class="live-chip pink">LIVE</span>
-          <span class="count">99999</span>
-          <p class="live-info">
-            <span class="name">小希</span>
-            <span class="time">每週一到每週六21:00-22:00</span>
-          </p>
-          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
-            <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
-              >追蹤</span
-            >
-          </button>
-        </a>
-        <a class="live-item">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-          <span class="live-chip pink">LIVE</span>
-          <span class="count">99999</span>
-          <p class="live-info">
-            <span class="name">小希</span>
-            <span class="time">每週一到每週六21:00-22:00</span>
-          </p>
-          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
-            <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
-              >追蹤</span
-            >
-          </button>
-        </a>
-        <a class="live-item">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-          <span class="live-chip pink">LIVE</span>
-          <span class="count">99999</span>
-          <p class="live-info">
-            <span class="name">小希</span>
-            <span class="time">每週一到每週六21:00-22:00</span>
-          </p>
-          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
-            <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
-              >追蹤</span
-            >
-          </button>
-        </a>
-        <a class="live-item">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-          <span class="live-chip">LIVE</span>
-          <span class="count">99999</span>
-          <p class="live-info">
-            <span class="name">小希</span>
-            <span class="time">每週一到每週六21:00-22:00</span>
-          </p>
-          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
-            <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
-              >追蹤</span
-            >
-          </button>
-        </a>
-        <a class="live-item">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-          <span class="live-chip">LIVE</span>
-          <span class="count">99999</span>
-          <p class="live-info">
-            <span class="name">小希</span>
-            <span class="time">每週一到每週六21:00-22:00</span>
-          </p>
-          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
-            <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
-              >追蹤</span
-            >
-          </button>
-        </a>
+        </div>
       </div>
       <div class="live-list mobile-only live-items glide" id="follow-slides">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__list glide__slides">
             <li class="glide__slide">
-              <a class="live-item">
-                <div class="img-wrap">
-                  <img src="images/s2.jpg" alt="" />
-                </div>
-                <span class="live-chip pink">LIVE</span>
-                <span class="count">99999</span>
-                <p class="live-info">
-                  <span class="name">小希</span>
-                  <span class="time">每週一到每週六21:00-22:00</span>
-                </p>
-                <button
-                  type="button"
-                  class="follow-btn"
-                  id="follow"
-                  onclick="handleFollow(event, this)"
-                >
-                  <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
-                    >追蹤</span
-                  >
-                </button>
-              </a>
+              <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
+          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
+            <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
+              >追蹤</span
+            >
+          </button>
+        </div>
             </li>
             <li class="glide__slide">
-              <a class="live-item">
-                <div class="img-wrap">
-                  <img src="images/s2.jpg" alt="" />
-                </div>
-                <span class="live-chip pink">LIVE</span>
-                <span class="count">99999</span>
-                <p class="live-info">
-                  <span class="name">小希</span>
-                  <span class="time">每週一到每週六21:00-22:00</span>
-                </p>
-                <button
-                  type="button"
-                  class="follow-btn"
-                  id="follow"
-                  onclick="handleFollow(event, this)"
-                >
-                  <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
-                    >追蹤</span
-                  >
-                </button>
-              </a>
+              <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
+          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
+            <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
+              >追蹤</span
+            >
+          </button>
+        </div>
             </li>
             <li class="glide__slide">
-              <a class="live-item">
-                <div class="img-wrap">
-                  <img src="images/s2.jpg" alt="" />
-                </div>
-                <span class="live-chip pink">LIVE</span>
-                <span class="count">99999</span>
-                <p class="live-info">
-                  <span class="name">小希</span>
-                  <span class="time">每週一到每週六21:00-22:00</span>
-                </p>
-                <button
-                  type="button"
-                  class="follow-btn"
-                  id="follow"
-                  onclick="handleFollow(event, this)"
-                >
-                  <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
-                    >追蹤</span
-                  >
-                </button>
-              </a>
+              <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
+          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
+            <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
+              >追蹤</span
+            >
+          </button>
+        </div>
             </li>
             <li class="glide__slide">
-              <a class="live-item">
-                <div class="img-wrap">
-                  <img src="images/s2.jpg" alt="" />
-                </div>
-                <span class="live-chip pink">LIVE</span>
-                <span class="count">99999</span>
-                <p class="live-info">
-                  <span class="name">小希</span>
-                  <span class="time">每週一到每週六21:00-22:00</span>
-                </p>
-                <button
-                  type="button"
-                  class="follow-btn"
-                  id="follow"
-                  onclick="handleFollow(event, this)"
-                >
-                  <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
-                    >追蹤</span
-                  >
-                </button>
-              </a>
+              <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
+          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
+            <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
+              >追蹤</span
+            >
+          </button>
+        </div>
             </li>
             <li class="glide__slide">
-              <a class="live-item">
-                <div class="img-wrap">
-                  <img src="images/s2.jpg" alt="" />
-                </div>
-                <span class="live-chip pink">LIVE</span>
-                <span class="count">99999</span>
-                <p class="live-info">
-                  <span class="name">小希</span>
-                  <span class="time">每週一到每週六21:00-22:00</span>
-                </p>
-                <button
-                  type="button"
-                  class="follow-btn"
-                  id="follow"
-                  onclick="handleFollow(event, this)"
-                >
-                  <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
-                    >追蹤</span
-                  >
-                </button>
-              </a>
+              <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
+          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
+            <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
+              >追蹤</span
+            >
+          </button>
+        </div>
             </li>
             <li class="glide__slide">
-              <a class="live-item">
-                <div class="img-wrap">
-                  <img src="images/s2.jpg" alt="" />
-                </div>
-                <span class="live-chip pink">LIVE</span>
-                <span class="count">99999</span>
-                <p class="live-info">
-                  <span class="name">小希</span>
-                  <span class="time">每週一到每週六21:00-22:00</span>
-                </p>
-                <button
-                  type="button"
-                  class="follow-btn"
-                  id="follow"
-                  onclick="handleFollow(event, this)"
-                >
-                  <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
-                    >追蹤</span
-                  >
-                </button>
-              </a>
+              <div class="live-item-wrap">
+          <a href="live-on.html" class="live-item">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+            <span class="count">99999</span>
+            <p class="live-info">
+              <span class="name">小希</span>
+              <span class="time">每週一到每週六21:00-22:00</span>
+            </p>
+          </a>
+          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
+            <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
+              >追蹤</span
+            >
+          </button>
+        </div>
             </li>
           </ul>
           <div class="glide__arrow" data-glide-el="controls">
@@ -497,6 +422,7 @@
       </div>
     </footer>
     <script src="js/header.js"></script>
+    <script src="js/main.js"></script>
     <script>
       new Glide("#follow-slides", {
         type: "carousel",
@@ -515,12 +441,6 @@
       function handleFollow(event, el) {
         const element = el.querySelector(".follow-text");
         element.innerText = "已追蹤";
-      }
-
-      // handle clear search value
-      function handleClearSearchValue(event, el) {
-        const element = el.parentNode.parentNode.querySelector("input");
-        element.value = "";
       }
     </script>
   </body>

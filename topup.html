@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/header.css" />
@@ -96,19 +96,47 @@
       </section>
       <section class="method-options">
         <h4>儲值方式選擇</h4>
-        <div class="options">
-          <button type="button" class="outlined secondary">NewebPay藍新金流</button>
-          <button type="button" class="outlined secondary">紅陽 - 信用卡</button>
-          <button type="button" class="outlined secondary">紅陽 - ATM轉帳</button>
-          <button type="button" class="outlined secondary">紅陽 - 超市代碼</button>
+        <div class="options" id="payments-methods">
+          <button
+            type="button"
+            class="outlined secondary"
+            id="newebpay"
+            onclick="handleOptionClick(this.id)"
+          >
+            NewebPay藍新金流
+          </button>
+          <button
+            type="button"
+            class="outlined secondary"
+            id="sunpay-credit"
+            onclick="handleOptionClick(this.id)"
+          >
+            紅陽 - 信用卡
+          </button>
+          <button
+            type="button"
+            class="outlined secondary"
+            id="sunpay-atm"
+            onclick="handleOptionClick(this.id)"
+          >
+            紅陽 - ATM轉帳
+          </button>
+          <button
+            type="button"
+            class="outlined secondary"
+            id="sunpay-market"
+            onclick="handleOptionClick(this.id)"
+          >
+            紅陽 - 超市代碼
+          </button>
         </div>
       </section>
 
       <section class="amount-options">
         <h4>儲值金額</h4>
-        <ul>
+        <ul id="amount-options">
           <li>
-            <button type="button">
+            <button type="button" id="amount1" onclick="handleOptionClick(this.id, 'amount')">
               <span class="point"
                 ><span>2,040<span>（贈送15）</span></span></span
               >
@@ -116,7 +144,7 @@
             </button>
           </li>
           <li>
-            <button type="button">
+            <button type="button" id="amount2" onclick="handleOptionClick(this.id, 'amount')">
               <span class="point"
                 ><span>4,080<span>（贈送30）</span></span></span
               >
@@ -124,7 +152,7 @@
             </button>
           </li>
           <li>
-            <button type="button">
+            <button type="button" id="amount3" onclick="handleOptionClick(this.id, 'amount')">
               <span class="point"
                 ><span>6,800<span>（贈送50）</span></span></span
               >
@@ -132,7 +160,7 @@
             </button>
           </li>
           <li>
-            <button type="button">
+            <button type="button" id="amount4" onclick="handleOptionClick(this.id, 'amount')">
               <span class="point"
                 ><span>13,600<span>（贈送200）</span></span></span
               >
@@ -140,7 +168,7 @@
             </button>
           </li>
           <li>
-            <button type="button">
+            <button type="button" id="amount5" onclick="handleOptionClick(this.id, 'amount')">
               <span class="point"
                 ><span>20,400<span>（贈送300）</span></span></span
               >
@@ -148,7 +176,7 @@
             </button>
           </li>
           <li>
-            <button type="button">
+            <button type="button" id="amount6" onclick="handleOptionClick(this.id, 'amount')">
               <span class="point"
                 ><span>40,800<span>（贈送600）</span></span></span
               >
@@ -156,7 +184,7 @@
             </button>
           </li>
           <li>
-            <button type="button">
+            <button type="button" id="amount1" onclick="handleOptionClick(this.id, 'amount')">
               <span class="point"
                 ><span>69,400<span>（贈送1,000）</span></span></span
               >
@@ -164,7 +192,7 @@
             </button>
           </li>
           <li>
-            <button type="button">
+            <button type="button" id="amount7" onclick="handleOptionClick(this.id, 'amount')">
               <span class="point"
                 ><span>139,800<span>（贈送2,000）</span></span></span
               >
@@ -172,7 +200,7 @@
             </button>
           </li>
           <li>
-            <button type="button">
+            <button type="button" id="amount8" onclick="handleOptionClick(this.id, 'amount')">
               <span class="point"
                 ><span>278,000<span>（贈送4,000）</span></span></span
               >
@@ -180,7 +208,7 @@
             </button>
           </li>
           <li>
-            <button type="button">
+            <button type="button" id="amount9" onclick="handleOptionClick(this.id, 'amount')">
               <span class="point"
                 ><span>700,000<span>（贈送21,000）</span></span></span
               >
@@ -188,7 +216,7 @@
             </button>
           </li>
           <li>
-            <button type="button">
+            <button type="button" id="amount10" onclick="handleOptionClick(this.id, 'amount')">
               <span class="point"
                 ><span>1,400,000<span>（贈送50,000）</span></span></span
               >
@@ -196,7 +224,7 @@
             </button>
           </li>
           <li>
-            <button type="button">
+            <button type="button" id="amount11" onclick="handleOptionClick(this.id, 'amount')">
               <span class="point"
                 ><span>2,820,000<span>（贈送120,000）</span></span></span
               >
@@ -204,7 +232,7 @@
             </button>
           </li>
           <li>
-            <button type="button">
+            <button type="button" id="amount12" onclick="handleOptionClick(this.id, 'amount')">
               <span class="point"
                 ><span>7,050,000<span>（贈送350,000）</span></span></span
               >
@@ -212,7 +240,7 @@
             </button>
           </li>
           <li>
-            <button type="button">
+            <button type="button" id="amount13" onclick="handleOptionClick(this.id, 'amount')">
               <span class="point"
                 ><span>14,500,000<span>（贈送500,000）</span></span></span
               >
@@ -222,7 +250,7 @@
         </ul>
       </section>
     </main>
-    <footer>
+    <footer class="desktop-only">
       <div class="footer-content flex-row">
         <nav class="flex-row">
           <a href="#" class="line-icon"><img src="images/line.png" alt="line" /></a>
@@ -246,5 +274,19 @@
     </footer>
 
     <script src="js/header.js"></script>
+    <script>
+      /*儲值方式, 捧花點擊變色*/
+      function handleOptionClick(id, optionFor = "payment") {
+        const activeElement = document.getElementById(id);
+        const prevSelected =
+          optionFor === "payment"
+            ? document.getElementById("payments-methods").getElementsByClassName("active")[0]
+            : document.getElementById("amount-options").getElementsByClassName("active")[0];
+        if (prevSelected && prevSelected !== activeElement) {
+          prevSelected.classList.remove("active");
+        }
+        activeElement.classList.add("active");
+      }
+    </script>
   </body>
 </html>

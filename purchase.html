@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Tikka</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/slideshow.css" />
+    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <!-- Required Core Stylesheet -->
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <div class="site-header__start">
+          <a href="index.html" class="brand"><img src="images/logo.svg" alt="Tikka Logo" /></a>
+        </div>
+        <div class="site-header__middle">
+          <nav class="nav">
+            <button class="nav__toggle" aria-expanded="false" type="button">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="nav__wrapper">
+              <li class="nav__item">
+                <a href="live.html"><img src="images/m1.svg" alt="直播" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="competition.html"><img src="images/m2.svg" alt="競賽" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="products.html"><img src="images/m3.svg" alt="商品" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="ranking.html"><img src="images/m4.svg" alt="榜單" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="topup.html"><img src="images/m5.svg" alt="儲值" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="search.html"><img src="images/m6.svg" alt="搜尋主播" /></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="site-header__end product-page">
+          <div class="logged-in">
+            <a class="button" href="login.html">
+              <span class="img-wrap"><img src="images/s1.jpg" alt="頭像" /></span>
+              <span class="username">Allen</span>
+            </a>
+          </div>
+          <div class="share-cart-wrapper">
+            <a
+              class="button share mobile-only"
+              href="javascript:void(0)"
+              onclick="handleOpenShareOverlay()"
+            >
+              <img src="images/share-pink-btn.svg" alt="分享" />
+            </a>
+            <a class="button" href="#">
+              <span class="icon">
+                <span class="cart-amount">99</span>
+                <img class="icon" src="images/cart-icon.svg" alt="購物車" />
+              </span>
+              <span class="desktop-only"><img src="images/cart-btn.svg" alt="購物車" /></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!--Main-->
+    <main class="purchase">
+      <div class="cart-items flex-column">
+        <div class="cart-item flex-row" id="item1">
+          <div class="img-wrap">
+            <img src="images/product1.png" alt="產品圖片" />
+          </div>
+          <div class="item-info flex-column">
+            <h3>Moiskin長效賦活精華液</h3>
+            <p class="description">
+              選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
+              選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
+            </p>
+            <form action="javascript:void(0);">
+              <p class="cost">NT.1,280</p>
+              <div class="flex-row">
+                <button class="add" onclick="addOneItemToCart('item1')">
+                  <span class="material-symbols-outlined"> change_history </span>
+                </button>
+                <input type="number" min="0" class="quantity" value="3" />
+                <button class="reduce" onclick="removeOneItemToCart('item1')">
+                  <span class="material-symbols-outlined"> change_history </span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="cart-item flex-row" id="item2">
+          <div class="img-wrap">
+            <img src="images/product2.png" alt="產品圖片" />
+          </div>
+          <div class="item-info flex-column">
+            <h3>Moiskin長效賦活精華液</h3>
+            <p class="description">
+              選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
+              選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
+            </p>
+            <form action="javascript:void(0);">
+              <p class="cost">NT.1,280</p>
+              <div class="flex-row">
+                <button class="add" onclick="addOneItemToCart('item2')">
+                  <span class="material-symbols-outlined"> change_history </span>
+                </button>
+                <input type="number" min="0" class="quantity" value="3" />
+                <button class="reduce" onclick="removeOneItemToCart('item2')">
+                  <span class="material-symbols-outlined"> change_history </span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="cart-item flex-row" id="item3">
+          <div class="img-wrap">
+            <img src="images/product3.png" alt="產品圖片" />
+          </div>
+          <div class="item-info flex-column">
+            <h3>Moiskin長效賦活精華液</h3>
+            <p class="description">
+              選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
+              選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
+            </p>
+            <form action="javascript:void(0);">
+              <p class="cost">NT.1,280</p>
+              <div class="flex-row">
+                <button class="add" onclick="addOneItemToCart('item3')">
+                  <span class="material-symbols-outlined"> change_history </span>
+                </button>
+                <input type="number" min="0" class="quantity" value="3" />
+                <button class="reduce" onclick="removeOneItemToCart('item3')">
+                  <span class="material-symbols-outlined"> change_history </span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="cart-item cart-total flex-row">
+          <h4>購物車總金額</h4>
+          <p class="cost">NT.5790</p>
+        </div>
+      </div>
+      <form action="javascript:void(0);" class="customer-detail">
+        <div class="input-wrapper">
+          <label for="name">收件人姓名：</label>
+          <input type="text" name="name" id="name" placeholder="請輸入文字..." />
+        </div>
+        <div class="input-wrapper">
+          <label for="phone">收件人電話：</label>
+          <input type="text" name="phone" id="phone" placeholder="請輸入文字..." />
+        </div>
+        <div class="flex-row">
+          <div class="input-wrapper">
+            <label for="city-county">縣市：</label>
+            <input type="text" name="city-county" id="city-county" placeholder="請輸入文字..." />
+          </div>
+          <div class="input-wrapper">
+            <label for="address2">鄉鎮市區：</label>
+            <input type="text" name="address2" id="address2" placeholder="請輸入文字..." />
+          </div>
+        </div>
+        <div class="input-wrapper">
+          <label for="delivery-address">收件地址：</label>
+          <textarea
+            type="text"
+            name="delivery-address"
+            id="delivery-address"
+            placeholder="請輸入文字..."
+          ></textarea>
+        </div>
+        <div class="input-wrapper">
+          <label for="note">備註（可不填）：</label>
+          <textarea type="text" name="note" id="note" placeholder="請輸入文字..."></textarea>
+        </div>
+        <button type="submit">送出訂單</button>
+        <p class="note">
+          本站購物通通免運費 <br />
+          信用卡與ATM皆為即時到帳 <br />
+          超商付款約15分到隔天入帳 <br />
+          付款成功後會用簡訊通知您訂單編號
+        </p>
+      </form>
+    </main>
+
+    <footer class="desktop-only">
+      <div class="footer-content flex-row">
+        <nav class="flex-row">
+          <a href="#" class="line-icon"><img src="images/line.png" alt="line" /></a>
+          <ul>
+            <li>
+              <a href="contact.html">聯絡我們</a>
+            </li>
+            <li>
+              <a href="about.html">關於我們</a>
+            </li>
+            <li>
+              <a href="policy.html">服務條款</a>
+            </li>
+          </ul>
+        </nav>
+        <p class="copyright">
+          <span>Copyright© 2022 by Tikka版權所有</span>
+          <span>Copyright© 2022 Tikka. All rights reserved.</span>
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/header.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      function addOneItemToCart(itemId) {
+        document.querySelector(`#${itemId} input[type="number"]`).value++;
+      }
+
+      function removeOneItemToCart(itemId) {
+        if (Number(document.querySelector(`#${itemId} input[type="number"]`).value) === 0) {
+          return;
+        }
+        document.querySelector(`#${itemId} input[type="number"]`).value--;
+      }
+    </script>
+  </body>
+</html>

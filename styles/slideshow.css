@@ -3,7 +3,7 @@
   padding-top: 8.14%; /*Img Ratio*/
 }
 
-.single-slides#highlighted-products-slides{
+.single-slides#highlighted-products-slides {
   margin-bottom: 2rem;
 }
 
@@ -48,6 +48,11 @@
   text-align: center;
 }
 
+.glide__slides,
+.glide__track {
+  z-index: 4;
+}
+
 .glide__bullets button {
   border: none;
   width: 10px;
@@ -65,6 +70,13 @@ button.glide__bullet--active {
 
 .glide__arrow button {
   background: none !important;
+  z-index: 5 !important;
+  opacity: 1;
+}
+@media screen and (max-width: 480px) {
+  .glide__arrow button {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
