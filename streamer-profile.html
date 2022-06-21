@@ -100,7 +100,7 @@
         <div class="round-bg"></div>
       </section>
       <section class="intro">
-        <button class="toggle-intro-button arrow-down" onclick="openIntro()">
+        <button class="toggle-intro-button toggle-close" disabled onclick="openIntro()">
           <span class="material-icons">&#xE313;</span>
         </button>
         <div class="intro-content">
@@ -118,7 +118,7 @@
             自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊。
           </p>
         </div>
-        <button class="toggle-intro-button arrow-down" onclick="closeIntro()">
+        <button class="toggle-intro-button toggle-open" onclick="closeIntro()">
           <span class="material-icons">&#xE316;</span>
         </button>
       </section>
@@ -151,12 +151,12 @@
       </section>
     </main>
 
-    <div class="social-media-shares overlay" id="social-media-shares" style="display: none">
+    <div class="full-width streamer-profile-overlay social-media-shares overlay" id="social-media-shares" style="display: none">
       <div class="title flex-row">
         <button class="close" onclick="handleCloseShareOverlay()">
           <img src="images/close-icon.svg" alt="close" />
         </button>
-        <p class="flex-row"><img src="images/social.svg" alt="分享" /> 分享</p>
+        <p class="flex-row"><img src="images/social.svg" alt="分享" /> 我要分享</p>
       </div>
       <div class="content">
         <ul>
@@ -217,5 +217,17 @@
     </footer>
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      function openIntro() {
+        document.querySelector(".intro-content").style.height = "300px";
+        document.querySelector(".toggle-open").disabled = false;
+        document.querySelector(".toggle-close").disabled = true;
+      }
+      function closeIntro() {
+        document.querySelector(".intro-content").style.height = 0;
+        document.querySelector(".toggle-close").disabled = false;
+        document.querySelector(".toggle-open").disabled = true;
+      }
+    </script>
   </body>
 </html>
