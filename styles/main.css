@@ -8,11 +8,33 @@
   letter-spacing: 0.02em;
   /* transition: 0.3s all; */
 }
+
 .material-icons {
   font-family: "Material Icons" !important;
 }
+
+/* Scroller */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 html {
   height: calc(100% - 130px);
+  scrollbar-color: #aaa transparent;
+  scrollbar-width: thin;
 }
 
 body {
@@ -828,8 +850,7 @@ a.live-item span.count {
   font-size: 0.8rem;
 }
 
-section.live .live-list ul li span.live-chip,
-a.live-item span.live-chip {
+span.live-chip {
   border-radius: 25px;
   left: 25px;
   padding: 0.2rem 0.5rem;
@@ -1297,7 +1318,7 @@ div.live-items {
     overflow: auto;
     grid-auto-rows: min-content;
   }
-  main.live h1{
+  main.live h1 {
     margin-bottom: 1rem;
   }
 }
@@ -4059,6 +4080,7 @@ main.live-on section.right-column ul:not(#products-detail-tabs) li.glide__slide 
 }
 
 main.live-on section.right-column ul#products-detail-tabs li.glide__slide {
+  width: 90px !important;
 }
 
 main.live-on section.right-column ul li.glide__slide div.img-wrap {
@@ -4369,14 +4391,26 @@ main.live-on ul.revenue-list > li div.badge img {
 
 div#rewards-overlay-mobile .wrapper {
   width: 100%;
-  height: 40px;
   overflow-y: auto;
 }
 
 div#rewards-overlay-mobile .wrapper.reward-btns-mobile {
-  height: 100px;
+  height: 70px;
   width: calc(100% - 1rem - 50px);
   margin-left: 60px;
+}
+
+div#rewards-overlay-mobile div.btns {
+  padding-top: 1rem;
+  margin-bottom: 0;
+}
+
+div#rewards-overlay-mobile div.content {
+  height: 100%;
+}
+
+div#rewards-overlay-mobile div.send-gift {
+  padding-bottom: 1rem;
 }
 
 main.product-detail ul.tabs {
@@ -4890,7 +4924,7 @@ form.customer-detail .input-wrapper {
   align-items: baseline;
 }
 
-form.customer-detail .input-wrapper input, 
+form.customer-detail .input-wrapper input,
 form.customer-detail .input-wrapper textarea {
   border: 0;
   font-size: 1rem;
@@ -4898,7 +4932,7 @@ form.customer-detail .input-wrapper textarea {
 }
 
 form.customer-detail .input-wrapper input::placeholder,
-form.customer-detail .input-wrapper textarea::placeholder{
+form.customer-detail .input-wrapper textarea::placeholder {
   color: #bbb;
 }
 
@@ -5059,7 +5093,7 @@ main.purchase .item-info form button.reduce {
     display: flex;
     flex-direction: row;
     font-size: 0.875rem;
-    padding:  0.5rem 20px;
+    padding: 0.5rem 20px;
   }
 
   form.customer-detail .input-wrapper input,
@@ -5086,4 +5120,272 @@ main.purchase .item-info form button.reduce {
   main.purchase .item-info form button .material-symbols-outlined {
     font-size: 18px;
   }
+}
+
+main.streamer-profile {
+  border: 0;
+  background: #ffebfa;
+  max-width: none;
+  width: 100%;
+  top: 90px;
+}
+
+main.streamer-profile > section {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+main.streamer-profile section.header {
+  position: relative;
+  height: 450px;
+}
+
+main.streamer-profile section.header > div.flex-row {
+  margin: 0 auto;
+  width: 600px;
+  gap: 1rem;
+  padding-top: 80px;
+}
+
+main.streamer-profile section.header div.avatar-wrapper {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border: 5px solid #fff;
+  box-shadow: 0 0 10px #55555575;
+}
+
+main.streamer-profile section.header div.avatar-container {
+  position: relative;
+}
+
+main.streamer-profile section.header div.avatar-container span.live-chip {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  z-index: 4;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  border-radius: 20px;
+  padding-left: 10px;
+}
+
+main.streamer-profile section.header div.avatar-wrapper img.avatar {
+  position: absolute;
+  width: 100%;
+}
+
+main.streamer-profile section.header div.info {
+  gap: 1rem;
+}
+
+main.streamer-profile section.header div.info h5 {
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 0 1px 4px rgb(96, 96, 96);
+  gap: 0.5rem;
+}
+
+main.streamer-profile section.header div.info h5 span.profile-name {
+  width: 150px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+main.streamer-profile section.header div.info h5 button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  padding: 0;
+}
+
+main.streamer-profile section.header div.info h5 button img {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  top: 1px;
+  left: 1px;
+}
+
+main.streamer-profile section.header div.round-bg {
+  position: absolute;
+  width: 100%;
+  padding-top: 100%;
+  bottom: 0;
+  background: #f29ec2;
+  border: 10px solid #fff;
+  box-shadow: 0 5px 15px #555;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+main.streamer-profile section.list div.list-item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+main.streamer-profile div.img-wrap {
+  position: relative;
+  padding-top: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main.streamer-profile div.img-wrap img {
+  position: absolute;
+  display: block;
+  top: 0;
+  height: 100%;
+}
+
+main.streamer-profile section.list div.img-wrap {
+  border-radius: 20px;
+  border: 5px solid #fff;
+}
+
+main.streamer-profile section.header div.info .performance-data {
+  gap: 0.5rem;
+  position: relative;
+  height: 30px;
+}
+
+main.streamer-profile section.header div.info .performance-data img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -10px;
+}
+
+main.streamer-profile section.header div.info .performance-data.rewards {
+  margin-bottom: 0.5rem;
+}
+
+main.streamer-profile section.header div.info .performance-data.rewards img {
+  width: 60px;
+  height: 60px;
+  top: -13px;
+}
+
+main.streamer-profile section.header div.info .performance-data span.value {
+  height: 36px;
+  display: block;
+  width: 200px;
+  line-height: 36px;
+  padding: 0 20px 0 50px;
+  color: #fff;
+  text-shadow: 0 1px 2px #555;
+  border-radius: 20px;
+  margin-left: 10px;
+  font-size: 1.4rem;
+}
+
+main.streamer-profile section.header div.info .performance-data.rewards span.value {
+  background: linear-gradient(#ff9dc6, #f1438b);
+}
+
+button.gift-button {
+  padding: 0;
+  width: 80px;
+  height: 80px;
+  display: block;
+  position: absolute;
+  bottom: -40px;
+  left: calc(50% - 40px);
+}
+button.gift-button img {
+  width: 100%;
+  height: 100%;
+}
+
+main.streamer-profile section.intro {
+  text-align: center;
+  margin-top: 50px;
+}
+
+main.streamer-profile section.intro button.toggle-intro-button span {
+  color: #f7b5d3;
+  font-size: 2rem;
+}
+
+main.streamer-profile section.intro div.intro-content {
+  width: 80%;
+  margin: 0 auto;
+  min-width: 200px;
+  font-size: 1.1rem;
+  color: #555555;
+  height: 200px;
+  overflow: auto;
+}
+main.streamer-profile section.intro div.intro-content ul {
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+main.streamer-profile section.intro div.intro-content ul li {
+  list-style: square outside !important;
+  margin-left: 20px;
+  width: fit-content;
+}
+
+main.streamer-profile section.intro div.intro-content p {
+  margin-bottom: 1rem;
+}
+
+main.streamer-profile section.menus {
+  background: url("../images/curve-bg.svg") no-repeat center center;
+  margin-bottom: 2rem;
+}
+
+main.streamer-profile section.menus ul {
+  align-items: center;
+  justify-content: center;
+  padding: 20px 150px;
+}
+
+main.streamer-profile section.menus ul li:not(:first-child) button {
+  border-left: 1px solid #fff;
+}
+main.streamer-profile section.menus ul li button {
+  color: #fff;
+  border-radius: 0;
+  padding: 0 50px;
+  text-shadow: 0 1px 2px #555;
+}
+
+main.streamer-profile section.footer-actions {
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+main.streamer-profile section.footer-actions button {
+  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
+  color: #d6236c;
+  width: 140px;
+  box-shadow: 0 2px 10px #999;
+}
+
+main.streamer-profile section.footer-actions button img {
+  filter: invert(0.589) sepia(20) contrast(250%) hue-rotate(293deg);
+}
+
+main.streamer-profile section.footer-actions button:hover {
+  background: linear-gradient(#ffc1db, #ff398c, #f03282) !important;
+  color: #fff;
+  filter: none;
+}
+
+main.streamer-profile section.footer-actions button:hover img {
+  filter: none;
 }

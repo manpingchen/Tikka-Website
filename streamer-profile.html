@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Tikka</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/slideshow.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <!-- Required Core Stylesheet -->
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <div class="site-header__start">
+          <a href="index.html" class="brand"><img src="images/logo.svg" alt="Tikka Logo" /></a>
+        </div>
+        <div class="site-header__middle">
+          <nav class="nav">
+            <button class="nav__toggle" aria-expanded="false" type="button">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="nav__wrapper">
+              <li class="nav__item">
+                <a href="live.html"><img src="images/m1.svg" alt="直播" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="competition.html"><img src="images/m2.svg" alt="競賽" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="products.html"><img src="images/m3.svg" alt="商品" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="ranking.html"><img src="images/m4.svg" alt="榜單" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="topup.html"><img src="images/m5.svg" alt="儲值" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="search.html"><img src="images/m6.svg" alt="搜尋主播" /></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="site-header__end">
+          <a class="button" href="login.html">
+            <span class="icon"><img src="images/login-icon.svg" alt="登入" /></span>
+            <span><img src="images/login-btn.svg" alt="登入" /></span>
+          </a>
+          <a class="button" href="#">
+            <span class="icon">
+              <span class="cart-amount">1</span>
+              <img class="icon" src="images/cart-icon.svg" alt="購物車" />
+            </span>
+            <span><img src="images/cart-btn.svg" alt="購物車" /></span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!--Main-->
+    <main class="streamer-profile">
+      <section class="header">
+        <div class="flex-row">
+          <div class="avatar-container">
+            <span class="live-chip pink">Live</span>
+            <div class="avatar-wrapper">
+              <img src="images/s1.jpg" class="avatar" alt="name" />
+            </div>
+          </div>
+          <div class="info flex-column">
+            <h5 class="flex-row">
+              <span class="profile-name">呆呆萌萌小愛</span>
+              <button type="button" class="follow-icon">
+                <img src="images/heart-round-pink.svg" alt="heart icon" />
+              </button>
+            </h5>
+            <div class="performance-data flex-row rewards">
+              <img src="images/gift-round-pink.svg" alt="gift icon" />
+              <span class="value">999,999,999</span>
+            </div>
+            <div class="performance-data flex-row followers">
+              <img src="images/followers-icon.svg" alt="followers icon" />
+              <span class="value">粉絲 99.9K</span>
+            </div>
+          </div>
+        </div>
+        <button class="gift-button"><img src="images/gift-round.png" alt="gift icon" /></button>
+        <div class="round-bg"></div>
+      </section>
+      <section class="intro">
+        <button class="toggle-intro-button arrow-down" onclick="openIntro()">
+          <span class="material-icons">&#xE313;</span>
+        </button>
+        <div class="intro-content">
+          <ul class="flex-column">
+            <li>各大品牌平面、廣告、代言模特兒</li>
+            <li>節目、主持、演員、多部戲劇、電影</li>
+          </ul>
+          <p>
+            自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊。
+          </p>
+          <p>IG: Account1234</p>
+          <p>
+            自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊。
+            自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊。
+            自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊。
+          </p>
+        </div>
+        <button class="toggle-intro-button arrow-down" onclick="closeIntro()">
+          <span class="material-icons">&#xE316;</span>
+        </button>
+      </section>
+      <section class="menus">
+        <ul class="flex-row">
+          <li><button>最新動態</button></li>
+          <li><button>經典影片</button></li>
+          <li><button>專屬禮物</button></li>
+          <li><button>熱銷商品</button></li>
+        </ul>
+      </section>
+      <section class="list">
+        <div class="list-item">
+          <div class="img-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+          <div class="img-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+          <div class="img-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+      <section class="footer-actions flex-row">
+        <button class="button-like" onclick="handleOpenShareOverlay()">
+          <img src="images/social.svg" alt="" /> 我要分享
+        </button>
+        <button class="button-like"><img src="images/microphone.svg" alt="" /> 觀看直播</button>
+      </section>
+    </main>
+
+    <div class="social-media-shares overlay" id="social-media-shares" style="display: none">
+      <div class="title flex-row">
+        <button class="close" onclick="handleCloseShareOverlay()">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+        <p class="flex-row"><img src="images/social.svg" alt="分享" /> 分享</p>
+      </div>
+      <div class="content">
+        <ul>
+          <li>
+            <button type="button">
+              <img src="images/line.svg" alt="" />
+              LINE
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <img src="images/facebook.svg" alt="" />
+              Facebook
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <img src="images/whatsapp.svg" alt="" />
+              Whatsapp
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <img src="images/twitter.svg" alt="" />
+              Twitter
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <img src="images/link.svg" alt="" />
+              複製連結
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <footer class="desktop-only">
+      <div class="footer-content flex-row">
+        <nav class="flex-row">
+          <a href="#" class="line-icon"><img src="images/line.png" alt="line" /></a>
+          <ul>
+            <li>
+              <a href="contact.html">聯絡我們</a>
+            </li>
+            <li>
+              <a href="about.html">關於我們</a>
+            </li>
+            <li>
+              <a href="policy.html">服務條款</a>
+            </li>
+          </ul>
+        </nav>
+        <p class="copyright">
+          <span>Copyright© 2022 by Tikka版權所有</span>
+          <span>Copyright© 2022 Tikka. All rights reserved.</span>
+        </p>
+      </div>
+    </footer>
+    <script src="js/header.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
