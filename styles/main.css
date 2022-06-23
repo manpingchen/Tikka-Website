@@ -3784,7 +3784,7 @@ div.overlay.social-media-shares div.title p {
   background: linear-gradient(#ffffff, #ffe1f4, #ff87c8);
 }
 
-div.overlay.social-media-shares div.title button.close {
+div.overlay.streamer-profile-overlay button.close {
   right: 1rem;
   left: initial;
 }
@@ -5474,6 +5474,7 @@ div.full-width.overlay.rewards div.content section.title {
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
+  position: relative;
 }
 
 div.full-width.overlay.rewards div.content section.reward-items-container {
@@ -5489,7 +5490,7 @@ div.full-width.overlay.rewards div.reward-items {
   max-width: 900px;
   grid-template-columns: repeat(8, 1fr);
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 0;
   display: grid;
   height: calc(100% - 160px);
   overflow-y: auto;

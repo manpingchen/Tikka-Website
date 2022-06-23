@@ -21,17 +21,10 @@ function handleOpenComingSoon() {
   document.getElementById("coming-soon").style.display = "block";
 }
 
-function handleCloseComingSoon() {
-  document.getElementById("coming-soon").style.display = "none";
-}
-
 /* 直播畫面 捧花不足開關 */
 
 function handleOpenTopUp() {
   document.getElementById("top-up-overlay").style.display = "block";
-}
-function handleCloseTopUp() {
-  document.getElementById("top-up-overlay").style.display = "none";
 }
 
 /* 直播畫面 確保聊天視窗滾輪對齊最下方 */
@@ -187,13 +180,13 @@ function switchCalendarRanking(activeElementId, rankingType) {
 
 /* 榜單 收禮者與帶貨者 */
 function openReceiverRanking() {
+  handleCloseComponent("#sender-ranking");
   document.getElementById("receiver-ranking").style.display = "block";
-  document.getElementById("sender-ranking").style.display = "none";
   setActiveStatus("receiver-sender-tabs", "receiver-tab");
   switchCalendarRanking("receiver-day-btn", "receiver");
 }
 function openSenderRanking() {
-  document.getElementById("receiver-ranking").style.display = "none";
+  handleCloseComponent("#receiver-ranking");
   document.getElementById("sender-ranking").style.display = "block";
   setActiveStatus("receiver-sender-tabs", "sender-tab");
   switchCalendarRanking("sender-day-btn", "sender");
@@ -205,23 +198,17 @@ function handleClearSearchValue(event, el) {
   element.value = "";
 }
 
-/* 關閉分享Overlay */
-function handleCloseShareOverlay() {
-  document.getElementById("social-media-shares").style.display = "none";
-}
-
 function handleOpenShareOverlay() {
   document.getElementById("social-media-shares").style.display = "block";
 }
 
-/* 直播畫面 手機版 禮物牆關閉 */
-function handleCloseRewardOverlay() {
-  document.getElementById("rewards-overlay-mobile").style.display = "none";
+/* 關閉元件 */
+function handleCloseComponent(className) {
+  document.querySelector(className).style.display = "none";
 }
 
 /* 切換 禮物牆 all 及 熱門 */
 function showRewardDetail(id = "gift-all", parentId = "gift-details") {
- 
   const data = () => {
     if (parentId.includes("gift-details")) {
       if (id.includes("gift-all")) return allGifts;
