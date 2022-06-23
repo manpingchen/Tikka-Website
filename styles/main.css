@@ -2071,7 +2071,8 @@ main.live-on div.reward-items {
 main.live-on div.reward-items.hide {
   display: none;
 }
-main.live-on div.reward-item {
+main.live-on div.reward-item,
+div.full-width.overlay.rewards div.reward-item {
   position: relative;
   overflow: hidden;
   height: min-content;
@@ -2079,12 +2080,14 @@ main.live-on div.reward-item {
   border-radius: 10px;
 }
 
-main.live-on div.reward-item.active {
+main.live-on div.reward-item.active,
+div.full-width.overlay.rewards div.reward-item.active {
   background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
   box-shadow: 0 0 2px 2px #db4e8675;
 }
 
-main.live-on div.reward-item .img-wrap {
+main.live-on div.reward-item .img-wrap,
+div.full-width.overlay.rewards div.reward-item .img-wrap {
   position: relative;
   top: 0;
   width: 100%;
@@ -2096,13 +2099,15 @@ main.live-on div.reward-item .img-wrap {
   justify-content: center;
 }
 
-main.live-on div.reward-item img {
+main.live-on div.reward-item img,
+div.full-width.overlay.rewards div.reward-item .img-wrap img {
   height: 100%;
   position: absolute;
   top: 0;
 }
 
-main.live-on div.reward-item span.name {
+main.live-on div.reward-item span.name,
+div.full-width.overlay.rewards div.reward-item span.name {
   width: 100%;
   color: #e50370;
   font-size: 0.75rem;
@@ -2127,7 +2132,8 @@ main.live-on div.reward-item span.point {
   font-size: 0.7rem;
 }
 
-main.live-on div.overlay.rewards div.reward-item span.point {
+main.live-on div.overlay.rewards div.reward-item span.point,
+div.full-width.overlay.rewards div.reward-item span.point {
   background: url(../images/coin.png) no-repeat 2px -7px;
   background-size: 30px;
   width: 100px;
@@ -5303,7 +5309,15 @@ button.gift-button {
   position: absolute;
   bottom: -40px;
   left: calc(50% - 40px);
+  background: url("../images/gift-round.png") no-repeat center center;
+  background-size: contain;
+  transition: 0.3s background;
 }
+
+button.gift-button:hover {
+  background-image: url("../images/gift-round-pink-button.png");
+}
+
 button.gift-button img {
   width: 100%;
   height: 100%;
@@ -5432,4 +5446,152 @@ div.overlay.social-media-shares.streamer-profile-overlay div.content ul li img {
 
 div.overlay.social-media-shares.streamer-profile-overlay button.close {
   top: 25px;
+}
+
+div.full-width.overlay.rewards {
+  height: 500px;
+  position: fixed;
+  bottom: 0;
+  backdrop-filter: blur(5px);
+}
+
+div.full-width.overlay.rewards div.content {
+  margin-bottom: 0;
+  gap: 0;
+  height: 100%;
+  background: transparent;
+  justify-content: flex-start !important;
+}
+
+div.full-width.overlay.rewards div.content section {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+div.full-width.overlay.rewards div.content section.title {
+  padding: 1rem 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+div.full-width.overlay.rewards div.content section.reward-items-container {
+  background: #00000050;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+}
+
+div.full-width.overlay.rewards div.reward-items {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+  grid-template-columns: repeat(8, 1fr);
+  margin-top: 1rem;
+  padding: 1rem;
+  display: grid;
+  height: calc(100% - 160px);
+  overflow-y: auto;
+  gap: 1rem;
+}
+
+div.full-width.overlay.rewards div.footer {
+  height: 160px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+div.full-width.overlay.rewards div.footer span.point {
+  color: #fff;
+}
+
+div.full-width.overlay.rewards div.footer span.point::before {
+  content: "";
+  background: url(../images/coin.png) no-repeat center center;
+  background-size: cover;
+  filter: drop-shadow(0 0 3px rgb(80, 80, 80));
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin-right: -10px;
+}
+
+div.full-width.overlay.rewards div.send-gift {
+  background-position: 10px center;
+  height: auto;
+  background-size: 65px;
+  justify-content: space-between;
+}
+
+div.full-width.rewards.overlay div.btns {
+  align-items: flex-start;
+  gap: 8px;
+  width: max-content;
+  display: flex;
+}
+
+div.full-width.overlay.rewards div.footer button {
+  width: 90px;
+  font-size: 0.875rem;
+  padding: 5px;
+  color: #d6236c;
+  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  box-shadow: 0 2px 2px #2a2a2a55;
+}
+
+div.full-width.overlay.rewards div.footer button:hover {
+  color: #fff;
+  background: linear-gradient(#ffc1db, #ff398c, #f03282);
+}
+
+div.full-width.rewards.overlay div.btns button {
+  width: auto;
+  font-size: 0.875rem;
+  padding: 5px 10px;
+  color: #fff;
+  background: linear-gradient(#ffc1db, #ff398c, #f03282);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  box-shadow: 0 2px 2px #2a2a2a55;
+}
+
+div.full-width.rewards.overlay div.btns button img {
+  width: 16px;
+}
+
+div.full-width.rewards.overlay div.detail-links {
+  padding: 0;
+}
+
+div.full-width.overlay.rewards div.reward-item {
+  padding-bottom: 10px;
+}
+
+div.full-width.overlay.rewards div.reward-item span.name,
+div.full-width.overlay.rewards div.reward-item span.point {
+  font-size: 0.7rem;
+}
+
+div.full-width.overlay.rewards div.reward-item:not(.active) span.name,
+div.full-width.overlay.rewards div.reward-item:not(.active) span.point {
+  color: #fff !important;
+}
+
+div.full-width.overlay.rewards div.reward-item span.point {
+  padding-left: 25px;
+}
+
+div.full-width.overlay.rewards div.reward-item.active span.name,
+div.full-width.overlay.rewards div.reward-item.active span.point {
+  color: #e50370;
 }

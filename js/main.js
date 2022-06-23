@@ -105,11 +105,6 @@ function handleSwitchRevenue(parentId, activeElementId) {
   }
 }
 
-/* 直播畫面 手機版 禮物牆關閉 */
-function handleCloseRewardOverlay() {
-  document.getElementById("rewards-overlay-mobile").style.display = "none";
-}
-
 /* 直播畫面 手機版 當日營收 */
 function handleOpenMobileRevenueViewerPanel(tabId, activePanelId) {
   if (window.innerWidth >= 1201) {
@@ -217,4 +212,62 @@ function handleCloseShareOverlay() {
 
 function handleOpenShareOverlay() {
   document.getElementById("social-media-shares").style.display = "block";
+}
+
+/* 直播畫面 手機版 禮物牆關閉 */
+function handleCloseRewardOverlay() {
+  document.getElementById("rewards-overlay-mobile").style.display = "none";
+}
+
+/* 切換 禮物牆 all 及 熱門 */
+function showRewardDetail(id = "gift-all", parentId = "gift-details") {
+ 
+  const data = () => {
+    if (parentId.includes("gift-details")) {
+      if (id.includes("gift-all")) return allGifts;
+      if (id.includes("gift-popular")) return popularGifts;
+      if (id.includes("gift-favourite")) return favouriteGifts;
+      if (id.includes("gift-romantic")) return romanticGifts;
+    }
+    if (parentId.includes("product-details")) {
+      if (id.includes("product-all")) return allProducts;
+      if (id.includes("product-popular")) return popularProducts;
+    }
+    if (parentId.includes("box-details")) {
+      return boxGifts;
+    }
+  };
+
+  setActiveStatus(parentId, id);
+
+  const containerId = parentId.includes("mobile") ? "rewards-wall-mobile" : "rewards-wall";
+  const containerElement = document.getElementById(containerId);
+  containerElement.innerHTML = "";
+
+  data().forEach((item, i) => {
+    const newElement = document.createElement("div");
+    newElement.classList.add("reward-item");
+    newElement.id = data()[i].name + i;
+
+    const imgWrapElement = document.createElement("div");
+    imgWrapElement.classList.add("img-wrap");
+
+    const imgElement = document.createElement("img");
+    imgElement.src = data()[i].imgUrl;
+    const pointElement = document.createElement("span");
+    pointElement.innerText = data()[i].value;
+
+    const nameElement = document.createElement("span");
+    nameElement.innerText = data()[i].name;
+
+    pointElement.classList.add("point", "flex-row");
+    nameElement.classList.add("name", "flex-row");
+
+    imgWrapElement.append(imgElement);
+    newElement.append(imgWrapElement, nameElement, pointElement);
+    newElement.onclick = function () {
+      setActiveStatus(containerId, newElement.id);
+    };
+    containerElement.appendChild(newElement);
+  });
 }

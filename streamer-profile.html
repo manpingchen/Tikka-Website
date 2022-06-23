@@ -96,7 +96,7 @@
             </div>
           </div>
         </div>
-        <button class="gift-button"><img src="images/gift-round.png" alt="gift icon" /></button>
+        <button class="gift-button"></button>
         <div class="round-bg"></div>
       </section>
       <section class="intro">
@@ -151,7 +151,11 @@
       </section>
     </main>
 
-    <div class="full-width streamer-profile-overlay social-media-shares overlay" id="social-media-shares" style="display: none">
+    <div
+      class="full-width streamer-profile-overlay social-media-shares overlay"
+      id="social-media-shares"
+      style="display: none"
+    >
       <div class="title flex-row">
         <button class="close" onclick="handleCloseShareOverlay()">
           <img src="images/close-icon.svg" alt="close" />
@@ -193,6 +197,84 @@
         </ul>
       </div>
     </div>
+
+    <div class="full-width rewards overlay" id="rewards-overlay">
+      <div class="content">
+        <section class="title">
+          <button class="close" onclick="handleCloseRewardOverlay()">
+            <img src="images/close-icon.svg" alt="close" />
+          </button>
+          <div class="wrapper reward-btns">
+            <div class="btns" id="reward-title-buttons">
+              <button
+                id="reward-gift"
+                type="button"
+                class="active"
+                onclick="handleRewardTitleClick(this.id,'reward-title-buttons')"
+              >
+                <img src="images/gift.svg" alt="" />禮物
+              </button>
+              <button
+                id="reward-product"
+                type="button"
+                onclick="handleRewardTitleClick(this.id,'reward-title-buttons')"
+              >
+                <img src="images/arrow-cart.svg" alt="" />商品
+              </button>
+              <button
+                id="reward-box"
+                type="button"
+                onclick="handleRewardTitleClick(this.id,'reward-title-buttons')"
+              >
+                <img src="images/treasure.svg" alt="" />百寶箱
+              </button>
+            </div>
+          </div>
+          <div class="detail-links reward-gift" id="gift-details">
+            <a href="#" id="gift-all" onclick="showRewardDetail(this.id, 'gift-details')">All</a>
+            <span class="border"></span>
+            <a href="#" id="gift-popular" onclick="showRewardDetail(this.id, 'gift-details')"
+              >熱門</a
+            >
+            <span class="border"></span>
+            <a href="#" id="gift-favourite" onclick="showRewardDetail(this.id, 'gift-details')"
+              >女神最愛</a
+            >
+            <span class="border"></span>
+            <a href="#" id="gift-romantic" onclick="showRewardDetail(this.id, 'gift-details')"
+              >浪漫禮物</a
+            >
+          </div>
+          <div class="detail-links reward-gift" id="product-details" style="display: none">
+            <a href="#" id="product-all" onclick="showRewardDetail(this.id, 'product-details')"
+              >All</a
+            >
+            <span class="border"></span>
+            <a href="#" id="product-popular" onclick="showRewardDetail(this.id, 'product-details')"
+              >熱銷</a
+            >
+          </div>
+          <div class="detail-links reward-gift" id="box-details" style="display: none">
+            <a href="#" id="box-all" onclick="showRewardDetail(this.id, 'box-details')">All</a>
+          </div>
+        </section>
+        <section class="reward-items-container">
+          <div class="reward-items reward-gift" id="rewards-wall">
+            <!-- <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="point flex-row">2740000</span>
+            </div> -->
+          </div>
+          <div class="footer">
+            <div class="send-gift flex-row">
+              <span class="point flex-row">2740000</span>
+              <button id="buy-button" type="button" onclick="handleBuy(this.id)">贈送</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
     <footer class="desktop-only">
       <div class="footer-content flex-row">
         <nav class="flex-row">
@@ -216,6 +298,7 @@
       </div>
     </footer>
     <script src="js/header.js"></script>
+    <script src="js/fakeData.js"></script>
     <script src="js/main.js"></script>
     <script>
       function openIntro() {
@@ -227,6 +310,13 @@
         document.querySelector(".intro-content").style.height = 0;
         document.querySelector(".toggle-close").disabled = false;
         document.querySelector(".toggle-open").disabled = true;
+      }
+      /* 禮物牆顯示 */
+      showRewardDetail();
+
+      function handleShowRewardWall() {
+        document.getElementById("rewards-overlay").style.display = "block";
+        showRewardDetail("gift-all", "gift-details");
       }
     </script>
   </body>
