@@ -5413,11 +5413,10 @@ main.streamer-profile section.footer-actions button:hover img {
   filter: none;
 }
 
-div.overlay.social-media-shares.full-width {
+div.overlay.full-width {
   width: 100%;
   left: 0;
   bottom: 0;
-  height: 350px;
   -webkit-border-top-left-radius: 30px !important;
   -webkit-border-top-right-radius: 30px !important;
   -moz-border-radius-topleft: 30px !important;
@@ -5425,6 +5424,11 @@ div.overlay.social-media-shares.full-width {
   border-top-left-radius: 30px !important;
   border-top-right-radius: 30px !important;
   border-radius: initial;
+  position: fixed;
+}
+
+div.overlay.social-media-shares.full-width {
+  height: 350px;
 }
 
 div.overlay.social-media-shares.streamer-profile-overlay div.title {
@@ -5595,4 +5599,42 @@ div.full-width.overlay.rewards div.reward-item span.point {
 div.full-width.overlay.rewards div.reward-item.active span.name,
 div.full-width.overlay.rewards div.reward-item.active span.point {
   color: #e50370;
+}
+
+div.stream-profile-overlay#gift-full-overlay,
+div.stream-profile-overlay#gift-full-overlay .content {
+  background: transparent;
+}
+
+div.stream-profile-overlay#gift-full-overlay {
+  height: 100% !important;
+  z-index: 10;
+}
+
+div.stream-profile-overlay#gift-full-overlay .content {
+  max-width: 900px;
+  margin: 0 auto;
+  max-height: 100%;
+  height: 100% !important;
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.stream-profile-overlay#top-up-overlay div.title {
+  max-width: 900px;
+  margin: 0 auto;
+}
+div.stream-profile-overlay#gift-full-overlay .content img.gift-img {
+  width: 100%;
+}
+
+div.stream-profile-overlay#gift-sent {
+  position: fixed;
+  z-index: 9;
+}
+
+div.stream-profile-overlay#top-up-overlay div.footer > span.point {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
 }

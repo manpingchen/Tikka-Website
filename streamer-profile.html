@@ -96,7 +96,7 @@
             </div>
           </div>
         </div>
-        <button class="gift-button"></button>
+        <button class="gift-button" onclick="handleOpenComponent('.rewards.overlay')"></button>
         <div class="round-bg"></div>
       </section>
       <section class="intro">
@@ -144,7 +144,7 @@
         </div>
       </section>
       <section class="footer-actions flex-row">
-        <button class="button-like" onclick="handleOpenShareOverlay()">
+        <button class="button-like" onclick="handleOpenComponent('#social-media-shares')">
           <img src="images/social.svg" alt="" /> 我要分享
         </button>
         <button class="button-like"><img src="images/microphone.svg" alt="" /> 觀看直播</button>
@@ -198,7 +198,11 @@
       </div>
     </div>
 
-    <div class="full-width streamer-profile-overlay rewards overlay" id="rewards-overlay">
+    <div
+      class="full-width streamer-profile-overlay rewards overlay"
+      id="rewards-overlay"
+      style="display: none"
+    >
       <div class="content">
         <section class="title">
           <button class="close" onclick="handleCloseComponent('.rewards.overlay')">
@@ -272,6 +276,58 @@
             </div>
           </div>
         </section>
+      </div>
+    </div>
+
+    <!-- 捧花不足 -->
+    <div
+      class="full-width stream-profile-overlay overlay"
+      id="top-up-overlay"
+      style="display: none"
+    >
+      <div class="title flex-row">
+        <button class="close" onclick="handleCloseComponent('#top-up-overlay')">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+        <p class="flex-row"><span class="line"></span>捧花不足 <span class="line"></span></p>
+      </div>
+      <div class="content">
+        <a href="topup.html" class="topup-btn"><img src="images/coin.png" />請儲值</a>
+      </div>
+      <div class="footer">
+        <span class="point">59</span>
+      </div>
+    </div>
+
+    <!-- 下方禮物送出框 -->
+    <div
+      class="stream-profile-overlay overlay gift-sent-overlay"
+      id="gift-sent"
+      style="display: none"
+    >
+      <div class="avatar-wrapper">
+        <img src="images/s2.jpg" class="avatar" alt="name" />
+      </div>
+      <div class="info">
+        <span class="name">小愛</span>
+        <div class="gift-name marquee-wall" id="marquee-gift-wall">
+          <span class="gift-text" id="marquee-gift-text"> 送了 名字短的名稱 </span>
+        </div>
+      </div>
+      <div class="gift-img-wrapper">
+        <img src="images/gift2.png" alt="禮物小圖" />
+      </div>
+    </div>
+
+    <!-- 滿版禮物圖 -->
+
+    <div
+      class="full-width stream-profile-overlay overlay"
+      id="gift-full-overlay"
+      style="display: none"
+    >
+      <div class="content">
+        <img src="images/kisses.png" alt="" class="gift-img" />
       </div>
     </div>
 

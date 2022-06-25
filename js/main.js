@@ -16,17 +16,6 @@ function handleCloseStickerPanel() {
   document.getElementById("sticker-panel").classList.remove("show-from-left-side");
 }
 
-/* 直播畫面 敬請期待關閉 */
-function handleOpenComingSoon() {
-  document.getElementById("coming-soon").style.display = "block";
-}
-
-/* 直播畫面 捧花不足開關 */
-
-function handleOpenTopUp() {
-  document.getElementById("top-up-overlay").style.display = "block";
-}
-
 /* 直播畫面 確保聊天視窗滾輪對齊最下方 */
 function locateScrollbar() {
   const chatBody = document.querySelector(".chat-body");
@@ -104,6 +93,7 @@ function handleOpenMobileRevenueViewerPanel(tabId, activePanelId) {
     return;
   }
   setActiveStatus("revenue-viewer-tabs", tabId);
+
 
   document.getElementById(activePanelId).style.display = "block";
 
@@ -198,13 +188,15 @@ function handleClearSearchValue(event, el) {
   element.value = "";
 }
 
-function handleOpenShareOverlay() {
-  document.getElementById("social-media-shares").style.display = "block";
-}
 
 /* 關閉元件 */
 function handleCloseComponent(className) {
   document.querySelector(className).style.display = "none";
+}
+
+/* 開啟元件 */
+function handleOpenComponent(className) {
+  document.querySelector(className).style.display = "block";
 }
 
 /* 切換 禮物牆 all 及 熱門 */
@@ -257,4 +249,13 @@ function showRewardDetail(id = "gift-all", parentId = "gift-details") {
     };
     containerElement.appendChild(newElement);
   });
+}
+
+/*點擊購買按鈕變色 及 (＊＊＊供示意：顯示 捧花不足遮罩 、 隱藏 送出之禮物）*/
+function handleBuy(id) {
+  document.getElementById(id).classList.add("active");
+  document.getElementById("top-up-overlay").style.display = "block";
+  document.getElementById("gift-sent").style.display = "none";
+  document.getElementById("gift-full-overlay").style.display = "none";
+  document.querySelector(".rewards.overlay").style.display = "none";
 }
