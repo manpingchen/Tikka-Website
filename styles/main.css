@@ -2087,7 +2087,8 @@ div.full-width.overlay.rewards div.reward-item.active {
 }
 
 main.live-on div.reward-item .img-wrap,
-div.full-width.overlay.rewards div.reward-item .img-wrap {
+div.full-width.overlay.rewards div.reward-item .img-wrap,
+div.full-width.overlay.personal-gifts div.reward-item .img-wrap {
   position: relative;
   top: 0;
   width: 100%;
@@ -2100,7 +2101,8 @@ div.full-width.overlay.rewards div.reward-item .img-wrap {
 }
 
 main.live-on div.reward-item img,
-div.full-width.overlay.rewards div.reward-item .img-wrap img {
+div.full-width.overlay.rewards div.reward-item .img-wrap img,
+div.full-width.overlay.personal-gifts div.reward-item .img-wrap img {
   height: 100%;
   position: absolute;
   top: 0;
@@ -3724,6 +3726,7 @@ div.overlay {
   -moz-border-radius-topright: 30px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
+  backdrop-filter: blur(5px);
 }
 
 div.overlay.social-media-shares {
@@ -3785,8 +3788,8 @@ div.overlay.social-media-shares div.title p {
 }
 
 div.overlay.streamer-profile-overlay button.close {
-  right: 1rem;
-  left: initial;
+  right: 1rem !important;
+  left: initial !important;
 }
 
 div.overlay.social-media-shares div.title p img {
@@ -3840,6 +3843,10 @@ div.overlay button.close {
   height: 15px;
   padding: 0;
   margin: 0;
+}
+
+div.overlay button.close > img {
+  width: 100% !important;
 }
 
 div.overlay div.content {
@@ -5232,14 +5239,15 @@ main.streamer-profile section.header div.round-bg {
   z-index: -1;
 }
 
-main.streamer-profile section.list div.list-item {
+main.streamer-profile section.list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 5rem;
 }
 
-main.streamer-profile div.img-wrap {
+main.streamer-profile div.img-wrap,
+main.streamer-profile div.video-wrap {
   position: relative;
   padding-top: 100%;
   width: 100%;
@@ -5247,18 +5255,20 @@ main.streamer-profile div.img-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 20px;
+  border: 5px solid #fff;
 }
 
-main.streamer-profile div.img-wrap img {
+main.streamer-profile div.img-wrap img,
+main.streamer-profile div.video-wrap video {
   position: absolute;
   display: block;
   top: 0;
   height: 100%;
 }
 
-main.streamer-profile section.list div.img-wrap {
-  border-radius: 20px;
-  border: 5px solid #fff;
+main.streamer-profile div.video-wrap video {
+  width: 100%;
 }
 
 main.streamer-profile section.header div.info .performance-data {
@@ -5452,14 +5462,16 @@ div.overlay.social-media-shares.streamer-profile-overlay button.close {
   top: 25px;
 }
 
-div.full-width.overlay.rewards {
+div.full-width.overlay.rewards,
+div.full-width.overlay.personal-gifts {
   height: 500px;
   position: fixed;
   bottom: 0;
   backdrop-filter: blur(5px);
 }
 
-div.full-width.overlay.rewards div.content {
+div.full-width.overlay.rewards div.content,
+div.full-width.overlay.personal-gifts div.content {
   margin-bottom: 0;
   gap: 0;
   height: 100%;
@@ -5467,12 +5479,14 @@ div.full-width.overlay.rewards div.content {
   justify-content: flex-start !important;
 }
 
-div.full-width.overlay.rewards div.content section {
+div.full-width.overlay.rewards div.content section,
+div.full-width.overlay.personal-gifts div.content section {
   max-width: 900px;
   margin: 0 auto;
 }
 
-div.full-width.overlay.rewards div.content section.title {
+div.full-width.overlay.rewards div.content section.title,
+div.full-width.overlay.personal-gifts div.content section.title {
   padding: 1rem 0 0.5rem;
   display: flex;
   flex-direction: column;
@@ -5481,14 +5495,28 @@ div.full-width.overlay.rewards div.content section.title {
   position: relative;
 }
 
-div.full-width.overlay.rewards div.content section.reward-items-container {
+div.full-width.overlay.personal-gifts div.content section.title {
+  padding: 1rem 0;
+}
+
+div.full-width.overlay.rewards div.content section.reward-items-container,
+div.full-width.overlay.personal-gifts div.content section.reward-items-container {
   background: #00000050;
   width: 100%;
   max-width: none;
   height: 100%;
 }
 
-div.full-width.overlay.rewards div.reward-items {
+div.full-width.overlay.personal-gifts {
+  background: #ffdcffd6;
+}
+
+div.full-width.overlay.personal-gifts div.content section.reward-items-container {
+  background: #fffaffd6;
+}
+
+div.full-width.overlay.rewards div.reward-items,
+div.full-width.overlay.personal-gifts div.reward-items {
   margin: 0 auto;
   width: 100%;
   max-width: 900px;
@@ -5499,6 +5527,40 @@ div.full-width.overlay.rewards div.reward-items {
   height: calc(100% - 160px);
   overflow-y: auto;
   gap: 1rem;
+}
+
+div.full-width.overlay.personal-gifts div.reward-items {
+  height: calc(100% - 60px);
+}
+
+div.full-width.overlay.personal-gifts div.reward-items div.reward-item img {
+  width: 100%;
+}
+
+div.full-width.overlay.personal-gifts div.reward-items div.reward-item span.name {
+  background: none;
+  color: #e9558f;
+  padding: 0;
+  text-align: center;
+  line-height: 1.5rem;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 55px;
+  margin: 0 auto;
+}
+
+div.full-width.overlay.personal-gifts div.reward-items div.reward-item span.count {
+  padding: 0.2rem 0.5rem;
+  background: #e9558f;
+  color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  display: block;
+  width: 60px;
+  margin: 0 auto;
 }
 
 div.full-width.overlay.rewards div.footer {
@@ -5556,7 +5618,8 @@ div.full-width.overlay.rewards div.footer button:hover {
   background: linear-gradient(#ffc1db, #ff398c, #f03282);
 }
 
-div.full-width.rewards.overlay div.btns button {
+div.full-width.rewards.overlay div.btns button,
+div.full-width.overlay.personal-gifts div.btns button {
   width: auto;
   font-size: 0.875rem;
   padding: 5px 10px;
@@ -5570,7 +5633,8 @@ div.full-width.rewards.overlay div.btns button {
   box-shadow: 0 2px 2px #2a2a2a55;
 }
 
-div.full-width.rewards.overlay div.btns button img {
+div.full-width.rewards.overlay div.btns button img,
+div.full-width.overlay.personal-gifts div.btns button img {
   width: 16px;
 }
 
@@ -5601,17 +5665,17 @@ div.full-width.overlay.rewards div.reward-item.active span.point {
   color: #e50370;
 }
 
-div.stream-profile-overlay#gift-full-overlay,
-div.stream-profile-overlay#gift-full-overlay .content {
+div.streamer-profile-overlay#gift-full-overlay,
+div.streamer-profile-overlay#gift-full-overlay .content {
   background: transparent;
 }
 
-div.stream-profile-overlay#gift-full-overlay {
+div.streamer-profile-overlay#gift-full-overlay {
   height: 100% !important;
   z-index: 10;
 }
 
-div.stream-profile-overlay#gift-full-overlay .content {
+div.streamer-profile-overlay#gift-full-overlay .content {
   max-width: 900px;
   margin: 0 auto;
   max-height: 100%;
@@ -5620,20 +5684,20 @@ div.stream-profile-overlay#gift-full-overlay .content {
   justify-content: flex-end;
 }
 
-div.stream-profile-overlay#top-up-overlay div.title {
+div.streamer-profile-overlay#top-up-overlay div.title {
   max-width: 900px;
   margin: 0 auto;
 }
-div.stream-profile-overlay#gift-full-overlay .content img.gift-img {
+div.streamer-profile-overlay#gift-full-overlay .content img.gift-img {
   width: 100%;
 }
 
-div.stream-profile-overlay#gift-sent {
+div.streamer-profile-overlay#gift-sent {
   position: fixed;
   z-index: 9;
 }
 
-div.stream-profile-overlay#top-up-overlay div.footer > span.point {
+div.streamer-profile-overlay#top-up-overlay div.footer > span.point {
   max-width: 900px;
   margin: 0 auto;
   width: 100%;

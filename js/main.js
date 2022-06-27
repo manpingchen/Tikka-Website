@@ -170,13 +170,13 @@ function switchCalendarRanking(activeElementId, rankingType) {
 
 /* 榜單 收禮者與帶貨者 */
 function openReceiverRanking() {
-  handleCloseComponent("#sender-ranking");
+  handleHideComponent("#sender-ranking");
   document.getElementById("receiver-ranking").style.display = "block";
   setActiveStatus("receiver-sender-tabs", "receiver-tab");
   switchCalendarRanking("receiver-day-btn", "receiver");
 }
 function openSenderRanking() {
-  handleCloseComponent("#receiver-ranking");
+  handleHideComponent("#receiver-ranking");
   document.getElementById("sender-ranking").style.display = "block";
   setActiveStatus("receiver-sender-tabs", "sender-tab");
   switchCalendarRanking("sender-day-btn", "sender");
@@ -190,13 +190,17 @@ function handleClearSearchValue(event, el) {
 
 
 /* 關閉元件 */
-function handleCloseComponent(className) {
+function handleHideComponent(className) {
   document.querySelector(className).style.display = "none";
 }
 
 /* 開啟元件 */
-function handleOpenComponent(className) {
+function handleShowComponent(className) {
   document.querySelector(className).style.display = "block";
+}
+
+function handleShowComponentInGrid(className) {
+  document.querySelector(className).style.display = "grid";
 }
 
 /* 切換 禮物牆 all 及 熱門 */

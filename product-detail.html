@@ -63,7 +63,7 @@
             <a
               class="button share mobile-only"
               href="javascript:void(0)"
-              onclick="handleOpenComponent('#social-media-shares')"
+              onclick="handleShowComponent('#social-media-shares')"
             >
               <img src="images/share-pink-btn.svg" alt="分享" />
             </a>
@@ -445,7 +445,7 @@
       <div class="product-detail-btns">
         <ul class="flex-row">
           <li class="desktop-only">
-            <button class="button-like" onclick="handleOpenComponent('#social-media-shares')">
+            <button class="button-like" onclick="handleShowComponent('#social-media-shares')">
               <img src="images/social.svg" alt="" /> 分享
             </button>
           </li>
@@ -461,7 +461,7 @@
 
     <div class="social-media-shares overlay" id="social-media-shares" style="display: none">
       <div class="title flex-row">
-        <button class="close" onclick="handleCloseComponent('#social-media-shares')">
+        <button class="close" onclick="handleHideComponent('#social-media-shares')">
           <img src="images/close-icon.svg" alt="close" />
         </button>
         <p class="flex-row"><img src="images/social.svg" alt="分享" /> 分享</p>

@@ -96,7 +96,7 @@
             </div>
           </div>
         </div>
-        <button class="gift-button" onclick="handleOpenComponent('.rewards.overlay')"></button>
+        <button class="gift-button" onclick="handleShowComponent('.rewards.overlay')"></button>
         <div class="round-bg"></div>
       </section>
       <section class="intro">
@@ -125,39 +125,94 @@
       <section class="menus">
         <ul class="flex-row">
           <li><button>最新動態</button></li>
-          <li><button>經典影片</button></li>
-          <li><button>專屬禮物</button></li>
+          <li><button onclick="showVideos()">經典影片</button></li>
+          <li>
+            <button onclick="handleShowComponent('#personal-gifts-overlay')">專屬禮物</button>
+          </li>
           <li><button>熱銷商品</button></li>
         </ul>
       </section>
-      <section class="list">
+      <section class="list images">
         <div class="list-item">
           <div class="img-wrap">
             <img src="images/s2.jpg" alt="" />
           </div>
+        </div>
+        <div class="list-item">
           <div class="img-wrap">
             <img src="images/s2.jpg" alt="" />
           </div>
+        </div>
+        <div class="list-item">
+          <div class="img-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="img-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="img-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+        <div class="list-item">
           <div class="img-wrap">
             <img src="images/s2.jpg" alt="" />
           </div>
         </div>
       </section>
+
+      <section class="list videos" style="display: none">
+        <div class="list-item">
+          <div class="video-wrap">
+            <video id="rtc_media_player" playsinline controls></video>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="video-wrap">
+            <video id="rtc_media_player" playsinline controls></video>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="video-wrap">
+            <video id="rtc_media_player" playsinline controls></video>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="video-wrap">
+            <video id="rtc_media_player" playsinline controls></video>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="video-wrap">
+            <video id="rtc_media_player" playsinline controls></video>
+          </div>
+        </div>
+        <div class="list-item">
+          <div class="video-wrap">
+            <video id="rtc_media_player" playsinline controls></video>
+          </div>
+        </div>
+      </section>
       <section class="footer-actions flex-row">
-        <button class="button-like" onclick="handleOpenComponent('#social-media-shares')">
+        <button class="button-like" onclick="handleShowComponent('#social-media-shares')">
           <img src="images/social.svg" alt="" /> 我要分享
         </button>
         <button class="button-like"><img src="images/microphone.svg" alt="" /> 觀看直播</button>
       </section>
     </main>
 
+    <!--我要分享-->
     <div
       class="full-width streamer-profile-overlay social-media-shares overlay"
       id="social-media-shares"
       style="display: none"
     >
       <div class="title flex-row">
-        <button class="close" onclick="handleCloseComponent('#social-media-shares')">
+        <button class="close" onclick="handleHideComponent('#social-media-shares')">
           <img src="images/close-icon.svg" alt="close" />
         </button>
         <p class="flex-row"><img src="images/social.svg" alt="分享" /> 我要分享</p>
@@ -198,6 +253,7 @@
       </div>
     </div>
 
+    <!--禮物牆-->
     <div
       class="full-width streamer-profile-overlay rewards overlay"
       id="rewards-overlay"
@@ -205,7 +261,7 @@
     >
       <div class="content">
         <section class="title">
-          <button class="close" onclick="handleCloseComponent('.rewards.overlay')">
+          <button class="close" onclick="handleHideComponent('.rewards.overlay')">
             <img src="images/close-icon.svg" alt="close" />
           </button>
           <div class="wrapper reward-btns">
@@ -281,12 +337,12 @@
 
     <!-- 捧花不足 -->
     <div
-      class="full-width stream-profile-overlay overlay"
+      class="full-width streamer-profile-overlay overlay"
       id="top-up-overlay"
       style="display: none"
     >
       <div class="title flex-row">
-        <button class="close" onclick="handleCloseComponent('#top-up-overlay')">
+        <button class="close" onclick="handleHideComponent('#top-up-overlay')">
           <img src="images/close-icon.svg" alt="close" />
         </button>
         <p class="flex-row"><span class="line"></span>捧花不足 <span class="line"></span></p>
@@ -301,7 +357,7 @@
 
     <!-- 下方禮物送出框 -->
     <div
-      class="stream-profile-overlay overlay gift-sent-overlay"
+      class="streamer-profile-overlay overlay gift-sent-overlay"
       id="gift-sent"
       style="display: none"
     >
@@ -320,9 +376,8 @@
     </div>
 
     <!-- 滿版禮物圖 -->
-
     <div
-      class="full-width stream-profile-overlay overlay"
+      class="full-width streamer-profile-overlay overlay"
       id="gift-full-overlay"
       style="display: none"
     >
@@ -331,6 +386,126 @@
       </div>
     </div>
 
+    <!-- 專屬禮物 -->
+    <div
+      class="full-width streamer-profile-overlay overlay personal-gifts"
+      id="personal-gifts-overlay"
+      style="display: none"
+    >
+      <div class="content">
+        <section class="title">
+          <button class="close" onclick="handleHideComponent('#personal-gifts-overlay')">
+            <img src="images/close-icon.svg" alt="close" />
+          </button>
+          <div class="wrapper reward-btns">
+            <div class="btns" id="reward-title-buttons">
+              <button id="reward-gift" type="button">
+                <img src="images/gift.svg" alt="" />專屬禮物
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="reward-items-container">
+          <div class="reward-items reward-gift" id="rewards-wall">
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
     <footer class="desktop-only">
       <div class="footer-content flex-row">
         <nav class="flex-row">
@@ -373,6 +548,11 @@
       function handleShowRewardWall() {
         document.getElementById("rewards-overlay").style.display = "block";
         showRewardDetail("gift-all", "gift-details");
+      }
+      // 經典影片
+      function showVideos() {
+        handleShowComponentInGrid(".list.videos");
+        handleHideComponent(".list.images");
       }
     </script>
   </body>

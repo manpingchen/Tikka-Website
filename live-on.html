@@ -97,10 +97,10 @@
           </div>
         </div>
         <div class="gift-mission">
-          <a href="#" class="gift" onclick="handleOpenComponent('#coming-soon')">
+          <a href="#" class="gift" onclick="handleShowComponent('#coming-soon')">
             <img src="images/diamond.png" alt="" /><span>每日領取</span>
           </a>
-          <a href="#" class="mission" onclick="handleOpenComponent('#coming-soon')">
+          <a href="#" class="mission" onclick="handleShowComponent('#coming-soon')">
             <img src="images/mission.svg" alt="" /><span>活動任務</span>
           </a>
         </div>
@@ -365,7 +365,7 @@
             <button class="icon pink" onclick="handleShowMobileRewardWall()">
               <img src="images/gift.svg" />
             </button>
-            <button class="icon pink" onclick="handleOpenComponent('#coming-soon')">
+            <button class="icon pink" onclick="handleShowComponent('#coming-soon')">
               <img src="images/mission.svg" />
             </button>
             <button class="icon">
@@ -383,7 +383,7 @@
           <!-- 敬請期待 -->
           <div class="coming-soon overlay" id="coming-soon" style="display: none">
             <div class="title flex-row">
-              <button class="close" onclick="handleCloseComponent('#coming-soon')">
+              <button class="close" onclick="handleHideComponent('#coming-soon')">
                 <img src="images/close-icon.svg" alt="close" />
               </button>
               <p class="flex-row">
@@ -399,7 +399,7 @@
           <!-- 捧花不足 -->
           <div class="overlay" id="top-up-overlay" style="display: none">
             <div class="title flex-row">
-              <button class="close" onclick="handleCloseComponent('#top-up-overlay')">
+              <button class="close" onclick="handleHideComponent('#top-up-overlay')">
                 <img src="images/close-icon.svg" alt="close" />
               </button>
               <p class="flex-row"><span class="line"></span>捧花不足 <span class="line"></span></p>
@@ -415,7 +415,7 @@
           <!-- 手機版禮物牆 -->
           <div class="overlay rewards" id="rewards-overlay-mobile" style="display: none">
             <div class="content">
-              <button class="close" onclick="handleCloseComponent('#rewards-overlay-mobile')">
+              <button class="close" onclick="handleHideComponent('#rewards-overlay-mobile')">
                 <img src="images/close-icon.svg" alt="close" />
               </button>
               <div class="wrapper reward-btns-mobile">
