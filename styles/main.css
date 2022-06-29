@@ -2088,7 +2088,8 @@ div.full-width.overlay.rewards div.reward-item.active {
 
 main.live-on div.reward-item .img-wrap,
 div.full-width.overlay.rewards div.reward-item .img-wrap,
-div.full-width.overlay.personal-gifts div.reward-item .img-wrap {
+div.full-width.overlay.personal-gifts div.reward-item .img-wrap,
+div.full-width.overlay.popular-products div.reward-item .img-wrap {
   position: relative;
   top: 0;
   width: 100%;
@@ -2102,7 +2103,8 @@ div.full-width.overlay.personal-gifts div.reward-item .img-wrap {
 
 main.live-on div.reward-item img,
 div.full-width.overlay.rewards div.reward-item .img-wrap img,
-div.full-width.overlay.personal-gifts div.reward-item .img-wrap img {
+div.full-width.overlay.personal-gifts div.reward-item .img-wrap img,
+div.full-width.overlay.popular-products div.reward-item .img-wrap img {
   height: 100%;
   position: absolute;
   top: 0;
@@ -5463,7 +5465,8 @@ div.overlay.social-media-shares.streamer-profile-overlay button.close {
 }
 
 div.full-width.overlay.rewards,
-div.full-width.overlay.personal-gifts {
+div.full-width.overlay.personal-gifts,
+div.full-width.overlay.popular-products {
   height: 500px;
   position: fixed;
   bottom: 0;
@@ -5471,7 +5474,8 @@ div.full-width.overlay.personal-gifts {
 }
 
 div.full-width.overlay.rewards div.content,
-div.full-width.overlay.personal-gifts div.content {
+div.full-width.overlay.personal-gifts div.content,
+div.full-width.overlay.popular-products div.content {
   margin-bottom: 0;
   gap: 0;
   height: 100%;
@@ -5480,13 +5484,15 @@ div.full-width.overlay.personal-gifts div.content {
 }
 
 div.full-width.overlay.rewards div.content section,
-div.full-width.overlay.personal-gifts div.content section {
+div.full-width.overlay.personal-gifts div.content section,
+div.full-width.overlay.popular-products div.content section {
   max-width: 900px;
   margin: 0 auto;
 }
 
 div.full-width.overlay.rewards div.content section.title,
-div.full-width.overlay.personal-gifts div.content section.title {
+div.full-width.overlay.personal-gifts div.content section.title,
+div.full-width.overlay.popular-products div.content section.title {
   padding: 1rem 0 0.5rem;
   display: flex;
   flex-direction: column;
@@ -5495,28 +5501,33 @@ div.full-width.overlay.personal-gifts div.content section.title {
   position: relative;
 }
 
-div.full-width.overlay.personal-gifts div.content section.title {
+div.full-width.overlay.personal-gifts div.content section.title,
+div.full-width.overlay.popular-products div.content section.title {
   padding: 1rem 0;
 }
 
 div.full-width.overlay.rewards div.content section.reward-items-container,
-div.full-width.overlay.personal-gifts div.content section.reward-items-container {
+div.full-width.overlay.personal-gifts div.content section.reward-items-container,
+div.full-width.overlay.popular-products div.content section.reward-items-container {
   background: #00000050;
   width: 100%;
   max-width: none;
   height: 100%;
 }
 
-div.full-width.overlay.personal-gifts {
+div.full-width.overlay.personal-gifts,
+div.full-width.overlay.popular-products {
   background: #ffdcffd6;
 }
 
-div.full-width.overlay.personal-gifts div.content section.reward-items-container {
+div.full-width.overlay.personal-gifts div.content section.reward-items-container,
+div.full-width.overlay.popular-products div.content section.reward-items-container {
   background: #fffaffd6;
 }
 
 div.full-width.overlay.rewards div.reward-items,
-div.full-width.overlay.personal-gifts div.reward-items {
+div.full-width.overlay.personal-gifts div.reward-items,
+div.full-width.overlay.popular-products div.reward-items {
   margin: 0 auto;
   width: 100%;
   max-width: 900px;
@@ -5529,15 +5540,18 @@ div.full-width.overlay.personal-gifts div.reward-items {
   gap: 1rem;
 }
 
-div.full-width.overlay.personal-gifts div.reward-items {
+div.full-width.overlay.personal-gifts div.reward-items,
+div.full-width.overlay.popular-products div.reward-items {
   height: calc(100% - 60px);
 }
 
-div.full-width.overlay.personal-gifts div.reward-items div.reward-item img {
+div.full-width.overlay.personal-gifts div.reward-items div.reward-item img,
+div.full-width.overlay.popular-products div.reward-items div.reward-item img {
   width: 100%;
 }
 
-div.full-width.overlay.personal-gifts div.reward-items div.reward-item span.name {
+div.full-width.overlay.personal-gifts div.reward-items div.reward-item span.name,
+div.full-width.overlay.popular-products div.reward-items div.reward-item span.name {
   background: none;
   color: #e9558f;
   padding: 0;
@@ -5551,7 +5565,8 @@ div.full-width.overlay.personal-gifts div.reward-items div.reward-item span.name
   margin: 0 auto;
 }
 
-div.full-width.overlay.personal-gifts div.reward-items div.reward-item span.count {
+div.full-width.overlay.personal-gifts div.reward-items div.reward-item span.count,
+div.full-width.overlay.popular-products div.reward-items div.reward-item span.count {
   padding: 0.2rem 0.5rem;
   background: #e9558f;
   color: #fff;
@@ -5619,7 +5634,8 @@ div.full-width.overlay.rewards div.footer button:hover {
 }
 
 div.full-width.rewards.overlay div.btns button,
-div.full-width.overlay.personal-gifts div.btns button {
+div.full-width.overlay.personal-gifts div.btns button,
+div.full-width.overlay.popular-products div.btns button {
   width: auto;
   font-size: 0.875rem;
   padding: 5px 10px;
@@ -5634,7 +5650,8 @@ div.full-width.overlay.personal-gifts div.btns button {
 }
 
 div.full-width.rewards.overlay div.btns button img,
-div.full-width.overlay.personal-gifts div.btns button img {
+div.full-width.overlay.personal-gifts div.btns button img,
+div.full-width.overlay.popular-products div.btns button img {
   width: 16px;
 }
 
@@ -5701,4 +5718,8 @@ div.streamer-profile-overlay#top-up-overlay div.footer > span.point {
   max-width: 900px;
   margin: 0 auto;
   width: 100%;
+}
+
+.white-svg {
+  filter: brightness(0) invert(1);
 }
