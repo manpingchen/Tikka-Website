@@ -195,12 +195,8 @@ function handleHideComponent(className) {
 }
 
 /* 開啟元件 */
-function handleShowComponent(className) {
-  document.querySelector(className).style.display = "block";
-}
-
-function handleShowComponentInGrid(className) {
-  document.querySelector(className).style.display = "grid";
+function handleShowComponent(className, displayValue = 'block') {
+  document.querySelector(className).style.display = displayValue;
 }
 
 /* 切換 禮物牆 all 及 熱門 */

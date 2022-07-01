@@ -47,7 +47,7 @@ main {
   max-width: 1100px;
   width: 80%;
   margin: 0 auto 170px;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   padding: 2rem;
   position: relative;
   top: 130px;
@@ -207,6 +207,11 @@ div.img-wrap img {
   display: block;
 }
 
+.pink-gradient-bg {
+  background: linear-gradient(0deg, #e60672, #ef99bf) !important;
+  color: #fff !important;
+}
+
 /*Topup*/
 
 .topup section {
@@ -321,6 +326,7 @@ div.img-wrap img {
 
 .topup .login-section .logged-in div.my-flower span.point {
   color: #fff;
+  font-size: 1rem;
 }
 
 .topup .login-section .logged-in div.my-flower span.point::before {
@@ -329,8 +335,9 @@ div.img-wrap img {
   background-size: cover;
   filter: drop-shadow(0 0 3px rgb(80, 80, 80));
   display: inline-block;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
+  margin-right: -10px;
 }
 
 .topup .login-section .logged-in div.my-flower span.cost {
@@ -339,9 +346,9 @@ div.img-wrap img {
   height: 46px;
   line-height: 46px;
   padding: 0 20px;
-  margin-left: 20px;
+  margin-left: 10px;
   color: #888;
-  min-width: 200px;
+  min-width: 130px;
 }
 
 @media screen and (max-width: 425px) {
@@ -377,14 +384,14 @@ div.img-wrap img {
 }
 
 .topup .method-options .options {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   flex-wrap: wrap;
   gap: 1rem;
 }
 
 .topup .method-options .options button {
-  width: calc((100% - 3rem) / 4);
-  min-width: 190px;
+  border-radius: 0.5rem;
 }
 
 .topup .method-options .options button:hover {
@@ -394,9 +401,9 @@ div.img-wrap img {
 }
 
 .topup .method-options .options button.active {
-  background: #ef99bf;
-  color: #fff;
-  border: 2px solid #fff;
+  background: #ef99bf !important;
+  color: #fff !important;
+  border: 1px solid #fff !important;
   box-shadow: 0 0 5px #aaa;
 }
 
@@ -407,6 +414,48 @@ div.img-wrap img {
 
 .topup .amount-options li button.active {
   filter: contrast(1.9);
+}
+
+form.invoice-info-field div.flex-row {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+form.invoice-info-field label,
+form.invoice-info-field input {
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-width: 1px;
+  border-style: solid;
+}
+
+form.invoice-info-field label {
+  background: #ef99bf !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  box-shadow: 0 0 5px #aaa;
+  width: 200px;
+  text-align: center;
+}
+
+form.invoice-info-field input {
+  border-color: #aaa !important;
+  font-size: 1rem;
+  width: 100%;
+}
+
+form.invoice-info-field input::placeholder {
+  color: #aaa;
+}
+
+form.invoice-info-field span#invoice-info-tips {
+  display: block;
+  color: #c80808;
+  font-size: 0.75rem;
+  width: 100%;
+  margin-top: 1rem;
 }
 
 main.index,
@@ -1068,8 +1117,31 @@ form div.radio-group input {
 main.topup {
   padding-bottom: 0px !important;
 }
+
+.topup .amount-options {
+  margin-bottom: 15rem;
+}
+
+.topup section h4 {
+  color: #e23a80;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  letter-spacing: 0.2rem;
+  padding-bottom: 10px;
+}
+
+.topup section h4::before,
+.topup section h4::after {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 2px;
+  background: #e23a80;
+}
+
 .topup .amount-options ul {
-  margin: 0;
+  margin: 0 0 2rem;
   gap: 2%;
 }
 .topup .amount-options ul li {
@@ -1102,7 +1174,6 @@ main.topup {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: linear-gradient(0deg, #e60672, #ef99bf);
   width: 350px;
   border-radius: 50px;
   box-shadow: 0 0 5px rgb(118, 118, 118);
@@ -1136,6 +1207,21 @@ main.topup {
 
 .topup .amount-options button span.cost {
   color: #666;
+}
+
+.topup .amount-options button.topup-btn {
+  width: initial;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px 10px 10px;
+  margin: 0 auto;
+  height: 40px;
+  overflow: hidden;
+  font-size: 1.2rem;
+}
+
+.topup .amount-options button.topup-btn img {
+  width: 50px;
 }
 
 @media screen and (max-width: 1279px) {
@@ -1177,7 +1263,6 @@ main.topup {
 
 @media screen and (max-width: 960px) {
   .topup .amount-options ul {
-    margin: 0;
     gap: 0 2%;
   }
   .topup .amount-options ul li {
@@ -1198,9 +1283,6 @@ main.topup {
   .topup .amount-options button span.point > span > span {
     font-size: 1rem;
   }
-  .topup .method-options .options button {
-    width: calc((100% - 1rem) / 2);
-  }
   .logged-in,
   .logged-in .avatar {
     flex-direction: column;
@@ -1211,6 +1293,9 @@ main.topup {
 }
 
 @media screen and (max-width: 660px) {
+  .topup .method-options .options {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .topup .amount-options button span.point {
     max-width: 350px;
     min-width: 200px;
@@ -1240,7 +1325,29 @@ main.topup {
     width: 40px;
   }
   .topup .amount-options button span.cost {
-    font-size: 0.75rem;
+    font-size: 1rem;
+  }
+  .topup .method-options .options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+  .topup .method-options .options button.outlined {
+    padding: 0.5rem;
+  }
+  .topup .method-options .options button {
+    min-width: 120px;
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  form.invoice-info-field div.flex-row {
+    gap: 5px;
+  }
+  form.invoice-info-field label,
+  form.invoice-info-field input {
+    font-size: 0.8rem;
+    padding: 0.5rem;
   }
 }
 
@@ -1250,7 +1357,7 @@ main.topup {
   }
   .topup .amount-options button span.point > span {
     width: 125px;
-    font-size: 1.15rem;
+    font-size: 1.3rem;
   }
 }
 
