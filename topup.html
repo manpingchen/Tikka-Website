@@ -352,10 +352,80 @@
             </button>
           </li>
         </ul>
-        <button class="pink-gradient-bg topup-btn flex-row" type="button">
+        <button
+          class="pink-gradient-bg topup-btn flex-row"
+          type="button"
+          onclick="handleShowComponent('#topup-successful')"
+        >
           <img src="images/coin.png" alt="金幣圖示" />儲值
         </button>
       </section>
+
+      <!-- 儲值成功遮罩 -->
+      <div class="overlay small topup" id="topup-successful" style="display: none">
+        <div class="header">
+          <img src="images/logo.svg" alt="logo" class="white-svg" />
+          <button class="close-button" onclick="handleHideComponent('#topup-successful')">
+            <img src="images/close-icon.svg" alt="close-icon" />
+          </button>
+        </div>
+        <h4>恭喜儲值成功</h4>
+        <div class="content">
+          <div class="highlight button-like pink-gradient-bg">
+            <img src="images/coin.png" alt="" /> 儲值成功
+          </div>
+        </div>
+        <div class="footer"></div>
+      </div>
+
+      <!-- 儲值失敗遮罩 -->
+      <div class="overlay small topup" id="topup-failed" style="display: none">
+        <div class="header">
+          <img src="images/logo.svg" alt="logo" class="white-svg" />
+          <button class="close-button" onclick="handleHideComponent('#topup-failed')">
+            <img src="images/close-icon.svg" alt="close-icon" />
+          </button>
+        </div>
+        <h4>請重新儲值</h4>
+        <div class="content">
+          <div class="highlight button-like pink-gradient-bg">
+            <img src="images/coin.png" alt="" /> 儲值失敗
+          </div>
+        </div>
+        <div class="footer"></div>
+      </div>
+
+      <!-- 交易成功 遮罩 -->
+      <div class="overlay small topup" id="trade-successful">
+        <div class="header">
+          <img src="images/logo.svg" alt="logo" class="white-svg" />
+          <button class="close-button" onclick="handleHideComponent('#trade-successful')">
+            <img src="images/close-icon.svg" alt="close-icon" />
+          </button>
+        </div>
+        <h4>恭喜交易成功</h4>
+        <div class="content">
+          <div class="highlight button-like pink-gradient-bg">
+            <img src="images/coin.png" alt="" /> 交易完成
+          </div>
+        </div>
+        <div class="footer"><p>將於確認付款後匯入點數</p></div>
+      </div>
+
+      <!-- 儲值前登入會員 遮罩 -->
+      <div class="overlay small topup" id="trade-successful" style="display: none">
+        <div class="header">
+          <img src="images/logo.svg" alt="logo" class="white-svg" />
+          <button class="close-button" onclick="handleHideComponent('#trade-successful')">
+            <img src="images/close-icon.svg" alt="close-icon" />
+          </button>
+        </div>
+        <h4>儲值前請先登入會員</h4>
+        <div class="content">
+          <div class="highlight button-like pink-gradient-bg">登入會員</div>
+        </div>
+        <div class="footer"></div>
+      </div>
     </main>
     <footer class="desktop-only">
       <div class="footer-content flex-row">
