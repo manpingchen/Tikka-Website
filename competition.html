@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/header.css" />
@@ -97,22 +100,22 @@
         <div class="list glide mobile-only" id="competition-slides">
           <div class="glide__track" data-glide-el="track">
             <ul class="list mobile-only glide__list glide__slides">
-              <li class="glide__slide">
+              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
                 <div class="img-wrap">
                   <img src="images/c2.jpeg" alt="" />
                 </div>
               </li>
-              <li class="glide__slide">
+              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
                 <div class="img-wrap">
                   <img src="images/c2.jpeg" alt="" />
                 </div>
               </li>
-              <li class="glide__slide">
+              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
                 <div class="img-wrap">
                   <img src="images/c2.jpeg" alt="" />
                 </div>
               </li>
-              <li class="glide__slide">
+              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
                 <div class="img-wrap">
                   <img src="images/c2.jpeg" alt="" />
                 </div>
@@ -140,27 +143,27 @@
               <img src="images/c2.jpeg" alt="" />
             </div>
           </li>
-          <li>
+          <li onclick="handleShowComponent('.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c3.jpeg" alt="" />
             </div>
           </li>
-          <li>
+          <li onclick="handleShowComponent('.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c2.jpeg" alt="" />
             </div>
           </li>
-          <li>
+          <li onclick="handleShowComponent('.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c3.jpeg" alt="" />
             </div>
           </li>
-          <li>
+          <li onclick="handleShowComponent('.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c1.jpg" alt="" />
             </div>
           </li>
-          <li>
+          <li onclick="handleShowComponent('.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c3.jpeg" alt="" />
             </div>
@@ -169,25 +172,25 @@
         <div class="glide mobile-only" id="review-slides">
           <div class="glide__track" data-glide-el="track">
             <ul class="list mobile-only glide__list glide__slides">
-              <li class="glide__slide">
+              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
                 <div class="img-wrap"><img src="images/c2.jpeg" alt="img1" /></div>
               </li>
-              <li class="glide__slide">
+              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
                 <div class="img-wrap"><img src="images/c3.jpeg" alt="img1" /></div>
               </li>
-              <li class="glide__slide">
+              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
                 <div class="img-wrap"><img src="images/c2.jpeg" alt="img1" /></div>
               </li>
-              <li class="glide__slide">
+              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
                 <div class="img-wrap"><img src="images/c3.jpeg" alt="img1" /></div>
               </li>
-              <li class="glide__slide">
+              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
                 <div class="img-wrap"><img src="images/c2.jpeg" alt="img1" /></div>
               </li>
-              <li class="glide__slide">
+              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
                 <div class="img-wrap"><img src="images/c4.jpg" alt="img1" /></div>
               </li>
-              <li class="glide__slide">
+              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
                 <div class="img-wrap"><img src="images/c2.jpeg" alt="img1" /></div>
               </li>
             </ul>
@@ -203,6 +206,135 @@
         </div>
       </section>
     </main>
+
+    <!-- 競賽內容遮罩 -->
+    <div class="event-detail-overlay overlay" id="event-detail-overlay">
+      <div class="backdrop"></div>
+      <div class="container">
+        <div class="content">
+          <button class="close" onclick="handleHideComponent('.event-detail-overlay')">
+            <img src="images/close-icon.svg" />
+          </button>
+          <h1><img src="images/event-detail-title.svg" alt="活動說明" /></h1>
+          <section>
+            <h2><img src="images/event-detail-title-7.svg" alt=活動指定貼圖" /></h2>
+            <div class="stickers">
+              <div class="sticker-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/sticker.png" alt="" />
+                </div>
+                <div class="sticker-info flex-column">
+                  <span class="name flex-row">水晶粽</span>
+                  <span class="point flex-row"><img src="images/coin.png" alt="coin" />99999</span>
+                </div>
+              </div>
+              <div class="sticker-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/sticker.png" alt="" />
+                </div>
+                <div class="sticker-info flex-column">
+                  <span class="name flex-row">水晶粽</span>
+                  <span class="point flex-row"><img src="images/coin.png" alt="coin" />99999</span>
+                </div>
+              </div>
+              <div class="sticker-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/sticker.png" alt="" />
+                </div>
+                <div class="sticker-info flex-column">
+                  <span class="name flex-row">水晶粽</span>
+                  <span class="point flex-row"><img src="images/coin.png" alt="coin" />99999</span>
+                </div>
+              </div>
+              <div class="sticker-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/sticker.png" alt="" />
+                </div>
+                <div class="sticker-info flex-column">
+                  <span class="name flex-row">水晶粽</span>
+                  <span class="point flex-row"><img src="images/coin.png" alt="coin" />99999</span>
+                </div>
+              </div>
+              <div class="sticker-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/sticker.png" alt="" />
+                </div>
+                <div class="sticker-info flex-column">
+                  <span class="name flex-row">水晶粽</span>
+                  <span class="point flex-row"><img src="images/coin.png" alt="coin" />99999</span>
+                </div>
+              </div>
+              <div class="sticker-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/sticker.png" alt="" />
+                </div>
+                <div class="sticker-info flex-column">
+                  <span class="name flex-row">水晶粽</span>
+                  <span class="point flex-row"><img src="images/coin.png" alt="coin" />99999</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h2><img src="images/event-detail-title-6.svg" alt="活動時間" /></h2>
+            <p class="event-time">
+              6/<span class="larger-font-size pink-color">1</span>
+              <span class="larger-font-size">-</span> 6/<span class="larger-font-size pink-color">
+                30
+              </span>
+            </p>
+          </section>
+          <section>
+            <h2><img src="images/event-detail-title-5.svg" alt="活動辦法" /></h2>
+            <div class="detail-wrap">
+              <div class="detail-content">
+                在活動期間內，送出本月活動的禮物，支持你心目中的主播，人氣最高
+                <span class="pink-color">前三名主播</span>
+                ，即可獲得<span class="pink-color">超優質獎項</span>，趕快來參加吧！
+              </div>
+            </div>
+          </section>
+          <section>
+            <h2><img src="images/event-detail-title-4.svg" alt="活動資訊" /></h2>
+            <div class="detail-wrap">
+              <div class="detail-content">
+                <p class="flex-row flex-start mb-1">
+                  <span class="pink-color">第一名主播：</span>
+                  捷運大型看板廣告。<br />
+                  主播的曝光度，也會因為你的支持而提升喔！
+                </p>
+                <p class="flex-row flex-start mb-1">
+                  <span class="pink-color">第二名主播：</span>
+                  捷運大型看板廣告。<br />
+                  主播的曝光度，也會因為你的支持而提升喔！
+                </p>
+                <p class="flex-row flex-start mb-1">
+                  <span class="pink-color">第三名主播：</span>
+                  捷運大型看板廣告。<br />
+                  主播的曝光度，也會因為你的支持而提升喔！
+                </p>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h2><img src="images/event-detail-title-3.svg" alt="優渥獎項" /></h2>
+            <div class="detail-wrap">
+              <div class="detail-content">
+                活動內容活動內容活動內容，活動內容活動內容活動內容活動內容。
+              </div>
+            </div>
+          </section>
+          <section>
+            <h2><img src="images/event-detail-title-2.svg" alt="貼心提醒" /></h2>
+            <div class="detail-wrap">
+              <div class="detail-content">
+                活動內容活動內容活動內容，活動內容活動內容活動內容活動內容。
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
 
     <footer class="desktop-only">
       <div class="footer-content flex-row">
