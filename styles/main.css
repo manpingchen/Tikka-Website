@@ -6042,6 +6042,8 @@ div.overlay.event-detail-overlay .sticker-item {
   align-items: center;
   padding: 0.5rem;
   gap: 2rem;
+  margin: 4px;
+  box-shadow: 0 4px 4px #999;
 }
 
 div.overlay.event-detail-overlay .sticker-item div.img-wrap {
@@ -6155,4 +6157,43 @@ div.overlay.event-detail-overlay .content section div.detail-wrap {
 
 div.overlay.event-detail-overlay .content section div.detail-wrap div.detail-content {
   width: calc(100% - 1rem - 10px);
+}
+
+@media screen and (max-width: 480px) {
+  div.overlay.event-detail-overlay .content h1 img {
+    width: 260px;
+  }
+
+  div.overlay.event-detail-overlay .container::after {
+    border-radius: 40px;
+    height: calc(80vh + 20px);
+  }
+
+  div.overlay.event-detail-overlay .content {
+    width: calc(90% - 20px);
+    overflow-x: hidden;
+  }
+
+  div.overlay.event-detail-overlay .stickers {
+    gap: 0.5rem;
+  }
+
+  div.overlay.event-detail-overlay .sticker-item {
+    gap: 1rem;
+  }
+
+  div.overlay.event-detail-overlay .sticker-item div.img-wrap {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  div.overlay.event-detail-overlay .sticker-item div.img-wrap {
+    width: 70px;
+    height: 70px;
+  }
+  div.overlay.event-detail-overlay .content section h2 img {
+    width: 200px;
+  }
 }
