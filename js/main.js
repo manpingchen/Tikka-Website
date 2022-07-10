@@ -94,7 +94,6 @@ function handleOpenMobileRevenueViewerPanel(tabId, activePanelId) {
   }
   setActiveStatus("revenue-viewer-tabs", tabId);
 
-
   document.getElementById(activePanelId).style.display = "block";
 
   if (tabId.includes("revenue")) {
@@ -121,65 +120,76 @@ function handleCloseRevenueOverlay() {
 /* 日週月榜單切換 */
 function switchCalendarRanking(activeElementId, rankingType) {
   setActiveStatus(`${rankingType}-calendar-btns`, activeElementId);
-  if (activeElementId.includes("day")) {
-    console.log(activeElementId, rankingType);
-    if (rankingType === "sender") {
-      new Glide("#sender-day-top-three-slides", slidesConfig).enable();
-      new Glide("#sender-week-top-three-slides", slidesConfig).disable();
-      new Glide("#sender-month-top-three-slides", slidesConfig).disable();
-    } else {
-      new Glide("#receiver-day-top-three-slides", slidesConfig).enable();
-      new Glide("#receiver-week-top-three-slides", slidesConfig).disable();
-      new Glide("#receiver-month-top-three-slides", slidesConfig).disable();
+
+  // Reset All Glide
+  [".sender.glide", ".receiver.glide", ".event.glide"].forEach((selector) => {
+    new Glide(selector, slidesConfig).disable();
+  });
+
+  if (!activeElementId.includes("event")) {
+    if (activeElementId.includes("day")) {
+      new Glide(`#${rankingType}-day-top-three-slides`, slidesConfig).enable();
+      [...document.querySelectorAll(".day")].map((node) => (node.style.display = "block"));
+      [...document.querySelectorAll(".month"), ...document.querySelectorAll(".week")].map(
+        (node) => (node.style.display = "none")
+      );
     }
-    [...document.querySelectorAll(".day")].map((node) => (node.style.display = "block"));
-    [...document.querySelectorAll(".month")].map((node) => (node.style.display = "none"));
-    [...document.querySelectorAll(".week")].map((node) => (node.style.display = "none"));
-  }
-  if (activeElementId.includes("week")) {
-    console.log(activeElementId, rankingType);
-    if (rankingType === "sender") {
-      new Glide("#sender-day-top-three-slides", slidesConfig).disable();
-      new Glide("#sender-week-top-three-slides", slidesConfig).enable();
-      new Glide("#sender-month-top-three-slides", slidesConfig).disable();
-    } else {
-      new Glide("#receiver-day-top-three-slides", slidesConfig).disable();
-      new Glide("#receiver-week-top-three-slides", slidesConfig).enable();
-      new Glide("#receiver-month-top-three-slides", slidesConfig).disable();
+
+    if (activeElementId.includes("week")) {
+      new Glide(`#${rankingType}-week-top-three-slides`, slidesConfig).enable();
+      [...document.querySelectorAll(".day"), ...document.querySelectorAll(".month")].map(
+        (node) => (node.style.display = "none")
+      );
+      [...document.querySelectorAll(".week")].map((node) => (node.style.display = "block"));
     }
-    [...document.querySelectorAll(".day")].map((node) => (node.style.display = "none"));
-    [...document.querySelectorAll(".week")].map((node) => (node.style.display = "block"));
-    [...document.querySelectorAll(".month")].map((node) => (node.style.display = "none"));
-  }
-  if (activeElementId.includes("month")) {
-    console.log(activeElementId, rankingType);
-    if (rankingType === "sender") {
-      new Glide("#sender-day-top-three-slides", slidesConfig).disable();
-      new Glide("#sender-week-top-three-slides", slidesConfig).disable();
-      new Glide("#sender-month-top-three-slides", slidesConfig).enable();
-    } else {
-      new Glide("#receiver-day-top-three-slides", slidesConfig).disable();
-      new Glide("#receiver-week-top-three-slides", slidesConfig).disable();
-      new Glide("#receiver-month-top-three-slides", slidesConfig).enable();
+
+    if (activeElementId.includes("month")) {
+      new Glide(`#${rankingType}-month-top-three-slides`, slidesConfig).enable();
+      [...document.querySelectorAll(".day"), ...document.querySelectorAll(".week")].map(
+        (node) => (node.style.display = "none")
+      );
+      [...document.querySelectorAll(".month")].map((node) => (node.style.display = "block"));
     }
-    [...document.querySelectorAll(".day")].map((node) => (node.style.display = "none"));
-    [...document.querySelectorAll(".week")].map((node) => (node.style.display = "none"));
-    [...document.querySelectorAll(".month")].map((node) => (node.style.display = "block"));
+  } else {
+    const eventId = activeElementId.split("-btn")[0];
+    const activeSlidesId = eventId + "-top-three-slides";
+
+    [...document.querySelectorAll(`.glide:not(.${eventId})`)].map((node) => {
+      node.style.display = "none";
+    });
+
+    [...document.querySelectorAll(`.recommend-items:not(.${eventId})`)].map((node) => {
+      node.style.display = "none";
+    });
+
+    new Glide(activeSlidesId, slidesConfig).enable();
+    [...document.querySelectorAll(`.event-ranking .${eventId}`)].map(
+      (node) => (node.style.display = "block")
+    );
   }
 }
 
 /* 榜單 收禮者與帶貨者 */
 function openReceiverRanking() {
   handleHideComponent("#sender-ranking");
+  handleHideComponent("#event-ranking");
   document.getElementById("receiver-ranking").style.display = "block";
-  setActiveStatus("receiver-sender-tabs", "receiver-tab");
+  setActiveStatus("ranking-tabs", "receiver-tab");
   switchCalendarRanking("receiver-day-btn", "receiver");
 }
 function openSenderRanking() {
   handleHideComponent("#receiver-ranking");
+  handleHideComponent("#event-ranking");
   document.getElementById("sender-ranking").style.display = "block";
-  setActiveStatus("receiver-sender-tabs", "sender-tab");
+  setActiveStatus("ranking-tabs", "sender-tab");
   switchCalendarRanking("sender-day-btn", "sender");
+}
+function openEventRanking() {
+  handleHideComponent("#receiver-ranking");
+  handleHideComponent("#sender-ranking");
+  document.getElementById("event-ranking").style.display = "block";
+  setActiveStatus("ranking-tabs", "event-tab");
+  switchCalendarRanking("event-1-btn", "event");
 }
 
 /* handle clear search value */
@@ -188,14 +198,13 @@ function handleClearSearchValue(event, el) {
   element.value = "";
 }
 
-
 /* 關閉元件 */
 function handleHideComponent(className) {
   document.querySelector(className).style.display = "none";
 }
 
 /* 開啟元件 */
-function handleShowComponent(className, displayValue = 'block') {
+function handleShowComponent(className, displayValue = "block") {
   document.querySelector(className).style.display = displayValue;
 }
 

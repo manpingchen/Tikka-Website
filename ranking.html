@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/header.css" />
@@ -70,15 +73,20 @@
     <main class="ranking">
       <h1><img src="images/title-ranking.svg" alt="排行榜" /></h1>
       <div class="sub-nav">
-        <ul class="flex-row" id="receiver-sender-tabs">
+        <ul class="flex-row" id="ranking-tabs">
           <li id="receiver-tab">
             <a href="javascript:void(0)" onclick="openReceiverRanking()"
-              ><img src="images/subtitle1.svg" alt="收禮榜"
+              ><img src="images/subtitle1.png" alt="收禮榜"
             /></a>
           </li>
           <li id="sender-tab">
             <a href="javascript:void(0)" onclick="openSenderRanking()"
-              ><img src="images/subtitle2.svg" alt="帶貨榜"
+              ><img src="images/subtitle2.png" alt="帶貨榜"
+            /></a>
+          </li>
+          <li id="event-tab">
+            <a href="javascript:void(0)" onclick="openEventRanking()"
+              ><img src="images/subtitle3.png" alt="活動榜"
             /></a>
           </li>
         </ul>
@@ -100,7 +108,7 @@
         </div>
 
         <section class="top-three">
-          <div class="glide day" id="receiver-day-top-three-slides">
+          <div class="glide receiver day" id="receiver-day-top-three-slides">
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__list glide__slides">
                 <li class="glide__slide">
@@ -306,7 +314,7 @@
               </div>
             </div>
           </div>
-          <div class="glide week" id="receiver-week-top-three-slides">
+          <div class="glide receiver week" id="receiver-week-top-three-slides">
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__list glide__slides">
                 <li class="glide__slide">
@@ -506,7 +514,7 @@
               </div>
             </div>
           </div>
-          <div class="glide month" id="receiver-month-top-three-slides">
+          <div class="glide receiver month" id="receiver-month-top-three-slides">
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__list glide__slides">
                 <li class="glide__slide">
@@ -1728,7 +1736,7 @@
         </div>
 
         <section class="top-three">
-          <div class="glide day" id="sender-day-top-three-slides">
+          <div class="glide sender day" id="sender-day-top-three-slides">
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__list glide__slides">
                 <li class="glide__slide">
@@ -1934,7 +1942,7 @@
               </div>
             </div>
           </div>
-          <div class="glide week" id="sender-week-top-three-slides">
+          <div class="glide sender week" id="sender-week-top-three-slides">
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__list glide__slides">
                 <li class="glide__slide">
@@ -2134,7 +2142,7 @@
               </div>
             </div>
           </div>
-          <div class="glide month" id="sender-month-top-three-slides">
+          <div class="glide sender month" id="sender-month-top-three-slides">
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__list glide__slides">
                 <li class="glide__slide">
@@ -3339,6 +3347,2183 @@
           </div>
         </div>
       </div>
+
+      <div class="event-ranking" id="event-ranking">
+        <div class="calendar-nav calendar-nav-text-only">
+          <ul class="flex-row" id="event-calendar-btns">
+            <li id="event-1-btn" onclick="switchCalendarRanking(this.id, 'event')">
+              <a href="javascript:void(0)" class="ranking-detail-tab"
+                ><img src="images/ranking-type-bg.svg" alt="" /><span>活動一名</span></a
+              >
+            </li>
+            <li id="event-2-btn" onclick="switchCalendarRanking(this.id, 'event')">
+              <a href="javascript:void(0)" class="ranking-detail-tab"
+                ><img src="images/ranking-type-bg.svg" alt="" /><span>活動二名</span></a
+              >
+            </li>
+            <li id="event-3-btn" onclick="switchCalendarRanking(this.id, 'event')">
+              <a href="javascript:void(0)" class="ranking-detail-tab"
+                ><img src="images/ranking-type-bg.svg" alt="" /><span>活動三名</span></a
+              >
+            </li>
+            <li id="event-4-btn" onclick="switchCalendarRanking(this.id, 'event')">
+              <a href="javascript:void(0)" class="ranking-detail-tab"
+                ><img src="images/ranking-type-bg.svg" alt="" /><span>活動四名</span></a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <section class="top-three">
+          <div class="glide event event-1" id="event-1-top-three-slides">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__list glide__slides">
+                <li class="glide__slide">
+                  <div class="wrapper">
+                    <div class="bg">
+                      <div class="trophy"><img src="images/no1.svg" /></div>
+                      <div class="img-wrap">
+                        <img
+                          src="https://files.tikka.tw/streamer/c97f3478115342cfb344f43ea844c9ec.png"
+                          alt="img1"
+                        />
+                      </div>
+                      <ul class="photos">
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="info">
+                        <p class="name">活動榜一主播姓名</p>
+                        <p class="value">$100,000</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="wrapper">
+                    <div class="bg">
+                      <div class="trophy"><img src="images/no2.svg" /></div>
+                      <div class="img-wrap">
+                        <img
+                          src="https://files.tikka.tw/streamer/c97f3478115342cfb344f43ea844c9ec.png"
+                          alt="img1"
+                        />
+                      </div>
+                      <ul class="photos">
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="info">
+                        <p class="name">活動榜一主播姓名</p>
+                        <p class="value">$100,000</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="wrapper">
+                    <div class="bg">
+                      <div class="trophy"><img src="images/no3.svg" /></div>
+                      <div class="img-wrap">
+                        <img
+                          src="https://files.tikka.tw/streamer/c97f3478115342cfb344f43ea844c9ec.png"
+                          alt="img1"
+                        />
+                      </div>
+                      <ul class="photos">
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="info">
+                        <p class="name">活動榜一主播姓名</p>
+                        <p class="value">$100,000</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="glide__arrow" data-glide-el="controls">
+                <button data-glide-dir="<" class="prev">
+                  <span class="material-icons">&#xE5CB;</span>
+                </button>
+                <button data-glide-dir=">" class="next">
+                  <span class="material-icons">&#xE5CC;</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="glide event event-2" id="event-2-top-three-slides">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__list glide__slides">
+                <li class="glide__slide">
+                  <div class="wrapper">
+                    <div class="bg">
+                      <div class="trophy"><img src="images/no1.svg" /></div>
+                      <div class="img-wrap">
+                        <img src="images/s3.jpg" alt="img1" />
+                      </div>
+                      <ul class="photos">
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="info">
+                        <p class="name">活動榜二主播姓名</p>
+                        <p class="value">$100,000</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="wrapper">
+                    <div class="bg">
+                      <div class="trophy"><img src="images/no2.svg" /></div>
+                      <div class="img-wrap">
+                        <img
+                          src="https://files.tikka.tw/streamer/c97f3478115342cfb344f43ea844c9ec.png"
+                          alt="img1"
+                        />
+                      </div>
+                      <ul class="photos">
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="info">
+                        <p class="name">活動榜二主播姓名</p>
+                        <p class="value">$100,000</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="wrapper">
+                    <div class="bg">
+                      <div class="trophy"><img src="images/no3.svg" /></div>
+                      <div class="img-wrap">
+                        <img src="images/s2.jpg" alt="img1" />
+                      </div>
+                      <ul class="photos">
+                        <li>
+                          <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="info">
+                        <p class="name">活動榜二主播姓名</p>
+                        <p class="value">$100,000</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="glide__arrow" data-glide-el="controls">
+                <button data-glide-dir="<" class="prev">
+                  <span class="material-icons">&#xE5CB;</span>
+                </button>
+                <button data-glide-dir=">" class="next">
+                  <span class="material-icons">&#xE5CC;</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="glide event event-3" id="event-3-top-three-slides">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__list glide__slides">
+                <li class="glide__slide">
+                  <div class="wrapper">
+                    <div class="bg">
+                      <div class="trophy"><img src="images/no1.svg" /></div>
+                      <div class="img-wrap">
+                        <img
+                          src="https://files.tikka.tw/streamer/c97f3478115342cfb344f43ea844c9ec.png"
+                          alt="img1"
+                        />
+                      </div>
+                      <ul class="photos">
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="info">
+                        <p class="name">活動榜三主播姓</p>
+                        <p class="value">$100,000</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="wrapper">
+                    <div class="bg">
+                      <div class="trophy"><img src="images/no2.svg" /></div>
+                      <div class="img-wrap">
+                        <img
+                          src="https://files.tikka.tw/streamer/c97f3478115342cfb344f43ea844c9ec.png"
+                          alt="img1"
+                        />
+                      </div>
+                      <ul class="photos">
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="info">
+                        <p class="name">活動榜三主播姓名</p>
+                        <p class="value">$100,000</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="wrapper">
+                    <div class="bg">
+                      <div class="trophy"><img src="images/no3.svg" /></div>
+                      <div class="img-wrap">
+                        <img
+                          src="https://files.tikka.tw/streamer/c97f3478115342cfb344f43ea844c9ec.png"
+                          alt="img1"
+                        />
+                      </div>
+                      <ul class="photos">
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="info">
+                        <p class="name">活動榜三主播姓名</p>
+                        <p class="value">$100,000</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="glide__arrow" data-glide-el="controls">
+                <button data-glide-dir="<" class="prev">
+                  <span class="material-icons">&#xE5CB;</span>
+                </button>
+                <button data-glide-dir=">" class="next">
+                  <span class="material-icons">&#xE5CC;</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="glide event event-4" id="event-4-top-three-slides">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__list glide__slides">
+                <li class="glide__slide">
+                  <div class="wrapper">
+                    <div class="bg">
+                      <div class="trophy"><img src="images/no1.svg" /></div>
+                      <div class="img-wrap">
+                        <img
+                          src="https://files.tikka.tw/streamer/c97f3478115342cfb344f43ea844c9ec.png"
+                          alt="img1"
+                        />
+                      </div>
+                      <ul class="photos">
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="info">
+                        <p class="name">活動榜四主播姓名</p>
+                        <p class="value">$100,000</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="wrapper">
+                    <div class="bg">
+                      <div class="trophy"><img src="images/no2.svg" /></div>
+                      <div class="img-wrap">
+                        <img
+                          src="https://files.tikka.tw/streamer/c97f3478115342cfb344f43ea844c9ec.png"
+                          alt="img1"
+                        />
+                      </div>
+                      <ul class="photos">
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="info">
+                        <p class="name">活動榜四主播姓名</p>
+                        <p class="value">$100,000</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="glide__slide">
+                  <div class="wrapper">
+                    <div class="bg">
+                      <div class="trophy"><img src="images/no3.svg" /></div>
+                      <div class="img-wrap">
+                        <img
+                          src="https://files.tikka.tw/streamer/c97f3478115342cfb344f43ea844c9ec.png"
+                          alt="img1"
+                        />
+                      </div>
+                      <ul class="photos">
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                          <div class="bg">
+                            <ul class="top-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                            <ul class="bottom-boxes white-boxes">
+                              <li></li>
+                              <li></li>
+                              <li></li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                      <div class="info">
+                        <p class="name">活動榜四主播姓名</p>
+                        <p class="value">$100,000</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="glide__arrow" data-glide-el="controls">
+                <button data-glide-dir="<" class="prev">
+                  <span class="material-icons">&#xE5CB;</span>
+                </button>
+                <button data-glide-dir=">" class="next">
+                  <span class="material-icons">&#xE5CC;</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="recommend-items event-1">
+          <div class="recommend-item">
+            <p class="number">4</p>
+            <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動綁主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">5</p>
+            <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動綁主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">6</p>
+            <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動綁主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">7</p>
+            <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動綁主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">8</p>
+            <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動綁主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">9</p>
+            <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動綁主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="recommend-items event-2" style="display: none">
+          <div class="recommend-item">
+            <p class="number">4</p>
+            <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動榜二主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">5</p>
+            <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動榜二主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">6</p>
+            <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動榜二主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">7</p>
+            <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動榜二主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">8</p>
+            <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動榜二主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">9</p>
+            <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動榜二主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="recommend-items event-3" style="display: none">
+          <div class="recommend-item">
+            <p class="number">4</p>
+            <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動三主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">5</p>
+            <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動三主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">6</p>
+            <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動三主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">7</p>
+            <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動三主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">8</p>
+            <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動三主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">9</p>
+            <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動三主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="recommend-items event-4" style="display: none">
+          <div class="recommend-item">
+            <p class="number">4</p>
+            <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動榜四主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">5</p>
+            <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動榜四主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">6</p>
+            <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動榜四主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">7</p>
+            <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動榜四主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">8</p>
+            <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動榜四主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="recommend-item">
+            <p class="number">9</p>
+            <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+            <div class="info">
+              <p class="name">活動榜四主播姓名</p>
+              <p class="value">$100,000</p>
+            </div>
+            <ul class="photos">
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s3.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrap"><img src="images/s2.jpg" alt="" /></div>
+                <div class="bg">
+                  <ul class="top-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <ul class="bottom-boxes white-boxes">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer class="desktop-only">
@@ -3401,6 +5586,10 @@
       new Glide("#sender-day-top-three-slides", slidesConfig).mount();
       new Glide("#sender-week-top-three-slides", slidesConfig).mount();
       new Glide("#sender-month-top-three-slides", slidesConfig).mount();
+      new Glide("#event-1-top-three-slides", slidesConfig).mount();
+      new Glide("#event-2-top-three-slides", slidesConfig).mount();
+      new Glide("#event-3-top-three-slides", slidesConfig).mount();
+      new Glide("#event-4-top-three-slides", slidesConfig).mount();
       /* 預設開啟收禮榜日榜 */
       openReceiverRanking();
     </script>

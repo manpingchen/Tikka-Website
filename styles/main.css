@@ -3121,6 +3121,10 @@ main.ranking div.calendar-nav ul {
   position: relative;
 }
 
+main.ranking div.calendar-nav-text-only ul {
+  width: 750px !important;
+}
+
 main.ranking div.calendar-nav ul::before {
   position: absolute;
   width: 120%;
@@ -3135,7 +3139,7 @@ main.ranking div.calendar-nav ul::before {
 
 main.ranking div.calendar-nav ul::after {
   position: absolute;
-  width: 100%;
+  width: 110%;
   height: 1px;
   top: calc(24% + 10px);
   content: "";
@@ -3149,9 +3153,13 @@ main.ranking div.sub-nav ul li a {
   display: block;
 }
 
+main.ranking div.sub-nav ul li a img {
+  width: 150px;
+}
+
 main.ranking div.calendar-nav ul li {
   display: flex;
-  width: 33.33%;
+  /* width: 33.33%; */
   z-index: 2;
 }
 
@@ -3172,6 +3180,18 @@ main.ranking div.calendar-nav ul li a {
   width: 100%;
 }
 
+main.ranking div.calendar-nav ul li a.ranking-detail-tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 28px 0;
+}
+
+main.ranking div.calendar-nav ul li a.ranking-detail-tab span {
+  width: 100px;
+  position: absolute;
+  color: #fff;
+}
 main.ranking div.calendar-nav ul li a:hover img {
   filter: contrast(1.8);
 }
@@ -6134,11 +6154,11 @@ p.event-time {
   color: #f566a1;
 }
 
-div.overlay.event-detail-overlay button.close{
+div.overlay.event-detail-overlay button.close {
   border-radius: 50%;
   background: #f29ec2;
   left: initial;
-    right: 20px;
+  right: 20px;
 }
 
 div.overlay.event-detail-overlay .content section div.detail-wrap::before {
