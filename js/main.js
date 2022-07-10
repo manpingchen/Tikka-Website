@@ -117,7 +117,7 @@ function handleCloseRevenueOverlay() {
   document.getElementById("revenue-tab").classList.remove("active");
 }
 
-/* 日週月榜單切換 */
+/* 榜單切換 */
 function switchCalendarRanking(activeElementId, rankingType) {
   setActiveStatus(`${rankingType}-calendar-btns`, activeElementId);
 
@@ -173,21 +173,21 @@ function switchCalendarRanking(activeElementId, rankingType) {
 function openReceiverRanking() {
   handleHideComponent("#sender-ranking");
   handleHideComponent("#event-ranking");
-  document.getElementById("receiver-ranking").style.display = "block";
+  handleShowComponent("#receiver-ranking");
   setActiveStatus("ranking-tabs", "receiver-tab");
   switchCalendarRanking("receiver-day-btn", "receiver");
 }
 function openSenderRanking() {
   handleHideComponent("#receiver-ranking");
   handleHideComponent("#event-ranking");
-  document.getElementById("sender-ranking").style.display = "block";
+  handleShowComponent("#sender-ranking");
   setActiveStatus("ranking-tabs", "sender-tab");
   switchCalendarRanking("sender-day-btn", "sender");
 }
 function openEventRanking() {
   handleHideComponent("#receiver-ranking");
   handleHideComponent("#sender-ranking");
-  document.getElementById("event-ranking").style.display = "block";
+  handleShowComponent("#event-ranking");
   setActiveStatus("ranking-tabs", "event-tab");
   switchCalendarRanking("event-1-btn", "event");
 }
@@ -263,8 +263,8 @@ function showRewardDetail(id = "gift-all", parentId = "gift-details") {
 /*點擊購買按鈕變色 及 (＊＊＊供示意：顯示 捧花不足遮罩 、 隱藏 送出之禮物）*/
 function handleBuy(id) {
   document.getElementById(id).classList.add("active");
-  document.getElementById("top-up-overlay").style.display = "block";
-  document.getElementById("gift-sent").style.display = "none";
-  document.getElementById("gift-full-overlay").style.display = "none";
-  document.querySelector(".rewards.overlay").style.display = "none";
+  handleHideComponent("#gift-sent");
+  handleHideComponent("#gift-full-overlay");
+  handleHideComponent(".rewards.overlay");
+  handleShowComponent("#top-up-overlay");
 }
