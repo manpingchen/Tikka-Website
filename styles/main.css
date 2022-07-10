@@ -6134,6 +6134,13 @@ p.event-time {
   color: #f566a1;
 }
 
+div.overlay.event-detail-overlay button.close{
+  border-radius: 50%;
+  background: #f29ec2;
+  left: initial;
+    right: 20px;
+}
+
 div.overlay.event-detail-overlay .content section div.detail-wrap::before {
   width: 10px;
   height: 10px;
