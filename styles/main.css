@@ -3154,7 +3154,8 @@ main.ranking div.sub-nav ul li a {
 }
 
 main.ranking div.sub-nav ul li a img {
-  width: 150px;
+  max-width: 150px;
+  width: 100%;
 }
 
 main.ranking div.calendar-nav ul li {
@@ -3317,6 +3318,7 @@ main.ranking .value {
 @media screen and (max-width: 768px) {
   main.ranking {
     width: 100%;
+    overflow: hidden;
     margin: 0;
   }
   main.ranking section.top-three .glide__arrow {
@@ -3328,14 +3330,23 @@ main.ranking .value {
   }
   main.ranking div.sub-nav ul {
     width: 420px;
-    gap: 20px;
+    gap: 10px;
   }
   main.ranking div.calendar-nav ul {
-    gap: 0px;
-    width: 420px;
+    gap: 10px;
+    width: 450px !important;
+  }
+
+  main.ranking div.calendar-nav ul#event-calendar-btns {
+    gap: 10px;
+    width: 90% !important;
   }
   main.ranking div.sub-nav ul li a {
     width: 100px;
+  }
+
+  main.ranking div.calendar-nav ul li a.ranking-detail-tab {
+    padding: 31px 0;
   }
   main.ranking div.calendar-nav ul li a img {
     width: 120%;
@@ -3346,10 +3357,28 @@ main.ranking .value {
 @media screen and (max-width: 500px) {
   main.ranking div.sub-nav ul,
   main.ranking div.calendar-nav ul {
-    width: 300px;
+    width: 300px !important;
   }
   main.ranking div.calendar-nav ul::before {
     top: calc(17% + 20px);
+  }
+  main.ranking div.calendar-nav ul li a.ranking-detail-tab {
+    padding: 24px 0;
+  }
+
+  main.ranking div.sub-nav ul {
+    gap: 5px;
+  }
+
+  main.ranking div.sub-nav ul li a{
+    width: 100%;
+  }
+
+  main.ranking div.calendar-nav ul li a.ranking-detail-tab span {
+    font-size: 0.7rem;
+  }
+  main.ranking div.sub-nav{
+    margin-bottom: 1rem;
   }
 }
 
