@@ -229,24 +229,65 @@
         </div>
       </section>
       <section class="live-frame">
-        <div class="profile mobile-only flex-row">
-          <div class="avatar-wrapper">
-            <img src="images/s1.jpg" class="avatar" alt="name" />
+        <div class="frame-top-bar mobile-only flex-row">
+          <div class="profile mobile-only">
+            <div class="avatar-wrapper">
+              <img src="images/s1.jpg" class="avatar" alt="name" />
+            </div>
+            <span class="name">
+              <span class="marquee-wall"><span>小愛</span></span>
+            </span>
+            <div class="btns flex-row">
+              <button type="button" class="follow-btn" onclick="handleFollowIcon()">
+                <img src="images/heart-pink.svg" id="follow-icon" alt="heart icon" />
+              </button>
+              <button type="button" class="profile-btn">
+                <img src="images/house-pink.svg" alt="house icon" />
+              </button>
+            </div>
           </div>
-          <span class="name">小愛</span>
-          <div class="btns flex-row">
-            <button type="button" class="follow-btn" onclick="handleFollowIcon()">
-              <img src="images/heart-pink.svg" id="follow-icon" alt="heart icon" />
-            </button>
-            <button type="button" class="profile-btn">
-              <img src="images/house-pink.svg" alt="house icon" />
-            </button>
+          <ul class="revenue-list" onclick="handleShowComponent('#revenue-overlay-mobile')">
+            <li class="">
+              <div class="badge"><img src="images/r1.svg" /></div>
+              <div class="img-wrap">
+                <img src="images/s2.jpg" alt="" />
+              </div>
+              <div class="value">99K</div>
+            </li>
+            <li class="">
+              <div class="badge"><img src="images/r2.svg" /></div>
+              <div class="img-wrap">
+                <img src="images/s2.jpg" alt="" />
+              </div>
+              <div class="value">99K</div>
+            </li>
+            <li class="">
+              <div class="badge"><img src="images/r3.svg" /></div>
+              <div class="img-wrap">
+                <img src="images/s2.jpg" alt="" />
+              </div>
+              <div class="value">99K</div>
+            </li>
+            <li class="">
+              <div class="img-wrap">
+                <img src="images/s2.jpg" alt="" />
+              </div>
+              <div class="value">99K</div>
+            </li>
+          </ul>
+          <div
+            class="viewer-tab flex-column"
+            id="viewer-tab"
+            onclick="handleOpenMobileRevenueViewerPanel(this.id, 'viewer-overlay-mobile')"
+          >
+            <span class="value">999</span>
+            <span class="icon pink-gradient-bg"><img src="images/eye.svg" alt="" /></span>
           </div>
         </div>
         <div class="frame-top-bar flex-row">
           <div class="flex-row" id="revenue-viewer-tabs">
             <div
-              class="revenue-tab flex-row"
+              class="revenue-tab flex-row desktop-only"
               id="revenue-tab"
               onclick="handleOpenMobileRevenueViewerPanel(this.id, 'revenue-overlay-mobile')"
             >
@@ -254,7 +295,7 @@
               <span class="value">999,999,999</span>
             </div>
             <div
-              class="viewer-tab flex-row"
+              class="viewer-tab flex-row desktop-only"
               id="viewer-tab"
               onclick="handleOpenMobileRevenueViewerPanel(this.id, 'viewer-overlay-mobile')"
             >
@@ -352,31 +393,42 @@
               <span class="chat-content">聊天文字內容</span>
             </div>
           </div>
-          <div class="chat-field flex-row">
-            <div class="flex-row">
-              <img class="chat-icon" src="images/dialog.svg" alt="" />
-              <input type="text" placeholder="跟主播聊聊..." id="new-chat-input-mobile" />
+          <div class="flex-row chat-controls">
+            <div class="chat-field flex-row">
+              <div class="flex-row">
+                <!-- <img class="chat-icon" src="images/dialog.svg" alt="" /> -->
+                <input type="text" placeholder="跟主播聊聊..." id="new-chat-input-mobile" />
+              </div>
+              <div class="flex-row">
+                <button
+                  type="button"
+                  class="face-btn"
+                  onclick="handleShowComponent('.sticker-overlay')"
+                >
+                  <img src="images/face.svg" />
+                </button>
+                <button type="button" onclick="handleAddTextToChat('mobile')">
+                  <img src="images/fat-arrow.svg" alt="送出" />
+                </button>
+              </div>
             </div>
-            <button type="button" onclick="handleAddTextToChat('mobile')">
-              <img src="images/fat-arrow.svg" alt="送出" />
-            </button>
-          </div>
-          <div class="btns">
-            <button class="icon pink" onclick="handleShowMobileRewardWall()">
-              <img src="images/gift.svg" />
-            </button>
-            <button class="icon pink" onclick="handleShowComponent('#coming-soon')">
-              <img src="images/mission.svg" />
-            </button>
-            <button class="icon">
-              <img src="images/social.svg" alt="" />
-            </button>
-            <button class="icon">
-              <img src="images/trophy.svg" alt="" />
-            </button>
-            <button class="icon">
-              <img src="images/reload.svg" alt="" />
-            </button>
+            <div class="btns">
+              <button class="icon pink" onclick="handleShowMobileRewardWall()">
+                <img src="images/gift.svg" />
+              </button>
+              <button class="icon pink" onclick="handleShowComponent('#coming-soon')">
+                <img src="images/mission.svg" />
+              </button>
+              <button class="icon">
+                <img src="images/social.svg" alt="" />
+              </button>
+              <button class="icon">
+                <img src="images/trophy.svg" alt="" />
+              </button>
+              <button class="icon">
+                <img src="images/reload.svg" alt="" />
+              </button>
+            </div>
           </div>
         </div>
         <div class="iframe">
@@ -659,6 +711,16 @@
           <iframe id="giftAdmin" src="" scrolling="no" frameborder="0"></iframe>
         </div>
       </section>
+
+      <!-- 手機版貼圖遮罩 -->
+      <div class="overlay sticker-overlay" id="sticker-overlay-mobile" style="display: block">
+        <div class="title flex-row">
+          <button class="close" onclick="handleHideComponent('.sticker-overlay')">
+            <img src="images/close-icon.svg" alt="close" />
+          </button>
+        </div>
+        <div class="content"></div>
+      </div>
 
       <!-- //////  網頁版 右邊欄位 //////  -->
       <section class="right-column desktop-only">

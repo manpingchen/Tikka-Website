@@ -2383,9 +2383,30 @@ main.live-on .mobile-only {
   left: 10px;
 }
 
+main.live-on div.frame-top-bar.mobile-only {
+  left: 2%;
+  width: 96%;
+  top: 20px;
+  gap: 0;
+  justify-content: flex-start;
+}
+
+main.live-on div.profile.mobile-only {
+  gap: 0;
+  justify-content: flex-start;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+main.live-on div.profile.mobile-only .name .marquee-wall {
+  top: 5px;
+  width: auto !important;
+}
+
 main.live-on div.profile.mobile-only div.avatar-wrapper {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   z-index: 4;
 }
 
@@ -2396,22 +2417,26 @@ main.live-on div.profile.mobile-only span.name {
   text-shadow: 0 2px 2px #2a2a2a55;
   margin-left: -20px;
   position: relative;
-  font-size: 1rem;
-  padding: 0.5rem 100px 0.5rem 30px;
-  height: initial;
+  font-size: 0.8rem;
+  padding: 0 60px 0 22px;
+  height: 30px;
+  width: 120px;
+  margin-top: 4px;
+  line-height: 30px;
 }
 
 main.live-on div.profile.mobile-only div.btns {
-  margin-left: -65px;
+  margin-left: -55px;
   z-index: 4;
-  gap: 4px;
+  margin-top: -4px;
+  gap: 2px;
 }
 
 main.live-on div.profile.mobile-only div.btns button {
-  padding: 5px;
+  padding: 3px;
   background: #fff;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2422,6 +2447,51 @@ main.live-on div.profile.mobile-only div.btns button {
 main.live-on div.profile.mobile-only div.btns button img {
   display: block;
   width: 70%;
+}
+
+main.live-on div.frame-top-bar.mobile-only .viewer-tab {
+  position: relative;
+  width: 40px;
+  margin-left: 10px;
+}
+
+main.live-on div.frame-top-bar.mobile-only .viewer-tab .value {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 50%;
+  background: #ffb4d3;
+  margin-top: -16px;
+  line-height: 36px;
+  text-align: center;
+  color: #d6236c;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+main.live-on div.frame-top-bar.mobile-only .viewer-tab span.icon {
+  position: absolute;
+  color: #d6236c;
+  width: 90%;
+  bottom: -12px;
+  left: 5%;
+  padding: 2px 5px;
+  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
+  border-radius: 40px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  box-shadow: 0 2px 2px #2a2a2a55;
+  height: initial !important;
+  border: none;
+}
+
+main.live-on div.frame-top-bar.mobile-only .viewer-tab span.icon img {
+  width: 17px;
+  margin: 2px auto;
 }
 
 main.live-on div.frame-bottom-bar.mobile-only {
@@ -2446,7 +2516,7 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-field {
   backdrop-filter: blur(4px);
 }
 main.live-on div.frame-bottom-bar.mobile-only div.chat-field > .flex-row {
-  gap: 10px;
+  gap: 5px;
 }
 main.live-on div.frame-bottom-bar.mobile-only div.chat-field input {
   color: #fff;
@@ -2542,6 +2612,16 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-body div.chat-item {
 }
 
 @media screen and (max-width: 560px) {
+  main.live-on {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+    height: 100vh !important;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    max-height: none;
+  }
   main.live-on section.live-frame {
     width: 400px;
     padding-top: 170%;
@@ -2557,63 +2637,89 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-body div.chat-item {
     bottom: 10px;
   }
   main.live-on div.frame-bottom-bar.mobile-only div.chat-field {
+    width: calc(100% - 170px);
+  }
+
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-field input {
     width: 100%;
   }
 
-  main.live-on div.frame-bottom-bar.mobile-only div.chat-field input {
-    width: 250px;
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-field button {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
   }
+
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-field button img {
+    width: 1rem;
+    height: auto;
+  }
+
   main.live-on div.frame-bottom-bar.mobile-only div.chat-body {
     height: 140px;
-    bottom: 110px;
+    bottom: 50px;
+    left: 0;
+    width: 75%;
   }
-}
-
-@media screen and (max-width: 480px) {
-  main.live-on {
-    padding-top: 0;
-    margin-bottom: 0px;
+  main.live-on div.frame-bottom-bar button.icon {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-
-  main.live-on section.live-frame {
-    width: 370px;
-    padding-top: 180%;
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-controls {
+    gap: 1rem;
   }
-  main.live-on div.frame-bottom-bar.mobile-only div.chat-field input {
-    width: 200px;
+  main.live-on div.frame-bottom-bar .btns {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    width: 170px;
   }
-}
-
-@media screen and (max-width: 320px) {
-  main.live-on {
-    padding-top: 0;
-    margin-bottom: 0px;
-  }
-
-  main.live-on section.live-frame {
-    width: 320px;
-    padding-top: 200%;
-  }
-  main.live-on div.frame-bottom-bar.mobile-only div.chat-field input {
-    width: 150px;
-  }
-  main.live-on div.profile.mobile-only {
-    flex-direction: column;
-    align-items: baseline;
-    gap: 5px;
-  }
-
-  main.live-on div.profile.mobile-only span.name {
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    margin-left: 0;
-  }
-  main.live-on div.profile.mobile-only div.btns {
-    margin-left: 0;
+  main.live-on div.frame-bottom-bar button img {
+    width: 20px;
+    height: 20px;
   }
 
   main.live-on div.frame-bottom-bar.mobile-only div.chat-body div.chat-item {
     padding: 5px 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main.live-on section.live-frame {
+    width: 100%;
+    padding-top: 0%;
+    border-radius: 0;
+  }
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-field button {
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  main.live-on div.profile.mobile-only {
+    /* flex-wrap: wrap; */
+  }
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-field > .flex-row {
+    gap: 0;
+  }
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-field {
+    width: 100%;
+  }
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-body {
+    bottom: 90px;
+  }
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+  main.live-on div.frame-bottom-bar .btns {
+    justify-content: flex-start;
+    width: 100%;
+    gap: 10px;
   }
 }
 
@@ -3370,14 +3476,14 @@ main.ranking .value {
     gap: 5px;
   }
 
-  main.ranking div.sub-nav ul li a{
+  main.ranking div.sub-nav ul li a {
     width: 100%;
   }
 
   main.ranking div.calendar-nav ul li a.ranking-detail-tab span {
     font-size: 0.7rem;
   }
-  main.ranking div.sub-nav{
+  main.ranking div.sub-nav {
     margin-bottom: 1rem;
   }
 }
@@ -4153,7 +4259,7 @@ div.gift-sent-overlay marquee {
   text-shadow: 0 2px 4px #ff5fa2a7;
 }
 
-div.marquee-wall {
+.marquee-wall {
   width: 120px;
   overflow: hidden;
   display: flex;
@@ -4391,6 +4497,49 @@ main.live-on ul.viewer-list {
   grid-template-columns: repeat(6, 1fr);
   width: 100%;
   gap: 1rem;
+}
+
+main.live-on div.mobile-only.frame-top-bar ul.revenue-list {
+  grid-template-columns: repeat(4, 1fr);
+  margin-left: 10px;
+  gap: 0;
+  width: 160px;
+}
+
+main.live-on div.mobile-only.frame-top-bar ul.revenue-list > li div.img-wrap {
+  width: 36px;
+  height: 36px;
+  top: -5px;
+  border-width: 1px;
+}
+
+main.live-on div.mobile-only.frame-top-bar ul.revenue-list > li .badge {
+  left: -2px;
+  width: 20px;
+  height: 20px;
+  top: -10px;
+}
+
+main.live-on div.mobile-only.frame-top-bar ul.revenue-list > li .badge img {
+  width: 20px;
+  height: 20px;
+}
+
+main.live-on div.mobile-only.frame-top-bar ul.revenue-list .value {
+  position: absolute;
+  color: #d6236c;
+  width: 90%;
+  bottom: 0px;
+  left: 5%;
+  font-size: 0.7rem;
+  padding: 2px 5px;
+  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
+  border-radius: 40px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  box-shadow: 0 2px 2px #2a2a2a55;
 }
 
 @media screen and (max-width: 700px) {
@@ -6023,7 +6172,7 @@ div.overlay.event-detail-overlay .backdrop {
   width: 100%;
   height: 100vh;
   top: 0;
-  background: #00000044;
+  background: #000000cc;
 }
 
 div.overlay.event-detail-overlay .container {
@@ -6046,6 +6195,10 @@ div.overlay.event-detail-overlay .content {
   padding: 1rem 3rem 3rem;
   overflow-y: scroll;
   height: 80vh;
+}
+
+div.overlay.event-detail-overlay .content img{
+  width: 100% !important;
 }
 
 div.overlay.event-detail-overlay .container::after {
