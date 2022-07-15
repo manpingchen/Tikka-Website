@@ -18,8 +18,10 @@ function handleCloseStickerPanel() {
 
 /* 直播畫面 確保聊天視窗滾輪對齊最下方 */
 function locateScrollbar() {
-  const chatBody = document.querySelector(".chat-body");
-  chatBody.scrollTop = chatBody.scrollHeight - chatBody.clientHeight;
+  const allChatBody = document.querySelectorAll(".chat-body");
+  [...allChatBody].forEach(node => {
+    node.scrollTop = node.scrollHeight - node.clientHeight;
+  })
 }
 
 /* 直播畫面 禮物牆標題切換 */
