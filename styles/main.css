@@ -1814,7 +1814,7 @@ main.live-on div.sticker-overlay ul.stickers-detail-tabs li a {
   text-decoration: none;
 }
 
-main.live-on div.sticker-overlay ul.stickers-detail-tabs li.active a{
+main.live-on div.sticker-overlay ul.stickers-detail-tabs li.active a {
   text-shadow: 0 0 7px #c40761;
 }
 
@@ -3531,8 +3531,8 @@ main.ranking section.top-three ul.glide__list > li.glide__slide--active {
 }
 
 main.ranking .value {
-  background: url("../images/coin.png") no-repeat -10px center;
-  background-size: 40px;
+  background: url(../images/money.png) no-repeat 2px center;
+  background-size: 17px;
   padding-left: 20px;
 }
 
@@ -4972,20 +4972,43 @@ section.product-slides {
   height: 110%;
 }
 
+.next-list-wrap {
+  width: 100%;
+  overflow-x: auto;
+  position: absolute;
+  height: 150px;
+  top: 416px;
+}
+
+@media screen and (max-width: 768px) {
+  .next-list-wrap {
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+    height: 150px;
+    top: 20px;
+  }
+}
+
+.next-list-wrap::-webkit-scrollbar {
+  height: 5px;
+}
+
 .next-list {
   list-style-type: none;
+  top: 0;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: auto;
   height: 130px;
   position: absolute;
-  bottom: -140px;
+  /* bottom: -140px; */
   left: 0;
   padding: 4px;
   display: flex;
   align-items: center;
   flex-direction: row;
-  gap: 24px;
+  gap: 1rem;
   overflow: hidden;
   transition: all 0.5s;
 }
@@ -5221,13 +5244,13 @@ main.product-detail .senders button.follow-btn:hover {
   .next-list {
     height: auto;
     gap: 10px;
-    bottom: -35%;
+    /* bottom: -35%; */
   }
 
   .next-list li.img-wrap {
-    width: 100%;
+    /* width: 100%;
     height: 0;
-    padding-top: 30%;
+    padding-top: 30%;*/
     position: relative;
   }
 
@@ -5270,6 +5293,10 @@ main.product-detail .senders button.follow-btn:hover {
 
   div.product-summary div.summary p {
     font-size: 1rem;
+  }
+
+  section.product-slides {
+    margin-bottom: 120px;
   }
 }
 
