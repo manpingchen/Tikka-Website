@@ -275,7 +275,6 @@ function stopGlidesOnMobile(slideElement, selector) {
   if (window.innerWidth >= 769) {
     return;
   }
-  console.log("stopGlidesOnMobile");
   slideElement.destroy();
 }
 
