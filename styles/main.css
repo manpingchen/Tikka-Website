@@ -693,11 +693,12 @@ main.index div#ranking-slides li.glide__slide div.img-wrap {
   padding-top: 100%;
   width: 100%;
   overflow: hidden;
-  border-radius: 15px;
-  /* border: 8px solid #ffddec; */
+  border-radius: 20px;
+  border: 8px solid #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.4s;
 }
 
 main.index div#ranking-slides li.glide__slide div.img-wrap > img {
@@ -706,7 +707,7 @@ main.index div#ranking-slides li.glide__slide div.img-wrap > img {
   top: 0;
   height: 130%;
   max-height: 130%;
-  border-radius: 20px;
+  transition: 0.4s;
 }
 
 span.name {

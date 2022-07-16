@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/header.css" />
@@ -68,26 +71,36 @@
 
     <!--Main-->
     <main class="index">
-      <section class="glide single-slides" id="main-slides" aria-label="glide Basic HTML Example">
+      <section
+        class="glide single-slides slider"
+        id="main-slides"
+        aria-label="glide Basic HTML Example"
+      >
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__list glide__slides">
             <li class="glide__slide">
-              <img
-                src="https://files.tikka.tw/banner/13d41c03b2774cc68f50d68f6191d1e0.png"
-                alt="img1"
-              />
+              <a href="https://www.tikka.tw/activity/data/5">
+                <img
+                  src="https://files.tikka.tw/banner/623e96f0ea9a4a1496366bc7de035daf.png"
+                  alt="img1"
+                />
+              </a>
             </li>
             <li class="glide__slide">
-              <img
-                src="https://files.tikka.tw/banner/13d41c03b2774cc68f50d68f6191d1e0.png"
-                alt="img1"
-              />
+              <a href="https://www.tikka.tw/activity/data/5">
+                <img
+                  src="https://files.tikka.tw/banner/24dcd1cacfde442d8e0cccc157a8bcde.png"
+                  alt="img1"
+                />
+              </a>
             </li>
             <li class="glide__slide">
-              <img
-                src="https://files.tikka.tw/banner/13d41c03b2774cc68f50d68f6191d1e0.png"
-                alt="img1"
-              />
+              <a href="https://www.tikka.tw/activity/data/5">
+                <img
+                  src="https://files.tikka.tw/banner/623e96f0ea9a4a1496366bc7de035daf.png"
+                  alt="img1"
+                />
+              </a>
             </li>
           </ul>
           <div class="glide__bullets" data-glide-el="controls[nav]">
@@ -103,7 +116,7 @@
           <div class="ranking-slides-title">
             <img src="images/popular-ranking-title.svg" alt="熱門直播標題" />
           </div>
-          <div class="glide" id="ranking-slides" aria-label="glide Basic HTML Example">
+          <div class="glide desktop-only" id="ranking-slides" aria-label="glide Basic HTML Example">
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__list glide__slides">
                 <li class="glide__slide">
@@ -215,7 +228,7 @@
           <img src="images/live.svg" alt="熱門直播標題" />
           <a href="#"><img src="images/more.svg" alt="看更多" /></a>
         </div>
-        <div class="live-list glide" id="live-slides">
+        <div class="live-list glide desktop-only" id="live-slides">
           <div class="glide__track" data-glide-el="track">
             <ul class="glide__list glide__slides">
               <li class="glide__slide">
@@ -305,13 +318,28 @@
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__list glide__slides">
             <li class="glide__slide">
-              <img src="images/s4.jpg" alt="img1" />
+              <a href="https://www.tikka.tw/activity/data/5">
+                <img
+                  src="https://files.tikka.tw/banner/623e96f0ea9a4a1496366bc7de035daf.png"
+                  alt="img1"
+                />
+              </a>
             </li>
             <li class="glide__slide">
-              <img src="images/s5.jpg" alt="img1" />
+              <a href="https://www.tikka.tw/activity/data/5">
+                <img
+                  src="https://files.tikka.tw/banner/623e96f0ea9a4a1496366bc7de035daf.png"
+                  alt="img1"
+                />
+              </a>
             </li>
             <li class="glide__slide">
-              <img src="images/s6.jpg" alt="img1" />
+              <a href="https://www.tikka.tw/activity/data/5">
+                <img
+                  src="https://files.tikka.tw/banner/623e96f0ea9a4a1496366bc7de035daf.png"
+                  alt="img1"
+                />
+              </a>
             </li>
           </ul>
           <div class="glide__bullets" data-glide-el="controls[nav]">
@@ -327,7 +355,7 @@
           <img src="images/products.svg" alt="熱銷商品標題" />
           <a href="#"><img src="images/more-2.svg" alt="看更多" /></a>
         </div>
-        <div class="glide" id="products-slides" aria-label="glide Basic HTML Example">
+        <div class="glide desktop-only" id="products-slides" aria-label="glide Basic HTML Example">
           <div class="glide__track" data-glide-el="track">
             <ul class="glide__list glide__slides">
               <li class="glide__slide">
@@ -429,10 +457,11 @@
         </p>
       </div>
     </footer>
+    <script src="js/main.js"></script>
     <script>
       new Glide("#main-slides", { type: "carousel" }).mount();
       new Glide("#product-slides", { type: "carousel" }).mount();
-      new Glide("#live-slides", {
+      const liveSlides = new Glide("#live-slides", {
         type: "carousel",
         perView: 5,
         autoplay: 8000,
@@ -444,44 +473,28 @@
           900: {
             perView: 3,
           },
-          768: {
-            perView: 2,
-            gap: 20,
-            peek: { before: 20, after: 80 },
-          },
-          480: {
-            perView: 2,
-            gap: 20,
-            peek: { before: 20, after: 80 },
-          },
         },
-      }).mount();
-      new Glide("#products-slides", {
-        type: "carousel",
-        perView: 5,
-        autoplay: 8000,
-        animationDuration: 800,
-        breakpoints: {
-          1024: {
-            perView: 4,
-          },
-          900: {
-            perView: 3,
-          },
-          768: {
-            perView: 2,
-            gap: 10,
-            peek:  { before: 10, after: 84 },
-          },
-          480: {
-            perView: 2,
-            gap: 10,
-            peek: { before: 10, after: 84 },
-          },
-        },
-      }).mount();
+      });
+      liveSlides.mount();
 
-      new Glide("#ranking-slides", {
+      const productsSlides = new Glide("#products-slides", {
+        type: "carousel",
+        perView: 5,
+        autoplay: 8000,
+        animationDuration: 800,
+        dragThreshold: 10,
+        breakpoints: {
+          1024: {
+            perView: 4,
+          },
+          900: {
+            perView: 3,
+          },
+        },
+      });
+      productsSlides.mount();
+
+      const rankingSlides = new Glide("#ranking-slides", {
         type: "carousel",
         perView: 3,
         autoplay: 8000,
@@ -490,13 +503,29 @@
           1024: {
             perView: 2,
           },
-          768: {
-            perView: 1,
-            gap: 50,
-            peek: { before: 50, after: 150 },
-          },
         },
-      }).mount();
+      });
+      rankingSlides.mount();
+
+      stopGlidesOnMobile(productsSlides);
+      stopGlidesOnMobile(rankingSlides);
+      stopGlidesOnMobile(liveSlides);
+
+      window.addEventListener("resize", function () {
+        stopGlidesOnMobile(productsSlides);
+        stopGlidesOnMobile(rankingSlides);
+        stopGlidesOnMobile(liveSlides);
+      });
+
+      document.addEventListener("DOMContentLoaded", function (e) {
+        [
+          "#ranking-slides ul.glide__list",
+          "#live-slides ul.glide__list",
+          "#products-slides ul.glide__list",
+        ].forEach((selector) => {
+          makeEleGraggable(selector);
+        });
+      });
     </script>
     <script src="js/header.js"></script>
   </body>

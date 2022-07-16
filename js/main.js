@@ -19,9 +19,9 @@ function handleCloseStickerPanel() {
 /* 直播畫面 確保聊天視窗滾輪對齊最下方 */
 function locateScrollbar() {
   const allChatBody = document.querySelectorAll(".chat-body");
-  [...allChatBody].forEach(node => {
+  [...allChatBody].forEach((node) => {
     node.scrollTop = node.scrollHeight - node.clientHeight;
-  })
+  });
 }
 
 /* 直播畫面 禮物牆標題切換 */
@@ -269,4 +269,43 @@ function handleBuy(id) {
   handleHideComponent("#gift-full-overlay");
   handleHideComponent(".rewards.overlay");
   handleShowComponent("#top-up-overlay");
+}
+
+function stopGlidesOnMobile(slideElement, selector) {
+  if (window.innerWidth >= 769) {
+    return;
+  }
+  console.log("stopGlidesOnMobile");
+  slideElement.destroy();
+}
+
+function makeEleGraggable(selector) {
+  const slider = document.querySelector(selector);
+  slider.style.touchAction = "initial";
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener("mousedown", (e) => {
+    isDown = true;
+    slider.classList.add("active");
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener("mouseleave", () => {
+    isDown = false;
+    slider.classList.remove("active");
+  });
+  slider.addEventListener("mouseup", () => {
+    isDown = false;
+    slider.classList.remove("active");
+  });
+  slider.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 3; //scroll-fast
+    slider.scrollLeft = scrollLeft - walk;
+    console.log(walk);
+  });
 }

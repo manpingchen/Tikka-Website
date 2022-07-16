@@ -12,6 +12,10 @@
   padding-top: 6.25%; /*Img Ratio*/
 }
 
+.single-slides ul.glide__list li a:hover img {
+  filter: none;
+}
+
 .single-slides ul.glide__list li img {
   position: absolute;
   top: 0;
@@ -169,6 +173,47 @@ button.glide__bullet--active {
   }
   #ranking-slides .glide__arrow--prev {
     left: 0;
+  }
+  .glide.desktop-only .glide__arrow {
+    display: none;
+  }
+
+  .glide.desktop-only li.glide__slide {
+    width: 180px;
+    height: 180px;
+  }
+  .glide.desktop-only ul.glide__slides {
+    overflow-x: auto;
+    gap: 10px;
+    padding-left: 10%;
+  }
+
+  .glide.desktop-only {
+    cursor: grab;
+    overflow: auto;
+    width: 100vw !important;
+    margin: 0 -12% !important;
+  }
+
+  .glide.desktop-only ul.glide__slides::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+  }
+
+  main.index div#ranking-slides li.glide__slide{
+    max-width: none !important;
+    width: 200px;
+    height: 220px;
+    padding-left: 1rem;
+  }
+
+  main.index div#ranking-slides li.glide__slide div.number {
+    bottom:  0 !important;
+    left: 0 !important;
+  }
+
+  main.index div#ranking-slides li.glide__slide div.number span{
+    font-size: 80px;
   }
 }
 
