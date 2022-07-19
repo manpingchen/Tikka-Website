@@ -140,13 +140,15 @@
         <div class="summary flex-column">
           <h3>Moiskin基礎保養套組</h3>
           <p class="cost">新台幣：NT. 1,999</p>
-          <p class="point">點數：999</p>
+          <p class="point">捧花：9999</p>
           <p class="stock">僅剩庫存：3</p>
           <a class="add-btn button-like" href="purchase.html">立即搶購</a>
         </div>
       </div>
 
       <div id="product-intro">
+        <h2>商品介紹</h2>
+        <div class="content">介紹文案</div>
         <div class="main-visuals">
           <img src="images/product4.png" alt="" />
         </div>
@@ -323,7 +325,7 @@
           </a>
         </div>
         <div class="mobile-only live-items" id="live-items-mobile">
-          <div class="glide__track" data-glide-el="track">
+          <div class="glide__track mobile-scroll-drag" data-glide-el="track">
             <ul class="glide__list glide__slides">
               <li class="glide__slide">
                 <a class="live-item" href="javascript:void(0)">
@@ -540,19 +542,19 @@
     <script src="js/main.js"></script>
     <script src="js/scrollToElement.js"></script>
     <script>
-      new Glide("#live-items-mobile", {
-        type: "carousel",
-        perView: 2,
-        autoplay: 8000,
-        animationDuration: 800,
-        breakpoints: {
-          425: {
-            perView: 2,
-            gap: 20,
-            peek: { before: 20, after: 40 },
-          },
-        },
-      }).mount();
+      // new Glide("#live-items-mobile", {
+      //   type: "carousel",
+      //   perView: 2,
+      //   autoplay: 8000,
+      //   animationDuration: 800,
+      //   breakpoints: {
+      //     425: {
+      //       perView: 2,
+      //       gap: 20,
+      //       peek: { before: 20, after: 40 },
+      //     },
+      //   },
+      // }).mount();
       /* Carousel */
 
       const carouselContainer = document.querySelector(".product-slides");

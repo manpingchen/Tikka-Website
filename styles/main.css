@@ -3870,41 +3870,55 @@ main.follow .search-container {
 
 section.category {
   margin-bottom: 2rem;
+  position: relative;
 }
 
-section.category div.glide__track ul.glide__list {
+section.category > ul {
   margin-left: -1px;
   z-index: 9;
 }
 
-section.category ul li.glide__slide {
+ul#products-detail-tabs li {
   font-size: 1.5rem;
   color: #f19ca6;
   text-align: center;
-  border-left: 1px solid #f19ca6;
-  height: 60px;
-  line-height: 60px;
+  height: 20px;
+  margin: 10px 0;
+  line-height: 20px;
 }
 
-section.category ul li.glide__slide a {
+ul#products-detail-tabs li:not(:first-child) {
+  border-left: 1px solid #f19ca6;
+}
+
+section.category div.slick-track {
+  margin-left: -1px;
+}
+
+section.category ul li a {
   color: #f19ca6;
   text-decoration: none;
 }
 
-section.category ul li.glide__slide a:hover,
-section.category ul li.glide__slide.active a {
+section.category ul li a:hover,
+section.category ul li.active a {
   color: #f54c8f;
 }
-section.category div.glide__arrow {
-  margin-top: -30px !important;
-  height: 60px;
-  width: 114%;
-  margin: 0 -7%;
+button.slick-arrow {
+  position: absolute;
+  top: calc(50% - 30px);
+  left: -25px;
 }
 
-section.category div.glide__arrow .material-icons {
+button.slick-arrow.slick-next {
+  right: -25px;
+  left: initial;
+}
+
+section.category button.slick-arrow .material-icons {
   color: #f19ca6;
   font-size: 30px;
+  background: #fff;
 }
 
 @media screen and (max-width: 480px) {
@@ -3948,16 +3962,16 @@ section.category div.glide__arrow .material-icons {
     display: none;
   }
 
-  section.category ul li.glide__slide {
+  section.category > ul > li {
     font-size: 1rem;
     height: 30px;
     line-height: 30px;
   }
-  section.category div.glide__arrow {
+  section.category button.slick_arrow {
     margin-top: -25px !important;
   }
 
-  main.products section.category .glide__arrow {
+  main.products section.category button.slick_arrow {
     width: 120% !important;
     margin: -26px -10% 0 !important;
     height: 40px;
@@ -4922,9 +4936,10 @@ div.product-summary div.summary h3 {
 }
 div.product-summary div.summary p {
   font-size: 1.3rem;
+  color: #aaa;
 }
 
-div.product-summary div.summary p.point,
+div.product-summary div.summary p.cost,
 div.product-summary div.summary p.stock {
   color: #e60672;
 }
@@ -4947,6 +4962,11 @@ main.product-detail .mobile-only {
 main.product-detail .mobile-only li.glide__slide {
   overflow: visible;
   padding-bottom: 60px;
+  width: 200px;
+}
+
+main.product-detail .senders a.live-item p.live-info {
+  padding: 10px 20px !important;
 }
 
 /* Slides with Thumbnails */
@@ -5129,6 +5149,7 @@ main.product-detail .arrow-right {
   width: 100%;
 }
 
+#product-intro h2,
 #product-features h2,
 #product-scale h2,
 #product-notice h2 {
@@ -5143,12 +5164,18 @@ main.product-detail .arrow-right {
   color: #fff;
 }
 
+#product-intro div.content,
 #product-features div.content,
 #product-scale div.content,
 #product-notice div.content {
   min-height: 500px;
   width: 100%;
   background: #e6e6e6;
+  padding: 1rem;
+}
+
+#product-intro div.content {
+  margin-bottom: 2rem;
 }
 
 main.product-detail .senders .title img {

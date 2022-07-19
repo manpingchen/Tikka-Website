@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
     <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/slick.css" />
     <!-- Required Core Stylesheet -->
     <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -124,38 +125,26 @@
       </section>
 
       <section class="category">
-        <div class="glide" id="category-slides">
-          <div class="glide__track" data-glide-el="track">
-            <ul class="glide__list glide__slides" id="products-detail-tabs">
-              <li class="glide__slide p1-btn">
-                <a href="javascript:void(0)" onclick="setActiveClass('p1-btn')">熱銷推薦</a>
-              </li>
-              <li class="glide__slide p2-btn">
-                <a href="javascript:void(0)" onclick="setActiveClass('p2-btn')">生鮮食品</a>
-              </li>
-              <li class="glide__slide p3-btn">
-                <a href="javascript:void(0)" onclick="setActiveClass('p3-btn')">保健食品</a>
-              </li>
-              <li class="glide__slide p4-btn">
-                <a href="javascript:void(0)" onclick="setActiveClass('p4-btn')">保養品</a>
-              </li>
-              <li class="glide__slide p5-btn">
-                <a href="javascript:void(0)" onclick="setActiveClass('p5-btn')">時尚服飾</a>
-              </li>
-              <li class="glide__slide p6-btn">
-                <a href="javascript:void(0)" onclick="setActiveClass('p6-btn')">居家生活</a>
-              </li>
-            </ul>
-            <div class="glide__arrow" data-glide-el="controls">
-              <button data-glide-dir="<" class="prev">
-                <span class="material-icons">&#xE5CB;</span>
-              </button>
-              <button data-glide-dir=">" class="next">
-                <span class="material-icons">&#xE5CC;</span>
-              </button>
-            </div>
-          </div>
-        </div>
+        <ul id="products-detail-tabs">
+          <li class="p1-btn">
+            <a href="javascript:void(0)" onclick="setActiveClass('p1-btn')">熱銷推薦</a>
+          </li>
+          <li class="p2-btn">
+            <a href="javascript:void(0)" onclick="setActiveClass('p2-btn')">生鮮食品</a>
+          </li>
+          <li class="p3-btn">
+            <a href="javascript:void(0)" onclick="setActiveClass('p3-btn')">保健食品</a>
+          </li>
+          <li class="p4-btn">
+            <a href="javascript:void(0)" onclick="setActiveClass('p4-btn')">保養品</a>
+          </li>
+          <li class="p5-btn">
+            <a href="javascript:void(0)" onclick="setActiveClass('p5-btn')">時尚服飾</a>
+          </li>
+          <li class="p6-btn">
+            <a href="javascript:void(0)" onclick="setActiveClass('p6-btn')">居家生活</a>
+          </li>
+        </ul>
       </section>
 
       <section class="products desktop-only">
@@ -365,6 +354,12 @@
         </p>
       </div>
     </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
     <script>
       new Glide("#highlighted-products-slides", { type: "carousel" }).mount();
       new Glide("#all-products-slides", {
@@ -379,30 +374,38 @@
           },
         },
       }).mount();
-      new Glide("#category-slides", {
-        type: "carousel",
-        perView: 6,
-        autoplay: 8000,
-        animationDuration: 800,
-        breakpoints: {
-          1024: {
-            perView: 4,
-          },
-          900: {
-            perView: 3,
-          },
-          768: {
-            perView: 2,
-          },
-          425: {
-            perView: 2,
-          },
-        },
-      }).mount();
     </script>
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
     <script>
+      $("#products-detail-tabs").slick({
+        slidesToShow: 5,
+        slidesToScroll: 3,
+        infinite: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      });
       function setActiveClass(classId) {
         [...document.querySelectorAll("#products-detail-tabs .glide__slide")].map((node) =>
           node.classList.remove("active")

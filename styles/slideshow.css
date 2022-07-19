@@ -182,25 +182,29 @@ button.glide__bullet--active {
     width: 180px;
     height: 180px;
   }
-  .glide.desktop-only ul.glide__slides {
+  .glide.desktop-only ul.glide__slides,
+  .mobile-scroll-drag ul.glide__slides {
     overflow-x: auto;
     gap: 10px;
     padding-left: 10%;
+    touch-action: auto;
   }
 
-  .glide.desktop-only {
+  .glide.desktop-only,
+  .mobile-scroll-drag {
     cursor: grab;
-    overflow: auto;
+    overflow: auto !important;
     width: 100vw !important;
-    margin: 0 -12% !important;
+    /* margin: 0 -12% !important; */
   }
 
-  .glide.desktop-only ul.glide__slides::-webkit-scrollbar {
+  .glide.desktop-only ul.glide__slides::-webkit-scrollbar,
+  .mobile-scroll-drag ul.glide__slides::-webkit-scrollbar {
     width: 5px;
     height: 0px;
   }
 
-  main.index div#ranking-slides li.glide__slide{
+  main.index div#ranking-slides li.glide__slide {
     max-width: none !important;
     width: 200px;
     height: 220px;
@@ -208,11 +212,11 @@ button.glide__bullet--active {
   }
 
   main.index div#ranking-slides li.glide__slide div.number {
-    bottom:  0 !important;
+    bottom: 0 !important;
     left: 0 !important;
   }
 
-  main.index div#ranking-slides li.glide__slide div.number span{
+  main.index div#ranking-slides li.glide__slide div.number span {
     font-size: 80px;
   }
 }
