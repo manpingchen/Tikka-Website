@@ -640,10 +640,10 @@ main.index section.live .live-list ul li span.count {
     margin: 0 auto !important;
   }
 
-  section.products .glide__arrow {
+  /* section.products .glide__arrow {
     width: 100% !important;
     margin: -20px auto 0 !important;
-  }
+  } */
 
   section.live .live-title,
   section.products .products-title,
@@ -3716,10 +3716,16 @@ main.products section.mobile-only {
   display: none;
 }
 
-main.products section.desktop-only {
+main.products section.products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  main.products section.products {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 main.products section div.product {
@@ -3732,7 +3738,7 @@ main.products section div.product {
   justify-content: center;
   gap: 1rem;
   position: relative;
-  padding-top: 80%;
+  /* padding-top: 80%; */
 }
 main.products section div.product p {
   display: flex;
@@ -3759,14 +3765,7 @@ main.products section div.product p span.name {
 @media screen and (max-width: 900px) {
   main.products section div.product p,
   main.products section div.product p span.name {
-    font-size: 0.8rem !important;
-  }
-}
-
-@media screen and (max-width: 660px) {
-  main.products section div.product p,
-  main.products section div.product p span.name {
-    font-size: 0.875rem !important;
+    font-size: 1rem !important;
   }
 }
 
@@ -3789,20 +3788,72 @@ main.products section div.product p span.value {
 }
 
 main.products section div.product a.img-wrap {
-  position: absolute;
-  top: 10%;
-  left: 20%;
-  width: 60%;
-  height: 60%;
+  margin-top: 10px;
+  width: 180px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 20px;
+}
+
+main.products section div.product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 main.products section div.product a.img-wrap img {
-  height: 110%;
+  height: 190px;
+}
+@media screen and (max-width: 768px) {
+  main.products section div.product a.img-wrap {
+    margin-top: 15px;
+    width: 140px;
+    height: 140px;
+    border-radius: 18px;
+  }
+  main.products section div.product p,
+  main.products section div.product p span.name {
+    font-size: 1.2rem !important;
+  }
+  main.products section div.product a.img-wrap img {
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main.products section div.product a.img-wrap {
+    margin-top: 15px;
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+  }
+  main.products section div.product p,
+  main.products section div.product p span.name {
+    font-size: 1rem !important;
+  }
+  main.products section div.product a.img-wrap img {
+    height: 130px;
+  }
+}
+
+
+@media screen and (max-width: 375px) {
+  main.products section div.product a.img-wrap {
+    margin-top: 15px;
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+  }
+  main.products section div.product p,
+  main.products section div.product p span.name {
+    font-size: 0.8rem !important;
+  }
+  main.products section div.product a.img-wrap img {
+    height: 110px;
+  }
 }
 
 main.products section div.product a.img-wrap:hover img {
@@ -3900,6 +3951,18 @@ section.category ul li a {
   text-decoration: none;
 }
 
+@media screen and (max-width: 768px) {
+  section.category ul li a {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  section.category ul li a {
+    font-size: 1rem;
+  }
+}
+
 section.category ul li a:hover,
 section.category ul li.active a {
   color: #f54c8f;
@@ -3953,7 +4016,7 @@ section.category button.slick-arrow .material-icons {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
   .search-container {
     width: 100%;
   }
@@ -3987,8 +4050,15 @@ section.category button.slick-arrow .material-icons {
   }
 
   section.category {
-    width: 80%;
+    width: 90%;
     margin: 0 auto 2rem;
+  }
+
+  section.category button.slick-arrow.slick-next {
+    right: -45px;
+  }
+  section.category button.slick-arrow.slick-prev {
+    left: -45px;
   }
 }
 .add-to-cart {
