@@ -229,61 +229,189 @@
         </div>
       </section>
       <section class="live-frame">
-        <div class="frame-top-bar mobile-only flex-row">
-          <div class="profile mobile-only">
-            <div class="avatar-wrapper">
-              <img src="images/s1.jpg" class="avatar" alt="name" />
-            </div>
-            <span class="name">
-              <span class="marquee-wall"><span>小愛</span></span>
-            </span>
-            <div class="btns flex-row">
-              <button type="button" class="follow-btn" onclick="handleFollowIcon()">
-                <img src="images/heart-pink.svg" id="follow-icon" alt="heart icon" />
-              </button>
-              <button type="button" class="profile-btn">
-                <img src="images/house-pink.svg" alt="house icon" />
-              </button>
-            </div>
-          </div>
-          <ul class="revenue-list" onclick="handleShowComponent('#revenue-overlay-mobile')">
-            <li class="">
-              <div class="badge"><img src="images/r1.svg" /></div>
-              <div class="img-wrap">
-                <img src="images/s2.jpg" alt="" />
-              </div>
-              <div class="value">99K</div>
-            </li>
-            <li class="">
-              <div class="badge"><img src="images/r2.svg" /></div>
-              <div class="img-wrap">
-                <img src="images/s2.jpg" alt="" />
-              </div>
-              <div class="value">99K</div>
-            </li>
-            <li class="">
-              <div class="badge"><img src="images/r3.svg" /></div>
-              <div class="img-wrap">
-                <img src="images/s2.jpg" alt="" />
-              </div>
-              <div class="value">99K</div>
-            </li>
-            <li class="">
-              <div class="img-wrap">
-                <img src="images/s2.jpg" alt="" />
-              </div>
-              <div class="value">99K</div>
-            </li>
-          </ul>
-          <div
-            class="viewer-tab flex-column"
-            id="viewer-tab"
-            onclick="handleOpenMobileRevenueViewerPanel(this.id, 'viewer-overlay-mobile')"
-          >
-            <span class="value">999</span>
-            <span class="icon pink-gradient-bg"><img src="images/eye.svg" alt="" /></span>
+        <!--行動版起始頁-->
+        <div class="before-live mobile-only">
+          <button class="play" onclick="handleShowLive()">
+            <img src="images/play-icon.svg" alt="" />
+          </button>
+          <div class="default-live-img">
+            <img src="images/s1.jpg" alt="" />
           </div>
         </div>
+        <div class="mobile-live-controls" style="display: none">
+          <div class="frame-top-bar mobile-only mobile-live-on flex-row">
+            <div class="profile mobile-only">
+              <div class="avatar-wrapper">
+                <img src="images/s1.jpg" class="avatar" alt="name" />
+              </div>
+              <span class="name">
+                <span class="marquee-wall"><span>小愛</span></span>
+              </span>
+              <div class="btns flex-row">
+                <button type="button" class="follow-btn" onclick="handleFollowIcon()">
+                  <img src="images/heart-pink.svg" id="follow-icon" alt="heart icon" />
+                </button>
+                <button type="button" class="profile-btn">
+                  <img src="images/house-pink.svg" alt="house icon" />
+                </button>
+              </div>
+            </div>
+            <ul class="revenue-list" onclick="handleShowComponent('#revenue-overlay-mobile')">
+              <li class="">
+                <div class="badge"><img src="images/badge-1.svg" /></div>
+                <div class="img-wrap">
+                  <img src="images/s2.jpg" alt="" />
+                </div>
+                <div class="value">99K</div>
+              </li>
+              <li class="">
+                <div class="badge"><img src="images/badge-2.svg" /></div>
+                <div class="img-wrap">
+                  <img src="images/s2.jpg" alt="" />
+                </div>
+                <div class="value">99K</div>
+              </li>
+              <li class="">
+                <div class="badge"><img src="images/badge-3.svg" /></div>
+                <div class="img-wrap">
+                  <img src="images/s2.jpg" alt="" />
+                </div>
+                <div class="value">99K</div>
+              </li>
+              <li class="">
+                <div class="img-wrap">
+                  <img src="images/s2.jpg" alt="" />
+                </div>
+                <div class="value">99K</div>
+              </li>
+            </ul>
+            <div
+              class="viewer-tab flex-column"
+              id="viewer-tab"
+              onclick="handleOpenMobileRevenueViewerPanel(this.id, 'viewer-overlay-mobile')"
+            >
+              <span class="value">999</span>
+              <span class="icon pink-gradient-bg"><img src="images/eye.svg" alt="" /></span>
+            </div>
+          </div>
+          <div class="frame-bottom-bar mobile-only mobile-live-on flex-row">
+            <div class="">
+              <div class="chat-body" id="chat-items-mobile">
+                <div class="chat-item">
+                  <span class="chat-name">第一筆留言者：</span>
+                  <span class="chat-content">12345678</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">小小小馬馬馬：</span>
+                  <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">姓名：</span>
+                  <span class="chat-content">聊天文字內容</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">姓名：</span>
+                  <span class="chat-content">聊天文字內容</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">姓名：</span>
+                  <span class="chat-content">聊天文字內容</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">姓名：</span>
+                  <span class="chat-content">聊天文字內容</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">姓名：</span>
+                  <span class="chat-content">聊天文字內容</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">姓名：</span>
+                  <span class="chat-content">聊天文字內容</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">姓名：</span>
+                  <span class="chat-content">聊天文字內容</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">小愛：</span>
+                  <span class="chat-content">12345678</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">小小小馬馬馬：</span>
+                  <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">姓名：</span>
+                  <span class="chat-content">聊天文字內容</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">小愛：</span>
+                  <span class="chat-content">12345678</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">小小小馬馬馬：</span>
+                  <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">姓名：</span>
+                  <span class="chat-content">聊天文字內容</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">小愛：</span>
+                  <span class="chat-content">12345678</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">小小小馬馬馬：</span>
+                  <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
+                </div>
+                <div class="chat-item">
+                  <span class="chat-name">姓名：</span>
+                  <span class="chat-content">聊天文字內容</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex-row chat-controls">
+              <div class="chat-field flex-row">
+                <div class="flex-row">
+                  <input type="text" placeholder="跟主播聊聊..." id="new-chat-input-mobile" />
+                </div>
+                <div class="flex-row">
+                  <button
+                    type="button"
+                    class="face-btn"
+                    onclick="handleShowComponent('.sticker-overlay')"
+                  >
+                    <img src="images/face.svg" />
+                  </button>
+                  <button type="button" onclick="handleAddTextToChat('mobile')">
+                    <img src="images/fat-arrow.svg" alt="送出" />
+                  </button>
+                </div>
+              </div>
+              <div class="btns">
+                <button class="icon pink" onclick="handleShowComponent('#social-media-shares')">
+                  <img src="images/social.svg" />
+                </button>
+                <button class="icon pink" onclick="handleShowMobileRewardWall()">
+                  <img src="images/gift.svg" />
+                </button>
+
+                <!-- <button class="icon">
+                <img src="images/social.svg" alt="" />
+              </button>
+              <button class="icon">
+                <img src="images/trophy.svg" alt="" />
+              </button>
+              <button class="icon">
+                <img src="images/reload.svg" alt="" />
+              </button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="frame-top-bar flex-row">
           <div class="flex-row" id="revenue-viewer-tabs">
             <div
@@ -318,121 +446,7 @@
             <img src="images/reload.svg" alt="" />
           </button>
         </div>
-        <div class="frame-bottom-bar mobile-only flex-row">
-          <div class="">
-            <div class="chat-body" id="chat-items-mobile">
-              <div class="chat-item">
-                <span class="chat-name">第一筆留言者：</span>
-                <span class="chat-content">12345678</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">小小小馬馬馬：</span>
-                <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">姓名：</span>
-                <span class="chat-content">聊天文字內容</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">姓名：</span>
-                <span class="chat-content">聊天文字內容</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">姓名：</span>
-                <span class="chat-content">聊天文字內容</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">姓名：</span>
-                <span class="chat-content">聊天文字內容</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">姓名：</span>
-                <span class="chat-content">聊天文字內容</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">姓名：</span>
-                <span class="chat-content">聊天文字內容</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">姓名：</span>
-                <span class="chat-content">聊天文字內容</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">小愛：</span>
-                <span class="chat-content">12345678</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">小小小馬馬馬：</span>
-                <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">姓名：</span>
-                <span class="chat-content">聊天文字內容</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">小愛：</span>
-                <span class="chat-content">12345678</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">小小小馬馬馬：</span>
-                <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">姓名：</span>
-                <span class="chat-content">聊天文字內容</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">小愛：</span>
-                <span class="chat-content">12345678</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">小小小馬馬馬：</span>
-                <span class="chat-content">掰掰掰掰掰掰掰掰掰掰掰掰</span>
-              </div>
-              <div class="chat-item">
-                <span class="chat-name">姓名：</span>
-                <span class="chat-content">聊天文字內容</span>
-              </div>
-            </div>
-          </div>
 
-          <div class="flex-row chat-controls">
-            <div class="chat-field flex-row">
-              <div class="flex-row">
-                <input type="text" placeholder="跟主播聊聊..." id="new-chat-input-mobile" />
-              </div>
-              <div class="flex-row">
-                <button
-                  type="button"
-                  class="face-btn"
-                  onclick="handleShowComponent('.sticker-overlay')"
-                >
-                  <img src="images/face.svg" />
-                </button>
-                <button type="button" onclick="handleAddTextToChat('mobile')">
-                  <img src="images/fat-arrow.svg" alt="送出" />
-                </button>
-              </div>
-            </div>
-            <div class="btns">
-              <button class="icon pink" onclick="handleShowMobileRewardWall()">
-                <img src="images/gift.svg" />
-              </button>
-              <button class="icon pink" onclick="handleShowComponent('#coming-soon')">
-                <img src="images/mission.svg" />
-              </button>
-              <button class="icon">
-                <img src="images/social.svg" alt="" />
-              </button>
-              <button class="icon">
-                <img src="images/trophy.svg" alt="" />
-              </button>
-              <button class="icon">
-                <img src="images/reload.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
         <div class="iframe">
           <!-- 敬請期待 -->
           <div class="coming-soon overlay" id="coming-soon" style="display: none">
@@ -703,6 +717,54 @@
             </div>
           </div>
 
+          <!-- 我要分享遮罩 -->
+          <div
+            class="full-width streamer-profile-overlay social-media-shares overlay"
+            id="social-media-shares"
+            style="display: none"
+          >
+            <div class="title flex-row">
+              <button class="close" onclick="handleHideComponent('#social-media-shares')">
+                <img src="images/close-icon.svg" alt="close" />
+              </button>
+              <p class="flex-row"><img src="images/social.svg" alt="分享" /> 我要分享</p>
+            </div>
+            <div class="content">
+              <ul>
+                <li>
+                  <button type="button">
+                    <img src="images/line.svg" alt="" />
+                    LINE
+                  </button>
+                </li>
+                <li>
+                  <button type="button">
+                    <img src="images/facebook.svg" alt="" />
+                    Facebook
+                  </button>
+                </li>
+                <li>
+                  <button type="button">
+                    <img src="images/whatsapp.svg" alt="" />
+                    Whatsapp
+                  </button>
+                </li>
+                <li>
+                  <button type="button">
+                    <img src="images/twitter.svg" alt="" />
+                    Twitter
+                  </button>
+                </li>
+                <li>
+                  <button type="button">
+                    <img src="images/link.svg" alt="" />
+                    複製連結
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <!-- 滿版禮物圖 -->
           <div class="gift-full-overlay" style="display: none" id="gift-full-overlay">
             <img src="images/gift2.png" alt="" />
@@ -714,7 +776,7 @@
         </div>
 
         <!-- 手機版貼圖遮罩 -->
-        <div class="overlay sticker-overlay" id="sticker-overlay-mobile" style="display: block">
+        <div class="overlay sticker-overlay" id="sticker-overlay-mobile" style="display: none">
           <div class="title flex-row">
             <img src="images/my-sticker.svg" alt="我的貼圖" class="title-img" />
             <button class="close" onclick="handleHideComponent('.sticker-overlay')">
@@ -1255,7 +1317,7 @@
         setActiveStatus(tabParentId, tabId);
         const selector = "#" + tabId + "-list";
         console.log({ selector });
-        handleShowComponent(selector, 'grid');
+        handleShowComponent(selector, "grid");
       }
 
       /* 桌面版 顯示追蹤最愛或熱推主播 Slides */
@@ -1356,6 +1418,12 @@
         document.querySelector("#box-details .glide__arrow").style.display = "none";
         document.querySelector("#box-details").style.margin = "0";
         document.querySelector("#box-details").style.padding = "0";
+      }
+
+      /*起始頁按鈕*/
+      function handleShowLive() {
+        handleShowComponent(".mobile-live-controls");
+        handleHideComponent(".before-live");
       }
     </script>
   </body>

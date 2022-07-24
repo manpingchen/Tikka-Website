@@ -2600,10 +2600,13 @@ main.live-on div.frame-top-bar.mobile-only .viewer-tab span.icon img {
 }
 
 main.live-on div.frame-bottom-bar.mobile-only {
-  gap: 5px;
-  bottom: 20px;
+  gap: 0px;
+  bottom: 0;
+  right: 0;
   top: initial;
-  height: 40px;
+  height: 80px;
+  width: 100%;
+  left: 0;
   justify-content: space-between;
 }
 
@@ -2613,10 +2616,10 @@ main.live-on div.frame-bottom-bar.mobile-only button.pink {
 
 main.live-on div.frame-bottom-bar.mobile-only div.chat-field {
   gap: 10px;
-  background: rgba(206, 206, 206, 0.627);
+  background: rgba(206, 206, 206, 0.8);
   border-radius: 40px;
   padding-left: 15px;
-  width: calc(100% - 240px);
+  width: calc(100% - 110px);
   justify-content: space-between;
   backdrop-filter: blur(4px);
 }
@@ -2624,13 +2627,13 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-field > .flex-row {
   gap: 5px;
 }
 main.live-on div.frame-bottom-bar.mobile-only div.chat-field input {
-  color: #fff;
+  color: #333;
   letter-spacing: 0.1rem;
   border: none;
   background: none;
 }
 main.live-on div.frame-bottom-bar.mobile-only div.chat-field input::placeholder {
-  color: rgb(223, 223, 223);
+  color: #333;
 }
 main.live-on div.frame-bottom-bar.mobile-only div.chat-field img.chat-icon {
   display: block;
@@ -2639,7 +2642,8 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-field img.chat-icon {
 
 main.live-on div.frame-bottom-bar.mobile-only div.chat-body {
   position: absolute;
-  bottom: 50px;
+  bottom: 90px;
+  left: 20px;
   height: 250px;
   overflow-y: auto;
   width: 100%;
@@ -2659,7 +2663,7 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-body div.chat-item {
 }
 
 main.live-on div.frame-bottom-bar.mobile-only div.chat-controls button {
-  padding: 10px;
+  padding: 20px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -2691,6 +2695,15 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-controls button {
     align-items: initial;
     gap: 5px;
   }
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-controls {
+    width: 100%;
+    gap: 1rem;
+    padding: 20px 20px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    height: 80px;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 990px) {
@@ -2704,7 +2717,7 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-controls button {
     padding-right: 10px;
   }
   main.live-on div.frame-bottom-bar.mobile-only div.chat-field {
-    width: 50%;
+    width: calc(100% - 110px);
     margin-right: 1rem;
   }
   main.live-on div.frame-bottom-bar.mobile-only div.chat-controls {
@@ -2712,6 +2725,7 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-controls button {
   }
   main.live-on div.frame-bottom-bar.mobile-only div.chat-field input {
     width: 200px;
+    height: 46px;
   }
 }
 
@@ -2748,10 +2762,9 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-controls button {
   main.live-on div.frame-bottom-bar.mobile-only {
     flex-direction: column;
     height: initial;
-    bottom: 10px;
   }
   main.live-on div.frame-bottom-bar.mobile-only div.chat-field {
-    width: calc(100% - 170px);
+    width: 100%;
     margin-right: 0;
   }
 
@@ -2772,8 +2785,6 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-controls button {
 
   main.live-on div.frame-bottom-bar.mobile-only div.chat-body {
     height: 140px;
-    bottom: 50px;
-    left: 0;
     width: 75%;
   }
   main.live-on div.frame-bottom-bar button.icon {
@@ -2792,7 +2803,7 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-controls button {
     display: flex;
     flex-direction: row;
     gap: 2px;
-    width: 170px;
+    width: 80px;
   }
   main.live-on div.frame-bottom-bar button img {
     width: 20px;
@@ -3839,7 +3850,6 @@ main.products section div.product a.img-wrap img {
   }
 }
 
-
 @media screen and (max-width: 375px) {
   main.products section div.product a.img-wrap {
     margin-top: 15px;
@@ -4718,6 +4728,7 @@ main.live-on div.mobile-only.frame-top-bar ul.revenue-list > li .badge {
   width: 20px;
   height: 20px;
   top: -10px;
+  border: none;
 }
 
 main.live-on div.mobile-only.frame-top-bar ul.revenue-list > li .badge img {
@@ -5996,6 +6007,10 @@ div.overlay.full-width {
   position: fixed;
 }
 
+div.iframe div.overlay.full-width {
+  position: absolute;
+}
+
 div.overlay.social-media-shares.full-width {
   height: 350px;
 }
@@ -6645,4 +6660,38 @@ div.overlay.event-detail-overlay .content section div.detail-wrap div.detail-con
   div.overlay.event-detail-overlay .content section h2 img {
     width: 200px;
   }
+}
+
+.before-live {
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.before-live button.play {
+  width: 50px;
+  height: 50px;
+  padding: 0px;
+  position: relative;
+  z-index: 999;
+}
+
+.before-live button.play img{
+  width: 100%;
+}
+
+.before-live .default-live-img {
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.before-live .default-live-img img {
+  height: 100vh;
 }
