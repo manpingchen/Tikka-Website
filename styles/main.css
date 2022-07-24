@@ -4301,15 +4301,16 @@ div.overlay.social-media-shares div.title p img {
   }
 
   div.overlay.social-media-shares div.content ul {
-    gap: 8px;
+    gap: 16px;
   }
 
   div.overlay.social-media-shares div.content ul li button {
-    font-size: 0.8rem;
+    font-size: 0.75rem !important;
+    width: 50px;
   }
 
   div.overlay.social-media-shares div.content ul li img {
-    width: 30px;
+    width: 40px !important;
   }
 }
 
@@ -6650,6 +6651,21 @@ div.overlay.event-detail-overlay .content section div.detail-wrap div.detail-con
     width: 90px;
     height: 90px;
   }
+
+  div.overlay.social-media-shares.full-width {
+    height: 250px;
+  }
+
+  div.overlay.social-media-shares.streamer-profile-overlay div.title {
+    height: 60px;
+  }
+  div.overlay.social-media-shares.streamer-profile-overlay div.content {
+    height: calc(100% - 60px);
+  }
+
+  div.overlay.social-media-shares.streamer-profile-overlay button.close {
+    top: 15px;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -6680,7 +6696,7 @@ div.overlay.event-detail-overlay .content section div.detail-wrap div.detail-con
   z-index: 999;
 }
 
-.before-live button.play img{
+.before-live button.play img {
   width: 100%;
 }
 
