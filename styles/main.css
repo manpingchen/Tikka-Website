@@ -605,10 +605,10 @@ main.index section.live .live-list ul li span.count {
     top: 100px;
   }
   main.index {
-    top: -20px;
+    top: -50px;
     width: 100%;
     overflow: hidden;
-    padding-bottom: 0 !important;
+    padding-bottom: 40px !important;
   }
   #main-slides,
   #product-slides,
@@ -2195,8 +2195,28 @@ main.live-on div.overlay.revenue,
 main.live-on div.overlay.viewer {
   padding: 0;
   height: 400px;
-  background: #ff94bbc0;
+  background: #ff94bbd8;
   backdrop-filter: blur(4px);
+}
+
+main.live-on div.overlay.revenue .title {
+  height: 60px;
+}
+
+main.live-on div.overlay.viewer .title {
+  height: 80px;
+}
+
+main.live-on div.overlay.revenue .title > p,
+main.live-on div.overlay.viewer .title > p {
+  margin-left: 10px !important;
+}
+
+main.live-on div.overlay.rewards button.close,
+main.live-on div.overlay.revenue button.close,
+main.live-on div.overlay.viewer button.close {
+  left: initial;
+  right: 20px;
 }
 
 main.live-on div.overlay.rewards div.content {
@@ -2229,7 +2249,7 @@ main.live-on div.overlay.rewards div.send-gift {
 main.live-on div.rewards.overlay div.btns {
   padding: 1rem 0 0;
   align-items: flex-start;
-  gap: 8px;
+  gap: 5px;
   width: max-content;
 }
 
@@ -2453,7 +2473,7 @@ main.live-on div.frame-top-bar div.viewer-tab.active span.icon {
 }
 
 main.live-on div.frame-top-bar div.revenue-tab.active span.icon img,
-main.live-on div.frame-top-bar div.viewer-tab.active span.icon img {
+main.live-on div.frame-top-bar:not(.mobile-only) div.viewer-tab.active span.icon img {
   filter: invert(0.589) sepia(20) contrast(250%) hue-rotate(293deg)
     drop-shadow(0 1px 1px rgba(188, 188, 188, 0.3));
 }
@@ -2625,6 +2645,7 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-field {
 }
 main.live-on div.frame-bottom-bar.mobile-only div.chat-field > .flex-row {
   gap: 5px;
+  margin-right: 8px;
 }
 main.live-on div.frame-bottom-bar.mobile-only div.chat-field input {
   color: #333;
@@ -2734,7 +2755,7 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-controls button {
     padding: 0 !important;
     margin: 0 !important;
     width: 100%;
-    height: 100vh !important;
+    height: 100% !important;
     position: fixed;
     top: 0;
     z-index: 9999;
@@ -4699,7 +4720,11 @@ div.overlay.viewer div.content {
   overflow: scroll;
   padding: 1rem;
   justify-content: initial;
-  height: calc(100% - 140px);
+  height: calc(100% - 40px);
+}
+
+div.overlay.viewer div.content {
+  height: calc(100% - 60px);
 }
 
 main.live-on ul.revenue-list,
@@ -4829,7 +4854,7 @@ main.live-on ul.viewer-list > li .name {
 }
 
 main.live-on ul.viewer-list > li .name {
-  width: 40px;
+  width: 45px;
 }
 
 main.live-on ul.revenue-list > li .value {
@@ -4939,9 +4964,9 @@ div#rewards-overlay-mobile .wrapper {
 }
 
 div#rewards-overlay-mobile .wrapper.reward-btns-mobile {
-  height: 70px;
+  height: 80px;
   width: calc(100% - 1rem - 50px);
-  margin-left: 60px;
+  margin-left: 15px;
 }
 
 div#rewards-overlay-mobile div.btns {
@@ -4951,6 +4976,22 @@ div#rewards-overlay-mobile div.btns {
 
 div#rewards-overlay-mobile div.content {
   height: 100%;
+  background: none !important;
+}
+
+main.live-on div.overlay.rewards {
+  border-radius: 0;
+  -webkit-border-top-left-radius: 30px !important;
+  -webkit-border-top-right-radius: 30px !important;
+  -moz-border-radius-topleft: 30px !important;
+  -moz-border-radius-topright: 30px !important;
+  border-top-left-radius: 30px !important;
+  border-top-right-radius: 30px !important;
+}
+
+main.live-on div.overlay.rewards button.close {
+  right: 20px;
+  left: initial;
 }
 
 div#rewards-overlay-mobile div.send-gift {
@@ -6705,7 +6746,10 @@ div.overlay.event-detail-overlay .content section div.detail-wrap div.detail-con
   width: 100%;
   top: 0;
   left: 0;
+  display: flex;
   position: fixed;
+  align-items: center;
+  justify-content: center;
 }
 
 .before-live .default-live-img img {

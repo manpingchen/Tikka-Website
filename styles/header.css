@@ -43,6 +43,7 @@
     padding-right: 2rem;
     background: #fff;
     gap: 10px;
+    max-width: 100vw;
   }
   .site-header__end a {
     width: fit-content;
@@ -56,13 +57,14 @@
     gap: 10px;
   }
   .site-header__end a {
-    width: initial !important;
+    width: 130px !important;
   }
   .site-header__end {
     justify-content: space-between;
+    max-width: 100vw;
   }
-  
-  .site-header__end a.share.button img{
+
+  .site-header__end a.share.button img {
     height: 24px;
   }
 }
