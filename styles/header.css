@@ -177,6 +177,7 @@
   background-color: transparent;
   top: 1.5rem;
   padding: 0;
+  border-radius: 0;
 }
 
 .nav__toggle span {
