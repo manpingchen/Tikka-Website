@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
-    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
-    <!-- Required Core Stylesheet -->
-    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   </head>
   <body>
@@ -104,7 +101,7 @@
           <img src="images/review-title.svg" alt="經典回顧標題" />
         </h1>
         <ul class="list">
-          <li>
+          <li onclick="handleShowComponent('.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c2.jpeg" alt="" />
             </div>
@@ -135,41 +132,6 @@
             </div>
           </li>
         </ul>
-        <!-- <div class="glide mobile-only" id="review-slides">
-          <div class="glide__track" data-glide-el="track">
-            <ul class="list mobile-only glide__list glide__slides">
-              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
-                <div class="img-wrap"><img src="images/c2.jpeg" alt="img1" /></div>
-              </li>
-              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
-                <div class="img-wrap"><img src="images/c3.jpeg" alt="img1" /></div>
-              </li>
-              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
-                <div class="img-wrap"><img src="images/c2.jpeg" alt="img1" /></div>
-              </li>
-              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
-                <div class="img-wrap"><img src="images/c3.jpeg" alt="img1" /></div>
-              </li>
-              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
-                <div class="img-wrap"><img src="images/c2.jpeg" alt="img1" /></div>
-              </li>
-              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
-                <div class="img-wrap"><img src="images/c4.jpg" alt="img1" /></div>
-              </li>
-              <li class="glide__slide" onclick="handleShowComponent('.event-detail-overlay')">
-                <div class="img-wrap"><img src="images/c2.jpeg" alt="img1" /></div>
-              </li>
-            </ul>
-            <div class="glide__arrow" data-glide-el="controls">
-              <button data-glide-dir="<" class="prev">
-                <span class="material-icons">&#xE5CB;</span>
-              </button>
-              <button data-glide-dir=">" class="next">
-                <span class="material-icons">&#xE5CC;</span>
-              </button>
-            </div>
-          </div>
-        </div> -->
       </section>
     </main>
 
@@ -208,26 +170,6 @@
         </p>
       </div>
     </footer>
-    <script>
-      new Glide("#review-slides", {
-        type: "carousel",
-        perView: 1,
-        focusAt: "center",
-        autoplay: 8000,
-        animationDuration: 800,
-        gap: 10,
-        peek: { before: 40, after: 40 },
-      }).mount();
-      new Glide("#competition-slides", {
-        type: "carousel",
-        perView: 1,
-        focusAt: "center",
-        autoplay: 8000,
-        animationDuration: 800,
-        gap: 10,
-        peek: { before: 40, after: 40 },
-      }).mount();
-    </script>
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
   </body>
