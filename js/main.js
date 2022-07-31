@@ -305,6 +305,16 @@ function makeEleGraggable(selector) {
     const x = e.pageX - slider.offsetLeft;
     const walk = (x - startX) * 3; //scroll-fast
     slider.scrollLeft = scrollLeft - walk;
-    console.log(walk);
   });
+}
+
+function addOneItemToCart(itemId) {
+  document.querySelector(`#${itemId} input[type="number"]`).value++;
+}
+
+function removeOneItemToCart(itemId) {
+  if (Number(document.querySelector(`#${itemId} input[type="number"]`).value) === 0) {
+    return;
+  }
+  document.querySelector(`#${itemId} input[type="number"]`).value--;
 }

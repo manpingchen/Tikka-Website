@@ -3693,13 +3693,15 @@ main.competition-review ul.list > li > div.img-wrap img {
 }
 
 @media screen and (max-width: 480px) {
-  main.live, main.ranking, main.competition-review{
+  main.live,
+  main.ranking,
+  main.competition-review {
     padding: 0;
     width: 100%;
     margin-bottom: 50px;
   }
-  
-  main.competition-review h1{
+
+  main.competition-review h1 {
     margin-bottom: 1rem;
   }
 
@@ -5047,7 +5049,8 @@ div.product-summary div.summary h3 {
   font-size: 1.6rem;
   font-weight: 500;
 }
-div.product-summary div.summary p {
+div.product-summary div.summary p,
+main.product-detail.sold-out div.product-summary div.summary p.stock {
   font-size: 1.3rem;
   color: #aaa;
 }
@@ -5057,14 +5060,50 @@ div.product-summary div.summary p.stock {
   color: #e60672;
 }
 
+div.product-summary div.summary p.stock .sold-out-text {
+  display: none;
+}
+
+main.product-detail.sold-out div.product-summary div.summary p.stock .value {
+  display: none;
+}
+
+main.product-detail.sold-out div.product-summary div.summary p.stock .sold-out-text {
+  display: inline-block;
+}
+
+main.product-detail div.product-detail-btns a.button-like,
+main.product-detail div.product-detail-btns button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.1rem;
+  width: auto;
+}
+
+main.product-detail.sold-out .available-if-instock {
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+  background: linear-gradient(#e2e2e2, #a8a8a8, #535353) !important;
+}
+
 div.product-summary div.summary button.add-btn {
   color: #fff;
   background: linear-gradient(#ffa9cd, #ff237f);
   border-radius: 40px;
   height: 40px;
   padding: 0rem 1rem;
-  width: 130px;
+  width: 140px;
   letter-spacing: 0.2em;
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 768px) {
+  div.product-summary div.summary button.add-btn {
+    margin: 1rem auto;
+  }
+}
+
+div.product-summary div.summary button.add-btn.sold-out:hover {
+  filter: none;
 }
 
 main.product-detail .mobile-only {
@@ -5267,13 +5306,13 @@ main.product-detail .arrow-right {
 #product-scale h2,
 #product-notice h2 {
   margin: 0 auto 20px;
-  width: 140px;
+  width: 100px;
   font-weight: normal;
-  font-size: 1.2rem;
-  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  padding: 0.2rem 1rem;
   text-align: center;
   border-radius: 50px;
-  background: #aaa;
+  background: #f19ec2;
   color: #fff;
 }
 
@@ -5432,8 +5471,9 @@ main.product-detail .senders button.follow-btn:hover {
     font-size: 0.875rem;
   }
 
-  div.product-summary div.summary p {
-    font-size: 1rem;
+  div.product-summary div.summary p,
+  main.product-detail.sold-out div.product-summary div.summary p.stock {
+    font-size: 1.2rem;
   }
 
   section.product-slides {
@@ -5629,7 +5669,7 @@ main.purchase .item-info div {
   gap: 1rem;
 }
 
-main.purchase .item-info form input[type="number"] {
+form.adjust-item-count input[type="number"] {
   border: none;
   background: none;
   font-weight: bold;
@@ -5637,10 +5677,16 @@ main.purchase .item-info form input[type="number"] {
   text-align: center;
   width: 50px;
   margin: 0;
+  -moz-appearance: textfield;
 }
 
-main.purchase .item-info form button.add,
-main.purchase .item-info form button.reduce {
+form.adjust-item-count input[type="number"]::-webkit-outer-spin-button,
+form.adjust-item-count input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+form.adjust-item-count button.add,
+form.adjust-item-count button.reduce {
   border: 1px solid #000;
   border-radius: 0;
   padding: 0px;
@@ -5648,7 +5694,7 @@ main.purchase .item-info form button.reduce {
   height: 40px;
 }
 
-main.purchase .item-info form button.reduce {
+form.adjust-item-count button.reduce {
   transform: rotate(180deg);
 }
 
@@ -5722,17 +5768,17 @@ main.purchase .item-info form button.reduce {
     gap: 10px;
   }
 
-  main.purchase .item-info form button.add,
-  main.purchase .item-info form button.reduce {
+  form.adjust-item-count button.add,
+  form.adjust-item-count button.reduce {
     width: 25px;
     height: 25px;
   }
 
-  main.purchase .item-info form input[type="number"] {
+  form.adjust-item-count input[type="number"] {
     width: 40px;
     font-size: 1rem;
   }
-  main.purchase .item-info form button .material-symbols-outlined {
+  form.adjust-item-count button .material-symbols-outlined {
     font-size: 18px;
   }
 }

@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/header.css" />
@@ -94,7 +97,7 @@
               選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
               選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
             </p>
-            <form action="javascript:void(0);">
+            <form action="javascript:void(0);" class="adjust-item-count">
               <p class="cost">NT.1,280</p>
               <div class="flex-row">
                 <button class="add" onclick="addOneItemToCart('item1')">
@@ -118,7 +121,7 @@
               選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
               選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
             </p>
-            <form action="javascript:void(0);">
+            <form action="javascript:void(0);" class="adjust-item-count">
               <p class="cost">NT.1,280</p>
               <div class="flex-row">
                 <button class="add" onclick="addOneItemToCart('item2')">
@@ -142,7 +145,7 @@
               選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
               選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
             </p>
-            <form action="javascript:void(0);">
+            <form action="javascript:void(0);" class="adjust-item-count">
               <p class="cost">NT.1,280</p>
               <div class="flex-row">
                 <button class="add" onclick="addOneItemToCart('item3')">
@@ -229,17 +232,5 @@
 
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
-    <script>
-      function addOneItemToCart(itemId) {
-        document.querySelector(`#${itemId} input[type="number"]`).value++;
-      }
-
-      function removeOneItemToCart(itemId) {
-        if (Number(document.querySelector(`#${itemId} input[type="number"]`).value) === 0) {
-          return;
-        }
-        document.querySelector(`#${itemId} input[type="number"]`).value--;
-      }
-    </script>
   </body>
 </html>

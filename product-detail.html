@@ -15,6 +15,10 @@
     <!-- Required Core Stylesheet -->
     <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
   </head>
   <body>
     <!-- Header Start -->
@@ -81,7 +85,7 @@
     <!-- Header End -->
 
     <!--Main-->
-    <main class="product-detail">
+    <main class="product-detail sold-out">
       <ul class="tabs flex-row">
         <li>
           <a
@@ -137,12 +141,32 @@
           <span class="arrow arrow-right"> <span class="material-icons">&#xE5CC;</span> </span>
         </section>
 
-        <div class="summary flex-column">
+        <div class="summary flex-column" id="item1">
           <h3>Moiskin基礎保養套組</h3>
           <p class="cost">新台幣：NT. 1,999</p>
           <p class="point">捧花：9999</p>
-          <p class="stock">僅剩庫存：3</p>
-          <a class="add-btn button-like" href="purchase.html">立即搶購</a>
+          <p class="stock">
+            僅剩庫存：
+            <span class="value">9</span>
+            <span class="sold-out-text">已售完</span>
+          </p>
+          <form action="javascript:void(0);" class="adjust-item-count">
+            <div class="flex-row">
+              <button class="add" onclick="addOneItemToCart('item1')">
+                <span class="material-symbols-outlined"> change_history </span>
+              </button>
+              <input type="number" min="0" class="quantity" value="3" />
+              <button class="reduce" onclick="removeOneItemToCart('item1')">
+                <span class="material-symbols-outlined"> change_history </span>
+              </button>
+            </div>
+          </form>
+          <button
+            class="add-btn button-like available-if-instock"
+            onclick="location.href='purchase.html'"
+          >
+            立即搶購
+          </button>
         </div>
       </div>
 
@@ -463,10 +487,10 @@
             </button>
           </li>
           <li>
-            <button class="button-like">加入購物車</button>
+            <button class="button-like available-if-instock">加入購物車</button>
           </li>
           <li>
-            <a class="button-like" href="purchase.html">立即搶購</a>
+            <a class="button-like available-if-instock" href="purchase.html">立即搶購</a>
           </li>
         </ul>
       </div>
@@ -542,19 +566,6 @@
     <script src="js/main.js"></script>
     <script src="js/scrollToElement.js"></script>
     <script>
-      // new Glide("#live-items-mobile", {
-      //   type: "carousel",
-      //   perView: 2,
-      //   autoplay: 8000,
-      //   animationDuration: 800,
-      //   breakpoints: {
-      //     425: {
-      //       perView: 2,
-      //       gap: 20,
-      //       peek: { before: 20, after: 40 },
-      //     },
-      //   },
-      // }).mount();
       /* Carousel */
 
       const carouselContainer = document.querySelector(".product-slides");
@@ -654,6 +665,22 @@
         [...document.querySelectorAll(`.${[...element.classList].join(".")}`)].map((node) =>
           node.classList.add("pink")
         );
+      }
+
+      disableBtnsIfSoldOut();
+
+      /* 如產品售完，關閉按鈕功能 */
+      function disableBtnsIfSoldOut() {
+        const ifSoldOut = document
+          .querySelector("main.product-detail")
+          .classList.value.includes("sold-out");
+
+        if (ifSoldOut) {
+          [...document.querySelectorAll(".available-if-instock")].forEach(
+            (node) => (node.disabled = true)
+          );
+          document.querySelector("form.adjust-item-count").style.display = "none";
+        }
       }
     </script>
   </body>
