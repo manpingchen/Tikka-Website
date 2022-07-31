@@ -5113,11 +5113,10 @@ main.product-detail .mobile-only {
 
 main.product-detail .mobile-only li.glide__slide {
   overflow: visible;
-  padding-bottom: 60px;
-  width: 200px;
+  width: 250px;
 }
 
-main.product-detail .senders a.live-item p.live-info {
+main.product-detail .senders .live-item p.live-info {
   padding: 10px 20px !important;
 }
 
@@ -5336,27 +5335,36 @@ main.product-detail .senders .title img {
   display: block;
 }
 
-main.product-detail .senders a.live-item {
+main.product-detail .senders .live-item {
   border: 0;
   overflow: visible;
   margin-bottom: 50px;
+  display: block;
 }
 
-main.product-detail .senders a.live-item div.img-wrap {
+main.product-detail .senders .live-item span.live-chip {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+main.product-detail .senders .live-item div.img-wrap {
   border-radius: 20px;
+  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-main.product-detail .senders a.live-item div.img-wrap img {
+main.product-detail .senders .live-item div.img-wrap img {
   height: 100%;
   width: auto;
   left: initial;
   top: 0;
+  position: absolute;
 }
 
-main.product-detail .senders a.live-item p.live-info {
+main.product-detail .senders .live-item p.live-info {
   -webkit-border-bottom-left-radius: 20px;
   -webkit-border-bottom-right-radius: 20px;
   -moz-border-radius-bottomleft: 20px;
@@ -5364,11 +5372,20 @@ main.product-detail .senders a.live-item p.live-info {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   background: #d6216d55;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+main.product-detail .senders .live-item p.live-info span.name {
+  background: url(../images/heart-icon.svg) 1px 5px no-repeat;
+  background-size: 12px;
+  padding-left: 16px;
 }
 
 main.product-detail .senders button.follow-btn {
-  position: absolute;
-  bottom: -50px;
   width: 90px;
   font-size: 0.875rem;
   padding: 5px;
@@ -5379,6 +5396,7 @@ main.product-detail .senders button.follow-btn {
   align-items: center;
   justify-content: center;
   gap: 5px;
+  margin: 1rem auto;
 }
 
 main.product-detail .senders button.follow-btn.pink {
