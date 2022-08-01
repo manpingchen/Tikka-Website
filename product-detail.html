@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
-    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/slick.css" />
     <!-- Required Core Stylesheet -->
     <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -112,33 +112,46 @@
 
       <div class="product-summary">
         <section class="product-slides">
-          <div class="img-wrap">
-            <img src="images/product5.png" alt="" class="current-image" />
+          <div class="product-zoom-in">
+            <div>
+              <img src="images/product5.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product6.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product2.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product5.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product6.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product2.png" alt="" class="image-of-list" />
+            </div>
           </div>
-          <span class="arrow arrow-left"> <span class="material-icons">&#xE5CB;</span> </span>
-          <div class="next-list-wrap">
-            <ul class="next-list">
-              <li class="img-wrap">
-                <img src="images/product5.png" alt="" class="image-of-list current-image-list" />
-              </li>
-              <li class="img-wrap">
-                <img src="images/product6.png" alt="" class="image-of-list" />
-              </li>
-              <li class="img-wrap">
-                <img src="images/product2.png" alt="" class="image-of-list" />
-              </li>
-              <li class="img-wrap">
-                <img src="images/product5.png" alt="" class="image-of-list" />
-              </li>
-              <li class="img-wrap">
-                <img src="images/product6.png" alt="" class="image-of-list" />
-              </li>
-              <li class="img-wrap">
-                <img src="images/product2.png" alt="" class="image-of-list" />
-              </li>
-            </ul>
+          <div class="product-nav">
+            <div>
+              <img src="images/product5.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product6.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product2.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product5.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product6.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product2.png" alt="" class="image-of-list" />
+            </div>
           </div>
-          <span class="arrow arrow-right"> <span class="material-icons">&#xE5CC;</span> </span>
         </section>
 
         <div class="summary flex-column" id="item1">
@@ -410,14 +423,6 @@
                 </div>
               </li>
             </ul>
-            <div class="glide__arrow" data-glide-el="controls">
-              <button data-glide-dir="<" class="prev">
-                <span class="material-icons">&#xE5CB;</span>
-              </button>
-              <button data-glide-dir=">" class="next">
-                <span class="material-icons">&#xE5CC;</span>
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -504,103 +509,31 @@
       </div>
     </footer>
 
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
     <script src="js/scrollToElement.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
     <script>
-      /* Carousel */
-
-      const carouselContainer = document.querySelector(".product-slides");
-      const listImageArea = carouselContainer.querySelector(".next-list");
-      const listOfImages = listImageArea.querySelectorAll("img");
-      const currentImage = carouselContainer.querySelector(".current-image");
-      const arrowLeft = carouselContainer.querySelector(".arrow-left");
-      const arrowRight = carouselContainer.querySelector(".arrow-right");
-
-      function styleList() {
-        if (listImageArea.scrollWidth == listImageArea.offsetWidth) {
-          listImageArea.style.justifyContent = "center";
-        } else {
-          listImageArea.style.justifyContent = "flex-start";
-        }
-      }
-
-      function goToRight() {
-        let current = listImageArea.querySelector(".current-image-list");
-        current.classList.remove("current-image-list");
-
-        const nextElementSibling = current.parentElement.nextElementSibling?.children[0];
-        if (nextElementSibling) {
-          nextElementSibling.classList.add("current-image-list");
-        } else {
-          listImageArea.children[0].querySelector("img").classList.add("current-image-list");
-        }
-
-        current = listImageArea.querySelector(".current-image-list");
-        listImageArea.scrollLeft = current.offsetLeft;
-        currentImage.attributes.src.value = current.attributes.src.value;
-        currentImage.classList.add("slideInFromRight");
-        setTimeout(function () {
-          currentImage.classList.remove("slideInFromRight");
-        }, 500);
-      }
-
-      function goToLeft() {
-        let current = listImageArea.querySelector(".current-image-list");
-        const lastIndex = listImageArea.children.length - 1;
-        current.classList.remove("current-image-list");
-
-        const previousElementSibling = current.parentElement.previousElementSibling?.children[0];
-        if (previousElementSibling) {
-          previousElementSibling.classList.add("current-image-list");
-        } else {
-          listImageArea.children[lastIndex]
-            .querySelector("img")
-            .classList.add("current-image-list");
-        }
-
-        current = listImageArea.querySelector(".current-image-list");
-        listImageArea.scrollLeft = current.offsetLeft;
-        currentImage.attributes.src.value = current.attributes.src.value;
-        currentImage.classList.add("slideInFromLeft");
-        setTimeout(function () {
-          currentImage.classList.remove("slideInFromLeft");
-        }, 500);
-      }
-
-      function changeCurrentImage(newImage, newImageIndex) {
-        // Fade in effect
-        newImage.classList.add("fadeIn");
-        setTimeout(function () {
-          newImage.classList.remove("fadeIn");
-        }, 500);
-        // Update classname
-        listOfImages.forEach((image, index) => {
-          index === newImageIndex
-            ? image.classList.add("current-image-list")
-            : image.classList.remove("current-image-list");
-        });
-        //Update main img src value
-        currentImage.attributes.src.value = newImage.attributes.src.value;
-      }
-
-      styleList();
-
-      arrowLeft.addEventListener("click", goToLeft);
-      arrowRight.addEventListener("click", goToRight);
-
-      window.addEventListener("resize", function (e) {
-        styleList();
+      $(".product-zoom-in").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        fade: true,
+        asNavFor: ".product-nav",
       });
 
-      (function () {
-        if (typeof NodeList.prototype.forEach === "function") return false;
-        NodeList.prototype.forEach = Array.prototype.forEach;
-      })();
-
-      listOfImages.forEach((image, index) =>
-        image.addEventListener("click", () => changeCurrentImage(image, index))
-      );
+      $(".product-nav").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: ".product-zoom-in",
+        centerMode: true,
+        focusOnSelect: true,
+      });
 
       /* 追蹤按鈕文字 */
       function handleFollow(element) {

@@ -41,6 +41,7 @@ body {
   min-height: 100vh;
   position: relative;
   padding-bottom: 10px;
+  overflow-x: hidden;
 }
 
 main {
@@ -3994,11 +3995,18 @@ button.slick-arrow {
   position: absolute;
   top: calc(50% - 30px);
   left: -25px;
+  z-index: 9;
+  color: #999;
+}
+
+button.slick-arrow span {
+  font-size: 2rem;
 }
 
 button.slick-arrow.slick-next {
   right: -25px;
   left: initial;
+  z-index: 9;
 }
 
 section.category button.slick-arrow .material-icons {
@@ -5126,8 +5134,11 @@ section.product-slides {
   width: 400px;
   height: 400px;
   position: relative;
-  display: flex;
-  justify-content: center;
+}
+
+section.product-slides .slick-slide img {
+  width: 100%;
+  height: auto;
 }
 
 .product-slides > div.img-wrap {
@@ -5204,8 +5215,6 @@ section.product-slides {
 .image-of-list {
   width: auto;
   height: 100%;
-  opacity: 0.5;
-  box-shadow: 0 0 10px rgb(135, 135, 135);
   transition: all 0.5s;
 }
 
@@ -5427,10 +5436,7 @@ main.product-detail .senders button.follow-btn:hover {
   }
   section.product-slides {
     width: 100%;
-    height: 0;
     position: relative;
-    padding-top: 100%;
-    margin-bottom: 30%;
   }
   .product-slides > div.img-wrap {
     position: absolute;
@@ -5494,9 +5500,6 @@ main.product-detail .senders button.follow-btn:hover {
     font-size: 1.2rem;
   }
 
-  section.product-slides {
-    margin-bottom: 120px;
-  }
 }
 
 .product-detail-btns {
