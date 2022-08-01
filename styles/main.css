@@ -5499,7 +5499,6 @@ main.product-detail .senders button.follow-btn:hover {
   main.product-detail.sold-out div.product-summary div.summary p.stock {
     font-size: 1.2rem;
   }
-
 }
 
 .product-detail-btns {
@@ -6534,9 +6533,9 @@ div.overlay.event-detail-overlay .container {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  margin: 0;
+  overflow-y: auto;
 }
 
 div.overlay.event-detail-overlay .content {
@@ -6544,44 +6543,18 @@ div.overlay.event-detail-overlay .content {
   max-width: 930px;
   background: #fff;
   border-radius: 30px;
-  position: absolute;
-  justify-content: flex-start;
-  padding: 1rem 3rem 3rem;
-  overflow-y: scroll;
-  height: 80vh;
+  position: relative;
+  padding: 0;
+  height: initial;
+  overflow-y: auto;
+  border: 10px solid #f0abca;
+  margin: 80px auto 60px;
+  top: 30px;
 }
 
 div.overlay.event-detail-overlay .content img {
   width: 100% !important;
   margin: 0 auto;
-}
-
-div.overlay.event-detail-overlay .container::after {
-  width: 100%;
-  height: 100%;
-  content: "";
-  width: 90%;
-  max-width: 990px;
-  border-radius: 50px;
-  background: #ffa7cb;
-  height: calc(80vh + 60px);
-}
-
-div.overlay.event-detail-overlay .content h1 img {
-  width: 310px;
-}
-div.overlay.event-detail-overlay .content section h2 img {
-  width: 240px;
-}
-
-div.overlay.event-detail-overlay .content section {
-  width: 100%;
-  position: relative;
-}
-
-div.overlay.event-detail-overlay .content section h2 {
-  text-align: center;
-  margin-bottom: 1rem;
 }
 
 div.overlay.event-detail-overlay .stickers {
@@ -6628,9 +6601,6 @@ div.overlay.event-detail-overlay .sticker-item span.name {
 }
 
 @media screen and (max-width: 990px) {
-  div.overlay.event-detail-overlay .content {
-    padding: 1rem;
-  }
   div.overlay.event-detail-overlay .sticker-item div.img-wrap {
     width: 120px;
     height: 120px;
@@ -6702,43 +6672,13 @@ div.overlay.event-detail-overlay button.close img {
   width: 100%;
 }
 
-div.overlay.event-detail-overlay .content section div.detail-wrap::before {
-  width: 10px;
-  height: 10px;
-  content: "";
-  display: block;
-  background: #888;
-}
-
-div.overlay.event-detail-overlay .content section div.detail-wrap {
-  width: 70%;
-  max-width: 500px;
-  min-width: 230px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 0 auto;
-  align-items: baseline;
-  color: #666;
-}
-
-div.overlay.event-detail-overlay .content section div.detail-wrap div.detail-content {
-  width: calc(100% - 1rem - 10px);
-}
-
 @media screen and (max-width: 480px) {
-  div.overlay.event-detail-overlay .content h1 img {
-    width: 260px;
-  }
-
   div.overlay.event-detail-overlay .container::after {
     border-radius: 40px;
-    height: calc(80vh + 20px);
   }
 
   div.overlay.event-detail-overlay .content {
-    width: calc(90% - 20px);
+    width: 90%;
     overflow-x: hidden;
   }
 
