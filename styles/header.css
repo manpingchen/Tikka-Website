@@ -47,6 +47,7 @@
     padding-right: 2rem;
     background: #fff;
     gap: 10px;
+    max-width: 100vw;
   }
   .site-header__end a {
     width: fit-content;
@@ -64,6 +65,7 @@
   }
   .site-header__end {
     justify-content: space-between;
+    max-width: 100vw;
   }
 
   .site-header__end a.share.button img {
@@ -181,6 +183,7 @@
   background-color: transparent;
   top: 1.5rem;
   padding: 0;
+  border-radius: 0;
 }
 
 .nav__toggle span {

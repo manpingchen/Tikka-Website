@@ -194,8 +194,9 @@ button.glide__bullet--active {
   .mobile-scroll-drag {
     cursor: grab;
     overflow: auto !important;
-    width: 100vw !important;
-    /* margin: 0 -12% !important; */
+    position: relative;
+    width: calc(100% + 4rem) !important /* margin: 0 -12% !important; */;
+    left: -2rem;
   }
 
   .glide.desktop-only ul.glide__slides::-webkit-scrollbar,

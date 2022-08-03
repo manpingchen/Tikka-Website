@@ -11,10 +11,14 @@
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
-    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/slick.css" />
     <!-- Required Core Stylesheet -->
     <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
   </head>
   <body>
     <!-- Header Start -->
@@ -81,7 +85,7 @@
     <!-- Header End -->
 
     <!--Main-->
-    <main class="product-detail">
+    <main class="product-detail sold-out">
       <ul class="tabs flex-row">
         <li>
           <a
@@ -108,41 +112,74 @@
 
       <div class="product-summary">
         <section class="product-slides">
-          <div class="img-wrap">
-            <img src="images/product5.png" alt="" class="current-image" />
+          <div class="product-zoom-in">
+            <div>
+              <img src="images/product5.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product6.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product2.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product5.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product6.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product2.png" alt="" class="image-of-list" />
+            </div>
           </div>
-          <span class="arrow arrow-left"> <span class="material-icons">&#xE5CB;</span> </span>
-          <div class="next-list-wrap">
-            <ul class="next-list">
-              <li class="img-wrap">
-                <img src="images/product5.png" alt="" class="image-of-list current-image-list" />
-              </li>
-              <li class="img-wrap">
-                <img src="images/product6.png" alt="" class="image-of-list" />
-              </li>
-              <li class="img-wrap">
-                <img src="images/product2.png" alt="" class="image-of-list" />
-              </li>
-              <li class="img-wrap">
-                <img src="images/product5.png" alt="" class="image-of-list" />
-              </li>
-              <li class="img-wrap">
-                <img src="images/product6.png" alt="" class="image-of-list" />
-              </li>
-              <li class="img-wrap">
-                <img src="images/product2.png" alt="" class="image-of-list" />
-              </li>
-            </ul>
+          <div class="product-nav">
+            <div>
+              <img src="images/product5.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product6.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product2.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product5.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product6.png" alt="" class="image-of-list" />
+            </div>
+            <div>
+              <img src="images/product2.png" alt="" class="image-of-list" />
+            </div>
           </div>
-          <span class="arrow arrow-right"> <span class="material-icons">&#xE5CC;</span> </span>
         </section>
 
-        <div class="summary flex-column">
+        <div class="summary flex-column" id="item1">
           <h3>Moiskin基礎保養套組</h3>
           <p class="cost">新台幣：NT. 1,999</p>
           <p class="point">捧花：9999</p>
-          <p class="stock">僅剩庫存：3</p>
-          <a class="add-btn button-like" href="purchase.html">立即搶購</a>
+          <p class="stock">
+            僅剩庫存：
+            <span class="value">9</span>
+            <span class="sold-out-text">已售完</span>
+          </p>
+          <form action="javascript:void(0);" class="adjust-item-count">
+            <div class="flex-row">
+              <button class="add" onclick="addOneItemToCart('item1')">
+                <span class="material-symbols-outlined"> change_history </span>
+              </button>
+              <input type="number" min="0" class="quantity" value="3" />
+              <button class="reduce" onclick="removeOneItemToCart('item1')">
+                <span class="material-symbols-outlined"> change_history </span>
+              </button>
+            </div>
+          </form>
+          <button
+            class="add-btn button-like available-if-instock"
+            onclick="location.href='purchase.html'"
+          >
+            立即搶購
+          </button>
         </div>
       </div>
 
@@ -183,275 +220,209 @@
           </div>
         </form>
         <div class="desktop-only live-items">
-          <a class="live-item" href="javascript:void(0)">
-            <div class="img-wrap">
+          <div class="live-item">
+            <div class="img-wrap on" onclick="handleLiveItemClick(this)">
               <img src="images/s2.jpg" alt="" />
+              <span class="live-chip pink">LIVE</span>
+              <span class="count">99999</span>
+              <p class="live-info">
+                <span class="name">小希</span>
+                <span class="time">每週一到每週六21:00-22:00</span>
+              </p>
             </div>
-            <span class="live-chip pink">LIVE</span>
-            <span class="count">99999</span>
-            <p class="live-info">
-              <span class="name">小希</span>
-              <span class="time">每週一到每週六21:00-22:00</span>
-            </p>
             <button type="button" class="follow-btn pink follow1" onclick="handleFollow(this)">
-              <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text">追蹤</span>
+              <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text">
+                已追蹤
+              </span>
             </button>
-          </a>
-          <a class="live-item" href="javascript:void(0)">
-            <div class="img-wrap">
+          </div>
+          <div class="live-item">
+            <div class="img-wrap on" onclick="handleLiveItemClick(this)">
               <img src="images/s2.jpg" alt="" />
+              <span class="live-chip pink">LIVE</span>
+              <span class="count">99999</span>
+              <p class="live-info">
+                <span class="name">小希</span>
+                <span class="time">每週一到每週六21:00-22:00</span>
+              </p>
             </div>
-            <span class="live-chip pink">LIVE</span>
-            <span class="count">99999</span>
-            <p class="live-info">
-              <span class="name">小希</span>
-              <span class="time">每週一到每週六21:00-22:00</span>
-            </p>
             <button type="button" class="follow-btn pink follow2" onclick="handleFollow(this)">
-              <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text">追蹤</span>
+              <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text">
+                已追蹤
+              </span>
             </button>
-          </a>
-          <a class="live-item" href="javascript:void(0)">
-            <div class="img-wrap">
+          </div>
+          <div class="live-item">
+            <div class="img-wrap on" onclick="handleLiveItemClick(this)">
               <img src="images/s2.jpg" alt="" />
+              <span class="live-chip pink">LIVE</span>
+              <span class="count">99999</span>
+              <p class="live-info">
+                <span class="name">小希</span>
+                <span class="time">每週一到每週六21:00-22:00</span>
+              </p>
             </div>
-            <span class="live-chip">LIVE</span>
-            <span class="count">99999</span>
-            <p class="live-info">
-              <span class="name">小希</span>
-              <span class="time">每週一到每週六21:00-22:00</span>
-            </p>
-            <button type="button" class="follow-btn follow3" onclick="handleFollow(this)">
-              <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text">追蹤</span>
+            <button type="button" class="follow-btn pink follow3" onclick="handleFollow(this)">
+              <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text">
+                已追蹤
+              </span>
             </button>
-          </a>
-          <a class="live-item" href="javascript:void(0)">
-            <div class="img-wrap">
+          </div>
+          <div class="live-item">
+            <div class="img-wrap on" onclick="handleLiveItemClick(this)">
               <img src="images/s2.jpg" alt="" />
+              <span class="live-chip pink">LIVE</span>
+              <span class="count">99999</span>
+              <p class="live-info">
+                <span class="name">小希</span>
+                <span class="time">每週一到每週六21:00-22:00</span>
+              </p>
             </div>
-            <span class="live-chip">LIVE</span>
-            <span class="count">99999</span>
-            <p class="live-info">
-              <span class="name">小希</span>
-              <span class="time">每週一到每週六21:00-22:00</span>
-            </p>
-            <button type="button" class="follow-btn follow4" onclick="handleFollow(this)">
-              <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text">追蹤</span>
+            <button type="button" class="follow-btn pink follow4" onclick="handleFollow(this)">
+              <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text">
+                已追蹤
+              </span>
             </button>
-          </a>
-          <a class="live-item" href="javascript:void(0)">
-            <div class="img-wrap">
+          </div>
+          <div class="live-item">
+            <div class="img-wrap on" onclick="handleLiveItemClick(this)">
               <img src="images/s2.jpg" alt="" />
+              <span class="live-chip">LIVE</span>
+              <span class="count">99999</span>
+              <p class="live-info">
+                <span class="name">小希</span>
+                <span class="time">每週一到每週六21:00-22:00</span>
+              </p>
             </div>
-            <span class="live-chip">LIVE</span>
-            <span class="count">99999</span>
-            <p class="live-info">
-              <span class="name">小希</span>
-              <span class="time">每週一到每週六21:00-22:00</span>
-            </p>
             <button type="button" class="follow-btn follow5" onclick="handleFollow(this)">
               <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text">追蹤</span>
             </button>
-          </a>
-          <a class="live-item" href="javascript:void(0)">
-            <div class="img-wrap">
+          </div>
+          <div class="live-item">
+            <div class="img-wrap on" onclick="handleLiveItemClick(this)">
               <img src="images/s2.jpg" alt="" />
+              <span class="live-chip">LIVE</span>
+              <span class="count">99999</span>
+              <p class="live-info">
+                <span class="name">小希</span>
+                <span class="time">每週一到每週六21:00-22:00</span>
+              </p>
             </div>
-            <span class="live-chip">LIVE</span>
-            <span class="count">99999</span>
-            <p class="live-info">
-              <span class="name">小希</span>
-              <span class="time">每週一到每週六21:00-22:00</span>
-            </p>
-            <button type="button" class="follow-btn" id="follow6" onclick="handleFollow(this)">
+            <button type="button" class="follow-btn follow6" onclick="handleFollow(this)">
               <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text">追蹤</span>
             </button>
-          </a>
-          <a class="live-item" href="javascript:void(0)">
-            <div class="img-wrap">
+          </div>
+          <div class="live-item">
+            <div class="img-wrap on" onclick="handleLiveItemClick(this)">
               <img src="images/s2.jpg" alt="" />
+              <span class="live-chip">LIVE</span>
+              <span class="count">99999</span>
+              <p class="live-info">
+                <span class="name">小希</span>
+                <span class="time">每週一到每週六21:00-22:00</span>
+              </p>
             </div>
-            <span class="live-chip">LIVE</span>
-            <span class="count">99999</span>
-            <p class="live-info">
-              <span class="name">小希</span>
-              <span class="time">每週一到每週六21:00-22:00</span>
-            </p>
-            <button type="button" class="follow-btn" id="follow7" onclick="handleFollow(this)">
+            <button type="button" class="follow-btn follow7" onclick="handleFollow(this)">
               <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text">追蹤</span>
             </button>
-          </a>
-          <a class="live-item" href="javascript:void(0)">
-            <div class="img-wrap">
+          </div>
+          <div class="live-item">
+            <div class="img-wrap on" onclick="handleLiveItemClick(this)">
               <img src="images/s2.jpg" alt="" />
+              <span class="live-chip">LIVE</span>
+              <span class="count">99999</span>
+              <p class="live-info">
+                <span class="name">小希</span>
+                <span class="time">每週一到每週六21:00-22:00</span>
+              </p>
             </div>
-            <span class="live-chip">LIVE</span>
-            <span class="count">99999</span>
-            <p class="live-info">
-              <span class="name">小希</span>
-              <span class="time">每週一到每週六21:00-22:00</span>
-            </p>
             <button type="button" class="follow-btn follow8" onclick="handleFollow(this)">
               <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text">追蹤</span>
             </button>
-          </a>
-          <a class="live-item" href="javascript:void(0)">
-            <div class="img-wrap">
-              <img src="images/s2.jpg" alt="" />
-            </div>
-            <span class="live-chip">LIVE</span>
-            <span class="count">99999</span>
-            <p class="live-info">
-              <span class="name">小希</span>
-              <span class="time">每週一到每週六21:00-22:00</span>
-            </p>
-            <button type="button" class="follow-btn follow9" onclick="handleFollow(this)">
-              <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text">追蹤</span>
-            </button>
-          </a>
-          <a class="live-item" href="javascript:void(0)">
-            <div class="img-wrap">
-              <img src="images/s2.jpg" alt="" />
-            </div>
-            <span class="live-chip">LIVE</span>
-            <span class="count">99999</span>
-            <p class="live-info">
-              <span class="name">小希</span>
-              <span class="time">每週一到每週六21:00-22:00</span>
-            </p>
-            <button type="button" class="follow-btn follow10" onclick="handleFollow(this)">
-              <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text">追蹤</span>
-            </button>
-          </a>
+          </div>
         </div>
         <div class="mobile-only live-items" id="live-items-mobile">
-          <div class="glide__track mobile-scroll-drag" data-glide-el="track">
-            <ul class="glide__list glide__slides">
+          <div class="mobile-scroll-drag">
+            <ul class="glide__slides">
               <li class="glide__slide">
-                <a class="live-item" href="javascript:void(0)">
+                <div class="live-item on" onclick="handleLiveItemClick(this)">
                   <div class="img-wrap">
                     <img src="images/s2.jpg" alt="" />
+                    <span class="live-chip pink">LIVE</span>
+                    <span class="count">99999</span>
+                    <p class="live-info">
+                      <span class="name">小希</span>
+                      <span class="time">每週一到每週六21:00-22:00</span>
+                    </p>
                   </div>
-                  <span class="live-chip pink">LIVE</span>
-                  <span class="count">99999</span>
-                  <p class="live-info">
-                    <span class="name">小希</span>
-                    <span class="time">每週一到每週六21:00-22:00</span>
-                  </p>
-                  <button
-                    type="button"
-                    class="follow-btn pink follow1"
-                    onclick="handleFollow(this)"
-                  >
-                    <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text"
-                      >追蹤</span
-                    >
-                  </button>
-                </a>
+                </div>
               </li>
               <li class="glide__slide">
-                <a class="live-item" href="javascript:void(0)">
+                <div class="live-item on" onclick="handleLiveItemClick(this)">
                   <div class="img-wrap">
                     <img src="images/s2.jpg" alt="" />
+                    <span class="live-chip pink">LIVE</span>
+                    <span class="count">99999</span>
+                    <p class="live-info">
+                      <span class="name">小希</span>
+                      <span class="time">每週一到每週六21:00-22:00</span>
+                    </p>
                   </div>
-                  <span class="live-chip">LIVE</span>
-                  <span class="count">99999</span>
-                  <p class="live-info">
-                    <span class="name">小希</span>
-                    <span class="time">每週一到每週六21:00-22:00</span>
-                  </p>
-                  <button type="button" class="follow-btn follow2" onclick="handleFollow(this)">
-                    <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text"
-                      >追蹤</span
-                    >
-                  </button>
-                </a>
+                </div>
               </li>
               <li class="glide__slide">
-                <a class="live-item" href="javascript:void(0)">
+                <div class="live-item on" onclick="handleLiveItemClick(this)">
                   <div class="img-wrap">
                     <img src="images/s2.jpg" alt="" />
+                    <span class="live-chip pink">LIVE</span>
+                    <span class="count">99999</span>
+                    <p class="live-info">
+                      <span class="name">小希</span>
+                      <span class="time">每週一到每週六21:00-22:00</span>
+                    </p>
                   </div>
-                  <span class="live-chip">LIVE</span>
-                  <span class="count">99999</span>
-                  <p class="live-info">
-                    <span class="name">小希</span>
-                    <span class="time">每週一到每週六21:00-22:00</span>
-                  </p>
-                  <button type="button" class="follow-btn follow3" onclick="handleFollow(this)">
-                    <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text"
-                      >追蹤</span
-                    >
-                  </button>
-                </a>
+                </div>
               </li>
               <li class="glide__slide">
-                <a class="live-item" href="javascript:void(0)">
+                <div class="live-item" onclick="handleLiveItemClick(this)">
                   <div class="img-wrap">
                     <img src="images/s2.jpg" alt="" />
+                    <span class="live-chip">LIVE</span>
+                    <span class="count">99999</span>
+                    <p class="live-info">
+                      <span class="name">小希</span>
+                      <span class="time">每週一到每週六21:00-22:00</span>
+                    </p>
                   </div>
-                  <span class="live-chip">LIVE</span>
-                  <span class="count">99999</span>
-                  <p class="live-info">
-                    <span class="name">小希</span>
-                    <span class="time">每週一到每週六21:00-22:00</span>
-                  </p>
-                  <button type="button" class="follow-btn follow4" onclick="handleFollow(this)">
-                    <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text"
-                      >追蹤</span
-                    >
-                  </button>
-                </a>
+                </div>
               </li>
               <li class="glide__slide">
-                <a class="live-item" href="javascript:void(0)">
+                <div class="live-item" onclick="handleLiveItemClick(this)">
                   <div class="img-wrap">
                     <img src="images/s2.jpg" alt="" />
+                    <span class="live-chip">LIVE</span>
+                    <span class="count">99999</span>
+                    <p class="live-info">
+                      <span class="name">小希</span>
+                      <span class="time">每週一到每週六21:00-22:00</span>
+                    </p>
                   </div>
-                  <span class="live-chip pink">LIVE</span>
-                  <span class="count">99999</span>
-                  <p class="live-info">
-                    <span class="name">小希</span>
-                    <span class="time">每週一到每週六21:00-22:00</span>
-                  </p>
-                  <button
-                    type="button"
-                    class="follow-btn pink follow5"
-                    onclick="handleFollow(this)"
-                  >
-                    <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text"
-                      >追蹤</span
-                    >
-                  </button>
-                </a>
+                </div>
               </li>
               <li class="glide__slide">
-                <a class="live-item" href="javascript:void(0)">
+                <div class="live-item" onclick="handleLiveItemClick(this)">
                   <div class="img-wrap">
                     <img src="images/s2.jpg" alt="" />
+                    <span class="live-chip">LIVE</span>
+                    <span class="count">99999</span>
+                    <p class="live-info">
+                      <span class="name">小希</span>
+                      <span class="time">每週一到每週六21:00-22:00</span>
+                    </p>
                   </div>
-                  <span class="live-chip pink">LIVE</span>
-                  <span class="count">99999</span>
-                  <p class="live-info">
-                    <span class="name">小希</span>
-                    <span class="time">每週一到每週六21:00-22:00</span>
-                  </p>
-                  <button type="button" class="follow-btn follow6" onclick="handleFollow(this)">
-                    <img src="images/heart-icon.svg" alt="heart icon" /><span id="follow-text"
-                      >追蹤</span
-                    >
-                  </button>
-                </a>
+                </div>
               </li>
             </ul>
-            <div class="glide__arrow" data-glide-el="controls">
-              <button data-glide-dir="<" class="prev">
-                <span class="material-icons">&#xE5CB;</span>
-              </button>
-              <button data-glide-dir=">" class="next">
-                <span class="material-icons">&#xE5CC;</span>
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -463,10 +434,10 @@
             </button>
           </li>
           <li>
-            <button class="button-like">加入購物車</button>
+            <button class="button-like available-if-instock">加入購物車</button>
           </li>
           <li>
-            <a class="button-like" href="purchase.html">立即搶購</a>
+            <a class="button-like available-if-instock" href="purchase.html">立即搶購</a>
           </li>
         </ul>
       </div>
@@ -538,122 +509,64 @@
       </div>
     </footer>
 
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
     <script src="js/scrollToElement.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
     <script>
-      // new Glide("#live-items-mobile", {
-      //   type: "carousel",
-      //   perView: 2,
-      //   autoplay: 8000,
-      //   animationDuration: 800,
-      //   breakpoints: {
-      //     425: {
-      //       perView: 2,
-      //       gap: 20,
-      //       peek: { before: 20, after: 40 },
-      //     },
-      //   },
-      // }).mount();
-      /* Carousel */
-
-      const carouselContainer = document.querySelector(".product-slides");
-      const listImageArea = carouselContainer.querySelector(".next-list");
-      const listOfImages = listImageArea.querySelectorAll("img");
-      const currentImage = carouselContainer.querySelector(".current-image");
-      const arrowLeft = carouselContainer.querySelector(".arrow-left");
-      const arrowRight = carouselContainer.querySelector(".arrow-right");
-
-      function styleList() {
-        if (listImageArea.scrollWidth == listImageArea.offsetWidth) {
-          listImageArea.style.justifyContent = "center";
-        } else {
-          listImageArea.style.justifyContent = "flex-start";
-        }
-      }
-
-      function goToRight() {
-        let current = listImageArea.querySelector(".current-image-list");
-        current.classList.remove("current-image-list");
-
-        const nextElementSibling = current.parentElement.nextElementSibling?.children[0];
-        if (nextElementSibling) {
-          nextElementSibling.classList.add("current-image-list");
-        } else {
-          listImageArea.children[0].querySelector("img").classList.add("current-image-list");
-        }
-
-        current = listImageArea.querySelector(".current-image-list");
-        listImageArea.scrollLeft = current.offsetLeft;
-        currentImage.attributes.src.value = current.attributes.src.value;
-        currentImage.classList.add("slideInFromRight");
-        setTimeout(function () {
-          currentImage.classList.remove("slideInFromRight");
-        }, 500);
-      }
-
-      function goToLeft() {
-        let current = listImageArea.querySelector(".current-image-list");
-        const lastIndex = listImageArea.children.length - 1;
-        current.classList.remove("current-image-list");
-
-        const previousElementSibling = current.parentElement.previousElementSibling?.children[0];
-        if (previousElementSibling) {
-          previousElementSibling.classList.add("current-image-list");
-        } else {
-          listImageArea.children[lastIndex]
-            .querySelector("img")
-            .classList.add("current-image-list");
-        }
-
-        current = listImageArea.querySelector(".current-image-list");
-        listImageArea.scrollLeft = current.offsetLeft;
-        currentImage.attributes.src.value = current.attributes.src.value;
-        currentImage.classList.add("slideInFromLeft");
-        setTimeout(function () {
-          currentImage.classList.remove("slideInFromLeft");
-        }, 500);
-      }
-
-      function changeCurrentImage(newImage, newImageIndex) {
-        // Fade in effect
-        newImage.classList.add("fadeIn");
-        setTimeout(function () {
-          newImage.classList.remove("fadeIn");
-        }, 500);
-        // Update classname
-        listOfImages.forEach((image, index) => {
-          index === newImageIndex
-            ? image.classList.add("current-image-list")
-            : image.classList.remove("current-image-list");
-        });
-        //Update main img src value
-        currentImage.attributes.src.value = newImage.attributes.src.value;
-      }
-
-      styleList();
-
-      arrowLeft.addEventListener("click", goToLeft);
-      arrowRight.addEventListener("click", goToRight);
-
-      window.addEventListener("resize", function (e) {
-        styleList();
+      $(".product-zoom-in").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        fade: true,
+        asNavFor: ".product-nav",
       });
 
-      (function () {
-        if (typeof NodeList.prototype.forEach === "function") return false;
-        NodeList.prototype.forEach = Array.prototype.forEach;
-      })();
-
-      listOfImages.forEach((image, index) =>
-        image.addEventListener("click", () => changeCurrentImage(image, index))
-      );
+      $(".product-nav").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: ".product-zoom-in",
+        centerMode: true,
+        focusOnSelect: true,
+      });
 
       /* 追蹤按鈕文字 */
       function handleFollow(element) {
         [...document.querySelectorAll(`.${[...element.classList].join(".")}`)].map((node) =>
           node.classList.add("pink")
         );
+      }
+
+      disableBtnsIfSoldOut();
+
+      /* 如產品售完，關閉按鈕功能 */
+      function disableBtnsIfSoldOut() {
+        const ifSoldOut = document
+          .querySelector("main.product-detail")
+          .classList.value.includes("sold-out");
+
+        if (ifSoldOut) {
+          [...document.querySelectorAll(".available-if-instock")].forEach(
+            (node) => (node.disabled = true)
+          );
+          document.querySelector("form.adjust-item-count").style.display = "none";
+        }
+      }
+
+      /* 帶貨主打星點擊 */
+      function handleLiveItemClick(target) {
+        const ifOnLive = target.classList.value.includes("on");
+        if (ifOnLive) {
+          location.href = "live-on.html";
+        }
+        if (!ifOnLive) {
+          location.href = "streamer-profile.html";
+        }
       }
     </script>
   </body>
