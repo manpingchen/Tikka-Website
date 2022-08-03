@@ -25,6 +25,10 @@
   margin: 0 auto;
 }
 
+.add-cart-nav-btn {
+  width: 60px !important;
+}
+
 @media (min-width: 900px) {
   .site-header__wrapper {
     justify-content: initial;
@@ -56,7 +60,7 @@
     display: flex;
     gap: 10px;
   }
-  .site-header__end a {
+  .site-header__end a:not(.add-cart-nav-btn) {
     width: 130px !important;
   }
   .site-header__end {

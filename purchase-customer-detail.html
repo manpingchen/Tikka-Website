@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Tikka</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/slideshow.css" />
+    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <!-- Required Core Stylesheet -->
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <div class="site-header__start">
+          <a href="index.html" class="brand"><img src="images/logo.svg" alt="Tikka Logo" /></a>
+        </div>
+        <div class="site-header__middle">
+          <nav class="nav">
+            <button class="nav__toggle" aria-expanded="false" type="button">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="nav__wrapper">
+              <li class="nav__item">
+                <a href="live.html"><img src="images/m1.svg" alt="直播" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="competition.html"><img src="images/m2.svg" alt="競賽" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="products.html"><img src="images/m3.svg" alt="商品" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="ranking.html"><img src="images/m4.svg" alt="榜單" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="topup.html"><img src="images/m5.svg" alt="儲值" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="search.html"><img src="images/m6.svg" alt="搜尋主播" /></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="site-header__end product-page">
+          <div class="logged-in">
+            <a class="button" href="login.html">
+              <span class="img-wrap"><img src="images/s1.jpg" alt="頭像" /></span>
+              <span class="username">Allen</span>
+            </a>
+          </div>
+          <div class="share-cart-wrapper">
+            <a class="button add-cart-nav-btn" href="#">
+              <span class="icon">
+                <span class="cart-amount">99</span>
+                <img class="icon" src="images/cart-icon.svg" alt="購物車" />
+              </span>
+              <span class="desktop-only"><img src="images/cart-btn.svg" alt="購物車" /></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!--Main-->
+    <main class="purchase">
+      <div class="cart-titles mb-1">
+        <h1 class="flex-row gap-half">
+          <img src="images/cart-icon.svg" alt="購物車商品標題圖" />訂購人資訊
+        </h1>
+      </div>
+      <form action="javascript:void(0);" class="customer-detail mb-1">
+        <div class="flex-column select-wrapper">
+          <label for="payment-method">付款方式</label>
+          <select name="payment-method" id="payment-method">
+            <option value="">NewbePay藍新金流</option>
+          </select>
+        </div>
+        <div class="flex-column select-wrapper">
+          <label for="delivery-method">配送方式</label>
+          <select name="delivery-method" id="delivery-method">
+            <option value="">宅配</option>
+          </select>
+        </div>
+        <div class="input-wrapper">
+          <label for="name">收件人姓名：</label>
+          <input type="text" name="name" id="name" placeholder="請輸入文字..." />
+        </div>
+        <div class="input-wrapper">
+          <label for="phone">收件人電話：</label>
+          <input type="text" name="phone" id="phone" placeholder="請輸入文字..." />
+        </div>
+        <div class="input-wrapper">
+          <label for="mail">收件人mail：</label>
+          <input type="text" name="mail" id="mail" placeholder="請輸入文字..." />
+        </div>
+        <div class="flex-row">
+          <div class="input-wrapper">
+            <label for="city-county">縣市：</label>
+            <input type="text" name="city-county" id="city-county" placeholder="請輸入文字..." />
+          </div>
+          <div class="input-wrapper">
+            <label for="address2">鄉鎮市區：</label>
+            <input type="text" name="address2" id="address2" placeholder="請輸入文字..." />
+          </div>
+        </div>
+        <div class="input-wrapper">
+          <label for="delivery-address">收件地址：</label>
+          <textarea
+            type="text"
+            name="delivery-address"
+            id="delivery-address"
+            placeholder="請輸入文字..."
+          ></textarea>
+        </div>
+        <div class="input-wrapper">
+          <label for="note">備註（可不填）：</label>
+          <textarea type="text" name="note" id="note" placeholder="請輸入文字..."></textarea>
+        </div>
+        <div class="input-wrapper">
+          <label for="coupon">主播推薦碼：</label>
+          <input type="text" name="coupon" id="coupon" placeholder="請輸入文字..." />
+        </div>
+      </form>
+      <div class="cart-item receipt-options flex-column mb-1">
+        <h4>電子發票</h4>
+        <div class="options flex-row gap-1" id="invoice-types">
+          <button
+            type="button"
+            class="outlined secondary"
+            id="einvoice"
+            onclick="handleOptionClick(this.id, 'invoice-types')"
+          >
+            電子發票
+          </button>
+          <button
+            type="button"
+            class="outlined secondary"
+            id="tax-id-number"
+            onclick="handleOptionClick(this.id, 'invoice-types')"
+          >
+            統一編號
+          </button>
+          <button
+            type="button"
+            class="outlined secondary"
+            id="donation"
+            onclick="handleOptionClick(this.id, 'invoice-types')"
+          >
+            愛心捐贈
+          </button>
+          <button
+            type="button"
+            class="outlined secondary"
+            id="carrier-barcode"
+            onclick="handleOptionClick(this.id, 'invoice-types')"
+          >
+            載具條碼
+          </button>
+        </div>
+        <form class="invoice-info-field" style="display: none">
+          <div class="flex-row input-field">
+            <label for="invoice-info-input" class="">Email</label>
+            <input id="invoice-info-input" placeholder="請輸入文字..." />
+          </div>
+          <span id="invoice-info-tips" style="display: none"></span>
+        </form>
+      </div>
+      <div class="cart-item payment-options flex-row">
+        <h4>結帳方式</h4>
+        <div class="flex-row gap-1 btns-group" id="payment-option-buttons">
+          <button
+            class="gray-gradient-bg active"
+            id="cost"
+            onclick="getTotal(this.id, 'payment-option-buttons')"
+          >
+            台幣
+          </button>
+          <button
+            class="gray-gradient-bg"
+            id="point"
+            onclick="getTotal(this.id, 'payment-option-buttons')"
+          >
+            捧花
+          </button>
+        </div>
+      </div>
+      <div class="flex-row justify-center gap-1 mt-1 btns-group">
+        <button class="pink-gradient-bg" onclick="location.href='purchase.html'">上一步</button>
+        <button class="pink-gradient-bg" onclick="location.href='check-purchase-detail.html'">
+          送出訂單
+        </button>
+      </div>
+      <!-- <p class="note">
+        本站購物通通免運費 <br />
+        信用卡與ATM皆為即時到帳 <br />
+        超商付款約15分到隔天入帳 <br />
+        付款成功後會用簡訊通知您訂單編號
+      </p> -->
+    </main>
+
+    <footer class="desktop-only">
+      <div class="footer-content flex-row">
+        <nav class="flex-row">
+          <a href="#" class="line-icon"><img src="images/line.png" alt="line" /></a>
+          <ul>
+            <li>
+              <a href="contact.html">聯絡我們</a>
+            </li>
+            <li>
+              <a href="about.html">關於我們</a>
+            </li>
+            <li>
+              <a href="policy.html">服務條款</a>
+            </li>
+          </ul>
+        </nav>
+        <p class="copyright">
+          <span>Copyright© 2022 by Tikka版權所有</span>
+          <span>Copyright© 2022 Tikka. All rights reserved.</span>
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/header.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      /*儲值方式, 捧花點擊變色*/
+      function handleOptionClick(id, parentId) {
+        setActiveStatus(parentId, id);
+
+        // 顯示發票資訊表單
+        if (parentId === "invoice-types") {
+          const activeElement = document.getElementById(id);
+          const type = activeElement.innerText;
+
+          handleShowComponent(".invoice-info-field");
+          const labelElement = document.querySelector(".invoice-info-field label");
+          const tipElement = document.querySelector("#invoice-info-tips");
+
+          switch (type) {
+            case "電子發票":
+              labelElement.innerHTML = "Email";
+              handleHideComponent("#invoice-info-tips");
+              break;
+            case "愛心捐贈":
+              labelElement.innerHTML = "愛心碼";
+              handleShowComponent("#invoice-info-tips");
+              tipElement.innerHTML = "＊若為愛心捐贈電子發票，則無發退換貨。";
+
+              break;
+            case "統一編號":
+              labelElement.innerHTML = type;
+              handleHideComponent("#invoice-info-tips");
+              break;
+            case "載具條碼":
+              labelElement.innerHTML = type;
+              handleShowComponent("#invoice-info-tips");
+              tipElement.innerHTML = "＊若使用載具發票，請在輸入文字最前方加入／*";
+              break;
+            default:
+              break;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
