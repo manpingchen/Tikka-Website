@@ -61,14 +61,7 @@
             </a>
           </div>
           <div class="share-cart-wrapper">
-            <a
-              class="button share mobile-only"
-              href="javascript:void(0)"
-              onclick="handleShowComponent('#social-media-shares')"
-            >
-              <img src="images/share-pink-btn.svg" alt="分享" />
-            </a>
-            <a class="button" href="#">
+            <a class="button add-cart-nav-btn" href="#">
               <span class="icon">
                 <span class="cart-amount">99</span>
                 <img class="icon" src="images/cart-icon.svg" alt="購物車" />
@@ -83,6 +76,11 @@
 
     <!--Main-->
     <main class="purchase">
+      <div class="cart-titles mb-1">
+        <h1 class="flex-row gap-half">
+          <img src="images/cart-icon.svg" alt="購物車商品標題圖" />購物車商品
+        </h1>
+      </div>
       <div class="cart-items flex-column">
         <div class="cart-item flex-row" id="item1">
           <div class="img-wrap">
@@ -96,6 +94,7 @@
             </p>
             <form action="javascript:void(0);">
               <p class="cost">NT.1,280</p>
+              <p class="point">捧花：17920</p>
               <div class="flex-row">
                 <button class="add" onclick="addOneItemToCart('item1')">
                   <span class="material-symbols-outlined"> change_history </span>
@@ -120,6 +119,7 @@
             </p>
             <form action="javascript:void(0);">
               <p class="cost">NT.1,280</p>
+              <p class="point">捧花：17920</p>
               <div class="flex-row">
                 <button class="add" onclick="addOneItemToCart('item2')">
                   <span class="material-symbols-outlined"> change_history </span>
@@ -144,6 +144,7 @@
             </p>
             <form action="javascript:void(0);">
               <p class="cost">NT.1,280</p>
+              <p class="point">捧花：17920</p>
               <div class="flex-row">
                 <button class="add" onclick="addOneItemToCart('item3')">
                   <span class="material-symbols-outlined"> change_history </span>
@@ -156,52 +157,11 @@
             </form>
           </div>
         </div>
-
-        <div class="cart-item cart-total flex-row">
-          <h4>購物車總金額</h4>
-          <p class="cost">NT.5790</p>
-        </div>
       </div>
-      <form action="javascript:void(0);" class="customer-detail">
-        <div class="input-wrapper">
-          <label for="name">收件人姓名：</label>
-          <input type="text" name="name" id="name" placeholder="請輸入文字..." />
-        </div>
-        <div class="input-wrapper">
-          <label for="phone">收件人電話：</label>
-          <input type="text" name="phone" id="phone" placeholder="請輸入文字..." />
-        </div>
-        <div class="flex-row">
-          <div class="input-wrapper">
-            <label for="city-county">縣市：</label>
-            <input type="text" name="city-county" id="city-county" placeholder="請輸入文字..." />
-          </div>
-          <div class="input-wrapper">
-            <label for="address2">鄉鎮市區：</label>
-            <input type="text" name="address2" id="address2" placeholder="請輸入文字..." />
-          </div>
-        </div>
-        <div class="input-wrapper">
-          <label for="delivery-address">收件地址：</label>
-          <textarea
-            type="text"
-            name="delivery-address"
-            id="delivery-address"
-            placeholder="請輸入文字..."
-          ></textarea>
-        </div>
-        <div class="input-wrapper">
-          <label for="note">備註（可不填）：</label>
-          <textarea type="text" name="note" id="note" placeholder="請輸入文字..."></textarea>
-        </div>
-        <button type="submit">送出訂單</button>
-        <p class="note">
-          本站購物通通免運費 <br />
-          信用卡與ATM皆為即時到帳 <br />
-          超商付款約15分到隔天入帳 <br />
-          付款成功後會用簡訊通知您訂單編號
-        </p>
-      </form>
+      <div class="flex-row justify-center gap-1 mt-1 btns-group">
+        <button class="pink-gradient-bg" onclick="location.href='products.html'">繼續購物</button>
+        <button class="pink-gradient-bg" onclick="location.href='purchase-customer-detail.html'">下一步</button>
+      </div>
     </main>
 
     <footer class="desktop-only">

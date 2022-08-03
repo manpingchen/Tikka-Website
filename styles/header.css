@@ -25,6 +25,10 @@
   margin: 0 auto;
 }
 
+.add-cart-nav-btn {
+  width: 60px !important;
+}
+
 @media (min-width: 900px) {
   .site-header__wrapper {
     justify-content: initial;
@@ -55,14 +59,14 @@
     display: flex;
     gap: 10px;
   }
-  .site-header__end a {
-    width: initial !important;
+  .site-header__end a:not(.add-cart-nav-btn) {
+    width: 130px !important;
   }
   .site-header__end {
     justify-content: space-between;
   }
-  
-  .site-header__end a.share.button img{
+
+  .site-header__end a.share.button img {
     height: 24px;
   }
 }

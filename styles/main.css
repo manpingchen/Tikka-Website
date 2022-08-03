@@ -199,8 +199,24 @@ a:hover img {
   flex-direction: column;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .flex-start {
   align-items: flex-start;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.gap-half {
+  gap: 0.5rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
 }
 
 .mb-1 {
@@ -217,6 +233,11 @@ div.img-wrap img {
 
 .pink-gradient-bg {
   background: linear-gradient(0deg, #e60672, #ef99bf) !important;
+  color: #fff !important;
+}
+
+.gray-gradient-bg {
+  background: linear-gradient(#d5d5d5, #555555) !important;
   color: #fff !important;
 }
 
@@ -5406,9 +5427,61 @@ main.purchase .cart-items {
 main.purchase .cart-item,
 form.customer-detail {
   padding: 2rem 4rem;
-  background: #fff1fb;
+  background: #fff5fc;
   gap: 40px;
   border-radius: 20px;
+}
+
+main.purchase .btns-group button {
+  padding: 0.5rem 1.5rem;
+}
+
+main.purchase .receipt-options .options {
+  flex-wrap: wrap;
+}
+
+main.purchase form.invoice-info-field .input-field {
+  border: 1px solid #999 !important;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  border-radius: 20px !important;
+  margin-top: 0;
+}
+
+main.purchase form.invoice-info-field .input-field label {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #999 !important;
+  width: auto !important;
+  padding: 0 !important;
+}
+main.purchase form.invoice-info-field .input-field label::after {
+  content: ":";
+  display: inline-block;
+}
+
+main.purchase form.invoice-info-field .input-field input {
+  border: none !important;
+  background: none !important;
+  width: auto !important;
+  padding: 0;
+}
+
+main.purchase .receipt-options .options button {
+  padding: 0.5rem 2.5rem;
+}
+
+.cart-titles h1 {
+  color: #d6236c;
+  font-size: 1rem;
+  background: #fff1fb;
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.cart-titles h1 img {
+  width: 24px;
 }
 
 form.customer-detail {
@@ -5424,6 +5497,44 @@ form.customer-detail .input-wrapper {
   margin-bottom: 1rem;
   display: flex;
   align-items: baseline;
+}
+
+form.customer-detail .select-wrapper label {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  font-size: 0.875rem;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+form.customer-detail .select-wrapper label::before,
+form.customer-detail .select-wrapper label::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 1px;
+  background: #000;
+}
+
+form.customer-detail .select-wrapper select {
+  border: 1px solid #000;
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  padding: 0.5rem 20px;
+  font-size: 0.875rem;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 2.5em) 0;
+  background-size: 5px 5px, 5px 5px, 0 0;
+  background-repeat: no-repeat;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 form.customer-detail .input-wrapper input,
@@ -5478,6 +5589,10 @@ form.customer-detail p.note {
   font-size: 1.5rem;
 }
 
+main.purchase {
+  margin-bottom: 0;
+}
+
 main.purchase .cart-item .img-wrap {
   width: 200px;
   padding-top: 200px;
@@ -5499,13 +5614,29 @@ main.purchase .cart-item .img-wrap img {
 
 main.purchase .item-info {
   height: 200px;
-  width: 600px;
+  width: calc(100% - 200px - 1rem);
+  line-height: 1.4em;
   justify-content: space-around;
 }
 
-main.purchase .item-info p.cost {
+main.purchase .item-info p.description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+main.purchase .item-info p.cost,
+main.purchase .item-info p.point {
   color: #d6236c;
-  font-size: 1.4rem;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+main.purchase .item-info p.point {
+  color: #999;
   margin-bottom: 1rem;
 }
 
@@ -5539,9 +5670,19 @@ main.purchase .item-info form button.reduce {
   transform: rotate(180deg);
 }
 
+main.purchase .payment-options button.active {
+  background: linear-gradient(0deg, #e60672, #ef99bf) !important;
+  color: #fff !important;
+}
+
+main.purchase .payment-options {
+  justify-content: space-between;
+}
+
 @media screen and (max-width: 768px) {
   main.purchase {
     margin-bottom: 0;
+    padding-top: 100px;
   }
   main.purchase .cart-item,
   form.customer-detail {
@@ -5561,16 +5702,11 @@ main.purchase .item-info form button.reduce {
   }
 
   main.purchase .item-info p.description {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* number of lines to show */
-    line-clamp: 2;
-    -webkit-box-orient: vertical;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
 
-  main.purchase .item-info p.cost {
+  main.purchase .item-info p.cost,
+  main.purchase .item-info p.point {
     font-size: 0.875rem;
   }
 
@@ -5591,9 +5727,12 @@ main.purchase .item-info form button.reduce {
     gap: 0;
   }
 
+  form.customer-detail .input-wrapper:not(.select-wrapper) {
+    flex-direction: row;
+  }
+
   form.customer-detail .input-wrapper {
     display: flex;
-    flex-direction: row;
     font-size: 0.875rem;
     padding: 0.5rem 20px;
   }
