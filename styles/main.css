@@ -189,6 +189,10 @@ a:hover img {
   filter: contrast(1.9);
 }
 
+.full-width {
+  width: 100%;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -202,6 +206,10 @@ a:hover img {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
 }
 
 .flex-start {
@@ -5598,11 +5606,15 @@ main.purchase .cart-items {
 }
 
 main.purchase .cart-item,
-form.customer-detail {
+div.form-wrapper {
   padding: 2rem 4rem;
   background: #fff5fc;
   gap: 40px;
   border-radius: 20px;
+}
+
+div.form-wrapper {
+  padding: 2rem;
 }
 
 main.purchase .btns-group button {
@@ -5611,6 +5623,14 @@ main.purchase .btns-group button {
 
 main.purchase .receipt-options .options {
   flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media screen and (max-width: 768px) {
+  main.purchase .receipt-options .options {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 main.purchase form.invoice-info-field .input-field {
@@ -5645,6 +5665,12 @@ main.purchase .receipt-options .options button {
   padding: 0.5rem 2.5rem;
 }
 
+main.purchase .receipt-options .options button.active {
+  border-color: #fff;
+  background: #ef99bf;
+  color: #fff;
+}
+
 .cart-titles h1 {
   color: #d6236c;
   font-size: 1rem;
@@ -5655,10 +5681,6 @@ main.purchase .receipt-options .options button {
 
 .cart-titles h1 img {
   width: 24px;
-}
-
-form.customer-detail {
-  margin-top: 1rem;
 }
 
 form.customer-detail .input-wrapper {
@@ -5672,7 +5694,7 @@ form.customer-detail .input-wrapper {
   align-items: baseline;
 }
 
-form.customer-detail .select-wrapper label {
+main.purchase .select-wrapper label {
   margin-bottom: 0.5rem;
   display: flex;
   flex-direction: row;
@@ -5681,8 +5703,8 @@ form.customer-detail .select-wrapper label {
   align-items: center;
 }
 
-form.customer-detail .select-wrapper label::before,
-form.customer-detail .select-wrapper label::after {
+main.purchase .select-wrapper label::before,
+main.purchase .select-wrapper label::after {
   content: "";
   display: block;
   width: 10px;
@@ -5690,7 +5712,7 @@ form.customer-detail .select-wrapper label::after {
   background: #000;
 }
 
-form.customer-detail .select-wrapper select {
+main.purchase .select-wrapper select {
   border: 1px solid #000;
   width: 100%;
   border-radius: 20px;
@@ -5856,6 +5878,12 @@ main.purchase .payment-options button.active {
 
 main.purchase .payment-options {
   justify-content: space-between;
+  gap: 1rem;
+}
+
+main.purchase .payment-options p,
+main.purchase .payment-options h4 {
+  color: #d6236c;
 }
 
 @media screen and (max-width: 768px) {
@@ -5864,7 +5892,7 @@ main.purchase .payment-options {
     padding-top: 100px;
   }
   main.purchase .cart-item,
-  form.customer-detail {
+  div.form-wrapper {
     padding: 1rem;
     gap: 1rem;
   }
