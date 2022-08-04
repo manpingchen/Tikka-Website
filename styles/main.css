@@ -201,7 +201,7 @@ a:hover img {
 
 .flex-column {
   display: flex;
-  flex-direction: column;
+  flex-direction: column !important;
 }
 
 .justify-center {
@@ -214,6 +214,10 @@ a:hover img {
 
 .flex-start {
   align-items: flex-start;
+}
+
+.align-center {
+  align-items: center !important;
 }
 
 .gap-1 {
@@ -230,6 +234,10 @@ a:hover img {
 
 .mb-1 {
   margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem !important;
 }
 
 div.img-wrap {
@@ -5621,6 +5629,14 @@ main.purchase .btns-group button {
   padding: 0.5rem 1.5rem;
 }
 
+main.purchase .btns-group button:not(.gray-gradient-bg):hover{
+  filter: contrast(1.9);
+}
+
+main.purchase .btns-group button.gray-gradient-bg:not(.active):hover{
+  filter: contrast(1.4);
+}
+
 main.purchase .receipt-options .options {
   flex-wrap: wrap;
   display: grid;
@@ -5766,12 +5782,32 @@ form.customer-detail button[type="submit"]:hover {
   filter: contrast(1.9);
 }
 
-form.customer-detail p.note {
+div.form-wrapper p.note {
   color: #999;
   text-align: center;
   line-height: 1.4rem;
   font-size: 0.87rem;
   margin-bottom: 2rem;
+}
+
+div.form-wrapper .detail {
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+div.form-wrapper .detail p {
+  line-height: 1.5em;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  width: auto;
+}
+
+div.form-wrapper .detail p.label {
+  width: 120px;
+}
+
+div.form-wrapper .detail p.value {
+  width: calc(100% - 120px);
 }
 
 .cart-total {
@@ -5884,6 +5920,16 @@ main.purchase .payment-options {
 main.purchase .payment-options p,
 main.purchase .payment-options h4 {
   color: #d6236c;
+}
+
+main.purchase .check-item-count {
+  margin-bottom: 0.25rem !important;
+  gap: 0 !important;
+  width: initial !important;
+}
+
+main.purchase .check-item-count p.point {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 768px) {
