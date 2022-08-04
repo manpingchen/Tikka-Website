@@ -73,22 +73,22 @@
           <img src="images/competition-title.svg" alt="熱門競賽標題" />
         </h1>
         <ul class="list">
-          <li onclick="handleShowComponent('.event-detail-overlay')">
+          <li id="c-1" onclick="handleShowCompetitionDetail(this.id, '.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c2.jpeg" alt="" />
             </div>
           </li>
-          <li onclick="handleShowComponent('.event-detail-overlay')">
+          <li id="c-2" onclick="handleShowCompetitionDetail(this.id, '.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c2.jpeg" alt="" />
             </div>
           </li>
-          <li onclick="handleShowComponent('.event-detail-overlay')">
+          <li id="c-3" onclick="handleShowCompetitionDetail(this.id, '.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c2.jpeg" alt="" />
             </div>
           </li>
-          <li onclick="handleShowComponent('.event-detail-overlay')">
+          <li id="c-4" onclick="handleShowCompetitionDetail(this.id, '.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c2.jpeg" alt="" />
             </div>
@@ -101,32 +101,32 @@
           <img src="images/review-title.svg" alt="經典回顧標題" />
         </h1>
         <ul class="list">
-          <li onclick="handleShowComponent('.event-detail-overlay')">
+          <li id="c-5" onclick="handleShowCompetitionDetail(this.id, '.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c2.jpeg" alt="" />
             </div>
           </li>
-          <li onclick="handleShowComponent('.event-detail-overlay')">
+          <li id="c-6" onclick="handleShowCompetitionDetail(this.id, '.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c3.jpeg" alt="" />
             </div>
           </li>
-          <li onclick="handleShowComponent('.event-detail-overlay')">
+          <li id="c-7" onclick="handleShowCompetitionDetail(this.id, '.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c2.jpeg" alt="" />
             </div>
           </li>
-          <li onclick="handleShowComponent('.event-detail-overlay')">
+          <li id="c-8" onclick="handleShowCompetitionDetail(this.id, '.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c3.jpeg" alt="" />
             </div>
           </li>
-          <li onclick="handleShowComponent('.event-detail-overlay')">
+          <li id="c-9" onclick="handleShowCompetitionDetail(this.id, '.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c1.jpg" alt="" />
             </div>
           </li>
-          <li onclick="handleShowComponent('.event-detail-overlay')">
+          <li id="c-10" onclick="handleShowCompetitionDetail(this.id, '.event-detail-overlay')">
             <div class="img-wrap">
               <img src="images/c3.jpeg" alt="" />
             </div>
@@ -172,5 +172,11 @@
     </footer>
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      function handleShowCompetitionDetail(competitionId, overlayClassName) {
+        handleShowComponent(overlayClassName);
+        document.querySelector(overlayClassName).dataset.id = competitionId;
+      }
+    </script>
   </body>
 </html>
