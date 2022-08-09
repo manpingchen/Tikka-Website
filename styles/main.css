@@ -4086,7 +4086,8 @@ section.category button.slick-arrow .material-icons {
 
 @media screen and (max-width: 480px) {
   .search-container {
-    width: 100%;
+    width: 90%;
+    max-width: 375px;
   }
   body.products footer,
   body.search footer {
@@ -5629,11 +5630,11 @@ main.purchase .btns-group button {
   padding: 0.5rem 1.5rem;
 }
 
-main.purchase .btns-group button:not(.gray-gradient-bg):hover{
+main.purchase .btns-group button:not(.gray-gradient-bg):hover {
   filter: contrast(1.9);
 }
 
-main.purchase .btns-group button.gray-gradient-bg:not(.active):hover{
+main.purchase .btns-group button.gray-gradient-bg:not(.active):hover {
   filter: contrast(1.4);
 }
 
@@ -6969,4 +6970,96 @@ div.overlay.event-detail-overlay button.close img {
 
 .before-live .default-live-img img {
   height: 100vh;
+}
+
+div.img-wrap-with-live-chip {
+  position: relative;
+  top: -8px;
+}
+
+div.img-wrap-with-live-chip div.img-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #fdc9e1;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 30%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.img-wrap-with-live-chip div.img-wrap img {
+  height: 100%;
+}
+
+div.img-wrap-with-live-chip span.live-chip {
+  position: absolute;
+  bottom: -10px;
+  color: #fff;
+  width: 50px;
+  left: calc(50% - 25px);
+  font-size: 0.75rem;
+}
+
+.search-list div.recommend-item {
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  border-bottom: none;
+}
+
+div.recommend-item div.info {
+  width: 100px;
+}
+
+div.recommend-item div.info .name {
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.search-list div.recommend-item button.follow-btn {
+  position: relative;
+  bottom: initial;
+  background: linear-gradient(#d5d5d5, #555555);
+  width: 70px;
+  font-size: 0.75rem;
+}
+
+.search-list div.recommend-item button.follow-btn img {
+  height: 10px;
+}
+
+.search-list div.recommend-item button.follow-btn.pink {
+  background: linear-gradient(#ffc1db, #ff398c, #f03282) !important;
+  color: #fff;
+}
+
+.search-list div.recommend-item ul.photos {
+  gap: 6px;
+}
+
+.search-list div.recommend-item ul.photos li {
+  width: 47px;
+  height: 76px;
+}
+
+.search-list div.recommend-item ul.photos div.img-wrap {
+  width: 40px;
+  height: 50px;
+  top: calc(50% - 25px);
+  left: calc(50% - 20px);
+}
+
+.search-list div.recommend-item ul.photos div.bg ul.white-boxes {
+  width: 50px;
+  gap: 8px;
+}
+
+.search-list div.recommend-item ul.photos div.bg ul.white-boxes li {
+  width: 5px;
+  height: 5px;
 }
