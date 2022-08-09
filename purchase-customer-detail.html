@@ -220,12 +220,6 @@
           送出訂單
         </button>
       </div>
-      <!-- <p class="note">
-        本站購物通通免運費 <br />
-        信用卡與ATM皆為即時到帳 <br />
-        超商付款約15分到隔天入帳 <br />
-        付款成功後會用簡訊通知您訂單編號
-      </p> -->
     </main>
 
     <footer class="desktop-only">
@@ -253,57 +247,5 @@
 
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
-    <script>
-      handleOptionClick("einvoice", "invoice-types");
-      /*儲值方式, 捧花點擊變色*/
-      function handleOptionClick(id, parentId) {
-        setActiveStatus(parentId, id);
-
-        // 顯示發票資訊表單
-        if (parentId === "invoice-types") {
-          const activeElement = document.getElementById(id);
-          const type = activeElement.innerText;
-
-          handleShowComponent(".invoice-info-field");
-          const labelElement = document.querySelector(".invoice-info-field label");
-          const tipElement = document.querySelector("#invoice-info-tips");
-
-          switch (type) {
-            case "電子發票":
-              labelElement.innerHTML = "Email";
-              handleHideComponent("#invoice-info-tips");
-              break;
-            case "愛心捐贈":
-              labelElement.innerHTML = "愛心碼";
-              handleShowComponent("#invoice-info-tips");
-              tipElement.innerHTML = "＊若為愛心捐贈電子發票，則無發退換貨。";
-
-              break;
-            case "統一編號":
-              labelElement.innerHTML = type;
-              handleHideComponent("#invoice-info-tips");
-              break;
-            case "載具條碼":
-              labelElement.innerHTML = type;
-              handleShowComponent("#invoice-info-tips");
-              tipElement.innerHTML = "＊若使用載具發票，請在輸入文字最前方加入／*";
-              break;
-            default:
-              break;
-          }
-        }
-      }
-
-      switchTotalByCurrency("nt-dollar");
-
-      /* 結帳方式切換 */
-      function switchTotalByCurrency(id, parentId) {
-        setActiveStatus(parentId, id);
-        const pointValue = "9,999";
-        const ntDollarValue = "1800";
-        document.querySelector("#total-value").innerHTML =
-          id === "nt-dollar" ? "NT." + ntDollarValue : pointValue;
-      }
-    </script>
   </body>
 </html>

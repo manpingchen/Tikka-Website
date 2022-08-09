@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Tikka</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/slideshow.css" />
+    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <!-- Required Core Stylesheet -->
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <div class="site-header__start">
+          <a href="index.html" class="brand"><img src="images/logo.svg" alt="Tikka Logo" /></a>
+        </div>
+        <div class="site-header__middle">
+          <nav class="nav">
+            <button class="nav__toggle" aria-expanded="false" type="button">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="nav__wrapper">
+              <li class="nav__item">
+                <a href="live.html"><img src="images/m1.svg" alt="直播" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="competition.html"><img src="images/m2.svg" alt="競賽" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="products.html"><img src="images/m3.svg" alt="商品" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="ranking.html"><img src="images/m4.svg" alt="榜單" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="topup.html"><img src="images/m5.svg" alt="儲值" /></a>
+              </li>
+              <li class="nav__item">
+                <a href="search.html"><img src="images/m6.svg" alt="搜尋主播" /></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="site-header__end product-page">
+          <div class="logged-in">
+            <a class="button" href="login.html">
+              <span class="img-wrap"><img src="images/s1.jpg" alt="頭像" /></span>
+              <span class="username">Allen</span>
+            </a>
+          </div>
+          <div class="share-cart-wrapper">
+            <a class="button add-cart-nav-btn" href="#">
+              <span class="icon">
+                <span class="cart-amount">99</span>
+                <img class="icon" src="images/cart-icon.svg" alt="購物車" />
+              </span>
+              <span class="desktop-only"><img src="images/cart-btn.svg" alt="購物車" /></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!--Main-->
+    <main class="purchase">
+      <div class="confirm-screen">
+        <img src="images/done-icon.svg" alt="" />
+        <h1>商品訂購完成</h1>
+        <h2>感謝您的訂購<br />我們將盡快為您出貨</h2>
+      </div>
+    </main>
+
+    <footer class="desktop-only">
+      <div class="footer-content flex-row">
+        <nav class="flex-row">
+          <a href="#" class="line-icon"><img src="images/line.png" alt="line" /></a>
+          <ul>
+            <li>
+              <a href="contact.html">聯絡我們</a>
+            </li>
+            <li>
+              <a href="about.html">關於我們</a>
+            </li>
+            <li>
+              <a href="policy.html">服務條款</a>
+            </li>
+          </ul>
+        </nav>
+        <p class="copyright">
+          <span>Copyright© 2022 by Tikka版權所有</span>
+          <span>Copyright© 2022 Tikka. All rights reserved.</span>
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/header.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      handleOptionClick("einvoice", "invoice-types");
+      /*儲值方式, 捧花點擊變色*/
+      function handleOptionClick(id, parentId) {
+        setActiveStatus(parentId, id);
+
+        // 顯示發票資訊表單
+        if (parentId === "invoice-types") {
+          const activeElement = document.getElementById(id);
+          const type = activeElement.innerText;
+
+          handleShowComponent(".invoice-info-field");
+          const labelElement = document.querySelector(".invoice-info-field label");
+          const tipElement = document.querySelector("#invoice-info-tips");
+
+          switch (type) {
+            case "電子發票":
+              labelElement.innerHTML = "Email";
+              handleHideComponent("#invoice-info-tips");
+              break;
+            case "愛心捐贈":
+              labelElement.innerHTML = "愛心碼";
+              handleShowComponent("#invoice-info-tips");
+              tipElement.innerHTML = "＊若為愛心捐贈電子發票，則無發退換貨。";
+
+              break;
+            case "統一編號":
+              labelElement.innerHTML = type;
+              handleHideComponent("#invoice-info-tips");
+              break;
+            case "載具條碼":
+              labelElement.innerHTML = type;
+              handleShowComponent("#invoice-info-tips");
+              tipElement.innerHTML = "＊若使用載具發票，請在輸入文字最前方加入／*";
+              break;
+            default:
+              break;
+          }
+        }
+      }
+
+      switchTotalByCurrency("nt-dollar");
+
+      /* 結帳方式切換 */
+      function switchTotalByCurrency(id, parentId) {
+        setActiveStatus(parentId, id);
+        const pointValue = "9,999";
+        const ntDollarValue = "1800";
+        document.querySelector("#total-value").innerHTML =
+          id === "nt-dollar" ? "NT." + ntDollarValue : pointValue;
+      }
+    </script>
+  </body>
+</html>

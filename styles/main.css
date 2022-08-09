@@ -7063,3 +7063,38 @@ div.recommend-item div.info .name {
   width: 5px;
   height: 5px;
 }
+
+.confirm-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.confirm-screen img {
+  width: 100px;
+  display: block;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.confirm-screen h1 {
+  font-size: 4.5em;
+  margin-bottom: 1rem;
+  color: #e9538e;
+}
+
+.confirm-screen h2 {
+  font-size: 2.5em;
+  color: #888;
+  line-height: 1.4em;
+  text-align: center;
+}
+@media screen and (max-width: 480px) {
+  .confirm-screen h1 {
+    font-size: 3em;
+  }
+
+  .confirm-screen h2 {
+    font-size: 1.5em;
+  }
+}
