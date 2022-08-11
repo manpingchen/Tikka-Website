@@ -95,15 +95,14 @@ function handleOpenMobileRevenueViewerPanel(tabId, activePanelId) {
     return;
   }
   setActiveStatus("revenue-viewer-tabs", tabId);
-
-  document.getElementById(activePanelId).style.display = "block";
+  handleShowComponent(`#${activePanelId}`);
 
   if (tabId.includes("revenue")) {
-    document.getElementById("viewer-overlay-mobile").style.display = "none";
+    handleHideComponent("#viewer-overlay-mobile");
   }
 
   if (tabId.includes("viewer")) {
-    document.getElementById("revenue-overlay-mobile").style.display = "none";
+    handleHideComponent("#revenue-overlay-mobile");
   }
 }
 
@@ -206,8 +205,14 @@ function handleHideComponent(className) {
 }
 
 /* 開啟元件 */
-function handleShowComponent(className, displayValue = "block") {
-  document.querySelector(className).style.display = displayValue;
+function handleShowComponent(selector, displayValue = "block") {
+  const node = document.querySelector(selector);
+  node.style.display = displayValue;
+
+  /* 如果元件為遮罩，則同步開啟backdrop，做為關閉遮罩之點擊範圍 */
+  if (node?.classList.contains("overlay")) {
+    handleShowComponent(".backdrop");
+  }
 }
 
 /* 切換 禮物牆 all 及 熱門 */
@@ -271,7 +276,7 @@ function handleBuy(id) {
   handleShowComponent("#top-up-overlay");
 }
 
-function stopGlidesOnMobile(slideElement, selector) {
+function stopGlidesOnMobile(slideElement) {
   if (window.innerWidth >= 769) {
     return;
   }
@@ -318,3 +323,13 @@ function removeOneItemToCart(itemId) {
   }
   document.querySelector(`#${itemId} input[type="number"]`).value--;
 }
+
+// 遮罩以外點擊
+
+const backdrop = document.querySelector(".backdrop");
+const overlays = document.querySelectorAll(".overlay");
+
+backdrop.addEventListener("click", () => {
+  [...overlays].forEach((node) => (node.style.display = "none"));
+  backdrop.style.display = "none";
+});

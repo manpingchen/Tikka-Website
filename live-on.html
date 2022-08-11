@@ -379,34 +379,27 @@
                 </div>
                 <div class="flex-row">
                   <button
-                    type="button"
+                    type="button open-overlay"
                     class="face-btn"
                     onclick="handleShowComponent('.sticker-overlay')"
                   >
                     <img src="images/face.svg" />
                   </button>
-                  <button type="button" onclick="handleAddTextToChat('mobile')">
+                  <button type="button open-overlay" onclick="handleAddTextToChat('mobile')">
                     <img src="images/fat-arrow.svg" alt="送出" />
                   </button>
                 </div>
               </div>
               <div class="btns">
-                <button class="icon pink" onclick="handleShowComponent('#social-media-shares')">
+                <button
+                  class="icon pink open-overlay"
+                  onclick="handleShowComponent('#social-media-shares')"
+                >
                   <img src="images/social.svg" />
                 </button>
-                <button class="icon pink" onclick="handleShowMobileRewardWall()">
+                <button class="icon pink open-overlay" onclick="handleShowMobileRewardWall()">
                   <img src="images/gift.svg" />
                 </button>
-
-                <!-- <button class="icon">
-                <img src="images/social.svg" alt="" />
-              </button>
-              <button class="icon">
-                <img src="images/trophy.svg" alt="" />
-              </button>
-              <button class="icon">
-                <img src="images/reload.svg" alt="" />
-              </button> -->
               </div>
             </div>
           </div>
@@ -415,7 +408,7 @@
         <div class="frame-top-bar flex-row">
           <div class="flex-row" id="revenue-viewer-tabs">
             <div
-              class="revenue-tab flex-row desktop-only"
+              class="revenue-tab flex-row desktop-only open-overlay"
               id="revenue-tab"
               onclick="handleOpenMobileRevenueViewerPanel(this.id, 'revenue-overlay-mobile')"
             >
@@ -423,7 +416,7 @@
               <span class="value">999,999,999</span>
             </div>
             <div
-              class="viewer-tab flex-row desktop-only"
+              class="viewer-tab flex-row desktop-only open-overlay"
               id="viewer-tab"
               onclick="handleOpenMobileRevenueViewerPanel(this.id, 'viewer-overlay-mobile')"
             >
@@ -436,13 +429,13 @@
           </div>
         </div>
         <div class="frame-bottom-bar desktop-only flex-row">
-          <button class="icon">
+          <button class="icon open-overlay">
             <img src="images/social.svg" alt="" />
           </button>
-          <button class="icon">
+          <button class="icon open-overlay">
             <img src="images/trophy.svg" alt="" />
           </button>
-          <button class="icon">
+          <button class="icon open-overlay">
             <img src="images/reload.svg" alt="" />
           </button>
         </div>
@@ -702,7 +695,7 @@
           </div>
 
           <!-- 下方禮物送出框 -->
-          <div class="gift-sent-overlay" style="display: none" id="gift-sent">
+          <div class="gift-sent-overlay overlay" style="display: none" id="gift-sent">
             <div class="avatar-wrapper">
               <img src="images/s2.jpg" class="avatar" alt="name" />
             </div>
@@ -766,107 +759,110 @@
           </div>
 
           <!-- 滿版禮物圖 -->
-          <div class="gift-full-overlay" style="display: none" id="gift-full-overlay">
+          <div class="gift-full-overlay overlay" style="display: none" id="gift-full-overlay">
             <img src="images/gift2.png" alt="" />
           </div>
+          <!-- 手機版貼圖遮罩 -->
+          <div class="overlay sticker-overlay" id="sticker-overlay-mobile" style="display: none">
+            <div class="title flex-row">
+              <img src="images/my-sticker.svg" alt="我的貼圖" class="title-img" />
+              <button class="close" onclick="handleHideComponent('.sticker-overlay')">
+                <img src="images/close-icon.svg" alt="close" />
+              </button>
+            </div>
+            <div class="detail-links stickers-details" id="stickers-details">
+              <ul class="stickers-detail-tabs">
+                <li id="all-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
+                  <a href="#">All</a>
+                </li>
+                <li id="popular-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
+                  <a href="#">熱門</a>
+                </li>
+                <li id="my-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
+                  <a href="#">我的貼圖</a>
+                </li>
+              </ul>
+            </div>
+            <div class="content">
+              <div class="sticker-body" id="all-stickers-list">
+                <button class="sticker-item add-sticker">
+                  <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
+                  <span class="img-wrap"> <img src="images/sticker.png" alt="" /> </span>
+                  <span class="sticker-name">貼圖名稱</span>
+                  <span class="value">230</span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
+                  <span class="img-wrap"> <img src="images/sticker.png" alt="" /></span>
+                  <span class="sticker-name">貼圖名稱</span>
+                  <span class="value">230</span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
+                  <span class="img-wrap"> <img src="images/sticker2.png" alt="" /></span>
+                  <span class="sticker-name">貼圖名稱</span>
+                  <span class="value">230</span>
+                </button>
+              </div>
+              <div class="sticker-body" id="popular-stickers-list" style="display: none">
+                <button class="sticker-item add-sticker">
+                  <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
+                  <span class="img-wrap"> <img src="images/sticker.png" alt="" /> </span>
+                  <span class="sticker-name">貼圖名稱</span>
+                  <span class="value">230</span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
+                  <span class="img-wrap"> <img src="images/sticker.png" alt="" /></span>
+                  <span class="sticker-name">貼圖名稱</span>
+                  <span class="value">230</span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
+                  <span class="img-wrap"> <img src="images/sticker2.png" alt="" /></span>
+                  <span class="sticker-name">貼圖名稱</span>
+                  <span class="value">230</span>
+                </button>
+              </div>
+              <div class="sticker-body" id="my-stickers-list" style="display: none">
+                <button class="sticker-item add-sticker">
+                  <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
+                  <span class="img-wrap"> <img src="images/sticker.png" alt="" /> </span>
+                  <span class="sticker-name">貼圖名稱</span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
+                  <span class="img-wrap"> <img src="images/sticker.png" alt="" /></span>
+                  <span class="sticker-name">貼圖名稱</span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
+                  <span class="img-wrap"> <img src="images/sticker2.png" alt="" /></span>
+                  <span class="sticker-name">貼圖名稱</span>
+                </button>
+              </div>
+            </div>
+            <div class="sticker-footer">
+              <div class="send-gift buy-sticker flex-row">
+                <span class="point flex-row">2740000</span>
+                <button
+                  id="buy-button"
+                  type="button"
+                  onclick="handleHideComponent('.sticker-overlay')"
+                >
+                  購買
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!--遮罩backdrop-->
+          <div class="backdrop" style="display: none"></div>
+
           <div class="videoDiv">
             <video id="rtc_media_player" autoplay playsinline controls></video>
           </div>
           <iframe id="giftAdmin" src="" scrolling="no" frameborder="0"></iframe>
-        </div>
-
-        <!-- 手機版貼圖遮罩 -->
-        <div class="overlay sticker-overlay" id="sticker-overlay-mobile" style="display: none">
-          <div class="title flex-row">
-            <img src="images/my-sticker.svg" alt="我的貼圖" class="title-img" />
-            <button class="close" onclick="handleHideComponent('.sticker-overlay')">
-              <img src="images/close-icon.svg" alt="close" />
-            </button>
-          </div>
-          <div class="detail-links stickers-details" id="stickers-details">
-            <ul class="stickers-detail-tabs">
-              <li id="all-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
-                <a href="#">All</a>
-              </li>
-              <li id="popular-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
-                <a href="#">熱門</a>
-              </li>
-              <li id="my-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
-                <a href="#">我的貼圖</a>
-              </li>
-            </ul>
-          </div>
-          <div class="content">
-            <div class="sticker-body" id="all-stickers-list">
-              <button class="sticker-item add-sticker">
-                <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
-              </button>
-              <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker.png" alt="" /> </span>
-                <span class="sticker-name">貼圖名稱</span>
-                <span class="value">230</span>
-              </button>
-              <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker.png" alt="" /></span>
-                <span class="sticker-name">貼圖名稱</span>
-                <span class="value">230</span>
-              </button>
-              <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker2.png" alt="" /></span>
-                <span class="sticker-name">貼圖名稱</span>
-                <span class="value">230</span>
-              </button>
-            </div>
-            <div class="sticker-body" id="popular-stickers-list" style="display: none">
-              <button class="sticker-item add-sticker">
-                <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
-              </button>
-              <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker.png" alt="" /> </span>
-                <span class="sticker-name">貼圖名稱</span>
-                <span class="value">230</span>
-              </button>
-              <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker.png" alt="" /></span>
-                <span class="sticker-name">貼圖名稱</span>
-                <span class="value">230</span>
-              </button>
-              <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker2.png" alt="" /></span>
-                <span class="sticker-name">貼圖名稱</span>
-                <span class="value">230</span>
-              </button>
-            </div>
-            <div class="sticker-body" id="my-stickers-list" style="display: none">
-              <button class="sticker-item add-sticker">
-                <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
-              </button>
-              <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker.png" alt="" /> </span>
-                <span class="sticker-name">貼圖名稱</span>
-              </button>
-              <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker.png" alt="" /></span>
-                <span class="sticker-name">貼圖名稱</span>
-              </button>
-              <button class="sticker-item flex-column" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker2.png" alt="" /></span>
-                <span class="sticker-name">貼圖名稱</span>
-              </button>
-            </div>
-          </div>
-          <div class="sticker-footer">
-            <div class="send-gift buy-sticker flex-row">
-              <span class="point flex-row">2740000</span>
-              <button
-                id="buy-button"
-                type="button"
-                onclick="handleHideComponent('.sticker-overlay')"
-              >
-                購買
-              </button>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -1259,7 +1255,7 @@
 
       /* 手機版禮物牆顯示 */
       function handleShowMobileRewardWall() {
-        document.getElementById("rewards-overlay-mobile").style.display = "block";
+        handleShowComponent("#rewards-overlay-mobile");
         showRewardDetail("gift-all-mobile", "gift-details-mobile");
       }
 
@@ -1316,7 +1312,6 @@
         });
         setActiveStatus(tabParentId, tabId);
         const selector = "#" + tabId + "-list";
-        console.log({ selector });
         handleShowComponent(selector, "grid");
       }
 

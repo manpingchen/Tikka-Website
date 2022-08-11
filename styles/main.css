@@ -4279,13 +4279,13 @@ div.overlay {
   backdrop-filter: blur(5px);
 }
 
-div.overlay .backdrop {
+div.backdrop {
   position: fixed;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   z-index: 8;
   bottom: 0;
-  background-color: #000;
+  left: 0;
 }
 
 div.overlay.social-media-shares {
