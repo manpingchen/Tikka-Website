@@ -6742,42 +6742,41 @@ div.overlay.event-detail-overlay {
   top: 0;
   min-height: 100vh;
   height: 100%;
-  width: 100vw;
+  width: 100%;
   left: 0;
   z-index: 999;
   background: none !important;
+  overflow-y: auto;
+  border-radius: 0;
 }
 
-div.overlay.event-detail-overlay .backdrop {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
+div.backdrop.gray {
   background: #000000cc;
 }
 
 div.overlay.event-detail-overlay .container {
   position: relative;
-  width: 100%;
+  width: calc(90% - 60px);
+  max-width: 930px;
   height: 100%;
-  /* display: flex; */
-  /* align-items: center; */
-  margin: 0;
-  overflow-y: auto;
+  margin: 0 auto;
+  z-index: 9;
+}
+
+div.overlay.event-detail-overlay .backdrop{
+  position: sticky;
 }
 
 div.overlay.event-detail-overlay .content {
-  width: calc(90% - 60px);
+  /* width: calc(90% - 60px); */
   max-width: 930px;
   background: #fff;
   border-radius: 30px;
   position: relative;
   padding: 0;
   height: initial;
-  overflow-y: auto;
   border: 10px solid #f0abca;
   margin: 80px auto 60px;
-  /* top: 30px; */
 }
 
 div.overlay.event-detail-overlay .content img {
