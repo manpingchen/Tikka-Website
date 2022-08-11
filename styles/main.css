@@ -3607,6 +3607,11 @@ main.ranking .value {
   padding-left: 20px;
 }
 
+main.ranking .receiver-ranking .value {
+  background: url(../images/diamond-ranking.png) no-repeat -24px center;
+  background-size: 63px;
+}
+
 @media screen and (max-width: 768px) {
   main.ranking {
     width: 100%;
@@ -4272,6 +4277,15 @@ div.overlay {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   backdrop-filter: blur(5px);
+}
+
+div.overlay .backdrop {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 8;
+  bottom: 0;
+  background-color: #000;
 }
 
 div.overlay.social-media-shares {
