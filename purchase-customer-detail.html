@@ -139,7 +139,7 @@
           </div>
         </form>
       </div>
-      <div class="cart-item receipt-options flex-column mb-1">
+      <div class="form-wrapper receipt-options flex-column mb-1">
         <h4>電子發票</h4>
         <div class="options flex-row gap-1" id="invoice-types">
           <button
@@ -183,7 +183,7 @@
           <span id="invoice-info-tips" style="display: none"></span>
         </form>
       </div>
-      <div class="cart-item payment-options flex-column">
+      <div class="form-wrapper payment-options flex-column">
         <div class="flex-row full-width justify-space-between">
           <h4>結帳方式</h4>
           <div class="flex-row gap-1 btns-group" id="payment-option-buttons">
@@ -247,5 +247,9 @@
 
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      switchTotalByCurrency("nt-dollar");
+      handleOptionClick("einvoice", "invoice-types");
+     </script>
   </body>
 </html>

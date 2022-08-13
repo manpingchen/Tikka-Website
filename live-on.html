@@ -15,6 +15,10 @@
     <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
     <!-- Required Core Stylesheet -->
     <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
   </head>
   <body>
     <!-- Header Start -->
@@ -1130,6 +1134,187 @@
         </div>
       </section>
     </main>
+
+    <!--滿版商品訂購遮罩-->
+
+    <div class="overlay purchase-overlay" id="purchase-overlay" style="display: none">
+      <div class="title flex-row">
+        <img src="images/purchase-title-icon-1.svg" alt="商品訂購頁標題" class="title-img" />
+      </div>
+      <div class="content">
+        <div class="cart-item flex-row mb-1" id="item1">
+          <div class="img-wrap">
+            <img src="images/product1.png" alt="產品圖片" />
+          </div>
+          <div class="item-info flex-column">
+            <h3>Moiskin長效賦活精華液</h3>
+            <p class="description">
+              選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
+              選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
+            </p>
+            <form action="javascript:void(0);" class="adjust-item-count">
+              <p class="cost">NT.1,280</p>
+              <p class="point">捧花：17920</p>
+              <div class="flex-row">
+                <button class="add" onclick="addOneItemToCart('item1')">
+                  <span class="material-symbols-outlined"> change_history </span>
+                </button>
+                <input type="number" min="0" class="quantity" value="3" />
+                <button class="reduce" onclick="removeOneItemToCart('item1')">
+                  <span class="material-symbols-outlined"> change_history </span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="form-wrapper mb-1">
+          <div class="flex-column select-wrapper">
+            <label for="payment-method">付款方式</label>
+            <select name="payment-method" id="payment-method">
+              <option value="">NewbePay藍新金流</option>
+            </select>
+          </div>
+          <div class="flex-column select-wrapper">
+            <label for="delivery-method">配送方式</label>
+            <select name="delivery-method" id="delivery-method">
+              <option value="">宅配</option>
+            </select>
+          </div>
+          <form action="javascript:void(0);" class="customer-detail mb-1">
+            <div class="input-wrapper">
+              <label for="name">收件人姓名：</label>
+              <input type="text" name="name" id="name" placeholder="請輸入文字..." />
+            </div>
+            <div class="input-wrapper">
+              <label for="phone">收件人電話：</label>
+              <input type="text" name="phone" id="phone" placeholder="請輸入文字..." />
+            </div>
+            <div class="input-wrapper">
+              <label for="mail">收件人mail：</label>
+              <input type="text" name="mail" id="mail" placeholder="請輸入文字..." />
+            </div>
+            <div class="flex-row">
+              <div class="input-wrapper">
+                <label for="city-county">縣市：</label>
+                <input
+                  type="text"
+                  name="city-county"
+                  id="city-county"
+                  placeholder="請輸入文字..."
+                />
+              </div>
+              <div class="input-wrapper">
+                <label for="address2">鄉鎮市區：</label>
+                <input type="text" name="address2" id="address2" placeholder="請輸入文字..." />
+              </div>
+            </div>
+            <div class="input-wrapper">
+              <label for="delivery-address">收件地址：</label>
+              <textarea
+                type="text"
+                name="delivery-address"
+                id="delivery-address"
+                placeholder="請輸入文字..."
+              ></textarea>
+            </div>
+            <div class="input-wrapper">
+              <label for="note">備註（可不填）：</label>
+              <textarea type="text" name="note" id="note" placeholder="請輸入文字..."></textarea>
+            </div>
+            <div class="input-wrapper">
+              <label for="coupon">主播推薦碼：</label>
+              <input type="text" name="coupon" id="coupon" placeholder="請輸入文字..." />
+            </div>
+          </form>
+        </div>
+        <div class="form-wrapper receipt-options flex-column mb-1">
+          <h4>電子發票</h4>
+          <div class="options flex-row gap-1" id="invoice-types">
+            <button
+              type="button"
+              class="outlined secondary active"
+              id="einvoice"
+              onclick="handleOptionClick(this.id, 'invoice-types')"
+            >
+              電子發票
+            </button>
+            <button
+              type="button"
+              class="outlined secondary"
+              id="tax-id-number"
+              onclick="handleOptionClick(this.id, 'invoice-types')"
+            >
+              統一編號
+            </button>
+            <button
+              type="button"
+              class="outlined secondary"
+              id="donation"
+              onclick="handleOptionClick(this.id, 'invoice-types')"
+            >
+              愛心捐贈
+            </button>
+            <button
+              type="button"
+              class="outlined secondary"
+              id="carrier-barcode"
+              onclick="handleOptionClick(this.id, 'invoice-types')"
+            >
+              載具條碼
+            </button>
+          </div>
+          <form class="invoice-info-field">
+            <div class="flex-row input-field">
+              <label for="invoice-info-input" class="">Email</label>
+              <input id="invoice-info-input" placeholder="請輸入文字..." />
+            </div>
+            <span id="invoice-info-tips" style="display: none"></span>
+          </form>
+        </div>
+        <div class="form-wrapper payment-options flex-column">
+          <div class="flex-row full-width justify-space-between">
+            <h4>結帳方式</h4>
+            <div class="flex-row gap-1 btns-group" id="payment-option-buttons">
+              <button
+                class="gray-gradient-bg active"
+                id="nt-dollar"
+                onclick="switchTotalByCurrency(this.id, 'payment-option-buttons')"
+              >
+                台幣
+              </button>
+              <button
+                class="gray-gradient-bg"
+                id="point"
+                onclick="switchTotalByCurrency(this.id, 'payment-option-buttons')"
+              >
+                捧花
+              </button>
+            </div>
+          </div>
+          <div class="price-calculation full-width">
+            <div class="delivery-fee flex-row justify-space-between">
+              <p class="flex-row gap-1">
+                運費<span class="fee-applied">（未達最低消費門檻）</span>
+              </p>
+              <p class="cost">NT.<span class="value">80</span></p>
+            </div>
+            <div class="total-price flex-row justify-space-between">
+              <p class="flex-row gap-1">購物車總金額</p>
+              <p class="cost"><span class="value" id="total-value">640,000</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="form-wrapper flex-row justify-center mt-1">
+          <button type="submit" class="pink-gradient-bg" onclick="location.href='check-purchase-detail.html'">
+            送出訂單
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--遮罩backdrop-->
+    <div class="backdrop" style="display: none"></div>
+
     <footer class="desktop-only">
       <div class="footer-content flex-row">
         <nav class="flex-row">

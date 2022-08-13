@@ -463,7 +463,7 @@ div.img-wrap img {
 }
 
 form.invoice-info-field div.flex-row {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   display: flex;
   gap: 1rem;
   width: 100%;
@@ -4419,6 +4419,18 @@ div.overlay div.content {
   height: calc(100% - 80px);
 }
 
+div.overlay.purchase-overlay .content {
+  overflow-y: auto;
+  display: block;
+  padding: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  div.overlay.purchase-overlay .content {
+    padding: 1rem;
+  }
+}
+
 div.overlay#top-up-overlay .title p {
   text-shadow: 0 0 7px #c40761;
 }
@@ -5629,6 +5641,7 @@ main.purchase .cart-items {
 }
 
 main.purchase .cart-item,
+div.purchase-overlay .cart-item,
 div.form-wrapper {
   padding: 2rem 4rem;
   background: #fff5fc;
@@ -5636,7 +5649,15 @@ div.form-wrapper {
   border-radius: 20px;
 }
 
+@media screen and (max-width: 768px) {
+  div.purchase-overlay .cart-item {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}
+
 div.form-wrapper {
+  gap: 1rem;
   padding: 2rem;
 }
 
@@ -5664,7 +5685,8 @@ main.purchase .receipt-options .options {
   }
 }
 
-main.purchase form.invoice-info-field .input-field {
+main.purchase form.invoice-info-field .input-field,
+div.purchase-overlay form.invoice-info-field .input-field {
   border: 1px solid #999 !important;
   padding: 1rem 1.5rem;
   background: #fff;
@@ -5672,7 +5694,8 @@ main.purchase form.invoice-info-field .input-field {
   margin-top: 0;
 }
 
-main.purchase form.invoice-info-field .input-field label {
+main.purchase form.invoice-info-field .input-field label,
+div.purchase-overlay form.invoice-info-field .input-field label {
   background: none !important;
   border: none !important;
   box-shadow: none !important;
@@ -5680,23 +5703,39 @@ main.purchase form.invoice-info-field .input-field label {
   width: auto !important;
   padding: 0 !important;
 }
-main.purchase form.invoice-info-field .input-field label::after {
+main.purchase form.invoice-info-field .input-field label::after,
+div.purchase-overlay form.invoice-info-field .input-field label::after {
   content: ":";
   display: inline-block;
 }
 
-main.purchase form.invoice-info-field .input-field input {
+main.purchase form.invoice-info-field .input-field input,
+div.purchase-overlay form.invoice-info-field .input-field input {
   border: none !important;
   background: none !important;
   width: auto !important;
   padding: 0;
 }
 
-main.purchase .receipt-options .options button {
+main.purchase .receipt-options .options button,
+div.purchase-overlay .receipt-options .options button,
+div.purchase-overlay .payment-options button,
+div.form-wrapper button[type="submit"] {
   padding: 0.5rem 2.5rem;
 }
 
-main.purchase .receipt-options .options button.active {
+@media screen and (max-width: 480px) {
+  div.purchase-overlay .receipt-options .options button,
+  div.purchase-overlay .payment-options button {
+    padding: 0.5rem 1.5rem;
+  }
+  div.form-wrapper button[type="submit"] {
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+main.purchase .receipt-options .options button.active,
+div.purchase-overlay .receipt-options .options button.active {
   border-color: #fff;
   background: #ef99bf;
   color: #fff;
@@ -5725,7 +5764,8 @@ form.customer-detail .input-wrapper {
   align-items: baseline;
 }
 
-main.purchase .select-wrapper label {
+main.purchase .select-wrapper label,
+div.purchase-overlay .select-wrapper label {
   margin-bottom: 0.5rem;
   display: flex;
   flex-direction: row;
@@ -5735,7 +5775,9 @@ main.purchase .select-wrapper label {
 }
 
 main.purchase .select-wrapper label::before,
-main.purchase .select-wrapper label::after {
+main.purchase .select-wrapper label::after,
+div.purchase-overlay .select-wrapper label::before,
+div.purchase-overlay .select-wrapper label::after {
   content: "";
   display: block;
   width: 10px;
@@ -5743,7 +5785,8 @@ main.purchase .select-wrapper label::after {
   background: #000;
 }
 
-main.purchase .select-wrapper select {
+main.purchase .select-wrapper select,
+div.purchase-overlay .select-wrapper select {
   border: 1px solid #000;
   width: 100%;
   border-radius: 20px;
@@ -5839,7 +5882,8 @@ main.purchase {
   margin-bottom: 0;
 }
 
-main.purchase .cart-item .img-wrap {
+main.purchase .cart-item .img-wrap,
+div.purchase-overlay .cart-item .img-wrap {
   width: 200px;
   padding-top: 200px;
   position: relative;
@@ -5852,20 +5896,29 @@ main.purchase .cart-item .img-wrap {
   background: #fff;
 }
 
-main.purchase .cart-item .img-wrap img {
+@media screen and (max-width: 768px) {
+  div.purchase-overlay .cart-item .img-wrap {
+    width: 100px;
+    padding-top: 100px;
+  }
+}
+
+main.purchase .cart-item .img-wrap img,
+div.purchase-overlay .cart-item .img-wrap img {
   position: absolute;
   height: 110%;
   top: -5%;
+  width: auto !important;
 }
 
-main.purchase .item-info {
+.cart-item .item-info {
   height: 200px;
   width: calc(100% - 200px - 1rem);
   line-height: 1.4em;
   justify-content: space-around;
 }
 
-main.purchase .item-info p.description {
+.cart-item .item-info p.description {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -5873,20 +5926,27 @@ main.purchase .item-info p.description {
   line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-
-main.purchase .item-info p.cost,
-main.purchase .item-info p.point {
+@media screen and (max-width: 768px) {
+  div.purchase-overlay .cart-item .item-info {
+    width: calc(100% - 100px - 1rem);
+  }
+  div.purchase-overlay .cart-item .item-info p.description {
+    font-size: 0.875rem;
+  }
+}
+.cart-item .item-info p.cost,
+.cart-item .item-info p.point {
   color: #d6236c;
   font-size: 1rem;
   margin-bottom: 0.25rem;
 }
 
-main.purchase .item-info p.point {
+.cart-item .item-info p.point {
   color: #999;
   margin-bottom: 1rem;
 }
 
-main.purchase .item-info div {
+.cart-item .item-info div {
   width: 200px;
   display: flex;
   flex-direction: row;
@@ -5922,18 +5982,22 @@ form.adjust-item-count button.reduce {
   transform: rotate(180deg);
 }
 
-main.purchase .payment-options button.active {
+main.purchase .payment-options button.active,
+div.purchase-overlay .payment-options button.active {
   background: linear-gradient(0deg, #e60672, #ef99bf) !important;
   color: #fff !important;
 }
 
-main.purchase .payment-options {
+main.purchase .payment-options,
+div.purchase-overlay .payment-options {
   justify-content: space-between;
   gap: 1rem;
 }
 
 main.purchase .payment-options p,
-main.purchase .payment-options h4 {
+main.purchase .payment-options h4,
+div.purchase-overlay .payment-options p,
+div.purchase-overlay .payment-options h4 {
   color: #d6236c;
 }
 
@@ -5956,6 +6020,12 @@ main.purchase .check-item-count p.point {
   div.form-wrapper {
     padding: 1rem;
     gap: 1rem;
+  }
+
+  div.form-wrapper .options,
+  .payment-options .btns-group {
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   main.purchase .item-info {
@@ -6763,7 +6833,7 @@ div.overlay.event-detail-overlay .container {
   z-index: 9;
 }
 
-div.overlay.event-detail-overlay .backdrop{
+div.overlay.event-detail-overlay .backdrop {
   position: sticky;
 }
 
@@ -7110,4 +7180,15 @@ div.recommend-item div.info .name {
   .confirm-screen h2 {
     font-size: 1.5em;
   }
+}
+
+div.purchase-overlay {
+  position: fixed;
+  bottom: 0;
+  height: 75%;
+  z-index: 9999;
+}
+
+div.purchase-overlay div.title img.title-img {
+  height: 60px;
 }
