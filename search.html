@@ -298,7 +298,7 @@
           </div>
           <ul class="photos">
             <li>
-              <div class="img-wrap" onclick="location.href = ''">
+              <div class="img-wrap" onclick="handleShowComponent('#search-result-video-overlay')">
                 <img src="images/s2.jpg" alt="" />
               </div>
               <div class="bg">
@@ -315,7 +315,7 @@
               </div>
             </li>
             <li>
-              <div class="img-wrap" onclick="location.href = ''">
+              <div class="img-wrap" onclick="handleShowComponent('#search-result-video-overlay')">
                 <img src="images/s2.jpg" alt="" />
               </div>
               <div class="bg">
@@ -332,7 +332,7 @@
               </div>
             </li>
             <li>
-              <div class="img-wrap" onclick="location.href = ''">
+              <div class="img-wrap" onclick="handleShowComponent('#search-result-video-overlay')">
                 <img src="images/s2.jpg" alt="" />
               </div>
               <div class="bg">
@@ -372,7 +372,7 @@
           </div>
           <ul class="photos">
             <li>
-              <div class="img-wrap" onclick="location.href = ''">
+              <div class="img-wrap" onclick="handleShowComponent('#search-result-video-overlay')">
                 <img src="images/s2.jpg" alt="" />
               </div>
               <div class="bg">
@@ -389,7 +389,7 @@
               </div>
             </li>
             <li>
-              <div class="img-wrap" onclick="location.href = ''">
+              <div class="img-wrap" onclick="handleShowComponent('#search-result-video-overlay')">
                 <img src="images/s2.jpg" alt="" />
               </div>
               <div class="bg">
@@ -406,7 +406,7 @@
               </div>
             </li>
             <li>
-              <div class="img-wrap" onclick="location.href = ''">
+              <div class="img-wrap" onclick="handleShowComponent('#search-result-video-overlay')">
                 <img src="images/s2.jpg" alt="" />
               </div>
               <div class="bg">
@@ -426,6 +426,36 @@
         </div>
       </div>
     </main>
+
+    <div class="overlay full-size search-result-video" id="search-result-video-overlay">
+      <div class="top-bar">
+        <button class="back" onclick="handleHideComponent('#search-result-video-overlay')">
+          <span class="material-icons">&#xE5CB;</span>
+        </button>
+        <p>經典影片</p>
+      </div>
+      <div class="content">
+        <div class="videoDiv">
+          <video id="rtc_media_player" autoplay playsinline controls></video>
+        </div>
+        <div class="video-description">
+          經典影片內容說明，經典影片內容說明經典影片內容說明。經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明。
+        </div>
+        <div class="btn-groups">
+          <button class="followed" onclick="handleFollow()">
+            <img src="images/heart-icon.svg" alt="heart icon" />
+            <span class="value">999</span>
+          </button>
+          <button onclick="handleFollow()">
+            <img src="images/gift.svg" alt="gift icon" />
+          </button>
+          <button onclick="handleShare()">
+            <img src="images/social.svg" alt="social icon" />
+          </button>
+        </div>
+      </div>
+    </div>
+
     <footer class="desktop-only">
       <div class="footer-content flex-row">
         <nav class="flex-row">
