@@ -118,6 +118,7 @@
   }
   .nav__wrapper.active {
     visibility: visible;
+    width: 100%;
     opacity: 1;
     top: 100%;
     transform: translateY(0);

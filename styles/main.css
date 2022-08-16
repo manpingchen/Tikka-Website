@@ -6810,18 +6810,18 @@ div.overlay.small.topup div.footer p::before {
 div.overlay.event-detail-overlay {
   position: fixed;
   top: 0;
-  min-height: 100vh;
+  min-height: 100%;
   height: 100%;
   width: 100%;
   left: 0;
   z-index: 999;
-  background: none !important;
   overflow-y: auto;
   border-radius: 0;
+  background: #000000cc;
 }
 
 div.backdrop.gray {
-  background: #000000cc;
+  /* background: #000000cc; */
 }
 
 div.overlay.event-detail-overlay .container {
@@ -6831,6 +6831,12 @@ div.overlay.event-detail-overlay .container {
   height: 100%;
   margin: 0 auto;
   z-index: 9;
+}
+
+@media screen and (max-width: 480px) {
+  div.overlay.event-detail-overlay .container {
+    width: 90%;
+  }
 }
 
 div.overlay.event-detail-overlay .backdrop {
@@ -6847,11 +6853,13 @@ div.overlay.event-detail-overlay .content {
   height: initial;
   border: 10px solid #f0abca;
   margin: 80px auto 60px;
+  display: inline-block;
 }
 
 div.overlay.event-detail-overlay .content img {
   width: 100% !important;
   margin: 0 auto;
+  border-radius: 20px;
 }
 
 div.overlay.event-detail-overlay .stickers {
@@ -6975,7 +6983,6 @@ div.overlay.event-detail-overlay button.close img {
   }
 
   div.overlay.event-detail-overlay .content {
-    width: 90%;
     overflow-x: hidden;
   }
 
@@ -7201,7 +7208,7 @@ div.overlay.full-size {
 }
 
 div.overlay.search-result-video {
-  z-index: 10000;
+  z-index: 99;
   overflow-y: auto;
   background: #333;
 }
