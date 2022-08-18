@@ -328,7 +328,7 @@ function removeOneItemToCart(itemId) {
 // 遮罩以外點擊
 
 const backdrop = document.querySelector(".backdrop");
-const overlays = document.querySelectorAll(".overlay");
+const overlays = document.querySelectorAll(".overlay:not(.full-page)");
 
 backdrop.addEventListener("click", () => {
   [...overlays].forEach((node) => (node.style.display = "none"));

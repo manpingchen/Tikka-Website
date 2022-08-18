@@ -2214,11 +2214,12 @@ main.live-on div.slides-list .glide__arrow button.next {
   right: -10px;
 }
 
-main.live-on div.rewards {
+main.live-on div.rewards,
+div.overlay.rewards {
   border-radius: 20px;
   padding: 1rem;
   background: #fea7cb;
-  height: calc(100% - 372px);
+  height: calc(100% - 372px) !important;
 }
 
 main.live-on div.rewards div.btns {
@@ -2228,10 +2229,10 @@ main.live-on div.rewards div.btns {
   margin-bottom: 1rem;
 }
 
-main.live-on div.overlay.rewards,
+div.overlay.rewards,
 main.live-on div.overlay.revenue,
 main.live-on div.overlay.viewer {
-  padding: 0;
+  padding: 0 !important;
   height: 400px;
   background: #ff94bbd8;
   backdrop-filter: blur(4px);
@@ -2250,21 +2251,21 @@ main.live-on div.overlay.viewer .title > p {
   margin-left: 10px !important;
 }
 
-main.live-on div.overlay.rewards button.close,
+div.overlay.rewards button.close,
 main.live-on div.overlay.revenue button.close,
 main.live-on div.overlay.viewer button.close {
   left: initial;
   right: 20px;
 }
 
-main.live-on div.overlay.rewards div.content {
+div.overlay.rewards div.content {
   align-items: flex-start;
   margin-bottom: 0;
   gap: 0;
   height: calc(100% - 60px);
 }
 
-main.live-on div.overlay.rewards div.reward-items {
+div.overlay.rewards div.reward-items {
   margin: 0;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
@@ -2272,26 +2273,27 @@ main.live-on div.overlay.rewards div.reward-items {
   margin-top: 1rem;
 }
 
-main.live-on div.overlay.rewards div.reward-item span.name,
-main.live-on div.overlay.rewards div.reward-item span.point {
-  color: #fff;
+div.overlay.rewards div.reward-item span.name,
+div.overlay.rewards div.reward-item span.point {
+  color: #fff !important;
 }
 
-main.live-on div.overlay.rewards div.send-gift {
+div.overlay.rewards div.send-gift {
   padding: 0 1rem 0 60px;
   background-position: 10px center;
   height: auto;
   background-size: 65px;
 }
 
-main.live-on div.rewards.overlay div.btns {
+div.rewards.overlay div.btns {
   padding: 1rem 0 0;
   align-items: flex-start;
   gap: 5px;
   width: max-content;
+  display: flex;
 }
 
-main.live-on div.rewards.overlay div.btns button {
+div.rewards.overlay div.btns button {
   width: auto;
   font-size: 0.875rem;
   padding: 5px 10px;
@@ -2305,34 +2307,34 @@ main.live-on div.rewards.overlay div.btns button {
   box-shadow: 0 2px 2px #2a2a2a55;
 }
 
-main.live-on div.rewards.overlay div.btns button img {
+div.rewards.overlay div.btns button img {
   width: 16px;
 }
 
-main.live-on div.rewards div.btns button.active,
-main.live-on div.rewards div.btns button.active:hover,
-main.live-on div.rewards div.btns button:not(.active):hover {
+div.rewards div.btns button.active,
+div.rewards div.btns button.active:hover,
+div.rewards div.btns button:not(.active):hover {
   color: #fff;
   background: linear-gradient(#ffa9cd, #ff237f);
   filter: none;
   display: flex;
 }
 
-main.live-on div.rewards div.btns button:not(.active) {
+div.rewards div.btns button:not(.active) {
   background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
   color: #d6236c;
   filter: none;
 }
 
-main.live-on div.rewards div.btns button:not(.active) img {
+div.rewards div.btns button:not(.active) img {
   filter: invert(0.589) sepia(20) contrast(250%) hue-rotate(293deg);
 }
 
-main.live-on div.rewards div.btns button:not(.active):hover img {
+div.rewards div.btns button:not(.active):hover img {
   filter: none;
 }
 
-main.live-on div.reward-items {
+div.reward-items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
@@ -2349,7 +2351,8 @@ main.live-on div.reward-items.hide {
   display: none;
 }
 main.live-on div.reward-item,
-div.full-width.overlay.rewards div.reward-item {
+div.full-width.overlay.rewards div.reward-item,
+div.overlay.rewards div.reward-item {
   position: relative;
   overflow: hidden;
   height: min-content;
@@ -2358,7 +2361,8 @@ div.full-width.overlay.rewards div.reward-item {
 }
 
 main.live-on div.reward-item.active,
-div.full-width.overlay.rewards div.reward-item.active {
+div.full-width.overlay.rewards div.reward-item.active,
+div.overlay.rewards div.reward-item.active {
   background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
   box-shadow: 0 0 2px 2px #db4e8675;
 }
@@ -2366,7 +2370,8 @@ div.full-width.overlay.rewards div.reward-item.active {
 main.live-on div.reward-item .img-wrap,
 div.full-width.overlay.rewards div.reward-item .img-wrap,
 div.full-width.overlay.personal-gifts div.reward-item .img-wrap,
-div.full-width.overlay.popular-products div.reward-item .img-wrap {
+div.full-width.overlay.popular-products div.reward-item .img-wrap,
+div.overlay.rewards div.reward-item .img-wrap {
   position: relative;
   top: 0;
   width: 100%;
@@ -2381,14 +2386,16 @@ div.full-width.overlay.popular-products div.reward-item .img-wrap {
 main.live-on div.reward-item img,
 div.full-width.overlay.rewards div.reward-item .img-wrap img,
 div.full-width.overlay.personal-gifts div.reward-item .img-wrap img,
-div.full-width.overlay.popular-products div.reward-item .img-wrap img {
+div.full-width.overlay.popular-products div.reward-item .img-wrap img,
+div.overlay.rewards div.reward-item img {
   height: 100%;
   position: absolute;
   top: 0;
 }
 
 main.live-on div.reward-item span.name,
-div.full-width.overlay.rewards div.reward-item span.name {
+div.full-width.overlay.rewards div.reward-item span.name,
+div.overlay.rewards div.reward-item span.name {
   width: 100%;
   color: #e50370;
   font-size: 0.75rem;
@@ -2402,7 +2409,8 @@ div.full-width.overlay.rewards div.reward-item span.name {
   border-radius: 0;
 }
 
-main.live-on div.reward-item span.point {
+main.live-on div.reward-item span.point,
+div.overlay.rewards div.reward-item span.point {
   align-items: center;
   gap: 10px;
   width: 100%;
@@ -2414,19 +2422,25 @@ main.live-on div.reward-item span.point {
 }
 
 main.live-on div.overlay.rewards div.reward-item span.point,
-div.full-width.overlay.rewards div.reward-item span.point {
+div.full-width.overlay.rewards div.reward-item span.point,
+div.overlay.rewards div.reward-item span.point {
   background: url(../images/coin.png) no-repeat 2px -7px;
   background-size: 30px;
   width: 100px;
   margin: 0 auto;
 }
 
-main.live-on div.send-gift {
-  background: url("../images/coin.png") no-repeat -15px center;
+div.overlay.rewards .footer{
+  width: 100%;
+}
+
+main.live-on div.send-gift,
+div.overlay.rewards div.send-gift {
+  background: url(../images/coin.png) no-repeat -5px -23px;
   background-size: 70px;
   margin-top: 1rem;
-  padding-left: 40px;
-  height: 30px;
+  padding-left: 50px;
+  height: 40px;
   color: #fff;
   text-shadow: 0 2px 2px #2a2a2a55;
   gap: 10px;
@@ -2439,7 +2453,8 @@ main.live-on div.buy-sticker {
   margin: 0.75rem auto;
 }
 
-main.live-on div.send-gift button {
+main.live-on div.send-gift button,
+div.overlay.rewards div.send-gift button {
   color: #d6216d;
   width: 80px;
   padding: 5px 10px;
@@ -2447,7 +2462,8 @@ main.live-on div.send-gift button {
   box-shadow: 0 2px 2px #2a2a2a55;
 }
 
-main.live-on div.send-gift button.active {
+main.live-on div.send-gift button.active,
+div.overlay.rewards div.send-gift button.active {
   color: #fff;
   background: linear-gradient(#ffa9cd, #ff237f);
   filter: none;
@@ -5028,7 +5044,7 @@ div#rewards-overlay-mobile .wrapper {
 }
 
 div#rewards-overlay-mobile .wrapper.reward-btns-mobile {
-  height: 80px;
+  height: 60px;
   width: calc(100% - 1rem - 50px);
   margin-left: 15px;
 }
@@ -7200,7 +7216,7 @@ div.purchase-overlay div.title img.title-img {
   height: 60px;
 }
 
-div.overlay.full-size {
+div.overlay.full-page {
   border-radius: 0;
   width: 100%;
   height: calc(100% - 62px - 71px); /* nav at top & at bottom */
@@ -7208,7 +7224,7 @@ div.overlay.full-size {
 }
 
 div.overlay.search-result-video {
-  z-index: 99;
+  z-index: 1;
   overflow-y: auto;
   background: #333;
 }
@@ -7277,9 +7293,8 @@ div.overlay.search-result-video div.content div.video-description {
 
 div.overlay.search-result-video div.content div.btn-groups {
   display: flex;
-  height: 40px;
   flex-direction: row;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 0.5rem;
 }
 
 div.overlay.search-result-video div.content div.btn-groups button:not(:last-child) {
@@ -7297,8 +7312,8 @@ div.overlay.search-result-video div.content div.btn-groups button:not(:first-chi
   padding-left: 10px;
 }
 div.overlay.search-result-video div.content div.btn-groups button {
-  padding: 0;
-  font-size: 0.7rem;
+  padding: 0.5rem;
+  font-size: 0.875rem;
   color: #fff;
   display: flex;
   align-items: center;
@@ -7307,5 +7322,11 @@ div.overlay.search-result-video div.content div.btn-groups button {
 }
 
 div.overlay.search-result-video div.content div.btn-groups button img {
-  width: 12px;
+  width: 20px;
+}
+
+.search-page-overlay {
+  z-index: 9999 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
