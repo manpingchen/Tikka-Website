@@ -428,7 +428,11 @@
     </main>
 
     <!-- 手機版禮物牆 -->
-    <div class="overlay rewards search-page-overlay" id="rewards-overlay-mobile" style="display: none">
+    <div
+      class="overlay rewards search-page-overlay"
+      id="rewards-overlay-mobile"
+      style="display: none"
+    >
       <div class="content">
         <button class="close" onclick="handleHideComponent('#rewards-overlay-mobile')">
           <img src="images/close-icon.svg" alt="close" />
@@ -519,18 +523,110 @@
         <div class="footer">
           <div class="send-gift flex-row">
             <span class="point flex-row">2740000</span>
-            <button id="buy-button" type="button" onclick="handleBuy(this.id)">購買</button>
+            <button id="buy-button" type="button" onclick="handleBuy()">購買</button>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- 我要分享遮罩 -->
+    <div
+      class="full-width streamer-profile-overlay social-media-shares overlay"
+      id="social-media-shares"
+      style="display: none"
+    >
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#social-media-shares')">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+        <p class="flex-row"><img src="images/social.svg" alt="分享" />分享</p>
+      </div>
+      <div class="content">
+        <ul>
+          <li>
+            <button type="button">
+              <img src="images/line.svg" alt="" />
+              LINE
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <img src="images/facebook.svg" alt="" />
+              Facebook
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <img src="images/whatsapp.svg" alt="" />
+              Whatsapp
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <img src="images/twitter.svg" alt="" />
+              Twitter
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <img src="images/link.svg" alt="" />
+              複製連結
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 捧花不足 -->
+    <div class="overlay" id="top-up-overlay" style="display: none">
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#top-up-overlay')">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+        <p class="flex-row"><span class="line"></span>捧花不足 <span class="line"></span></p>
+      </div>
+      <div class="content">
+        <a href="topup.html" class="topup-btn"><img src="images/coin.png" />請儲值</a>
+      </div>
+      <div class="footer">
+        <span class="point">59</span>
+      </div>
+    </div>
+
+    <!-- 滿版禮物圖 -->
+    <div class="gift-full-overlay search-page overlay" style="display: none" id="gift-full-overlay">
+      <img src="images/gift2.png" alt="" />
+    </div>
+
+    <!-- 下方禮物送出框 -->
+    <div class="gift-sent-overlay search-page overlay" style="display: none" id="gift-sent">
+      <div class="avatar-wrapper">
+        <img src="images/s2.jpg" class="avatar" alt="name" />
+      </div>
+      <div class="info">
+        <span class="name">小愛</span>
+        <div class="gift-name marquee-wall" id="marquee-gift-wall">
+          <span class="gift-text" id="marquee-gift-text"> 送了 名字短的名稱 </span>
+        </div>
+      </div>
+      <div class="gift-img-wrapper">
+        <img src="images/gift2.png" alt="禮物小圖" />
+      </div>
+    </div>
+
+    <!-- 行動版滿版經典影片區 -->
     <div class="overlay full-page search-result-video" id="search-result-video-overlay">
       <div class="top-bar">
         <button class="back" onclick="handleHideComponent('#search-result-video-overlay')">
           <span class="material-icons">&#xE5CB;</span>
         </button>
         <p>經典影片</p>
+      </div>
+      <div class="header">
+        <div class="img-wrap">
+          <img src="images/s1.jpg" alt="" />
+        </div>
+        <p>可愛小貝最萌</p>
       </div>
       <div class="content">
         <div class="videoDiv">
@@ -547,7 +643,7 @@
           <button onclick="handleShowMobileRewardWall()">
             <img src="images/gift.svg" alt="gift icon" />
           </button>
-          <button onclick="handleShare()">
+          <button onclick="handleShowComponent('#social-media-shares')">
             <img src="images/social.svg" alt="social icon" />
           </button>
         </div>
@@ -594,6 +690,17 @@
       function handleShowMobileRewardWall() {
         handleShowComponent("#rewards-overlay-mobile");
         showRewardDetail("gift-all-mobile", "gift-details-mobile");
+      }
+
+      /* 購買禮物捧花不足 */
+      function handleBuy() {
+        handleHideComponent("#rewards-overlay-mobile");
+        // 下列兩個遮罩可切換
+        // 捧花不足遮罩
+        // handleShowComponent("#top-up-overlay");
+        // 送出禮物遮罩
+        handleShowComponent("#gift-full-overlay");
+        handleShowComponent("#gift-sent", "flex");
       }
     </script>
   </body>
