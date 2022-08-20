@@ -7325,7 +7325,6 @@ div.overlay.search-result-video div.content div.video-description {
   border-bottom: 1px solid #fff;
   padding: 0.85rem 1rem;
   display: flex;
-  align-items: center;
   height: inherit;
   overflow-y: auto;
 }
