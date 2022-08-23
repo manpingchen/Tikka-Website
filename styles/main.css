@@ -2222,6 +2222,10 @@ div.overlay.rewards {
   height: calc(100% - 372px) !important;
 }
 
+main.live-on div.rewards{
+  height: 500px !important;
+}
+
 main.live-on div.rewards div.btns {
   display: flex;
   flex-direction: row;
@@ -4556,7 +4560,7 @@ div.gift-sent-overlay {
   color: #fff !important;
 }
 
-div.gift-sent-overlay.search-page{
+div.gift-sent-overlay.search-page {
   top: 65%;
 }
 
@@ -5679,6 +5683,10 @@ div.form-wrapper {
   border-radius: 20px;
 }
 
+div.purchase-overlay .cart-item {
+  margin-bottom: 1rem;
+}
+
 @media screen and (max-width: 768px) {
   div.purchase-overlay .cart-item {
     padding: 1rem;
@@ -5878,6 +5886,10 @@ div.form-wrapper p.note {
   margin-bottom: 2rem;
 }
 
+div.purchase-overlay div.form-wrapper p.note {
+  margin-bottom: 0;
+}
+
 div.form-wrapper .detail {
   align-items: baseline;
   margin-bottom: 0.25rem;
@@ -5894,8 +5906,20 @@ div.form-wrapper .detail p.label {
   width: 120px;
 }
 
+div.purchase-overlay .detail,
+div.purchase-overlay .cart-item .item-info {
+  color: #333;
+}
+
+div.purchase-overlay .detail {
+    flex-wrap: wrap;
+  }
+div.purchase-overlay div.form-wrapper .detail p.label {
+  width: auto;
+}
+
 div.form-wrapper .detail p.value {
-  width: calc(100% - 120px);
+  width: auto;
 }
 
 .cart-total {
@@ -6031,13 +6055,19 @@ div.purchase-overlay .payment-options h4 {
   color: #d6236c;
 }
 
-main.purchase .check-item-count {
+main.purchase .check-item-count,
+div.purchase-overlay .check-item-count {
   margin-bottom: 0.25rem !important;
   gap: 0 !important;
   width: initial !important;
 }
 
-main.purchase .check-item-count p.point {
+div.purchase-overlay .check-item-count p {
+  color: #666;
+}
+
+main.purchase .check-item-count p.point,
+div.purchase-overlay .check-item-count p.point {
   margin-bottom: 0;
 }
 

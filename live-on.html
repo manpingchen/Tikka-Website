@@ -1136,7 +1136,6 @@
     </main>
 
     <!--滿版商品訂購遮罩-->
-
     <div class="overlay purchase-overlay" id="purchase-overlay" style="display: none">
       <div class="title flex-row">
         <img src="images/purchase-title-icon-1.svg" alt="商品訂購頁標題" class="title-img" />
@@ -1305,9 +1304,118 @@
           </div>
         </div>
         <div class="form-wrapper flex-row justify-center mt-1">
-          <button type="submit" class="pink-gradient-bg" onclick="location.href='check-purchase-detail.html'">
+          <button type="submit" class="pink-gradient-bg" onclick="handleSubmitPurchase()">
             送出訂單
           </button>
+        </div>
+      </div>
+    </div>
+
+    <!--滿版商品訂單遮罩-->
+    <div class="overlay purchase-overlay" id="purchase-confirm-overlay" style="display: none">
+      <div class="title flex-row">
+        <img src="images/purchase-title-icon-2.svg" alt="商品訂單頁標題" class="title-img" />
+      </div>
+      <div class="content">
+        <div class="cart-items flex-column mb-1">
+          <div class="cart-item flex-row" id="item1">
+            <div class="img-wrap">
+              <img src="images/product1.png" alt="產品圖片" />
+            </div>
+            <div class="item-info flex-column">
+              <h3>Moiskin長效賦活精華液</h3>
+              <p class="description">
+                選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
+                選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
+              </p>
+              <div class="check-item-count flex-column">
+                <p class="cost">NT.1,280</p>
+                <p class="point">捧花：17920</p>
+                <p class="">數量：50箱</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-wrapper mb-1">
+          <div class="detail flex-row">
+            <p class="label">付款方式：</p>
+            <p class="value">NewebPay藍新</p>
+          </div>
+          <div class="detail flex-row mb-2">
+            <p class="label">配送方式：</p>
+            <p class="value">宅配</p>
+          </div>
+          <div class="detail flex-row">
+            <p class="label">收件人姓名：</p>
+            <p class="value">會員姓名</p>
+          </div>
+          <div class="detail flex-row">
+            <p class="label">收件人電話：</p>
+            <p class="value">098873613</p>
+          </div>
+          <div class="detail flex-row">
+            <p class="label">收件人Mail：</p>
+            <p class="value">google@gmail.com</p>
+          </div>
+          <div class="detail flex-row">
+            <p class="label">縣市：</p>
+            <p class="value">台北市</p>
+          </div>
+          <div class="detail flex-row">
+            <p class="label">鄉鎮市區：</p>
+            <p class="value">信義區</p>
+          </div>
+          <div class="detail flex-row">
+            <p class="label">收件地址：</p>
+            <p class="value">台灣大道1006號30樓之二</p>
+          </div>
+          <div class="detail flex-row mb-2">
+            <p class="label">備註：</p>
+            <p class="value">
+              備註事項內容，備註事項內容，備註事項內容，備註事項內容，備註事項內容。備註事項內容，備註事項內容，備註事項內容，備註事項內容。
+            </p>
+          </div>
+          <div class="detail flex-row mb-2">
+            <p class="label">主播推薦碼：</p>
+            <p class="value">T0101010</p>
+          </div>
+          <div class="detail flex-row mb-2">
+            <p class="label flex-column">電子發票-載具條碼：</p>
+            <p class="value">/J1234123</p>
+          </div>
+
+          <div class="detail flex-row">
+            <p class="label">結帳方式：</p>
+            <p class="value">台幣</p>
+          </div>
+          <div class="detail flex-row">
+            <p class="label">運費(未達消費最低金額)：</p>
+            <p class="value">NT.80</p>
+          </div>
+          <div class="detail flex-row">
+            <p class="label">購物車總金額：</p>
+            <p class="value">NT.980</p>
+          </div>
+        </div>
+
+        <div class="form-wrapper flex-column justify-center mt-1">
+          <div class="flex-row justify-center gap-1">
+            <button type="submit" class="pink-gradient-bg" onclick="handleBackToPurchase()">
+              上一頁
+            </button>
+            <button
+              type="submit"
+              class="pink-gradient-bg"
+              onclick="location.href='check-purchase-detail.html'"
+            >
+              結帳付款
+            </button>
+          </div>
+          <p class="note">
+            信用卡與ATM皆為即時到帳 <br />
+            超商付款約15分到隔天入帳 <br />
+            付款成功後會用簡訊通知您訂單編號
+          </p>
         </div>
       </div>
     </div>
@@ -1605,6 +1713,18 @@
         handleShowComponent(".mobile-live-controls");
         handleHideComponent(".before-live");
         handleHideComponent(".site-header");
+      }
+
+      /* 送出訂單 */
+      function handleSubmitPurchase() {
+        handleShowComponent("#purchase-confirm-overlay");
+        handleHideComponent("#purchase-overlay");
+      }
+
+      /* 點選上一頁回到訂單 */
+      function handleBackToPurchase() {
+        handleHideComponent("#purchase-confirm-overlay");
+        handleShowComponent("#purchase-overlay");
       }
     </script>
   </body>
