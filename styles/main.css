@@ -1467,9 +1467,19 @@ div.live-items {
   }
 }
 
+main.my-favourite.follow div.live-items {
+  padding: 1rem;
+}
+
 @media screen and (max-width: 480px) {
   div.live-items {
     grid-template-columns: repeat(1, 1fr);
+  }
+  main.my-favourite.follow div.live-items {
+    grid-template-columns: repeat(2, 1fr);
+    height: 500px;
+    max-height: 80%;
+    overflow-y: auto;
   }
   main.live div.live-items {
     grid-template-columns: repeat(2, 1fr);
@@ -2222,7 +2232,7 @@ div.overlay.rewards {
   height: calc(100% - 372px) !important;
 }
 
-main.live-on div.rewards{
+main.live-on div.rewards {
   height: 500px !important;
 }
 
@@ -3177,12 +3187,16 @@ main.follow button.follow-btn {
   font-size: 0.875rem;
   padding: 5px;
   color: #fff;
-  background: linear-gradient(#ffc1db, #ff398c, #f03282);
+  background: linear-gradient(#d5d5d5, #555555);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 5px;
+}
+
+main.follow div.recommend-item button.follow-btn {
+  position: initial;
 }
 
 main.follow div.live-item-wrap {
@@ -3222,6 +3236,9 @@ main.follow button.follow-btn:hover {
     width: 100%;
     top: 70px;
     padding: 2rem 0;
+  }
+  main.my-favourite {
+    margin-bottom: 0;
   }
   main.follow h1 {
     padding-left: 2rem;
@@ -3353,6 +3370,48 @@ ul.photos div.bg ul.bottom-boxes {
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+main.my-favourite div.recommend-item{
+  cursor: pointer;
+}
+
+@media screen and (max-width: 660px) and (min-width: 378px) {
+  main.my-favourite div.recommend-items {
+    width: 90%;
+  }
+  main.my-favourite div.recommend-item {
+    flex-wrap: nowrap;
+    gap: 5px;
+  }
+  main.my-favourite ul.photos {
+    gap: 5px;
+  }
+  main.my-favourite ul.photos li {
+    width: 50px;
+    height: 90px;
+  }
+  main.my-favourite ul.photos div.img-wrap {
+    width: 80%;
+    height: 70%;
+    top: 15%;
+    left: 10%;
+  }
+  main.my-favourite ul.photos div.bg ul.white-boxes {
+    width: 50px;
+    gap: 5px;
+  }
+  main.my-favourite ul.photos div.bg ul.white-boxes li {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  main.my-favourite div.recommend-item {
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 }
 
@@ -5912,8 +5971,8 @@ div.purchase-overlay .cart-item .item-info {
 }
 
 div.purchase-overlay .detail {
-    flex-wrap: wrap;
-  }
+  flex-wrap: wrap;
+}
 div.purchase-overlay div.form-wrapper .detail p.label {
   width: auto;
 }
@@ -7183,7 +7242,7 @@ div.recommend-item div.info .name {
   height: 10px;
 }
 
-.search-list div.recommend-item button.follow-btn.pink {
+button.follow-btn.pink {
   background: linear-gradient(#ffc1db, #ff398c, #f03282) !important;
   color: #fff;
 }

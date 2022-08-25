@@ -383,3 +383,10 @@ function switchTotalByCurrency(id, parentId) {
   document.querySelector("#total-value").innerHTML =
     id === "nt-dollar" ? "NT." + ntDollarValue : pointValue;
 }
+
+//handle follow button
+function handleFollow(_, el) {
+  const element = el.querySelector(".follow-text");
+  element.innerText = "已追蹤";
+  document.querySelector(`#${el.id}`).classList.add("pink");
+}

@@ -562,9 +562,10 @@
 
       /* 追蹤按鈕文字 */
       function handleFollow(element) {
-        [...document.querySelectorAll(`.${[...element.classList].join(".")}`)].map((node) =>
-          node.classList.add("pink")
-        );
+        [...document.querySelectorAll(`.${[...element.classList].join(".")}`)].map((node) => {
+          node.classList.add("pink");
+          node.children[(id = "follow-text")].innerText = "已追蹤";
+        });
       }
 
       disableBtnsIfSoldOut();

@@ -658,6 +658,19 @@
         handleShowComponent(".list.videos", "grid");
         handleHideComponent(".list.images");
       }
+
+      // 開啟特定經典影片
+      function showVideoById(id) {
+        console.log("此為開啟影片遮罩 － 畫面尚完成", { id });
+      }
+
+      // 開啟經典影片
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const videoId = urlParams.get("videoId");
+      if (videoId) {
+        showVideoById(videoId);
+      }
     </script>
   </body>
 </html>
