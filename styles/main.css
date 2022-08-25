@@ -3373,7 +3373,7 @@ ul.photos div.bg ul.bottom-boxes {
   }
 }
 
-main.my-favourite div.recommend-item{
+main.my-favourite div.recommend-item {
   cursor: pointer;
 }
 
@@ -7437,8 +7437,8 @@ div.overlay.search-result-video div.content div.btn-groups button:not(:last-chil
   padding-right: 10px;
 }
 
-div.overlay.search-result-video div.content div.btn-groups button.followed img,
-div.overlay.search-result-video div.content div.btn-groups button:hover img {
+div.overlay.search-result-video div.content div.btn-groups button.followed img
+/* ,div.overlay.search-result-video div.content div.btn-groups button:hover img */ {
   filter: invert(0.6) sepia(3) contrast(180%) hue-rotate(289deg) saturate(1.8);
 }
 
