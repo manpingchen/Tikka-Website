@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/header.css" />
@@ -65,72 +68,144 @@
       </div>
     </header>
     <!-- Header End -->
-    <main class="account-table-data">
-      <h1><img src="images/my-topup-title.svg" alt="我的儲值" /></h1>
-      <div class="table-wrapper">
-        <table class="account-table">
-          <thead>
-            <tr>
-              <th>訂單編號</th>
-              <th>產品名稱</th>
-              <th>訂單金額</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>12345678</td>
-              <td>緊緻精華噴霧</td>
-              <td>7,000</td>
-            </tr>
-            <tr>
-              <td>12345678</td>
-              <td>緊緻精華噴霧</td>
-              <td>7,000</td>
-            </tr>
-            <tr>
-              <td>12345678</td>
-              <td>緊緻精華噴霧</td>
-              <td>7,000</td>
-            </tr>
-            <tr>
-              <td>12345678</td>
-              <td>緊緻精華噴霧</td>
-              <td>7,000</td>
-            </tr>
-            <tr>
-              <td>12345678</td>
-              <td>緊緻精華噴霧</td>
-              <td>7,000</td>
-            </tr>
-            <tr>
-              <td>12345678</td>
-              <td>緊緻精華噴霧</td>
-              <td>7,000</td>
-            </tr>
-            <tr>
-              <td>12345678</td>
-              <td>緊緻精華噴霧</td>
-              <td>7,000</td>
-            </tr>
-            <tr>
-              <td>12345678</td>
-              <td>緊緻精華噴霧</td>
-              <td>7,000</td>
-            </tr>
-            <tr>
-              <td>12345678</td>
-              <td>緊緻精華噴霧</td>
-              <td>7,000</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>我的總點數</td>
-              <td></td>
-              <td>1,000</td>
-            </tr>
-          </tfoot>
-        </table>
+    <main class="account-table-data account-orders">
+      <h1><img src="images/order-title.svg" alt="訂單瀏覽" /></h1>
+      <div class="orders flex-column desktop-only">
+        <div class="order order-1" id="order-1">
+          <div class="order-content">
+            <ul class="order-info">
+              <li><span class="title">訂單日期</span><span class="value">2022.07.20</span></li>
+              <li><span class="title">訂單編號</span><span class="value">776542111</span></li>
+              <li><span class="title">訂單狀態</span><span class="value">待配送</span></li>
+              <li>
+                <span class="title">付款方式</span><span class="value">NewebPay藍新金流</span>
+              </li>
+              <li><span class="title">配送方式</span><span class="value">宅配</span></li>
+              <li><span class="title">訂單金額</span><span class="value">NT.7,000</span></li>
+            </ul>
+            <h5 class="flex-row">
+              <button class="order-toggle-button" name="order-1" onclick="toggleExpand(this)">
+                <img src="images/arrow-pink.svg" />
+              </button>
+              訂購商品（<span class="expand-toggle-text">向下展開</span>）
+            </h5>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <p>Moiskin長效賦活精華</p>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product6.png" alt="" />
+                </div>
+                <p>Moiskin長效賦活精華</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order order-2" id="order-2">
+          <div class="order-content">
+            <ul class="order-info">
+              <li><span class="title">訂單日期</span><span class="value">2022.07.20</span></li>
+              <li><span class="title">訂單編號</span><span class="value">776542111</span></li>
+              <li><span class="title">訂單狀態</span><span class="value">待配送</span></li>
+              <li>
+                <span class="title">付款方式</span><span class="value">NewebPay藍新金流</span>
+              </li>
+              <li><span class="title">配送方式</span><span class="value">宅配</span></li>
+              <li><span class="title">訂單金額</span><span class="value">NT.7,000</span></li>
+            </ul>
+            <h5 class="flex-row">
+              <button class="order-toggle-button" name="order-2" onclick="toggleExpand(this)">
+                <img src="images/arrow-pink.svg" />
+              </button>
+              訂購商品（<span class="expand-toggle-text">向下展開</span>）
+            </h5>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <p>Moiskin長效賦活精華</p>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product6.png" alt="" />
+                </div>
+                <p>Moiskin長效賦活精華</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="orders flex-column mobile-only">
+        <div class="order order-1" id="order-1">
+          <div class="order-title">
+            <button class="order-toggle-button" name="order-1" onclick="toggleExpand(this)">
+              <img src="images/arrow-pink.svg" />
+            </button>
+            <p>訂單日期－2022.07.20</p>
+          </div>
+          <div class="order-content">
+            <ul class="order-info">
+              <li>訂單編號－<span class="value">776542111</span></li>
+              <li>訂單狀態－<span class="value">待配送</span></li>
+              <li>付款方式－<span class="value">NewebPay藍新金流</span></li>
+              <li>配送方式－<span class="value">宅配</span></li>
+              <li>訂單金額－<span class="value">NT.7,000</span></li>
+            </ul>
+            <h5>訂購商品(<span class="expand-toggle-text">向下展開</span>)</h5>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <p>Moiskin長效賦活精華</p>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product6.png" alt="" />
+                </div>
+                <p>Moiskin長效賦活精華</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order order-2" id="order-2">
+          <div class="order-title">
+            <button class="order-toggle-button" name="order-2" onclick="toggleExpand(this)">
+              <img src="images/arrow-pink.svg" />
+            </button>
+            <p>訂單日期－2022.06.20</p>
+          </div>
+          <div class="order-content">
+            <ul class="order-info">
+              <li>訂單編號－<span class="value">776542111</span></li>
+              <li>訂單狀態－<span class="value">待配送</span></li>
+              <li>付款方式－<span class="value">NewebPay藍新金流</span></li>
+              <li>配送方式－<span class="value">宅配</span></li>
+              <li>訂單金額－<span class="value">NT.7,000</span></li>
+            </ul>
+            <h5>訂購商品(<span class="expand-toggle-text">向下展開</span>)</h5>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product3.png" alt="" />
+                </div>
+                <p>Moiskin長效賦活精華</p>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <p>Moiskin長效賦活精華</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <footer class="desktop-only">
@@ -157,28 +232,22 @@
     </footer>
     <script src="js/header.js"></script>
     <script>
-      new Glide("#follow-slides", {
-        type: "carousel",
-        perView: 2,
-        focusAt: "center",
-        autoplay: 8000,
-        animationDuration: 800,
-        breakpoints: {
-          425: {
-            perView: 2,
-          },
-        },
-      }).mount();
-      function uploadImageHandler(evt) {
-        const [file] = avatarInput.files;
-        if (file) {
-          uploadedImage.src = URL.createObjectURL(file);
-          uploadedImage.style.display = "block";
-          imgPlaceholder.innerText = "";
-        } else {
-          uploadedImage.style.display = "none";
-          imgPlaceholder.innerText = "上傳照片";
-        }
+      // toggle expand
+      function toggleExpand(buttonElement) {
+        buttonElement.classList.toggle("expanded");
+
+        const orderId = buttonElement.name;
+        const orderItemsNode = document.querySelectorAll(`div.${orderId}`);
+
+        [...orderItemsNode].forEach((node) => {
+          node.classList.toggle("expanded");
+          // toggle text
+          if (node.classList.contains("expanded")) {
+            node.querySelector(".expand-toggle-text").innerText = "向上展開";
+          } else {
+            node.querySelector(".expand-toggle-text").innerText = "向下展開";
+          }
+        });
       }
     </script>
   </body>
