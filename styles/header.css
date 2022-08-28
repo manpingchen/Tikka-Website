@@ -48,7 +48,6 @@
     background: #fff;
     gap: 10px;
     max-width: 100vw;
-    height: 62px;
   }
   .site-header__end a {
     width: fit-content;

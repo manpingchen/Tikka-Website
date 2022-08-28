@@ -3129,6 +3129,10 @@ main.follow h1 {
   margin-bottom: 2rem;
 }
 
+main.follow.my-favourite h1:not(.recommend) img {
+  margin: 0 0 0 1rem;
+}
+
 main.follow h1.left {
   text-align: left;
 }
@@ -3154,6 +3158,25 @@ main.follow div.live-item-wrap {
 main.follow a.live-item {
   overflow: visible;
   margin-bottom: 70px;
+}
+
+main.my-favourite.follow div.live-items a.live-item {
+  border: 3px solid #fff;
+  box-shadow: 0 0 4px #00000050;
+  border-radius: 20px;
+}
+
+main.my-favourite.follow div.live-items a.live-item div.img-wrap {
+  border-radius: 18px;
+}
+
+main.my-favourite.follow div.live-items p.live-info {
+  -webkit-border-bottom-right-radius: 18px;
+  -webkit-border-bottom-left-radius: 18px;
+  -moz-border-radius-bottomright: 18px;
+  -moz-border-radius-bottomleft: 18px;
+  border-bottom-right-radius: 18px;
+  border-bottom-left-radius: 18px;
 }
 
 main.follow a.live-item div.img-wrap {
@@ -3243,6 +3266,9 @@ main.follow button.follow-btn:hover {
   main.follow h1 {
     padding-left: 2rem;
   }
+  main.my-favourite.follow h1:not(.recommend) img {
+    margin: 0 auto;
+  }
   main.follow .glide__arrow {
     width: 96%;
     margin: 0 2%;
@@ -3303,6 +3329,12 @@ div.recommend-item div.info {
   gap: 8px;
   flex-direction: column;
   width: 150px;
+}
+
+@media screen and (min-width: 769px) {
+  main.my-favourite div.recommend-item div.info {
+    width: 200px;
+  }
 }
 
 ul.photos li {
