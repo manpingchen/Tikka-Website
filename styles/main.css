@@ -4,7 +4,7 @@
   box-sizing: border-box;
   list-style: none !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-    "Open Sans", "Helvetica Neue", sans-serif;
+  "Open Sans", "Helvetica Neue", sans-serif;
   letter-spacing: 0.02em;
   /* transition: 0.3s all; */
 }
@@ -377,7 +377,7 @@ div.img-wrap img {
 
 .topup .login-section .logged-in div.my-flower span.point::before {
   content: "";
-  background: url(../images/coin.png) no-repeat center center;
+  background: url(../assets/tikkaimg/coin.png) no-repeat center center;
   background-size: cover;
   filter: drop-shadow(0 0 3px rgb(80, 80, 80));
   display: inline-block;
@@ -497,6 +497,48 @@ form.invoice-info-field input::placeholder {
 }
 
 form.invoice-info-field span#invoice-info-tips {
+  display: block;
+  color: #c80808;
+  font-size: 0.75rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+/*new*/
+div.invoice-info-field div.flex-row {
+  /* margin-top: 1rem; */
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+div.invoice-info-field label,
+div.invoice-info-field input {
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-width: 1px;
+  border-style: solid;
+}
+
+div.invoice-info-field label {
+  background: #ef99bf !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  box-shadow: 0 0 5px #aaa;
+  width: 200px;
+  text-align: center;
+}
+
+div.invoice-info-field input {
+  border-color: #aaa !important;
+  font-size: 1rem;
+  width: 100%;
+}
+
+div.invoice-info-field input::placeholder {
+  color: #aaa;
+}
+
+div.invoice-info-field span#invoice-info-tips {
   display: block;
   color: #c80808;
   font-size: 0.75rem;
@@ -755,7 +797,7 @@ span.name {
   padding: 0.25rem 0.75rem 0.25rem 1.5rem;
   border-radius: 20px;
   font-size: 0.875rem;
-  background: url("../images/heart-icon.svg") 10px 7px no-repeat rgba(0, 0, 0, 0.3);
+  background: url("../assets/tikkaimg/heart-icon.svg") 10px 7px no-repeat rgba(0, 0, 0, 0.3);
   background-size: 10px;
 }
 
@@ -922,7 +964,7 @@ a.live-item p.live-info span.time {
 section.live .live-list ul li p.live-info span.name,
 a.live-item p.live-info span.name {
   align-self: center;
-  background: url("../images/heart-icon.svg") left center no-repeat;
+  background: url("../assets/tikkaimg/heart-icon.svg") left center no-repeat;
   background-size: 10px;
   padding-left: 16px;
 }
@@ -930,7 +972,7 @@ a.live-item p.live-info span.name {
 section.live .live-list ul li p.live-info span.time,
 a.live-item p.live-info span.time {
   font-size: 0.7rem;
-  background: url("../images/clock-icon.svg") left 17% no-repeat;
+  background: url("../assets/tikkaimg/clock-icon.svg") left 17% no-repeat;
   background-size: 10px;
   padding-left: 16px;
   align-items: baseline;
@@ -998,7 +1040,7 @@ section.live .live-list ul li span.count {
   #products-slides li.glide__slide p span.name {
     padding: 3.5px 5px 3.5px 18px;
     height: 23px;
-    background: url(../images/heart-icon.svg) 7px 6px no-repeat rgba(0, 0, 0, 0.3);
+    background: url(../assets/tikkaimg/heart-icon.svg) 7px 6px no-repeat rgba(0, 0, 0, 0.3);
     background-size: 9px;
     margin-bottom: 6px;
   }
@@ -1230,7 +1272,7 @@ main.topup {
 }
 .topup .amount-options ul li button span.point::before {
   content: "";
-  background: url("../images/coin.png") no-repeat center center;
+  background: url("../assets/tikkaimg/coin.png") no-repeat center center;
   background-size: cover;
   filter: drop-shadow(0 0 3px rgb(80, 80, 80));
   display: inline-block;
@@ -1915,7 +1957,7 @@ main.live-on div.sticker-overlay div.sticker-body .sticker-item .sticker-name {
 main.live-on div.sticker-overlay div.sticker-body .sticker-item .value {
   color: #fff;
   font-size: 1rem;
-  background: url(../images/coin.png) no-repeat left center;
+  background: url(../assets/tikkaimg/coin.png) no-repeat left center;
   background-size: 30px;
   width: 70px;
   margin: 0 auto;
@@ -2044,11 +2086,11 @@ main.live-on div.gift-mission a.mission {
 }
 
 main.live-on div.gift-mission a.gift {
-  background-image: url("../images/gift-bg.png");
+  background-image: url("../assets/tikkaimg/gift-bg.png");
 }
 
 main.live-on div.gift-mission a.mission {
-  background-image: url("../images/mission-bg.png");
+  background-image: url("../assets/tikkaimg/mission-bg.png");
 }
 
 main.live-on div.gift-mission a.gift img,
@@ -2430,7 +2472,7 @@ div.overlay.rewards div.reward-item span.point {
   width: 100%;
   padding: 0 10px 5px 24px;
   color: #e50370;
-  background: url("../images/coin.png") no-repeat 2px -5px;
+  background: url("../assets/tikkaimg/coin.png") no-repeat 2px -5px;
   background-size: 33%;
   font-size: 0.7rem;
 }
@@ -2438,7 +2480,7 @@ div.overlay.rewards div.reward-item span.point {
 main.live-on div.overlay.rewards div.reward-item span.point,
 div.full-width.overlay.rewards div.reward-item span.point,
 div.overlay.rewards div.reward-item span.point {
-  background: url(../images/coin.png) no-repeat 2px -7px;
+  background: url(../assets/tikkaimg/coin.png) no-repeat 2px -7px;
   background-size: 30px;
   width: 100px;
   margin: 0 auto;
@@ -2450,7 +2492,7 @@ div.overlay.rewards .footer {
 
 main.live-on div.send-gift,
 div.overlay.rewards div.send-gift {
-  background: url(../images/coin.png) no-repeat -5px -23px;
+  background: url(../assets/tikkaimg/coin.png) no-repeat -5px -23px;
   background-size: 70px;
   margin-top: 1rem;
   padding-left: 50px;
@@ -2543,7 +2585,7 @@ main.live-on div.frame-top-bar div.viewer-tab.active span.icon {
 main.live-on div.frame-top-bar div.revenue-tab.active span.icon img,
 main.live-on div.frame-top-bar:not(.mobile-only) div.viewer-tab.active span.icon img {
   filter: invert(0.589) sepia(20) contrast(250%) hue-rotate(293deg)
-    drop-shadow(0 1px 1px rgba(188, 188, 188, 0.3));
+  drop-shadow(0 1px 1px rgba(188, 188, 188, 0.3));
 }
 
 main.live-on div.frame-bottom-bar {
@@ -2955,7 +2997,7 @@ main.account h1 img {
 }
 
 div.upload {
-  background: url("../images/upload-avatar-bg.svg") no-repeat center center;
+  background: url("../assets/tikkaimg/upload-avatar-bg.svg") no-repeat center center;
   width: 180px;
   height: 186px;
   margin: 0 auto 50px;
@@ -2999,7 +3041,7 @@ div.upload .custom-input-field span.placeholder {
   border-radius: 50%;
   width: 100%;
   height: 100%;
-  background: url("../images/upload-avatar-bg.svg") no-repeat center center;
+  background: url("../assets/tikkaimg/upload-avatar-bg.svg") no-repeat center center;
   color: rgb(107, 107, 107);
   overflow: hidden;
   white-space: nowrap;
@@ -3037,7 +3079,7 @@ main.account h4.name {
 }
 
 main.account div.point {
-  background: url("../images/coin.png") left center no-repeat #f75193;
+  background: url("../assets/tikkaimg/coin.png") left center no-repeat #f75193;
   background-size: 60px;
   color: #fff;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
@@ -3713,13 +3755,13 @@ main.ranking section.top-three ul.glide__list > li.glide__slide--active {
 }
 
 main.ranking .value {
-  background: url(../images/money.png) no-repeat 2px center;
+  background: url(../assets/tikkaimg/money.png) no-repeat 2px center;
   background-size: 17px;
   padding-left: 20px;
 }
 
 main.ranking .receiver-ranking .value {
-  background: url(../images/diamond-ranking.png) no-repeat -24px center;
+  background: url(../assets/tikkaimg/diamond-ranking.png) no-repeat -24px center;
   background-size: 63px;
 }
 
@@ -4285,7 +4327,7 @@ main.info-page {
 }
 
 main.info-page div.title {
-  background: url("../images/color-bg.png") no-repeat center center;
+  background: url("../assets/tikkaimg/color-bg.png") no-repeat center center;
   background-size: cover;
   width: 100%;
   height: 300px;
@@ -4604,7 +4646,7 @@ div.overlay#top-up-overlay div.footer span.point {
 
 div.overlay#top-up-overlay div.footer span.point::before {
   content: "";
-  background: url(../images/coin.png) no-repeat center center;
+  background: url(../assets/tikkaimg/coin.png) no-repeat center center;
   background-size: cover;
   filter: drop-shadow(0 0 3px rgb(80, 80, 80));
   display: block;
@@ -4770,7 +4812,7 @@ main.live-on div.overlay.viewer .title > p {
 main.live-on div.overlay.revenue .title > p img,
 main.live-on div.overlay.viewer .title > p img {
   filter: invert(0.589) sepia(20) contrast(250%) hue-rotate(293deg)
-    drop-shadow(0 1px 1px rgba(188, 188, 188, 0.3));
+  drop-shadow(0 1px 1px rgba(188, 188, 188, 0.3));
   width: 16px;
 }
 
@@ -4864,7 +4906,7 @@ main.live-on div.badge.vip img {
 }
 
 main.live-on div.badge.vip {
-  background: url("../images/vip-icon.svg") no-repeat center center;
+  background: url("../assets/tikkaimg/vip-icon.svg") no-repeat center center;
 }
 
 main.live-on div.badge {
@@ -5043,7 +5085,7 @@ main.live-on ul.viewer-list > li .name {
 }
 
 main.live-on ul.revenue-list > li .value {
-  background: url("../images/gift.svg") no-repeat left center;
+  background: url("../assets/tikkaimg/gift.svg") no-repeat left center;
   background-size: 9px;
   padding-left: 12px;
   text-align: left;
@@ -5578,7 +5620,7 @@ main.product-detail .senders .live-item p.live-info {
 }
 
 main.product-detail .senders .live-item p.live-info span.name {
-  background: url(../images/heart-icon.svg) 1px 5px no-repeat;
+  background: url(../assets/tikkaimg/heart-icon.svg) 1px 5px no-repeat;
   background-size: 12px;
   padding-left: 16px;
 }
@@ -5882,7 +5924,7 @@ div.purchase-overlay .receipt-options .options button.active {
   width: 24px;
 }
 
-form.customer-detail .input-wrapper {
+div.customer-detail .input-wrapper {
   width: 100%;
   border: 1px solid #000;
   background: #fff;
@@ -5923,9 +5965,9 @@ div.purchase-overlay .select-wrapper select {
   padding: 0.5rem 20px;
   font-size: 0.875rem;
   background-image: linear-gradient(45deg, transparent 50%, gray 50%),
-    linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+  linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
   background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px),
-    calc(100% - 2.5em) 0;
+  calc(100% - 2.5em) 0;
   background-size: 5px 5px, 5px 5px, 0 0;
   background-repeat: no-repeat;
   -webkit-box-sizing: border-box;
@@ -5935,23 +5977,23 @@ div.purchase-overlay .select-wrapper select {
   -moz-appearance: none;
 }
 
-form.customer-detail .input-wrapper input,
-form.customer-detail .input-wrapper textarea {
+div.customer-detail .input-wrapper input,
+div.customer-detail .input-wrapper textarea {
   border: 0;
   font-size: 1rem;
   padding: 0.5rem;
 }
 
-form.customer-detail .input-wrapper input::placeholder,
-form.customer-detail .input-wrapper textarea::placeholder {
+div.customer-detail .input-wrapper input::placeholder,
+div.customer-detail .input-wrapper textarea::placeholder {
   color: #bbb;
 }
 
-form.customer-detail .flex-row {
+div.customer-detail .flex-row {
   gap: 1rem;
 }
 
-form.customer-detail button[type="submit"] {
+div.customer-detail button[type="submit"] {
   width: 140px;
   font-size: 1.2rem;
   padding: 5px;
@@ -5965,7 +6007,7 @@ form.customer-detail button[type="submit"] {
   margin: 4rem auto 1rem;
 }
 
-form.customer-detail button[type="submit"]:hover {
+div.customer-detail button[type="submit"]:hover {
   filter: contrast(1.9);
 }
 
@@ -6211,23 +6253,23 @@ div.purchase-overlay .check-item-count p.point {
     font-size: 1rem;
   }
 
-  form.customer-detail .flex-row {
+  div.customer-detail .flex-row {
     flex-direction: column;
     gap: 0;
   }
 
-  form.customer-detail .input-wrapper:not(.select-wrapper) {
+  div.customer-detail .input-wrapper:not(.select-wrapper) {
     flex-direction: row;
   }
 
-  form.customer-detail .input-wrapper {
+  div.customer-detail .input-wrapper {
     display: flex;
     font-size: 0.875rem;
     padding: 0.5rem 20px;
   }
 
-  form.customer-detail .input-wrapper input,
-  form.customer-detail .input-wrapper textarea {
+  div.customer-detail .input-wrapper input,
+  div.customer-detail .input-wrapper textarea {
     font-size: 0.875rem;
     padding: 0 0.5rem;
   }
@@ -6436,13 +6478,13 @@ button.gift-button {
   position: absolute;
   bottom: -40px;
   left: calc(50% - 40px);
-  background: url("../images/gift-round.png") no-repeat center center;
+  background: url("../assets/tikkaimg/gift-round.png") no-repeat center center;
   background-size: contain;
   transition: 0.3s background;
 }
 
 button.gift-button:hover {
-  background-image: url("../images/gift-round-pink-button.png");
+  background-image: url("../assets/tikkaimg/gift-round-pink-button.png");
 }
 
 button.gift-button img {
@@ -6491,7 +6533,7 @@ main.streamer-profile section.intro div.intro-content p {
 }
 
 main.streamer-profile section.menus {
-  background: url("../images/curve-bg.svg") no-repeat center center;
+  background: url("../assets/tikkaimg/curve-bg.svg") no-repeat center center;
   margin-bottom: 2rem;
 }
 
@@ -6710,7 +6752,7 @@ div.full-width.overlay.rewards div.footer span.point {
 
 div.full-width.overlay.rewards div.footer span.point::before {
   content: "";
-  background: url(../images/coin.png) no-repeat center center;
+  background: url(../assets/tikkaimg/coin.png) no-repeat center center;
   background-size: cover;
   filter: drop-shadow(0 0 3px rgb(80, 80, 80));
   display: inline-block;
@@ -7470,7 +7512,7 @@ div.overlay.search-result-video div.content div.btn-groups button:not(:last-chil
 }
 
 div.overlay.search-result-video div.content div.btn-groups button.followed img
-/* ,div.overlay.search-result-video div.content div.btn-groups button:hover img */ {
+  /* ,div.overlay.search-result-video div.content div.btn-groups button:hover img */ {
   filter: invert(0.6) sepia(3) contrast(180%) hue-rotate(289deg) saturate(1.8);
 }
 
