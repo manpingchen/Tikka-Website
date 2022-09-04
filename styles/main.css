@@ -4,7 +4,7 @@
   box-sizing: border-box;
   list-style: none !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-  "Open Sans", "Helvetica Neue", sans-serif;
+    "Open Sans", "Helvetica Neue", sans-serif;
   letter-spacing: 0.02em;
   /* transition: 0.3s all; */
 }
@@ -377,7 +377,7 @@ div.img-wrap img {
 
 .topup .login-section .logged-in div.my-flower span.point::before {
   content: "";
-  background: url(../assets/tikkaimg/coin.png) no-repeat center center;
+  background: url(../images/coin.png) no-repeat center center;
   background-size: cover;
   filter: drop-shadow(0 0 3px rgb(80, 80, 80));
   display: inline-block;
@@ -797,7 +797,7 @@ span.name {
   padding: 0.25rem 0.75rem 0.25rem 1.5rem;
   border-radius: 20px;
   font-size: 0.875rem;
-  background: url("../assets/tikkaimg/heart-icon.svg") 10px 7px no-repeat rgba(0, 0, 0, 0.3);
+  background: url("../images/heart-icon.svg") 10px 7px no-repeat rgba(0, 0, 0, 0.3);
   background-size: 10px;
 }
 
@@ -891,6 +891,7 @@ div.live-item {
 }
 
 div.live-items a.live-item,
+div.live-items div.live-item,
 li.glide__slide a.live-item,
 div.live-item {
   display: flex;
@@ -919,7 +920,6 @@ div.live-item div.img-wrap {
   position: relative;
   overflow: hidden;
   border-radius: 15px;
-  /* border: 10px solid #ffc1db; */
 }
 
 a.live-item div.img-wrap {
@@ -956,23 +956,26 @@ a.live-item p.live-info {
 section.live .live-list ul li p.live-info span.name,
 section.live .live-list ul li p.live-info span.time,
 a.live-item p.live-info span.name,
-a.live-item p.live-info span.time {
+a.live-item p.live-info span.time,
+div.live-item p.live-info span.name,
+div.live-item p.live-info span.time {
   display: flex;
   flex-direction: row;
 }
 
 section.live .live-list ul li p.live-info span.name,
-a.live-item p.live-info span.name {
-  align-self: center;
-  background: url("../assets/tikkaimg/heart-icon.svg") left center no-repeat;
+a.live-item p.live-info span.name,
+div.live-item p.live-info span.name {
+  background: url("../images/heart-icon.svg") left center no-repeat;
   background-size: 10px;
   padding-left: 16px;
 }
 
 section.live .live-list ul li p.live-info span.time,
-a.live-item p.live-info span.time {
+a.live-item p.live-info span.time,
+div.live-item p.live-info span.time {
   font-size: 0.7rem;
-  background: url("../assets/tikkaimg/clock-icon.svg") left 17% no-repeat;
+  background: url("../images/clock-icon.svg") left 17% no-repeat;
   background-size: 10px;
   padding-left: 16px;
   align-items: baseline;
@@ -982,6 +985,8 @@ a.live-item p.live-info span.time {
 section.live .live-list ul li span.live-chip,
 section.live .live-list ul li span.count,
 a.live-item span.live-chip,
+div.live-item span.live-chip,
+a.live-item span.count,
 a.live-item span.count {
   position: absolute;
   top: 25px;
@@ -1040,7 +1045,7 @@ section.live .live-list ul li span.count {
   #products-slides li.glide__slide p span.name {
     padding: 3.5px 5px 3.5px 18px;
     height: 23px;
-    background: url(../assets/tikkaimg/heart-icon.svg) 7px 6px no-repeat rgba(0, 0, 0, 0.3);
+    background: url(../images/heart-icon.svg) 7px 6px no-repeat rgba(0, 0, 0, 0.3);
     background-size: 9px;
     margin-bottom: 6px;
   }
@@ -1272,7 +1277,7 @@ main.topup {
 }
 .topup .amount-options ul li button span.point::before {
   content: "";
-  background: url("../assets/tikkaimg/coin.png") no-repeat center center;
+  background: url("../images/coin.png") no-repeat center center;
   background-size: cover;
   filter: drop-shadow(0 0 3px rgb(80, 80, 80));
   display: inline-block;
@@ -1957,7 +1962,7 @@ main.live-on div.sticker-overlay div.sticker-body .sticker-item .sticker-name {
 main.live-on div.sticker-overlay div.sticker-body .sticker-item .value {
   color: #fff;
   font-size: 1rem;
-  background: url(../assets/tikkaimg/coin.png) no-repeat left center;
+  background: url(../images/coin.png) no-repeat left center;
   background-size: 30px;
   width: 70px;
   margin: 0 auto;
@@ -2086,11 +2091,11 @@ main.live-on div.gift-mission a.mission {
 }
 
 main.live-on div.gift-mission a.gift {
-  background-image: url("../assets/tikkaimg/gift-bg.png");
+  background-image: url("../images/gift-bg.png");
 }
 
 main.live-on div.gift-mission a.mission {
-  background-image: url("../assets/tikkaimg/mission-bg.png");
+  background-image: url("../images/mission-bg.png");
 }
 
 main.live-on div.gift-mission a.gift img,
@@ -2472,7 +2477,7 @@ div.overlay.rewards div.reward-item span.point {
   width: 100%;
   padding: 0 10px 5px 24px;
   color: #e50370;
-  background: url("../assets/tikkaimg/coin.png") no-repeat 2px -5px;
+  background: url("../images/coin.png") no-repeat 2px -5px;
   background-size: 33%;
   font-size: 0.7rem;
 }
@@ -2480,7 +2485,7 @@ div.overlay.rewards div.reward-item span.point {
 main.live-on div.overlay.rewards div.reward-item span.point,
 div.full-width.overlay.rewards div.reward-item span.point,
 div.overlay.rewards div.reward-item span.point {
-  background: url(../assets/tikkaimg/coin.png) no-repeat 2px -7px;
+  background: url(../images/coin.png) no-repeat 2px -7px;
   background-size: 30px;
   width: 100px;
   margin: 0 auto;
@@ -2492,7 +2497,7 @@ div.overlay.rewards .footer {
 
 main.live-on div.send-gift,
 div.overlay.rewards div.send-gift {
-  background: url(../assets/tikkaimg/coin.png) no-repeat -5px -23px;
+  background: url(../images/coin.png) no-repeat -5px -23px;
   background-size: 70px;
   margin-top: 1rem;
   padding-left: 50px;
@@ -2585,7 +2590,7 @@ main.live-on div.frame-top-bar div.viewer-tab.active span.icon {
 main.live-on div.frame-top-bar div.revenue-tab.active span.icon img,
 main.live-on div.frame-top-bar:not(.mobile-only) div.viewer-tab.active span.icon img {
   filter: invert(0.589) sepia(20) contrast(250%) hue-rotate(293deg)
-  drop-shadow(0 1px 1px rgba(188, 188, 188, 0.3));
+    drop-shadow(0 1px 1px rgba(188, 188, 188, 0.3));
 }
 
 main.live-on div.frame-bottom-bar {
@@ -2997,7 +3002,7 @@ main.account h1 img {
 }
 
 div.upload {
-  background: url("../assets/tikkaimg/upload-avatar-bg.svg") no-repeat center center;
+  background: url("../images/upload-avatar-bg.svg") no-repeat center center;
   width: 180px;
   height: 186px;
   margin: 0 auto 50px;
@@ -3041,7 +3046,7 @@ div.upload .custom-input-field span.placeholder {
   border-radius: 50%;
   width: 100%;
   height: 100%;
-  background: url("../assets/tikkaimg/upload-avatar-bg.svg") no-repeat center center;
+  background: url("../images/upload-avatar-bg.svg") no-repeat center center;
   color: rgb(107, 107, 107);
   overflow: hidden;
   white-space: nowrap;
@@ -3079,7 +3084,7 @@ main.account h4.name {
 }
 
 main.account div.point {
-  background: url("../assets/tikkaimg/coin.png") left center no-repeat #f75193;
+  background: url("../images/coin.png") left center no-repeat #f75193;
   background-size: 60px;
   color: #fff;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
@@ -3202,23 +3207,18 @@ main.follow a.live-item {
   margin-bottom: 70px;
 }
 
-main.my-favourite.follow div.live-items a.live-item {
-  border: 3px solid #fff;
-  box-shadow: 0 0 4px #00000050;
-  border-radius: 20px;
-}
-
-main.my-favourite.follow div.live-items a.live-item div.img-wrap {
-  border-radius: 18px;
-}
-
 main.my-favourite.follow div.live-items p.live-info {
-  -webkit-border-bottom-right-radius: 18px;
-  -webkit-border-bottom-left-radius: 18px;
-  -moz-border-radius-bottomright: 18px;
-  -moz-border-radius-bottomleft: 18px;
-  border-bottom-right-radius: 18px;
-  border-bottom-left-radius: 18px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  padding: 10px;
+  font-size: 0.875rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+main.my-favourite.follow div.live-items p.live-info span.name {
+  background-color: transparent;
 }
 
 main.follow a.live-item div.img-wrap {
@@ -3755,13 +3755,13 @@ main.ranking section.top-three ul.glide__list > li.glide__slide--active {
 }
 
 main.ranking .value {
-  background: url(../assets/tikkaimg/money.png) no-repeat 2px center;
+  background: url(../images/money.png) no-repeat 2px center;
   background-size: 17px;
   padding-left: 20px;
 }
 
 main.ranking .receiver-ranking .value {
-  background: url(../assets/tikkaimg/diamond-ranking.png) no-repeat -24px center;
+  background: url(../images/diamond-ranking.png) no-repeat -24px center;
   background-size: 63px;
 }
 
@@ -4327,7 +4327,7 @@ main.info-page {
 }
 
 main.info-page div.title {
-  background: url("../assets/tikkaimg/color-bg.png") no-repeat center center;
+  background: url("../images/color-bg.png") no-repeat center center;
   background-size: cover;
   width: 100%;
   height: 300px;
@@ -4646,7 +4646,7 @@ div.overlay#top-up-overlay div.footer span.point {
 
 div.overlay#top-up-overlay div.footer span.point::before {
   content: "";
-  background: url(../assets/tikkaimg/coin.png) no-repeat center center;
+  background: url(../images/coin.png) no-repeat center center;
   background-size: cover;
   filter: drop-shadow(0 0 3px rgb(80, 80, 80));
   display: block;
@@ -4812,7 +4812,7 @@ main.live-on div.overlay.viewer .title > p {
 main.live-on div.overlay.revenue .title > p img,
 main.live-on div.overlay.viewer .title > p img {
   filter: invert(0.589) sepia(20) contrast(250%) hue-rotate(293deg)
-  drop-shadow(0 1px 1px rgba(188, 188, 188, 0.3));
+    drop-shadow(0 1px 1px rgba(188, 188, 188, 0.3));
   width: 16px;
 }
 
@@ -4906,7 +4906,7 @@ main.live-on div.badge.vip img {
 }
 
 main.live-on div.badge.vip {
-  background: url("../assets/tikkaimg/vip-icon.svg") no-repeat center center;
+  background: url("../images/vip-icon.svg") no-repeat center center;
 }
 
 main.live-on div.badge {
@@ -5085,7 +5085,7 @@ main.live-on ul.viewer-list > li .name {
 }
 
 main.live-on ul.revenue-list > li .value {
-  background: url("../assets/tikkaimg/gift.svg") no-repeat left center;
+  background: url("../images/gift.svg") no-repeat left center;
   background-size: 9px;
   padding-left: 12px;
   text-align: left;
@@ -5582,13 +5582,28 @@ main.product-detail .senders .live-item {
   display: block;
 }
 
-main.product-detail .senders .live-item span.live-chip {
+main.my-favourite div.live-item {
+  overflow: visible;
+  border: 0;
+  align-items: baseline;
+  padding-bottom: 60px;
+}
+
+main.product-detail .senders .live-item span.live-chip,
+main.my-favourite div.live-item span.live-chip {
   position: absolute;
   top: 10px;
   left: 10px;
 }
 
-main.product-detail .senders .live-item div.img-wrap {
+main.my-favourite div.live-item span.count {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+main.product-detail .senders .live-item div.img-wrap,
+main.my-favourite div.live-item div.img-wrap {
   border-radius: 20px;
   position: relative;
   display: flex;
@@ -5596,7 +5611,8 @@ main.product-detail .senders .live-item div.img-wrap {
   justify-content: center;
 }
 
-main.product-detail .senders .live-item div.img-wrap img {
+main.product-detail .senders .live-item div.img-wrap img,
+main.my-favourite div.live-item div.img-wrap img {
   height: 100%;
   width: auto;
   left: initial;
@@ -5604,7 +5620,13 @@ main.product-detail .senders .live-item div.img-wrap img {
   position: absolute;
 }
 
-main.product-detail .senders .live-item p.live-info {
+main.my-favourite div.live-item div.img-wrap {
+  border: 10px solid #fde9f2;
+  cursor: pointer;
+}
+
+main.product-detail .senders .live-item p.live-info,
+main.my-favourite .live-item div.img-wrap p.live-chip {
   -webkit-border-bottom-left-radius: 20px;
   -webkit-border-bottom-right-radius: 20px;
   -moz-border-radius-bottomleft: 20px;
@@ -5620,12 +5642,13 @@ main.product-detail .senders .live-item p.live-info {
 }
 
 main.product-detail .senders .live-item p.live-info span.name {
-  background: url(../assets/tikkaimg/heart-icon.svg) 1px 5px no-repeat;
+  background: url(../images/heart-icon.svg) 1px 5px no-repeat;
   background-size: 12px;
   padding-left: 16px;
 }
 
-main.product-detail .senders button.follow-btn {
+main.product-detail .senders button.follow-btn,
+main.my-favourite button.follow-btn {
   width: 90px;
   font-size: 0.875rem;
   padding: 5px;
@@ -5639,15 +5662,22 @@ main.product-detail .senders button.follow-btn {
   margin: 1rem auto;
 }
 
-main.product-detail .senders button.follow-btn.pink {
+main.my-favourite button.follow-btn {
+  bottom: 0;
+}
+
+main.product-detail .senders button.follow-btn.pink,
+main.my-favourite button.follow-btn.pink {
   background: linear-gradient(#ffc1db, #ff398c, #f03282);
 }
 
-main.product-detail .senders button.follow-btn img {
+main.product-detail .senders button.follow-btn img,
+main.my-favourite button.follow-btn img {
   height: 16px;
 }
 
-main.product-detail .senders button.follow-btn:hover {
+main.product-detail .senders button.follow-btn:hover,
+main.my-favourite button.follow-btn:hover {
   filter: none;
 }
 
@@ -5965,9 +5995,9 @@ div.purchase-overlay .select-wrapper select {
   padding: 0.5rem 20px;
   font-size: 0.875rem;
   background-image: linear-gradient(45deg, transparent 50%, gray 50%),
-  linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+    linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
   background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px),
-  calc(100% - 2.5em) 0;
+    calc(100% - 2.5em) 0;
   background-size: 5px 5px, 5px 5px, 0 0;
   background-repeat: no-repeat;
   -webkit-box-sizing: border-box;
@@ -6478,13 +6508,13 @@ button.gift-button {
   position: absolute;
   bottom: -40px;
   left: calc(50% - 40px);
-  background: url("../assets/tikkaimg/gift-round.png") no-repeat center center;
+  background: url("../images/gift-round.png") no-repeat center center;
   background-size: contain;
   transition: 0.3s background;
 }
 
 button.gift-button:hover {
-  background-image: url("../assets/tikkaimg/gift-round-pink-button.png");
+  background-image: url("../images/gift-round-pink-button.png");
 }
 
 button.gift-button img {
@@ -6533,7 +6563,7 @@ main.streamer-profile section.intro div.intro-content p {
 }
 
 main.streamer-profile section.menus {
-  background: url("../assets/tikkaimg/curve-bg.svg") no-repeat center center;
+  background: url("../images/curve-bg.svg") no-repeat center center;
   margin-bottom: 2rem;
 }
 
@@ -6752,7 +6782,7 @@ div.full-width.overlay.rewards div.footer span.point {
 
 div.full-width.overlay.rewards div.footer span.point::before {
   content: "";
-  background: url(../assets/tikkaimg/coin.png) no-repeat center center;
+  background: url(../images/coin.png) no-repeat center center;
   background-size: cover;
   filter: drop-shadow(0 0 3px rgb(80, 80, 80));
   display: inline-block;

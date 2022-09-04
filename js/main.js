@@ -335,7 +335,6 @@ backdrop.addEventListener("click", () => {
   backdrop.style.display = "none";
 });
 
-
 /*儲值方式, 捧花點擊變色*/
 function handleOptionClick(id, parentId) {
   setActiveStatus(parentId, id);
@@ -384,9 +383,31 @@ function switchTotalByCurrency(id, parentId) {
     id === "nt-dollar" ? "NT." + ntDollarValue : pointValue;
 }
 
-//handle follow button
-function handleFollow(_, el) {
-  const element = el.querySelector(".follow-text");
-  element.innerText = "已追蹤";
-  document.querySelector(`#${el.id}`).classList.add("pink");
+// //handle follow button
+// function handleFollow(_, el) {
+//   const element = el.querySelector(".follow-text");
+//   element.innerText = "已追蹤";
+//   document.querySelector(`#${el.id}`).classList.add("pink");
+// }
+
+/* 追蹤按鈕文字 */
+function handleFollow(element) {
+  [...document.querySelectorAll(`.${[...element.classList].join(".")}`)].map((node) => {
+    
+    node.classList.toggle("pink");
+
+    const followed = node.classList.contains("pink");
+    node.children[(id = "follow-text")].innerText = followed ? "已追蹤" : "追蹤";
+  });
+}
+
+/* 點擊單一主播圖片，開啟新頁面 */
+function handleLiveItemClick(target) {
+  const ifOnLive = target.classList.value.includes("on");
+  if (ifOnLive) {
+    location.href = "live-on.html";
+  }
+  if (!ifOnLive) {
+    location.href = "streamer-profile.html";
+  }
 }
