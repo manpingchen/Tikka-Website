@@ -328,7 +328,7 @@ function removeOneItemToCart(itemId) {
 // 遮罩以外點擊
 
 const backdrop = document.querySelector(".backdrop");
-const overlays = document.querySelectorAll(".overlay:not(.full-page)");
+const overlays = document.querySelectorAll(".overlay:not(.not-close-by-backdrop)");
 
 backdrop.addEventListener("click", () => {
   [...overlays].forEach((node) => (node.style.display = "none"));
@@ -393,7 +393,6 @@ function switchTotalByCurrency(id, parentId) {
 /* 追蹤按鈕文字 */
 function handleFollow(element) {
   [...document.querySelectorAll(`.${[...element.classList].join(".")}`)].map((node) => {
-    
     node.classList.toggle("pink");
 
     const followed = node.classList.contains("pink");

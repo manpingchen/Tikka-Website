@@ -124,8 +124,8 @@
       </section>
       <section class="menus">
         <ul class="flex-row">
-          <li><button>最新動態</button></li>
-          <li><button onclick="showVideos()">經典影片</button></li>
+          <li><button onclick="showStoryList()">最新動態</button></li>
+          <li><button onclick="showVideoList()">經典影片</button></li>
           <li>
             <button onclick="handleShowComponent('#personal-gifts-overlay')">專屬禮物</button>
           </li>
@@ -135,32 +135,32 @@
         </ul>
       </section>
       <section class="list images">
-        <div class="list-item">
+        <div class="list-item" id="story-1" onclick="showStoryById(this.id)">
           <div class="img-wrap">
             <img src="images/s2.jpg" alt="" />
           </div>
         </div>
-        <div class="list-item">
+        <div class="list-item" id="story-2" onclick="showStoryById(this.id)">
           <div class="img-wrap">
             <img src="images/s2.jpg" alt="" />
           </div>
         </div>
-        <div class="list-item">
+        <div class="list-item" id="story-3" onclick="showStoryById(this.id)">
           <div class="img-wrap">
             <img src="images/s2.jpg" alt="" />
           </div>
         </div>
-        <div class="list-item">
+        <div class="list-item" id="story-4" onclick="showStoryById(this.id)">
           <div class="img-wrap">
             <img src="images/s2.jpg" alt="" />
           </div>
         </div>
-        <div class="list-item">
+        <div class="list-item" id="story-5" onclick="showStoryById(this.id)">
           <div class="img-wrap">
             <img src="images/s2.jpg" alt="" />
           </div>
         </div>
-        <div class="list-item">
+        <div class="list-item" id="story-6" onclick="showStoryById(this.id)">
           <div class="img-wrap">
             <img src="images/s2.jpg" alt="" />
           </div>
@@ -168,32 +168,32 @@
       </section>
 
       <section class="list videos" style="display: none">
-        <div class="list-item">
+        <div class="list-item" id="video-1" onclick="showVideoById(this.id)">
           <div class="video-wrap">
             <video id="rtc_media_player" playsinline controls></video>
           </div>
         </div>
-        <div class="list-item">
+        <div class="list-item" id="video-2" onclick="showVideoById(this.id)">
           <div class="video-wrap">
             <video id="rtc_media_player" playsinline controls></video>
           </div>
         </div>
-        <div class="list-item">
+        <div class="list-item" id="video-3" onclick="showVideoById(this.id)">
           <div class="video-wrap">
             <video id="rtc_media_player" playsinline controls></video>
           </div>
         </div>
-        <div class="list-item">
+        <div class="list-item" id="video-4" onclick="showVideoById(this.id)">
           <div class="video-wrap">
             <video id="rtc_media_player" playsinline controls></video>
           </div>
         </div>
-        <div class="list-item">
+        <div class="list-item" id="video-5" onclick="showVideoById(this.id)">
           <div class="video-wrap">
             <video id="rtc_media_player" playsinline controls></video>
           </div>
         </div>
-        <div class="list-item">
+        <div class="list-item" id="video-6" onclick="showVideoById(this.id)">
           <div class="video-wrap">
             <video id="rtc_media_player" playsinline controls></video>
           </div>
@@ -324,12 +324,12 @@
           <div class="reward-items reward-gift" id="rewards-wall">
             <!-- <div class="reward-item">
               <img src="images/diamond.png" alt="" />
-              <span class="point flex-row">2740000</span>
+              <span class="flex-row">2740000</span>
             </div> -->
           </div>
           <div class="footer">
             <div class="send-gift flex-row">
-              <span class="point flex-row">2740000</span>
+              <span class="flex-row">2740000</span>
               <button id="buy-button" type="button" onclick="handleBuy(this.id)">贈送</button>
             </div>
           </div>
@@ -608,7 +608,88 @@
       </div>
     </div>
 
-    <div class="backdrop"></div>
+    <!-- 滿版經典影片遮罩 -->
+    <div
+      class="overlay full-page highlight-content-overlay not-close-by-backdrop"
+      id="single-video-overlay"
+      style="display: none"
+    >
+      <div class="top-bar">
+        <button class="back" onclick="handleHideComponent('#single-video-overlay')">
+          <span class="material-icons">&#xE5CB;</span>
+        </button>
+        <p>經典影片</p>
+      </div>
+      <div class="header">
+        <div class="img-wrap">
+          <img src="images/s1.jpg" alt="" />
+        </div>
+        <p>可愛小貝最萌</p>
+      </div>
+      <div class="content">
+        <div class="videoDiv">
+          <video id="rtc_media_player" autoplay playsinline controls></video>
+        </div>
+        <div class="video-description">
+          經典影片內容說明，經典影片內容說明經典影片內容說明。經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明。
+        </div>
+        <div class="btn-groups">
+          <button class="followed" onclick="handleFollow()">
+            <img src="images/heart-icon.svg" alt="heart icon" />
+            <span class="value">999</span>
+          </button>
+          <button onclick="handleShowComponent('#rewards-overlay')">
+            <img src="images/gift.svg" alt="gift icon" />
+          </button>
+          <button onclick="handleShowComponent('#social-media-shares')">
+            <img src="images/social.svg" alt="social icon" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 滿版最新動態遮罩 -->
+    <div
+      class="overlay full-page highlight-content-overlay not-close-by-backdrop"
+      id="single-story-overlay"
+      style="display: none"
+    >
+      <div class="top-bar">
+        <button class="back" onclick="handleHideComponent('#single-story-overlay')">
+          <span class="material-icons">&#xE5CB;</span>
+        </button>
+        <p>最新動態</p>
+      </div>
+      <div class="header">
+        <div class="img-wrap">
+          <img src="images/s1.jpg" alt="" />
+        </div>
+        <p>可愛小貝最萌</p>
+      </div>
+      <div class="content">
+        <div class="img-wrap">
+          <img src="images/s2.jpg" alt="" />
+        </div>
+        <div class="video-description">
+          經典影片內容說明，經典影片內容說明經典影片內容說明。經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明。
+        </div>
+        <div class="btn-groups">
+          <button class="followed" onclick="handleFollow()">
+            <img src="images/heart-icon.svg" alt="heart icon" />
+            <span class="value">999</span>
+          </button>
+          <button onclick="handleShowComponent('#rewards-overlay')">
+            <img src="images/gift.svg" alt="gift icon" />
+          </button>
+          <button onclick="handleShowComponent('#social-media-shares')">
+            <img src="images/social.svg" alt="social icon" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--遮罩backdrop-->
+    <div class="backdrop" style="display: none"></div>
 
     <footer class="desktop-only">
       <div class="footer-content flex-row">
@@ -654,14 +735,27 @@
         showRewardDetail("gift-all", "gift-details");
       }
       // 經典影片
-      function showVideos() {
+      function showVideoList() {
         handleShowComponent(".list.videos", "grid");
         handleHideComponent(".list.images");
       }
 
+      // 經典影片
+      function showStoryList() {
+        handleHideComponent(".list.videos");
+        handleShowComponent(".list.images", "grid");
+      }
+
       // 開啟特定經典影片
       function showVideoById(id) {
-        console.log("此為開啟影片遮罩 － 畫面尚完成", { id });
+        console.log({ id });
+        handleShowComponent("#single-video-overlay");
+      }
+
+      // 開啟特定經典影片
+      function showStoryById(id) {
+        console.log({ id });
+        handleShowComponent("#single-story-overlay");
       }
 
       // 開啟經典影片
@@ -670,6 +764,22 @@
       const videoId = urlParams.get("videoId");
       if (videoId) {
         showVideoById(videoId);
+      }
+
+      /*點擊購買按鈕 及 (＊＊＊供示意：顯示 捧花不足遮罩）*/
+      function handleBuy(id) {
+        handleHideComponent("#rewards-overlay");
+        // handleShowComponent("#top-up-overlay");
+        handleShowComponent("#gift-sent", "flex");
+        handleShowComponent("#gift-full-overlay");
+        setTimeout(() => {
+          handleHideComponent("#gift-sent");
+        }, 5000);
+
+        /*設計沒有做到滿版帖圖關閉的環節，先以10秒後關閉*/
+        setTimeout(() => {
+          handleHideComponent("#gift-full-overlay");
+        }, 10000);
       }
     </script>
   </body>

@@ -429,103 +429,110 @@
 
     <!-- 手機版禮物牆 -->
     <div
-      class="overlay rewards search-page-overlay"
-      id="rewards-overlay-mobile"
+      class="full-width overlay rewards search-page-overlay"
+      id="rewards-overlay"
       style="display: none"
     >
       <div class="content">
-        <button class="close" onclick="handleHideComponent('#rewards-overlay-mobile')">
-          <img src="images/close-icon.svg" alt="close" />
-        </button>
-        <div class="wrapper reward-btns-mobile">
-          <div class="btns" id="reward-title-buttons-mobile">
-            <button
-              id="reward-gift-mobile"
-              type="button"
-              class="active"
-              onclick="handleRewardTitleClick(this.id,'reward-title-buttons-mobile')"
-            >
-              <img src="images/gift.svg" alt="" />禮物
-            </button>
-            <button
-              id="reward-product-mobile"
-              type="button"
-              onclick="handleRewardTitleClick(this.id,'reward-title-buttons-mobile')"
-            >
-              <img src="images/arrow-cart.svg" alt="" />商品
-            </button>
-            <button
-              id="reward-box-mobile"
-              type="button"
-              onclick="handleRewardTitleClick(this.id,'reward-title-buttons-mobile')"
-            >
-              <img src="images/treasure.svg" alt="" />百寶箱
-            </button>
+        <section class="title">
+          <button class="close" onclick="handleHideComponent('#rewards-overlay')">
+            <img src="images/close-icon.svg" alt="close" />
+          </button>
+          <div class="wrapper reward-btns-mobile">
+            <div class="btns" id="reward-title-buttons-mobile">
+              <button
+                id="reward-gift-mobile"
+                type="button"
+                class="active"
+                onclick="handleRewardTitleClick(this.id,'reward-title-buttons-mobile')"
+              >
+                <img src="images/gift.svg" alt="" />禮物
+              </button>
+              <button
+                id="reward-product-mobile"
+                type="button"
+                onclick="handleRewardTitleClick(this.id,'reward-title-buttons-mobile')"
+              >
+                <img src="images/arrow-cart.svg" alt="" />商品
+              </button>
+              <button
+                id="reward-box-mobile"
+                type="button"
+                onclick="handleRewardTitleClick(this.id,'reward-title-buttons-mobile')"
+              >
+                <img src="images/treasure.svg" alt="" />百寶箱
+              </button>
+            </div>
           </div>
-        </div>
 
-        <div class="detail-links reward-gift" id="gift-details-mobile">
-          <a
-            href="#"
-            id="gift-all-mobile"
-            onclick="showRewardDetail(this.id, 'gift-details-mobile')"
-            >All</a
-          >
-          <span class="border"></span>
-          <a
-            href="#"
-            id="gift-popular-mobile"
-            onclick="showRewardDetail(this.id, 'gift-details-mobile')"
-            >熱門</a
-          >
-          <span class="border"></span>
-          <a
-            href="#"
-            id="gift-favourite-mobile"
-            onclick="showRewardDetail(this.id, 'gift-details-mobile')"
-            >女神最愛</a
-          >
-          <span class="border"></span>
-          <a
-            href="#"
-            id="gift-romantic-mobile"
-            onclick="showRewardDetail(this.id, 'gift-details-mobile')"
-            >浪漫禮物</a
-          >
-        </div>
+          <div class="detail-links reward-gift" id="gift-details-mobile">
+            <a
+              href="#"
+              id="gift-all-mobile"
+              onclick="showRewardDetail(this.id, 'gift-details-mobile')"
+              >All</a
+            >
+            <span class="border"></span>
+            <a
+              href="#"
+              id="gift-popular-mobile"
+              onclick="showRewardDetail(this.id, 'gift-details-mobile')"
+              >熱門</a
+            >
+            <span class="border"></span>
+            <a
+              href="#"
+              id="gift-favourite-mobile"
+              onclick="showRewardDetail(this.id, 'gift-details-mobile')"
+              >女神最愛</a
+            >
+            <span class="border"></span>
+            <a
+              href="#"
+              id="gift-romantic-mobile"
+              onclick="showRewardDetail(this.id, 'gift-details-mobile')"
+              >浪漫禮物</a
+            >
+          </div>
 
-        <div class="detail-links reward-gift" id="product-details-mobile" style="display: none">
-          <a
-            href="#"
-            id="product-all-mobile"
-            onclick="showRewardDetail(this.id, 'product-details-mobile')"
-            >All</a
-          >
-          <span class="border"></span>
-          <a
-            href="#"
-            id="product-popular-mobile"
-            onclick="showRewardDetail(this.id, 'product-details-mobile')"
-            >熱銷</a
-          >
-        </div>
-        <div class="detail-links reward-gift" id="box-details-mobile" style="display: none">
-          <a href="#" id="box-all-mobile" onclick="showRewardDetail(this.id, 'box-details-mobile')"
-            >All</a
-          >
-        </div>
-        <div class="reward-items reward-gift" id="rewards-wall-mobile">
-          <!-- <div class="reward-item">
+          <div class="detail-links reward-gift" id="product-details-mobile" style="display: none">
+            <a
+              href="#"
+              id="product-all-mobile"
+              onclick="showRewardDetail(this.id, 'product-details-mobile')"
+              >All</a
+            >
+            <span class="border"></span>
+            <a
+              href="#"
+              id="product-popular-mobile"
+              onclick="showRewardDetail(this.id, 'product-details-mobile')"
+              >熱銷</a
+            >
+          </div>
+          <div class="detail-links reward-gift" id="box-details-mobile" style="display: none">
+            <a
+              href="#"
+              id="box-all-mobile"
+              onclick="showRewardDetail(this.id, 'box-details-mobile')"
+              >All</a
+            >
+          </div>
+        </section>
+        <section class="reward-items-container">
+          <div class="reward-items reward-gift" id="rewards-wall-mobile">
+            <!-- <div class="reward-item">
             <img src="images/diamond.png" alt="" />
             <span class="point flex-row">2740000</span>
           </div> -->
-        </div>
-        <div class="footer">
-          <div class="send-gift flex-row">
-            <span class="point flex-row">2740000</span>
-            <button id="buy-button" type="button" onclick="handleBuy()">購買</button>
           </div>
-        </div>
+          <div class="footer">
+            <div class="send-gift flex-row">
+              <span class="flex-row">2740000</span>
+              <button id="buy-button" type="button" onclick="handleBuy()">購買</button>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
 
@@ -615,7 +622,7 @@
     </div>
 
     <!-- 行動版滿版經典影片區 -->
-    <div class="overlay full-page search-result-video" id="search-result-video-overlay">
+    <div class="overlay full-page highlight-content-overlay" id="search-result-video-overlay">
       <div class="top-bar">
         <button class="back" onclick="handleHideComponent('#search-result-video-overlay')">
           <span class="material-icons">&#xE5CB;</span>
@@ -640,7 +647,7 @@
             <img src="images/heart-icon.svg" alt="heart icon" />
             <span class="value">999</span>
           </button>
-          <button onclick="handleShowMobileRewardWall()">
+          <button onclick="handleShowRewardWallFromVideoOverlay()">
             <img src="images/gift.svg" alt="gift icon" />
           </button>
           <button onclick="handleShowComponent('#social-media-shares')">
@@ -679,13 +686,6 @@
     <script src="js/fakeData.js"></script>
     <script src="js/main.js"></script>
     <script>
-
-      /* 手機版禮物牆顯示 */
-      function handleShowMobileRewardWall() {
-        handleShowComponent("#rewards-overlay-mobile");
-        showRewardDetail("gift-all-mobile", "gift-details-mobile");
-      }
-
       /* 購買禮物捧花不足 */
       function handleBuy() {
         handleHideComponent("#rewards-overlay-mobile");
@@ -695,6 +695,12 @@
         // 送出禮物遮罩
         handleShowComponent("#gift-full-overlay");
         handleShowComponent("#gift-sent", "flex");
+      }
+
+      /* 點擊經典影片遮罩，開啟禮物牆 */
+      function handleShowRewardWallFromVideoOverlay() {
+        handleShowComponent("#rewards-overlay");
+        showRewardDetail("gift-all-mobile", "gift-details-mobile");
       }
     </script>
   </body>

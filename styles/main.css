@@ -2330,8 +2330,14 @@ div.overlay.rewards div.reward-items {
   margin: 0;
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
-  background: #00000050;
+  background: #00000075;
   margin-top: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  div.overlay.rewards div.reward-items {
+    grid-template-columns: repeat(8, 1fr);
+  }
 }
 
 div.overlay.rewards div.reward-item span.name,
@@ -2424,7 +2430,7 @@ div.overlay.rewards div.reward-item {
 main.live-on div.reward-item.active,
 div.full-width.overlay.rewards div.reward-item.active,
 div.overlay.rewards div.reward-item.active {
-  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
+  background: linear-gradient(#55323e, #582e2e, #ffb4d3);
   box-shadow: 0 0 2px 2px #db4e8675;
 }
 
@@ -5185,27 +5191,27 @@ main.live-on ul.revenue-list > li div.badge img {
   /* width: max-content; */
 }
 
-div#rewards-overlay-mobile .wrapper {
+div#rewards-overlay .wrapper {
   width: 100%;
   overflow-y: auto;
 }
 
-div#rewards-overlay-mobile .wrapper.reward-btns-mobile {
+/* div#rewards-overlay .wrapper.reward-btns-mobile {
   height: 60px;
   width: calc(100% - 1rem - 50px);
   margin-left: 15px;
-}
+} */
 
-div#rewards-overlay-mobile.overlay.rewards.search-page-overlay {
-  height: inherit !important;
-}
-
-div#rewards-overlay-mobile div.btns {
+/*div#rewards-overlay.overlay.rewards.search-page-overlay {
+  height: inherit !important; 
+}*/
+/* 
+div#rewards-overlay div.btns {
   padding-top: 1rem;
   margin-bottom: 0;
-}
+} */
 
-div#rewards-overlay-mobile div.content {
+div#rewards-overlay div.content {
   height: 100%;
   background: none !important;
 }
@@ -5224,10 +5230,10 @@ main.live-on div.overlay.rewards button.close {
   right: 20px;
   left: initial;
 }
-
-div#rewards-overlay-mobile div.send-gift {
+/* 
+div#rewards-overlay div.send-gift {
   padding-bottom: 1rem;
-}
+} */
 
 main.product-detail ul.tabs {
   background: #f19ec2;
@@ -6446,6 +6452,7 @@ main.streamer-profile div.video-wrap {
   justify-content: center;
   border-radius: 20px;
   border: 5px solid #fff;
+  cursor: pointer;
 }
 
 main.streamer-profile div.img-wrap img,
@@ -6677,7 +6684,7 @@ div.full-width.overlay.popular-products div.content {
 div.full-width.overlay.rewards div.content section,
 div.full-width.overlay.personal-gifts div.content section,
 div.full-width.overlay.popular-products div.content section {
-  max-width: 900px;
+  /* max-width: 900px; */
   margin: 0 auto;
 }
 
@@ -6694,7 +6701,7 @@ div.full-width.overlay.popular-products div.content section.title {
 
 div.full-width.overlay.personal-gifts div.content section.title,
 div.full-width.overlay.popular-products div.content section.title {
-  padding: 1rem 0;
+  padding: 1rem;
 }
 
 div.full-width.overlay.rewards div.content section.reward-items-container,
@@ -6724,16 +6731,31 @@ div.full-width.overlay.popular-products div.reward-items {
   max-width: 900px;
   grid-template-columns: repeat(8, 1fr);
   margin-top: 1rem;
-  padding: 1rem 1rem 1rem 0;
+  padding: 1rem;
   display: grid;
   height: calc(100% - 160px);
   overflow-y: auto;
   gap: 1rem;
 }
 
+@media screen and (max-width: 768px) {
+  div.full-width.overlay.rewards div.reward-items,
+  div.full-width.overlay.personal-gifts div.reward-items,
+  div.full-width.overlay.popular-products div.reward-items {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+div.streamer-profile-overlay.full-width.overlay div.reward-items,
+div.full-width.overlay.rewards.search-page-overlay div.reward-items {
+  margin-top: 0;
+  max-width: none;
+  height: calc(100% - 140px);
+}
+
 div.full-width.overlay.personal-gifts div.reward-items,
 div.full-width.overlay.popular-products div.reward-items {
-  height: calc(100% - 60px);
+  height: 100%;
 }
 
 div.full-width.overlay.personal-gifts div.reward-items div.reward-item img,
@@ -6772,8 +6794,13 @@ div.full-width.overlay.popular-products div.reward-items div.reward-item span.co
 div.full-width.overlay.rewards div.footer {
   height: 160px;
   width: 100%;
-  max-width: 900px;
+  /* max-width: 900px; */
   margin: 0 auto;
+}
+
+div.full-width.overlay.rewards.streamer-profile-overlay div.footer,
+div.full-width.overlay.rewards.search-page-overlay div.footer {
+  height: 140px;
 }
 
 div.full-width.overlay.rewards div.footer span.point {
@@ -6796,6 +6823,24 @@ div.full-width.overlay.rewards div.send-gift {
   height: auto;
   background-size: 65px;
   justify-content: space-between;
+}
+
+div.full-width.overlay.rewards.streamer-profile-overlay div.send-gift {
+  background-position: 0 center;
+}
+
+div.full-width.overlay.rewards.streamer-profile-overlay div.content section.title,
+div.full-width.overlay.rewards.search-page-overlay div.content section.title {
+  padding-left: 1rem;
+}
+
+div.full-width.overlay.rewards.streamer-profile-overlay div.btns,
+div.full-width.overlay.rewards.search-page-overlay div.btns {
+  padding-top: 0;
+}
+
+div.full-width.overlay.rewards.search-page-overlay div.send-gift {
+  padding-left: 60px;
 }
 
 div.full-width.rewards.overlay div.btns {
@@ -6844,6 +6889,7 @@ div.full-width.rewards.overlay div.btns button img,
 div.full-width.overlay.personal-gifts div.btns button img,
 div.full-width.overlay.popular-products div.btns button img {
   width: 16px;
+  filter: none;
 }
 
 div.full-width.rewards.overlay div.detail-links {
@@ -6902,7 +6948,7 @@ div.streamer-profile-overlay#gift-full-overlay .content img.gift-img {
 
 div.streamer-profile-overlay#gift-sent {
   position: fixed;
-  z-index: 9;
+  z-index: 11;
 }
 
 div.streamer-profile-overlay#top-up-overlay div.footer > span.point {
@@ -7430,13 +7476,33 @@ div.overlay.full-page {
   top: 71px; /* nav at topr */
 }
 
-div.overlay.search-result-video {
-  z-index: 1;
-  overflow-y: auto;
-  background: #333;
+@media screen and (min-width: 1024px) {
+  div.overlay.full-page {
+    top: 92px;
+    height: calc(100vh - 92px);
+    position: fixed;
+    bottom: 0;
+  }
+
+  div.overlay.highlight-content-overlay {
+    padding: 2%;
+  }
+
+  div.overlay.highlight-content-overlay div.top-bar,
+  div.overlay.highlight-content-overlay div.header,
+  div.overlay.highlight-content-overlay div.content {
+    max-width: 320px;
+    margin: 0 auto;
+  }
 }
 
-div.overlay.search-result-video div.top-bar {
+div.overlay.highlight-content-overlay {
+  z-index: 8;
+  overflow-y: auto;
+  background: #333333e5;
+}
+
+div.overlay.highlight-content-overlay div.top-bar {
   color: #fff;
   display: flex;
   flex-direction: row;
@@ -7447,7 +7513,7 @@ div.overlay.search-result-video div.top-bar {
   background: #ff669e;
 }
 
-div.overlay.search-result-video div.top-bar button.back {
+div.overlay.highlight-content-overlay div.top-bar button.back {
   position: absolute;
   left: 0.5rem;
   top: 0;
@@ -7458,11 +7524,11 @@ div.overlay.search-result-video div.top-bar button.back {
   padding: inherit;
 }
 
-div.overlay.search-result-video div.top-bar button.back span {
+div.overlay.highlight-content-overlay div.top-bar button.back span {
   color: #fff;
 }
 
-div.overlay.search-result-video div.header {
+div.overlay.highlight-content-overlay div.header {
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -7472,12 +7538,12 @@ div.overlay.search-result-video div.header {
   padding: 1rem;
 }
 
-div.overlay.search-result-video div.header p {
+div.overlay.highlight-content-overlay div.header p {
   font-size: 1rem;
   color: #fff;
 }
 
-div.overlay.search-result-video div.header div.img-wrap {
+div.overlay.highlight-content-overlay div.header div.img-wrap {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -7489,11 +7555,11 @@ div.overlay.search-result-video div.header div.img-wrap {
   box-shadow: 0 0 10px rgb(142, 142, 142);
 }
 
-div.overlay.search-result-video div.header div.img-wrap img {
+div.overlay.highlight-content-overlay div.header div.img-wrap img {
   width: 100%;
 }
 
-div.overlay.search-result-video div.content {
+div.overlay.highlight-content-overlay div.content {
   height: calc(100% - 5.5rem);
   position: relative;
   gap: 0;
@@ -7501,20 +7567,31 @@ div.overlay.search-result-video div.content {
   justify-content: space-between;
 }
 
-div.overlay.search-result-video div.content div.videoDiv {
+div.overlay.highlight-content-overlay div.content div.videoDiv,
+div.overlay.highlight-content-overlay div.content div.img-wrap {
   width: 100%;
   padding-top: 100%;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-div.overlay.search-result-video div.content div.videoDiv video {
-  width: 100%;
+div.overlay.highlight-content-overlay div.content div.videoDiv video,
+div.overlay.highlight-content-overlay div.content div.img-wrap img {
+  width: auto;
   position: absolute;
   top: 0;
   height: 100%;
 }
 
-div.overlay.search-result-video div.content div.video-description {
+div.overlay.highlight-content-overlay div.content div.videoDiv video{
+  height: 100%;
+  width: 100%;
+}
+
+div.overlay.highlight-content-overlay div.content div.video-description {
   border-bottom: 1px solid #fff;
   padding: 0.85rem 1rem;
   display: flex;
@@ -7522,34 +7599,34 @@ div.overlay.search-result-video div.content div.video-description {
   overflow-y: auto;
 }
 
-div.overlay.search-result-video div.content div.video-description p,
-div.overlay.search-result-video div.content div.video-description {
+div.overlay.highlight-content-overlay div.content div.video-description p,
+div.overlay.highlight-content-overlay div.content div.video-description {
   font-size: 0.875rem;
   line-height: 1.8em;
   color: #fff;
 }
 
-div.overlay.search-result-video div.content div.btn-groups {
+div.overlay.highlight-content-overlay div.content div.btn-groups {
   display: flex;
   flex-direction: row;
   padding: 0.25rem 0.5rem;
 }
 
-div.overlay.search-result-video div.content div.btn-groups button:not(:last-child) {
+div.overlay.highlight-content-overlay div.content div.btn-groups button:not(:last-child) {
   border-right: 1px solid #fff;
   border-radius: 0;
   padding-right: 10px;
 }
 
-div.overlay.search-result-video div.content div.btn-groups button.followed img
-  /* ,div.overlay.search-result-video div.content div.btn-groups button:hover img */ {
+div.overlay.highlight-content-overlay div.content div.btn-groups button.followed img
+  /* ,div.overlay.highlight-content-overlay div.content div.btn-groups button:hover img */ {
   filter: invert(0.6) sepia(3) contrast(180%) hue-rotate(289deg) saturate(1.8);
 }
 
-div.overlay.search-result-video div.content div.btn-groups button:not(:first-child) {
+div.overlay.highlight-content-overlay div.content div.btn-groups button:not(:first-child) {
   padding-left: 10px;
 }
-div.overlay.search-result-video div.content div.btn-groups button {
+div.overlay.highlight-content-overlay div.content div.btn-groups button {
   padding: 0.25rem;
   font-size: 0.75rem;
   color: #fff;
@@ -7559,7 +7636,7 @@ div.overlay.search-result-video div.content div.btn-groups button {
   gap: 0.25rem;
 }
 
-div.overlay.search-result-video div.content div.btn-groups button img {
+div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   width: 14px;
 }
 
