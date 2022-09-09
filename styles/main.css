@@ -6336,12 +6336,26 @@ main.streamer-profile {
   max-width: none;
   width: 100%;
   top: 90px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  main.streamer-profile {
+    top: 70px;
+    margin-bottom: 20px;
+  }
 }
 
 main.streamer-profile > section {
   width: 90%;
   max-width: 900px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 480px) {
+  main.streamer-profile > section {
+    width: 100%;
+  }
 }
 
 main.streamer-profile section.header {
@@ -6434,11 +6448,36 @@ main.streamer-profile section.header div.round-bg {
   z-index: -1;
 }
 
+@media screen and (max-width: 768px) {
+  main.streamer-profile section.header div.round-bg {
+    width: 210%;
+    padding-top: 210%;
+    left: -55%;
+  }
+
+  main.streamer-profile section.header {
+    height: 440px;
+  }
+
+  main.streamer-profile section.header > div.flex-row {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 0;
+  }
+}
+
 main.streamer-profile section.list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+  main.streamer-profile section.list {
+    gap: 0.25rem;
+    margin-bottom: 2rem;
+  }
 }
 
 main.streamer-profile div.img-wrap,
@@ -6546,7 +6585,7 @@ main.streamer-profile section.intro button.toggle-intro-button:disabled span {
 main.streamer-profile section.intro div.intro-content {
   width: 50%;
   margin: 0 auto;
-  min-width: 200px;
+  min-width: 300px;
   font-size: 1.1rem;
   color: #555555;
   height: 300px;
@@ -6574,6 +6613,25 @@ main.streamer-profile section.menus {
   margin-bottom: 2rem;
 }
 
+@media screen and (max-width: 768px) {
+  main.streamer-profile section.menus {
+    background: #e63483;
+  }
+
+  main.streamer-profile section.menus ul {
+    padding: 0 !important;
+    flex-wrap: wrap;
+  }
+
+  main.streamer-profile section.menus ul li button {
+    width: 150px !important;
+  }
+
+  main.streamer-profile section.menus ul li:not(:first-child) button {
+    border-left: none !important;
+  }
+}
+
 main.streamer-profile section.menus ul {
   align-items: center;
   justify-content: center;
@@ -6595,6 +6653,18 @@ main.streamer-profile section.footer-actions {
   align-items: center;
   justify-content: center;
   gap: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+  main.streamer-profile section.footer-actions {
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  main.streamer-profile section.footer-actions {
+    flex-direction: column !important;
+  }
 }
 
 main.streamer-profile section.footer-actions button {
@@ -6671,6 +6741,13 @@ div.full-width.overlay.popular-products {
   backdrop-filter: blur(5px);
 }
 
+@media screen and (max-width: 480px) {
+  div.full-width.overlay.personal-gifts,
+  div.full-width.overlay.popular-products {
+    bottom: 60px;
+  }
+}
+
 div.full-width.overlay.rewards div.content,
 div.full-width.overlay.personal-gifts div.content,
 div.full-width.overlay.popular-products div.content {
@@ -6721,6 +6798,7 @@ div.full-width.overlay.popular-products {
 div.full-width.overlay.personal-gifts div.content section.reward-items-container,
 div.full-width.overlay.popular-products div.content section.reward-items-container {
   background: #fffaffd6;
+  overflow-y: scroll;
 }
 
 div.full-width.overlay.rewards div.reward-items,
@@ -6736,6 +6814,11 @@ div.full-width.overlay.popular-products div.reward-items {
   height: calc(100% - 160px);
   overflow-y: auto;
   gap: 1rem;
+}
+
+div.full-width.overlay.personal-gifts.streamer-profile-overlay div.reward-items-container,
+div.full-width.overlay.popular-products.streamer-profile-overlay div.reward-items-container {
+  background: #ffc1db;
 }
 
 @media screen and (max-width: 768px) {
@@ -6958,7 +7041,7 @@ div.streamer-profile-overlay#top-up-overlay div.footer > span.point {
 }
 
 .white-svg {
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1) !important;
 }
 
 div.overlay.small.topup {
@@ -7502,6 +7585,13 @@ div.overlay.highlight-content-overlay {
   background: #333333e5;
 }
 
+@media screen and (max-width: 480px) {
+  div.overlay.highlight-content-overlay {
+    height: calc(100% - 60px - 70px);
+    position: fixed;
+  }
+}
+
 div.overlay.highlight-content-overlay div.top-bar {
   color: #fff;
   display: flex;
@@ -7586,7 +7676,7 @@ div.overlay.highlight-content-overlay div.content div.img-wrap img {
   height: 100%;
 }
 
-div.overlay.highlight-content-overlay div.content div.videoDiv video{
+div.overlay.highlight-content-overlay div.content div.videoDiv video {
   height: 100%;
   width: 100%;
 }
