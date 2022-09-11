@@ -6784,7 +6784,7 @@ div.full-width.overlay.popular-products div.content section.title {
 div.full-width.overlay.rewards div.content section.reward-items-container,
 div.full-width.overlay.personal-gifts div.content section.reward-items-container,
 div.full-width.overlay.popular-products div.content section.reward-items-container {
-  background: #00000050;
+  background: #ce9db1a1;
   width: 100%;
   max-width: none;
   height: 100%;
@@ -6814,6 +6814,14 @@ div.full-width.overlay.popular-products div.reward-items {
   height: calc(100% - 160px);
   overflow-y: auto;
   gap: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+  div.full-width.overlay.rewards div.reward-items,
+  div.full-width.overlay.personal-gifts div.reward-items,
+  div.full-width.overlay.popular-products div.reward-items {
+    gap: 0.25rem;
+  }
 }
 
 div.full-width.overlay.personal-gifts.streamer-profile-overlay div.reward-items-container,
@@ -7012,6 +7020,10 @@ div.streamer-profile-overlay#gift-full-overlay {
   z-index: 10;
 }
 
+div.streamer-profile-overlay.full-width {
+  z-index: 999 !important;
+}
+
 div.streamer-profile-overlay#gift-full-overlay .content {
   max-width: 900px;
   margin: 0 auto;
@@ -7029,9 +7041,16 @@ div.streamer-profile-overlay#gift-full-overlay .content img.gift-img {
   width: 100%;
 }
 
+@media screen and (max-width: 480px) {
+  div.streamer-profile-overlay#gift-full-overlay .content img.gift-img {
+    height: 100%;
+    width: auto;
+  }
+}
+
 div.streamer-profile-overlay#gift-sent {
   position: fixed;
-  z-index: 11;
+  z-index: 1000;
 }
 
 div.streamer-profile-overlay#top-up-overlay div.footer > span.point {
