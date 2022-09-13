@@ -4599,7 +4599,7 @@ div.overlay#top-up-overlay .title span {
 }
 
 div.overlay#top-up-overlay div.content {
-  background: #00000050;
+  background: #350c1b52;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4638,7 +4638,7 @@ div.overlay#top-up-overlay div.footer {
   height: 80px;
   display: flex;
   align-items: center;
-  background: #c77e9f;
+  background: #350c1b52;
 }
 
 div.overlay#top-up-overlay div.footer span.point {
@@ -4693,7 +4693,7 @@ div.gift-sent-overlay {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  background: #da6c9aa7;
+  background: #c73572a7;
   overflow: visible;
   border-radius: 50px;
   color: #fff !important;
@@ -7081,7 +7081,7 @@ div.overlay.small.topup {
   overflow: hidden;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   div.overlay.small.topup {
     width: 300px;
   }
