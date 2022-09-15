@@ -6732,6 +6732,10 @@ div.overlay.social-media-shares.streamer-profile-overlay button.close {
   top: 25px;
 }
 
+div.streamer-profile-overlay div.reward-items {
+  background: #fff3f8;
+}
+
 div.full-width.overlay.rewards,
 div.full-width.overlay.personal-gifts,
 div.full-width.overlay.popular-products {
@@ -6741,12 +6745,12 @@ div.full-width.overlay.popular-products {
   backdrop-filter: blur(5px);
 }
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   div.full-width.overlay.personal-gifts,
   div.full-width.overlay.popular-products {
     bottom: 60px;
   }
-}
+} */
 
 div.full-width.overlay.rewards div.content,
 div.full-width.overlay.personal-gifts div.content,
@@ -6834,6 +6838,11 @@ div.full-width.overlay.popular-products.streamer-profile-overlay div.reward-item
   div.full-width.overlay.personal-gifts div.reward-items,
   div.full-width.overlay.popular-products div.reward-items {
     grid-template-columns: repeat(4, 1fr);
+  }
+  
+  div.full-width.overlay.personal-gifts.streamer-profile-overlay div.reward-items,
+  div.full-width.overlay.popular-products.streamer-profile-overlay div.reward-items {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
