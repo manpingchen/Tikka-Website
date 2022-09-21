@@ -556,6 +556,31 @@ main.purchase {
   top: 0;
 }
 
+main.index {
+  padding-top: 90px;
+}
+
+main.index section.news {
+  background: #ffe6ee;
+  padding: 1.4rem;
+  line-height: 1.5em;
+  margin-bottom: 1rem;
+}
+
+main.index section.news h2 {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+main.index section.news p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* number of lines to show */
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
 main.product-detail {
   margin-bottom: 50px;
 }
@@ -1089,7 +1114,7 @@ section.live .live-list ul li span.count {
   color: #df216d;
 }
 #main-slides {
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 #highlighted-slides {
   margin-bottom: 40px;
@@ -6839,7 +6864,7 @@ div.full-width.overlay.popular-products.streamer-profile-overlay div.reward-item
   div.full-width.overlay.popular-products div.reward-items {
     grid-template-columns: repeat(4, 1fr);
   }
-  
+
   div.full-width.overlay.personal-gifts.streamer-profile-overlay div.reward-items,
   div.full-width.overlay.popular-products.streamer-profile-overlay div.reward-items {
     grid-template-columns: repeat(5, 1fr);

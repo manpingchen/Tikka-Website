@@ -1,6 +1,6 @@
 .single-slides ul.glide__list li.glide__slide {
   position: relative;
-  padding-top: 8.14%; /*Img Ratio*/
+  padding-top: 5.14%; /*Img Ratio*/
 }
 
 .single-slides#highlighted-products-slides {
@@ -25,6 +25,7 @@
 
 .single-slides .glide__bullets {
   bottom: 20px;
+  z-index: 999;
 }
 
 @media screen and (max-width: 480px) {

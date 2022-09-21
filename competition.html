@@ -136,7 +136,7 @@
     </main>
 
     <!-- 競賽內容遮罩 -->
-    <div class="event-detail-overlay overlay" id="event-detail-overlay">
+    <div class="event-detail-overlay overlay" id="event-detail-overlay" style="display: none">
       <div class="container">
         <div class="content">
           <button class="close" onclick="handleHideComponent('.event-detail-overlay')">
@@ -176,6 +176,17 @@
       function handleShowCompetitionDetail(competitionId, overlayClassName) {
         handleShowComponent(overlayClassName);
         document.querySelector(overlayClassName).dataset.id = competitionId;
+      }
+
+      checkIfOpenCompetitionModal();
+      function checkIfOpenCompetitionModal() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const id = urlParams.get("id");
+        if (id) {
+          console.log({ id });
+          handleShowCompetitionDetail(id, ".event-detail-overlay");
+        }
       }
     </script>
   </body>
