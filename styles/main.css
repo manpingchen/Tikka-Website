@@ -7722,6 +7722,7 @@ div.overlay.highlight-content-overlay div.content div.video-description {
   font-size: 0.875rem;
   line-height: 1.8em;
   color: #fff;
+  width: 100%;
 }
 
 div.overlay.highlight-content-overlay div.content div.btn-groups {
