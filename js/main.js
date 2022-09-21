@@ -277,12 +277,12 @@ function handleBuy(id) {
   handleShowComponent("#purchase-overlay");
 }
 
-function stopGlidesOnMobile(slideElement) {
-  if (window.innerWidth >= 769) {
-    return;
-  }
-  slideElement.destroy();
-}
+// function stopSlidesOnMobile(slideElement) {
+//   if (window.innerWidth >= 769) {
+//     return;
+//   }
+//   slideElement.unslick();
+// }
 
 function makeEleGraggable(selector) {
   const slider = document.querySelector(selector);

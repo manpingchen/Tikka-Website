@@ -183,15 +183,15 @@ button.glide__bullet--active {
     width: 180px;
     height: 180px;
   }
-  .glide.desktop-only ul.glide__slides,
-  .mobile-scroll-drag ul.glide__slides {
+  .desktop-only ul,
+  .mobile-scroll-drag ul {
     overflow-x: auto;
     gap: 10px;
     padding-left: 10%;
     touch-action: auto;
   }
 
-  .glide.desktop-only,
+  .desktop-only,
   .mobile-scroll-drag {
     cursor: grab;
     overflow: auto !important;
@@ -200,25 +200,26 @@ button.glide__bullet--active {
     left: -2rem;
   }
 
-  .glide.desktop-only ul.glide__slides::-webkit-scrollbar,
-  .mobile-scroll-drag ul.glide__slides::-webkit-scrollbar {
+  .desktop-only ul::-webkit-scrollbar,
+  .slides-container ul::-webkit-scrollbar,
+  .mobile-scroll-drag ul::-webkit-scrollbar {
     width: 5px;
     height: 0px;
   }
 
-  main.index div#ranking-slides li.glide__slide {
+  main.index div#ranking-slides li {
     max-width: none !important;
     width: 200px;
     height: 220px;
     padding-left: 1rem;
   }
 
-  main.index div#ranking-slides li.glide__slide div.number {
+  main.index div#ranking-slides li div.number {
     bottom: 0 !important;
     left: 0 !important;
   }
 
-  main.index div#ranking-slides li.glide__slide div.number span {
+  main.index div#ranking-slides li div.number span {
     font-size: 80px;
   }
 }
