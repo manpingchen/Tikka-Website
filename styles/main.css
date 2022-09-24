@@ -651,6 +651,10 @@ div.ranking-slides-wrap div#ranking-slides {
 main.index section.live .live-list ul li {
   padding: 0;
 }
+main.index section.live .live-list ul li a{
+  color: #fff;
+}
+
 main.index section.live .live-list ul li p.live-info {
   width: 100%;
   left: 0;
@@ -664,6 +668,8 @@ main.index section.live .live-list ul li span.count {
   top: initial;
   right: 10px;
   bottom: 10px;
+  background: url('../images/fire.svg') left center no-repeat;
+  padding-left: 13px;
 }
 
 #ranking-slides li {
@@ -730,10 +736,6 @@ main.index section.live .live-list ul li span.count {
   main.index section.live .live-list ul li span.live-chip {
     left: 10px;
     top: 10px;
-  }
-  main.index section.live .live-list ul li span.count {
-    top: 10px;
-    right: 10px;
   }
 }
 
