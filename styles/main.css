@@ -4791,6 +4791,7 @@ div.gift-full-overlay {
 
 div.gift-full-overlay.search-page {
   height: calc(100% - 61px - 61px) !important;
+  z-index: 9;
 }
 
 div.gift-full-overlay img {
