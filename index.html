@@ -445,12 +445,19 @@
       <section class="products">
         <div class="products-title">
           <img src="images/products.svg" alt="熱銷商品標題" />
-          <a href="#"><img src="images/more-2.svg" alt="看更多" /></a>
+          <a href="products.html"><img src="images/more-2.svg" alt="看更多" /></a>
         </div>
         <div class="slides-container">
           <ul class="desktop-only" id="products-slides">
             <li>
-              <div class="product">
+              <div
+                class="product"
+                id="product-1"
+                onclick="location.href = `product-detail.html?id=${this.id}`"
+              >
+                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
+                  <img src="images/cart-icon.svg" />
+                </button>
                 <div class="img-wrap">
                   <img
                     src="https://files.tikka.tw/product/4309cb29999d4c23b599bfb87d7bde6a.png"
@@ -464,7 +471,14 @@
               </div>
             </li>
             <li>
-              <div class="product">
+              <div
+                class="product"
+                id="product-2"
+                onclick="location.href = `product-detail.html?id=${this.id}`"
+              >
+                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
+                  <img src="images/cart-icon.svg" />
+                </button>
                 <div class="img-wrap">
                   <img
                     src="https://files.tikka.tw/product/86211aa33a6141a2a09fb687bfd01e09.png"
@@ -478,7 +492,14 @@
               </div>
             </li>
             <li>
-              <div class="product">
+              <div
+                class="product"
+                id="product-3"
+                onclick="location.href = `product-detail.html?id=${this.id}`"
+              >
+                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
+                  <img src="images/cart-icon.svg" />
+                </button>
                 <div class="img-wrap">
                   <img
                     src="https://files.tikka.tw/product/4309cb29999d4c23b599bfb87d7bde6a.png"
@@ -492,7 +513,14 @@
               </div>
             </li>
             <li>
-              <div class="product">
+              <div
+                class="product"
+                id="product-4"
+                onclick="location.href = `product-detail.html?id=${this.id}`"
+              >
+                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
+                  <img src="images/cart-icon.svg" />
+                </button>
                 <div class="img-wrap">
                   <img
                     src="https://files.tikka.tw/product/86211aa33a6141a2a09fb687bfd01e09.png"
@@ -506,7 +534,14 @@
               </div>
             </li>
             <li>
-              <div class="product">
+              <div
+                class="product"
+                id="product-5"
+                onclick="location.href = `product-detail.html?id=${this.id}`"
+              >
+                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
+                  <img src="images/cart-icon.svg" />
+                </button>
                 <div class="img-wrap"><img src="images/p2.png" alt="img1" /></div>
                 <p>
                   <span class="name">線雕緊緻精華噴霧</span>
@@ -515,7 +550,14 @@
               </div>
             </li>
             <li>
-              <div class="product">
+              <div
+                class="product"
+                id="product-6"
+                onclick="location.href = `product-detail.html?id=${this.id}`"
+              >
+                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
+                  <img src="images/cart-icon.svg" />
+                </button>
                 <div class="img-wrap"><img src="images/p2.png" alt="img1" /></div>
                 <p>
                   <span class="name">線雕緊緻精華噴霧</span>
@@ -524,7 +566,46 @@
               </div>
             </li>
             <li>
-              <div class="product">
+              <div
+                class="product"
+                id="product-7"
+                onclick="location.href = `product-detail.html?id=${this.id}`"
+              >
+                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
+                  <img src="images/cart-icon.svg" />
+                </button>
+                <div class="img-wrap"><img src="images/p2.png" alt="img1" /></div>
+                <p>
+                  <span class="name">線雕緊緻精華噴霧</span>
+                  <span class="point"><span class="value">$15,000</span></span>
+                </p>
+              </div>
+            </li>
+            <li>
+              <div
+                class="product"
+                id="product-8"
+                onclick="location.href = `product-detail.html?id=${this.id}`"
+              >
+                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
+                  <img src="images/cart-icon.svg" />
+                </button>
+                <div class="img-wrap"><img src="images/p2.png" alt="img1" /></div>
+                <p>
+                  <span class="name">線雕緊緻精華噴霧</span>
+                  <span class="point"><span class="value">$15,000</span></span>
+                </p>
+              </div>
+            </li>
+            <li>
+              <div
+                class="product"
+                id="product-9"
+                onclick="location.href = `product-detail.html?id=${this.id}`"
+              >
+                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
+                  <img src="images/cart-icon.svg" />
+                </button>
                 <div class="img-wrap"><img src="images/p2.png" alt="img1" /></div>
                 <p>
                   <span class="name">線雕緊緻精華噴霧</span>
@@ -534,6 +615,12 @@
             </li>
           </ul>
         </div>
+      </section>
+
+      <section class="products-highlight">
+        <a href="product-detail.html?id=product-1" class="img-wrap" id="product-1"><img src="images/product1.png" alt="" /></a>
+        <a href="product-detail.html?id=product-2" class="img-wrap" id="product-2"><img src="https://files.tikka.tw/banner/dd7dffe3caf04cc18dfe10814f526fb6.png" alt="" /></a>
+        <a href="product-detail.html?id=product-3" class="img-wrap" id="product-3"><img src="https://files.tikka.tw/banner/ff430bade79745a1ac61ae9869e70e39.png" alt="" /></a>
       </section>
     </main>
 

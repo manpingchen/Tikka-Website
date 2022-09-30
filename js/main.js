@@ -410,3 +410,11 @@ function handleLiveItemClick(target) {
     location.href = "streamer-profile.html";
   }
 }
+
+//加入購物車 By 產品Id
+function handleAddProductToCart(target) {
+  const productId = target.parentNode.id;
+  console.log({ productId });
+}
+
+

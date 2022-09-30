@@ -651,7 +651,7 @@ div.ranking-slides-wrap div#ranking-slides {
 main.index section.live .live-list ul li {
   padding: 0;
 }
-main.index section.live .live-list ul li a{
+main.index section.live .live-list ul li a {
   color: #fff;
 }
 
@@ -668,7 +668,7 @@ main.index section.live .live-list ul li span.count {
   top: initial;
   right: 10px;
   bottom: 10px;
-  background: url('../images/fire.svg') left center no-repeat;
+  background: url("../images/fire.svg") left center no-repeat;
   padding-left: 13px;
 }
 
@@ -684,7 +684,7 @@ main.index section.live .live-list ul li span.count {
   left: -5%;
 }
 
-#ranking-slides li div.number img{
+#ranking-slides li div.number img {
   height: 100%;
   position: relative;
   top: 0%;
@@ -797,40 +797,6 @@ main.index section.live .live-list ul li span.count {
   main.topup {
     padding: 1rem 1rem 0 !important;
   }
-}
-
-main.index div#ranking-slides li.glide__slide {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding-left: 3rem;
-  cursor: pointer;
-  max-width: 33%;
-}
-
-main.index div#ranking-slides li.glide__slide div.img-wrap {
-  position: relative;
-  padding-top: 100%;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 20px;
-  border: 8px solid #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.4s;
-}
-
-main.index div#ranking-slides li.glide__slide div.img-wrap > img {
-  display: block;
-  position: absolute;
-  top: 0;
-  height: 130%;
-  max-height: 130%;
-  transition: 0.4s;
 }
 
 span.name {
@@ -7973,6 +7939,24 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   border-radius: 10px;
   box-shadow: 0 0 5px #ddd;
   padding: 1rem 0;
+  position: relative;
+}
+
+#products-slides li button.add-to-cart {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  top: 10px;
+  right: 10px;
+}
+
+#products-slides li button.add-to-cart img {
+  width: 100%;
+}
+
+#products-slides li button.add-to-cart:hover img {
+  filter: contrast(0.8) brightness(1.4);
 }
 
 #products-slides li span.name {
@@ -8045,11 +8029,10 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
 }
 
 @media screen and (max-width: 768px) {
-
-  .product-types .list{
+  .product-types .list {
     padding: 1rem;
   }
-  
+
   .slides-container ul {
     display: flex;
     flex-direction: row;
@@ -8070,4 +8053,26 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
     flex-shrink: 0;
     padding-left: 1rem;
   }
+}
+
+section.products-highlight a.img-wrap {
+  width: 100%;
+  max-width: 1100px;
+  position: relative;
+  padding-top: 56.5%;
+  height: 0;
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+section.products-highlight a.img-wrap img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+section.products-highlight a.img-wrap:hover img{
+  filter: none;
 }
