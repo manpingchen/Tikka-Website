@@ -210,7 +210,8 @@ function handleShowComponent(selector, displayValue = "block") {
   node.style.display = displayValue;
 
   /* 如果元件為遮罩，則同步開啟backdrop，做為關閉遮罩之點擊範圍 */
-  if (node?.classList.contains("overlay")) {
+  const classList = node?.classList;
+  if (classList.contains("overlay") && !classList.contains("full-page")) {
     handleShowComponent(".backdrop");
   }
 }
@@ -416,5 +417,3 @@ function handleAddProductToCart(target) {
   const productId = target.parentNode.id;
   console.log({ productId });
 }
-
-

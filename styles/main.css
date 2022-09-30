@@ -6748,6 +6748,24 @@ div.streamer-profile-overlay div.reward-items {
   background: #fff3f8;
 }
 
+div.streamer-profile-overlay.full-width.overlay.personal-gifts
+  div.reward-items
+  div.reward-item
+  div.img-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.streamer-profile-overlay.full-width.overlay.personal-gifts
+  div.reward-items
+  div.reward-item
+  div.img-wrap
+  img {
+  width: auto;
+  height: 100%;
+}
+
 div.full-width.overlay.rewards,
 div.full-width.overlay.personal-gifts,
 div.full-width.overlay.popular-products {
@@ -8074,6 +8092,6 @@ section.products-highlight a.img-wrap img {
   left: 0;
 }
 
-section.products-highlight a.img-wrap:hover img{
+section.products-highlight a.img-wrap:hover img {
   filter: none;
 }
