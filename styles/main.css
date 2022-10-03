@@ -2279,7 +2279,7 @@ div.overlay.rewards {
 }
 
 main.live-on div.rewards {
-  height: 500px !important;
+  height: 520px !important;
 }
 
 main.live-on div.rewards div.btns {
@@ -2323,6 +2323,15 @@ div.overlay.rewards div.content {
   margin-bottom: 0;
   gap: 0;
   height: calc(100% - 60px);
+}
+
+.iframe div.overlay.rewards div.content {
+  height: 100%;
+}
+
+.iframe div.overlay.rewards div.send-gift {
+  padding-left: 0;
+  justify-content: initial;
 }
 
 div.overlay.rewards div.reward-items {
@@ -2502,16 +2511,18 @@ div.overlay.rewards .footer {
 
 main.live-on div.send-gift,
 div.overlay.rewards div.send-gift {
-  background: url(../images/coin.png) no-repeat -5px -23px;
-  background-size: 70px;
-  margin-top: 1rem;
-  padding-left: 50px;
+  margin-top: 0.5rem;
   height: 40px;
   color: #fff;
   text-shadow: 0 2px 2px #2a2a2a55;
   gap: 10px;
   justify-content: space-between;
   font-size: 1.4rem;
+}
+
+main.live-on div.send-gift img {
+  width: 60px;
+  margin-right: -10px;
 }
 
 main.live-on div.buy-sticker {
