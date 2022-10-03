@@ -92,6 +92,7 @@
 }
 .slick-initialized .slick-slide {
   display: block;
+  overflow: hidden;
 }
 .slick-loading .slick-slide {
   visibility: hidden;
@@ -196,11 +197,26 @@
   position: relative;
   width: 100%;
   padding-top: 50%;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 #main-slides .slick-slide a img,
 #product-slides .slick-slide a img {
   width: 100%;
   position: absolute;
   top: 0;
+}
+
+@media screen and (max-width: 480px) {
+  #main-slides .slick-slide a,
+  #product-slides .slick-slide a {
+    padding-top: 100%;
+  }
+  #main-slides .slick-slide a img,
+  #product-slides .slick-slide a img {
+    height: 100%;
+    width: auto;
+  }
 }

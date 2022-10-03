@@ -749,7 +749,7 @@ main.index section.live .live-list ul li span.count {
     top: 100px;
   }
   main.index {
-    top: -20px;
+    top: 0;
     width: 100%;
     overflow: hidden;
     padding-bottom: 40px !important;
@@ -1112,19 +1112,9 @@ section.live .live-list ul li span.count {
   section.live,
   section.products {
     position: relative;
-    padding-bottom: 80px;
-  }
-  section.live .live-title a,
-  section.products .products-title a {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    left: 0;
+    padding-bottom: 30px !important;
   }
 
-  main.index section.products {
-    padding-bottom: 80px;
-  }
   section.live .live-title a img,
   section.products .products-title a img {
     display: block;
@@ -3944,7 +3934,7 @@ main.products {
 }
 
 section.products {
-  padding-bottom: 0;
+  padding-bottom: 30px;
 }
 
 main.products section.mobile-only {
@@ -8013,6 +8003,16 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   text-align: center;
 }
 
+@media screen and (max-width: 480px) {
+  .product-types .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-types li.top-4 {
+    display: none;
+  }
+}
+
 .product-types .list li div.img-wrap {
   border-radius: 10px;
   overflow: hidden;
@@ -8080,16 +8080,18 @@ section.products-highlight a.img-wrap {
   position: relative;
   padding-top: 56.5%;
   height: 0;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 0;
   overflow: hidden;
+  margin-bottom: 1rem;
 }
 
 section.products-highlight a.img-wrap img {
-  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
-  left: 0;
 }
 
 section.products-highlight a.img-wrap:hover img {
