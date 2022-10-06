@@ -73,6 +73,17 @@ footer {
   margin: 0 auto;
 }
 
+.footer-menu {
+  text-align: right;
+  gap: 0.5rem;
+  justify-content: end;
+}
+
+.footer-menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
 footer nav ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -88,16 +99,19 @@ footer nav ul li a:hover {
   text-decoration: underline;
 }
 
-footer a.line-icon {
-  display: flex;
-  padding: 0.5rem;
-  margin-right: 0.5rem;
+footer .social-icons {
+  gap: 0.5rem;
 }
 
-footer a.line-icon img {
+footer a.social-icon {
   width: 40px;
+  height: 40px;
   box-shadow: 0 0 8px rgba(97, 97, 97, 0.516);
   border-radius: 5px;
+}
+
+footer a.social-icon img {
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -116,8 +130,12 @@ footer a.line-icon img {
     text-align: center;
     margin-bottom: 0.5rem;
   }
-  footer a.line-icon {
-    margin: 0 0 1rem;
+  footer a.social-icon {
+    margin: 1rem 0 1rem;
+  }
+  .footer-menu {
+    justify-content: center;
+    margin-bottom: 1rem;
   }
 }
 
@@ -6519,13 +6537,13 @@ main.streamer-profile div.video-wrap video {
   width: 100%;
 }
 
-main.streamer-profile div.video-wrap::before{
-  content: '';
+main.streamer-profile div.video-wrap::before {
+  content: "";
   display: block;
   position: absolute;
   height: 100%;
   width: 30%;
-  background: url('../images/play-icon2.svg') center center no-repeat;
+  background: url("../images/play-icon2.svg") center center no-repeat;
   top: 0;
   z-index: 2;
 }
@@ -7566,13 +7584,13 @@ button.follow-btn.pink {
   left: calc(50% - 20px);
 }
 
-.search-list div.recommend-item ul.photos div.img-wrap::before{
+.search-list div.recommend-item ul.photos div.img-wrap::before {
   display: block;
   position: absolute;
-  background: url('../images/play-icon2.svg') center center no-repeat;
+  background: url("../images/play-icon2.svg") center center no-repeat;
   width: 70%;
   height: 100%;
-  content: '';
+  content: "";
 }
 
 .search-list div.recommend-item ul.photos div.bg ul.white-boxes {
