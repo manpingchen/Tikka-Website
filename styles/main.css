@@ -6519,6 +6519,17 @@ main.streamer-profile div.video-wrap video {
   width: 100%;
 }
 
+main.streamer-profile div.video-wrap::before{
+  content: '';
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  background: url('../images/play-icon2.svg') center center no-repeat;
+  top: 0;
+  z-index: 2;
+}
+
 main.streamer-profile section.header div.info .performance-data {
   gap: 0.5rem;
   position: relative;
@@ -7553,6 +7564,15 @@ button.follow-btn.pink {
   height: 50px;
   top: calc(50% - 25px);
   left: calc(50% - 20px);
+}
+
+.search-list div.recommend-item ul.photos div.img-wrap::before{
+  display: block;
+  position: absolute;
+  background: url('../images/play-icon2.svg') center center no-repeat;
+  width: 70%;
+  height: 100%;
+  content: '';
 }
 
 .search-list div.recommend-item ul.photos div.bg ul.white-boxes {
