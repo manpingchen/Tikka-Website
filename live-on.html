@@ -1732,12 +1732,11 @@
         handleShowComponent("#purchase-overlay");
       }
 
-      handleBuy()
+      handleShowPurchaseAnimation();
 
-      /*點擊購買按鈕 (＊＊＊供示意）*/
-      function handleBuy(id) {
+      /*呈現購買後動畫按鈕 (＊＊＊供示意）*/
+      function handleShowPurchaseAnimation() {
         handleHideComponent("#rewards-overlay-mobile");
-        // handleShowComponent("#top-up-overlay");
         handleShowComponent("#gift-sent", "flex");
         handleShowComponent("#gift-full-overlay");
         setTimeout(() => {
