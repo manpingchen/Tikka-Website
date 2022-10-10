@@ -4729,6 +4729,24 @@ div.gift-sent-overlay {
   color: #fff !important;
 }
 
+main.live-on div.gift-sent-overlay{
+  margin-left: -30px;
+}
+
+main.live-on div.gift-sent-overlay div.gift-count {
+  position: absolute;
+  right: -90px;
+  width: 80px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+main.live-on div.gift-sent-overlay div.gift-count .value {
+  font-size: 1.4rem;
+}
+
 div.gift-sent-overlay.search-page {
   top: 65%;
 }
@@ -7468,7 +7486,7 @@ div.overlay.event-detail-overlay button.close img {
 .before-live {
   width: 100%;
   position: fixed;
-  z-index: 999;
+  z-index: 999 !important;
   height: 100vh;
   display: flex;
   align-items: center;

@@ -714,6 +714,7 @@
             <div class="gift-img-wrapper">
               <img src="images/gift2.png" alt="禮物小圖" />
             </div>
+            <div class="gift-count">x<span class="value">20</span></div>
           </div>
 
           <!-- 我要分享遮罩 -->
@@ -1729,6 +1730,24 @@
       function handleBackToPurchase() {
         handleHideComponent("#purchase-confirm-overlay");
         handleShowComponent("#purchase-overlay");
+      }
+
+      handleBuy()
+
+      /*點擊購買按鈕 (＊＊＊供示意）*/
+      function handleBuy(id) {
+        handleHideComponent("#rewards-overlay-mobile");
+        // handleShowComponent("#top-up-overlay");
+        handleShowComponent("#gift-sent", "flex");
+        handleShowComponent("#gift-full-overlay");
+        setTimeout(() => {
+          handleHideComponent("#gift-sent");
+        }, 5000);
+
+        /*設計沒有做到滿版帖圖關閉的環節，先以10秒後關閉*/
+        setTimeout(() => {
+          handleHideComponent("#gift-full-overlay");
+        }, 10000);
       }
     </script>
   </body>
