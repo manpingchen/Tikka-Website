@@ -733,7 +733,7 @@
               <ul>
                 <li>
                   <button type="button">
-                    <img src="images/line.svg" alt="" />
+                    <img src="images/line.png" alt="" />
                     LINE
                   </button>
                 </li>
@@ -1172,17 +1172,19 @@
           </div>
         </div>
         <div class="form-wrapper mb-1">
-          <div class="flex-column select-wrapper">
-            <label for="payment-method">付款方式</label>
-            <select name="payment-method" id="payment-method">
-              <option value="">NewbePay藍新金流</option>
-            </select>
-          </div>
-          <div class="flex-column select-wrapper">
-            <label for="delivery-method">配送方式</label>
-            <select name="delivery-method" id="delivery-method">
-              <option value="">宅配</option>
-            </select>
+          <div class="select-wrappers flex-row">
+            <div class="flex-column select-wrapper">
+              <label for="payment-method">付款方式</label>
+              <select name="payment-method" id="payment-method">
+                <option value="">NewbePay藍新金流</option>
+              </select>
+            </div>
+            <div class="flex-column select-wrapper">
+              <label for="delivery-method">配送方式</label>
+              <select name="delivery-method" id="delivery-method">
+                <option value="">宅配</option>
+              </select>
+            </div>
           </div>
           <form action="javascript:void(0);" class="customer-detail mb-1">
             <div class="input-wrapper">

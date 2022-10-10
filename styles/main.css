@@ -4729,7 +4729,7 @@ div.gift-sent-overlay {
   color: #fff !important;
 }
 
-main.live-on div.gift-sent-overlay{
+main.live-on div.gift-sent-overlay {
   margin-left: -30px;
 }
 
@@ -6009,7 +6009,7 @@ div.purchase-overlay .receipt-options .options button.active {
   width: 24px;
 }
 
-div.customer-detail .input-wrapper {
+.customer-detail .input-wrapper {
   width: 100%;
   border: 1px solid #000;
   background: #fff;
@@ -6018,6 +6018,14 @@ div.customer-detail .input-wrapper {
   margin-bottom: 1rem;
   display: flex;
   align-items: baseline;
+}
+
+div.purchase-overlay .select-wrappers {
+  gap: 2rem;
+}
+
+div.purchase-overlay .select-wrappers .select-wrapper {
+  width: 50%;
 }
 
 main.purchase .select-wrapper label,
@@ -6062,23 +6070,23 @@ div.purchase-overlay .select-wrapper select {
   -moz-appearance: none;
 }
 
-div.customer-detail .input-wrapper input,
-div.customer-detail .input-wrapper textarea {
+.customer-detail .input-wrapper input,
+.customer-detail .input-wrapper textarea {
   border: 0;
   font-size: 1rem;
   padding: 0.5rem;
 }
 
-div.customer-detail .input-wrapper input::placeholder,
-div.customer-detail .input-wrapper textarea::placeholder {
+.customer-detail .input-wrapper input::placeholder,
+.customer-detail .input-wrapper textarea::placeholder {
   color: #bbb;
 }
 
-div.customer-detail .flex-row {
+.customer-detail .flex-row {
   gap: 1rem;
 }
 
-div.customer-detail button[type="submit"] {
+.customer-detail button[type="submit"] {
   width: 140px;
   font-size: 1.2rem;
   padding: 5px;
@@ -6092,7 +6100,7 @@ div.customer-detail button[type="submit"] {
   margin: 4rem auto 1rem;
 }
 
-div.customer-detail button[type="submit"]:hover {
+.customer-detail button[type="submit"]:hover {
   filter: contrast(1.9);
 }
 
@@ -6338,23 +6346,32 @@ div.purchase-overlay .check-item-count p.point {
     font-size: 1rem;
   }
 
-  div.customer-detail .flex-row {
+  .customer-detail .flex-row {
     flex-direction: column;
     gap: 0;
   }
 
-  div.customer-detail .input-wrapper:not(.select-wrapper) {
+  div.purchase-overlay .select-wrappers {
+    flex-direction: column !important;
+    gap: unset;
+  }
+
+  div.purchase-overlay .select-wrappers .select-wrapper {
+    width: 100%;
+  }
+
+  .customer-detail .input-wrapper:not(.select-wrapper) {
     flex-direction: row;
   }
 
-  div.customer-detail .input-wrapper {
+  .customer-detail .input-wrapper {
     display: flex;
     font-size: 0.875rem;
     padding: 0.5rem 20px;
   }
 
-  div.customer-detail .input-wrapper input,
-  div.customer-detail .input-wrapper textarea {
+  .customer-detail .input-wrapper input,
+  .customer-detail .input-wrapper textarea {
     font-size: 0.875rem;
     padding: 0 0.5rem;
   }
