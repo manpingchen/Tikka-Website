@@ -203,10 +203,15 @@
 }
 
 #main-slides .slick-slide a img,
-#product-slides .slick-slide a img {
+#product-slides .slick-slide a img,
+#main-slides .slick-slide a picture,
+#product-slides .slick-slide a picture {
   width: 100%;
   position: absolute;
   top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 480px) {
@@ -215,8 +220,13 @@
     padding-top: 100%;
   }
   #main-slides .slick-slide a img,
-  #product-slides .slick-slide a img {
+  #main-slides .slick-slide a picture,
+  #product-slides .slick-slide a img,
+  #product-slides .slick-slide a picture {
+    display: flex;
     height: 100%;
     width: auto;
+    align-items: center;
+    justify-content: center;
   }
 }
