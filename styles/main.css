@@ -258,6 +258,12 @@ a:hover img {
   margin-bottom: 2rem !important;
 }
 
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 div.img-wrap {
   overflow: hidden;
 }
@@ -927,11 +933,6 @@ div.live-item {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border: 10px solid #fde9f2;
-}
-
-li.glide__slide a.live-item {
-  border-width: 3px;
 }
 
 li.glide__slide a.live-item p.live-info {
@@ -980,6 +981,7 @@ a.live-item p.live-info {
   left: 0;
   width: 100%;
 }
+
 section.live .live-list ul li p.live-info span.name,
 section.live .live-list ul li p.live-info span.time,
 a.live-item p.live-info span.name,
@@ -1511,6 +1513,19 @@ main.live h1 img,
 main.ranking h1 img,
 main.competition-review h1 img {
   height: 50px;
+}
+
+main.live h1 {
+  height: 60px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main.live h1 img {
+  width: 220px;
+  height: auto;
 }
 
 div.live-items {
@@ -5172,9 +5187,17 @@ main.live-on ul.revenue-list > li div.badge img {
 
 @media screen and (max-width: 480px) {
   main.live {
-    padding: 0;
+    padding: 0 10px;
     top: 100px;
     margin-bottom: 30px;
+  }
+
+  main.live div.live-items {
+    gap: 0.5rem;
+  }
+
+  main.live a.live-item p.live-info {
+    padding: 10px 5px;
   }
 }
 
@@ -8180,4 +8203,56 @@ section.products-highlight a.img-wrap img {
 
 section.products-highlight a.img-wrap:hover img {
   filter: none;
+}
+
+main.live a.live-item p.live-info {
+  background: transparent;
+  width: calc(100% - 70px);
+}
+
+main.live a.live-item p.live-info > span {
+  display: block;
+  text-shadow: 2px 2px 2px #000;
+  text-align: left;
+}
+
+main.live a.live-item p.live-info > span.topic {
+  height: 30px;
+  background: url(../images/mic-icon.svg) no-repeat left center;
+  background-size: 25px 24px;
+  padding-left: 25px;
+  font-size: 1rem;
+  line-height: 30px;
+  width: 160px;
+}
+
+main.live a.live-item p.live-info > span.location {
+  background: url(../images/globe-icon.svg) no-repeat left center;
+  background-size: 24px 12px;
+  padding-left: 25px;
+  width: 100px;
+}
+
+main.live a.live-item span.count {
+  width: 75px;
+  background: url(../images/view-icon.svg) no-repeat left center;
+  background-size: 18px;
+  padding-left: 10px;
+  right: 0px;
+  bottom: 10px;
+  position: absolute;
+  top: unset;
+}
+
+@media screen and (max-width: 374px) {
+  main.live a.live-item p.live-info > span.location {
+    width: 80px;
+    font-size: 0.7rem;
+  }
+  main.live a.live-item span.count {
+    width: 60px;
+    font-size: 0.7rem;
+    background-size: 13px;
+    padding-left: 10px;
+  }
 }

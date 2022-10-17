@@ -331,10 +331,12 @@ function removeOneItemToCart(itemId) {
 const backdrop = document.querySelector(".backdrop");
 const overlays = document.querySelectorAll(".overlay:not(.not-close-by-backdrop)");
 
-backdrop.addEventListener("click", () => {
-  [...overlays].forEach((node) => (node.style.display = "none"));
-  backdrop.style.display = "none";
-});
+if (backdrop) {
+  backdrop.addEventListener("click", () => {
+    [...overlays].forEach((node) => (node.style.display = "none"));
+    backdrop.style.display = "none";
+  });
+}
 
 /*儲值方式, 捧花點擊變色*/
 function handleOptionClick(id, parentId) {
@@ -403,6 +405,7 @@ function handleFollow(element) {
 
 /* 點擊單一主播圖片，開啟新頁面 */
 function handleLiveItemClick(target) {
+  console.log(target);
   const ifOnLive = target.classList.value.includes("on");
   if (ifOnLive) {
     location.href = "live-on.html";
