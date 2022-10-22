@@ -206,7 +206,9 @@
           <img src="images/social.svg" alt="" /> 我要分享
         </button>
         <button class="button-like"><img src="images/microphone.svg" alt="" /> 觀看直播</button>
-        <button class="button-like"><img src="images/dialog-icon.svg" alt="" /> 私訊聊聊</button>
+        <button class="button-like" onclick="handleChat()">
+          <img src="images/dialog-icon.svg" alt="" /> 私訊聊聊
+        </button>
       </section>
     </main>
 
@@ -1004,7 +1006,6 @@
           newElement.append(avatarElement);
           newElement.append(contentElement);
           document.getElementById("followers-chat-items").appendChild(newElement);
-
 
           /* 清除輸入框 */
           inputField.value = "";
