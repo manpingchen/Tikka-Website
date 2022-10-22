@@ -76,12 +76,12 @@
           <div class="avatar-container">
             <span class="live-chip pink">Live</span>
             <div class="avatar-wrapper">
-              <img src="images/s1.jpg" class="avatar" alt="name" />
+              <img src="images/s2.jpg" class="avatar" alt="name" />
             </div>
           </div>
           <div class="info flex-column">
             <h5 class="flex-row">
-              <span class="profile-name">呆呆萌萌小愛</span>
+              <span class="profile-name ellipsis">呆呆萌萌小愛</span>
               <button type="button" class="follow-icon">
                 <img src="images/heart-round-pink.svg" alt="heart icon" />
               </button>
@@ -90,8 +90,10 @@
               <img src="images/gift-round-pink.svg" alt="gift icon" />
               <span class="value">999,999,999</span>
             </div>
-            <div class="performance-data flex-row followers">
-              <img src="images/followers-icon.svg" alt="followers icon" />
+            <div
+              class="performance-data flex-row followers"
+              onclick="handleShowComponent('#followers-overlay')"
+            >
               <span class="value">粉絲 99.9K</span>
             </div>
           </div>
@@ -204,6 +206,7 @@
           <img src="images/social.svg" alt="" /> 我要分享
         </button>
         <button class="button-like"><img src="images/microphone.svg" alt="" /> 觀看直播</button>
+        <button class="button-like"><img src="images/dialog-icon.svg" alt="" /> 私訊聊聊</button>
       </section>
     </main>
 
@@ -211,13 +214,14 @@
     <div
       class="full-width streamer-profile-overlay social-media-shares overlay"
       id="social-media-shares"
-      style="display: none"
     >
       <div class="title flex-row">
         <button class="close" onclick="handleHideComponent('#social-media-shares')">
           <img src="images/close-icon.svg" alt="close" />
         </button>
-        <p class="flex-row"><img src="images/social.svg" alt="分享" /> 我要分享</p>
+        <p class="flex-row title-text light-pink">
+          <img src="images/social.svg" alt="分享" /> 我要分享
+        </p>
       </div>
       <div class="content">
         <ul>
@@ -256,11 +260,7 @@
     </div>
 
     <!--禮物牆-->
-    <div
-      class="full-width streamer-profile-overlay rewards overlay"
-      id="rewards-overlay"
-      style="display: none"
-    >
+    <div class="full-width streamer-profile-overlay rewards overlay" id="rewards-overlay">
       <div class="content">
         <section class="title">
           <button class="close" onclick="handleHideComponent('.rewards.overlay')">
@@ -338,11 +338,7 @@
     </div>
 
     <!-- 捧花不足 -->
-    <div
-      class="full-width streamer-profile-overlay overlay"
-      id="top-up-overlay"
-      style="display: none"
-    >
+    <div class="full-width streamer-profile-overlay overlay" id="top-up-overlay">
       <div class="title flex-row">
         <button class="close" onclick="handleHideComponent('#top-up-overlay')">
           <img src="images/close-icon.svg" alt="close" />
@@ -358,31 +354,25 @@
     </div>
 
     <!-- 下方禮物送出框 -->
-    <div
-      class="streamer-profile-overlay overlay gift-sent-overlay"
-      id="gift-sent"
-      style="display: none"
-    >
-      <div class="avatar-wrapper">
-        <img src="images/s2.jpg" class="avatar" alt="name" />
-      </div>
-      <div class="info">
-        <span class="name">小愛</span>
-        <div class="gift-name marquee-wall" id="marquee-gift-wall">
-          <span class="gift-text" id="marquee-gift-text"> 送了 名字短的名稱 </span>
+    <div class="streamer-profile-overlay overlay gift-sent-overlay" id="gift-sent">
+      <div class="container">
+        <div class="avatar-wrapper">
+          <img src="images/s2.jpg" class="avatar" alt="name" />
         </div>
-      </div>
-      <div class="gift-img-wrapper">
-        <img src="images/gift2.png" alt="禮物小圖" />
+        <div class="info">
+          <span class="name">小愛</span>
+          <div class="gift-name marquee-wall" id="marquee-gift-wall">
+            <span class="gift-text" id="marquee-gift-text"> 送了 名字短的名稱 </span>
+          </div>
+        </div>
+        <div class="gift-img-wrapper">
+          <img src="images/gift2.png" alt="禮物小圖" />
+        </div>
       </div>
     </div>
 
     <!-- 滿版禮物圖 -->
-    <div
-      class="full-width streamer-profile-overlay overlay"
-      id="gift-full-overlay"
-      style="display: none"
-    >
+    <div class="full-width streamer-profile-overlay overlay" id="gift-full-overlay">
       <div class="content">
         <img src="images/kisses.png" alt="" class="gift-img" />
       </div>
@@ -392,7 +382,6 @@
     <div
       class="full-width streamer-profile-overlay overlay personal-gifts"
       id="personal-gifts-overlay"
-      style="display: none"
     >
       <div class="content">
         <section class="title">
@@ -551,7 +540,6 @@
     <div
       class="full-width streamer-profile-overlay overlay popular-products"
       id="popular-products-overlay"
-      style="display: none"
     >
       <div class="content">
         <section class="title">
@@ -612,7 +600,6 @@
     <div
       class="overlay full-page highlight-content-overlay not-close-by-backdrop"
       id="single-video-overlay"
-      style="display: none"
     >
       <div class="top-bar">
         <button class="back" onclick="handleHideComponent('#single-video-overlay')">
@@ -652,7 +639,6 @@
     <div
       class="overlay full-page highlight-content-overlay not-close-by-backdrop"
       id="single-story-overlay"
-      style="display: none"
     >
       <div class="top-bar">
         <button class="back" onclick="handleHideComponent('#single-story-overlay')">
@@ -688,14 +674,195 @@
       </div>
     </div>
 
+    <!-- 粉絲遮罩 -->
+    <div
+      class="overlay streamer-profile-overlay followers-overlay full-width"
+      id="followers-overlay"
+    >
+      <!-- 遮罩標題 -->
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#followers-overlay')">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+        <p class="flex-row title-text light-pink"><img src="images/man.svg" alt="粉絲" /> 粉絲</p>
+      </div>
+
+      <!-- 遮罩內容 -->
+      <div class="content">
+        <!-- Search Bar -->
+        <form action="/portal/index/form" method="get" name="form" id="form" class="search-form">
+          <div class="search-container">
+            <input type="text" placeholder="請輸入關鍵字" name="search" />
+            <div class="search-controls">
+              <button
+                type="button"
+                class="clear-search-button"
+                onclick="handleClearSearchValue(event, this)"
+              >
+                <span class="material-icons">&#xE5CD;</span>
+              </button>
+              <button type="submit"><span class="material-icons">&#xE8B6;</span></button>
+            </div>
+          </div>
+        </form>
+
+        <!-- 粉絲列表 -->
+        <ul class="followers-list">
+          <li class="flex-row align-center justify-space-between">
+            <div class="follower-detail flex-row align-center">
+              <div class="avatar-wrapper">
+                <img src="images/s2.jpg" alt="粉絲頭貼" class="avatar" />
+              </div>
+              <div class="follower-name ellipsis">會員名稱會員名稱</div>
+            </div>
+            <button class="chat-button" id="follower-1" onclick="handleChat(this.id)">
+              私訊聊聊
+            </button>
+          </li>
+          <li class="flex-row align-center justify-space-between">
+            <div class="follower-detail flex-row align-center">
+              <div class="avatar-wrapper">
+                <img src="images/s2.jpg" alt="粉絲頭貼" class="avatar" />
+              </div>
+              <div class="follower-name ellipsis">會員名稱會員名稱</div>
+            </div>
+            <button class="chat-button" id="follower-1" onclick="handleChat(this.id)">
+              私訊聊聊
+            </button>
+          </li>
+          <li class="flex-row align-center justify-space-between">
+            <div class="follower-detail flex-row align-center">
+              <div class="avatar-wrapper">
+                <img src="images/s2.jpg" alt="粉絲頭貼" class="avatar" />
+              </div>
+              <div class="follower-name ellipsis">會員名稱會員名稱</div>
+            </div>
+            <button class="chat-button" id="follower-1" onclick="handleChat(this.id)">
+              私訊聊聊
+            </button>
+          </li>
+          <li class="flex-row align-center justify-space-between">
+            <div class="follower-detail flex-row align-center">
+              <div class="avatar-wrapper">
+                <img src="images/s2.jpg" alt="粉絲頭貼" class="avatar" />
+              </div>
+              <div class="follower-name ellipsis">會員名稱會員名稱</div>
+            </div>
+            <button class="chat-button" id="follower-1" onclick="handleChat(this.id)">
+              私訊聊聊
+            </button>
+          </li>
+          <li class="flex-row align-center justify-space-between">
+            <div class="follower-detail flex-row align-center">
+              <div class="avatar-wrapper">
+                <img src="images/s2.jpg" alt="粉絲頭貼" class="avatar" />
+              </div>
+              <div class="follower-name ellipsis">會員名稱會員名稱</div>
+            </div>
+            <button class="chat-button" id="follower-1" onclick="handleChat(this.id)">
+              私訊聊聊
+            </button>
+          </li>
+          <li class="flex-row align-center justify-space-between">
+            <div class="follower-detail flex-row align-center">
+              <div class="avatar-wrapper">
+                <img src="images/s2.jpg" alt="粉絲頭貼" class="avatar" />
+              </div>
+              <div class="follower-name ellipsis">會員名稱會員名稱</div>
+            </div>
+            <button class="chat-button" id="follower-1" onclick="handleChat(this.id)">
+              私訊聊聊
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 私訊聊聊遮罩 -->
+    <div
+      class="overlay streamer-profile-overlay full-width followers-chat-overlay"
+      id="followers-chat-overlay"
+    >
+      <!-- 遮罩標題 -->
+      <div class="title flex-row">
+        <button class="clear" onclick="handleClearChat()">
+          <img src="images/close-icon.svg" alt="close" /> 清空聊聊
+        </button>
+        <p class="flex-row title-text light-pink">
+          <img src="images/dialog-icon.svg" alt="粉絲" /> 私訊聊聊
+        </p>
+      </div>
+
+      <!-- 遮罩內容 -->
+      <div class="content">
+        <div class="chat-body" id="followers-chat-items">
+          <div class="chat-date"><p class="date-value">2022.07.04</p></div>
+          <div class="chat-item">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <span class="chat-content"
+              >＃＃＃第一則＃＃＃對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+            </span>
+          </div>
+          <div class="chat-item my-chat">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <span class="chat-content"
+              >＃＃＃第一則＃＃＃我的聊天文字內容聊天文字內容聊天文字，內容聊天文字內容</span
+            >
+          </div>
+          <div class="chat-item">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <span class="chat-content"
+              >＃＃＃第二則＃＃＃對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+            </span>
+          </div>
+          <div class="chat-item my-chat">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <span class="chat-content"
+              >＃＃＃第二則＃＃＃我的聊天文字內容聊天文字內容聊天文字，內容聊天文字內容</span
+            >
+          </div>
+        </div>
+
+        <div class="flex-row chat-controls">
+          <div class="chat-field flex-row">
+            <input type="text" placeholder="跟主播聊聊..." id="new-chat-input" />
+          </div>
+          <div class="btns">
+            <button
+              type="button open-overlay"
+              class="face-btn"
+              onclick="handleShowComponent('.sticker-overlay')"
+            >
+              <img src="images/face.svg" />
+            </button>
+            <button type="button open-overlay" onclick="handleAddTextToChat()">
+              <img src="images/fat-arrow.svg" alt="送出" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!--遮罩backdrop-->
     <div class="backdrop" style="display: none"></div>
 
     <footer class="desktop-only">
       <div class="footer-content flex-row">
-        <nav class="flex-row">
-          <a href="#" class="line-icon"><img src="images/line.png" alt="line" /></a>
-          <ul>
+        <div class="flex-row social-icons">
+          <a href="#" class="line-icon social-icon"><img src="images/line.png" alt="line" /></a>
+          <a href="#" class="fb-icon social-icon"><img src="images/fb.png" alt="line" /></a>
+          <a href="#" class="ig-icon social-icon"><img src="images/ig.png" alt="line" /></a>
+        </div>
+        <div class="flex-column">
+          <ul class="flex-row footer-menu">
             <li>
               <a href="contact.html">聯絡我們</a>
             </li>
@@ -706,11 +873,12 @@
               <a href="policy.html">服務條款</a>
             </li>
           </ul>
-        </nav>
-        <p class="copyright">
-          <span>Copyright© 2022 by Tikka版權所有</span>
-          <span>Copyright© 2022 Tikka. All rights reserved.</span>
-        </p>
+
+          <p class="copyright">
+            <span>Copyright© 2022 by Tikka版權所有</span>
+            <span>Copyright© 2022 Tikka. All rights reserved.</span>
+          </p>
+        </div>
       </div>
     </footer>
     <script src="js/header.js"></script>
@@ -780,6 +948,75 @@
         setTimeout(() => {
           handleHideComponent("#gift-full-overlay");
         }, 10000);
+      }
+
+      /* 私訊聊聊按鈕點擊 */
+      function handleChat(followerId) {
+        console.log({ followerId });
+        handleShowComponent("#followers-chat-overlay");
+        handleHideComponent("#followers-overlay");
+        /* Backdrop因followers-overlay關閉時一同關閉，*/
+        /* 故下方再次開啟，供關閉私訊聊聊遮罩使用 */
+        handleShowComponent(".backdrop");
+      }
+
+      /*加對話至對話框*/
+      function handleAddTextToChat() {
+        const inputField = document.getElementById("new-chat-input");
+        const chatText = inputField.value;
+
+        const allDates = document.querySelectorAll(".date-value");
+        const datesArray = [...allDates];
+        const date = new Date();
+        const today = date.getFullYear() + "." + (date.getMonth() + 1) + "." + date.getDate();
+
+        if (chatText) {
+          /* 確認是否加入對話日期 */
+          const isNewDate = datesArray.filter(({ innerText }) => innerText === today).length === 0;
+
+          if (isNewDate) {
+            const dateElement = document.createElement("div");
+            dateElement.classList.add("chat-date");
+            const dateValueElement = document.createElement("p");
+            dateValueElement.classList.add("date-value");
+            dateValueElement.innerHTML = today;
+
+            dateElement.append(dateValueElement);
+            document.querySelector(".chat-body").appendChild(dateElement);
+          }
+
+          /* 加入對話 */
+          const newElement = document.createElement("div");
+          newElement.classList.add("chat-item", "my-chat");
+
+          const avatarElement = document.createElement("div");
+          avatarElement.classList.add("avatar-wrapper");
+
+          const avatarImgElement = document.createElement("img");
+          avatarImgElement.classList.add("avatar");
+          avatarImgElement.src = "images/s2.jpg";
+
+          const contentElement = document.createElement("span");
+          contentElement.classList.add("chat-content");
+          contentElement.innerHTML = chatText;
+
+          avatarElement.append(avatarImgElement);
+          newElement.append(avatarElement);
+          newElement.append(contentElement);
+          document.getElementById("followers-chat-items").appendChild(newElement);
+
+
+          /* 清除輸入框 */
+          inputField.value = "";
+
+          /* 將對話區塊置底 */
+          locateScrollbar();
+        }
+      }
+
+      /* 清空對話 */
+      function handleClearChat() {
+        const chatBody = (document.getElementById("followers-chat-items").innerHTML = "");
       }
     </script>
   </body>

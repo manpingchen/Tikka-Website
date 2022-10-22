@@ -139,7 +139,7 @@ footer a.social-icon img {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 810px) {
   footer {
     padding-bottom: 90px;
     position: relative;
@@ -147,7 +147,8 @@ footer a.social-icon img {
     top: 50px;
   }
 }
-@media screen and (max-width: 480px) {
+
+@media screen and (max-width: 809px) {
   footer.desktop-only {
     display: none !important;
   }
@@ -1613,20 +1614,28 @@ main.live-on section.left-column div.profile div.name-avatar {
   align-items: center;
 }
 
-main.live-on div.profile div.avatar-wrapper {
+.avatar-wrapper {
+  border: 3px solid #fff;
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
-  display: block;
   position: relative;
   overflow: hidden;
-  border: 2px solid #fff;
+  display: block;
   box-shadow: 0 0 10px #55555575;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
 }
 
-main.live-on div.profile div.avatar-wrapper img.avatar {
+.avatar-wrapper img.avatar {
   position: absolute;
-  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+main.live-on div.profile div.avatar-wrapper {
+  width: 70px;
+  height: 70px;
 }
 
 main.live-on section.left-column div.profile div.name-avatar div.profile-info p {
@@ -1915,8 +1924,6 @@ main.live-on div.sticker-overlay div.title {
 }
 
 main.live-on div.sticker-overlay div.title button.close {
-  left: initial !important;
-  right: 20px;
   top: 10px;
 }
 
@@ -2322,6 +2329,11 @@ main.live-on div.rewards div.btns {
   margin-bottom: 1rem;
 }
 
+main.live-on div.wrapper.reward-btns-mobile div.btns {
+  margin-left: 15px;
+  padding: 0;
+}
+
 div.overlay.rewards,
 main.live-on div.overlay.revenue,
 main.live-on div.overlay.viewer {
@@ -2342,13 +2354,6 @@ main.live-on div.overlay.viewer .title {
 main.live-on div.overlay.revenue .title > p,
 main.live-on div.overlay.viewer .title > p {
   margin-left: 10px !important;
-}
-
-div.overlay.rewards button.close,
-main.live-on div.overlay.revenue button.close,
-main.live-on div.overlay.viewer button.close {
-  left: initial;
-  right: 20px;
 }
 
 div.overlay.rewards div.content {
@@ -2462,7 +2467,7 @@ main.live-on div.reward-item,
 div.full-width.overlay.rewards div.reward-item,
 div.overlay.rewards div.reward-item {
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   height: min-content;
   cursor: pointer;
   border-radius: 10px;
@@ -2517,25 +2522,25 @@ div.overlay.rewards div.reward-item span.name {
   border-radius: 0;
 }
 
-main.live-on div.reward-item span.point,
+/* main.live-on div.reward-item span.point,
 div.overlay.rewards div.reward-item span.point {
   align-items: center;
   gap: 10px;
   width: 100%;
   padding: 0 10px 5px 24px;
-  color: #e50370;
   background: url("../images/coin.png") no-repeat 2px -5px;
   background-size: 33%;
-  font-size: 0.7rem;
-}
+} */
 
-main.live-on div.overlay.rewards div.reward-item span.point,
-div.full-width.overlay.rewards div.reward-item span.point,
-div.overlay.rewards div.reward-item span.point {
+div.reward-item span.point {
+  font-size: 0.7rem;
+  color: #e50370;
   background: url(../images/coin.png) no-repeat 2px -7px;
   background-size: 30px;
-  width: 100px;
+  width: 80px;
   margin: 0 auto;
+  align-items: center;
+  padding: 0 10px 5px 24px;
 }
 
 div.overlay.rewards .footer {
@@ -2798,29 +2803,31 @@ main.live-on div.frame-bottom-bar.mobile-only button.pink {
   background: radial-gradient(#ffcfe4, #f03282, #c1145c);
 }
 
-main.live-on div.frame-bottom-bar.mobile-only div.chat-field {
+div.chat-field {
   gap: 10px;
-  background: rgba(206, 206, 206, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 40px;
   padding-left: 15px;
   width: calc(100% - 110px);
   justify-content: space-between;
   backdrop-filter: blur(4px);
 }
-main.live-on div.frame-bottom-bar.mobile-only div.chat-field > .flex-row {
+div.chat-field > .flex-row {
   gap: 5px;
   margin-right: 8px;
 }
-main.live-on div.frame-bottom-bar.mobile-only div.chat-field input {
+div.chat-field input {
   color: #333;
   letter-spacing: 0.1rem;
   border: none;
   background: none;
+  flex: 1;
+  width: 100%;
 }
-main.live-on div.frame-bottom-bar.mobile-only div.chat-field input::placeholder {
+div.chat-field input::placeholder {
   color: #333;
 }
-main.live-on div.frame-bottom-bar.mobile-only div.chat-field img.chat-icon {
+div.chat-field img.chat-icon {
   display: block;
   width: 20px;
 }
@@ -2847,11 +2854,101 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-body div.chat-item {
   color: #fff;
 }
 
-main.live-on div.frame-bottom-bar.mobile-only div.chat-controls button {
+div.chat-controls button {
   padding: 20px;
 }
 
-@media screen and (max-width: 1200px) {
+div.chat-controls {
+  display: none;
+  width: 100%;
+  gap: 1rem;
+  padding: 20px 20px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  height: 80px;
+  align-items: center;
+}
+
+div.followers-chat-overlay div.chat-controls {
+  display: flex;
+  padding: 10px;
+  height: 50px;
+}
+
+div.followers-chat-overlay div.chat-controls div.chat-field {
+  height: 30px;
+}
+
+div.followers-chat-overlay div.chat-body {
+  overflow-y: auto;
+  width: 100%;
+  padding: 1rem 1rem 0;
+  flex: 1;
+}
+
+div.followers-chat-overlay div.chat-item {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+div.followers-chat-overlay div.chat-item.my-chat {
+  flex-direction: row-reverse;
+}
+
+div.followers-chat-overlay div.chat-item .avatar-wrapper {
+  width: 40px;
+  height: 40px;
+  border-width: 2px;
+  flex-shrink: 0;
+}
+
+div.followers-chat-overlay div.chat-item .chat-content {
+  background: white;
+  border-radius: 0 15px 15px 15px;
+  padding: 6px 1rem;
+  max-width: 260px;
+}
+
+div.chat-date{
+  margin-bottom: 1rem;
+}
+
+div.chat-date p{
+  background: rgba(153, 153, 153, 0.6);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 0.75rem;
+  border-radius: 30px;
+}
+
+div.followers-chat-overlay div.chat-item.my-chat .chat-content {
+  background: #ffbad7;
+  border-radius: 15px 0 15px 15px;
+}
+
+div.followers-chat-overlay div.chat-controls .btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.followers-chat-overlay div.chat-controls button {
+  height: 40px;
+  padding: 10px;
+}
+
+div.followers-chat-overlay div.chat-controls button img {
+  display: block;
+  width: 20px;
+}
+
+@media screen and (max-width: 990px) {
   main.live-on .desktop-only,
   main.live .desktop-only {
     display: none;
@@ -2875,39 +2972,28 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-controls button {
     right: 0;
     justify-content: flex-end;
   }
+
   main.live-on div.frame-top-bar > div.flex-row {
     flex-direction: column;
     align-items: initial;
     gap: 5px;
   }
-  main.live-on div.frame-bottom-bar.mobile-only div.chat-controls {
-    width: 100%;
-    gap: 1rem;
-    padding: 20px 20px;
-    left: 0;
-    background: rgba(0, 0, 0, 0.3);
-    height: 80px;
-    align-items: center;
-  }
-}
 
-@media screen and (max-width: 990px) {
-  main.live-on section.live-frame {
-    width: 700px;
-    padding-top: 120%;
+  div.chat-controls {
+    display: flex;
   }
+
   main.live-on div.frame-top-bar span.value {
     font-size: 0.8rem;
     padding-left: 24px;
     padding-right: 10px;
   }
+
   main.live-on div.frame-bottom-bar.mobile-only div.chat-field {
     width: calc(100% - 110px);
     margin-right: 1rem;
   }
-  main.live-on div.frame-bottom-bar.mobile-only div.chat-controls {
-    width: 100%;
-  }
+
   main.live-on div.frame-bottom-bar.mobile-only div.chat-field input {
     width: 200px;
     height: 46px;
@@ -2980,7 +3066,7 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-controls button {
     align-items: center;
     justify-content: center;
   }
-  main.live-on div.frame-bottom-bar.mobile-only div.chat-controls {
+  div.chat-controls {
     gap: 1rem;
     width: 100%;
   }
@@ -3009,7 +3095,7 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-controls button {
   main.live-on div.frame-bottom-bar.mobile-only div.chat-field button {
     padding: 5px;
   }
-  main.live-on div.frame-bottom-bar.mobile-only div.chat-controls {
+  div.chat-controls {
     gap: 0.5rem;
   }
 }
@@ -3024,7 +3110,7 @@ main.live-on div.frame-bottom-bar.mobile-only div.chat-controls button {
   main.live-on div.frame-bottom-bar.mobile-only div.chat-body {
     bottom: 90px;
   }
-  main.live-on div.frame-bottom-bar.mobile-only div.chat-controls {
+  div.chat-controls {
     flex-direction: column;
     width: 100%;
   }
@@ -4481,6 +4567,9 @@ div.overlay {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   backdrop-filter: blur(5px);
+  transform: translate(0, 100%);
+  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  overflow: hidden;
 }
 
 div.backdrop {
@@ -4536,28 +4625,10 @@ div.overlay div.title p {
   gap: 10px;
   margin: 0 auto;
   font-size: 1.25rem;
-  letter-spacing: 0.2em;
-}
-
-div.overlay.social-media-shares div.title p {
-  font-size: 0.875rem;
-  padding: 0.5rem 1rem;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  border-radius: 20px;
-  color: #d6216d;
-  background: linear-gradient(#ffffff, #ffe1f4, #ff87c8);
 }
 
 div.overlay.streamer-profile-overlay button.close {
   right: 1rem !important;
-  left: initial !important;
-}
-
-div.overlay.social-media-shares div.title p img {
-  height: 14px;
-  filter: invert(0.6) sepia(3) contrast(180%) hue-rotate(289deg) saturate(1.8);
 }
 
 @media screen and (max-width: 480px) {
@@ -4598,19 +4669,46 @@ div.overlay div.title p span.line {
   background: #fff;
 }
 
-div.overlay button.close {
+div.overlay button.close,
+div.overlay button.clear {
+  position: absolute;
   width: 30px;
   height: 30px !important;
-  position: absolute;
-  top: 15px;
-  left: 20px;
-  height: 15px;
-  padding: 0;
+  right: 1rem;
+  padding: 5px;
   margin: 0;
 }
 
-div.overlay button.close > img {
-  width: 100% !important;
+div.overlay button.clear {
+  width: auto;
+  display: flex;
+  margin: 0 0 0 1rem;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 20px;
+  color: #d6216d;
+  background: linear-gradient(#ffffff, #ffe1f4, #ff87c8);
+}
+
+div.overlay button.close > img,
+div.overlay button.clear > img {
+  width: 20px !important;
+}
+
+div.overlay button.clear > img {
+  filter: invert(0.6) sepia(3) contrast(180%) hue-rotate(289deg) saturate(1.8);
+}
+
+div.overlay button.clear:hover {
+  color: #fff;
+  background: linear-gradient(rgb(255, 193, 219), rgb(255, 57, 140), rgb(240, 50, 130));
+}
+
+div.overlay button.clear:hover img {
+  filter: none;
 }
 
 div.overlay div.content {
@@ -4705,9 +4803,9 @@ div.overlay#top-up-overlay div.footer span.point::before {
   height: 60px;
 }
 
-div.overlay:not(.rewards) div.content img {
+/* div.overlay:not(.rewards) div.content img {
   width: 140px;
-}
+} */
 
 div.overlay div.content p.coming-soon-text {
   width: 140px;
@@ -4728,18 +4826,25 @@ div.overlay div.content p.coming-soon-text {
 
 div.gift-sent-overlay {
   position: absolute;
-  bottom: 10%;
+  bottom: 0px;
   width: 300px;
   left: calc(50% - 150px);
-  height: 60px;
+  height: 160px;
+  padding: 50px 0;
   z-index: 9;
+  background: none;
+  overflow: visible;
+}
+
+div.gift-sent-overlay .container {
+  overflow: visible;
+  height: 60px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
   background: #c73572a7;
-  overflow: visible;
   border-radius: 50px;
   color: #fff !important;
 }
@@ -4811,7 +4916,6 @@ div.gift-sent-overlay div.gift-img-wrapper {
   margin-right: 10px;
 }
 
-div.gift-sent-overlay div.avatar-wrapper img.avatar,
 div.gift-sent-overlay div.gift-img-wrapper img {
   position: absolute;
   height: 100%;
@@ -4827,6 +4931,7 @@ div.gift-sent-overlay div.gift-img-wrapper img {
 
 form.search-form > div.search-container {
   margin: 0 auto 40px;
+  background: white;
 }
 
 div.gift-full-overlay {
@@ -5268,11 +5373,11 @@ div#rewards-overlay .wrapper {
   overflow-y: auto;
 }
 
-/* div#rewards-overlay .wrapper.reward-btns-mobile {
+div#rewards-overlay .wrapper.reward-btns-mobile {
   height: 60px;
   width: calc(100% - 1rem - 50px);
   margin-left: 15px;
-} */
+}
 
 /*div#rewards-overlay.overlay.rewards.search-page-overlay {
   height: inherit !important; 
@@ -5298,10 +5403,6 @@ main.live-on div.overlay.rewards {
   border-top-right-radius: 30px !important;
 }
 
-main.live-on div.overlay.rewards button.close {
-  right: 20px;
-  left: initial;
-}
 /* 
 div#rewards-overlay div.send-gift {
   padding-bottom: 1rem;
@@ -6426,9 +6527,10 @@ main.streamer-profile {
   width: 100%;
   top: 90px;
   overflow: hidden;
+  margin-bottom: 150px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 989px) {
   main.streamer-profile {
     top: 70px;
     margin-bottom: 20px;
@@ -6449,7 +6551,7 @@ main.streamer-profile > section {
 
 main.streamer-profile section.header {
   position: relative;
-  height: 450px;
+  height: 400px;
   max-width: 1100px;
 }
 
@@ -6457,18 +6559,13 @@ main.streamer-profile section.header > div.flex-row {
   margin: 0 auto;
   width: 600px;
   gap: 1rem;
-  padding-top: 80px;
+  padding-top: 60px;
+  justify-content: center;
 }
 
 main.streamer-profile section.header div.avatar-wrapper {
-  border-radius: 50%;
   width: 200px;
   height: 200px;
-  display: block;
-  position: relative;
-  overflow: hidden;
-  border: 5px solid #fff;
-  box-shadow: 0 0 10px #55555575;
 }
 
 main.streamer-profile section.header div.avatar-container {
@@ -6487,11 +6584,6 @@ main.streamer-profile section.header div.avatar-container span.live-chip {
   padding-left: 10px;
 }
 
-main.streamer-profile section.header div.avatar-wrapper img.avatar {
-  position: absolute;
-  width: 100%;
-}
-
 main.streamer-profile section.header div.info {
   gap: 1rem;
 }
@@ -6505,9 +6597,6 @@ main.streamer-profile section.header div.info h5 {
 
 main.streamer-profile section.header div.info h5 span.profile-name {
   width: 150px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 main.streamer-profile section.header div.info h5 button {
@@ -6535,24 +6624,6 @@ main.streamer-profile section.header div.round-bg {
   box-shadow: 0 5px 15px #555;
   border-radius: 50%;
   z-index: -1;
-}
-
-@media screen and (max-width: 768px) {
-  main.streamer-profile section.header div.round-bg {
-    width: 210%;
-    padding-top: 210%;
-    left: -55%;
-  }
-
-  main.streamer-profile section.header {
-    height: 440px;
-  }
-
-  main.streamer-profile section.header > div.flex-row {
-    flex-direction: column;
-    width: 100%;
-    padding-top: 0;
-  }
 }
 
 main.streamer-profile section.list {
@@ -6610,6 +6681,18 @@ main.streamer-profile section.header div.info .performance-data {
   gap: 0.5rem;
   position: relative;
   height: 30px;
+}
+
+main.streamer-profile section.header div.info .performance-data.followers {
+  cursor: pointer;
+  background: url("../images/followers-icon.svg") 5px center no-repeat;
+  background-size: 45px;
+  height: 45px;
+  margin-top: -10px;
+}
+
+main.streamer-profile section.header div.info .performance-data.followers:hover {
+  background-image: url("../images/follower-icon-pink.svg");
 }
 
 main.streamer-profile section.header div.info .performance-data img {
@@ -6683,16 +6766,18 @@ main.streamer-profile section.intro button.toggle-intro-button:disabled span {
 }
 
 main.streamer-profile section.intro div.intro-content {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   min-width: 300px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #555555;
   height: 300px;
   overflow: auto;
   line-height: 1.9em;
   transition: 0.2s height;
+  padding-right: 10px;
 }
+
 main.streamer-profile section.intro div.intro-content ul {
   align-items: center;
   gap: 1rem;
@@ -6711,25 +6796,6 @@ main.streamer-profile section.intro div.intro-content p {
 main.streamer-profile section.menus {
   background: url("../images/curve-bg.svg") no-repeat center center;
   margin-bottom: 2rem;
-}
-
-@media screen and (max-width: 768px) {
-  main.streamer-profile section.menus {
-    background: #e63483;
-  }
-
-  main.streamer-profile section.menus ul {
-    padding: 0 !important;
-    flex-wrap: wrap;
-  }
-
-  main.streamer-profile section.menus ul li button {
-    width: 150px !important;
-  }
-
-  main.streamer-profile section.menus ul li:not(:first-child) button {
-    border-left: none !important;
-  }
 }
 
 main.streamer-profile section.menus ul {
@@ -6752,7 +6818,7 @@ main.streamer-profile section.menus ul li button {
 main.streamer-profile section.footer-actions {
   align-items: center;
   justify-content: center;
-  gap: 4rem;
+  gap: 1rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -6771,7 +6837,7 @@ main.streamer-profile section.footer-actions button {
   background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
   color: #d6236c;
   width: 180px;
-  padding: 0.65rem 2rem;
+  padding: 0.5rem 1rem;
   box-shadow: 0 2px 10px #999;
 }
 
@@ -6816,10 +6882,6 @@ div.overlay.social-media-shares.streamer-profile-overlay div.title {
   margin: 0 auto;
 }
 
-div.overlay.social-media-shares.streamer-profile-overlay div.title p {
-  margin: 0 0 0 1rem;
-}
-
 div.overlay.social-media-shares.streamer-profile-overlay div.content ul li button {
   font-size: 1.2rem;
 }
@@ -6845,6 +6907,10 @@ div.streamer-profile-overlay.full-width.overlay.personal-gifts
   justify-content: center;
 }
 
+div.streamer-profile-overlay.full-width.followers-overlay {
+  overflow: hidden;
+}
+
 div.streamer-profile-overlay.full-width.overlay.personal-gifts
   div.reward-items
   div.reward-item
@@ -6863,13 +6929,6 @@ div.full-width.overlay.popular-products {
   backdrop-filter: blur(5px);
 }
 
-/* @media screen and (max-width: 480px) {
-  div.full-width.overlay.personal-gifts,
-  div.full-width.overlay.popular-products {
-    bottom: 60px;
-  }
-} */
-
 div.full-width.overlay.rewards div.content,
 div.full-width.overlay.personal-gifts div.content,
 div.full-width.overlay.popular-products div.content {
@@ -6883,7 +6942,6 @@ div.full-width.overlay.popular-products div.content {
 div.full-width.overlay.rewards div.content section,
 div.full-width.overlay.personal-gifts div.content section,
 div.full-width.overlay.popular-products div.content section {
-  /* max-width: 900px; */
   margin: 0 auto;
 }
 
@@ -7012,7 +7070,6 @@ div.full-width.overlay.popular-products div.reward-items div.reward-item span.co
 div.full-width.overlay.rewards div.footer {
   height: 160px;
   width: 100%;
-  /* max-width: 900px; */
   margin: 0 auto;
 }
 
@@ -7048,7 +7105,8 @@ div.full-width.overlay.rewards.streamer-profile-overlay div.send-gift {
 }
 
 div.full-width.overlay.rewards.streamer-profile-overlay div.content section.title,
-div.full-width.overlay.rewards.search-page-overlay div.content section.title {
+div.full-width.overlay.rewards.search-page-overlay div.content section.title,
+div.full-width.overlay.rewards.followers-overlay div.content section.title {
   padding-left: 1rem;
 }
 
@@ -7166,6 +7224,104 @@ div.streamer-profile-overlay#top-up-overlay div.title {
 }
 div.streamer-profile-overlay#gift-full-overlay .content img.gift-img {
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  main.streamer-profile section.header {
+    height: max-content;
+    padding-bottom: 80px;
+  }
+
+  main.streamer-profile section.header div.round-bg {
+    width: 210%;
+    padding-top: 210%;
+    left: -55%;
+  }
+
+  main.streamer-profile section.header > div.flex-row {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  main.streamer-profile section.header div.avatar-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  main.streamer-profile section.header div.info h5 {
+    font-size: 1.2rem;
+  }
+
+  main.streamer-profile section.header div.info h5 span.profile-name {
+    max-width: 130px;
+    width: fit-content;
+  }
+
+  main.streamer-profile section.header div.avatar-container span.live-chip {
+    font-size: 0.8rem;
+    letter-spacing: unset;
+    top: 0;
+  }
+  main.streamer-profile section.header div.info .performance-data span.value {
+    font-size: 1rem;
+    width: fit-content;
+    padding-left: 40px;
+  }
+
+  main.streamer-profile section.menus {
+    background: #e63483;
+  }
+
+  main.streamer-profile section.menus ul {
+    padding: 0 !important;
+    flex-wrap: wrap;
+  }
+
+  main.streamer-profile section.menus ul li button {
+    width: 150px !important;
+  }
+
+  main.streamer-profile section.menus ul li:not(:first-child) button {
+    border-left: none !important;
+  }
+
+  main.streamer-profile section.header div.info .performance-data {
+    height: 20px;
+  }
+
+  main.streamer-profile section.header div.info .performance-data img {
+    width: 40px;
+    height: 40px;
+  }
+
+  main.streamer-profile section.header div.info .performance-data.followers {
+    background-size: 36px;
+    height: 36px;
+    background-position: 3px center;
+  }
+
+  main.streamer-profile section.header div.info .performance-data.rewards img {
+    width: 50px;
+    height: 50px;
+    left: -3px;
+  }
+
+  main.streamer-profile button.gift-button {
+    height: 60px;
+    width: 60px;
+    bottom: -30px;
+    left: calc(50% - 30px);
+  }
+
+  main.streamer-profile section.intro {
+    margin-top: 20px;
+  }
+
+  div.full-width.overlay.rewards div.reward-item span.point {
+    width: 80px;
+    background-position: 0px -7px;
+    padding-left: 22px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -7467,8 +7623,6 @@ p.event-time {
 div.overlay.event-detail-overlay button.close {
   border-radius: 50%;
   background: #f29ec2;
-  left: initial;
-  right: 20px;
 }
 
 div.overlay.event-detail-overlay button.close img {
@@ -7501,9 +7655,10 @@ div.overlay.event-detail-overlay button.close img {
     height: 250px;
   }
 
-  div.overlay.social-media-shares.streamer-profile-overlay div.title {
+  div.overlay.streamer-profile-overlay div.title {
     height: 60px;
   }
+
   div.overlay.social-media-shares.streamer-profile-overlay div.content {
     height: calc(100% - 60px);
   }
@@ -7723,7 +7878,7 @@ div.overlay.full-page {
   }
 
   div.overlay.highlight-content-overlay {
-    padding: 2%;
+    padding: 2% 0 0;
   }
 
   div.overlay.highlight-content-overlay div.top-bar,
@@ -7738,13 +7893,9 @@ div.overlay.highlight-content-overlay {
   z-index: 8;
   overflow-y: auto;
   background: #333333e5;
-}
-
-@media screen and (max-width: 480px) {
-  div.overlay.highlight-content-overlay {
-    height: calc(100% - 60px - 70px);
-    position: fixed;
-  }
+  top: unset;
+  height: calc(100% - 71px);
+  position: fixed;
 }
 
 div.overlay.highlight-content-overlay div.top-bar {
@@ -8254,5 +8405,118 @@ main.live a.live-item span.count {
     font-size: 0.7rem;
     background-size: 13px;
     padding-left: 10px;
+  }
+}
+
+/* Overlay Title */
+
+div.overlay p.title-text {
+  display: flex;
+  margin: 0 0 0 1rem !important;
+  font-size: 0.875rem !important;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 20px;
+}
+
+div.overlay p.title-text.light-pink {
+  color: #d6216d;
+  background: linear-gradient(#ffffff, #ffe1f4, #ff87c8);
+}
+
+div.overlay p.title-text img {
+  width: auto !important;
+  height: 14px !important;
+}
+
+div.overlay p.title-text.light-pink img {
+  filter: invert(0.6) sepia(3) contrast(180%) hue-rotate(289deg) saturate(1.8);
+}
+
+/* Followers Overlay Only */
+
+.followers-overlay,
+.followers-chat-overlay {
+  height: 60% !important;
+}
+
+.followers-overlay .title,
+.followers-chat-overlay .title {
+  height: 60px !important;
+}
+
+.followers-overlay .content,
+.followers-chat-overlay .content {
+  justify-content: flex-start !important;
+  padding: 1rem;
+  height: calc(100% - 60px) !important;
+  position: relative;
+}
+
+.followers-chat-overlay .content {
+  padding: 0;
+  gap: 0 !important;
+}
+
+.followers-overlay form.search-form {
+  width: 100%;
+  margin-bottom: 0rem;
+  max-width: 800px;
+}
+
+.followers-overlay form.search-form > div.search-container {
+  margin-bottom: 0;
+  max-width: none;
+  width: 100%;
+}
+
+.followers-overlay ul.followers-list {
+  width: 100%;
+  overflow-y: auto;
+  max-width: 800px;
+}
+
+.followers-overlay ul.followers-list > li {
+  margin-bottom: 0.5rem;
+}
+
+.followers-overlay ul.followers-list .follower-detail {
+  gap: 0.5rem;
+}
+
+.followers-overlay ul.followers-list .avatar-wrapper {
+  width: 40px;
+  height: 40px;
+}
+
+.followers-overlay ul.followers-list .follower-name {
+  color: white;
+  width: 180px;
+}
+
+.followers-overlay ul.followers-list button.chat-button {
+  width: 90px;
+  height: 30px;
+  background: white;
+  border-radius: 40px;
+  color: #e60672;
+  font-size: 0.8rem;
+  line-height: 30px;
+  padding: 0;
+  transition: 0.2s all;
+  box-shadow: 3px 3px 3px #00000050;
+  margin-right: 3px;
+}
+
+.followers-overlay ul.followers-list button.chat-button:hover {
+  background: #e60672;
+  color: white;
+}
+
+@media screen and (max-width: 374px) {
+  .followers-overlay ul.followers-list .follower-name {
+    width: 130px;
   }
 }

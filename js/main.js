@@ -199,18 +199,42 @@ function handleClearSearchValue(event, el) {
   element.value = "";
 }
 
+// 遮罩以外點擊
+const backdrop = document.querySelector(".backdrop");
+const overlays = document.querySelectorAll(".overlay:not(.not-close-by-backdrop)");
+
+if (backdrop) {
+  backdrop.addEventListener("click", () => {
+    [...overlays].forEach((node) => (node.style.transform = "translate(0, 100%)"));
+    backdrop.style.display = "none";
+  });
+}
+
 /* 關閉元件 */
-function handleHideComponent(className) {
-  document.querySelector(className).style.display = "none";
+function handleHideComponent(selector) {
+  const node = document.querySelector(selector);
+  const classList = node?.classList;
+
+  if (classList.contains("overlay")) {
+    node.style.transform = "translate(0, 100%)";
+    backdrop.style.display = "none";
+  } else {
+    node.style.display = "none";
+  }
 }
 
 /* 開啟元件 */
 function handleShowComponent(selector, displayValue = "block") {
   const node = document.querySelector(selector);
-  node.style.display = displayValue;
+  const classList = node?.classList;
+
+  if (classList.contains("overlay")) {
+    node.style.transform = "translate(0, 0)";
+  } else {
+    node.style.display = displayValue;
+  }
 
   /* 如果元件為遮罩，則同步開啟backdrop，做為關閉遮罩之點擊範圍 */
-  const classList = node?.classList;
   if (classList.contains("overlay") && !classList.contains("full-page")) {
     handleShowComponent(".backdrop");
   }
@@ -324,18 +348,6 @@ function removeOneItemToCart(itemId) {
     return;
   }
   document.querySelector(`#${itemId} input[type="number"]`).value--;
-}
-
-// 遮罩以外點擊
-
-const backdrop = document.querySelector(".backdrop");
-const overlays = document.querySelectorAll(".overlay:not(.not-close-by-backdrop)");
-
-if (backdrop) {
-  backdrop.addEventListener("click", () => {
-    [...overlays].forEach((node) => (node.style.display = "none"));
-    backdrop.style.display = "none";
-  });
 }
 
 /*儲值方式, 捧花點擊變色*/

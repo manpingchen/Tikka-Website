@@ -232,6 +232,7 @@
           </div>
         </div>
       </section>
+
       <section class="live-frame">
         <!--行動版起始頁-->
         <div class="before-live mobile-only">
@@ -446,7 +447,7 @@
 
         <div class="iframe">
           <!-- 敬請期待 -->
-          <div class="coming-soon overlay" id="coming-soon" style="display: none">
+          <div class="coming-soon overlay" id="coming-soon">
             <div class="title flex-row">
               <button class="close" onclick="handleHideComponent('#coming-soon')">
                 <img src="images/close-icon.svg" alt="close" />
@@ -462,7 +463,7 @@
           </div>
 
           <!-- 捧花不足 -->
-          <div class="overlay" id="top-up-overlay" style="display: none">
+          <div class="overlay" id="top-up-overlay">
             <div class="title flex-row">
               <button class="close" onclick="handleHideComponent('#top-up-overlay')">
                 <img src="images/close-icon.svg" alt="close" />
@@ -478,7 +479,7 @@
           </div>
 
           <!-- 手機版禮物牆 -->
-          <div class="overlay rewards" id="rewards-overlay-mobile" style="display: none">
+          <div class="overlay rewards" id="rewards-overlay-mobile">
             <div class="content">
               <button class="close" onclick="handleHideComponent('#rewards-overlay-mobile')">
                 <img src="images/close-icon.svg" alt="close" />
@@ -584,7 +585,7 @@
             </div>
           </div>
           <!-- 手機版當日營收 -->
-          <div class="overlay revenue" id="revenue-overlay-mobile" style="display: none">
+          <div class="overlay revenue" id="revenue-overlay-mobile">
             <div class="title flex-row">
               <button class="close" onclick="handleCloseRevenueOverlay()">
                 <img src="images/close-icon.svg" alt="close" />
@@ -671,7 +672,7 @@
           </div>
 
           <!-- 手機版誰來觀看 -->
-          <div class="overlay viewer" id="viewer-overlay-mobile" style="display: none">
+          <div class="overlay viewer" id="viewer-overlay-mobile">
             <div class="title flex-column">
               <button class="close" onclick="handleCloseViewerOverlay()">
                 <img src="images/close-icon.svg" alt="close" />
@@ -701,33 +702,36 @@
           </div>
 
           <!-- 下方禮物送出框 -->
-          <div class="gift-sent-overlay overlay" style="display: none" id="gift-sent">
-            <div class="avatar-wrapper">
-              <img src="images/s2.jpg" class="avatar" alt="name" />
-            </div>
-            <div class="info">
-              <span class="name">小愛</span>
-              <div class="gift-name marquee-wall" id="marquee-gift-wall">
-                <span class="gift-text" id="marquee-gift-text"> 送了 名字短的名稱 </span>
+          <div class="gift-sent-overlay overlay" id="gift-sent">
+            <div class="container">
+              <div class="avatar-wrapper">
+                <img src="images/s2.jpg" class="avatar" alt="name" />
               </div>
+              <div class="info">
+                <span class="name">小愛</span>
+                <div class="gift-name marquee-wall" id="marquee-gift-wall">
+                  <span class="gift-text" id="marquee-gift-text"> 送了 名字短的名稱 </span>
+                </div>
+              </div>
+              <div class="gift-img-wrapper">
+                <img src="images/gift2.png" alt="禮物小圖" />
+              </div>
+              <div class="gift-count">x<span class="value">20</span></div>
             </div>
-            <div class="gift-img-wrapper">
-              <img src="images/gift2.png" alt="禮物小圖" />
-            </div>
-            <div class="gift-count">x<span class="value">20</span></div>
           </div>
 
           <!-- 我要分享遮罩 -->
           <div
             class="full-width streamer-profile-overlay social-media-shares overlay"
             id="social-media-shares"
-            style="display: none"
           >
             <div class="title flex-row">
               <button class="close" onclick="handleHideComponent('#social-media-shares')">
                 <img src="images/close-icon.svg" alt="close" />
               </button>
-              <p class="flex-row"><img src="images/social.svg" alt="分享" />分享</p>
+              <p class="flex-row title-text light-pink">
+                <img src="images/social.svg" alt="分享" />分享
+              </p>
             </div>
             <div class="content">
               <ul>
@@ -766,11 +770,11 @@
           </div>
 
           <!-- 滿版禮物圖 -->
-          <div class="gift-full-overlay overlay" style="display: none" id="gift-full-overlay">
+          <div class="gift-full-overlay overlay" id="gift-full-overlay">
             <img src="images/gift2.png" alt="" />
           </div>
           <!-- 手機版貼圖遮罩 -->
-          <div class="overlay sticker-overlay" id="sticker-overlay-mobile" style="display: none">
+          <div class="overlay sticker-overlay" id="sticker-overlay-mobile">
             <div class="title flex-row">
               <img src="images/my-sticker.svg" alt="我的貼圖" class="title-img" />
               <button class="close" onclick="handleHideComponent('.sticker-overlay')">
@@ -1432,9 +1436,13 @@
 
     <footer class="desktop-only">
       <div class="footer-content flex-row">
-        <nav class="flex-row">
-          <a href="#" class="line-icon"><img src="images/line.png" alt="line" /></a>
-          <ul>
+        <div class="flex-row social-icons">
+          <a href="#" class="line-icon social-icon"><img src="images/line.png" alt="line" /></a>
+          <a href="#" class="fb-icon social-icon"><img src="images/fb.png" alt="line" /></a>
+          <a href="#" class="ig-icon social-icon"><img src="images/ig.png" alt="line" /></a>
+        </div>
+        <div class="flex-column">
+          <ul class="flex-row footer-menu">
             <li>
               <a href="contact.html">聯絡我們</a>
             </li>
@@ -1445,11 +1453,12 @@
               <a href="policy.html">服務條款</a>
             </li>
           </ul>
-        </nav>
-        <p class="copyright">
-          <span>Copyright© 2022 by Tikka版權所有</span>
-          <span>Copyright© 2022 Tikka. All rights reserved.</span>
-        </p>
+
+          <p class="copyright">
+            <span>Copyright© 2022 by Tikka版權所有</span>
+            <span>Copyright© 2022 Tikka. All rights reserved.</span>
+          </p>
+        </div>
       </div>
     </footer>
     <script src="js/header.js"></script>
