@@ -398,13 +398,6 @@ function switchTotalByCurrency(id, parentId) {
     id === "nt-dollar" ? "NT." + ntDollarValue : pointValue;
 }
 
-// //handle follow button
-// function handleFollow(_, el) {
-//   const element = el.querySelector(".follow-text");
-//   element.innerText = "已追蹤";
-//   document.querySelector(`#${el.id}`).classList.add("pink");
-// }
-
 /* 追蹤按鈕文字 */
 function handleFollow(element) {
   [...document.querySelectorAll(`.${[...element.classList].join(".")}`)].map((node) => {
@@ -431,4 +424,49 @@ function handleLiveItemClick(target) {
 function handleAddProductToCart(target) {
   const productId = target.parentNode.id;
   console.log({ productId });
+}
+
+///////////// 貼圖、對話相關功能 ///////////
+/* 切換貼圖列表 */
+function showStickersDetail(tabId, tabParentId) {
+  [...document.querySelectorAll(".sticker-body")].map((node) => {
+    node.style.display = "none";
+  });
+  setActiveStatus(tabParentId, tabId);
+  const selector = "#" + tabId + "-list";
+  handleShowComponent(selector, "grid");
+}
+
+/* 確認對話是否需加入日期分割元件 */
+function ifChatNeedNewDate() {
+  const allDates = document.querySelectorAll(".date-value");
+  const datesArray = [...allDates];
+  const date = new Date();
+  const today = date.getFullYear() + "." + (date.getMonth() + 1) + "." + date.getDate();
+
+  const isNewDate = datesArray.filter(({ innerText }) => innerText === today).length === 0;
+
+  if (!isNewDate) return false;
+
+  const dateElement = document.createElement("div");
+  dateElement.classList.add("chat-date");
+  const dateValueElement = document.createElement("p");
+  dateValueElement.classList.add("date-value");
+  dateValueElement.innerHTML = today;
+
+  dateElement.append(dateValueElement);
+  return document.querySelector(".chat-body").appendChild(dateElement);
+}
+
+/* 建立Avatar */
+function buildAvatar() {
+  const avatarElement = document.createElement("div");
+  avatarElement.classList.add("avatar-wrapper");
+
+  const avatarImgElement = document.createElement("img");
+  avatarImgElement.classList.add("avatar");
+  avatarImgElement.src = "images/s2.jpg";
+
+  avatarElement.append(avatarImgElement);
+  return avatarElement;
 }

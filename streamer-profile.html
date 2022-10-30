@@ -838,11 +838,7 @@
             <input type="text" placeholder="跟主播聊聊..." id="new-chat-input" />
           </div>
           <div class="btns">
-            <button
-              type="button open-overlay"
-              class="face-btn"
-              onclick="handleShowComponent('.sticker-overlay')"
-            >
+            <button type="button open-overlay" class="face-btn" onclick="handleShowStickers()">
               <img src="images/face.svg" />
             </button>
             <button type="button open-overlay" onclick="handleAddTextToChat()">
@@ -850,6 +846,115 @@
             </button>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- 貼圖遮罩 -->
+    <div
+      class="overlay streamer-profile-overlay full-width sticker-overlay"
+      id="sticker-overlay-mobile"
+    >
+      <div class="title flex-row">
+        <img src="images/my-sticker.svg" alt="我的貼圖" class="title-img" />
+        <button class="close" onclick="handleHideComponent('.sticker-overlay')">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+      </div>
+      <div class="detail-links stickers-details" id="stickers-details">
+        <ul class="stickers-detail-tabs">
+          <li id="all-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
+            <a href="#">All</a>
+          </li>
+          <li id="popular-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
+            <a href="#">熱門</a>
+          </li>
+          <li id="my-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
+            <a href="#">我的貼圖</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="sticker-body" id="all-stickers-list">
+          <button class="sticker-item add-sticker">
+            <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleAddStickerToChat()">
+              <img src="images/sticker2.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+            <span class="value">230</span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleAddStickerToChat()">
+              <img src="images/sticker2.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+            <span class="value">230</span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleAddStickerToChat()">
+              <img src="images/sticker2.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+            <span class="value">230</span>
+          </button>
+        </div>
+        <div class="sticker-body" id="popular-stickers-list" style="display: none">
+          <button class="sticker-item add-sticker">
+            <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleAddStickerToChat()">
+              <img src="images/sticker.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+            <span class="value">230</span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleAddStickerToChat()">
+              <img src="images/sticker.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+            <span class="value">230</span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleAddStickerToChat()">
+              <img src="images/sticker.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+            <span class="value">230</span>
+          </button>
+        </div>
+        <div class="sticker-body" id="my-stickers-list" style="display: none">
+          <button class="sticker-item add-sticker">
+            <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleAddStickerToChat()">
+              <img src="images/sticker2.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleAddStickerToChat()">
+              <img src="images/sticker2.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleAddStickerToChat()">
+              <img src="images/sticker2.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+          </button>
+        </div>
+      </div>
+      <div class="sticker-footer flex-row">
+        <span class="point flex-row">2740000</span>
+        <button id="buy-button" type="button" onclick="handleHideComponent('.sticker-overlay')">
+          購買
+        </button>
       </div>
     </div>
 
@@ -967,42 +1072,19 @@
         const inputField = document.getElementById("new-chat-input");
         const chatText = inputField.value;
 
-        const allDates = document.querySelectorAll(".date-value");
-        const datesArray = [...allDates];
-        const date = new Date();
-        const today = date.getFullYear() + "." + (date.getMonth() + 1) + "." + date.getDate();
-
         if (chatText) {
-          /* 確認是否加入對話日期 */
-          const isNewDate = datesArray.filter(({ innerText }) => innerText === today).length === 0;
-
-          if (isNewDate) {
-            const dateElement = document.createElement("div");
-            dateElement.classList.add("chat-date");
-            const dateValueElement = document.createElement("p");
-            dateValueElement.classList.add("date-value");
-            dateValueElement.innerHTML = today;
-
-            dateElement.append(dateValueElement);
-            document.querySelector(".chat-body").appendChild(dateElement);
-          }
+          ifChatNeedNewDate();
 
           /* 加入對話 */
           const newElement = document.createElement("div");
           newElement.classList.add("chat-item", "my-chat");
 
-          const avatarElement = document.createElement("div");
-          avatarElement.classList.add("avatar-wrapper");
-
-          const avatarImgElement = document.createElement("img");
-          avatarImgElement.classList.add("avatar");
-          avatarImgElement.src = "images/s2.jpg";
+          const avatarElement = buildAvatar();
 
           const contentElement = document.createElement("span");
           contentElement.classList.add("chat-content");
           contentElement.innerHTML = chatText;
 
-          avatarElement.append(avatarImgElement);
           newElement.append(avatarElement);
           newElement.append(contentElement);
           document.getElementById("followers-chat-items").appendChild(newElement);
@@ -1018,6 +1100,38 @@
       /* 清空對話 */
       function handleClearChat() {
         const chatBody = (document.getElementById("followers-chat-items").innerHTML = "");
+      }
+
+      /* 開啟貼圖遮罩 */
+      function handleShowStickers() {
+        handleShowComponent(".sticker-overlay");
+        handleHideComponent(".followers-chat-overlay");
+      }
+
+      /* 加貼圖至對話框 */
+      function handleAddStickerToChat() {
+        const imgElement = event.target.outerHTML;
+
+        if (imgElement) {
+          ifChatNeedNewDate();
+
+          const newElement = document.createElement("div");
+          newElement.classList.add("chat-item", "sticker-content", "my-chat");
+
+          const avatarElement = buildAvatar();
+
+          const contentElement = document.createElement("span");
+          contentElement.classList.add("chat-content");
+          contentElement.innerHTML = imgElement;
+
+          newElement.append(avatarElement);
+          newElement.append(contentElement);
+
+          document.getElementById("followers-chat-items").appendChild(newElement);
+          handleHideComponent(".sticker-overlay");
+          handleShowComponent("#followers-chat-overlay");
+          locateScrollbar();
+        }
       }
     </script>
   </body>

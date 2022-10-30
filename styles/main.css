@@ -1915,23 +1915,23 @@ main.live-on section.left-column div.sticker-body {
   align-content: baseline;
 }
 
-main.live-on div.sticker-overlay {
-  height: 400px;
+div.sticker-overlay {
+  height: auto !important;
 }
 
-main.live-on div.sticker-overlay div.title {
+div.sticker-overlay div.title {
   height: 50px;
 }
 
-main.live-on div.sticker-overlay div.title button.close {
+div.sticker-overlay div.title button.close {
   top: 10px;
 }
 
-main.live-on div.sticker-overlay div.title img.title-img {
+div.sticker-overlay div.title img.title-img {
   width: 140px;
 }
 
-main.live-on div.sticker-overlay ul.stickers-detail-tabs {
+div.sticker-overlay ul.stickers-detail-tabs {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -1939,28 +1939,28 @@ main.live-on div.sticker-overlay ul.stickers-detail-tabs {
   margin-bottom: 1rem;
 }
 
-main.live-on div.sticker-overlay ul.stickers-detail-tabs li:not(:first-child) {
+div.sticker-overlay ul.stickers-detail-tabs li:not(:first-child) {
   border-left: 2px solid #fff;
   padding-left: 0.5rem;
 }
 
-main.live-on div.sticker-overlay ul.stickers-detail-tabs li a {
+div.sticker-overlay ul.stickers-detail-tabs li a {
   color: #fff;
   text-decoration: none;
 }
 
-main.live-on div.sticker-overlay ul.stickers-detail-tabs li.active a {
+div.sticker-overlay ul.stickers-detail-tabs li.active a {
   text-shadow: 0 0 7px #c40761;
 }
 
-main.live-on div.sticker-overlay div.content {
+div.sticker-overlay div.content {
   padding: 10px;
   overflow: auto;
-  height: calc(100% - 140px);
+  height: calc(100% - 150px) !important;
   justify-content: flex-start !important;
 }
 
-main.live-on div.sticker-overlay div.sticker-body {
+div.sticker-overlay div.sticker-body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
@@ -1968,37 +1968,37 @@ main.live-on div.sticker-overlay div.sticker-body {
   width: 100%;
 }
 
-main.live-on div.sticker-overlay div.sticker-body button.add-sticker {
+div.sticker-overlay div.sticker-body button.add-sticker {
   background: #ffffffaa;
 }
 
-main.live-on div.sticker-overlay div.sticker-body button.add-sticker.sticker-item .img-wrap img {
+div.sticker-overlay div.sticker-body button.add-sticker.sticker-item .img-wrap img {
   width: 40px !important;
 }
 
-main.live-on div.sticker-overlay div.sticker-body .sticker-item {
+div.sticker-overlay div.sticker-body .sticker-item {
   border-radius: 10px;
   border: 2px solid #fff;
   margin-bottom: 70px;
 }
 
-main.live-on div.sticker-overlay div.sticker-body#my-stickers-list .sticker-item .sticker-name {
+div.sticker-overlay div.sticker-body#my-stickers-list .sticker-item .sticker-name {
   margin-bottom: 30px;
 }
 
-main.live-on div.sticker-overlay div.sticker-body .sticker-item .img-wrap img {
+div.sticker-overlay div.sticker-body .sticker-item .img-wrap img {
   height: auto;
   width: 100% !important;
 }
 
-main.live-on div.sticker-overlay div.sticker-body .sticker-item .sticker-name {
+div.sticker-overlay div.sticker-body .sticker-item .sticker-name {
   margin-top: 70px;
   color: #fff;
   font-size: 1rem;
   margin-bottom: 0.25rem;
 }
 
-main.live-on div.sticker-overlay div.sticker-body .sticker-item .value {
+div.sticker-overlay div.sticker-body .sticker-item .value {
   color: #fff;
   font-size: 1rem;
   background: url(../images/coin.png) no-repeat left center;
@@ -2008,11 +2008,11 @@ main.live-on div.sticker-overlay div.sticker-body .sticker-item .value {
   padding-left: 13px;
 }
 
-main.live-on div.sticker-overlay div.sticker-footer {
+div.sticker-overlay div.sticker-footer {
   height: 60px;
 }
 
-main.live-on .sticker-item {
+.sticker-item {
   border: 0;
   margin: 0;
   padding: 0;
@@ -2024,16 +2024,16 @@ main.live-on .sticker-item {
   position: relative;
 }
 
-main.live-on button.sticker-item:hover {
+button.sticker-item:hover {
   box-shadow: 0 0 5px 2px #fff;
   filter: none;
 }
 
-main.live-on button.sticker-item:hover img {
+button.sticker-item:hover img {
   filter: none;
 }
 
-main.live-on .sticker-item .img-wrap {
+.sticker-item .img-wrap {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -2043,27 +2043,27 @@ main.live-on .sticker-item .img-wrap {
   top: 0;
 }
 
-main.live-on .sticker-item .img-wrap img {
+.sticker-item .img-wrap img {
   height: 100%;
 }
 
-main.live-on button.sticker-item:not(.add-sticker) {
+button.sticker-item:not(.add-sticker) {
   background: #fff;
   cursor: pointer;
   border-radius: 0;
 }
 
-main.live-on button.add-sticker {
+button.add-sticker {
   background: rgb(52, 52, 52);
   border-radius: 0;
 }
 
-main.live-on button.add-sticker:hover {
+button.add-sticker:hover {
   filter: none;
   background: rgb(92, 92, 92);
 }
 
-main.live-on button.add-sticker img {
+button.add-sticker img {
   width: 40px;
 }
 
@@ -2913,11 +2913,11 @@ div.followers-chat-overlay div.chat-item .chat-content {
   max-width: 260px;
 }
 
-div.chat-date{
+div.chat-date {
   margin-bottom: 1rem;
 }
 
-div.chat-date p{
+div.chat-date p {
   background: rgba(153, 153, 153, 0.6);
   color: white;
   padding: 0.25rem 0.5rem;
@@ -7655,7 +7655,8 @@ div.overlay.event-detail-overlay button.close img {
     height: 250px;
   }
 
-  div.overlay.streamer-profile-overlay div.title {
+  div.overlay.streamer-profile-overlay div.title,
+  div.overlay.sticker-overlay div.title {
     height: 60px;
   }
 
@@ -8515,8 +8516,58 @@ div.overlay p.title-text.light-pink img {
   color: white;
 }
 
+.sticker-overlay .sticker-footer {
+  background: #00000050;
+  color: white;
+  padding: 0 20px;
+  justify-content: space-between;
+}
+
+.sticker-footer .point::before {
+  content: "";
+  background: url(../images/coin.png) no-repeat center center;
+  background-size: cover;
+  filter: drop-shadow(0 0 3px rgb(80, 80, 80));
+  display: inline-block;
+  width: 30px;
+  height: 50px;
+}
+
+.sticker-footer button#buy-button {
+  width: 90px;
+  font-size: 0.875rem;
+  padding: 5px;
+  color: #d6236c;
+  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
+}
+
+.sticker-footer button#buy-button:hover {
+  background: linear-gradient(0deg, #e60672, #ef99bf) !important;
+  color: #fff;
+}
+
+div.sticker-overlay.full-width div.sticker-body {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+@media screen and (max-width: 990px) {
+  div.sticker-overlay.full-width div.sticker-body {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.sticker-overlay.full-width div.sticker-body {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 @media screen and (max-width: 374px) {
   .followers-overlay ul.followers-list .follower-name {
     width: 130px;
+  }
+
+  div.sticker-overlay.full-width div.sticker-body {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
