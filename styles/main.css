@@ -718,15 +718,21 @@ main.index section.live .live-list ul li span.count {
 #ranking-slides li div.img-wrap {
   position: relative;
   width: 60%;
-  height: 100%;
+  padding-top: 80%;
   left: 30%;
   border-radius: 10px;
   box-shadow: 0 0 10px #e50370;
   border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #ranking-slides li div.img-wrap img {
-  width: 100%;
+  min-width: 100%;
+  position: absolute;
+  top: 0;
+  height: 110%;
 }
 
 @media screen and (min-width: 769px) {
@@ -8337,7 +8343,7 @@ section.products-highlight a.img-wrap {
   width: 100%;
   max-width: 1100px;
   position: relative;
-  padding-top: 56.5%;
+  padding-top: 50%;
   height: 0;
   display: flex;
   justify-content: center;
