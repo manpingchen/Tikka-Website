@@ -71,7 +71,7 @@
     <main class="follow">
       <form action="/portal/index/form" method="get" name="form" id="form" class="search-form">
         <div class="search-container">
-          <input type="text" placeholder="請輸入關鍵字" name="search" />
+          <input type="text" placeholder="請輸入關鍵字" name="search" id="search-input" />
           <div class="search-controls">
             <button
               type="button"
@@ -80,7 +80,9 @@
             >
               <span class="material-icons">&#xE5CD;</span>
             </button>
-            <button type="submit"><span class="material-icons">&#xE8B6;</span></button>
+            <button type="button" class="search-submit" onclick="handleSearch()">
+              <span class="material-icons">&#xE8B6;</span>
+            </button>
           </div>
         </div>
       </form>
@@ -99,7 +101,7 @@
               <span class="time">每週一到每週六21:00-22:00</span>
             </p>
           </a>
-          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
+          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
@@ -117,12 +119,7 @@
               <span class="time">每週一到每週六21:00-22:00</span>
             </p>
           </a>
-          <button
-            type="button"
-            class="follow-btn"
-            id="follow-2"
-            onclick="handleFollow(event, this)"
-          >
+          <button type="button" class="follow-btn" id="follow-2" onclick="handleFollow( this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
@@ -140,7 +137,7 @@
               <span class="time">每週一到每週六21:00-22:00</span>
             </p>
           </a>
-          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
+          <button type="button" class="follow-btn" id="follow-3" onclick="handleFollow(this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
@@ -158,7 +155,7 @@
               <span class="time">每週一到每週六21:00-22:00</span>
             </p>
           </a>
-          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
+          <button type="button" class="follow-btn" id="follow-4" onclick="handleFollow(this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
@@ -176,7 +173,7 @@
               <span class="time">每週一到每週六21:00-22:00</span>
             </p>
           </a>
-          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
+          <button type="button" class="follow-btn" id="follow-5" onclick="handleFollow(this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
@@ -194,7 +191,7 @@
               <span class="time">每週一到每週六21:00-22:00</span>
             </p>
           </a>
-          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
+          <button type="button" class="follow-btn" id="follow-6" onclick="handleFollow(this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
@@ -212,7 +209,7 @@
               <span class="time">每週一到每週六21:00-22:00</span>
             </p>
           </a>
-          <button type="button" class="follow-btn" id="follow" onclick="handleFollow(event, this)">
+          <button type="button" class="follow-btn" id="follow-7" onclick="handleFollow(this)">
             <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text"
               >追蹤</span
             >
@@ -285,12 +282,7 @@
           </div>
           <div class="info">
             <p class="name">主播姓名</p>
-            <button
-              type="button"
-              class="follow-btn"
-              id="follow-m-1"
-              onclick="handleFollow(event, this)"
-            >
+            <button type="button" class="follow-btn" id="follow-m-1" onclick="handleFollow(this)">
               <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text">
                 追蹤
               </span>
@@ -363,7 +355,7 @@
               type="button"
               class="follow-btn pink"
               id="follow-m-2"
-              onclick="handleFollow(event, this)"
+              onclick="handleFollow(this)"
             >
               <img src="images/heart-icon.svg" alt="heart icon" /><span class="follow-text">
                 追蹤
@@ -423,6 +415,42 @@
               </div>
             </li>
           </ul>
+        </div>
+      </div>
+
+      <!-- Search Result -->
+      <div class="search-result-list" style="display: none">
+        <div class="search-item">
+          <div class="img-wrap-with-live-chip" onclick="directPage({live: true})">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip pink">LIVE</span>
+          </div>
+          <div class="info">
+            <p class="name ellipsis">主播姓名</p>
+            <p class="popular">9999999</p>
+          </div>
+          <button type="button" class="follow-btn" id="search-1" onclick="handleFollow(this)">
+            <img src="images/heart-icon.svg" alt="heart icon" />
+            <span class="follow-text"> 追蹤 </span>
+          </button>
+        </div>
+        <div class="search-item">
+          <div class="img-wrap-with-live-chip" onclick="directPage({live: false})">
+            <div class="img-wrap">
+              <img src="images/s2.jpg" alt="" />
+            </div>
+            <span class="live-chip">LIVE</span>
+          </div>
+          <div class="info">
+            <p class="name ellipsis">主播姓名</p>
+            <p class="popular">9999999</p>
+          </div>
+          <button type="button" class="follow-btn" id="search-2" onclick="handleFollow(this)">
+            <img src="images/heart-icon.svg" alt="heart icon" />
+            <span class="follow-text"> 追蹤 </span>
+          </button>
         </div>
       </div>
     </main>
@@ -580,7 +608,7 @@
     </div>
 
     <!-- 捧花不足 -->
-    <div class="overlay" id="top-up-overlay">
+    <div class="overlay full-width" id="top-up-overlay">
       <div class="title flex-row">
         <button class="close" onclick="handleHideComponent('#top-up-overlay')">
           <img src="images/close-icon.svg" alt="close" />
@@ -596,12 +624,12 @@
     </div>
 
     <!-- 滿版禮物圖 -->
-    <div class="gift-full-overlay search-page overlay" id="gift-full-overlay">
+    <div class="gift-full-overlay full-width search-page overlay" id="gift-full-overlay">
       <img src="images/gift2.png" alt="" />
     </div>
 
     <!-- 下方禮物送出框 -->
-    <div class="gift-sent-overlay search-page overlay" id="gift-sent">
+    <div class="gift-sent-overlay full-width search-page overlay" id="gift-sent">
       <div class="container">
         <div class="avatar-wrapper">
           <img src="images/s2.jpg" class="avatar" alt="name" />
@@ -698,6 +726,27 @@
       function handleShowRewardWallFromVideoOverlay() {
         handleShowComponent("#rewards-overlay");
         showRewardDetail("gift-all-mobile", "gift-details-mobile");
+      }
+
+      /* 搜尋 */
+      function handleSearch() {
+        const searchValue = document.getElementById("search-input").value;
+        if (searchValue) {
+          console.log(searchValue);
+          [...document.querySelectorAll(".live-items")].forEach((node) => {
+            node.style.display = "none";
+          });
+          handleShowComponent(".search-result-list");
+        }
+      }
+
+      /* 轉導頁面*/ 
+      function directPage({live}){
+        if(live){
+          window.location.href = "live-on.html";
+        } else {
+          window.location.href = "streamer-profile.html";
+        }
       }
     </script>
   </body>

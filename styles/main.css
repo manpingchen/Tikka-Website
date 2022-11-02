@@ -3436,7 +3436,7 @@ main.follow button.follow-btn:hover {
     display: none !important;
   }
   main.follow div.live-items.mobile-only {
-    display: block !important;
+    display: block;
   }
   main.follow {
     width: 100%;
@@ -3469,7 +3469,8 @@ div.recommend-items {
   gap: 20px;
 }
 
-div.recommend-item {
+div.recommend-item,
+div.search-item {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -3491,7 +3492,8 @@ div.recommend-item p.number {
   line-height: 30px;
 }
 
-div.recommend-item > div.img-wrap {
+div.recommend-item > div.img-wrap,
+div.search-item > div.img-wrap {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -3502,11 +3504,13 @@ div.recommend-item > div.img-wrap {
   justify-content: center;
 }
 
-div.recommend-item > div.img-wrap img {
+div.recommend-item > div.img-wrap img,
+div.search-item > div.img-wrap img {
   height: 100%;
 }
 
-div.recommend-item div.info {
+div.recommend-item div.info,
+div.search-item div.info {
   color: #717171;
   display: flex;
   gap: 8px;
@@ -4263,7 +4267,8 @@ main.follow .search-container {
   color: #e60672;
 }
 
-.search-container button[type="submit"] {
+.search-container button[type="submit"],
+.search-container button.search-submit {
   -webkit-border-top-right-radius: 40px;
   -webkit-border-bottom-right-radius: 40px;
   -moz-border-radius-topright: 40px;
@@ -4275,7 +4280,8 @@ main.follow .search-container {
   transition: 0.4s;
 }
 
-.search-container button[type="submit"]:hover {
+.search-container button[type="submit"]:hover,
+.search-container button.search-submit:hover {
   filter: opacity(0.5);
 }
 
@@ -4874,7 +4880,7 @@ main.live-on div.gift-sent-overlay div.gift-count .value {
 }
 
 div.gift-sent-overlay.search-page {
-  top: 65%;
+  /* top: 65%; */
 }
 
 div.gift-sent-overlay div.info {
@@ -7751,7 +7757,8 @@ div.img-wrap-with-live-chip span.live-chip {
   font-size: 0.75rem;
 }
 
-.search-list div.recommend-item {
+.search-list div.recommend-item,
+.search-result-list div.search-item {
   width: 90%;
   margin: 0 auto;
   justify-content: space-around;
@@ -7764,7 +7771,19 @@ div.recommend-item div.info {
   width: 100px;
 }
 
-div.recommend-item div.info .name {
+div.search-item p.popular {
+  background: url('../images/fire.svg') no-repeat center left;
+  background-size: 20px 20px;
+  padding-left: 23px;
+}
+
+div.search-item button.follow-btn{
+  position: relative;
+  bottom: initial;
+}
+
+div.recommend-item div.info .name,
+div.search-item div.info .name {
   text-overflow: ellipsis;
   width: 100%;
   overflow: hidden;
@@ -7963,7 +7982,7 @@ div.overlay.highlight-content-overlay div.header div.img-wrap img {
 }
 
 div.overlay.highlight-content-overlay div.content {
-  height: calc(100% - 5.5rem);
+  height: calc(100% - 9rem);
   position: relative;
   gap: 0;
   align-items: baseline;
