@@ -2737,7 +2737,7 @@ main.live-on div.profile.mobile-only span.name {
 main.live-on div.profile.mobile-only div.btns {
   margin-left: -55px;
   z-index: 4;
-  margin-top: -4px;
+  margin-top: -9px;
   gap: 2px;
 }
 
@@ -2762,6 +2762,7 @@ main.live-on div.frame-top-bar.mobile-only .viewer-tab {
   position: relative;
   width: 40px;
   margin-left: 10px;
+  height: 50px;
 }
 
 main.live-on div.frame-top-bar.mobile-only .viewer-tab .value {
@@ -2771,7 +2772,6 @@ main.live-on div.frame-top-bar.mobile-only .viewer-tab .value {
   padding: 0;
   border-radius: 50%;
   background: #ffb4d3;
-  margin-top: -16px;
   line-height: 36px;
   text-align: center;
   color: #d6236c;
@@ -2784,7 +2784,7 @@ main.live-on div.frame-top-bar.mobile-only .viewer-tab span.icon {
   position: absolute;
   color: #d6236c;
   width: 90%;
-  bottom: -12px;
+  bottom: 0;
   left: 5%;
   padding: 2px 5px;
   background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
@@ -4594,9 +4594,17 @@ div.overlay {
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   backdrop-filter: blur(5px);
-  transform: translate(0, 100%);
+
   transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   overflow: hidden;
+}
+
+div.overlay:not(.from-right) {
+  transform: translate(0, 100%);
+}
+
+div.overlay.from-right {
+  transform: translate(100%, 0px);
 }
 
 div.backdrop {
@@ -5214,6 +5222,13 @@ main.live-on div.mobile-only.frame-top-bar ul.revenue-list .value {
   }
   main.live-on ul.viewer-list {
     grid-template-columns: repeat(4, 1fr);
+  }
+  main.live-on div#viewer-overlay-mobile ul.viewer-list {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 1rem;
+  }
+  main.live-on div#viewer-overlay-mobile ul.viewer-list > li .name {
+    width: 65px;
   }
 }
 
@@ -8635,4 +8650,11 @@ div.sticker-overlay.full-width div.sticker-body {
   div.sticker-overlay.full-width div.sticker-body {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+div.overlay#viewer-overlay-mobile {
+  height: 100%;
+  border-radius: 0;
+  width: 50%;
+  right: 0;
 }

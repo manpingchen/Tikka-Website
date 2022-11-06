@@ -672,9 +672,9 @@
           </div>
 
           <!-- 手機版誰來觀看 -->
-          <div class="overlay viewer" id="viewer-overlay-mobile">
+          <div class="overlay viewer from-right" id="viewer-overlay-mobile">
             <div class="title flex-column">
-              <button class="close" onclick="handleCloseViewerOverlay()">
+              <button class="close" onclick="handleHideComponent('#viewer-overlay-mobile')">
                 <img src="images/close-icon.svg" alt="close" />
               </button>
               <p class="flex-row"><img src="images/gift.svg" alt="禮物icon" />觀眾席</p>
@@ -691,10 +691,10 @@
             <div class="content">
               <ul class="viewer-list" id="viewer-list">
                 <li>
-                  <div class="img-wrap">
+                  <!-- <div class="img-wrap">
                     <img src="images/s2.jpg" alt="" />
                   </div>
-                  <div class="name">觀看者姓名</div>
+                  <div class="name">觀看者姓名</div> -->
                 </li>
               </ul>
             </div>
@@ -1731,11 +1731,14 @@
       /* 手機版 顯示小觀眾或VIP資料 */
       function showViewerList(tabId, tabParentId) {
         /* 讀取vip或小觀眾資料 */
+
+        const ifVIP = tabId.includes("vip");
+        const ifGeneral = tabId.includes("general");
         const data = () => {
-          if (tabId.includes("vip")) {
+          if (ifVIP) {
             return vipViewers;
           }
-          if (tabId.includes("general")) {
+          if (ifGeneral) {
             return generalViewers;
           }
         };
@@ -1754,11 +1757,25 @@
           imgElement.src = data()[i].imgUrl;
 
           const nameElement = document.createElement("div");
+
           nameElement.innerText = data()[i].name;
           nameElement.classList.add("name");
 
           imgWrapElement.append(imgElement);
-          newElement.append(imgWrapElement, nameElement);
+
+          if (ifVIP) {
+            const badgeWrapElement = document.createElement("div");
+            badgeWrapElement.classList.add("badge", "vip");
+
+            const badgeElement = document.createElement("img");
+            badgeElement.src = data()[i].imgUrl;
+
+            badgeWrapElement.append(badgeElement);
+            newElement.append(badgeWrapElement, imgWrapElement, nameElement);
+          } else {
+            newElement.append(imgWrapElement, nameElement);
+          }
+
           newElement.onclick = function () {
             console.log("點擊", { newElement });
           };

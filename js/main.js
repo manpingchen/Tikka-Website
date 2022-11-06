@@ -205,7 +205,13 @@ const overlays = document.querySelectorAll(".overlay:not(.not-close-by-backdrop)
 
 if (backdrop) {
   backdrop.addEventListener("click", () => {
-    [...overlays].forEach((node) => (node.style.transform = "translate(0, 100%)"));
+    [...overlays].forEach((node) => {
+      const classList = node?.classList;
+      if (classList.contains("from-right")) {
+        return (node.style.transform = "translate(100%, 0)");
+      }
+      node.style.transform = "translate(0, 100%)";
+    });
     backdrop.style.display = "none";
   });
 }
@@ -216,8 +222,11 @@ function handleHideComponent(selector) {
   const classList = node?.classList;
 
   if (classList.contains("overlay")) {
-    node.style.transform = "translate(0, 100%)";
     backdrop.style.display = "none";
+    if (classList.contains("from-right")) {
+      return (node.style.transform = "translate(100%, 0)");
+    }
+    node.style.transform = "translate(0, 100%)";
   } else {
     node.style.display = "none";
   }
