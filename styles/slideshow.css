@@ -186,8 +186,8 @@ button.glide__bullet--active {
   .desktop-only ul,
   .mobile-scroll-drag ul {
     overflow-x: auto;
-    gap: 10px;
-    padding-left: 10%;
+    gap: 5px;
+    padding-left: 13%;
     touch-action: auto;
   }
 

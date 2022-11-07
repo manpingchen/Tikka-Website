@@ -705,8 +705,9 @@ main.index section.live .live-list ul li span.count {
 #ranking-slides li div.number {
   position: absolute;
   width: 40%;
-  height: 90%;
-  left: -5%;
+  height: 102%;
+  left: -4%;
+  top: -1%;
 }
 
 #ranking-slides li div.number img {
@@ -717,8 +718,10 @@ main.index section.live .live-list ul li span.count {
 
 #ranking-slides li div.img-wrap {
   position: relative;
+  /*3:4*/
   width: 60%;
-  padding-top: 80%;
+  padding-top: 78.811%;
+
   left: 30%;
   border-radius: 10px;
   box-shadow: 0 0 10px #e50370;
@@ -757,7 +760,7 @@ main.index section.live .live-list ul li span.count {
 
   main.index section.live .live-list ul li {
     padding: 0;
-    width: 170px;
+    width: 38%;
   }
   main.index section.live .live-list ul li p.live-info {
     width: 100%;
@@ -8259,7 +8262,7 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
 }
 
 #live-slides li {
-  margin: 0.35rem;
+  margin: 0;
 }
 
 #products-slides li {
@@ -8391,6 +8394,12 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
     width: 200px;
     flex-shrink: 0;
     padding-left: 1rem;
+  }
+  #ranking-slides li {
+    width: 60%;
+  }
+  #products-slides li {
+    width: 35%;
   }
 }
 
