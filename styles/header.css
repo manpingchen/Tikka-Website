@@ -136,6 +136,10 @@
     margin-bottom: 1rem;
   }
 
+  .nav__wrapper.active:active{
+    transform: translateX(-100%);
+  }
+
   .nav__item a img {
     height: 36px !important;
   }
