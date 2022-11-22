@@ -8554,7 +8554,7 @@ div.overlay p.title-text.light-pink img {
 .followers-overlay form.search-form {
   width: 100%;
   margin-bottom: 0rem;
-  max-width: 800px;
+  max-width: 600px;
 }
 
 .followers-overlay form.search-form > div.search-container {
