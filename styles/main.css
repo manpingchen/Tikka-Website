@@ -810,7 +810,8 @@ main.index section.live .live-list ul li span.count {
   }
 
   section.live .live-list ul li,
-  a.live-item {
+  a.live-item,
+  div.live-item a {
     padding: 0 !important;
   }
 
@@ -965,13 +966,13 @@ a.live-item div.img-wrap {
 }
 
 section.live .live-list ul li div.img-wrap img,
-a.live-item div.img-wrap img {
+.live-item div.img-wrap img {
   position: absolute;
   top: 0;
   width: 100%;
 }
 
-a.live-item div.img-wrap img {
+.live-item div.img-wrap img {
   left: 0;
 }
 
@@ -8666,4 +8667,17 @@ div.overlay#viewer-overlay-mobile {
   border-radius: 0;
   width: 50%;
   right: 0;
+}
+
+.live-item-footer {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.live-item-footer p.name {
+  color: #666;
+}
+
+.live-item-footer button {
+  margin-top: 0.5rem;
 }
