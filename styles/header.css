@@ -160,7 +160,10 @@
   padding: 0.2rem 0.35rem;
 }
 
-.nav__item a img,
+.nav__item a img {
+  display: block;
+  height: 30px;
+}
 .site-header__end a span img {
   display: block;
   height: 24px;
