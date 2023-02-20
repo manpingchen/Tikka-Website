@@ -206,6 +206,7 @@ const overlays = document.querySelectorAll(".overlay:not(.not-close-by-backdrop)
 if (backdrop) {
   backdrop.addEventListener("click", () => {
     [...overlays].forEach((node) => {
+      console.log(node)
       const classList = node?.classList;
       if (classList.contains("from-right")) {
         return (node.style.transform = "translate(100%, 0)");
