@@ -2334,7 +2334,7 @@ div.overlay.rewards {
   border-radius: 20px;
   padding: 1rem;
   background: #fea7cb;
-  height: calc(100% - 372px) !important;
+  height: calc(100% - 370px) !important;
 }
 
 main.live-on div.rewards {
@@ -2411,7 +2411,7 @@ div.overlay.rewards div.reward-item span.point {
 }
 
 div.overlay.rewards div.send-gift {
-  padding: 0 1rem 0 60px;
+  padding: 0 20px;
   background-position: 10px center;
   height: auto;
   background-size: 65px;
@@ -2575,6 +2575,15 @@ div.overlay.rewards div.send-gift {
   gap: 10px;
   justify-content: space-between;
   font-size: 1.4rem;
+}
+
+main.live-on div.send-gift {
+  margin-top: 0.5rem !important;
+  justify-content: space-between !important;
+}
+
+div.overlay.rewards div.send-gift {
+  margin-top: 0;
 }
 
 main.live-on div.send-gift img {
@@ -7020,7 +7029,17 @@ div.full-width.overlay.popular-products div.content section.reward-items-contain
   background: #ce9db1a1;
   width: 100%;
   max-width: none;
-  height: 100%;
+  height: calc(100% - 80px);
+  display: flex;
+  flex-direction: column;
+}
+
+.reward-items-container .reward-items {
+  flex-grow: 1;
+}
+
+.reward-items-container .footer {
+  flex-grow: 0;
 }
 
 div.full-width.overlay.personal-gifts,
@@ -7128,7 +7147,9 @@ div.full-width.overlay.rewards div.footer {
 
 div.full-width.overlay.rewards.streamer-profile-overlay div.footer,
 div.full-width.overlay.rewards.search-page-overlay div.footer {
-  height: 140px;
+  height: 60px;
+  flex-grow: 0;
+  flex-shrink: none;
 }
 
 div.full-width.overlay.rewards div.footer span.point {
