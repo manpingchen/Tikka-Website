@@ -202,11 +202,11 @@ function handleClearSearchValue(event, el) {
 // 遮罩以外點擊
 const backdrop = document.querySelector(".backdrop");
 const overlays = document.querySelectorAll(".overlay:not(.not-close-by-backdrop)");
+const body = document.querySelector("body");
 
 if (backdrop) {
   backdrop.addEventListener("click", () => {
     [...overlays].forEach((node) => {
-      console.log(node)
       const classList = node?.classList;
       if (classList.contains("from-right")) {
         return (node.style.transform = "translate(100%, 0)");
@@ -214,6 +214,7 @@ if (backdrop) {
       node.style.transform = "translate(0, 100%)";
     });
     backdrop.style.display = "none";
+    body.style.overflow = "auto";
   });
 }
 
@@ -231,6 +232,8 @@ function handleHideComponent(selector) {
   } else {
     node.style.display = "none";
   }
+
+  body.style.overflow = "auto";
 }
 
 /* 開啟元件 */
@@ -243,6 +246,8 @@ function handleShowComponent(selector, displayValue = "block") {
   } else {
     node.style.display = displayValue;
   }
+
+  body.style.overflow = "hidden";
 
   /* 如果元件為遮罩，則同步開啟backdrop，做為關閉遮罩之點擊範圍 */
   if (classList.contains("overlay") && !classList.contains("full-page")) {

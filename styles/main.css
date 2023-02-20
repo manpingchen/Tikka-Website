@@ -7545,15 +7545,21 @@ div.overlay.event-detail-overlay .container {
   padding-bottom: 10%;
   overflow-y: auto;
 }
-
-@media screen and (max-width: 480px) {
-  div.overlay.event-detail-overlay .container {
-    width: 90%;
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  div.overlay.event-detail-overlay {
+    width: 80%;
+    left: 10%;
   }
 }
 
-div.overlay.event-detail-overlay .backdrop {
-  position: sticky;
+@media screen and (max-width: 767px) {
+  div.overlay.event-detail-overlay {
+    width: 94%;
+    left: 3%;
+  }
+  div.overlay.event-detail-overlay .container {
+    padding: 3% 0;
+  }
 }
 
 div.overlay.event-detail-overlay .content {
