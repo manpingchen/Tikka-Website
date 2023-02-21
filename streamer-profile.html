@@ -124,7 +124,7 @@
               <span class="value">999,999,999</span>
             </div>
             <div
-              class="performance-data flex-row followers"
+              class="performance-data flex-row followers streamer-authenticated"
               onclick="handleShowComponent('#followers-overlay')"
             >
               <span class="value">粉絲 99.9K</span>
@@ -240,7 +240,7 @@
         </button>
         <button class="button-like"><img src="images/microphone.svg" alt="" /> 觀看直播</button>
         <button class="button-like" onclick="handleChat()">
-          <img src="images/dialog-icon.svg" alt="" /> 私訊聊聊
+          <img src="images/dialog-icon.svg" alt="" /> 聊聊
         </button>
       </section>
     </main>
@@ -820,12 +820,18 @@
     >
       <!-- 遮罩標題 -->
       <div class="title flex-row">
-        <button class="clear" onclick="handleClearChat()">
-          <img src="images/close-icon.svg" alt="close" /> 清空聊聊
+        <button class="clear" onclick="handleClearChat()">清空聊聊</button>
+        <button class="close" onclick="handleHideComponent('.followers-chat-overlay')">
+          <img src="images/close-icon.svg" alt="close" />
         </button>
-        <p class="flex-row title-text light-pink">
-          <img src="images/dialog-icon.svg" alt="粉絲" /> 私訊聊聊
-        </p>
+        <div class="flex-row title-text streamer-name">
+          <div class="avatar-wrapper">
+            <img src="images/s2.jpg" alt="" class="avatar" />
+          </div>
+          <p class="streamer-name ellipsis">
+            主播名稱主播名稱
+          </p>
+        </div>
       </div>
 
       <!-- 遮罩內容 -->
@@ -1025,6 +1031,20 @@
     <script src="js/fakeData.js"></script>
     <script src="js/main.js"></script>
     <script>
+      /* 共用 */
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      /* 從網址判斷是主播登入或一般使用者 */
+      const streamerId = urlParams.get("streamerId");
+      /* 若非主播登入，隱藏僅限主播之元件 */
+      if (!streamerId) {
+        const streamerOnlyEle = document.getElementsByClassName("streamer-authenticated");
+        new Set(streamerOnlyEle).forEach((node) => {
+          node.style.display = "none";
+        });
+      }
+
       function openIntro() {
         document.querySelector(".intro-content").style.height = "300px";
         document.querySelector(".toggle-open").disabled = false;
@@ -1067,8 +1087,7 @@
       }
 
       // 開啟經典影片
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
+
       const videoId = urlParams.get("videoId");
       if (videoId) {
         showVideoById(videoId);
