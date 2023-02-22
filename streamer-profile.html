@@ -828,9 +828,7 @@
           <div class="avatar-wrapper">
             <img src="images/s2.jpg" alt="" class="avatar" />
           </div>
-          <p class="streamer-name ellipsis">
-            主播名稱主播名稱
-          </p>
+          <p class="streamer-name ellipsis">主播名稱主播名稱</p>
         </div>
       </div>
 
@@ -918,21 +916,21 @@
             <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleAddStickerToChat()">
+            <span class="img-wrap" onclick="handleMarkSticker()">
               <img src="images/sticker2.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
             <span class="value">230</span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleAddStickerToChat()">
+            <span class="img-wrap" onclick="handleMarkSticker()">
               <img src="images/sticker2.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
             <span class="value">230</span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleAddStickerToChat()">
+            <span class="img-wrap" onclick="handleMarkSticker()">
               <img src="images/sticker2.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
@@ -944,21 +942,21 @@
             <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleAddStickerToChat()">
+            <span class="img-wrap" onclick="handleMarkSticker()">
               <img src="images/sticker.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
             <span class="value">230</span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleAddStickerToChat()">
+            <span class="img-wrap" onclick="handleMarkSticker()">
               <img src="images/sticker.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
             <span class="value">230</span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleAddStickerToChat()">
+            <span class="img-wrap" onclick="handleMarkSticker()">
               <img src="images/sticker.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
@@ -970,19 +968,19 @@
             <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleAddStickerToChat()">
+            <span class="img-wrap" onclick="handleMarkSticker()">
               <img src="images/sticker2.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleAddStickerToChat()">
+            <span class="img-wrap" onclick="handleMarkSticker()">
               <img src="images/sticker2.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleAddStickerToChat()">
+            <span class="img-wrap" onclick="handleMarkSticker()">
               <img src="images/sticker2.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
@@ -994,6 +992,7 @@
         <button id="buy-button" type="button" onclick="handleHideComponent('.sticker-overlay')">
           購買
         </button>
+        <button id="send-button" type="button" onclick="handleAddStickerToChat()">送出</button>
       </div>
     </div>
 
@@ -1161,29 +1160,13 @@
       }
 
       /* 加貼圖至對話框 */
-      function handleAddStickerToChat() {
-        const imgElement = event.target.outerHTML;
+      function handleMarkSticker(e) {
+        const previousSelectedStickerNodes = document.querySelectorAll(".selected-sticker");
+        [...previousSelectedStickerNodes].forEach((node) => {
+          node.classList.remove("selected-sticker");
+        });
 
-        if (imgElement) {
-          ifChatNeedNewDate();
-
-          const newElement = document.createElement("div");
-          newElement.classList.add("chat-item", "sticker-content", "my-chat");
-
-          const avatarElement = buildAvatar();
-
-          const contentElement = document.createElement("span");
-          contentElement.classList.add("chat-content");
-          contentElement.innerHTML = imgElement;
-
-          newElement.append(avatarElement);
-          newElement.append(contentElement);
-
-          document.getElementById("followers-chat-items").appendChild(newElement);
-          handleHideComponent(".sticker-overlay");
-          handleShowComponent("#followers-chat-overlay");
-          locateScrollbar();
-        }
+        event.target.classList.add("selected-sticker");
       }
     </script>
   </body>

@@ -435,7 +435,6 @@ function handleFollow(element) {
 
 /* 點擊單一主播圖片，開啟新頁面 */
 function handleLiveItemClick(target) {
-  console.log(target);
   const ifOnLive = target.classList.value.includes("on");
   if (ifOnLive) {
     location.href = "live-on.html";
@@ -457,9 +456,47 @@ function showStickersDetail(tabId, tabParentId) {
   [...document.querySelectorAll(".sticker-body")].map((node) => {
     node.style.display = "none";
   });
+
   setActiveStatus(tabParentId, tabId);
   const selector = "#" + tabId + "-list";
   handleShowComponent(selector, "grid");
+
+  const buyButton = document.querySelector(".sticker-footer #buy-button");
+  const sendButton = document.querySelector(".sticker-footer #send-button");
+
+  if (tabId === "my-stickers") {
+    buyButton.style.display = "none";
+    sendButton.style.display = "block";
+  } else {
+    buyButton.style.display = "block";
+    sendButton.style.display = "none";
+  }
+}
+
+/* 加貼圖至對話框 */
+function handleAddStickerToChat() {
+  const imgElement = document.getElementsByClassName("selected-sticker")[0].outerHTML;
+
+  if (imgElement) {
+    ifChatNeedNewDate();
+
+    const newElement = document.createElement("div");
+    newElement.classList.add("chat-item", "sticker-content", "my-chat");
+
+    const avatarElement = buildAvatar();
+
+    const contentElement = document.createElement("span");
+    contentElement.classList.add("chat-content");
+    contentElement.innerHTML = imgElement;
+
+    newElement.append(avatarElement);
+    newElement.append(contentElement);
+
+    document.getElementById("followers-chat-items").appendChild(newElement);
+    handleHideComponent(".sticker-overlay");
+    handleShowComponent("#followers-chat-overlay");
+    locateScrollbar();
+  }
 }
 
 /* 確認對話是否需加入日期分割元件 */

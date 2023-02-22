@@ -1969,7 +1969,7 @@ div.sticker-overlay ul.stickers-detail-tabs li a {
 }
 
 div.sticker-overlay ul.stickers-detail-tabs li.active a {
-  text-shadow: 0 0 7px #c40761;
+  text-shadow: 1px 2px 3px #c70c65;
 }
 
 div.sticker-overlay div.content {
@@ -2044,7 +2044,7 @@ div.sticker-overlay div.sticker-footer {
 }
 
 button.sticker-item:hover {
-  box-shadow: 0 0 5px 2px #fff;
+  box-shadow: 0 0 1px 3px #e50dbb;
   filter: none;
 }
 
@@ -8658,6 +8658,10 @@ div.overlay p.title-text.light-pink img {
   justify-content: space-between;
 }
 
+.sticker-overlay .sticker-footer #send-button{
+  display: none;
+}
+
 .sticker-footer .point::before {
   content: "";
   background: url(../images/coin.png) no-repeat center center;
@@ -8668,7 +8672,8 @@ div.overlay p.title-text.light-pink img {
   height: 50px;
 }
 
-.sticker-footer button#buy-button {
+.sticker-footer button#buy-button,
+.sticker-footer button#send-button {
   width: 90px;
   font-size: 0.875rem;
   padding: 5px;
@@ -8676,7 +8681,7 @@ div.overlay p.title-text.light-pink img {
   background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
 }
 
-.sticker-footer button#buy-button:hover {
+.sticker-footer button#buy-button:hover, .sticker-footer button#send-button:hover {
   background: linear-gradient(0deg, #e60672, #ef99bf) !important;
   color: #fff;
 }
