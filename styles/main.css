@@ -4991,7 +4991,7 @@ div.gift-sent-overlay div.gift-img-wrapper img {
   left: 0 !important;
 }
 
-form.search-form > div.search-container {
+.search-form > div.search-container {
   margin: 0 auto 40px;
   background: white;
 }
@@ -8596,13 +8596,13 @@ div.overlay p.title-text.light-pink img {
   gap: 0 !important;
 }
 
-.followers-overlay form.search-form {
+.followers-overlay .search-form {
   width: 100%;
   margin-bottom: 0rem;
   max-width: 600px;
 }
 
-.followers-overlay form.search-form > div.search-container {
+.followers-overlay .search-form > div.search-container {
   margin-bottom: 0;
   max-width: none;
   width: 100%;
@@ -8616,10 +8616,15 @@ div.overlay p.title-text.light-pink img {
 
 .followers-overlay ul.followers-list > li {
   margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .followers-overlay ul.followers-list .follower-detail {
   gap: 0.5rem;
+  display: flex;
+  align-items: center;
 }
 
 .followers-overlay ul.followers-list .avatar-wrapper {
@@ -8629,7 +8634,7 @@ div.overlay p.title-text.light-pink img {
 
 .followers-overlay ul.followers-list .follower-name {
   color: white;
-  width: 180px;
+  width: 150px;
 }
 
 .followers-overlay ul.followers-list button.chat-button {

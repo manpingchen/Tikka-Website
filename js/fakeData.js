@@ -354,3 +354,16 @@ const rankingMonth = [
     photos: [{ imgUrl: "images/s3.jpg" }, { imgUrl: "images/s3.jpg" }, { imgUrl: "images/s3.jpg" }],
   },
 ];
+
+/* 主播個人頁 粉絲列表 */
+const fans = [
+  { name: "Ben", id: 2, img: "images/s2.jpg" },
+  { name: "會員名稱會員名稱", id: 4, img: "images/s2.jpg" },
+  { name: "Alex Chen", id: 1, img: "images/s2.jpg" },
+  { name: "粉絲名稱粉絲名稱一", id: 3, img: "images/s2.jpg" },
+  { name: "一個粉絲", id: 5, img: "images/s2.jpg" },
+  { name: "B粉絲", id: 2, img: "images/s2.jpg" },
+  { name: "A會員名稱會員名稱", id: 7, img: "images/s2.jpg" },
+  { name: "Zen Chen", id: 8, img: "images/s2.jpg" },
+  { name: "台灣粉絲", id:6, img: "images/s2.jpg" },
+];

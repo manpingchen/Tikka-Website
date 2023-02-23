@@ -725,9 +725,9 @@
       <!-- 遮罩內容 -->
       <div class="content">
         <!-- Search Bar -->
-        <form action="/portal/index/form" method="get" name="form" id="form" class="search-form">
+        <div id="form" class="search-form">
           <div class="search-container">
-            <input type="text" placeholder="請輸入關鍵字" name="search" />
+            <input type="text" placeholder="請輸入關鍵字" name="search" id="search-fans" />
             <div class="search-controls">
               <button
                 type="button"
@@ -736,79 +736,16 @@
               >
                 <span class="material-icons">&#xE5CD;</span>
               </button>
-              <button type="submit"><span class="material-icons">&#xE8B6;</span></button>
+              <button type="button" onclick="handleGetFans()" class="search-submit">
+                <span class="material-icons">&#xE8B6;</span>
+              </button>
             </div>
           </div>
-        </form>
+        </div>
 
         <!-- 粉絲列表 -->
-        <ul class="followers-list">
-          <li class="flex-row align-center justify-space-between">
-            <div class="follower-detail flex-row align-center">
-              <div class="avatar-wrapper">
-                <img src="images/s2.jpg" alt="粉絲頭貼" class="avatar" />
-              </div>
-              <div class="follower-name ellipsis">會員名稱會員名稱</div>
-            </div>
-            <button class="chat-button" id="follower-1" onclick="handleChat(this.id)">
-              私訊聊聊
-            </button>
-          </li>
-          <li class="flex-row align-center justify-space-between">
-            <div class="follower-detail flex-row align-center">
-              <div class="avatar-wrapper">
-                <img src="images/s2.jpg" alt="粉絲頭貼" class="avatar" />
-              </div>
-              <div class="follower-name ellipsis">會員名稱會員名稱</div>
-            </div>
-            <button class="chat-button" id="follower-1" onclick="handleChat(this.id)">
-              私訊聊聊
-            </button>
-          </li>
-          <li class="flex-row align-center justify-space-between">
-            <div class="follower-detail flex-row align-center">
-              <div class="avatar-wrapper">
-                <img src="images/s2.jpg" alt="粉絲頭貼" class="avatar" />
-              </div>
-              <div class="follower-name ellipsis">會員名稱會員名稱</div>
-            </div>
-            <button class="chat-button" id="follower-1" onclick="handleChat(this.id)">
-              私訊聊聊
-            </button>
-          </li>
-          <li class="flex-row align-center justify-space-between">
-            <div class="follower-detail flex-row align-center">
-              <div class="avatar-wrapper">
-                <img src="images/s2.jpg" alt="粉絲頭貼" class="avatar" />
-              </div>
-              <div class="follower-name ellipsis">會員名稱會員名稱</div>
-            </div>
-            <button class="chat-button" id="follower-1" onclick="handleChat(this.id)">
-              私訊聊聊
-            </button>
-          </li>
-          <li class="flex-row align-center justify-space-between">
-            <div class="follower-detail flex-row align-center">
-              <div class="avatar-wrapper">
-                <img src="images/s2.jpg" alt="粉絲頭貼" class="avatar" />
-              </div>
-              <div class="follower-name ellipsis">會員名稱會員名稱</div>
-            </div>
-            <button class="chat-button" id="follower-1" onclick="handleChat(this.id)">
-              私訊聊聊
-            </button>
-          </li>
-          <li class="flex-row align-center justify-space-between">
-            <div class="follower-detail flex-row align-center">
-              <div class="avatar-wrapper">
-                <img src="images/s2.jpg" alt="粉絲頭貼" class="avatar" />
-              </div>
-              <div class="follower-name ellipsis">會員名稱會員名稱</div>
-            </div>
-            <button class="chat-button" id="follower-1" onclick="handleChat(this.id)">
-              私訊聊聊
-            </button>
-          </li>
+        <ul class="followers-list" id="followers-list">
+          <!-- 由getFansList()產生-->
         </ul>
       </div>
     </div>
@@ -1167,6 +1104,51 @@
         });
 
         event.target.classList.add("selected-sticker");
+      }
+
+      getFansList();
+
+      /* 粉絲列表姓名排列 */
+      function getFansList(array = fans) {
+        const sortedFans = array.sort((a, b) => {
+          const nameA = a.name;
+          const nameB = b.name;
+
+          if (nameA < nameB) return -1;
+          if (nameA > nameB) return 1;
+          return 0;
+        });
+
+        sortedFans.forEach((fan) => {
+          const newElement = document.createElement("li");
+          newElement.classList.add("followers-list_item");
+
+          const contentElement = document.createElement("div");
+          contentElement.classList.add("follower-detail");
+
+          const avatarElement = buildAvatar();
+          const avatarWrapElement = document.createElement("div");
+          avatarWrapElement.classList.add("avatar-wrapper");
+          avatarWrapElement.innerHTML = avatarElement;
+
+          const nameElement = document.createElement("div");
+          nameElement.classList.add("follower-name", "ellipsis");
+          nameElement.innerHTML = fan.name;
+
+          contentElement.append(avatarElement);
+          contentElement.append(nameElement);
+
+          newElement.append(contentElement);
+
+          return document.getElementById("followers-list").appendChild(newElement);
+        });
+      }
+
+      function handleGetFans() {
+        const value = document.getElementById("search-fans").value.toLowerCase();
+        const matchedFans = fans.filter(({ name }) => name.toLowerCase().includes(value));
+        document.getElementById("followers-list").innerHTML = null;
+        getFansList(matchedFans);
       }
     </script>
   </body>
