@@ -6043,6 +6043,7 @@ main.my-favourite button.follow-btn:hover {
   border-radius: 20px;
   text-decoration: none;
   width: 120px;
+  cursor: pointer;
 }
 
 .button-like img {

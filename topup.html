@@ -404,7 +404,7 @@
         </div>
         <h4>恭喜儲值成功</h4>
         <div class="content">
-          <div class="highlight button-like pink-gradient-bg">
+          <div class="highlight button-like pink-gradient-bg"  onclick="handleHideComponent('#topup-successful')">
             <img src="images/coin.png" alt="" /> 儲值成功
           </div>
         </div>
@@ -449,10 +449,10 @@
       </div>
 
       <!-- 儲值前登入會員 遮罩 -->
-      <div class="overlay small topup" id="trade-successful" style="display: none">
+      <div class="overlay small topup" id="login-to-trade" style="display: none">
         <div class="header">
           <img src="images/logo.svg" alt="logo" class="white-svg" />
-          <button class="close-button" onclick="handleHideComponent('#trade-successful')">
+          <button class="close-button" onclick="handleHideComponent('#login-to-trade')">
             <img src="images/close-icon.svg" alt="close-icon" />
           </button>
         </div>

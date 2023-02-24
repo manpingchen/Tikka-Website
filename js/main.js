@@ -243,7 +243,7 @@ function handleHideComponent(selector) {
   }
 
   body.style.overflow = "auto";
-  handleHideComponent(".backdrop");
+  document.getElementsByClassName("backdrop")[0].style.display = "none";
 }
 
 /* 開啟元件 */
@@ -251,9 +251,18 @@ function handleShowComponent(selector, displayValue = "block", shouldBodyOverflo
   const node = document.querySelector(selector);
   const classList = node?.classList;
 
-  if (classList.contains("overlay")) {
+  const isNormalOverlay = classList.contains("overlay") && !classList.contains("small");
+  const isSmallOverlay = classList.contains("small") && classList.contains("overlay");
+
+  if (isNormalOverlay) {
     node.style.transform = "translate(0, 0)";
-  } else {
+  }
+  
+  if (isSmallOverlay) {
+    node.style.display = displayValue;
+  }
+
+  if (!isSmallOverlay && !isNormalOverlay) {
     node.style.display = displayValue;
   }
   if (shouldBodyOverflowHidden) {
