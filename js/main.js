@@ -174,7 +174,7 @@ function switchCalendarRanking(activeElementId, rankingType) {
 function openReceiverRanking() {
   handleHideComponent("#sender-ranking");
   handleHideComponent("#event-ranking");
-  handleShowComponent("#receiver-ranking");
+  handleShowComponent("#receiver-ranking", "block", false);
   setActiveStatus("ranking-tabs", "receiver-tab");
   switchCalendarRanking("receiver-day-btn", "receiver");
 }
@@ -223,21 +223,31 @@ function handleHideComponent(selector) {
   const node = document.querySelector(selector);
   const classList = node?.classList;
 
-  if (classList.contains("overlay")) {
+  const isNormalOverlay = classList.contains("overlay") && !classList.contains("small");
+  const isSmallOverlay = classList.contains("small") && classList.contains("overlay");
+
+  if (isNormalOverlay) {
     backdrop.style.display = "none";
     if (classList.contains("from-right")) {
       return (node.style.transform = "translate(100%, 0)");
     }
     node.style.transform = "translate(0, 100%)";
-  } else {
+  }
+
+  if (isSmallOverlay) {
+    node.style.transform = "translate(0, 100vh)";
+  }
+
+  if (!isSmallOverlay && !isNormalOverlay) {
     node.style.display = "none";
   }
 
   body.style.overflow = "auto";
+  handleHideComponent(".backdrop");
 }
 
 /* 開啟元件 */
-function handleShowComponent(selector, displayValue = "block") {
+function handleShowComponent(selector, displayValue = "block", shouldBodyOverflowHidden = true) {
   const node = document.querySelector(selector);
   const classList = node?.classList;
 
@@ -246,8 +256,9 @@ function handleShowComponent(selector, displayValue = "block") {
   } else {
     node.style.display = displayValue;
   }
-
-  body.style.overflow = "hidden";
+  if (shouldBodyOverflowHidden) {
+    body.style.overflow = "hidden";
+  }
 
   /* 如果元件為遮罩，則同步開啟backdrop，做為關閉遮罩之點擊範圍 */
   if (classList.contains("overlay") && !classList.contains("full-page")) {

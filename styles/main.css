@@ -7437,7 +7437,7 @@ div.overlay.small.topup {
   position: fixed;
   width: 350px;
   height: 270px;
-  top: calc(50% - 200px);
+  top: 0;
   left: calc(50% - 150px);
   background: #ec5a8f !important;
   box-shadow: 0 5px 10px #444;

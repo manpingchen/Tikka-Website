@@ -438,7 +438,10 @@
         </div>
         <h4>恭喜交易成功</h4>
         <div class="content">
-          <div class="highlight button-like pink-gradient-bg">
+          <div
+            class="highlight button-like pink-gradient-bg"
+            onclick="handleHideComponent('#trade-successful')"
+          >
             <img src="images/coin.png" alt="" /> 交易完成
           </div>
         </div>
@@ -497,7 +500,7 @@
           const activeElement = document.getElementById(id);
           const type = activeElement.innerText;
 
-          handleShowComponent(".invoice-info-field");
+          handleShowComponent(".invoice-info-field", "block", false);
           const labelElement = document.querySelector(".invoice-info-field label");
           const tipElement = document.querySelector("#invoice-info-tips");
 
@@ -508,7 +511,7 @@
               break;
             case "愛心捐贈":
               labelElement.innerHTML = "愛心碼";
-              handleShowComponent("#invoice-info-tips");
+              handleShowComponent("#invoice-info-tips", "block", false);
               tipElement.innerHTML = "＊若為愛心捐贈電子發票，則無發退換貨。";
 
               break;
@@ -518,7 +521,7 @@
               break;
             case "載具條碼":
               labelElement.innerHTML = type;
-              handleShowComponent("#invoice-info-tips");
+              handleShowComponent("#invoice-info-tips", "block", false);
               tipElement.innerHTML = "＊若使用載具發票，請在輸入文字最前方加入／*";
               break;
             default:
