@@ -487,6 +487,10 @@ div.img-wrap img {
   filter: contrast(1.9);
 }
 
+form.invoice-info-field{
+  margin-top: 1rem;
+}
+
 form.invoice-info-field div.flex-row {
   /* margin-top: 1rem; */
   display: flex;
