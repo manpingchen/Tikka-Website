@@ -750,6 +750,102 @@
       </div>
     </div>
 
+    <!-- 主播權限 聊聊列表遮罩 -->
+    <div
+      class="overlay streamer-profile-overlay full-width followers-chat-list-overlay"
+      id="followers-chat-list"
+    >
+      <!-- 遮罩標題 -->
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#followers-chat-list')">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+        <p class="flex-row title-text light-pink">
+          <img src="images/dialog-icon.svg" alt="聊聊" /> 聊聊
+        </p>
+      </div>
+
+      <!-- 遮罩內容 -->
+      <div class="content">
+        <div class="chat-body" id="follower-chat-items">
+          <div class="chat-item" id="chat-1" onclick="handleOpenChat(this.id)">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <div class="chat-detail">
+              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
+              <span class="chat-summary ellipsis"
+                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+              </span>
+            </div>
+            <div class="chat-date">2/15</div>
+          </div>
+          <div class="chat-item" id="chat-2" onclick="handleOpenChat(this.id)">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <div class="chat-detail">
+              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
+              <span class="chat-summary ellipsis"
+                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+              </span>
+            </div>
+            <div class="chat-date">2/15</div>
+          </div>
+          <div class="chat-item" id="chat-3" onclick="handleOpenChat(this.id)">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <div class="chat-detail">
+              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
+              <span class="chat-summary ellipsis"
+                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+              </span>
+            </div>
+            <div class="chat-date">2/14</div>
+          </div>
+          <div class="chat-item" id="chat-4" onclick="handleOpenChat(this.id)">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <div class="chat-detail">
+              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
+              <span class="chat-summary ellipsis"
+                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+              </span>
+            </div>
+            <div class="chat-date">2/13</div>
+          </div>
+
+          <div class="chat-item" id="chat-5" onclick="handleOpenChat(this.id)">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <div class="chat-detail">
+              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
+              <span class="chat-summary ellipsis"
+                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+              </span>
+            </div>
+            <div class="chat-date">2/12</div>
+          </div>
+
+          <div class="chat-item" id="chat-6" onclick="handleOpenChat(this.id)">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <div class="chat-detail">
+              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
+              <span class="chat-summary ellipsis"
+                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+              </span>
+            </div>
+            <div class="chat-date">2/11</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- 私訊聊聊遮罩 -->
     <div
       class="overlay streamer-profile-overlay full-width followers-chat-overlay"
@@ -761,11 +857,21 @@
         <button class="close" onclick="handleHideComponent('.followers-chat-overlay')">
           <img src="images/close-icon.svg" alt="close" />
         </button>
-        <div class="flex-row title-text streamer-name">
+        <div class="flex-row title-text streamer-name fans-authenticated">
           <div class="avatar-wrapper">
             <img src="images/s2.jpg" alt="" class="avatar" />
           </div>
           <p class="streamer-name ellipsis">主播名稱主播名稱</p>
+        </div>
+
+        <div class="flex-row title-text streamer-name streamer-authenticated">
+          <button class="back" onclick="handleBackToChatList()">
+            <span class="material-icons">&#xE5CB;</span>
+          </button>
+          <div class="avatar-wrapper">
+            <img src="images/s2.jpg" alt="" class="avatar" />
+          </div>
+          <p class="streamer-name ellipsis">會員名稱會員名稱</p>
         </div>
       </div>
 
@@ -974,9 +1080,20 @@
       /* 從網址判斷是主播登入或一般使用者 */
       const streamerId = urlParams.get("streamerId");
       /* 若非主播登入，隱藏僅限主播之元件 */
+      const streamerOnlyEle = document.getElementsByClassName("streamer-authenticated");
+      const fansOnlyEle = document.getElementsByClassName("fans-authenticated");
       if (!streamerId) {
-        const streamerOnlyEle = document.getElementsByClassName("streamer-authenticated");
         new Set(streamerOnlyEle).forEach((node) => {
+          node.style.display = "none";
+        });
+        new Set(fansOnlyEle).forEach((node) => {
+          node.style.display = "inherit";
+        });
+      } else {
+        new Set(streamerOnlyEle).forEach((node) => {
+          node.style.display = "inherit";
+        });
+        new Set(fansOnlyEle).forEach((node) => {
           node.style.display = "none";
         });
       }
@@ -1048,10 +1165,17 @@
       /* 私訊聊聊按鈕點擊 */
       function handleChat(followerId) {
         console.log({ followerId });
-        handleShowComponent("#followers-chat-overlay");
-        handleHideComponent("#followers-overlay");
-        /* Backdrop因followers-overlay關閉時一同關閉，*/
-        /* 故下方再次開啟，供關閉私訊聊聊遮罩使用 */
+
+        /* 粉絲登入版本 */
+        if (!streamerId) {
+          handleShowComponent("#followers-chat-overlay");
+          handleHideComponent("#followers-overlay");
+          /* Backdrop因followers-overlay關閉時一同關閉，*/
+          /* 故下方再次開啟，供關閉私訊聊聊遮罩使用 */
+        }
+        if (streamerId) {
+          handleShowComponent("#followers-chat-list");
+        }
         handleShowComponent(".backdrop");
       }
 
@@ -1149,6 +1273,19 @@
         const matchedFans = fans.filter(({ name }) => name.toLowerCase().includes(value));
         document.getElementById("followers-list").innerHTML = null;
         getFansList(matchedFans);
+      }
+
+      /* 主播版本 點擊聊天單一對話列表 */
+      function handleOpenChat(id) {
+        console.log({ chatId: id });
+        handleShowComponent("#followers-chat-overlay");
+        handleHideComponent("#followers-chat-list");
+      }
+
+      /* 主播版本 從私訊聊聊點擊上一頁 */
+      function handleBackToChatList() {
+        handleHideComponent("#followers-chat-overlay");
+        handleShowComponent("#followers-chat-list");
       }
     </script>
   </body>

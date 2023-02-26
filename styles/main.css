@@ -487,7 +487,7 @@ div.img-wrap img {
   filter: contrast(1.9);
 }
 
-form.invoice-info-field{
+form.invoice-info-field {
   margin-top: 1rem;
 }
 
@@ -4683,6 +4683,78 @@ div.overlay div.title {
   padding: 10px;
 }
 
+div.followers-chat-list-overlay {
+  min-height: 400px;
+}
+
+div.followers-chat-list-overlay div.title {
+  height: 50px;
+}
+
+div.followers-chat-list-overlay button.close {
+  top: 0.5rem !important;
+}
+
+div.followers-chat-list-overlay div.content {
+  overflow: auto;
+  height: calc(100% - 60px) !important;
+}
+
+div.followers-chat-list-overlay div.content div.chat-body {
+  height: 100%;
+  width: 100%;
+}
+
+div.followers-chat-list-overlay div.content div.chat-item:nth-child(odd) {
+  background-color: #1715156f;
+}
+
+div.followers-chat-list-overlay div.content div.chat-item:nth-child(even) {
+  background-color: #17151537;
+}
+
+div.followers-chat-list-overlay div.content div.chat-item {
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+div.followers-chat-list-overlay div.content div.avatar-wrapper {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+div.followers-chat-list-overlay div.content div.chat-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+  color: white;
+  flex-grow: 1;
+}
+
+div.followers-chat-list-overlay div.content div.chat-detail p.name {
+  font-size: 1.2rem;
+  width: 200px;
+}
+div.followers-chat-list-overlay div.content div.chat-detail .chat-summary {
+  width: 220px;
+  font-size: 0.875rem;
+  color: lightgray;
+}
+
+div.followers-chat-list-overlay div.content div.chat-date {
+  width: 60px;
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 div.overlay div.title p {
   color: #fff;
   align-items: center;
@@ -4692,7 +4764,8 @@ div.overlay div.title p {
 }
 
 div.overlay.streamer-profile-overlay button.close {
-  right: 1rem !important;
+  right: 0.75rem !important;
+  top: 0.75rem !important;
 }
 
 @media screen and (max-width: 480px) {
@@ -4736,8 +4809,8 @@ div.overlay div.title p span.line {
 div.overlay button.close,
 div.overlay button.clear {
   position: absolute;
-  width: 30px;
-  height: 30px !important;
+  width: 36px;
+  height: 36px !important;
   right: 1rem;
   padding: 5px;
   margin: 0;
@@ -4755,8 +4828,27 @@ div.overlay button.clear {
   gap: 5px;
   right: 3rem;
   border-radius: 20px;
+  top: 0.75rem;
   color: #d6216d;
   background: linear-gradient(#ffffff, #ffe1f4, #ff87c8);
+}
+
+div.overlay button.back {
+  background: linear-gradient(#ffffff, #ffe1f4, #ff87c8);
+  left: 0.5rem;
+  width: 36px;
+  height: 36px !important;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+div.overlay button.back span {
+  font-size: 30px;
+  color: #c40761;
 }
 
 div.overlay button.close > img,
@@ -8668,7 +8760,7 @@ div.overlay p.title-text.light-pink img {
   justify-content: space-between;
 }
 
-.sticker-overlay .sticker-footer #send-button{
+.sticker-overlay .sticker-footer #send-button {
   display: none;
 }
 
@@ -8691,7 +8783,8 @@ div.overlay p.title-text.light-pink img {
   background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
 }
 
-.sticker-footer button#buy-button:hover, .sticker-footer button#send-button:hover {
+.sticker-footer button#buy-button:hover,
+.sticker-footer button#send-button:hover {
   background: linear-gradient(0deg, #e60672, #ef99bf) !important;
   color: #fff;
 }
