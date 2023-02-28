@@ -2908,6 +2908,18 @@ div.followers-chat-overlay div.title div.avatar-wrapper {
   margin-right: 0.5rem;
 }
 
+div.followers-chat-overlay.streamer-authenticated.overlay.full-width {
+  width: 70% !important;
+  right: 0;
+  left: unset !important;
+  -webkit-border-top-left-radius: 0 !important;
+  -webkit-border-top-right-radius: 0 !important;
+  -moz-border-radius-topleft: 0 !important;
+  -moz-border-radius-topright: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
 div.followers-chat-overlay div.title p.streamer-name {
   width: 120px;
   font-size: 1rem;
@@ -2955,6 +2967,69 @@ div.followers-chat-overlay div.chat-item .chat-content {
   border-radius: 0 15px 15px 15px;
   padding: 6px 1rem;
   max-width: 200px;
+}
+
+div.followers-chat-overlay button.back {
+  background: linear-gradient(#ffffff, #ffe1f4, #ff87c8);
+}
+
+@media screen and (min-width: 768px) {
+  div.followers-chat-overlay.streamer-authenticated.overlay.full-width {
+    overflow: visible;
+  }
+
+  div.followers-chat-overlay.streamer-authenticated button.close,
+  div.followers-chat-overlay.streamer-authenticated button.clear,
+  div.followers-chat-overlay.streamer-authenticated div.avatar-wrapper,
+  div.followers-chat-overlay.streamer-authenticated p.streamer-name {
+    display: none;
+  }
+
+  div.streamer-profile-overlay.full-width div.avatar-wrapper {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    border-width: 2px;
+  }
+
+  div.streamer-profile-overlay.full-width .chat-title button {
+    top: 0.5rem !important;
+  }
+
+  div.followers-chat-overlay.streamer-authenticated div.title {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+
+  div.followers-chat-overlay.streamer-authenticated button.back {
+    transform: rotate(180deg);
+    background: #4f4d4d36;
+    border: 1px solid #fff;
+  }
+
+  div.followers-chat-overlay.streamer-authenticated button.back span {
+    color: white;
+  }
+
+  div.followers-chat-overlay.streamer-authenticated div.chat-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    background: #a14262;
+  }
+
+  div.followers-chat-overlay.streamer-authenticated.active div.chat-controls {
+    left: -30vw;
+  }
+
+  div.followers-chat-overlay div.chat-item .chat-content {
+    max-width: 400px;
+    font-size: 1rem;
+  }
 }
 
 div.chat-date {
@@ -4687,6 +4762,12 @@ div.followers-chat-list-overlay {
   min-height: 400px;
 }
 
+@media screen and (min-width: 768px) {
+  div.followers-chat-list-overlay {
+    height: calc(60% + 50px) !important;
+  }
+}
+
 div.followers-chat-list-overlay div.title {
   height: 50px;
 }
@@ -4743,6 +4824,13 @@ div.followers-chat-list-overlay div.content div.chat-detail .chat-summary {
   width: 220px;
   font-size: 0.875rem;
   color: lightgray;
+}
+
+@media screen and (min-width: 768px) {
+  div.followers-chat-list-overlay div.content div.chat-detail p.name,
+  div.followers-chat-list-overlay div.content div.chat-detail .chat-summary {
+    width: 300px;
+  }
 }
 
 div.followers-chat-list-overlay div.content div.chat-date {
@@ -4834,7 +4922,6 @@ div.overlay button.clear {
 }
 
 div.overlay button.back {
-  background: linear-gradient(#ffffff, #ffe1f4, #ff87c8);
   left: 0.5rem;
   width: 36px;
   height: 36px !important;

@@ -756,13 +756,34 @@
       id="followers-chat-list"
     >
       <!-- 遮罩標題 -->
-      <div class="title flex-row">
+      <div class="title flex-row list-title">
         <button class="close" onclick="handleHideComponent('#followers-chat-list')">
           <img src="images/close-icon.svg" alt="close" />
         </button>
         <p class="flex-row title-text light-pink">
           <img src="images/dialog-icon.svg" alt="聊聊" /> 聊聊
         </p>
+      </div>
+
+      <!-- 遮罩 會員名稱標題 -->
+      <div class="title flex-row chat-title" style="display: none">
+        <button class="clear" onclick="handleClearChat()">清空聊聊</button>
+        <button class="close" onclick="handleHideComponent('.followers-chat-overlay')">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+        <div class="flex-row title-text streamer-name fans-authenticated">
+          <div class="avatar-wrapper">
+            <img src="images/s2.jpg" alt="" class="avatar" />
+          </div>
+          <p class="streamer-name ellipsis">主播名稱主播名稱</p>
+        </div>
+
+        <div class="flex-row title-text streamer-name streamer-authenticated">
+          <div class="avatar-wrapper">
+            <img src="images/s2.jpg" alt="" class="avatar" />
+          </div>
+          <p class="streamer-name ellipsis">會員名稱會員名稱</p>
+        </div>
       </div>
 
       <!-- 遮罩內容 -->
@@ -912,19 +933,18 @@
             >
           </div>
         </div>
-
-        <div class="flex-row chat-controls">
-          <div class="chat-field flex-row">
-            <input type="text" placeholder="跟主播聊聊..." id="new-chat-input" />
-          </div>
-          <div class="btns">
-            <button type="button open-overlay" class="face-btn" onclick="handleShowStickers()">
-              <img src="images/face.svg" />
-            </button>
-            <button type="button open-overlay" onclick="handleAddTextToChat()">
-              <img src="images/fat-arrow.svg" alt="送出" />
-            </button>
-          </div>
+      </div>
+      <div class="flex-row chat-controls">
+        <div class="chat-field flex-row">
+          <input type="text" placeholder="跟主播聊聊..." id="new-chat-input" />
+        </div>
+        <div class="btns">
+          <button type="button open-overlay" class="face-btn" onclick="handleShowStickers()">
+            <img src="images/face.svg" />
+          </button>
+          <button type="button open-overlay" onclick="handleAddTextToChat()">
+            <img src="images/fat-arrow.svg" alt="送出" />
+          </button>
         </div>
       </div>
     </div>
@@ -1275,17 +1295,38 @@
         getFansList(matchedFans);
       }
 
+      const chatElement = document.getElementById("followers-chat-overlay");
+
+      if (window.innerWidth >= 768) {
+        chatElement.classList.add("from-right");
+      }
+
       /* 主播版本 點擊聊天單一對話列表 */
       function handleOpenChat(id) {
         console.log({ chatId: id });
+
+        if (window.innerWidth < 768) {
+          handleShowComponent("#followers-chat-overlay");
+          return handleHideComponent("#followers-chat-list");
+        }
+
+        chatElement.classList.add("streamer-authenticated", "active");
         handleShowComponent("#followers-chat-overlay");
-        handleHideComponent("#followers-chat-list");
+        handleShowComponent(".chat-title", "flex");
+        handleHideComponent(".list-title");
       }
 
       /* 主播版本 從私訊聊聊點擊上一頁 */
       function handleBackToChatList() {
         handleHideComponent("#followers-chat-overlay");
-        handleShowComponent("#followers-chat-list");
+
+        if (window.innerWidth < 768) {
+          return handleShowComponent("#followers-chat-list");
+        }
+
+        chatElement.classList.remove("streamer-authenticated", "active");
+        handleHideComponent(".chat-title");
+        handleShowComponent(".list-title", "flex");
       }
     </script>
   </body>

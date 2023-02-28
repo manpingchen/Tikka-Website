@@ -253,11 +253,16 @@ function handleShowComponent(selector, displayValue = "block", shouldBodyOverflo
 
   const isNormalOverlay = classList.contains("overlay") && !classList.contains("small");
   const isSmallOverlay = classList.contains("small") && classList.contains("overlay");
+  // const isFromRight = classList.contains("from-right");
+
+  // if (isFromRight) {
+  //   return (node.style.transform = "translate(100%, 0)");
+  // }
 
   if (isNormalOverlay) {
     node.style.transform = "translate(0, 0)";
   }
-  
+
   if (isSmallOverlay) {
     node.style.display = displayValue;
   }
