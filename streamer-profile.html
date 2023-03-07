@@ -123,10 +123,7 @@
               <img src="images/gift-round-pink.svg" alt="gift icon" />
               <span class="value">999,999,999</span>
             </div>
-            <div
-              class="performance-data flex-row followers streamer-authenticated"
-              onclick="handleShowComponent('#followers-overlay')"
-            >
+            <div class="performance-data flex-row followers" onclick="handleOpenFansList()">
               <span class="value">粉絲 99.9K</span>
             </div>
           </div>
@@ -1102,6 +1099,7 @@
       /* 若非主播登入，隱藏僅限主播之元件 */
       const streamerOnlyEle = document.getElementsByClassName("streamer-authenticated");
       const fansOnlyEle = document.getElementsByClassName("fans-authenticated");
+      const fansListButton = document.querySelector(".performance-data.followers");
       if (!streamerId) {
         new Set(streamerOnlyEle).forEach((node) => {
           node.style.display = "none";
@@ -1109,6 +1107,7 @@
         new Set(fansOnlyEle).forEach((node) => {
           node.style.display = "inherit";
         });
+        fansListButton.style.cursor = "initial";
       } else {
         new Set(streamerOnlyEle).forEach((node) => {
           node.style.display = "inherit";
@@ -1327,6 +1326,12 @@
         chatElement.classList.remove("streamer-authenticated", "active");
         handleHideComponent(".chat-title");
         handleShowComponent(".list-title", "flex");
+      }
+
+      function handleOpenFansList() {
+        if (streamerId) {
+          handleShowComponent("#followers-overlay");
+        }
       }
     </script>
   </body>
