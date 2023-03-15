@@ -207,7 +207,7 @@ const body = document.querySelector("body");
 if (backdrop) {
   backdrop.addEventListener("click", () => {
     [...overlays].forEach((node) => {
-      const classList = node?.classList;
+      const classList = node ? node.classList : null;
       if (classList.contains("from-right")) {
         return (node.style.transform = "translate(100%, 0)");
       }
@@ -221,7 +221,7 @@ if (backdrop) {
 /* 關閉元件 */
 function handleHideComponent(selector) {
   const node = document.querySelector(selector);
-  const classList = node?.classList;
+  const classList = node ? node.classList : null;
 
   const isNormalOverlay = classList.contains("overlay") && !classList.contains("small");
   const isSmallOverlay = classList.contains("small") && classList.contains("overlay");
@@ -249,7 +249,8 @@ function handleHideComponent(selector) {
 /* 開啟元件 */
 function handleShowComponent(selector, displayValue = "block", shouldBodyOverflowHidden = true) {
   const node = document.querySelector(selector);
-  const classList = node?.classList;
+
+  const classList = node ? node.classList : null;
 
   const isNormalOverlay = classList.contains("overlay") && !classList.contains("small");
   const isSmallOverlay = classList.contains("small") && classList.contains("overlay");
