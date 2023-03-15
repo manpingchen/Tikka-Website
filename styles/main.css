@@ -8921,3 +8921,8 @@ div.overlay#viewer-overlay-mobile {
 .live-item-footer button {
   margin-top: 0.5rem;
 }
+
+
+.competition-banner img{
+  width: 100%;
+}

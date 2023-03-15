@@ -558,3 +558,9 @@ function buildAvatar() {
   avatarElement.append(avatarImgElement);
   return avatarElement;
 }
+
+/* 競賽內容遮罩展開 */
+function handleShowCompetitionDetail(competitionId, overlayClassName) {
+  handleShowComponent(overlayClassName);
+  document.querySelector(overlayClassName).dataset.id = competitionId;
+}

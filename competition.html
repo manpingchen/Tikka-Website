@@ -206,11 +206,7 @@
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
     <script>
-      function handleShowCompetitionDetail(competitionId, overlayClassName) {
-        handleShowComponent(overlayClassName);
-        document.querySelector(overlayClassName).dataset.id = competitionId;
-      }
-
+      
       checkIfOpenCompetitionModal();
       function checkIfOpenCompetitionModal() {
         const queryString = window.location.search;
