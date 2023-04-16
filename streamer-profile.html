@@ -765,7 +765,7 @@
       <!-- 遮罩 會員名稱標題 -->
       <div class="title flex-row chat-title" style="display: none">
         <button class="clear" onclick="handleClearChat()">清空聊聊</button>
-        <button class="close" onclick="handleHideComponent('.followers-chat-overlay')">
+        <button class="close" onclick="handleCloseStreamerChat()">
           <img src="images/close-icon.svg" alt="close" />
         </button>
         <div class="flex-row title-text streamer-name fans-authenticated">
@@ -1096,6 +1096,7 @@
 
       /* 從網址判斷是主播登入或一般使用者 */
       const streamerId = urlParams.get("streamerId");
+
       /* 若非主播登入，隱藏僅限主播之元件 */
       const streamerOnlyEle = document.getElementsByClassName("streamer-authenticated");
       const fansOnlyEle = document.getElementsByClassName("fans-authenticated");
@@ -1115,6 +1116,9 @@
         new Set(fansOnlyEle).forEach((node) => {
           node.style.display = "none";
         });
+
+        const chatList = document.querySelector("#followers-chat-list");
+        chatList.classList.add("streamer-authenticated");
       }
 
       function openIntro() {
@@ -1296,7 +1300,7 @@
 
       const chatElement = document.getElementById("followers-chat-overlay");
 
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 1200) {
         chatElement.classList.add("from-right");
       }
 
@@ -1304,8 +1308,9 @@
       function handleOpenChat(id) {
         console.log({ chatId: id });
 
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 1200) {
           handleShowComponent("#followers-chat-overlay");
+          chatElement.classList.add("streamer-authenticated", "active");
           return handleHideComponent("#followers-chat-list");
         }
 
@@ -1313,19 +1318,38 @@
         handleShowComponent("#followers-chat-overlay");
         handleShowComponent(".chat-title", "flex");
         handleHideComponent(".list-title");
+
+        setTimeout(() => {
+          const chatList = document.querySelector("#followers-chat-list.streamer-authenticated");
+          chatList.classList.add("chat-content-opened");
+        }, 500);
       }
 
       /* 主播版本 從私訊聊聊點擊上一頁 */
       function handleBackToChatList() {
         handleHideComponent("#followers-chat-overlay");
 
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 1200) {
           return handleShowComponent("#followers-chat-list");
         }
 
         chatElement.classList.remove("streamer-authenticated", "active");
         handleHideComponent(".chat-title");
         handleShowComponent(".list-title", "flex");
+
+        const chatList = document.querySelector("#followers-chat-list.streamer-authenticated");
+        chatList.classList.remove("chat-content-opened");
+      }
+
+      /*主播版本 關閉聊聊視窗*/
+
+      function handleCloseStreamerChat() {
+        document.querySelector(".followers-chat-overlay").classList.remove("active");
+        document
+          .querySelector(".followers-chat-list-overlay")
+          .classList.remove("chat-content-opened");
+        handleHideComponent(".followers-chat-overlay");
+        handleHideComponent(".followers-chat-list-overlay");
       }
 
       function handleOpenFansList() {

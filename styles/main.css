@@ -2907,7 +2907,7 @@ div.followers-chat-overlay div.title div.avatar-wrapper {
   border-width: 2px;
   margin-right: 0.5rem;
 }
-
+/* 
 div.followers-chat-overlay.streamer-authenticated.overlay.full-width {
   width: 70% !important;
   right: 0;
@@ -2918,6 +2918,20 @@ div.followers-chat-overlay.streamer-authenticated.overlay.full-width {
   -moz-border-radius-topright: 0 !important;
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
+} */
+
+@media screen and (min-width: 1200px) {
+  div.followers-chat-overlay.streamer-authenticated.overlay.full-width {
+    width: 70% !important;
+    right: 0;
+    left: unset !important;
+    -webkit-border-top-left-radius: 0 !important;
+    -webkit-border-top-right-radius: 0 !important;
+    -moz-border-radius-topleft: 0 !important;
+    -moz-border-radius-topright: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
 }
 
 div.followers-chat-overlay div.title p.streamer-name {
@@ -2973,7 +2987,7 @@ div.followers-chat-overlay button.back {
   background: linear-gradient(#ffffff, #ffe1f4, #ff87c8);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) {
   div.followers-chat-overlay.streamer-authenticated.overlay.full-width {
     overflow: visible;
   }
@@ -4826,10 +4840,14 @@ div.followers-chat-list-overlay div.content div.chat-detail .chat-summary {
   color: lightgray;
 }
 
+#followers-chat-overlay:not(.active) {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   div.followers-chat-list-overlay div.content div.chat-detail p.name,
   div.followers-chat-list-overlay div.content div.chat-detail .chat-summary {
-    width: 300px;
+    width: 270px;
   }
 }
 
@@ -8771,8 +8789,33 @@ div.overlay p.title-text.light-pink img {
 .followers-chat-overlay .content {
   justify-content: flex-start !important;
   padding: 1rem;
-  height: calc(100% - 60px) !important;
+  height: calc(100% - 110px) !important;
   position: relative;
+}
+
+@media screen and (min-width: 1200px) {
+  .followers-overlay .content,
+  .followers-chat-overlay .content {
+    height: calc(100% - 60px) !important;
+  }
+
+  .streamer-authenticated#followers-chat-overlay .content {
+    height: calc(100% - 60px) !important;
+  }
+
+  div.followers-chat-list-overlay div.content {
+    transition: height 0.2s;
+    overflow-x: hidden;
+  }
+
+  div.followers-chat-list-overlay.streamer-authenticated div.content {
+    height: calc(100% - 50px) !important;
+  }
+
+  div.followers-chat-list-overlay.streamer-authenticated.chat-content-opened div.content {
+    height: calc(100% - 110px) !important;
+    width: 30%;
+  }
 }
 
 .followers-chat-overlay .content {
@@ -8922,7 +8965,6 @@ div.overlay#viewer-overlay-mobile {
   margin-top: 0.5rem;
 }
 
-
-.competition-banner img{
+.competition-banner img {
   width: 100%;
 }

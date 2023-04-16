@@ -543,7 +543,9 @@ function ifChatNeedNewDate() {
   dateValueElement.innerHTML = today;
 
   dateElement.append(dateValueElement);
-  return document.querySelector(".chat-body").appendChild(dateElement);
+
+  const chatBox = document.querySelector("#followers-chat-overlay .chat-body");
+  return chatBox.appendChild(dateElement);
 }
 
 /* 建立Avatar */
