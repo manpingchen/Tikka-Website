@@ -880,7 +880,7 @@
       <!-- 遮罩標題 -->
       <div class="title flex-row">
         <button class="clear" onclick="handleClearChat()">清空聊聊</button>
-        <button class="close" onclick="handleHideComponent('.followers-chat-overlay')">
+        <button class="close" onclick="handleCloseChat()">
           <img src="images/close-icon.svg" alt="close" />
         </button>
         <div class="flex-row title-text streamer-name fans-authenticated">
@@ -1199,6 +1199,8 @@
 
         /* 粉絲登入版本 */
         if (!streamerId) {
+          console.log("粉絲 ");
+          chatElement.classList.add("active");
           handleShowComponent("#followers-chat-overlay");
           handleHideComponent("#followers-overlay");
           /* Backdrop因followers-overlay關閉時一同關閉，*/
@@ -1364,6 +1366,12 @@
         if (streamerId) {
           handleShowComponent("#followers-overlay");
         }
+      }
+
+      /*粉絲版本 關閉聊聊視窗*/
+      function handleCloseChat() {
+        document.querySelector(".followers-chat-overlay").classList.remove("active");
+        handleHideComponent(".followers-chat-overlay");
       }
     </script>
   </body>
