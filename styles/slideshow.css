@@ -4,7 +4,7 @@
 }
 
 .single-slides#highlighted-products-slides {
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 }
 
 .single-slides#highlighted-products-slides ul.glide__list li.glide__slide {
@@ -196,7 +196,7 @@ button.glide__bullet--active {
     cursor: grab;
     overflow: auto !important;
     position: relative;
-    width: calc(100% + 4rem) !important /* margin: 0 -12% !important; */;
+    width: calc(100% + 2rem) !important;
     left: -2rem;
   }
 

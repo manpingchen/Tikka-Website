@@ -11,10 +11,8 @@
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
-    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/slick.css" />
     <!-- Required Core Stylesheet -->
-    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   </head>
   <body>
@@ -113,156 +111,709 @@
 
     <!--Main-->
     <main class="products">
-      <form action="product-detail.html" method="get" name="form" id="form" class="search-form">
-        <div class="search-container">
-          <input type="text" placeholder="請輸入關鍵字" name="search" />
-          <div class="search-controls">
-            <button
-              type="button"
-              class="clear-search-button"
-              onclick="handleClearSearchValue(event, this)"
-            >
-              <span class="material-icons">&#xE5CD;</span>
-            </button>
-            <button type="submit"><span class="material-icons">&#xE8B6;</span></button>
-          </div>
+      <section class="single-slides" id="highlighted-products-slides">
+        <div>
+          <a href="https://www.tikka.tw/activity/data/5">
+            <img
+              src="https://files.tikka.tw/banner/623e96f0ea9a4a1496366bc7de035daf.png"
+              alt="img1"
+            />
+          </a>
         </div>
-      </form>
-
-      <section class="glide single-slides" id="highlighted-products-slides">
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__list glide__slides">
-            <li class="glide__slide">
-              <a href="https://www.tikka.tw/activity/data/5">
-                <img
-                  src="https://files.tikka.tw/banner/623e96f0ea9a4a1496366bc7de035daf.png"
-                  alt="img1"
-                />
-              </a>
-            </li>
-            <li class="glide__slide">
-              <a href="https://www.tikka.tw/activity/data/5">
-                <img
-                  src="https://files.tikka.tw/banner/623e96f0ea9a4a1496366bc7de035daf.png"
-                  alt="img1"
-                />
-              </a>
-            </li>
-            <li class="glide__slide">
-              <a href="https://www.tikka.tw/activity/data/5">
-                <img
-                  src="https://files.tikka.tw/banner/623e96f0ea9a4a1496366bc7de035daf.png"
-                  alt="img1"
-                />
-              </a>
-            </li>
-          </ul>
-          <div class="glide__bullets" data-glide-el="controls[nav]">
-            <button class="glide__bullet" data-glide-dir="=0"></button>
-            <button class="glide__bullet" data-glide-dir="=1"></button>
-            <button class="glide__bullet" data-glide-dir="=2"></button>
-          </div>
+        <div>
+          <a href="https://www.tikka.tw/activity/data/5">
+            <img
+              src="https://files.tikka.tw/banner/623e96f0ea9a4a1496366bc7de035daf.png"
+              alt="img1"
+            />
+          </a>
+        </div>
+        <div>
+          <a href="https://www.tikka.tw/activity/data/5">
+            <img
+              src="https://files.tikka.tw/banner/623e96f0ea9a4a1496366bc7de035daf.png"
+              alt="img1"
+            />
+          </a>
+        </div>
+        <div>
+          <a href="https://www.tikka.tw/activity/data/5">
+            <img
+              src="https://files.tikka.tw/banner/623e96f0ea9a4a1496366bc7de035daf.png"
+              alt="img1"
+            />
+          </a>
+        </div>
+        <div>
+          <a href="https://www.tikka.tw/activity/data/5">
+            <img
+              src="https://files.tikka.tw/banner/623e96f0ea9a4a1496366bc7de035daf.png"
+              alt="img1"
+            />
+          </a>
         </div>
       </section>
 
       <section class="category">
         <ul id="products-detail-tabs">
           <li class="p1-btn">
-            <a href="javascript:void(0)" onclick="setActiveClass('p1-btn')">熱銷推薦</a>
+            <a href="javascript:void(0)" onclick="setActiveClass('p1-btn')">
+              <img src="images/c-1.svg" alt="美妝保養" />
+              <p>美妝保養</p></a
+            >
           </li>
           <li class="p2-btn">
-            <a href="javascript:void(0)" onclick="setActiveClass('p2-btn')">生鮮食品</a>
+            <a href="javascript:void(0)" onclick="setActiveClass('p2-btn')">
+              <img src="images/c-2.svg" alt="保健食品" />
+              <p>保健食品</p></a
+            >
           </li>
           <li class="p3-btn">
-            <a href="javascript:void(0)" onclick="setActiveClass('p3-btn')">保健食品</a>
+            <a href="javascript:void(0)" onclick="setActiveClass('p3-btn')">
+              <img src="images/c-3.svg" alt="身體清潔" />
+              <p>身體清潔</p>
+            </a>
           </li>
           <li class="p4-btn">
-            <a href="javascript:void(0)" onclick="setActiveClass('p4-btn')">保養品</a>
+            <a href="javascript:void(0)" onclick="setActiveClass('p4-btn')">
+              <img src="images/c-4.svg" alt="香氛蠟燭" />
+              <p>香氛蠟燭</p></a
+            >
           </li>
           <li class="p5-btn">
-            <a href="javascript:void(0)" onclick="setActiveClass('p5-btn')">時尚服飾</a>
+            <a href="javascript:void(0)" onclick="setActiveClass('p5-btn')">
+              <img src="images/c-5.svg" alt="服飾" />
+              <p>服飾</p></a
+            >
           </li>
           <li class="p6-btn">
-            <a href="javascript:void(0)" onclick="setActiveClass('p6-btn')">居家生活</a>
+            <a href="javascript:void(0)" onclick="setActiveClass('p6-btn')">
+              <img src="images/c-6.svg" alt="飾品" />
+              <p>飾品</p></a
+            >
+          </li>
+          <li class="p5-btn">
+            <a href="javascript:void(0)" onclick="setActiveClass('p5-btn')">
+              <img src="images/c-7.svg" alt="零食" />
+              <p>零食</p></a
+            >
+          </li>
+          <li class="p6-btn">
+            <a href="javascript:void(0)" onclick="setActiveClass('p6-btn')">
+              <img src="images/c-8.svg" alt="3C" />
+              <p>3C</p></a
+            >
           </li>
         </ul>
       </section>
 
       <section class="products list">
-        <div class="product" id="product-1">
-          <button class="add-to-cart" type="button" onclick="handleAddItemToCart('product-1')">
-            <img src="images/cart-icon.svg" alt="加入購物車" />
-          </button>
-          <a href="product-detail.html" class="img-wrap"
-            ><img src="images/product1.png" alt="img1"
-          /></a>
-          <p>
-            <span class="name">線雕緊緻精華噴霧</span>
-            <span class="point"><span class="value">15,000</span>點數</span>
-          </p>
+        <div class="products-title">
+          <img src="images/p-title-1.svg" alt="限時搶購" />
+          <div class="alarm">
+            <p><img src="images/alarm.svg" />距離結束</p>
+            <p>
+              <span class="time" id="hr">38</span>:<span class="time" id="min">38</span>:
+              <span class="time" id="sec">38</span>
+            </p>
+          </div>
         </div>
-        <div class="product">
-          <button class="add-to-cart" type="button" onclick="handleAddItemToCart()">
-            <img src="images/cart-icon.svg" alt="加入購物車" />
-          </button>
-          <a href="product-detail.html" class="img-wrap"
-            ><img src="images/product5.png" alt="img1"
-          /></a>
-          <p>
-            <span class="name">線雕緊緻精華噴霧</span>
-            <span class="point"><span class="value">15,000</span>點數</span>
-          </p>
+        <div class="slides-container">
+          <ul id="products-slides">
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite2"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite3"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite4"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="product">
-          <button class="add-to-cart" type="button" onclick="handleAddItemToCart()">
-            <img src="images/cart-icon.svg" alt="加入購物車" />
-          </button>
-          <a href="product-detail.html" class="img-wrap"
-            ><img src="images/product2.png" alt="img1"
-          /></a>
-          <p>
-            <span class="name">線雕緊緻精華噴霧</span>
-            <span class="point"><span class="value">15,000</span>點數</span>
-          </p>
+      </section>
+
+      <section class="products list">
+        <div class="products-title">
+          <img src="images/p-title-2.svg" alt="熱銷排行榜標題" />
         </div>
-        <div class="product">
-          <button class="add-to-cart" type="button" onclick="handleAddItemToCart()">
-            <img src="images/cart-icon.svg" alt="加入購物車" />
-          </button>
-          <a href="product-detail.html" class="img-wrap"><img src="images/p2.png" alt="img1" /></a>
-          <p>
-            <span class="name">線雕緊緻精華噴霧</span>
-            <span class="point"><span class="value">15,000</span>點數</span>
-          </p>
+        <div class="slides-container">
+          <ul id="ranking-products-slides">
+            <li>
+              <div class="product">
+                <img src="images/top1.svg" alt="top1" class="top-tag" />
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <img src="images/top2.svg" alt="top2" class="top-tag" />
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite2"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <img src="images/top3.svg" alt="top3" class="top-tag" />
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite3"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <img src="images/top4.svg" alt="top4" class="top-tag" />
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite4"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <img src="images/top5.svg" alt="top5" class="top-tag" />
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <img src="images/top6.svg" alt="top6" class="top-tag" />
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <img src="images/top1.svg" alt="top1" class="top-tag" />
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <img src="images/top2.svg" alt="top2" class="top-tag" />
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <img src="images/top3.svg" alt="top3" class="top-tag" />
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="product">
-          <button class="add-to-cart" type="button" onclick="handleAddItemToCart()">
-            <img src="images/cart-icon.svg" alt="加入購物車" />
-          </button>
-          <a href="product-detail.html" class="img-wrap"><img src="images/p2.png" alt="img1" /></a>
-          <p>
-            <span class="name">線雕緊緻精華噴霧</span>
-            <span class="point"><span class="value">15,000</span>點數</span>
-          </p>
+      </section>
+
+      <section class="products list">
+        <div class="products-title">
+          <img src="images/p-title-3.svg" alt="熱銷商品標題" />
+          <img src="images/see-more.svg" alt="發現更多" />
         </div>
-        <div class="product">
-          <button class="add-to-cart" type="button" onclick="handleAddItemToCart()">
-            <img src="images/cart-icon.svg" alt="加入購物車" />
-          </button>
-          <a href="product-detail.html" class="img-wrap"><img src="images/p2.png" alt="img1" /></a>
-          <p>
-            <span class="name">線雕緊緻精華噴霧</span>
-            <span class="point"><span class="value">15,000</span>點數</span>
-          </p>
+        <div class="slides-container">
+          <ul id="popular-products-slides">
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite2"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite3"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite4"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="products list">
+        <div class="products-title">
+          <img src="images/p-title-4.svg" alt="每日新發現標題" />
+        </div>
+        <div class="products-list-container">
+          <ul>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite2"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite3"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite4"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
     </main>
 
-    <footer class="desktop-only">
+    <footer>
       <div class="footer-content flex-row">
-        <nav class="flex-row">
-          <a href="#" class="line-icon"><img src="images/line.png" alt="line" /></a>
-          <ul>
+        <div class="flex-row social-icons">
+          <a href="#" class="line-icon social-icon"><img src="images/line.png" alt="line" /></a>
+          <a href="#" class="fb-icon social-icon"><img src="images/fb.png" alt="line" /></a>
+          <a href="#" class="ig-icon social-icon"><img src="images/ig.png" alt="line" /></a>
+        </div>
+        <div class="flex-column">
+          <ul class="flex-row footer-menu">
             <li>
               <a href="contact.html">聯絡我們</a>
             </li>
@@ -273,11 +824,12 @@
               <a href="policy.html">服務條款</a>
             </li>
           </ul>
-        </nav>
-        <p class="copyright">
-          <span>Copyright© 2022 by Tikka版權所有</span>
-          <span>Copyright© 2022 Tikka. All rights reserved.</span>
-        </p>
+
+          <p class="copyright">
+            <span>Copyright© 2022 by Tikka版權所有</span>
+            <span>Copyright© 2022 Tikka. All rights reserved.</span>
+          </p>
+        </div>
       </div>
     </footer>
     <script
@@ -286,40 +838,51 @@
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
-    <script>
-      new Glide("#highlighted-products-slides", { type: "carousel" }).mount();
-    </script>
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
     <script>
-      $("#products-detail-tabs").slick({
+      $("#highlighted-products-slides").slick({
+        infinite: true,
+        dots: true,
+      });
+
+      $("#products-slides").slick({
         slidesToShow: 5,
-        slidesToScroll: 3,
+        slidesToScroll: 5,
         infinite: true,
         responsive: [
           {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 4,
-              slidesToScroll: 4,
-            },
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-            },
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-            },
+            breakpoint: 767,
+            settings: "unslick",
           },
         ],
       });
+
+      $("#ranking-products-slides").slick({
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        infinite: true,
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: "unslick",
+          },
+        ],
+      });
+
+
+      $("#popular-products-slides").slick({
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        infinite: true,
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: "unslick",
+          },
+        ],
+      });
+
       function setActiveClass(classId) {
         [...document.querySelectorAll("#products-detail-tabs .glide__slide")].map((node) =>
           node.classList.remove("active")
@@ -330,9 +893,40 @@
         });
       }
 
-      function handleAddItemToCart(id) {
-        console.log(`將商品加入購物車, id:${id}`);
+      const deadline = "2023-04-22";
+
+      function getTimeRemaining(endtime = deadline) {
+        const total = Date.parse(endtime) - Date.parse(new Date());
+        const seconds = Math.floor((total / 1000) % 60);
+        const minutes = Math.floor((total / 1000 / 60) % 60);
+        const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+        const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+        return {
+          total,
+          days,
+          hours,
+          minutes,
+          seconds,
+        };
       }
+
+      function initializeClock(endtime = deadline) {
+        const hr = document.getElementById("hr");
+        const min = document.getElementById("min");
+        const sec = document.getElementById("sec");
+        const timeinterval = setInterval(() => {
+          const t = getTimeRemaining(endtime);
+          hr.innerHTML = t.hours;
+          min.innerHTML = t.minutes;
+          sec.innerHTML = t.seconds;
+          if (t.total <= 0) {
+            clearInterval(timeinterval);
+          }
+        }, 1000);
+      }
+
+      initializeClock();
     </script>
   </body>
 </html>

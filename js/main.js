@@ -459,6 +459,14 @@ function handleFollow(element) {
   }
 }
 
+function handleAddFavorite(element) {
+  if (element.classList.contains("pink")) {
+    element.classList.remove("pink");
+  } else {
+    element.classList.add("pink");
+  }
+}
+
 /* 點擊單一主播圖片，開啟新頁面 */
 function handleLiveItemClick(target) {
   const ifOnLive = target.classList.value.includes("on");
