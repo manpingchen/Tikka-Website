@@ -945,7 +945,7 @@ section.products .products-title img,
   section.live .live-title img,
   section.products .products-title img,
   .ranking-slides-title img {
-    height: 40px;
+    height: 36px;
   }
 }
 
@@ -4184,7 +4184,7 @@ main.products section div.product p {
   justify-content: center;
   font-size: 0.875rem;
   color: #000;
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
 }
 
 main.products section div.product p.price {
@@ -4204,7 +4204,10 @@ main.products div.product p.name {
   line-clamp: 2;
   width: 120px;
   -webkit-box-orient: vertical;
+  text-align: center;
+  font-size: 0.875rem;
 }
+
 
 main.products section div.product a.img-wrap {
   width: 100%;
@@ -4217,7 +4220,7 @@ main.products section div.product a.img-wrap {
   position: relative;
 }
 
-main.products section div.product a.img-wrap img{
+main.products section div.product a.img-wrap img {
   position: absolute;
   height: 100%;
   top: 0;
@@ -4246,39 +4249,6 @@ button.add-favorite.pink {
   background-image: url("../images/heart-pink-icon.svg");
 }
 
-
-@media screen and (max-width: 768px) {
-  main.products section div.product a.img-wrap {
-    border-radius: 18px;
-  }
-
-}
-
-@media screen and (max-width: 480px) {
-  main.products section div.product a.img-wrap {
-    border-radius: 15px;
-  }
-  main.products section div.product p,
-  main.products section div.product p span.name {
-    font-size: 1rem !important;
-  }
-  main.products section div.product a.img-wrap img {
-    height: 130px;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  main.products section div.product a.img-wrap {
-    border-radius: 15px;
-  }
-  main.products section div.product p,
-  main.products section div.product p span.name {
-    font-size: 0.8rem !important;
-  }
-  main.products section div.product a.img-wrap img {
-    height: 110px;
-  }
-}
 
 main.products section div.product a.img-wrap:hover img {
   filter: none;
@@ -4382,7 +4352,8 @@ ul#products-detail-tabs li img {
   display: block;
 }
 
-ul#products-detail-tabs li a:hover img, ul#products-detail-tabs li img:hover {
+ul#products-detail-tabs li a:hover img,
+ul#products-detail-tabs li img:hover {
   filter: none;
 }
 
@@ -8948,4 +8919,23 @@ div.overlay#viewer-overlay-mobile {
   font-size: 0.875rem;
   color: white;
   text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  .alarm,
+  .alarm p {
+    gap: 0.25rem;
+  }
+
+  .alarm img {
+    width: 16px;
+    height: auto !important;
+  }
+  .alarm p,
+  .alarm span.time {
+    font-size: 0.75rem;
+  }
+  .alarm span.time {
+    width: 23px;
+  }
 }
