@@ -128,400 +128,101 @@
         </div>
       </form>
 
-      <div class="live-items">
-        <div class="live-item-wrap">
-          <a class="live-item on" onclick="handleLiveItemClick(this)">
-            <div class="img-wrap">
-              <img src="images/s1.jpg" alt="" />
-            </div>
-            <span class="live-chip pink">LIVE</span>
-            <span class="count ellipsis">99999</span>
-            <p class="live-info">
-              <span class="topic ellipsis">開播主題</span>
-              <span class="location ellipsis">開播地點</span>
-            </p>
-          </a>
-          <div class="search-live-item-footer">
-            <p>主播姓名</p>
-            <button
-              type="button"
-              class="follow-btn"
-              id="follow-search-1"
-              onclick="handleFollow(this)"
-            >
-              <img src="images/heart-icon.svg" alt="heart icon" />
-              <span class="follow-text">追蹤</span>
-            </button>
-          </div>
-        </div>
-        <div class="live-item-wrap">
-          <a class="live-item" onclick="handleLiveItemClick(this)">
-            <div class="img-wrap">
-              <img src="images/s1.jpg" alt="" />
-            </div>
-            <span class="live-chip">LIVE</span>
-            <span class="count ellipsis">99999</span>
-            <p class="live-info">
-              <span class="topic ellipsis">開播主題</span>
-              <span class="location ellipsis">開播地點</span>
-            </p>
-          </a>
-          <div class="search-live-item-footer">
-            <p>主播姓名</p>
-            <button
-              type="button"
-              class="follow-btn"
-              id="follow-search-2"
-              onclick="handleFollow(this)"
-            >
-              <img src="images/heart-icon.svg" alt="heart icon" />
-              <span class="follow-text">追蹤</span>
-            </button>
-          </div>
-        </div>
-        <div class="live-item-wrap">
-          <a class="live-item" onclick="handleLiveItemClick(this)">
-            <div class="img-wrap">
-              <img src="images/s1.jpg" alt="" />
-            </div>
-            <span class="live-chip">LIVE</span>
-            <span class="count ellipsis">99999</span>
-            <p class="live-info">
-              <span class="topic ellipsis">開播主題</span>
-              <span class="location ellipsis">開播地點</span>
-            </p>
-          </a>
-          <div class="search-live-item-footer">
-            <p>主播姓名</p>
-            <button
-              type="button"
-              class="follow-btn"
-              id="follow-search-2"
-              onclick="handleFollow(this)"
-            >
-              <img src="images/heart-icon.svg" alt="heart icon" />
-              <span class="follow-text">追蹤</span>
-            </button>
-          </div>
-        </div>
-        <div class="live-item-wrap">
-          <a class="live-item" onclick="handleLiveItemClick(this)">
-            <div class="img-wrap">
-              <img src="images/s1.jpg" alt="" />
-            </div>
-            <span class="live-chip">LIVE</span>
-            <span class="count ellipsis">99999</span>
-            <p class="live-info">
-              <span class="topic ellipsis">開播主題</span>
-              <span class="location ellipsis">開播地點</span>
-            </p>
-          </a>
-          <div class="search-live-item-footer">
-            <p>主播姓名</p>
-            <button
-              type="button"
-              class="follow-btn"
-              id="follow-search-2"
-              onclick="handleFollow(this)"
-            >
-              <img src="images/heart-icon.svg" alt="heart icon" />
-              <span class="follow-text">追蹤</span>
-            </button>
-          </div>
-        </div>
-        <div class="live-item-wrap">
-          <a class="live-item" onclick="handleLiveItemClick(this)">
-            <div class="img-wrap">
-              <img src="images/s1.jpg" alt="" />
-            </div>
-            <span class="live-chip">LIVE</span>
-            <span class="count ellipsis">99999</span>
-            <p class="live-info">
-              <span class="topic ellipsis">開播主題</span>
-              <span class="location ellipsis">開播地點</span>
-            </p>
-          </a>
-          <div class="search-live-item-footer">
-            <p>主播姓名</p>
-            <button
-              type="button"
-              class="follow-btn"
-              id="follow-search-2"
-              onclick="handleFollow(this)"
-            >
-              <img src="images/heart-icon.svg" alt="heart icon" />
-              <span class="follow-text">追蹤</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
       <!-- Search Result -->
-      <div class="search-result-list" style="display: none">
-        <div class="search-item">
-          <div class="img-wrap-with-live-chip" onclick="directPage({live: true})">
-            <div class="img-wrap">
-              <img src="images/s2.jpg" alt="" />
-            </div>
-            <span class="live-chip pink">LIVE</span>
-          </div>
-          <div class="info">
-            <p class="name ellipsis">主播姓名</p>
-            <p class="popular">9999999</p>
-          </div>
-          <button type="button" class="follow-btn" id="search-1" onclick="handleFollow(this)">
-            <img src="images/heart-icon.svg" alt="heart icon" />
-            <span class="follow-text"> 追蹤 </span>
-          </button>
+      <div class="search-result-list product-search-list" style="display: none">
+        <div class="product-item search-item">
+          <button
+            type="button"
+            class="add-favorite"
+            id="favorite"
+            onclick="handleAddFavorite(this)"
+          ></button>
+          <a href="product-detail.html" class="img-wrap">
+            <img src="images/p2.png" alt="" />
+          </a>
+          <p class="name">搜尋結果商品名稱商品名稱商品名稱商品名稱</p>
+          <p class="price">$990</p>
         </div>
-        <div class="search-item">
-          <div class="img-wrap-with-live-chip" onclick="directPage({live: false})">
-            <div class="img-wrap">
-              <img src="images/s2.jpg" alt="" />
-            </div>
-            <span class="live-chip">LIVE</span>
-          </div>
-          <div class="info">
-            <p class="name ellipsis">主播姓名</p>
-            <p class="popular">9999999</p>
-          </div>
-          <button type="button" class="follow-btn" id="search-2" onclick="handleFollow(this)">
-            <img src="images/heart-icon.svg" alt="heart icon" />
-            <span class="follow-text"> 追蹤 </span>
-          </button>
+        <div class="product-item search-item">
+          <button
+            type="button"
+            class="add-favorite"
+            id="favorite"
+            onclick="handleAddFavorite(this)"
+          ></button>
+          <a href="product-detail.html" class="img-wrap">
+            <img src="images/p2.png" alt="" />
+          </a>
+          <p class="name">搜尋結果商品名稱商品名稱商品名稱商品名稱</p>
+          <p class="price">$990</p>
+        </div>
+        <div class="product-item search-item">
+          <button
+            type="button"
+            class="add-favorite"
+            id="favorite"
+            onclick="handleAddFavorite(this)"
+          ></button>
+          <a href="product-detail.html" class="img-wrap">
+            <img src="images/p2.png" alt="" />
+          </a>
+          <p class="name">搜尋結果商品名稱商品名稱商品名稱商品名稱</p>
+          <p class="price">$990</p>
+        </div>
+        <div class="product-item search-item">
+          <button
+            type="button"
+            class="add-favorite"
+            id="favorite"
+            onclick="handleAddFavorite(this)"
+          ></button>
+          <a href="product-detail.html" class="img-wrap">
+            <img src="images/p2.png" alt="" />
+          </a>
+          <p class="name">搜尋結果商品名稱商品名稱商品名稱商品名稱</p>
+          <p class="price">$990</p>
+        </div>
+        <div class="product-item search-item">
+          <button
+            type="button"
+            class="add-favorite"
+            id="favorite"
+            onclick="handleAddFavorite(this)"
+          ></button>
+          <a href="product-detail.html" class="img-wrap">
+            <img src="images/p2.png" alt="" />
+          </a>
+          <p class="name">搜尋結果商品名稱商品名稱商品名稱商品名稱</p>
+          <p class="price">$990</p>
+        </div>
+        <div class="product-item search-item">
+          <button
+            type="button"
+            class="add-favorite"
+            id="favorite"
+            onclick="handleAddFavorite(this)"
+          ></button>
+          <a href="product-detail.html" class="img-wrap">
+            <img src="images/p2.png" alt="" />
+          </a>
+          <p class="name">搜尋結果商品名稱商品名稱商品名稱商品名稱</p>
+          <p class="price">$990</p>
+        </div>
+        <div class="product-item search-item">
+          <button
+            type="button"
+            class="add-favorite"
+            id="favorite"
+            onclick="handleAddFavorite(this)"
+          ></button>
+          <a href="product-detail.html" class="img-wrap">
+            <img src="images/p2.png" alt="" />
+          </a>
+          <p class="name">搜尋結果商品名稱商品名稱商品名稱商品名稱</p>
+          <p class="price">$990</p>
         </div>
       </div>
     </main>
-
-    <!-- 手機版禮物牆 -->
-    <div class="full-width overlay rewards search-page-overlay" id="rewards-overlay">
-      <div class="content">
-        <section class="title">
-          <button class="close" onclick="handleHideComponent('#rewards-overlay')">
-            <img src="images/close-icon.svg" alt="close" />
-          </button>
-          <div class="wrapper reward-btns-mobile">
-            <div class="btns" id="reward-title-buttons-mobile">
-              <button
-                id="reward-gift-mobile"
-                type="button"
-                class="active"
-                onclick="handleRewardTitleClick(this.id,'reward-title-buttons-mobile')"
-              >
-                <img src="images/gift.svg" alt="" />禮物
-              </button>
-              <button
-                id="reward-product-mobile"
-                type="button"
-                onclick="handleRewardTitleClick(this.id,'reward-title-buttons-mobile')"
-              >
-                <img src="images/arrow-cart.svg" alt="" />商品
-              </button>
-              <button
-                id="reward-box-mobile"
-                type="button"
-                onclick="handleRewardTitleClick(this.id,'reward-title-buttons-mobile')"
-              >
-                <img src="images/treasure.svg" alt="" />百寶箱
-              </button>
-            </div>
-          </div>
-
-          <div class="detail-links reward-gift" id="gift-details-mobile">
-            <a
-              href="#"
-              id="gift-all-mobile"
-              onclick="showRewardDetail(this.id, 'gift-details-mobile')"
-              >All</a
-            >
-            <span class="border"></span>
-            <a
-              href="#"
-              id="gift-popular-mobile"
-              onclick="showRewardDetail(this.id, 'gift-details-mobile')"
-              >熱門</a
-            >
-            <span class="border"></span>
-            <a
-              href="#"
-              id="gift-favourite-mobile"
-              onclick="showRewardDetail(this.id, 'gift-details-mobile')"
-              >女神最愛</a
-            >
-            <span class="border"></span>
-            <a
-              href="#"
-              id="gift-romantic-mobile"
-              onclick="showRewardDetail(this.id, 'gift-details-mobile')"
-              >浪漫禮物</a
-            >
-          </div>
-
-          <div class="detail-links reward-gift" id="product-details-mobile" style="display: none">
-            <a
-              href="#"
-              id="product-all-mobile"
-              onclick="showRewardDetail(this.id, 'product-details-mobile')"
-              >All</a
-            >
-            <span class="border"></span>
-            <a
-              href="#"
-              id="product-popular-mobile"
-              onclick="showRewardDetail(this.id, 'product-details-mobile')"
-              >熱銷</a
-            >
-          </div>
-          <div class="detail-links reward-gift" id="box-details-mobile" style="display: none">
-            <a
-              href="#"
-              id="box-all-mobile"
-              onclick="showRewardDetail(this.id, 'box-details-mobile')"
-              >All</a
-            >
-          </div>
-        </section>
-        <section class="reward-items-container">
-          <div class="reward-items reward-gift" id="rewards-wall-mobile">
-            <!-- <div class="reward-item">
-            <img src="images/diamond.png" alt="" />
-            <span class="point flex-row">2740000</span>
-          </div> -->
-          </div>
-          <div class="footer">
-            <div class="send-gift flex-row">
-              <span class="point flex-row">2740000</span>
-              <button id="buy-button" type="button" onclick="handleBuy()">購買</button>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <!-- 我要分享遮罩 -->
-    <div
-      class="full-width streamer-profile-overlay social-media-shares overlay"
-      id="social-media-shares"
-    >
-      <div class="title flex-row">
-        <button class="close" onclick="handleHideComponent('#social-media-shares')">
-          <img src="images/close-icon.svg" alt="close" />
-        </button>
-        <p class="flex-row"><img src="images/social.svg" alt="分享" />分享</p>
-      </div>
-      <div class="content">
-        <ul>
-          <li>
-            <button type="button">
-              <img src="images/line.png" alt="" />
-              LINE
-            </button>
-          </li>
-          <li>
-            <button type="button">
-              <img src="images/facebook.svg" alt="" />
-              Facebook
-            </button>
-          </li>
-          <li>
-            <button type="button">
-              <img src="images/whatsapp.svg" alt="" />
-              Whatsapp
-            </button>
-          </li>
-          <li>
-            <button type="button">
-              <img src="images/twitter.svg" alt="" />
-              Twitter
-            </button>
-          </li>
-          <li>
-            <button type="button">
-              <img src="images/link.svg" alt="" />
-              複製連結
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 捧花不足 -->
-    <div class="overlay full-width" id="top-up-overlay">
-      <div class="title flex-row">
-        <button class="close" onclick="handleHideComponent('#top-up-overlay')">
-          <img src="images/close-icon.svg" alt="close" />
-        </button>
-        <p class="flex-row"><span class="line"></span>捧花不足 <span class="line"></span></p>
-      </div>
-      <div class="content">
-        <a href="topup.html" class="topup-btn"><img src="images/coin.png" />請儲值</a>
-      </div>
-      <div class="footer">
-        <span class="point">59</span>
-      </div>
-    </div>
-
-    <!-- 滿版禮物圖 -->
-    <div class="gift-full-overlay full-width search-page overlay" id="gift-full-overlay">
-      <img src="images/gift2.png" alt="" />
-    </div>
-
-    <!-- 下方禮物送出框 -->
-    <div class="gift-sent-overlay full-width search-page overlay" id="gift-sent">
-      <div class="container">
-        <div class="avatar-wrapper">
-          <img src="images/s2.jpg" class="avatar" alt="name" />
-        </div>
-        <div class="info">
-          <span class="name">小愛</span>
-          <div class="gift-name marquee-wall" id="marquee-gift-wall">
-            <span class="gift-text" id="marquee-gift-text"> 送了 名字短的名稱 </span>
-          </div>
-        </div>
-        <div class="gift-img-wrapper">
-          <img src="images/gift2.png" alt="禮物小圖" />
-        </div>
-      </div>
-    </div>
-
-    <!-- 行動版滿版經典影片區 -->
-    <div class="overlay full-page highlight-content-overlay" id="search-result-video-overlay">
-      <div class="top-bar">
-        <button class="back" onclick="handleHideComponent('#search-result-video-overlay')">
-          <span class="material-icons">&#xE5CB;</span>
-        </button>
-        <p>經典影片</p>
-      </div>
-      <div class="header">
-        <div class="img-wrap">
-          <img src="images/s1.jpg" alt="" />
-        </div>
-        <p>可愛小貝最萌</p>
-      </div>
-      <div class="content">
-        <div class="videoDiv">
-          <video id="rtc_media_player" autoplay playsinline controls></video>
-        </div>
-        <div class="video-description">
-          經典影片內容說明，經典影片內容說明經典影片內容說明。經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明。
-        </div>
-        <div class="btn-groups">
-          <button class="followed" onclick="handleFollow()">
-            <img src="images/heart-icon.svg" alt="heart icon" />
-            <span class="value">999</span>
-          </button>
-          <button onclick="handleShowRewardWallFromVideoOverlay()">
-            <img src="images/gift.svg" alt="gift icon" />
-          </button>
-          <button onclick="handleShowComponent('#social-media-shares')">
-            <img src="images/social.svg" alt="social icon" />
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!--遮罩backdrop-->
-    <div class="backdrop" style="display: none"></div>
 
     <footer>
       <div class="footer-content flex-row">
@@ -551,26 +252,8 @@
       </div>
     </footer>
     <script src="js/header.js"></script>
-    <script src="js/fakeData.js"></script>
     <script src="js/main.js"></script>
     <script>
-      /* 購買禮物捧花不足 */
-      function handleBuy() {
-        handleHideComponent("#rewards-overlay");
-        // 下列兩個遮罩可切換
-        // 捧花不足遮罩
-        // handleShowComponent("#top-up-overlay");
-        // 送出禮物遮罩
-        handleShowComponent("#gift-full-overlay");
-        handleShowComponent("#gift-sent", "flex");
-      }
-
-      /* 點擊經典影片遮罩，開啟禮物牆 */
-      function handleShowRewardWallFromVideoOverlay() {
-        handleShowComponent("#rewards-overlay");
-        showRewardDetail("gift-all-mobile", "gift-details-mobile");
-      }
-
       /* 搜尋 */
       function handleSearch() {
         const searchValue = document.getElementById("search-input").value;
@@ -579,16 +262,7 @@
           [...document.querySelectorAll(".live-items")].forEach((node) => {
             node.style.display = "none";
           });
-          handleShowComponent(".search-result-list");
-        }
-      }
-
-      /* 轉導頁面*/
-      function directPage({ live }) {
-        if (live) {
-          window.location.href = "live-on.html";
-        } else {
-          window.location.href = "streamer-profile.html";
+          handleShowComponent(".search-result-list", "grid");
         }
       }
     </script>
