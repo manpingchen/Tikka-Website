@@ -10,10 +10,7 @@
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/slideshow.css" />
-    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
     <!-- Required Core Stylesheet -->
-    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   </head>
   <body class="search">
@@ -254,17 +251,21 @@
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
     <script>
+      const defaultSearchedValue = "熱門";
       /* 搜尋 */
       function handleSearch() {
-        const searchValue = document.getElementById("search-input").value;
-        if (searchValue) {
-          console.log(searchValue);
-          [...document.querySelectorAll(".live-items")].forEach((node) => {
-            node.style.display = "none";
-          });
-          handleShowComponent(".search-result-list", "grid");
+        const searchInput = document.getElementById("search-input");
+        if (searchInput.value) {
+          console.log("輸入之關鍵字：", { searchValue: searchInput.value });
+        } else {
+          console.log("未輸入關鍵字時的預設關鍵字", { defaultSearchedValue });
+          searchInput.innerText = defaultSearchedValue;
         }
+        handleShowComponent(".search-result-list", "grid", false);
       }
+
+      /* 使用預設關鍵字之初始搜尋結果 */
+      handleSearch();
     </script>
   </body>
 </html>
