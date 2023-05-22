@@ -1126,6 +1126,7 @@ main.member h1 {
 
 main.member.login {
   padding: 0;
+  margin-bottom: 0;
 }
 
 main.member.login h1,
@@ -1183,10 +1184,13 @@ main.member.login ul.login-actions li {
   padding-bottom: 1rem;
 }
 
-main.member.login p.note {
+main.member p.note {
   text-align: center;
   color: gray;
   font-size: 0.8rem;
+  margin: 1rem 0;
+  letter-spacing: 0.1rem;
+  line-height: 1.5rem;
 }
 
 button.white-gradient,
@@ -1228,8 +1232,9 @@ a.white-gradient:hover img{
 .error-msg {
   color: #e60672;
   text-align: center;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.5rem;
   font-size: 0.875rem;
+  line-height: 1.5rem;
 }
 
 form.login,
@@ -1240,8 +1245,8 @@ form.register {
 
 form.login {
   border-bottom: 1px solid #fb8db9;
-  margin-bottom: 2rem;
-  padding-bottom: 1.2rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
 }
 
 form.login input,
