@@ -1125,7 +1125,7 @@ main.member h1 {
 }
 
 main.member.login {
-  padding: 0;
+  padding: 2rem 0 0;
   margin-bottom: 140px;
 }
 
