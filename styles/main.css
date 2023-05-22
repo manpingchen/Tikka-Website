@@ -1124,10 +1124,124 @@ main.member h1 {
   text-align: center;
 }
 
+main.member.login {
+  padding: 0;
+}
+
+main.member.login h1,
+main.member.login h2 {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  color: #df216d;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+main.member.login h2 {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background: #ffeaf3;
+  width: 300px;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+
+main.member.login h1 img {
+  width: 2rem;
+}
+
+main.member.login h2 img {
+  width: 1rem;
+}
+
+main.member.login ul.third-party-accounts {
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+main.member.login ul.third-party-accounts button {
+  padding: 0;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 5px 5px #cbcbcb;
+}
+
+main.member.login ul.third-party-accounts img {
+  width: 50px;
+}
+
+main.member.login ul.login-actions {
+  margin-top: 2rem;
+}
+
+main.member.login ul.login-actions li {
+  padding-bottom: 1rem;
+}
+
+main.member.login p.note {
+  text-align: center;
+  color: gray;
+  font-size: 0.8rem;
+}
+
+button.white-gradient,
+a.white-gradient {
+  color: #df216d;
+  background: linear-gradient(#fff, #fff, #fff, #ddd);
+  border-radius: 40px;
+  height: 40px;
+  padding: 0rem 1rem;
+  width: 180px !important;
+  letter-spacing: 0.2em;
+  font-size: 1.1rem;
+  display: flex;
+  box-shadow: 0 3px 5px #cbcbcb;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  text-decoration: none;
+  gap: 0.5rem;
+}
+
+
+button.white-gradient:hover, 
+a.white-gradient:hover {
+  color: #fff;
+  background: linear-gradient(0deg, #e60672, #ef99bf);
+}
+
+button.white-gradient img,
+a.white-gradient img {
+  width: 0.875rem;
+}
+
+button.white-gradient:hover img,
+a.white-gradient:hover img{
+  filter: brightness(10);
+}
+
+.error-msg {
+  color: #e60672;
+  text-align: center;
+  margin: 0 auto 1rem;
+  font-size: 0.875rem;
+}
+
 form.login,
 form.register {
   width: 300px;
   margin: 0 auto;
+}
+
+form.login {
+  border-bottom: 1px solid #fb8db9;
+  margin-bottom: 2rem;
+  padding-bottom: 1.2rem;
 }
 
 form.login input,
