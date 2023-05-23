@@ -1180,10 +1180,6 @@ main.member.login ul.login-actions {
   margin-top: 2rem;
 }
 
-main.member.login ul.login-actions li {
-  padding-bottom: 1rem;
-}
-
 main.member p.note {
   text-align: center;
   color: gray;
@@ -1207,13 +1203,12 @@ a.white-gradient {
   box-shadow: 0 3px 5px #cbcbcb;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  margin: 0 auto 1rem;
   text-decoration: none;
   gap: 0.5rem;
 }
 
-
-button.white-gradient:hover, 
+button.white-gradient:hover,
 a.white-gradient:hover {
   color: #fff;
   background: linear-gradient(0deg, #e60672, #ef99bf);
@@ -1225,7 +1220,7 @@ a.white-gradient img {
 }
 
 button.white-gradient:hover img,
-a.white-gradient:hover img{
+a.white-gradient:hover img {
   filter: brightness(10);
 }
 
@@ -1243,7 +1238,7 @@ form.register {
   margin: 0 auto;
 }
 
-form.login {
+form.login:not(.forget) {
   border-bottom: 1px solid #fb8db9;
   margin-bottom: 3rem;
   padding-bottom: 2.5rem;
@@ -1306,6 +1301,31 @@ form div.radio-group input {
   padding: 0;
   width: initial;
   margin-right: 10px;
+}
+
+.sent-message {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  background: #ffe5f4;
+  color: #df216d;
+  width: 100%;
+  margin: 0 auto 1rem;
+  max-width: 300px;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.sent-message > img {
+  width: 40px;
+}
+
+.sent-message > p {
+  padding: 0.5rem;
+  line-height: 1.5rem;
+  padding-left: 1rem;
+  border-left: 1px solid #fb8db9;
 }
 
 /*Topup*/
