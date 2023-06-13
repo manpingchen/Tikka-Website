@@ -8580,6 +8580,7 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   top: -5px;
   width: 40px;
   left: 0;
+  z-index: 2;
 }
 
 .products-list-container ul {
