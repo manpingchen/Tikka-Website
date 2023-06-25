@@ -328,6 +328,7 @@ nav.end-nav ul li {
 
 .end-nav li a > img {
   border-radius: 50%;
+  height: 50px;
   display: block;
 }
 
@@ -344,12 +345,26 @@ nav.end-nav ul li {
   border-radius: 10px;
 }
 
+.end-nav:not(.logged-in) li > a.login-link {
+  display: none;
+}
+
+.end-nav.logged-in li > a.login-link {
+  display: none;
+}
+
+.end-nav .avatar-wrapper {
+  height: 50px;
+  box-shadow: none;
+  border: none;
+}
+
 @media screen and (max-width: 480px) {
   nav.end-nav {
     display: flex;
   }
 
-  .site-header__end{
+  .site-header__end {
     display: none;
   }
 }

@@ -103,11 +103,17 @@
         </div>
       </div>
     </header>
- <!-- MOBILE NAV-->
-    <nav class="end-nav">
+    <!-- MOBILE NAV-->
+    <nav class="end-nav logged-in">
       <ul class="flex-row">
         <li>
-          <a href="login.html"><img src="images/m-nav-1.svg" />登入</a>
+          <a href="login.html" class="login-link"><img src="images/m-nav-1.svg" />登入</a>
+          <a href="account.html" class="account-link ellipsis">
+            <span class="avatar-wrapper">
+              <img src="images/s2.jpg" class="avatar" />
+            </span>
+            ALLEN
+          </a>
         </li>
         <li>
           <a href="products.html"><img src="images/m-nav-2.svg" />商品</a>
@@ -123,26 +129,26 @@
             <span class="icon">
               <span class="cart-amount">1</span>
             </span>
-            <img src="images/m-nav-5.svg"
-          />購物車</a>
+            <img src="images/m-nav-5.svg" />購物車</a
+          >
         </li>
       </ul>
     </nav>
     <!-- Header End -->
     <main class="member login">
       <h1><img src="images/login-icon.svg" alt="登入" />會員登入</h1>
-     
+
       <h2><img src="images/login-icon.svg" alt="登入" />使用TIKKA帳號登入</h2>
       <form action="" class="login">
         <input type="text" name="account" id="" placeholder="請輸入帳號（大小寫區分）" />
         <input type="password" name="password" id="" placeholder="請輸入密碼（大小寫區分）" />
-        
+
         <!--錯誤訊息-->
         <p class="error-msg">抱歉，您輸入的帳號或密碼錯誤</p>
-        
+
         <button type="submit" class="confirm white-gradient">確認登入</button>
       </form>
-      
+
       <h2><img src="images/login-icon.svg" alt="登入" />使用第三方帳號登入</h2>
       <ul class="third-party-accounts flex-row">
         <li>
@@ -152,15 +158,26 @@
           <button type="button"><img src="images/fb.png" alt="line" /></button>
         </li>
       </ul>
-     
-      <p class="note">登入後即代表您同意<br />TIKKA服務條例及隱私權保護政策</p>
-      
-      <ul class="login-actions">
-        <li><a class="white-gradient" href="register.html"><img src="images/login-icon.svg" alt="會員註冊" />會員註冊</a></li>
-        <li><a class="white-gradient" href="forget.html"><img src="images/security-icon.svg" alt="忘記密碼" />忘記密碼</a></li>
-        <li><a class="white-gradient" href="verification.html"><img src="images/mail-icon.svg" alt="登重寄驗證信入" />重寄驗證信</a></li>
-      </ul>
 
+      <p class="note">登入後即代表您同意<br />TIKKA服務條例及隱私權保護政策</p>
+
+      <ul class="login-actions">
+        <li>
+          <a class="white-gradient" href="register.html"
+            ><img src="images/login-icon.svg" alt="會員註冊" />會員註冊</a
+          >
+        </li>
+        <li>
+          <a class="white-gradient" href="forget.html"
+            ><img src="images/security-icon.svg" alt="忘記密碼" />忘記密碼</a
+          >
+        </li>
+        <li>
+          <a class="white-gradient" href="verification.html"
+            ><img src="images/mail-icon.svg" alt="登重寄驗證信入" />重寄驗證信</a
+          >
+        </li>
+      </ul>
     </main>
     <footer>
       <div class="footer-content flex-row">
