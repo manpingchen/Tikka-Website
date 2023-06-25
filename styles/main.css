@@ -4493,6 +4493,18 @@ ul#products-detail-tabs li img {
   display: block;
 }
 
+@media screen and (max-width: 480px) {
+  ul#products-detail-tabs li img {
+    min-width: 70px;
+    background-size: 70px 70px;
+    padding: 25px;
+  }
+  ul#products-detail-tabs li a p{
+    font-size: 0.875rem;
+    margin-top: 0;
+  }
+}
+
 ul#products-detail-tabs li a:hover img,
 ul#products-detail-tabs li img:hover {
   filter: none;
