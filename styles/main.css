@@ -8677,7 +8677,7 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   }
 }
 
-.product-types .list li div.img-wrap {
+.product-types .list li picture.img-wrap {
   border-radius: 10px;
   overflow: hidden;
   padding-top: 100%;
@@ -8700,7 +8700,8 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   color: #e9538e;
 }
 
-.product-types .list li div.img-wrap img {
+.product-types .list li .img-wrap img, 
+.product-types .list li .img-wrap source {
   height: 100%;
   position: absolute;
   top: 0;
