@@ -8660,6 +8660,19 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   margin-bottom: 3rem;
 }
 
+.product-types.mobile-only {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .product-types.mobile-only {
+    display: block;
+  }
+  .product-types.desktop-only {
+    display: none;
+  }
+}
+
 .product-types .list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -8677,7 +8690,7 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   }
 }
 
-.product-types .list li picture.img-wrap {
+.product-types .list li .img-wrap {
   border-radius: 10px;
   overflow: hidden;
   padding-top: 100%;
@@ -8700,7 +8713,7 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   color: #e9538e;
 }
 
-.product-types .list li .img-wrap img, 
+.product-types .list li .img-wrap img,
 .product-types .list li .img-wrap source {
   height: 100%;
   position: absolute;
