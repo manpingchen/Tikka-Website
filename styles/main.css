@@ -8684,10 +8684,6 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   .product-types .list {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .product-types li.top-4 {
-    display: none;
-  }
 }
 
 .product-types .list li .img-wrap {
