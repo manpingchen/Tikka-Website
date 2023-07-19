@@ -168,6 +168,10 @@ button {
   border: none;
 }
 
+button.small {
+  padding: 0.25rem 1rem;
+}
+
 button.confirm {
   background: #ffeaf3;
   color: #df216d;
@@ -3881,6 +3885,10 @@ main.account-table-data {
   text-align: center;
 }
 
+main.account-table-data > div.table-wrapper:not(:first-child) {
+  margin-bottom: 3rem;
+}
+
 main.account-table-data h1 img {
   height: 40px;
   margin-bottom: 1rem;
@@ -3896,45 +3904,120 @@ div.table-wrapper {
   box-shadow: 0 5px 5px rgb(183, 183, 183);
 }
 
-table.account-table {
+table.account-table,
+table.blocked-table,
+table.removed-table {
   border-collapse: collapse;
   width: 100%;
   margin: 0 auto;
 }
 
 table.account-table thead,
-table.account-table tfoot {
+table.account-table tfoot,
+table.blocked-table thead,
+table.removed-table thead {
   background: #fcb3d2;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1rem;
   letter-spacing: 0.05em;
 }
 
 table.account-table tr td,
-table.account-table tr th {
+table.account-table tr th,
+table.blocked-table tr td,
+table.blocked-table tr th,
+table.removed-table tr td,
+table.removed-table tr th {
   padding: 15px 10px;
 }
 
-table.account-table tbody {
+table.account-table tbody,
+table.blocked-table tbody,
+table.removed-table tbody {
   vertical-align: baseline;
 }
 
-table.account-table tbody tr td {
+table.account-table tbody tr td,
+table.blocked-table tbody tr td,
+table.removed-table tbody tr td {
   color: #777;
   padding: 12px 10px;
 }
 
-@media screen and (max-width: 425px) {
+table.blocked-table tbody tr td:not(:last-child),
+table.removed-table tbody tr td:not(:last-child) {
+  border-right: 1px solid #fcb3d2;
+}
+
+table.blocked-table tbody tr td span,
+table.removed-table tbody tr td span {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+table.blocked-table tbody tr td.name span,
+table.removed-table tbody tr td.name span {
+  width: 110px;
+}
+
+table.blocked-table tbody tr td.account span,
+table.removed-table tbody tr td.account span,
+table.blocked-table tbody tr td.nickname span,
+table.removed-table tbody tr td.nickname span {
+  width: 80px;
+}
+
+table.blocked-table tbody tr td.action,
+table.removed-table tbody tr td.action {
+  width: 100px;
+}
+
+@media screen and (max-width: 660px) {
   main.account-table-data {
-    width: 90%;
+    width: 100%;
     padding: 1rem;
     top: 100px;
     margin-bottom: 10px;
   }
+
+  div.table-wrapper {
+    width: 100%;
+  }
+
   table.account-table tr td,
   table.account-table tr th {
     font-size: 0.875rem;
     padding: 12px 5px;
+  }
+
+  table.blocked-table tr td,
+  table.blocked-table tr th,
+  table.removed-table tr td,
+  table.removed-table tr th,
+  table.blocked-table tr td button,
+  table.removed-table tr td button {
+    padding: 5px;
+    font-size: 0.75rem;
+  }
+
+  table.blocked-table tbody tr td.name span,
+  table.removed-table tbody tr td.name span {
+    width: 80px;
+  }
+
+  table.blocked-table tbody tr td.account span,
+  table.removed-table tbody tr td.account span,
+  table.blocked-table tbody tr td.nickname span,
+  table.removed-table tbody tr td.nickname span {
+    width: 60px;
+  }
+
+  table.blocked-table tbody tr td,
+  table.removed-table tbody tr td {
+    color: #777;
+    padding: 5px;
   }
 }
 
