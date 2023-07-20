@@ -141,7 +141,7 @@ footer a.social-icon img {
 
 @media screen and (max-width: 810px) {
   footer {
-    padding-bottom: 90px;
+    padding-bottom: 120px;
     position: relative;
     bottom: 60px;
     top: 50px;
@@ -9220,3 +9220,233 @@ div.overlay#viewer-overlay-mobile {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.stream-settings h1.title{
+  height: 80px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stream-settings h1.title img{
+  display: block;
+  height: 120px;
+}
+
+.stream-settings h2.subtitle{
+  margin-bottom: 3rem;
+  color: #F0A0C3;
+  margin-top: 1rem;
+}
+
+.stream-settings section {
+  position: relative;
+  background: #efefef;
+  padding: 2rem;
+  border-radius: 1rem;
+  padding-bottom: 3rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 660px) {
+  .stream-settings section  {
+    padding: 1rem 1rem 2.5rem;
+  }
+}
+
+.stream-settings section h1.title{
+  position: absolute;
+  top: -15px;
+  height: 40px;
+}
+
+.stream-settings section h1.title img{
+  height: 50px;
+}
+
+.stream-settings section h2.subtitle{
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.stream-settings section > ul{
+  margin-bottom: 3rem;
+}
+
+.stream-settings section > ul > li {
+  list-style: outside disc !important;
+  margin-left: 1rem;
+  line-height: 1.5rem;
+  color: gray;
+  margin-bottom: 1rem;
+}
+
+.stream-settings section p {
+  text-align: center;
+  line-height: 1.5rem;
+  color: gray;
+  margin: 1rem;
+}
+
+.stream-settings button{
+  width: max-content;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem auto 0;
+  display: block;
+  border-radius: 25px;
+}
+
+.stream-settings .app-downloads {
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.stream-settings .app-downloads a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.stream-settings .app-downloads .img-wrap {
+  display: block;
+  border-radius: 5px;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.stream-settings .app-downloads img{
+  width: 110%;
+  height: 110%;
+  margin: -5%;
+}
+
+.stream-settings .app-downloads span.os {
+  border-radius: 15px;
+  background: #F0A0C3;
+  color: white;
+  text-align: center;
+  padding: 0.25rem 1rem;
+}
+
+.stream-settings img.next-step{
+  display: block;
+  width: 40px;
+  margin: 2rem auto;
+}
+
+.stream-settings .setup-form {
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.stream-settings .setup-form h3 {
+  color: #F0A0C3;
+  text-align: center;
+}
+
+.stream-settings .setup-form .field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.stream-settings .setup-form label {
+  color: #F0A0C3;
+  text-align: right;
+  width: 100px;
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.stream-settings .setup-form label[for=password] ,
+.stream-settings .setup-form label[for=confirm-password] {
+  width: 120px;
+}
+
+.stream-settings .setup-form input {
+  max-width: 200px;
+  border-radius: 15px;
+  border: 1px solid lightgray;
+  flex: 1;
+  height: 2.5rem;
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 660px) {
+
+  .stream-settings .setup-form .field {
+    width: 100%;
+    flex-wrap: wrap;
+
+  }
+  .stream-settings .setup-form label {
+    width: 80px;
+    font-size: 0.875rem;
+  }
+
+  .stream-settings .setup-form label[for=password] ,
+  .stream-settings .setup-form label[for=confirm-password] {
+    width: 100px;
+  }
+
+  .stream-settings .setup-form input {
+    max-width: 200px;
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 374px) {
+
+  .stream-settings .setup-form .field {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+  }
+  .stream-settings .setup-form label {
+    width: auto !important;
+    text-align: center;
+    font-size: 0.875rem;
+  }
+
+}
+
+.stream-link{
+  text-align: center;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+  box-shadow: 0 2px 3px #aaa;
+  max-width: 800px;
+}
+
+.stream-link h3{
+  padding: 0.5rem;
+  letter-spacing: 0.25rem;
+  background: #F0A0C3;
+  width: 100%;
+  color: white;
+  flex-grow: 0;
+  font-size: 1rem;
+}
+
+.stream-link p.stream-link-url{
+  flex: 1;
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  word-break: break-all;
+  background: #FFF5FA;
+  color: #F0A0C3;
+  box-shadow: 0 -2px 4px #ce7da0;
+} 

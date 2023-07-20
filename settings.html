@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Tikka</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/slideshow.css" />
+    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <!-- Required Core Stylesheet -->
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <div class="site-header__start">
+          <a href="index.html" class="brand"><img src="images/logo.svg" alt="Tikka Logo" /></a>
+        </div>
+        <div class="site-header__middle">
+          <nav class="nav">
+            <button class="nav__toggle" aria-expanded="false" type="button">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="nav__wrapper">
+              <li class="nav__item">
+                <a href="live.html">
+                  <picture>
+                    <source media="(max-width: 989px)" srcset="images/m1.svg" />
+                    <source media="(min-width: 990px)" srcset="images/d1.svg" />
+                    <img src="images/d1.svg" alt="image-text" />
+                  </picture>
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="competition.html">
+                  <picture>
+                    <source media="(max-width: 989px)" srcset="images/m2.svg" />
+                    <source media="(min-width: 990px)" srcset="images/d2.svg" />
+                    <img src="images/d1.svg" alt="image-text" />
+                  </picture>
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="products.html">
+                  <picture>
+                    <source media="(max-width: 989px)" srcset="images/m3.svg" />
+                    <source media="(min-width: 990px)" srcset="images/d3.svg" />
+                    <img src="images/d1.svg" alt="image-text" />
+                  </picture>
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="ranking.html">
+                  <picture>
+                    <source media="(max-width: 989px)" srcset="images/m4.svg" />
+                    <source media="(min-width: 990px)" srcset="images/d4.svg" />
+                    <img src="images/d1.svg" alt="image-text" /> </picture
+                ></a>
+              </li>
+              <li class="nav__item">
+                <a href="topup.html">
+                  <picture>
+                    <source media="(max-width: 989px)" srcset="images/m5.svg" />
+                    <source media="(min-width: 990px)" srcset="images/d5.svg" />
+                    <img src="images/d1.svg" alt="image-text" /> </picture
+                ></a>
+              </li>
+              <li class="nav__item">
+                <a href="search.html">
+                  <picture>
+                    <source media="(max-width: 989px)" srcset="images/m6.svg" />
+                    <source media="(min-width: 990px)" srcset="images/d6.svg" />
+                    <img src="images/d1.svg" alt="image-text" /> </picture
+                ></a>
+              </li>
+              <li class="nav__item">
+                <a href="search-product.html">
+                  <picture>
+                    <source media="(max-width: 989px)" srcset="images/m7.svg" />
+                    <source media="(min-width: 990px)" srcset="images/d7.svg" />
+                    <img src="images/d7.svg" alt="image-text" /> </picture
+                ></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="site-header__end">
+          <a class="button" href="login.html">
+            <span class="icon"><img src="images/login-icon.svg" alt="登入" /></span>
+            <span><img src="images/login-btn.svg" alt="登入" /></span>
+          </a>
+          <a class="button" href="#">
+            <span class="icon">
+              <span class="cart-amount">1</span>
+              <img class="icon" src="images/cart-icon.svg" alt="購物車" />
+            </span>
+            <span><img src="images/cart-btn.svg" alt="購物車" /></span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- MOBILE NAV-->
+    <nav class="end-nav logged-in">
+      <ul class="flex-row">
+        <li>
+          <a href="login.html" class="login-link"><img src="images/m-nav-1.svg" />登入</a>
+          <a href="account.html" class="account-link ellipsis">
+            <span class="avatar-wrapper">
+              <img src="images/s2.jpg" class="avatar" />
+            </span>
+            ALLEN
+          </a>
+        </li>
+        <li>
+          <a href="products.html"><img src="images/m-nav-2.svg" />商品</a>
+        </li>
+        <li>
+          <a href="index.html"><img src="images/m-nav-3.svg" />首頁</a>
+        </li>
+        <li>
+          <a href=""><img src="images/m-nav-4.svg" />客服</a>
+        </li>
+        <li>
+          <a href="#" class="cart">
+            <span class="icon">
+              <span class="cart-amount">1</span>
+            </span>
+            <img src="images/m-nav-5.svg" />購物車</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <!-- Header End -->
+    <main class="stream-settings">
+      <h1 class="title"><img src="images/stream-title.svg" alt="直播設定" /></h1>
+      <h2 class="subtitle">若要開播，請依照下方步驟教學，依序操作即可</h2>
+      <section>
+        <h1 class="title"><img src="images/stream-start-title.svg" /></h1>
+
+        <!-- 1.下載『芯象』App -->
+        <h2 class="subtitle">1.下載『芯象』App</h2>
+        <ul>
+          <li>
+            請先下載『芯象』App，依照手機系統，於下方選擇ios或Android點擊下載，下載完成後，回到TIKKA網站－我的資料頁面，點擊『直播設定』，進入下一個畫面。
+          </li>
+        </ul>
+        <div class="app-downloads flex-row justify-center">
+          <a href="#"
+            ><span class="img-wrap"><img src="images/app.png" /></span
+            ><span class="os">iOS</span></a
+          >
+          <a href="#"
+            ><span class="img-wrap"><img src="images/app.png" /></span
+            ><span class="os">Android</span></a
+          >
+        </div>
+
+        <!-- 箭頭 -->
+        <img src="images/arrow-down.png" class="next-step" />
+
+        <!-- 2.設置密碼 -->
+        <h2 class="subtitle">2.設置密碼</h2>
+        <ul>
+          <li>可對直播間設置密碼，輸入完密碼後，請點擊『設置密碼』按鈕，即完成密碼設置。</li>
+          <li>如無需設置密碼，可跳過此步驟。</li>
+        </ul>
+        <div class="setup-form flex-column justify-center">
+          <div class="field">
+            <label for="password">請輸入密碼</label> <input type="text" id="password" />
+          </div>
+          <div class="field">
+            <label for="confirm-password">請再次輸入密碼</label>
+            <input type="text" id="confirm-password" />
+          </div>
+          <button type="button" class="pink-gradient-bg">設置密碼</button>
+        </div>
+
+        <!-- 箭頭 -->
+        <img src="images/arrow-down.png" class="next-step" />
+
+        <!-- 3.設置開播主題與地點 -->
+        <h2 class="subtitle">3.設置開播主題與地點</h2>
+        <ul>
+          <li>
+            輸入完開播主題與地點後，請點擊『開始直播』按鈕，點擊後，下方即會產生一串直播連結網址。
+          </li>
+        </ul>
+        <div class="setup-form flex-column justify-center">
+          <h3>設置開播主題與地點</h3>
+          <div class="field">
+            <label for="topic">開播主題</label> <input type="text" id="topic" />
+          </div>
+          <div class="field">
+            <label for="location">開播地點</label> <input type="text" id="location" />
+          </div>
+          <button type="button" class="pink-gradient-bg">開始直播</button>
+        </div>
+        <div class="stream-link">
+          <h3>直播連結網址</h3>
+          <p class="stream-link-url">rtmp://push.tikka.tw/tikka/fewrwerwrwer23r2rwerewrwer</p>
+        </div>
+        <button type="button" class="pink-gradient-bg" onclick="handleRefreshURL">
+          重新獲取直播連結網址
+        </button>
+        <p>
+          若需重新獲取上方的連結網址，請點擊『重新獲取直播連結網址』按鈕，即會更新一組新連結網址。
+        </p>
+        <button type="button" class="pink-gradient-bg" onclick="handleCopyLink">
+          複製直播連結網址
+        </button>
+        <p>
+          若擔心自行選取複製網址有誤，可點擊『複製直播連結網址』按鈕，即為您正確複製整串連結網址。
+        </p>
+
+        <!-- 箭頭 -->
+        <img src="images/arrow-down.png" class="next-step" />
+
+        <!-- 4.將直播連結網址，貼至芯象App -->
+        <h2 class="subtitle">4.將直播連結網址，貼至芯象App</h2>
+        <ul>
+          <li>
+            先複製產生後的直播連結網址，再至芯象App點擊『開始直播』按鈕，進入下一個畫面後，點擊右上方『直接推流』，會進入下一個畫面，再於最上方『推流地址』貼上剛剛複製的直播連結網誌，接著滑至最下方點擊『開始直播』按鈕，即會出現直播影像。
+          </li>
+        </ul>
+
+        <!-- 箭頭 -->
+        <img src="images/arrow-down.png" class="next-step" />
+
+        <!-- 5.確認開播 -->
+        <h2 class="subtitle">5.確認開播</h2>
+        <ul>
+          <li>
+            回到TIKKA網址－我的資料－直播設定頁面，往下滑至<span class="pink">第5點</span
+            >步驟，點擊『確認開播』按鈕，再至芯象App點擊『開始直播
+            <img src="" class="play-icon" />』啟動鈕，即可開始直播，完成開播流程。
+          </li>
+        </ul>
+        <button type="button" class="pink-gradient-bg" onclick="">確認開播</button>
+      </section>
+      <h2 class="subtitle">若要下播，請依照下方步驟教學，依序操作即可</h2>
+      <section>
+        <h1 class="title"><img src="images/stream-cancel-title.svg" /></h1>
+        <!-- 1.我要下播 -->
+        <h2 class="subtitle">1.我要下播</h2>
+        <ul>
+          <li>
+            至TIKKA網站－我的資料－直播設定頁面，滑至最下方的下播步驟，點擊『我要下播』按鈕，即結束直播。
+          </li>
+        </ul>
+        <button type="button" class="pink-gradient-bg" onclick="handleCancelStream">
+          我要下播
+        </button>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-content flex-row">
+        <div class="flex-row social-icons">
+          <a href="#" class="line-icon social-icon"><img src="images/line.png" alt="line" /></a>
+          <a href="#" class="fb-icon social-icon"><img src="images/fb.png" alt="line" /></a>
+          <a href="#" class="ig-icon social-icon"><img src="images/ig.png" alt="line" /></a>
+        </div>
+        <div class="flex-column">
+          <ul class="flex-row footer-menu">
+            <li>
+              <a href="contact.html">聯絡我們</a>
+            </li>
+            <li>
+              <a href="about.html">關於我們</a>
+            </li>
+            <li>
+              <a href="policy.html">服務條款</a>
+            </li>
+          </ul>
+
+          <p class="copyright">
+            <span>Copyright© 2022 by Tikka版權所有</span>
+            <span>Copyright© 2022 Tikka. All rights reserved.</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/header.js"></script>
+    <script>
+      function handleUnblockUser({ id }) {
+        const blockedTable = document.getElementsByClassName("blocked-table");
+        deleteRow = document.getElementById(id);
+        if (deleteRow.parentNode) deleteRow.parentNode.removeChild(deleteRow);
+      }
+
+      function handleUnremoveUser({ id }) {
+        const blockedTable = document.getElementsByClassName("removed-table");
+        deleteRow = document.getElementById(id);
+        if (deleteRow.parentNode) deleteRow.parentNode.removeChild(deleteRow);
+      }
+
+      function handleRefreshURL() {}
+
+      function handleCopyLink() {}
+
+      function handleCancelStream() {}
+    </script>
+  </body>
+</html>
