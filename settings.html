@@ -206,15 +206,19 @@
         </div>
         <div class="stream-link">
           <h3>直播連結網址</h3>
-          <p class="stream-link-url">rtmp://push.tikka.tw/tikka/fewrwerwrwer23r2rwerewrwer</p>
+          <input
+            class="stream-link-url"
+            id="stream-link-url"
+            value="rtmp://push.tikka.tw/tikka/fewrwerwrwer23r2rwerewrwer"
+          />
         </div>
-        <button type="button" class="pink-gradient-bg" onclick="handleRefreshURL">
+        <button type="button" class="pink-gradient-bg" onclick="handleRefreshURL()">
           重新獲取直播連結網址
         </button>
         <p>
           若需重新獲取上方的連結網址，請點擊『重新獲取直播連結網址』按鈕，即會更新一組新連結網址。
         </p>
-        <button type="button" class="pink-gradient-bg" onclick="handleCopyLink">
+        <button type="button" class="copy-url pink-gradient-bg" onclick="handleCopyLink()">
           複製直播連結網址
         </button>
         <p>
@@ -256,7 +260,7 @@
             至TIKKA網站－我的資料－直播設定頁面，滑至最下方的下播步驟，點擊『我要下播』按鈕，即結束直播。
           </li>
         </ul>
-        <button type="button" class="pink-gradient-bg" onclick="handleCancelStream">
+        <button type="button" class="pink-gradient-bg" onclick="handleCancelStream()">
           我要下播
         </button>
       </section>
@@ -302,11 +306,32 @@
         if (deleteRow.parentNode) deleteRow.parentNode.removeChild(deleteRow);
       }
 
-      function handleRefreshURL() {}
+      const urlInput = document.getElementById("stream-link-url");
 
-      function handleCopyLink() {}
+      function handleRefreshURL() {
+        const randomUrlCode = (Math.random() + 10).toString(36).substring(3);
+        urlInput.value = "rtmp://push.tikka.tw/tikka/" + randomUrlCode;
+      }
 
-      function handleCancelStream() {}
+      function handleCopyLink() {
+        urlInput.select();
+        urlInput.setSelectionRange(0, 99999); // For mobile devices
+
+        const { value } = urlInput;
+        navigator.clipboard.writeText(value);
+
+        const copiedSign = document.getElementsByClassName("copy-url")[0];
+
+        copiedSign.innerHTML = "網址成功複製！";
+
+        setTimeout(() => {
+          copiedSign.innerHTML = "複製直播連結網址";
+        }, 2500);
+      }
+
+      function handleCancelStream() {
+        // Cancel Stream
+      }
     </script>
   </body>
 </html>
