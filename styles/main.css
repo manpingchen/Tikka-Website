@@ -3334,6 +3334,10 @@ div.followers-chat-overlay div.chat-controls button img {
   div.chat-controls {
     gap: 0.5rem;
   }
+
+  div.followers-chat-overlay div.chat-controls{
+    height: 60px;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -7440,7 +7444,7 @@ div.full-width.overlay.popular-products div.reward-items {
   div.full-width.overlay.rewards div.reward-items,
   div.full-width.overlay.personal-gifts div.reward-items,
   div.full-width.overlay.popular-products div.reward-items {
-    gap: 0.25rem;
+    gap: 1.5rem 0.5rem;
   }
 }
 
@@ -7649,6 +7653,12 @@ div.streamer-profile-overlay#gift-full-overlay {
 
 div.streamer-profile-overlay.full-width {
   z-index: 999 !important;
+}
+
+@media screen and (max-width: 480px) {
+  div.streamer-profile-overlay.full-width {
+    padding-bottom: 7rem;
+  }
 }
 
 div.streamer-profile-overlay#gift-full-overlay .content {
@@ -8104,7 +8114,7 @@ div.overlay.event-detail-overlay button.close img {
   }
 
   div.overlay.social-media-shares.full-width {
-    height: 250px;
+    height: 400px;
   }
 
   div.overlay.streamer-profile-overlay div.title,
@@ -8113,7 +8123,7 @@ div.overlay.event-detail-overlay button.close img {
   }
 
   div.overlay.social-media-shares.streamer-profile-overlay div.content {
-    height: calc(100% - 60px);
+    height: calc(100% - 3rem);
   }
 
   div.overlay.social-media-shares.streamer-profile-overlay button.close {
@@ -8422,7 +8432,7 @@ div.overlay.highlight-content-overlay div.header div.img-wrap img {
 }
 
 div.overlay.highlight-content-overlay div.content {
-  height: calc(100% - 9rem);
+  height: calc(100% - 12rem);
   position: relative;
   gap: 0;
   align-items: baseline;
@@ -9221,7 +9231,7 @@ div.overlay#viewer-overlay-mobile {
   }
 }
 
-.stream-settings h1.title{
+.stream-settings h1.title {
   height: 80px;
   overflow: hidden;
   display: flex;
@@ -9229,14 +9239,14 @@ div.overlay#viewer-overlay-mobile {
   justify-content: center;
 }
 
-.stream-settings h1.title img{
+.stream-settings h1.title img {
   display: block;
   height: 120px;
 }
 
-.stream-settings h2.subtitle{
+.stream-settings h2.subtitle {
   margin-bottom: 3rem;
-  color: #F0A0C3;
+  color: #f0a0c3;
   margin-top: 1rem;
 }
 
@@ -9250,27 +9260,27 @@ div.overlay#viewer-overlay-mobile {
 }
 
 @media screen and (max-width: 660px) {
-  .stream-settings section  {
+  .stream-settings section {
     padding: 1rem 1rem 2.5rem;
   }
 }
 
-.stream-settings section h1.title{
+.stream-settings section h1.title {
   position: absolute;
   top: -15px;
   height: 40px;
 }
 
-.stream-settings section h1.title img{
+.stream-settings section h1.title img {
   height: 50px;
 }
 
-.stream-settings section h2.subtitle{
+.stream-settings section h2.subtitle {
   font-size: 1.1rem;
   margin-bottom: 1rem;
 }
 
-.stream-settings section > ul{
+.stream-settings section > ul {
   margin-bottom: 3rem;
 }
 
@@ -9289,7 +9299,7 @@ div.overlay#viewer-overlay-mobile {
   margin: 1rem;
 }
 
-.stream-settings button{
+.stream-settings button {
   width: max-content;
   padding: 0.75rem 1.5rem;
   margin: 1rem auto 0;
@@ -9318,7 +9328,7 @@ div.overlay#viewer-overlay-mobile {
   margin-bottom: 1rem;
 }
 
-.stream-settings .app-downloads img{
+.stream-settings .app-downloads img {
   width: 110%;
   height: 110%;
   margin: -5%;
@@ -9326,13 +9336,13 @@ div.overlay#viewer-overlay-mobile {
 
 .stream-settings .app-downloads span.os {
   border-radius: 15px;
-  background: #F0A0C3;
+  background: #f0a0c3;
   color: white;
   text-align: center;
   padding: 0.25rem 1rem;
 }
 
-.stream-settings img.next-step{
+.stream-settings img.next-step {
   display: block;
   width: 40px;
   margin: 2rem auto;
@@ -9344,7 +9354,7 @@ div.overlay#viewer-overlay-mobile {
 }
 
 .stream-settings .setup-form h3 {
-  color: #F0A0C3;
+  color: #f0a0c3;
   text-align: center;
 }
 
@@ -9358,15 +9368,15 @@ div.overlay#viewer-overlay-mobile {
 }
 
 .stream-settings .setup-form label {
-  color: #F0A0C3;
+  color: #f0a0c3;
   text-align: right;
   width: 100px;
   display: inline-block;
   font-size: 1rem;
 }
 
-.stream-settings .setup-form label[for=password] ,
-.stream-settings .setup-form label[for=confirm-password] {
+.stream-settings .setup-form label[for="password"],
+.stream-settings .setup-form label[for="confirm-password"] {
   width: 120px;
 }
 
@@ -9380,19 +9390,17 @@ div.overlay#viewer-overlay-mobile {
 }
 
 @media screen and (max-width: 660px) {
-
   .stream-settings .setup-form .field {
     width: 100%;
     flex-wrap: wrap;
-
   }
   .stream-settings .setup-form label {
     width: 80px;
     font-size: 0.875rem;
   }
 
-  .stream-settings .setup-form label[for=password] ,
-  .stream-settings .setup-form label[for=confirm-password] {
+  .stream-settings .setup-form label[for="password"],
+  .stream-settings .setup-form label[for="confirm-password"] {
     width: 100px;
   }
 
@@ -9402,24 +9410,20 @@ div.overlay#viewer-overlay-mobile {
   }
 }
 
-
 @media screen and (max-width: 374px) {
-
   .stream-settings .setup-form .field {
     width: 100%;
     flex-wrap: wrap;
     flex-direction: column;
-
   }
   .stream-settings .setup-form label {
     width: auto !important;
     text-align: center;
     font-size: 0.875rem;
   }
-
 }
 
-.stream-link{
+.stream-link {
   text-align: center;
   border-radius: 1rem;
   overflow: hidden;
@@ -9430,29 +9434,29 @@ div.overlay#viewer-overlay-mobile {
   max-width: 800px;
 }
 
-.stream-link h3{
+.stream-link h3 {
   padding: 0.5rem;
   letter-spacing: 0.25rem;
-  background: #F0A0C3;
+  background: #f0a0c3;
   width: 100%;
   color: white;
   flex-grow: 0;
   font-size: 1rem;
 }
 
-.stream-link .stream-link-url{
+.stream-link .stream-link-url {
   flex: 1;
   width: 100%;
   margin: 0;
   padding: 1rem;
   word-break: break-all;
-  background: #FFF5FA;
-  color: #F0A0C3;
+  background: #fff5fa;
+  color: #f0a0c3;
   box-shadow: 0 -2px 4px #ce7da0;
   border: 0;
   text-align: center;
   font-size: 1rem;
-} 
+}
 
 button.copy-url {
   position: relative;
@@ -9470,6 +9474,6 @@ button.copy-url {
   opacity: 0;
 }
 
-.copied-sign.show{
+.copied-sign.show {
   opacity: 1;
 }
