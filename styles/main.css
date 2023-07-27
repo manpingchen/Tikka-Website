@@ -7657,7 +7657,11 @@ div.streamer-profile-overlay.full-width {
 
 @media screen and (max-width: 480px) {
   div.streamer-profile-overlay.full-width {
-    padding-bottom: 7rem;
+    padding-bottom: 7rem !important;
+  }
+
+  div.streamer-profile-overlay.full-width.rewards {
+    min-height: 400px;
   }
 }
 
