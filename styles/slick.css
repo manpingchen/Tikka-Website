@@ -209,6 +209,7 @@
 #main-slides .slick-slide a picture,
 #highlighted-products-slides .slick-slide a img,
 #product-slides .slick-slide a picture,
+#highlighted-products-slides .slick-slide a picture,
 #competition-slides .slick-slide a img {
   width: 100%;
   position: absolute;
@@ -226,7 +227,8 @@
   #main-slides .slick-slide a img,
   #main-slides .slick-slide a picture,
   #product-slides .slick-slide a img,
-  #product-slides .slick-slide a picture {
+  #product-slides .slick-slide a picture,
+  #highlighted-products-slides .slick-slide a picture {
     display: flex;
     height: 100%;
     width: auto;
