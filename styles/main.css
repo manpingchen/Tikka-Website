@@ -9311,6 +9311,10 @@ div.overlay#viewer-overlay-mobile {
   border-radius: 25px;
 }
 
+.stream-settings button:disabled {
+  filter: grayscale(1) brightness(1.3);
+}
+
 .stream-settings .app-downloads {
   gap: 2rem;
   margin-top: 1rem;
