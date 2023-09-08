@@ -1819,6 +1819,25 @@ div.overlay.viewer div.detail-links a {
   font-size: 0.875rem;
 }
 
+div.overlay.rewards.full-width div.detail-links {
+  padding-left: 1rem;
+}
+
+div.overlay.rewards.full-width *::-webkit-scrollbar {
+  height: 5px;
+}
+
+div.overlay.rewards.full-width div.detail-links_content {
+  width: max-content;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+
+div.overlay.rewards.full-width div.detail-links_content * {
+  flex-shrink: 0;
+}
+
 main.live-on section.left-column div.detail-links a:hover,
 main.live-on section.right-column div.detail-links a:hover,
 main.live-on section.right-column div.detail-links a.active,
@@ -3336,7 +3355,7 @@ div.followers-chat-overlay div.chat-controls button img {
     gap: 0.5rem;
   }
 
-  div.followers-chat-overlay div.chat-controls{
+  div.followers-chat-overlay div.chat-controls {
     height: 60px;
   }
 }
@@ -8370,7 +8389,7 @@ div.overlay.full-page {
 }
 
 div.overlay.highlight-content-overlay {
-  z-index: 8;
+  z-index: 10000 !important;
   overflow-y: auto;
   background: #333333e5;
   top: unset;
@@ -8378,26 +8397,38 @@ div.overlay.highlight-content-overlay {
   position: fixed;
 }
 
+div.overlay.full-page.highlight-content-overlay div.content {
+  height: calc(100% - 100px);
+}
+
 div.overlay.highlight-content-overlay div.top-bar {
   color: #fff;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 0.5rem;
   position: relative;
   background: #ff669e;
+  height: 50px;
+}
+
+div.overlay.highlight-content-overlay div.top-bar p {
+  flex: 1;
+  margin-left: -40px;
+  text-align: center;
+  position: relative;
+  z-index: 0;
 }
 
 div.overlay.highlight-content-overlay div.top-bar button.back {
-  position: absolute;
-  left: 0.5rem;
-  top: 0;
   width: 40px;
   height: 100%;
   display: flex;
   justify-content: center;
   padding: inherit;
+  position: relative;
+  z-index: 1;
 }
 
 div.overlay.highlight-content-overlay div.top-bar button.back span {

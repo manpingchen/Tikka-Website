@@ -108,7 +108,7 @@
         </div>
       </div>
     </header>
-  <!-- MOBILE NAV-->
+    <!-- MOBILE NAV-->
     <nav class="end-nav logged-in">
       <ul class="flex-row">
         <li>
@@ -363,32 +363,43 @@
               </button>
             </div>
           </div>
+
           <div class="detail-links reward-gift" id="gift-details">
-            <a href="#" id="gift-all" onclick="showRewardDetail(this.id, 'gift-details')">All</a>
-            <span class="border"></span>
-            <a href="#" id="gift-popular" onclick="showRewardDetail(this.id, 'gift-details')"
-              >熱門</a
-            >
-            <span class="border"></span>
-            <a href="#" id="gift-favourite" onclick="showRewardDetail(this.id, 'gift-details')"
-              >女神最愛</a
-            >
-            <span class="border"></span>
-            <a href="#" id="gift-romantic" onclick="showRewardDetail(this.id, 'gift-details')"
-              >浪漫禮物</a
-            >
+            <div class="detail-links_content">
+              <a href="#" id="gift-all" onclick="showRewardDetail(this.id, 'gift-details')">All</a>
+              <span class="border"></span>
+              <a href="#" id="gift-popular" onclick="showRewardDetail(this.id, 'gift-details')">
+                熱門
+              </a>
+              <span class="border"></span>
+              <a href="#" id="gift-favourite" onclick="showRewardDetail(this.id, 'gift-details')">
+                女神最愛
+              </a>
+              <span class="border"></span>
+              <a href="#" id="gift-romantic" onclick="showRewardDetail(this.id, 'gift-details')">
+                浪漫禮物
+              </a>
+            </div>
           </div>
           <div class="detail-links reward-gift" id="product-details" style="display: none">
-            <a href="#" id="product-all" onclick="showRewardDetail(this.id, 'product-details')"
-              >All</a
-            >
-            <span class="border"></span>
-            <a href="#" id="product-popular" onclick="showRewardDetail(this.id, 'product-details')"
-              >熱銷</a
-            >
+            <div class="detail-links_content">
+              <a href="#" id="product-all" onclick="showRewardDetail(this.id, 'product-details')">
+                All
+              </a>
+              <span class="border"></span>
+              <a
+                href="#"
+                id="product-popular"
+                onclick="showRewardDetail(this.id, 'product-details')"
+              >
+                熱銷
+              </a>
+            </div>
           </div>
           <div class="detail-links reward-gift" id="box-details" style="display: none">
-            <a href="#" id="box-all" onclick="showRewardDetail(this.id, 'box-details')">All</a>
+            <div class="detail-links_content">
+              <a href="#" id="box-all" onclick="showRewardDetail(this.id, 'box-details')">All</a>
+            </div>
           </div>
         </section>
         <section class="reward-items-container">
