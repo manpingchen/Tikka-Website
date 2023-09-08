@@ -1842,6 +1842,7 @@ main.live-on section.left-column div.profile div.detail-links a img {
 div.overlay.rewards div.detail-links {
   padding: 0 1rem;
   width: max-content;
+  overflow-x: auto;
 }
 
 div.detail-links span.border {
@@ -7445,6 +7446,7 @@ div.full-width.overlay.popular-products div.reward-items {
   div.full-width.overlay.personal-gifts div.reward-items,
   div.full-width.overlay.popular-products div.reward-items {
     gap: 1.5rem 0.5rem;
+    z-index: 1000 !important;
   }
 }
 
@@ -7457,12 +7459,12 @@ div.full-width.overlay.popular-products.streamer-profile-overlay div.reward-item
   div.full-width.overlay.rewards div.reward-items,
   div.full-width.overlay.personal-gifts div.reward-items,
   div.full-width.overlay.popular-products div.reward-items {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
   }
 
   div.full-width.overlay.personal-gifts.streamer-profile-overlay div.reward-items,
   div.full-width.overlay.popular-products.streamer-profile-overlay div.reward-items {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
   }
 }
 
@@ -7616,6 +7618,8 @@ div.full-width.overlay.popular-products div.btns button img {
 
 div.full-width.rewards.overlay div.detail-links {
   padding: 0;
+  width: 100%;
+  overflow-x: auto;
 }
 
 div.full-width.overlay.rewards div.reward-item {
@@ -7652,14 +7656,10 @@ div.streamer-profile-overlay#gift-full-overlay {
 }
 
 div.streamer-profile-overlay.full-width {
-  z-index: 999 !important;
+  z-index: 10000 !important;
 }
 
 @media screen and (max-width: 480px) {
-  div.streamer-profile-overlay.full-width {
-    padding-bottom: 7rem !important;
-  }
-
   div.streamer-profile-overlay.full-width.rewards {
     min-height: 400px;
   }
