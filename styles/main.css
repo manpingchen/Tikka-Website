@@ -2063,6 +2063,9 @@ main.live-on section.left-column div.sticker-body {
 
 div.sticker-overlay {
   height: auto !important;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
 }
 
 div.sticker-overlay div.title {
@@ -2521,7 +2524,7 @@ div.overlay.rewards div.content {
 div.overlay.rewards div.reward-items {
   margin: 0;
   width: 100%;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
   background: #00000075;
   margin-top: 1rem;
 }
@@ -5266,10 +5269,10 @@ div.overlay div.content p.coming-soon-text {
 
 div.gift-sent-overlay {
   position: absolute;
-  bottom: 0px;
+  bottom: 60px;
   width: 300px;
   left: calc(50% - 150px);
-  height: 160px;
+  height: 60px;
   padding: 50px 0;
   z-index: 9;
   background: none;
@@ -5378,12 +5381,13 @@ div.gift-full-overlay {
   position: absolute;
   backdrop-filter: none;
   width: 100%;
-  height: 100%;
+  height: calc( 100% - 120px );
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
   background: transparent;
+  bottom: 60px;
 }
 
 div.gift-full-overlay.search-page {
