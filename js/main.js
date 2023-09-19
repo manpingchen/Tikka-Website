@@ -336,19 +336,34 @@ function showRewardDetail(id = "gift-all", parentId = "gift-details") {
 /*點擊購買按鈕變色 及 (＊＊＊供示意：顯示 捧花不足遮罩 、 隱藏 送出之禮物）*/
 function handleBuy(id) {
   document.getElementById(id).classList.add("active");
+
+  // 先關閉任何開啟的遮罩
   handleHideComponent("#gift-sent");
   handleHideComponent("#gift-full-overlay");
   handleHideComponent(".rewards.overlay");
-  // handleShowComponent("#top-up-overlay");
-  handleShowComponent("#purchase-overlay");
+
+  handleShowComponent("#purchase-overlay", "block", false);
+
+  // 開啟當次送出之禮物動畫
+  setTimeout(() => {
+    handleShowPurchaseAnimation();
+  }, 500);
 }
 
-// function stopSlidesOnMobile(slideElement) {
-//   if (window.innerWidth >= 769) {
-//     return;
-//   }
-//   slideElement.unslick();
-// }
+/*呈現購買後動畫按鈕 (＊＊＊供示意）*/
+function handleShowPurchaseAnimation() {
+  handleHideComponent("#rewards-overlay-mobile");
+  handleShowComponent("#gift-sent", "flex", false);
+  handleShowComponent("#gift-full-overlay", "block", false);
+  setTimeout(() => {
+    handleHideComponent("#gift-sent");
+  }, 5000);
+
+  /*設計沒有做到滿版帖圖關閉的環節，先以10秒後關閉*/
+  setTimeout(() => {
+    handleHideComponent("#gift-full-overlay");
+  }, 10000);
+}
 
 function makeEleGraggable(selector) {
   const slider = document.querySelector(selector);

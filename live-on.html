@@ -1974,23 +1974,6 @@
         handleHideComponent("#purchase-confirm-overlay");
         handleShowComponent("#purchase-overlay");
       }
-
-      handleShowPurchaseAnimation();
-
-      /*呈現購買後動畫按鈕 (＊＊＊供示意）*/
-      function handleShowPurchaseAnimation() {
-        handleHideComponent("#rewards-overlay-mobile");
-        handleShowComponent("#gift-sent", "flex");
-        handleShowComponent("#gift-full-overlay");
-        setTimeout(() => {
-          handleHideComponent("#gift-sent");
-        }, 5000);
-
-        /*設計沒有做到滿版帖圖關閉的環節，先以10秒後關閉*/
-        setTimeout(() => {
-          handleHideComponent("#gift-full-overlay");
-        }, 10000);
-      }
     </script>
   </body>
 </html>

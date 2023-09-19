@@ -5277,6 +5277,7 @@ div.gift-sent-overlay {
   z-index: 9;
   background: none;
   overflow: visible;
+  display: none;
 }
 
 div.gift-sent-overlay .container {
@@ -5388,6 +5389,7 @@ div.gift-full-overlay {
   z-index: 2;
   background: transparent;
   bottom: 60px;
+  display: none;
 }
 
 div.gift-full-overlay.search-page {
