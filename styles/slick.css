@@ -110,10 +110,39 @@
 
 /* 修正 slick 問題：當slick slider圖片數量不足時之樣式 */
 .product-zoom-in .slick-slide {
-  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.product-zoom-in .img-wrap,
+.product-nav .img-wrap {
+  position: relative;
+  height: 0;
+  padding-top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 5px #efefef;
+  margin: 10px;
+}
+
+.product-nav .img-wrap{
+  height: 56px;
+  width: 56px;
+  margin: 0;
+  border-radius: 5px;
+  padding-top: unset;
+}
+
+.product-zoom-in .img-wrap img,
+.product-nav .img-wrap img {
+  position: absolute;
+  top: 0;
+  width: auto !important;
+  height: 100% !important;
 }
 
 .product-nav .slick-track {

@@ -4668,14 +4668,21 @@ button.slick-arrow {
 
 button.slick-arrow span {
   font-size: 2rem;
-  color: #fff;
-  text-shadow: 0 0 5px #e60672;
+  color: #ddd;
 }
 
 button.slick-arrow.slick-next {
   right: -25px;
   left: initial;
   z-index: 9;
+}
+
+.product-summary button.slick-arrow.slick-next {
+  right: -1rem;
+}
+
+.product-summary button.slick-arrow.slick-prev {
+  left: -1rem;
 }
 
 section.category button.slick-arrow .material-icons {
@@ -5995,7 +6002,7 @@ main.product-detail .senders .live-item p.live-info {
 
 section.product-slides {
   width: 400px;
-  height: 400px;
+  /* height: 400px; */
   position: relative;
 }
 
