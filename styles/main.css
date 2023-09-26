@@ -6835,6 +6835,12 @@ form.adjust-item-count input[type="number"] {
   -moz-appearance: textfield;
 }
 
+form.adjust-item-count .unit{
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+  color: #d6236c;
+}
+
 form.adjust-item-count input[type="number"]::-webkit-outer-spin-button,
 form.adjust-item-count input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;

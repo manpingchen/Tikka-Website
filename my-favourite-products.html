@@ -146,198 +146,151 @@
     <!-- Header End -->
 
     <!--Main-->
-
-    <!-- classname: sold-out，為缺貨狀態用，如非缺貨狀態，可拿掉-->
-    <main class="product-detail sold-out">
-      <ul class="tabs flex-row">
-        <li>
-          <a
-            href="javascript:void(0)"
-            onclick="scrollToSmoothly(document.querySelector('#product-intro').offsetTop, 300)"
-            >商品介紹</a
-          >
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            onclick="scrollToSmoothly(document.querySelector('#product-features').offsetTop, 300)"
-            >商品特色</a
-          >
-        </li>
-        <li>
-          <a
-            href="javascript:void(0)"
-            onclick="scrollToSmoothly(document.querySelector('#product-scale').offsetTop, 300)"
-            >商品規格</a
-          >
-        </li>
-      </ul>
-
-      <div class="product-summary">
-        <section class="product-slides">
-          <div class="product-zoom-in">
-            <div>
-              <div class="img-wrap">
-                <img src="images/product2.png" alt="" class="image-of-list" />
-              </div>
-            </div>
-            <!-- <div>
-              <div class="img-wrap">
-              <img
-                src="https://files.tikka.tw/product/a14e5ce3b5b24e548e341b84cc54ae66.png"
-                alt=""
-                class="image-of-list"
-              />
-              </div>
-            </div>
-            <div>
-              <div class="img-wrap">
-              <img
-                src="https://files.tikka.tw/product/e3586c0e0c0d441fbc5d4455dba4e530.png"
-                alt=""
-                class="image-of-list"
-              />
-              </div>
-            </div>
-            <div>
-              <div class="img-wrap">
-                <img src="images/product5.png" alt="" class="image-of-list" />
-              </div>
-            </div>
-            
-            <div>
-              <div class="img-wrap">
-                <img src="images/product6.png" alt="" class="image-of-list" />
-              </div>
-            </div>
-            <div>
-              <div class="img-wrap">
-                <img
-                  src="https://files.tikka.tw/product/e3586c0e0c0d441fbc5d4455dba4e530.png"
-                  alt=""
-                  class="image-of-list"
-                />
-              </div>
-            </div> -->
-          </div>
-          <div class="product-nav">
-            <div>
-              <div class="img-wrap">
-                <img src="images/product2.png" alt="" class="image-of-list" />
-              </div>
-            </div>
-            <!-- <div>
-              <div class="img-wrap">
-                <img
-                  src="https://files.tikka.tw/product/a14e5ce3b5b24e548e341b84cc54ae66.png"
-                  alt=""
-                  class="image-of-list"
-                />
-              </div>
-            </div>
-            <div>
-              <div class="img-wrap">
-                <img
-                  src="https://files.tikka.tw/product/e3586c0e0c0d441fbc5d4455dba4e530.png"
-                  alt=""
-                  class="image-of-list"
-                />
-              </div>
-            </div>
-            <div>
-              <div class="img-wrap">
-                <img src="images/product5.png" alt="" class="image-of-list" />
-              </div>
-            </div>
-            <div>
-              <div class="img-wrap">
-                <img src="images/product6.png" alt="" class="image-of-list" />
-              </div>
-            </div>
-            <div>
-              <div class="img-wrap">
-              <img
-                src="https://files.tikka.tw/product/e3586c0e0c0d441fbc5d4455dba4e530.png"
-                alt=""
-                class="image-of-list"
-              />
-              </div>
-            </div> -->
-          </div>
-        </section>
-
-        <div class="summary flex-column" id="item1">
-          <h3>Moiskin基礎保養套組</h3>
-          <p class="cost">新台幣：NT. 1,999</p>
-          <p class="point">捧花：9999</p>
-          <p class="stock">
-            僅剩庫存：
-            <span class="value">9</span>
-            <span class="sold-out-text">已售完</span>
-          </p>
-
-          <!-- adjust-item-count 於 function disableBtnsIfSoldOut 示意為 display:none -->
-          <form action="javascript:void(0);" class="adjust-item-count">
-            <div class="flex-row">
-              <button class="add" onclick="addOneItemToCart('item1')">
-                <span class="material-symbols-outlined"> change_history </span>
-              </button>
-              <input type="number" min="0" class="quantity" value="3" />
-              <button class="reduce" onclick="removeOneItemToCart('item1')">
-                <span class="material-symbols-outlined"> change_history </span>
-              </button>
-              <span class="unit">箱</span>
-            </div>
-          </form>
-          <div class="flex-row gap-1">
-            <button class="add-btn button-like available-if-instock">加入購物車</button>
-            <button
-              class="add-btn button-like available-if-instock"
-              onclick="location.href='purchase.html'"
-            >
-              立即搶購
-            </button>
-          </div>
+    <main class="products">
+      <section class="products list">
+        <div class="products-title">
+          <img src="images/p-title-1.svg" alt="最愛商品" />
         </div>
-      </div>
-
-      <div id="product-intro">
-        <h2>商品介紹</h2>
-        <div class="content">介紹文案</div>
-        <div class="main-visuals">
-          <img src="images/product4.png" alt="" />
+        <div class="products-list-container">
+          <ul>
+            <li>
+              <div class="product-item">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product-item">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite2"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product-item">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite3"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product-item">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="favorite4"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product-item">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product-item">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product-item">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product-item">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+            <li>
+              <div class="product-item">
+                <button
+                  type="button"
+                  class="add-favorite"
+                  id="follow"
+                  onclick="handleAddFavorite(this)"
+                ></button>
+                <a href="product-detail.html" class="img-wrap">
+                  <img src="images/p2.png" alt="" />
+                </a>
+                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
+                <p class="price">$990</p>
+              </div>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div id="product-features">
-        <h2>商品特色</h2>
-        <div class="content"></div>
-      </div>
-      <div id="product-scale">
-        <h2>商品規格</h2>
-        <div class="content"></div>
-      </div>
-      <div id="product-notice">
-        <h2>注意事項</h2>
-        <div class="content"></div>
-      </div>
-      <div class="product-detail-btns">
-        <ul class="flex-row">
-          <li>
-            <button class="button-like" onclick="handleShowComponent('#social-media-shares')">
-              <img src="images/social.svg" alt="" /> 分享
-            </button>
-          </li>
-          <li>
-            <!--gray-gradient-bg 為控制是否產品已加入最愛的樣式-->
-            <button
-              class="button-like gray-gradient-bg"
-              onclick="location.href='my-favourite.html'"
-            >
-              <img src="images/social.svg" alt="" /> 最愛
-            </button>
-          </li>
-        </ul>
-      </div>
+      </section>
     </main>
 
     <div class="social-media-shares overlay" id="social-media-shares" style="display: none">
