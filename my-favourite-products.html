@@ -146,10 +146,10 @@
     <!-- Header End -->
 
     <!--Main-->
-    <main class="products">
+    <main class="products account-page">
       <section class="products list">
         <div class="products-title">
-          <img src="images/p-title-1.svg" alt="最愛商品" />
+          <img src="images/my-fav-prod-title.svg" alt="最愛商品" />
         </div>
         <div class="products-list-container">
           <ul>
@@ -157,7 +157,7 @@
               <div class="product-item">
                 <button
                   type="button"
-                  class="add-favorite"
+                  class="add-favorite pink"
                   id="favorite"
                   onclick="handleAddFavorite(this)"
                 ></button>
@@ -172,7 +172,7 @@
               <div class="product-item">
                 <button
                   type="button"
-                  class="add-favorite"
+                  class="add-favorite pink"
                   id="favorite2"
                   onclick="handleAddFavorite(this)"
                 ></button>
@@ -187,7 +187,7 @@
               <div class="product-item">
                 <button
                   type="button"
-                  class="add-favorite"
+                  class="add-favorite pink"
                   id="favorite3"
                   onclick="handleAddFavorite(this)"
                 ></button>
@@ -202,7 +202,7 @@
               <div class="product-item">
                 <button
                   type="button"
-                  class="add-favorite"
+                  class="add-favorite pink"
                   id="favorite4"
                   onclick="handleAddFavorite(this)"
                 ></button>
@@ -217,7 +217,7 @@
               <div class="product-item">
                 <button
                   type="button"
-                  class="add-favorite"
+                  class="add-favorite pink"
                   id="follow"
                   onclick="handleAddFavorite(this)"
                 ></button>
@@ -232,7 +232,7 @@
               <div class="product-item">
                 <button
                   type="button"
-                  class="add-favorite"
+                  class="add-favorite pink"
                   id="follow"
                   onclick="handleAddFavorite(this)"
                 ></button>
@@ -247,7 +247,7 @@
               <div class="product-item">
                 <button
                   type="button"
-                  class="add-favorite"
+                  class="add-favorite pink"
                   id="follow"
                   onclick="handleAddFavorite(this)"
                 ></button>
@@ -262,7 +262,7 @@
               <div class="product-item">
                 <button
                   type="button"
-                  class="add-favorite"
+                  class="add-favorite pink"
                   id="follow"
                   onclick="handleAddFavorite(this)"
                 ></button>
@@ -277,7 +277,7 @@
               <div class="product-item">
                 <button
                   type="button"
-                  class="add-favorite"
+                  class="add-favorite pink"
                   id="follow"
                   onclick="handleAddFavorite(this)"
                 ></button>
@@ -374,46 +374,5 @@
     <script src="js/main.js"></script>
     <script src="js/scrollToElement.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
-    <script>
-      $(".product-zoom-in").slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        fade: true,
-        asNavFor: ".product-nav",
-      });
-
-      $(".product-nav").slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        asNavFor: ".product-zoom-in",
-        centerMode: true,
-        focusOnSelect: true,
-      });
-
-      /* 追蹤按鈕文字 */
-      function handleFollow(element) {
-        [...document.querySelectorAll(`.${[...element.classList].join(".")}`)].map((node) => {
-          node.classList.add("pink");
-          node.children[(id = "follow-text")].innerText = "已追蹤";
-        });
-      }
-
-      disableBtnsIfSoldOut();
-
-      /* 如產品售完，關閉按鈕功能 */
-      function disableBtnsIfSoldOut() {
-        const ifSoldOut = document
-          .querySelector("main.product-detail")
-          .classList.value.includes("sold-out");
-
-        if (ifSoldOut) {
-          [...document.querySelectorAll(".available-if-instock")].forEach(
-            (node) => (node.disabled = true)
-          );
-          document.querySelector("form.adjust-item-count").style.display = "none";
-        }
-      }
-    </script>
   </body>
 </html>

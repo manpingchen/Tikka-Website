@@ -593,6 +593,11 @@ main.products {
   padding-top: 93px !important;
 }
 
+main.products.account-page .products-title {
+  padding-top: 30px;
+  justify-content: center;
+}
+
 @media screen and (max-width: 767px) {
   main.products {
     padding-top: 72px !important;
@@ -961,6 +966,10 @@ section.products .products-title img,
   section.products .products-title img,
   .ranking-slides-title img {
     height: 36px;
+  }
+
+  main.products.account-page section.products .products-title img{
+    height: 46px
   }
 }
 
@@ -5389,7 +5398,7 @@ div.gift-full-overlay {
   position: absolute;
   backdrop-filter: none;
   width: 100%;
-  height: calc( 100% - 120px );
+  height: calc(100% - 120px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6835,7 +6844,7 @@ form.adjust-item-count input[type="number"] {
   -moz-appearance: textfield;
 }
 
-form.adjust-item-count .unit{
+form.adjust-item-count .unit {
   padding-left: 0.5rem;
   font-size: 1.2rem;
   color: #d6236c;
