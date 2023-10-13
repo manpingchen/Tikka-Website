@@ -6419,6 +6419,13 @@ main.my-favourite button.follow-btn:hover {
     font-size: 1.2rem;
   }
 
+  #product-intro,
+  #product-features,
+  #product-scale,
+  #product-notice {
+    margin-bottom: 0;
+  }
+
   div.product-summary {
     width: 90%;
     margin: 2rem auto;
