@@ -243,7 +243,11 @@ function handleHideComponent(selector) {
   }
 
   body.style.overflow = "auto";
-  document.getElementsByClassName("backdrop")[0].style.display = "none";
+
+  const backdrop = document.getElementsByClassName("backdrop")[0];
+  if (backdrop) {
+    backdrop.style.display = "none";
+  }
 }
 
 /* 開啟元件 */
@@ -415,7 +419,7 @@ function handleOptionClick(id, parentId) {
     const activeElement = document.getElementById(id);
     const type = activeElement.innerText;
 
-    handleShowComponent(".invoice-info-field");
+    handleShowComponent(".invoice-info-field", "block", false);
     const labelElement = document.querySelector(".invoice-info-field label");
     const tipElement = document.querySelector("#invoice-info-tips");
 
@@ -426,7 +430,7 @@ function handleOptionClick(id, parentId) {
         break;
       case "愛心捐贈":
         labelElement.innerHTML = "愛心碼";
-        handleShowComponent("#invoice-info-tips");
+        handleShowComponent("#invoice-info-tips", "block", false);
         tipElement.innerHTML = "＊若為愛心捐贈電子發票，則無發退換貨。";
 
         break;
@@ -436,7 +440,7 @@ function handleOptionClick(id, parentId) {
         break;
       case "載具條碼":
         labelElement.innerHTML = type;
-        handleShowComponent("#invoice-info-tips");
+        handleShowComponent("#invoice-info-tips", "block", false);
         tipElement.innerHTML = "＊若使用載具發票，請在輸入文字最前方加入／*";
         break;
       default:
