@@ -8640,20 +8640,21 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   gap: 0.5rem;
 }
 
-.account-orders .orders .order button {
+.account-orders .orders .order button:not(.button-like) {
   background: #fff5fe;
   border-radius: 0;
   padding: 5px 8px 2px 8px;
   transition: 0.2;
 }
 
-.account-orders .desktop-only.orders .order button {
-  background: #f29ec2;
+.account-orders .desktop-only.orders .order button:not(.button-like) {
+  background: #fff;
   margin-right: 0.5rem;
+  border: 1px solid #eee;
 }
 
 .account-orders .desktop-only.orders .order button img {
-  filter: brightness(0) invert(1);
+  filter: unset;
 }
 
 .account-orders .orders .order button img {
@@ -8663,7 +8664,7 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
 }
 
 .account-orders .orders .order button.expanded {
-  background: #e9538d;
+  background: #e9538d !important;
 }
 
 .account-orders .orders .order button.expanded img {
@@ -8691,9 +8692,11 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   text-align: left;
   padding: 0.5rem 0.85rem 0.25rem 0.85rem;
 }
-
-.account-orders .desktop-only.orders .order h5 {
+.account-orders .desktop-only.orders .order .header {
   padding: 0.5rem 2rem;
+  justify-content: space-between;
+  flex-direction: row;
+  display: flex;
 }
 
 .account-orders .desktop-only.orders .order .order-info {
@@ -8725,13 +8728,23 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   padding: 0.5rem 0;
 }
 
+.account-orders .orders.mobile-only .order-content{
+  position: relative;
+}
+
+.account-orders .orders.mobile-only button.pay {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+
 .account-orders .orders .order .order-item {
   gap: 0.85rem;
   display: none;
 }
 
 .account-orders .desktop-only.orders .order .order-items {
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
 }
 
 .account-orders .orders .order .order-item:first-child {
