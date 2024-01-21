@@ -103,7 +103,7 @@
         </div>
       </div>
     </header>
-  <!-- MOBILE NAV-->
+    <!-- MOBILE NAV-->
     <nav class="end-nav logged-in">
       <ul class="flex-row">
         <li>
@@ -203,6 +203,22 @@
             onclick="handleOptionClick(this.id, 'payments-methods')"
           >
             紅陽 - 超市代碼
+          </button>
+          <button
+            type="button"
+            class="outlined secondary"
+            id="joks"
+            onclick="handleOptionClick(this.id, 'payments-methods')"
+          >
+            街口支付
+          </button>
+          <button
+            type="button"
+            class="outlined secondary"
+            id="paypal"
+            onclick="handleOptionClick(this.id, 'payments-methods')"
+          >
+            PAYPAL
           </button>
         </div>
       </section>
@@ -443,7 +459,10 @@
         </div>
         <h4>恭喜儲值成功</h4>
         <div class="content">
-          <div class="highlight button-like pink-gradient-bg"  onclick="handleHideComponent('#topup-successful')">
+          <div
+            class="highlight button-like pink-gradient-bg"
+            onclick="handleHideComponent('#topup-successful')"
+          >
             <img src="images/coin.png" alt="" /> 儲值成功
           </div>
         </div>
