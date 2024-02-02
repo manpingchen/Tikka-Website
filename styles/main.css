@@ -1693,7 +1693,6 @@ main.my-favourite.follow div.live-items {
   }
   main.my-favourite.follow div.live-items {
     grid-template-columns: repeat(2, 1fr);
-    height: 500px;
     max-height: 80%;
     overflow-y: auto;
   }
