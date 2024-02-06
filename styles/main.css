@@ -8727,7 +8727,7 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   padding: 0.5rem 0;
 }
 
-.account-orders .orders.mobile-only .order-content{
+.account-orders .orders.mobile-only .order-content {
   position: relative;
 }
 
@@ -8826,6 +8826,15 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   }
 }
 
+#products-slides .slick-track {
+  display: flex;
+  align-items: stretch;
+}
+
+#products-slides .slick-slide {
+  height: unset;
+}
+
 #products-slides li button.add-to-cart img {
   width: 100%;
 }
@@ -8838,8 +8847,15 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   background: none;
   color: #333;
   text-align: center;
-  padding: 0;
+  padding: 0 1rem 0.5rem;
   display: block;
+  height: auto;
+}
+
+#products-slides li button.add-to-cart {
+  top: 0;
+  min-height: 24px;
+  min-width: 24px;
 }
 
 #products-slides li span.point {
