@@ -3931,13 +3931,18 @@ main.account-table-data h1 img {
 }
 
 div.table-wrapper {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 1px solid #e588b2;
+}
+
+div.table-wrapper > table {
+  box-shadow: 0 5px 5px rgb(183, 183, 183);
   border-radius: 10px;
   border: 1px solid #e588b2;
   overflow: hidden;
-  width: 90%;
-  max-width: 900px;
-  margin: 0 auto;
-  box-shadow: 0 5px 5px rgb(183, 183, 183);
 }
 
 table.account-table,
@@ -4008,6 +4013,48 @@ table.removed-table tbody tr td.nickname span {
 table.blocked-table tbody tr td.action,
 table.removed-table tbody tr td.action {
   width: 100px;
+}
+
+div.table-wrapper > table th:not(:first-child) {
+  border-left: 1px solid #fff;
+}
+
+div.table-wrapper > table td:not(:first-child) {
+  border-left: 1px solid #e588b2;
+}
+
+div.table-wrapper > table td {
+  border-bottom: 1px solid #e588b2;
+}
+
+div.table-wrapper > table > tbody > tr:nth-child(2n-1) {
+  background: #f0f0f0;
+}
+
+table.points-table th,
+table.points-table td {
+  max-width: 100px;
+}
+
+table.points-table th.detail,
+table.points-table td.detail {
+  max-width: 200px;
+}
+
+table.points-table tbody tr td.detail {
+  text-align: left;
+}
+
+table.points-table tbody tr td.datetime span,
+table.points-table tbody tr td.datetime span,
+table.points-table tbody tr td.records span,
+table.points-table tbody tr td.records span {
+  display: block;
+  text-align: left;
+}
+
+table.points-table tbody tr td.records span.value-changed {
+  margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 660px) {
