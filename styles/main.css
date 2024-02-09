@@ -8666,14 +8666,41 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   gap: 1rem;
 }
 
+.account-orders ul.status-bar {
+  gap: 1rem;
+  max-width: 600px;
+  justify-content: space-around;
+  margin: 0 auto 1rem;
+}
+
+.account-orders ul.status-bar li a {
+  color: gray;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.account-orders ul.status-bar li.active a {
+  color: #e588b2;
+}
+
 .account-orders .orders .order {
   border-radius: 10px;
-  border: 2px solid #c1145c;
+  border: 2px solid #ec90b7;
   background: #fff5fe;
+  box-shadow: 0 0 10px lightgray;
   overflow: hidden;
   color: #777;
   font-size: 0.875rem;
   line-height: 1.7rem;
+}
+
+.account-orders .orders .order button.remove {
+  box-shadow: 0 0 10px gray;
+  border-radius: 0.25rem !important;
+  padding: 0.25rem 0.5rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .account-orders .mobile-only.orders .order .order-title {
@@ -8681,15 +8708,21 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   color: #fff;
   padding: 0.5rem 0.85rem;
   gap: 0.5rem;
 }
 
+.account-orders .mobile-only.orders .order .order-title p {
+  text-align: left;
+  flex: 1;
+}
+
 .account-orders .orders .order button:not(.button-like) {
   background: #fff5fe;
   border-radius: 0;
-  padding: 5px 8px 2px 8px;
+  padding: 2px 5px 0 6px;
   transition: 0.2;
 }
 
@@ -8726,8 +8759,117 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
 
 .account-orders .orders .order .order-items {
   text-align: left;
-  padding: 0.5rem 0.85rem;
   gap: 0.5rem;
+}
+
+.account-orders .mobile-only.orders .order .order-items,
+.account-orders .mobile-only.orders .order h5 {
+  background: #fffafc;
+}
+
+.account-orders .mobile-only.orders .order h5 {
+  border-top: 1px solid #ec90b7;
+}
+
+.account-orders .orders .order .order-items .order-item:nth-child(2n) {
+  background: #fff5fe;
+}
+
+.account-orders .mobile-only.orders .order .order-items .order-item {
+  padding: 0.5rem 0.85rem;
+}
+
+.account-orders .desktop-only.orders .order .order-items .order-item {
+  border-top: 1px solid #ec90b7;
+  padding: 1rem 3rem;
+}
+
+.account-orders .desktop-only.orders .order .order-items .order-item-detail {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+
+.account-orders .mobile-only.orders .order .order-items .order-item:not(:last-child) {
+  border-bottom: 1px solid #ec90b7;
+}
+
+.account-orders .orders .order .order-items .order-item .order-item-detail h6 {
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: black;
+  margin-bottom: 0;
+}
+
+.account-orders .desktop-only.orders .order .order-items .order-item .order-item-detail h6 {
+  width: 200px;
+}
+
+.account-orders .mobile-only.orders .order .order-items .order-item .order-item-detail ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+
+.account-orders .desktop-only.orders .order .order-items .order-item .order-item-detail ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+
+.account-orders .mobile-only.orders .order .order-items .order-item .order-item-detail ul li {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-orders .desktop-only.orders .order .order-items .order-item .order-item-detail ul li {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-orders .mobile-only.orders .order .order-items .order-item .order-item-detail ul li span {
+  line-height: 1.5em;
+}
+
+.account-orders .desktop-only.orders .order .order-items .order-item:first-child ul li {
+  padding-top: 1rem;
+  position: relative;
+  top: -0.5rem;
+}
+
+.account-orders
+  .desktop-only.orders
+  .order
+  .order-items
+  .order-item:first-child
+  .order-item-detail
+  ul
+  li
+  span.title {
+  border: 0.5px solid black;
+  border-radius: 2rem;
+  text-align: center;
+  display: inline-block;
+  color: black;
+  font-size: 0.75rem;
+  padding: 0.15rem;
+  line-height: 1em;
+  position: absolute;
+  top: -1rem;
+}
+
+.account-orders
+  .desktop-only.orders
+  .order
+  .order-items
+  .order-item:not(:first-child)
+  .order-item-detail
+  ul
+  li
+  span.title {
+  display: none;
 }
 
 .account-orders .orders .order h5 {
@@ -8743,6 +8885,11 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   justify-content: space-between;
   flex-direction: row;
   display: flex;
+  border-top: 1px solid #f19ec2;
+}
+
+.account-orders .desktop-only.orders .order.expanded .header {
+  border-bottom: 1px solid #f19ec2;
 }
 
 .account-orders .desktop-only.orders .order .order-info {
@@ -8752,6 +8899,7 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   align-items: center;
   color: #fff;
   padding: 0;
+  position: relative;
 }
 
 .account-orders .desktop-only.orders .order .order-info li {
@@ -8762,13 +8910,28 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   flex: 1 1 auto;
 }
 
+/* for remove button space*/
+.account-orders .desktop-only.orders .order .order-info li:nth-child(6) span {
+  padding-right: 40px !important;
+}
+
+.account-orders .desktop-only.orders .order .order-info li:last-child {
+  flex: unset;
+}
+
+.account-orders .desktop-only.orders .order .order-info li:last-child button.remove {
+  position: absolute;
+  right: 1rem;
+  top: 0.5rem;
+}
+
 .account-orders .desktop-only.orders .order .order-info li span.title {
   padding: 0.5rem 0;
 }
 
 .account-orders .desktop-only.orders .order .order-info li span.value {
   width: 100%;
-  background: #fff5fe;
+  background: #fffbfe;
   color: #777;
   text-align: center;
   padding: 0.5rem 0;
@@ -8776,6 +8939,22 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
 
 .account-orders .orders.mobile-only .order-content {
   position: relative;
+}
+
+.account-orders .orders.desktop-only .order .order-item {
+  background: unset;
+}
+
+.account-orders .orders.desktop-only .order-content > *:nth-child(2n) {
+  background: #fff6ff;
+}
+
+.account-orders .orders.desktop-only .order:not(.expanded) .order-content .order-items {
+  background: #fffbfe;
+}
+
+.account-orders .orders.desktop-only .order.expanded .order-content .order-item:nth-child(2n) {
+  background: #fffbfe;
 }
 
 .account-orders .orders.mobile-only button.pay {
@@ -8789,16 +8968,44 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   display: none;
 }
 
-.account-orders .desktop-only.orders .order .order-items {
-  padding: 1rem 3rem;
-}
-
 .account-orders .orders .order .order-item:first-child {
   display: flex;
 }
 
+.account-orders .desktop-only.orders .order .order-item:first-child {
+  padding-top: 3rem;
+}
+
 .account-orders .orders .order.expanded .order-item:not(:first-child) {
   display: flex;
+}
+
+.account-orders .orders .order-customer,
+.account-orders .orders .order-reference,
+.account-orders .orders .order-receipt {
+  display: none;
+}
+
+.account-orders .orders .order-receipt li:first-child {
+  color: #444;
+  font-weight: 500;
+}
+
+.account-orders .orders .order.expanded .order-customer,
+.account-orders .orders .order.expanded .order-reference,
+.account-orders .orders .order.expanded .order-receipt {
+  display: block;
+  text-align: left;
+  padding: 0.5rem 0.85rem;
+  border-bottom: 1px solid #fff;
+}
+
+.account-orders .desktop-only.orders .order.expanded .order-customer,
+.account-orders .desktop-only.orders .order.expanded .order-reference,
+.account-orders .desktop-only.orders .order.expanded .order-receipt {
+  background: #fffbfe;
+  padding: 0.5rem 3rem;
+  border: none;
 }
 
 .account-orders .orders .order .order-item .img-wrap {
