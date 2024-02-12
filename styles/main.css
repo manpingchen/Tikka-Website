@@ -8703,6 +8703,11 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   justify-content: center;
 }
 
+.account-orders .mobile-only.orders.refund .order,
+.account-orders .desktop-only.orders.refund .order {
+  filter: grayscale(1);
+}
+
 .account-orders .mobile-only.orders .order .order-title {
   background: #f29ec2;
   display: flex;
