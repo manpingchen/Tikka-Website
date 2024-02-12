@@ -4526,6 +4526,7 @@ div.product-item p.name {
   -webkit-box-orient: vertical;
   text-align: center;
   font-size: 0.875rem;
+  height: 38px;
 }
 
 div.product-item a.img-wrap {
