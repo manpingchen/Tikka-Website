@@ -5676,7 +5676,7 @@ main.live-on div.mobile-only.frame-top-bar ul.revenue-list > li .badge img {
 
 main.live-on div.mobile-only.frame-top-bar ul.revenue-list .value {
   position: absolute;
-  color: #d6236c;
+  color: #e9528e;
   width: 90%;
   bottom: 0px;
   left: 5%;
@@ -6228,7 +6228,8 @@ main.product-detail .arrow-right {
 #product-intro,
 #product-features,
 #product-scale,
-#product-notice {
+#product-notice,
+#purchase-notice {
   margin-bottom: 40px;
 }
 
@@ -6239,7 +6240,8 @@ main.product-detail .arrow-right {
 #product-intro h2,
 #product-features h2,
 #product-scale h2,
-#product-notice h2 {
+#product-notice h2,
+#purchase-notice h2 {
   margin: 0 auto 20px;
   width: 100px;
   font-weight: normal;
@@ -6254,7 +6256,8 @@ main.product-detail .arrow-right {
 #product-intro div.content,
 #product-features div.content,
 #product-scale div.content,
-#product-notice div.content {
+#product-notice div.content,
+#purchase-notice div.content {
   min-height: 500px;
   width: 100%;
   padding: 1rem;
@@ -6576,7 +6579,7 @@ main.purchase .cart-items {
 main.purchase .cart-item,
 div.purchase-overlay .cart-item,
 div.form-wrapper {
-  padding: 2rem 4rem;
+  padding: 2rem 2rem 2rem 3rem;
   background: #fff5fc;
   gap: 40px;
   border-radius: 20px;
@@ -6679,7 +6682,7 @@ div.purchase-overlay .receipt-options .options button.active {
 }
 
 .cart-titles h1 {
-  color: #d6236c;
+  color: #e9528e;
   font-size: 1rem;
   background: #fff1fb;
   border-radius: 20px;
@@ -6835,7 +6838,7 @@ div.form-wrapper .detail p.value {
 
 .cart-total h4,
 .cart-total p.cost {
-  color: #d6236c;
+  color: #e9528e;
   font-size: 1.5rem;
 }
 
@@ -6897,9 +6900,9 @@ div.purchase-overlay .cart-item .img-wrap img {
 }
 .cart-item .item-info p.cost,
 .cart-item .item-info p.point {
-  color: #d6236c;
+  color: #e9528e;
   font-size: 1rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .cart-item .item-info p.point {
@@ -6926,9 +6929,9 @@ form.adjust-item-count input[type="number"] {
 }
 
 form.adjust-item-count .unit {
-  padding-left: 0.5rem;
-  font-size: 1.2rem;
-  color: #d6236c;
+  padding-left: 0.25rem;
+  font-size: 1rem;
+  color: #e9528e;
 }
 
 form.adjust-item-count input[type="number"]::-webkit-outer-spin-button,
@@ -6941,8 +6944,8 @@ form.adjust-item-count button.reduce {
   border: 1px solid #000;
   border-radius: 0;
   padding: 0px;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
 }
 
 form.adjust-item-count button.reduce {
@@ -6953,6 +6956,10 @@ main.purchase .payment-options button.active,
 div.purchase-overlay .payment-options button.active {
   background: linear-gradient(0deg, #e60672, #ef99bf) !important;
   color: #fff !important;
+}
+
+main.purchase .item-info h3 {
+  padding-right: 4rem;
 }
 
 main.purchase .payment-options,
@@ -6966,6 +6973,11 @@ main.purchase .payment-options h4,
 div.purchase-overlay .payment-options p,
 div.purchase-overlay .payment-options h4 {
   color: #d6236c;
+}
+
+form.adjust-item-count button.add span.material-symbols-outlined,
+form.adjust-item-count button.reduce span.material-symbols-outlined {
+  font-size: 20px;
 }
 
 main.purchase .check-item-count,
@@ -7010,6 +7022,7 @@ div.purchase-overlay .check-item-count p.point {
 
   main.purchase .item-info h3 {
     font-size: 1rem;
+    width: unset;
   }
 
   main.purchase .item-info p.description {
@@ -7064,14 +7077,20 @@ div.purchase-overlay .check-item-count p.point {
   }
 
   main.purchase .item-info div {
-    width: 120px;
-    gap: 10px;
+    width: 150px;
+    gap: 0.5rem;
   }
 
   form.adjust-item-count button.add,
   form.adjust-item-count button.reduce {
     width: 25px;
     height: 25px;
+    display: inline-block;
+  }
+
+  form.adjust-item-count button.add span.material-symbols-outlined,
+  form.adjust-item-count button.reduce span.material-symbols-outlined {
+    font-size: 1rem;
   }
 
   form.adjust-item-count input[type="number"] {
@@ -8695,13 +8714,40 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   line-height: 1.7rem;
 }
 
-.account-orders .orders .order button.remove {
-  box-shadow: 0 0 10px gray;
+.account-orders .orders .order button.remove,
+.cart-item button.remove {
+  box-shadow: 0 0 5px gray;
   border-radius: 0.25rem !important;
-  padding: 0.25rem 0.5rem !important;
+  padding: 0 !important;
   display: flex;
   align-items: center;
+  width: 30px;
+  height: 30px;
   justify-content: center;
+}
+
+.cart-item .item-info {
+  position: relative;
+}
+
+.cart-item button.remove {
+  position: absolute;
+  top: -0.25rem;
+  right: 0.5rem;
+  background: #fefefe;
+}
+
+@media screen and (max-width: 600px) {
+  main.purchase .item-info h3 {
+    padding-right: unset;
+  }
+
+  .cart-item button.remove {
+    position: absolute;
+    bottom: 0;
+    top: unset;
+    right: 0;
+  }
 }
 
 .account-orders .mobile-only.orders.refund .order,
