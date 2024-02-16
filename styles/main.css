@@ -2000,8 +2000,38 @@ div.chat-item span {
   font-size: 0.8rem;
 }
 
+div.chat-item span.chat-content {
+  line-height: 23px;
+}
+
 div.chat-body span.chat-name {
   color: #e9528e;
+  height: 20px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  flex: none;
+}
+
+div.chat-body span.chat-name .admin-icon,
+div.chat-body span.chat-name .vip-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+div.chat-body span.chat-name .admin-icon {
+  border-radius: 50%;
+  background: #c40761;
+  color: white;
+}
+
+div.chat-body span.chat-name .vip-icon {
+  position: relative;
+  top: 5px;
 }
 
 main.live-on section.left-column div.chat-footer,
@@ -3350,7 +3380,7 @@ div.followers-chat-overlay div.chat-controls button img {
   }
 
   main.live-on div.frame-bottom-bar.mobile-only div.chat-body div.chat-item {
-    padding: 5px 10px;
+    padding: 8px 10px;
   }
 }
 
@@ -5491,7 +5521,7 @@ main.live-on div.overlay.viewer .title > p {
 }
 
 main.live-on div.overlay.viewer .title > p {
-  width: 120px;
+  width: 100px;
 }
 
 main.live-on div.overlay.revenue .title > p img,
