@@ -293,6 +293,7 @@ function showRewardDetail(id = "gift-all", parentId = "gift-details") {
       if (id.includes("gift-popular")) return popularGifts;
       if (id.includes("gift-favourite")) return favouriteGifts;
       if (id.includes("gift-romantic")) return romanticGifts;
+      if (id.includes("gift-vip")) return vipGifts;
     }
     if (parentId.includes("product-details")) {
       if (id.includes("product-all")) return allProducts;
@@ -334,6 +335,14 @@ function showRewardDetail(id = "gift-all", parentId = "gift-details") {
       setActiveStatus(containerId, newElement.id);
     };
     containerElement.appendChild(newElement);
+  });
+
+  /* 按鈕更新 */
+  document.querySelectorAll(".buy-button").forEach((e) => {
+    e.style.display = id.includes("gift-vip") ? "none" : "block";
+  });
+  document.querySelectorAll(".send-button").forEach((e) => {
+    e.style.display = !id.includes("gift-vip") ? "none" : "block";
   });
 }
 

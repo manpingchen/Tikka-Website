@@ -74,6 +74,21 @@ const romanticGifts = [
   { value: "888888", name: "浪漫城堡", imgUrl: "images/gift4.png" },
 ];
 
+const vipGifts = [
+  { value: "888888", name: "VIP禮物", imgUrl: "images/gift5.png" },
+  { value: "888888", name: "VIP禮物", imgUrl: "images/gift5.png" },
+  { value: "888888", name: "VIP禮物", imgUrl: "images/gift5.png" },
+  { value: "888888", name: "VIP禮物", imgUrl: "images/gift5.png" },
+  { value: "888888", name: "VIP禮物", imgUrl: "images/gift5.png" },
+  { value: "888888", name: "VIP禮物", imgUrl: "images/gift5.png" },
+  { value: "888888", name: "VIP禮物", imgUrl: "images/gift5.png" },
+  { value: "888888", name: "VIP禮物", imgUrl: "images/gift5.png" },
+  { value: "888888", name: "VIP禮物", imgUrl: "images/gift5.png" },
+  { value: "888888", name: "VIP禮物", imgUrl: "images/gift5.png" },
+  { value: "888888", name: "VIP禮物", imgUrl: "images/gift5.png" },
+  { value: "888888", name: "VIP禮物", imgUrl: "images/gift5.png" },
+];
+
 const allProducts = [
   { value: "888888", name: "氨基酸精華噴霧露", imgUrl: "images/product1.png" },
   { value: "888888", name: "氨基酸精華噴霧露", imgUrl: "images/product1.png" },
@@ -365,5 +380,5 @@ const fans = [
   { name: "B粉絲", id: 2, img: "images/s2.jpg" },
   { name: "A會員名稱會員名稱", id: 7, img: "images/s2.jpg" },
   { name: "Zen Chen", id: 8, img: "images/s2.jpg" },
-  { name: "台灣粉絲", id:6, img: "images/s2.jpg" },
+  { name: "台灣粉絲", id: 6, img: "images/s2.jpg" },
 ];

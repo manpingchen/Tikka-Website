@@ -631,8 +631,17 @@
                   href="#"
                   id="gift-romantic-mobile"
                   onclick="showRewardDetail(this.id, 'gift-details-mobile')"
-                  >浪漫禮物</a
                 >
+                  浪漫禮物
+                </a>
+                <span class="border"></span>
+                <a
+                  href="#"
+                  id="gift-vip-mobile"
+                  onclick="showRewardDetail(this.id, 'gift-details-mobile')"
+                >
+                  VIP
+                </a>
               </div>
 
               <div
@@ -673,7 +682,23 @@
                   <span class="point flex-row">
                     <img src="images/coin.png" alt="金幣圖示" class="coin-img" />2740000
                   </span>
-                  <button id="buy-button" type="button" onclick="handleBuy(this.id)">購買</button>
+                  <button
+                    id="buy-button"
+                    class="buy-button"
+                    type="button"
+                    onclick="handleBuy(this.id)"
+                  >
+                    購買
+                  </button>
+                  <button
+                    id="send-button"
+                    class="send-button"
+                    style="display: none"
+                    type="button"
+                    onclick="handleBuy(this.id)"
+                  >
+                    贈送
+                  </button>
                 </div>
               </div>
             </div>
@@ -1289,27 +1314,37 @@
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__list glide__slides" id="products-detail-tabs">
                 <li class="glide__slide p1-btn">
-                  <a href="#" id="gift-all" onclick="showRewardDetail(this.id, 'gift-details')"
-                    >All</a
-                  >
+                  <a href="#" id="gift-all" onclick="showRewardDetail(this.id, 'gift-details')">
+                    All
+                  </a>
                 </li>
                 <li class="glide__slide p2-btn">
-                  <a href="#" id="gift-popular" onclick="showRewardDetail(this.id, 'gift-details')"
-                    >熱門</a
-                  >
+                  <a href="#" id="gift-popular" onclick="showRewardDetail(this.id, 'gift-details')">
+                    熱門
+                  </a>
                 </li>
                 <li class="glide__slide p3-btn">
                   <a
                     href="#"
                     id="gift-favourite"
                     onclick="showRewardDetail(this.id, 'gift-details')"
-                    >女神最愛</a
                   >
+                    女神最愛
+                  </a>
                 </li>
                 <li class="glide__slide p4-btn">
-                  <a href="#" id="gift-romantic" onclick="showRewardDetail(this.id, 'gift-details')"
-                    >浪漫禮物</a
+                  <a
+                    href="#"
+                    id="gift-romantic"
+                    onclick="showRewardDetail(this.id, 'gift-details')"
                   >
+                    浪漫禮物
+                  </a>
+                </li>
+                <li class="glide__slide p4-btn">
+                  <a href="#" id="gift-vip" onclick="showRewardDetail(this.id, 'gift-details')">
+                    VIP
+                  </a>
                 </li>
               </ul>
             </div>
@@ -1384,7 +1419,18 @@
             <span class="point flex-row">
               <img src="images/coin.png" alt="金幣圖示" class="coin-img" />2740000</span
             >
-            <button id="buy-button" type="button" onclick="handleBuy(this.id)">購買</button>
+            <button id="buy-button" class="buy-button" type="button" onclick="handleBuy(this.id)">
+              購買
+            </button>
+            <button
+              id="send-button"
+              class="send-button"
+              style="display: none"
+              type="button"
+              onclick="handleBuy(this.id)"
+            >
+              贈送
+            </button>
           </div>
         </div>
       </section>

@@ -2507,7 +2507,7 @@ div.overlay.rewards {
 }
 
 main.live-on div.rewards {
-  height: 520px !important;
+  height: 537px !important;
 }
 
 main.live-on div.rewards div.btns {
@@ -2643,8 +2643,8 @@ div.reward-items {
   background: #ffc1db;
   margin-left: -1rem;
   margin-right: -1rem;
-  padding: 1rem;
-  height: 360px;
+  padding: 0.75rem;
+  height: 385px;
   overflow-y: scroll;
   align-content: baseline;
 }
@@ -2682,6 +2682,10 @@ div.overlay.rewards div.reward-item .img-wrap {
   display: flex;
   align-self: center;
   justify-content: center;
+}
+
+main.live-on div.reward-item .img-wrap {
+  background: #051328;
 }
 
 main.live-on div.reward-item img,
