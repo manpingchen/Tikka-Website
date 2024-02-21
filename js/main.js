@@ -225,6 +225,7 @@ function handleHideComponent(selector) {
 
   const isNormalOverlay = classList.contains("overlay") && !classList.contains("small");
   const isSmallOverlay = classList.contains("small") && classList.contains("overlay");
+  const backdrop = document.getElementsByClassName("backdrop")[0];
 
   if (isNormalOverlay) {
     backdrop.style.display = "none";
@@ -244,7 +245,6 @@ function handleHideComponent(selector) {
 
   body.style.overflow = "auto";
 
-  const backdrop = document.getElementsByClassName("backdrop")[0];
   if (backdrop) {
     backdrop.style.display = "none";
   }
@@ -320,6 +320,17 @@ function showRewardDetail(id = "gift-all", parentId = "gift-details") {
 
     const imgElement = document.createElement("img");
     imgElement.src = data()[i].imgUrl;
+
+    /* VIP禮物牆 會員儲值未滿20萬 加上鎖頭圖檔 */
+    if (id.includes("gift-vip")) {
+      const imgOverlayElement = document.createElement("img");
+      imgOverlayElement.src = "images/lock.svg";
+      imgOverlayElement.classList.add("lock");
+      imgWrapElement.append(imgOverlayElement);
+
+      imgElement.classList.add("locked");
+    }
+
     const pointElement = document.createElement("span");
     pointElement.innerText = data()[i].value;
 
@@ -361,6 +372,25 @@ function handleBuy(id) {
   setTimeout(() => {
     handleShowPurchaseAnimation();
   }, 500);
+}
+
+/*點擊贈送禮物按鈕變色 ）*/
+function handleSend(id, ifQualified = true) {
+  document.getElementById(id).classList.add("active");
+
+  // 先關閉任何開啟的遮罩
+  handleHideComponent("#gift-sent");
+  handleHideComponent("#gift-full-overlay");
+  handleHideComponent(".rewards.overlay");
+
+  if (!ifQualified) {
+    handleShowComponent("#be-vip-overlay", "block", false);
+  } else {
+    // 開啟當次送出之禮物動畫
+    setTimeout(() => {
+      handleShowPurchaseAnimation();
+    }, 500);
+  }
 }
 
 /*呈現購買後動畫按鈕 (＊＊＊供示意）*/
