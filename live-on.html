@@ -572,19 +572,6 @@
             </div>
           </div>
 
-          <!-- 成為VIP會員視窗 -->
-          <div class="overlay" id="be-vip-overlay">
-            <div class="title flex-row">
-              <button class="close" onclick="handleHideComponent('#be-vip-overlay')">
-                <img src="images/close-icon.svg" alt="close" />
-              </button>
-            </div>
-            <div class="content">
-              <p>成為VIP會員即可送出禮物</p>
-              <a href="topup.html" class="topup-btn"><img src="images/coin.png" />請儲值</a>
-            </div>
-          </div>
-
           <!-- 手機版禮物牆 -->
           <div class="overlay rewards" id="rewards-overlay-mobile">
             <div class="content">
@@ -705,10 +692,10 @@
                   </button>
                   <button
                     id="send-button"
-                    class="send-button not-vip"
+                    class="send-button"
                     style="display: none"
                     type="button"
-                    onclick="handleSend(this.id, false)"
+                    onclick="handleBuy(this.id)"
                   >
                     贈送
                   </button>
@@ -1437,10 +1424,10 @@
             </button>
             <button
               id="send-button"
-              class="send-button not-vip"
+              class="send-button"
               style="display: none"
               type="button"
-              onclick="handleSend(this.id, false)"
+              onclick="handleBuy(this.id)"
             >
               贈送
             </button>
