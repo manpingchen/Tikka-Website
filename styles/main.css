@@ -8906,6 +8906,8 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   font-weight: normal;
   color: black;
   margin-bottom: 0;
+  padding-right: 1rem;
+  line-height: 1.2rem;
 }
 
 .account-orders .desktop-only.orders .order .order-items .order-item .order-item-detail h6 {
@@ -8965,6 +8967,17 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   line-height: 1em;
   position: absolute;
   top: -1rem;
+}
+
+.account-orders
+  .desktop-only.orders
+  .order
+  .order-items
+  .order-item:first-child
+  .order-item-detail
+  ul
+  li {
+  min-width: 40px;
 }
 
 .account-orders

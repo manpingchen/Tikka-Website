@@ -184,7 +184,7 @@
               <li>
                 <span class="title">訂單總金額(含運費)</span><span class="value">NT.7,000</span>
               </li>
-              <li id="order-remove">
+              <li class="order-remove">
                 <button class="remove">
                   <img src="images/bin.svg" />
                 </button>
@@ -269,7 +269,7 @@
               <li>
                 <span class="title">訂單總金額(含運費)</span><span class="value">NT.7,000</span>
               </li>
-              <li>
+              <li class="order-remove">
                 <button class="remove">
                   <img src="images/bin.svg" />
                 </button>
@@ -325,7 +325,7 @@
               <img src="images/arrow-pink.svg" />
             </button>
             <p>訂單日期－2022.07.20（<span class="expand-toggle-text">向下展開</span>）</p>
-            <button class="remove">
+            <button class="remove order-remove">
               <img src="images/bin.svg" />
             </button>
           </div>
@@ -400,7 +400,7 @@
               <img src="images/arrow-pink.svg" />
             </button>
             <p>訂單日期－2022.06.20(<span class="expand-toggle-text">向下展開</span>)</p>
-            <button class="remove">
+            <button class="remove order-remove">
               <img src="images/bin.svg" />
             </button>
           </div>
@@ -520,27 +520,59 @@
 
       // order-status-switcher
       function switchOrderStatus(status) {
-        let statusText;
+        let statusText = "待付款";
+        let ifShowOrderAction = true;
+        let ifOrderRemovable = false;
+        let orderActionText = "付款去";
+        let shoudGreyOut = false;
+
         switch (status) {
-          case "toBePayed":
-            statusText = "待付款";
-            break;
           case "toBeDispatched":
             statusText = "待出貨";
+            ifShowOrderAction = false;
+
             break;
           case "toBeCollected":
             statusText = "待收貨";
+            ifShowOrderAction = false;
+            break;
+          case "completed":
+            statusText = "已完成";
+            ifShowOrderAction = true;
+            orderActionText = "再次訂購";
             break;
           case "returned":
             statusText = "退貨/退款";
+            ifShowOrderAction = false;
+            shoudGreyOut = true;
             break;
           default:
-          case "completed":
-            statusText = "已完成";
+          case "toBePayed":
+            ifOrderRemovable = true;
             break;
         }
+
+        //  status text updated
         [...document.querySelectorAll(".order-status")].forEach((node) => {
           node.innerText = statusText;
+        });
+
+        //  remove button display updated
+        [...document.querySelectorAll(".order-remove")].forEach((node) => {
+          node.style.display = ifOrderRemovable ? "block" : "none";
+        });
+
+        //  action button text and display updated
+        [...document.querySelectorAll(".order-action")].forEach((node) => {
+          node.style.display = ifShowOrderAction ? "block" : "none";
+          if (ifShowOrderAction) {
+            node.innerText = orderActionText;
+          }
+        });
+
+        //  orders grey out updated
+        [...document.querySelectorAll(".orders")].forEach((node) => {
+          shoudGreyOut ? node.classList.add("refund") : node.classList.remove("refund");
         });
       }
     </script>
