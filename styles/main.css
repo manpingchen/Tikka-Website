@@ -8748,14 +8748,14 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   margin: 0 auto 1rem;
 }
 
-.account-orders ul.status-bar li a {
+.account-orders ul.status-bar li button {
   color: gray;
   text-decoration: none;
   font-size: 0.875rem;
 }
 
-.account-orders ul.status-bar li.active a {
-  color: #e588b2;
+.account-orders ul.status-bar li.active button {
+  color: #e588b2 !important;
 }
 
 .account-orders .orders .order {
@@ -9064,7 +9064,7 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   background: #fffbfe;
 }
 
-.account-orders .orders.mobile-only button.pay {
+.account-orders .orders.mobile-only button.order-action {
   position: absolute;
   right: 0.5rem;
   top: 0.5rem;

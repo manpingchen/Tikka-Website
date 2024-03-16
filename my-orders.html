@@ -144,11 +144,27 @@
       <h1><img src="images/order-title.svg" alt="訂單瀏覽" /></h1>
       <!-- Order Status Bar-->
       <ul class="status-bar flex-row">
-        <li class="active"><a href="my-orders.html">待付款</a></li>
-        <li><a href="my-orders-dispatch.html">待出貨</a></li>
-        <li><a href="my-orders-collect.html">待收貨</a></li>
-        <li><a href="my-orders-complete.html">已完成</a></li>
-        <li><a href="my-orders-refund.html">退貨/退款 </a></li>
+        <li class="active">
+          <button type="button" id="toBePayed" onclick="switchOrderStatus(this.id)">待付款</button>
+        </li>
+        <li>
+          <button type="button" id="toBeDispatched" onclick="switchOrderStatus(this.id)">
+            待出貨
+          </button>
+        </li>
+        <li>
+          <button type="button" id="toBeCollected" onclick="switchOrderStatus(this.id)">
+            待收貨
+          </button>
+        </li>
+        <li>
+          <button type="button" id="completed" onclick="switchOrderStatus(this.id)">已完成</button>
+        </li>
+        <li>
+          <button type="button" id="returned" onclick="switchOrderStatus(this.id)">
+            退貨/退款
+          </button>
+        </li>
       </ul>
 
       <div class="orders flex-column desktop-only">
@@ -157,7 +173,10 @@
             <ul class="order-info">
               <li><span class="title">訂單日期</span><span class="value">2022.07.20</span></li>
               <li><span class="title">訂單編號</span><span class="value">776542111</span></li>
-              <li><span class="title">訂單狀態</span><span class="value">待配送</span></li>
+              <li>
+                <span class="title">訂單狀態</span>
+                <span class="value order-status">待付款</span>
+              </li>
               <li>
                 <span class="title">付款方式</span><span class="value">NewebPay藍新金流</span>
               </li>
@@ -165,7 +184,7 @@
               <li>
                 <span class="title">訂單總金額(含運費)</span><span class="value">NT.7,000</span>
               </li>
-              <li>
+              <li id="order-remove">
                 <button class="remove">
                   <img src="images/bin.svg" />
                 </button>
@@ -178,7 +197,7 @@
                 </button>
                 訂購商品（<span class="expand-toggle-text">向下展開</span>）
               </h5>
-              <button class="button-like">付款去</button>
+              <button class="button-like order-action">付款去</button>
             </div>
 
             <!--訂單客戶資訊-->
@@ -239,7 +258,10 @@
             <ul class="order-info">
               <li><span class="title">訂單日期</span><span class="value">2022.07.20</span></li>
               <li><span class="title">訂單編號</span><span class="value">776542111</span></li>
-              <li><span class="title">訂單狀態</span><span class="value">待配送</span></li>
+              <li>
+                <span class="title">訂單狀態</span>
+                <span class="value order-status">待付款</span>
+              </li>
               <li>
                 <span class="title">付款方式</span><span class="value">NewebPay藍新金流</span>
               </li>
@@ -260,7 +282,7 @@
                 </button>
                 訂購商品（<span class="expand-toggle-text">向下展開</span>）
               </h5>
-              <button class="button-like">付款去</button>
+              <button class="button-like order-action">付款去</button>
             </div>
             <div class="order-items flex-column">
               <div class="order-item flex-row">
@@ -308,10 +330,10 @@
             </button>
           </div>
           <div class="order-content">
-            <button class="button-like pay">付款去</button>
+            <button class="button-like order-action">付款去</button>
             <ul class="order-info">
               <li>訂單編號－<span class="value">776542111</span></li>
-              <li>訂單狀態－<span class="value">待配送</span></li>
+              <li>訂單狀態－<span class="value order-status">待付款</span></li>
               <li>付款方式－<span class="value">NewebPay藍新金流</span></li>
               <li>配送方式－<span class="value">宅配</span></li>
               <li>訂單金額－<span class="value">NT.7,000</span></li>
@@ -383,10 +405,10 @@
             </button>
           </div>
           <div class="order-content">
-            <button class="button-like pay">付款去</button>
+            <button class="button-like order-action">付款去</button>
             <ul class="order-info">
               <li>訂單編號－<span class="value">776542111</span></li>
-              <li>訂單狀態－<span class="value">待配送</span></li>
+              <li>訂單狀態－<span class="value order-status">待付款</span></li>
               <li>付款方式－<span class="value">NewebPay藍新金流</span></li>
               <li>配送方式－<span class="value">宅配</span></li>
               <li>訂單金額－<span class="value">NT.7,000</span></li>
@@ -493,6 +515,32 @@
           } else {
             node.querySelector(".expand-toggle-text").innerText = "向下展開";
           }
+        });
+      }
+
+      // order-status-switcher
+      function switchOrderStatus(status) {
+        let statusText;
+        switch (status) {
+          case "toBePayed":
+            statusText = "待付款";
+            break;
+          case "toBeDispatched":
+            statusText = "待出貨";
+            break;
+          case "toBeCollected":
+            statusText = "待收貨";
+            break;
+          case "returned":
+            statusText = "退貨/退款";
+            break;
+          default:
+          case "completed":
+            statusText = "已完成";
+            break;
+        }
+        [...document.querySelectorAll(".order-status")].forEach((node) => {
+          node.innerText = statusText;
         });
       }
     </script>
