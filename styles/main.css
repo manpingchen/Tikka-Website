@@ -8751,6 +8751,7 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
 .account-orders ul.status-bar li button {
   color: gray;
   text-decoration: none;
+  padding: 0.25rem !important;
   font-size: 0.875rem;
 }
 
