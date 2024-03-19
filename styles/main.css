@@ -8755,7 +8755,7 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   font-size: 0.875rem;
 }
 
-.account-orders ul.status-bar li.active button {
+.account-orders ul.status-bar li button.active {
   color: #e588b2 !important;
 }
 

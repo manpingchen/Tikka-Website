@@ -144,8 +144,10 @@
       <h1><img src="images/order-title.svg" alt="訂單瀏覽" /></h1>
       <!-- Order Status Bar-->
       <ul class="status-bar flex-row">
-        <li class="active">
-          <button type="button" id="toBePayed" onclick="switchOrderStatus(this.id)">待付款</button>
+        <li>
+          <button type="button" class="active" id="toBePayed" onclick="switchOrderStatus(this.id)">
+            待付款
+          </button>
         </li>
         <li>
           <button type="button" id="toBeDispatched" onclick="switchOrderStatus(this.id)">
@@ -525,6 +527,10 @@
         let ifOrderRemovable = false;
         let orderActionText = "付款去";
         let shoudGreyOut = false;
+
+        [...document.querySelectorAll(".status-bar li button")].forEach((node) => {
+          node.id === status ? node.classList.add("active") : node.classList.remove("active");
+        });
 
         switch (status) {
           case "toBeDispatched":
