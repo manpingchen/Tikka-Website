@@ -169,7 +169,8 @@
         </li>
       </ul>
 
-      <div class="orders flex-column desktop-only">
+      <!-- Status: to-be-payed-orders-->
+      <div class="orders flex-column desktop-only to-be-payed-orders">
         <div class="order order-1" id="order-1">
           <div class="order-content">
             <ul class="order-info">
@@ -223,6 +224,7 @@
               <li>電子發票－<span class="value">愛心捐贈</span></li>
               <li>愛心碼：<span class="value">12345678</span></li>
             </ul>
+
             <div class="order-items flex-column">
               <div class="order-item flex-row">
                 <div class="img-wrap">
@@ -258,15 +260,13 @@
         <div class="order order-2" id="order-2">
           <div class="order-content">
             <ul class="order-info">
-              <li><span class="title">訂單日期</span><span class="value">2022.07.20</span></li>
-              <li><span class="title">訂單編號</span><span class="value">776542111</span></li>
+              <li><span class="title">訂單日期</span><span class="value">2022.12.20</span></li>
+              <li><span class="title">訂單編號</span><span class="value">3349353</span></li>
               <li>
                 <span class="title">訂單狀態</span>
                 <span class="value order-status">待付款</span>
               </li>
-              <li>
-                <span class="title">付款方式</span><span class="value">NewebPay藍新金流</span>
-              </li>
+              <li><span class="title">付款方式</span><span class="value">linepay</span></li>
               <li><span class="title">配送方式</span><span class="value">宅配</span></li>
               <li>
                 <span class="title">訂單總金額(含運費)</span><span class="value">NT.7,000</span>
@@ -286,6 +286,27 @@
               </h5>
               <button class="button-like order-action">付款去</button>
             </div>
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">092134556</span></li>
+              <li>
+                收件人地址：<span class="value">201 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">customer1@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">T0123123123</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">12345678</span></li>
+            </ul>
             <div class="order-items flex-column">
               <div class="order-item flex-row">
                 <div class="img-wrap">
@@ -320,7 +341,7 @@
         </div>
       </div>
 
-      <div class="orders flex-column mobile-only">
+      <div class="orders flex-column mobile-only to-be-payed-orders">
         <div class="order order-1" id="order-1">
           <div class="order-title">
             <button class="order-toggle-button" name="order-1" onclick="toggleExpand(this)">
@@ -472,6 +493,1219 @@
           </div>
         </div>
       </div>
+
+      <!-- Status: to-be-dispatched-orders-->
+      <div class="orders flex-column desktop-only to-be-dispatched-orders" style="display: none">
+        <div class="order order-1" id="order-1">
+          <div class="order-content">
+            <ul class="order-info">
+              <li><span class="title">訂單日期</span><span class="value">2022.07.12</span></li>
+              <li><span class="title">訂單編號</span><span class="value">776542111</span></li>
+              <li>
+                <span class="title">訂單狀態</span>
+                <span class="value order-status">待出貨</span>
+              </li>
+              <li><span class="title">付款方式</span><span class="value">付款方式1</span></li>
+              <li><span class="title">配送方式</span><span class="value">宅配2</span></li>
+              <li>
+                <span class="title">訂單總金額(含運費)</span><span class="value">NT.7,100</span>
+              </li>
+            </ul>
+            <div class="header">
+              <h5 class="flex-row">
+                <button class="order-toggle-button" name="order-1" onclick="toggleExpand(this)">
+                  <img src="images/arrow-pink.svg" />
+                </button>
+                訂購商品（<span class="expand-toggle-text">向下展開</span>）
+              </h5>
+            </div>
+
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">091234556</span></li>
+              <li>
+                收件人地址：<span class="value">201 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">customer@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">T0123123123</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">12345678</span></li>
+            </ul>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x99</span></li>
+                    <li><span class="title">單價</span><span class="value">$999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product6.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9</span></li>
+                    <li><span class="title">單價</span><span class="value">$99</span></li>
+                    <li><span class="title">小計</span><span class="value">$999</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order order-2" id="order-2">
+          <div class="order-content">
+            <ul class="order-info">
+              <li><span class="title">訂單日期</span><span class="value">2023.09.12</span></li>
+              <li><span class="title">訂單編號</span><span class="value">776542110</span></li>
+              <li>
+                <span class="title">訂單狀態</span>
+                <span class="value order-status">待出貨</span>
+              </li>
+              <li><span class="title">付款方式</span><span class="value">新金流</span></li>
+              <li><span class="title">配送方式</span><span class="value">宅配1</span></li>
+              <li>
+                <span class="title">訂單總金額(含運費)</span><span class="value">NT.7,030</span>
+              </li>
+            </ul>
+            <div class="header">
+              <h5 class="flex-row">
+                <button class="order-toggle-button" name="order-2" onclick="toggleExpand(this)">
+                  <img src="images/arrow-pink.svg" />
+                </button>
+                訂購商品（<span class="expand-toggle-text">向下展開</span>）
+              </h5>
+            </div>
+
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">093234556</span></li>
+              <li>
+                收件人地址：<span class="value">204 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">user2@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">T0129222</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">12345678</span></li>
+            </ul>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product6.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="orders flex-column mobile-only to-be-dispatched-orders" style="display: none">
+        <div class="order order-1" id="order-1">
+          <div class="order-title">
+            <button class="order-toggle-button" name="order-1" onclick="toggleExpand(this)">
+              <img src="images/arrow-pink.svg" />
+            </button>
+            <p>訂單日期－2022.07.12（<span class="expand-toggle-text">向下展開</span>）</p>
+          </div>
+          <div class="order-content">
+            <ul class="order-info">
+              <li>訂單編號－<span class="value">37654123</span></li>
+              <li>訂單狀態－<span class="value order-status">待出貨</span></li>
+              <li>付款方式－<span class="value">付款方式1</span></li>
+              <li>配送方式－<span class="value">配送方式2</span></li>
+              <li>訂單金額－<span class="value">NT.200</span></li>
+            </ul>
+
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">091234556</span></li>
+              <li>
+                收件人地址：<span class="value">211 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">customer2@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">T012313333</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">1231236</span></li>
+            </ul>
+
+            <h5>訂購商品</h5>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product6.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order order-2" id="order-2">
+          <div class="order-title">
+            <button class="order-toggle-button" name="order-2" onclick="toggleExpand(this)">
+              <img src="images/arrow-pink.svg" />
+            </button>
+            <p>訂單日期－2022.06.20(<span class="expand-toggle-text">向下展開</span>)</p>
+          </div>
+          <div class="order-content">
+            <ul class="order-info">
+              <li>訂單編號－<span class="value">7765421231</span></li>
+              <li>訂單狀態－<span class="value order-status">待出貨</span></li>
+              <li>付款方式－<span class="value">NewebPay藍新金流3</span></li>
+              <li>配送方式－<span class="value">宅配2</span></li>
+              <li>訂單金額－<span class="value">NT.13,000</span></li>
+            </ul>
+
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">093212346</span></li>
+              <li>
+                收件人地址：<span class="value">212 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">customer4@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">T01212313</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">12345678</span></li>
+            </ul>
+
+            <h5>訂購商品</h5>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product3.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Status: to-be-collected-orders-->
+      <div class="orders flex-column desktop-only to-be-collected-orders" style="display: none">
+        <div class="order order-1" id="order-1">
+          <div class="order-content">
+            <ul class="order-info">
+              <li><span class="title">訂單日期</span><span class="value">2022.04.20</span></li>
+              <li><span class="title">訂單編號</span><span class="value">796541109</span></li>
+              <li>
+                <span class="title">訂單狀態</span>
+                <span class="value order-status">待收貨</span>
+              </li>
+              <li><span class="title">付款方式</span><span class="value">付款方式1</span></li>
+              <li><span class="title">配送方式</span><span class="value">配送方式1</span></li>
+              <li>
+                <span class="title">訂單總金額(含運費)</span><span class="value">NT.5,000</span>
+              </li>
+            </ul>
+            <div class="header">
+              <h5 class="flex-row">
+                <button class="order-toggle-button" name="order-1" onclick="toggleExpand(this)">
+                  <img src="images/arrow-pink.svg" />
+                </button>
+                訂購商品（<span class="expand-toggle-text">向下展開</span>）
+              </h5>
+            </div>
+
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">1231321312312</span></li>
+              <li>
+                收件人地址：<span class="value">2031 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">user45@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">123123</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">1123123218</span></li>
+            </ul>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x999</span></li>
+                    <li><span class="title">單價</span><span class="value">$999</span></li>
+                    <li><span class="title">小計</span><span class="value">$99</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product6.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9</span></li>
+                    <li><span class="title">單價</span><span class="value">$9</span></li>
+                    <li><span class="title">小計</span><span class="value">$9</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order order-2" id="order-2">
+          <div class="order-content">
+            <ul class="order-info">
+              <li><span class="title">訂單日期</span><span class="value">2022.07.30</span></li>
+              <li><span class="title">訂單編號</span><span class="value">2343242312</span></li>
+              <li>
+                <span class="title">訂單狀態</span>
+                <span class="value order-status">待收貨</span>
+              </li>
+              <li><span class="title">付款方式</span><span class="value">付款方式3</span></li>
+              <li><span class="title">配送方式</span><span class="value">配送方式21</span></li>
+              <li>
+                <span class="title">訂單總金額(含運費)</span><span class="value">NT.7,500</span>
+              </li>
+            </ul>
+            <div class="header">
+              <h5 class="flex-row">
+                <button class="order-toggle-button" name="order-2" onclick="toggleExpand(this)">
+                  <img src="images/arrow-pink.svg" />
+                </button>
+                訂購商品（<span class="expand-toggle-text">向下展開</span>）
+              </h5>
+            </div>
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">09334556</span></li>
+              <li>
+                收件人地址：<span class="value">201 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">user2@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">T0123123123</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">12345678</span></li>
+            </ul>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x1</span></li>
+                    <li><span class="title">單價</span><span class="value">$19</span></li>
+                    <li><span class="title">小計</span><span class="value">$19</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product6.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x399</span></li>
+                    <li><span class="title">單價</span><span class="value">$459</span></li>
+                    <li><span class="title">小計</span><span class="value">$23299</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="orders flex-column mobile-only to-be-collected-orders" style="display: none">
+        <div class="order order-1" id="order-1">
+          <div class="order-title">
+            <button class="order-toggle-button" name="order-1" onclick="toggleExpand(this)">
+              <img src="images/arrow-pink.svg" />
+            </button>
+            <p>訂單日期－2022.07.12（<span class="expand-toggle-text">向下展開</span>）</p>
+          </div>
+          <div class="order-content">
+            <ul class="order-info">
+              <li>訂單編號－<span class="value">2342342</span></li>
+              <li>訂單狀態－<span class="value order-status">待收貨</span></li>
+              <li>付款方式－<span class="value">付款方式3</span></li>
+              <li>配送方式－<span class="value">宅配</span></li>
+              <li>訂單金額－<span class="value">NT.5,100</span></li>
+            </ul>
+
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">4123123</span></li>
+              <li>
+                收件人地址：<span class="value">203 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">customer@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">T01231342123</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈1</span></li>
+              <li>愛心碼：<span class="value">13123123</span></li>
+            </ul>
+
+            <h5>訂購商品</h5>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x99</span></li>
+                    <li><span class="title">單價</span><span class="value">$999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product6.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order order-2" id="order-2">
+          <div class="order-title">
+            <button class="order-toggle-button" name="order-2" onclick="toggleExpand(this)">
+              <img src="images/arrow-pink.svg" />
+            </button>
+            <p>訂單日期－2022.06.20(<span class="expand-toggle-text">向下展開</span>)</p>
+          </div>
+          <div class="order-content">
+            <ul class="order-info">
+              <li>訂單編號－<span class="value">123123</span></li>
+              <li>訂單狀態－<span class="value order-status">待收貨</span></li>
+              <li>付款方式－<span class="value">123</span></li>
+              <li>配送方式－<span class="value">宅配</span></li>
+              <li>訂單金額－<span class="value">NT.7,020</span></li>
+            </ul>
+
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">093234556</span></li>
+              <li>
+                收件人地址：<span class="value">130 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">customer2@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">T0123123123</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">12345678</span></li>
+            </ul>
+
+            <h5>訂購商品</h5>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product3.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Status: completed-orders-->
+      <div class="orders flex-column desktop-only completed-orders" style="display: none">
+        <div class="order order-1" id="order-1">
+          <div class="order-content">
+            <ul class="order-info">
+              <li><span class="title">訂單日期</span><span class="value">2024.04.20</span></li>
+              <li><span class="title">訂單編號</span><span class="value">2923421</span></li>
+              <li>
+                <span class="title">訂單狀態</span>
+                <span class="value order-status">已完成</span>
+              </li>
+              <li><span class="title">付款方式</span><span class="value">linepay</span></li>
+              <li><span class="title">配送方式</span><span class="value">宅配1</span></li>
+              <li>
+                <span class="title">訂單總金額(含運費)</span><span class="value">NT.22,120</span>
+              </li>
+            </ul>
+            <div class="header">
+              <h5 class="flex-row">
+                <button class="order-toggle-button" name="order-1" onclick="toggleExpand(this)">
+                  <img src="images/arrow-pink.svg" />
+                </button>
+                訂購商品（<span class="expand-toggle-text">向下展開</span>）
+              </h5>
+              <button class="button-like order-action">再次訂購</button>
+            </div>
+
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">094234556</span></li>
+              <li>
+                收件人地址：<span class="value">211 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">customer@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">T0123123123</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">12345678</span></li>
+            </ul>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product6.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order order-2" id="order-2">
+          <div class="order-content">
+            <ul class="order-info">
+              <li><span class="title">訂單日期</span><span class="value">2023.07.12</span></li>
+              <li><span class="title">訂單編號</span><span class="value">92929293</span></li>
+              <li>
+                <span class="title">訂單狀態</span>
+                <span class="value order-status">已完成</span>
+              </li>
+              <li><span class="title">付款方式</span><span class="value">credit card</span></li>
+              <li><span class="title">配送方式</span><span class="value">黑貓</span></li>
+              <li>
+                <span class="title">訂單總金額(含運費)</span><span class="value">NT.1,400</span>
+              </li>
+            </ul>
+            <div class="header">
+              <h5 class="flex-row">
+                <button class="order-toggle-button" name="order-2" onclick="toggleExpand(this)">
+                  <img src="images/arrow-pink.svg" />
+                </button>
+                訂購商品（<span class="expand-toggle-text">向下展開</span>）
+              </h5>
+              <button class="button-like order-action">再次訂購</button>
+            </div>
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">091234556</span></li>
+              <li>
+                收件人地址：<span class="value">201 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">customer@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">T0123123123</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">12345678</span></li>
+            </ul>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product6.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="orders flex-column mobile-only completed-orders" style="display: none">
+        <div class="order order-1" id="order-1">
+          <div class="order-title">
+            <button class="order-toggle-button" name="order-1" onclick="toggleExpand(this)">
+              <img src="images/arrow-pink.svg" />
+            </button>
+            <p>訂單日期－2024.01.10（<span class="expand-toggle-text">向下展開</span>）</p>
+          </div>
+          <div class="order-content">
+            <button class="button-like order-action">再次訂購</button>
+            <ul class="order-info">
+              <li>訂單編號－<span class="value">199312931</span></li>
+              <li>訂單狀態－<span class="value order-status">已完成</span></li>
+              <li>付款方式－<span class="value">linepay</span></li>
+              <li>配送方式－<span class="value">宅配２</span></li>
+              <li>訂單金額－<span class="value">NT.22,000</span></li>
+            </ul>
+
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">093123123</span></li>
+              <li>
+                收件人地址：<span class="value">203 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">customer@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">T0123123123</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">12345678</span></li>
+            </ul>
+
+            <h5>訂購商品</h5>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product6.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order order-2" id="order-2">
+          <div class="order-title">
+            <button class="order-toggle-button" name="order-2" onclick="toggleExpand(this)">
+              <img src="images/arrow-pink.svg" />
+            </button>
+            <p>訂單日期－2022.09.20(<span class="expand-toggle-text">向下展開</span>)</p>
+          </div>
+          <div class="order-content">
+            <button class="button-like order-action">再次訂購</button>
+            <ul class="order-info">
+              <li>訂單編號－<span class="value">776542111</span></li>
+              <li>訂單狀態－<span class="value order-status">已完成</span></li>
+              <li>付款方式－<span class="value">credit card</span></li>
+              <li>配送方式－<span class="value">黑貓</span></li>
+              <li>訂單金額－<span class="value">NT.12,300</span></li>
+            </ul>
+
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">091234556</span></li>
+              <li>
+                收件人地址：<span class="value">223 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">customer@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">T0123123123</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">12345678</span></li>
+            </ul>
+
+            <h5>訂購商品</h5>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product3.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x99</span></li>
+                    <li><span class="title">單價</span><span class="value">$999</span></li>
+                    <li><span class="title">小計</span><span class="value">$9,999</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x1,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$91,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$991,999</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Status: returned-orders-->
+      <div class="orders flex-column desktop-only returned-orders refund" style="display: none">
+        <div class="order order-1" id="order-1">
+          <div class="order-content">
+            <ul class="order-info">
+              <li><span class="title">訂單日期</span><span class="value">2022.07.21</span></li>
+              <li><span class="title">訂單編號</span><span class="value">43423421</span></li>
+              <li>
+                <span class="title">訂單狀態</span>
+                <span class="value order-status">退款/退貨</span>
+              </li>
+              <li><span class="title">付款方式</span><span class="value">pay method2</span></li>
+              <li><span class="title">配送方式</span><span class="value">宅配1</span></li>
+              <li>
+                <span class="title">訂單總金額(含運費)</span><span class="value">NT5,000</span>
+              </li>
+            </ul>
+            <div class="header">
+              <h5 class="flex-row">
+                <button class="order-toggle-button" name="order-1" onclick="toggleExpand(this)">
+                  <img src="images/arrow-pink.svg" />
+                </button>
+                訂購商品（<span class="expand-toggle-text">向下展開</span>）
+              </h5>
+            </div>
+
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">234243324</span></li>
+              <li>
+                收件人地址：<span class="value">2021 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">custo34mer@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">234324234324</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">234234</span></li>
+            </ul>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x699</span></li>
+                    <li><span class="title">單價</span><span class="value">$1,929</span></li>
+                    <li><span class="title">小計</span><span class="value">$3,299</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product6.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9</span></li>
+                    <li><span class="title">單價</span><span class="value">$9</span></li>
+                    <li><span class="title">小計</span><span class="value">$9</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order order-2" id="order-2">
+          <div class="order-content">
+            <ul class="order-info">
+              <li><span class="title">訂單日期</span><span class="value">2024.02.13</span></li>
+              <li><span class="title">訂單編號</span><span class="value">131231231</span></li>
+              <li>
+                <span class="title">訂單狀態</span>
+                <span class="value order-status">退款/退貨</span>
+              </li>
+              <li><span class="title">付款方式</span><span class="value">credit card</span></li>
+              <li><span class="title">配送方式</span><span class="value">黑貓</span></li>
+              <li>
+                <span class="title">訂單總金額(含運費)</span><span class="value">NT.100</span>
+              </li>
+            </ul>
+            <div class="header">
+              <h5 class="flex-row">
+                <button class="order-toggle-button" name="order-2" onclick="toggleExpand(this)">
+                  <img src="images/arrow-pink.svg" />
+                </button>
+                訂購商品（<span class="expand-toggle-text">向下展開</span>）
+              </h5>
+            </div>
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">091234556</span></li>
+              <li>
+                收件人地址：<span class="value">201 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">customer@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">T0123123123</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">12345678</span></li>
+            </ul>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product6.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="orders flex-column mobile-only returned-orders refund" style="display: none">
+        <div class="order order-1" id="order-1">
+          <div class="order-title">
+            <button class="order-toggle-button" name="order-1" onclick="toggleExpand(this)">
+              <img src="images/arrow-pink.svg" />
+            </button>
+            <p>訂單日期－2022.12.03（<span class="expand-toggle-text">向下展開</span>）</p>
+          </div>
+          <div class="order-content">
+            <ul class="order-info">
+              <li>訂單編號－<span class="value">4552111</span></li>
+              <li>訂單狀態－<span class="value order-status">退款/退貨</span></li>
+              <li>付款方式－<span class="value">NewebPay藍新金流</span></li>
+              <li>配送方式－<span class="value">宅配</span></li>
+              <li>訂單金額－<span class="value">NT.12,000</span></li>
+            </ul>
+
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">094234556</span></li>
+              <li>
+                收件人地址：<span class="value">211 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">customer2@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">T0092312313</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">1234569</span></li>
+            </ul>
+
+            <h5>訂購商品</h5>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product6.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x9,999</span></li>
+                    <li><span class="title">單價</span><span class="value">$99,999</span></li>
+                    <li><span class="title">小計</span><span class="value">$999,999</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order order-2" id="order-2">
+          <div class="order-title">
+            <button class="order-toggle-button" name="order-2" onclick="toggleExpand(this)">
+              <img src="images/arrow-pink.svg" />
+            </button>
+            <p>訂單日期－2022.12.12(<span class="expand-toggle-text">向下展開</span>)</p>
+          </div>
+          <div class="order-content">
+            <ul class="order-info">
+              <li>訂單編號－<span class="value">912312323</span></li>
+              <li>訂單狀態－<span class="value order-status">退款/退貨</span></li>
+              <li>付款方式－<span class="value">points</span></li>
+              <li>配送方式－<span class="value">郵局</span></li>
+              <li>訂單金額－<span class="value">NT.12,120</span></li>
+            </ul>
+
+            <!--訂單客戶資訊-->
+            <ul class="order-customer">
+              <li>收件人姓名：<span class="value">會員姓名</span></li>
+              <li>收件人電話：<span class="value">091234556</span></li>
+              <li>
+                收件人地址：<span class="value">204 收件人地址收件人地址收件人地址收件人地址</span>
+              </li>
+              <li>收件人mail：<span class="value">customer@mail.com</span></li>
+              <li>備註：<span class="value">備註事項</span></li>
+            </ul>
+
+            <!--訂單推薦碼-->
+            <ul class="order-reference">
+              <li>主播推薦碼<span class="value">T0123123123</span></li>
+            </ul>
+
+            <!--訂單發票-->
+            <ul class="order-receipt">
+              <li>電子發票－<span class="value">愛心捐贈</span></li>
+              <li>愛心碼：<span class="value">12345678</span></li>
+            </ul>
+
+            <h5>訂購商品</h5>
+            <div class="order-items flex-column">
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product3.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x199</span></li>
+                    <li><span class="title">單價</span><span class="value">$1329</span></li>
+                    <li><span class="title">小計</span><span class="value">$23429</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="order-item flex-row">
+                <div class="img-wrap">
+                  <img src="images/product2.png" alt="" />
+                </div>
+                <!--訂單商品單一資訊-->
+                <div class="order-item-detail">
+                  <h6>Moiskin長效賦活精華</h6>
+                  <ul>
+                    <li><span class="title">數量</span><span class="value">x99</span></li>
+                    <li><span class="title">單價</span><span class="value">$1239</span></li>
+                    <li><span class="title">小計</span><span class="value">$42349</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div class="footer-content flex-row">
@@ -520,66 +1754,63 @@
         });
       }
 
+      document.addEventListener("resize", () => {
+        switchOrderStatus();
+      });
+
       // order-status-switcher
       function switchOrderStatus(status) {
-        let statusText = "待付款";
-        let ifShowOrderAction = true;
-        let ifOrderRemovable = false;
-        let orderActionText = "付款去";
-        let shoudGreyOut = false;
+        const ifMobile = window.innerWidth <= 768;
 
         [...document.querySelectorAll(".status-bar li button")].forEach((node) => {
           node.id === status ? node.classList.add("active") : node.classList.remove("active");
         });
 
+        [...document.querySelectorAll(".orders")].forEach((node) => {
+          node.style.display = "none";
+        });
+
+        [...document.querySelectorAll(".order")].forEach((node) => {
+          node.classList.remove("expanded");
+        });
+
         switch (status) {
           case "toBeDispatched":
-            statusText = "待出貨";
-            ifShowOrderAction = false;
+            ifMobile
+              ? (document.querySelector(".to-be-dispatched-orders.mobile-only").style.display =
+                  "flex")
+              : (document.querySelector(".to-be-dispatched-orders.desktop-only").style.display =
+                  "flex");
 
             break;
           case "toBeCollected":
-            statusText = "待收貨";
-            ifShowOrderAction = false;
+            ifMobile
+              ? (document.querySelector(".to-be-collected-orders.mobile-only").style.display =
+                  "flex")
+              : (document.querySelector(".to-be-collected-orders.desktop-only").style.display =
+                  "flex");
+
             break;
           case "completed":
-            statusText = "已完成";
-            ifShowOrderAction = true;
-            orderActionText = "再次訂購";
+            ifMobile
+              ? (document.querySelector(".completed-orders.mobile-only").style.display = "flex")
+              : (document.querySelector(".completed-orders.desktop-only").style.display = "flex");
+
             break;
           case "returned":
-            statusText = "退貨/退款";
-            ifShowOrderAction = false;
-            shoudGreyOut = true;
+            ifMobile
+              ? (document.querySelector(".returned-orders.mobile-only").style.display = "flex")
+              : (document.querySelector(".returned-orders.desktop-only").style.display = "flex");
+
             break;
           default:
           case "toBePayed":
-            ifOrderRemovable = true;
+            ifMobile
+              ? (document.querySelector(".to-be-payed-orders.mobile-only").style.display = "flex")
+              : (document.querySelector(".to-be-payed-orders.desktop-only").style.display = "flex");
+
             break;
         }
-
-        //  status text updated
-        [...document.querySelectorAll(".order-status")].forEach((node) => {
-          node.innerText = statusText;
-        });
-
-        //  remove button display updated
-        [...document.querySelectorAll(".order-remove")].forEach((node) => {
-          node.style.display = ifOrderRemovable ? "block" : "none";
-        });
-
-        //  action button text and display updated
-        [...document.querySelectorAll(".order-action")].forEach((node) => {
-          node.style.display = ifShowOrderAction ? "block" : "none";
-          if (ifShowOrderAction) {
-            node.innerText = orderActionText;
-          }
-        });
-
-        //  orders grey out updated
-        [...document.querySelectorAll(".orders")].forEach((node) => {
-          shoudGreyOut ? node.classList.add("refund") : node.classList.remove("refund");
-        });
       }
     </script>
   </body>
