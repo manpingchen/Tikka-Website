@@ -6298,12 +6298,11 @@ main.product-detail .arrow-right {
 #product-notice h2,
 #purchase-notice h2 {
   margin: 0 auto 20px;
-  width: 100px;
+  width: 100%;
   font-weight: normal;
   font-size: 1rem;
-  padding: 0.2rem 1rem;
+  padding: 1rem;
   text-align: center;
-  border-radius: 50px;
   background: #f19ec2;
   color: #fff;
 }
