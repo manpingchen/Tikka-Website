@@ -6014,7 +6014,6 @@ div.product-summary {
   margin-top: 20px;
   gap: 60px;
   margin-bottom: 50px;
-  padding-bottom: 140px;
 }
 
 div.product-summary div.summary {
@@ -6108,6 +6107,8 @@ section.product-slides {
 section.product-slides .slick-slide img {
   width: 100%;
   height: auto;
+  top: 0;
+  position: absolute;
 }
 
 .product-slides > div.img-wrap {
