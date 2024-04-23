@@ -10,6 +10,7 @@
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
+    <link rel="stylesheet" href="styles/glide-tab.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
@@ -141,11 +142,19 @@
     </nav>
     <!-- Header End -->
 
-    <!--Main-->
+    <!-- 24/4/23 updated: Fixed Buttons -->
+    <a href="live-on.html" class="fixed-button live">
+      <img src="images/live-btn.svg" alt="" />
+    </a>
+
+    <div onclick="scrollToTop()" class="fixed-button go-top"></div>
+
+    <!-- 24/4/23 updated: Main -->
     <main class="streamer-profile">
-      <section class="header">
+      <section class="header" style="background-image: url(images/p1.jpeg)">
         <div class="flex-row">
           <div class="avatar-container">
+            <!-- style for not live: please remove 'pink' from the classlist-->
             <span class="live-chip pink">Live</span>
             <div class="avatar-wrapper">
               <img src="images/s2.jpg" class="avatar" alt="name" />
@@ -155,25 +164,19 @@
             <h5 class="flex-row">
               <span class="profile-name ellipsis">呆呆萌萌小愛</span>
               <button type="button" class="follow-icon">
+                <!-- followed -->
                 <img src="images/heart-round-pink.svg" alt="heart icon" />
+                <!-- unfollowed -->
+                <img src="images/heart-round.svg" style="display: none" alt="heart icon" />
               </button>
             </h5>
-            <div class="performance-data flex-row rewards">
-              <img src="images/gift-round-pink.svg" alt="gift icon" />
-              <span class="value">999,999,999</span>
-            </div>
             <div class="performance-data flex-row followers" onclick="handleOpenFansList()">
               <span class="value">粉絲 99.9K</span>
             </div>
           </div>
         </div>
-        <button class="gift-button" onclick="handleShowComponent('.rewards.overlay')"></button>
-        <div class="round-bg"></div>
       </section>
       <section class="intro">
-        <button class="toggle-intro-button toggle-close" disabled onclick="openIntro()">
-          <span class="material-icons">&#xE313;</span>
-        </button>
         <div class="intro-content">
           <ul class="flex-column">
             <li>各大品牌平面、廣告、代言模特兒</li>
@@ -189,99 +192,340 @@
             自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊。
           </p>
         </div>
-        <button class="toggle-intro-button toggle-open" onclick="closeIntro()">
-          <span class="material-icons">&#xE316;</span>
+        <button class="toggle-intro-button" onclick="toggleIntro(this)">
+          <span class="material-icons">&#xE313;</span>
         </button>
       </section>
-      <section class="menus">
-        <ul class="flex-row">
-          <li><button onclick="showStoryList()">最新動態</button></li>
-          <li><button onclick="showVideoList()">經典影片</button></li>
-          <li>
-            <button onclick="handleShowComponent('#personal-gifts-overlay')">專屬禮物</button>
-          </li>
-          <li>
-            <button onclick="handleShowComponent('#popular-products-overlay')">熱銷商品</button>
-          </li>
-        </ul>
-      </section>
-      <section class="list images">
-        <div class="list-item" id="story-1" onclick="showStoryById(this.id)">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
+
+      <!-- 2024/4/22 更新-->
+      <section class="content">
+        <!-- 禮物遮罩按鈕 -->
+        <div class="gift-button-wrap">
+          <button class="gift-button" onclick="handleShowComponent('.rewards.overlay')"></button>
+        </div>
+        <div class="gift-button-wrap-bottom">
+          <div class="half-circle"></div>
+        </div>
+
+        <!-- 貼文/商品/禮物牆 Tabs-->
+        <div class="glide-tab">
+          <div class="tabs" id="content-id">
+            <input type="radio" name="tabs" id="posts-radio" checked />
+            <label for="posts-radio" class="tab">
+              <span class="icon">
+                <img src="images/post-pink.svg" alt="貼文" width="14" height="14" />
+              </span>
+              <span>貼文</span>
+            </label>
+            <input type="radio" name="tabs" id="products-radio" />
+            <label for="products-radio" class="tab">
+              <span class="icon">
+                <img src="images/bag-pink.svg" alt="商品" width="14" height="14" />
+              </span>
+              <span>商品</span>
+            </label>
+            <input type="radio" name="tabs" id="gifts-radio" />
+            <label for="gifts-radio" class="tab">
+              <span class="icon">
+                <img src="images/gift-icon.svg" alt="禮物" width="14" height="14" />
+              </span>
+              <span>禮物牆</span>
+            </label>
+            <div class="glider"></div>
           </div>
         </div>
-        <div class="list-item" id="story-2" onclick="showStoryById(this.id)">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
+
+        <!-- 貼文 -->
+        <div class="posts tab-content" id="posts">
+          <div class="post" id="story-1">
+            <div class="img-wrap" style="background-image: url('images/s5.jpg')"></div>
+            <!--max:22字-->
+            <p class="content">貼文打字貼文打字，貼文打字貼文打字貼文打字。</p>
+            <div class="post-info">
+              <div class="post-author">
+                <div class="avatar-wrapper" style="background-image: url('images/s1.jpg')"></div>
+                <p class="author ellipsis">呆呆萌萌小愛</p>
+              </div>
+              <div class="likes">
+                <span>999</span>
+                <button class="like-button pink" type="button" onclick="handleLike(this)">
+                  <img
+                    class="like"
+                    src="images/heart-pink-icon.svg"
+                    alt="like"
+                    width="20"
+                    height="20"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="post" id="story-2">
+            <div class="img-wrap" style="background-image: url('images/s2.jpg')"></div>
+            <!--max:22字-->
+            <p class="content">貼文打字貼文打字文打字貼文打字。</p>
+            <div class="post-info">
+              <div class="post-author">
+                <div class="avatar-wrapper" style="background-image: url('images/s2.jpg')"></div>
+                <p class="author ellipsis">呆呆萌萌小愛</p>
+              </div>
+              <div class="likes">
+                <span>999</span>
+                <button class="like-button" type="button" onclick="handleLike(this)">
+                  <img
+                    class="like"
+                    src="images/heart-pink-icon.svg"
+                    alt="like"
+                    width="20"
+                    height="20"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="post" id="story-3">
+            <div class="img-wrap" style="background-image: url('images/s3.jpg')"></div>
+            <!--max:22字-->
+            <p class="content">貼文打字貼文打字文打字。</p>
+            <div class="post-info">
+              <div class="post-author">
+                <div class="avatar-wrapper" style="background-image: url('images/s3.jpg')"></div>
+                <p class="author ellipsis">呆呆萌萌小愛</p>
+              </div>
+              <div class="likes">
+                <span>999</span>
+                <button class="like-button" type="button" onclick="handleLike(this)">
+                  <img
+                    class="like"
+                    src="images/heart-pink-icon.svg"
+                    alt="like"
+                    width="20"
+                    height="20"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="post" id="story-4">
+            <div class="img-wrap" style="background-image: url('images/s4.jpg')"></div>
+            <!--max:22字-->
+            <p class="content">貼文打字貼文打字文打字。</p>
+            <div class="post-info">
+              <div class="post-author">
+                <div class="avatar-wrapper" style="background-image: url('images/s4.jpg')"></div>
+                <p class="author ellipsis">呆呆萌萌小愛</p>
+              </div>
+              <div class="likes">
+                <span>999</span>
+                <button class="like-button" type="button" onclick="handleLike(this)">
+                  <img
+                    class="like"
+                    src="images/heart-pink-icon.svg"
+                    alt="like"
+                    width="20"
+                    height="20"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="post" id="story-5">
+            <div class="img-wrap" style="background-image: url('images/s5.jpg')"></div>
+            <!--max:22字-->
+            <p class="content">貼文打字貼文打字文打字。</p>
+            <div class="post-info">
+              <div class="post-author">
+                <div class="avatar-wrapper" style="background-image: url('images/s5.jpg')"></div>
+                <p class="author ellipsis">呆呆萌萌小愛</p>
+              </div>
+              <div class="likes">
+                <span>999</span>
+                <button class="like-button pink" type="button" onclick="handleLike(this)">
+                  <img
+                    class="like"
+                    src="images/heart-pink-icon.svg"
+                    alt="like"
+                    width="20"
+                    height="20"
+                  />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="list-item" id="story-3" onclick="showStoryById(this.id)">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
+
+        <!-- 商品 -->
+        <div class="products tab-content" id="products" style="display: none">
+          <div class="product" id="product-1">
+            <div class="img-wrap" style="background-image: url('images/p1.jpeg')"></div>
+            <!--max:9字-->
+            <p class="content ellipsis">商品名稱商品名稱商品名稱</p>
+            <div class="product-info">
+              <p class="ellipsis">$1,999</p>
+              <div class="likes">
+                <button class="like-button pink" type="button" onclick="handleLike(this)">
+                  <img
+                    class="like"
+                    src="images/heart-pink-icon.svg"
+                    alt="like"
+                    width="20"
+                    height="20"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="product" id="product-2">
+            <div class="img-wrap" style="background-image: url('images/product2.jpeg')"></div>
+            <!--max:9字-->
+            <p class="content ellipsis">商品名稱商品名稱商品名稱</p>
+            <div class="product-info">
+              <p class="ellipsis">$1,999</p>
+              <div class="likes">
+                <button class="like-button pink" type="button" onclick="handleLike(this)">
+                  <img
+                    class="like"
+                    src="images/heart-pink-icon.svg"
+                    alt="like"
+                    width="20"
+                    height="20"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="product" id="product-3">
+            <div class="img-wrap" style="background-image: url('images/product3.png')"></div>
+            <!--max:9字-->
+            <p class="content ellipsis">商品名稱商品名稱商品名稱</p>
+            <div class="product-info">
+              <p class="ellipsis">$1,999</p>
+              <div class="likes">
+                <button class="like-button pink" type="button" onclick="handleLike(this)">
+                  <img
+                    class="like"
+                    src="images/heart-pink-icon.svg"
+                    alt="like"
+                    width="20"
+                    height="20"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="product" id="product-4">
+            <div class="img-wrap" style="background-image: url('images/product4.png')"></div>
+            <!--max:9字-->
+            <p class="content ellipsis">商品名稱商品名稱商品名稱</p>
+            <div class="product-info">
+              <p class="ellipsis">$3,999</p>
+              <div class="likes">
+                <button class="like-button pink" type="button" onclick="handleLike(this)">
+                  <img
+                    class="like"
+                    src="images/heart-pink-icon.svg"
+                    alt="like"
+                    width="20"
+                    height="20"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="product" id="product-5">
+            <div class="img-wrap" style="background-image: url('images/product5.png')"></div>
+            <!--max:9字-->
+            <p class="content ellipsis">商品名稱商品名稱商品名稱</p>
+            <div class="product-info">
+              <p class="ellipsis">$3,999</p>
+              <div class="likes">
+                <button class="like-button pink" type="button" onclick="handleLike(this)">
+                  <img
+                    class="like"
+                    src="images/heart-pink-icon.svg"
+                    alt="like"
+                    width="20"
+                    height="20"
+                  />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="list-item" id="story-4" onclick="showStoryById(this.id)">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-        </div>
-        <div class="list-item" id="story-5" onclick="showStoryById(this.id)">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-        </div>
-        <div class="list-item" id="story-6" onclick="showStoryById(this.id)">
-          <div class="img-wrap">
-            <img src="images/s2.jpg" alt="" />
+
+        <!-- 禮物牆 -->
+        <div class="gifts tab-content" id="gifts" style="display: none">
+          <div class="gift-summary">已點亮<span>999</span>款禮物</div>
+          <div class="gift-list">
+            <div class="gift" id="gift-1">
+              <div class="img-wrap" style="background-image: url('images/gift1.png')"></div>
+              <span class="name ellipsis">禮物一名稱</span>
+              <span class="count">92</span>
+            </div>
+            <div class="gift" id="gift-2">
+              <div class="img-wrap" style="background-image: url('images/gift2.png')"></div>
+              <span class="name ellipsis">禮物二名稱</span>
+              <span class="count">314</span>
+            </div>
+            <div class="gift" id="gift-3">
+              <div class="img-wrap" style="background-image: url('images/gift3.png')"></div>
+              <span class="name ellipsis">禮物三名稱</span>
+              <span class="count">99</span>
+            </div>
+            <div class="gift" id="gift-4">
+              <div class="img-wrap" style="background-image: url('images/gift4.png')"></div>
+              <span class="name ellipsis">禮物四名稱</span>
+              <span class="count">123</span>
+            </div>
+            <div class="gift" id="gift-5">
+              <div class="img-wrap" style="background-image: url('images/gift5.png')"></div>
+              <span class="name ellipsis">禮物一名稱</span>
+              <span class="count">12</span>
+            </div>
+            <div class="gift" id="gift-6">
+              <div class="img-wrap" style="background-image: url('images/gift2.png')"></div>
+              <span class="name ellipsis">禮物二名稱</span>
+              <span class="count">43</span>
+            </div>
+            <div class="gift" id="gift-7">
+              <div class="img-wrap" style="background-image: url('images/gift1.png')"></div>
+              <span class="name ellipsis">禮物三名稱</span>
+              <span class="count">24</span>
+            </div>
+            <div class="gift" id="gift-8">
+              <div class="img-wrap" style="background-image: url('images/gift4.png')"></div>
+              <span class="name ellipsis">禮物四名稱</span>
+              <span class="count">55</span>
+            </div>
+            <div class="gift" id="gift-9">
+              <div class="img-wrap" style="background-image: url('images/gift1.png')"></div>
+              <span class="name ellipsis">禮物三名稱</span>
+              <span class="count">688</span>
+            </div>
+            <div class="gift" id="gift-10">
+              <div class="img-wrap" style="background-image: url('images/gift5.png')"></div>
+              <span class="name ellipsis">禮物四名稱</span>
+              <span class="count">9</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="list videos" style="display: none">
-        <div class="list-item" id="video-1" onclick="showVideoById(this.id)">
-          <div class="img-wrap video-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-        </div>
-        <div class="list-item" id="video-2" onclick="showVideoById(this.id)">
-          <div class="img-wrap video-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-        </div>
-        <div class="list-item" id="video-3" onclick="showVideoById(this.id)">
-          <div class="img-wrap video-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-        </div>
-        <div class="list-item" id="video-4" onclick="showVideoById(this.id)">
-          <div class="img-wrap video-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-        </div>
-        <div class="list-item" id="video-5" onclick="showVideoById(this.id)">
-          <div class="img-wrap video-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-        </div>
-        <div class="list-item" id="video-6" onclick="showVideoById(this.id)">
-          <div class="img-wrap video-wrap">
-            <img src="images/s2.jpg" alt="" />
-          </div>
-        </div>
-      </section>
       <section class="footer-actions flex-row">
-        <button class="button-like" onclick="handleShowComponent('#social-media-shares')">
-          <img src="images/social.svg" alt="" /> 我要分享
-        </button>
-        <button class="button-like"><img src="images/microphone.svg" alt="" /> 觀看直播</button>
         <button class="button-like" onclick="handleChat()">
-          <img src="images/dialog-icon.svg" alt="" /> 聊聊
+          <img src="images/dialog-icon.svg" alt="聊聊" /> 聊聊
+        </button>
+        <button class="button-like">
+          <img src="images/follow-white.svg" alt="關注" class="hover" />
+          <img src="images/follow.svg" alt="關注" class="default" /> 關注
+        </button>
+        <button class="button-like" onclick="handleShowComponent('#social-media-shares')">
+          <img src="images/social.svg" alt="分享" /> 分享
         </button>
       </section>
     </main>
 
-    <!--我要分享-->
+    <!-- 24/4/23 updated: X icon 我要分享-->
     <div
       class="full-width streamer-profile-overlay social-media-shares overlay"
       id="social-media-shares"
@@ -316,8 +560,8 @@
           </li>
           <li>
             <button type="button">
-              <img src="images/twitter.svg" alt="" />
-              Twitter
+              <img src="images/x-icon.svg" alt="" />
+              X
             </button>
           </li>
           <li>
@@ -457,224 +701,6 @@
     <div class="full-width streamer-profile-overlay overlay" id="gift-full-overlay">
       <div class="content">
         <img src="images/kisses.png" alt="" class="gift-img" />
-      </div>
-    </div>
-
-    <!-- 專屬禮物 -->
-    <div
-      class="full-width streamer-profile-overlay overlay personal-gifts"
-      id="personal-gifts-overlay"
-    >
-      <div class="content">
-        <section class="title">
-          <button class="close" onclick="handleHideComponent('#personal-gifts-overlay')">
-            <img src="images/close-icon.svg" alt="close" />
-          </button>
-          <div class="wrapper reward-btns">
-            <div class="btns" id="reward-title-buttons">
-              <button id="reward-gift" type="button">
-                <img src="images/gift.svg" alt="" />專屬禮物
-              </button>
-            </div>
-          </div>
-        </section>
-        <section class="reward-items-container">
-          <div class="reward-items reward-gift" id="rewards-wall">
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/p1.jpeg" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product5.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/p2.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product4.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/p2.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/p1.jpeg" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/p2.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">禮物名稱</span>
-              <span class="count">X99K</span>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <!-- 熱銷商品 -->
-    <div
-      class="full-width streamer-profile-overlay overlay popular-products"
-      id="popular-products-overlay"
-    >
-      <div class="content">
-        <section class="title">
-          <button class="close" onclick="handleHideComponent('#popular-products-overlay')">
-            <img src="images/close-icon.svg" alt="close" />
-          </button>
-          <div class="wrapper reward-btns">
-            <div class="btns" id="reward-title-buttons">
-              <button id="reward-gift" type="button">
-                <img src="images/cart-icon.svg" alt="" class="white-svg" />熱銷商品
-              </button>
-            </div>
-          </div>
-        </section>
-        <section class="reward-items-container">
-          <div class="reward-items reward-gift" id="rewards-wall">
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">氨基酸洗面乳</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">氨基酸洗面乳</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">氨基酸洗面乳</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">氨基酸洗面乳</span>
-              <span class="count">X99K</span>
-            </div>
-            <div class="reward-item">
-              <div class="img-wrap">
-                <img src="images/product1.png" alt="" />
-              </div>
-              <span class="name">氨基酸洗面乳</span>
-              <span class="count">X99K</span>
-            </div>
-          </div>
-        </section>
       </div>
     </div>
 
@@ -1109,7 +1135,7 @@
     <!--遮罩backdrop-->
     <div class="backdrop" style="display: none"></div>
 
-    <footer class="desktop-only">
+    <footer>
       <div class="footer-content flex-row">
         <div class="flex-row social-icons">
           <a href="#" class="line-icon social-icon"><img src="images/line.png" alt="line" /></a>
@@ -1171,16 +1197,6 @@
         chatList.classList.add("streamer-authenticated");
       }
 
-      function openIntro() {
-        document.querySelector(".intro-content").style.height = "300px";
-        document.querySelector(".toggle-open").disabled = false;
-        document.querySelector(".toggle-close").disabled = true;
-      }
-      function closeIntro() {
-        document.querySelector(".intro-content").style.height = 0;
-        document.querySelector(".toggle-close").disabled = false;
-        document.querySelector(".toggle-open").disabled = true;
-      }
       /* 禮物牆顯示 */
       showRewardDetail();
 
@@ -1188,35 +1204,10 @@
         document.getElementById("rewards-overlay").style.display = "block";
         showRewardDetail("gift-all", "gift-details");
       }
-      // 經典影片
-      function showVideoList() {
-        handleShowComponent(".list.videos", "grid");
-        handleHideComponent(".list.images");
-      }
 
-      // 經典影片
-      function showStoryList() {
-        handleHideComponent(".list.videos");
-        handleShowComponent(".list.images", "grid");
-      }
-
-      // 開啟特定經典影片
-      function showVideoById(id) {
-        console.log({ id });
-        handleShowComponent("#single-video-overlay");
-      }
-
-      // 開啟特定經典影片
       function showStoryById(id) {
         console.log({ id });
         handleShowComponent("#single-story-overlay");
-      }
-
-      // 開啟經典影片
-
-      const videoId = urlParams.get("videoId");
-      if (videoId) {
-        showVideoById(videoId);
       }
 
       /*點擊購買按鈕 及 (＊＊＊供示意：顯示 捧花不足遮罩）*/
@@ -1350,10 +1341,7 @@
       }
 
       const chatElement = document.getElementById("followers-chat-overlay");
-
-      if (window.innerWidth >= 1200) {
-        chatElement.classList.add("from-right");
-      }
+      if (window.innerWidth >= 1200) chatElement.classList.add("from-right");
 
       /* 主播版本 點擊聊天單一對話列表 */
       function handleOpenChat(id) {
@@ -1392,8 +1380,7 @@
         chatList.classList.remove("chat-content-opened");
       }
 
-      /*主播版本 關閉聊聊視窗*/
-
+      /* 主播版本 關閉聊聊視窗 */
       function handleCloseStreamerChat() {
         document.querySelector(".followers-chat-overlay").classList.remove("active");
         document
@@ -1409,11 +1396,92 @@
         }
       }
 
-      /*粉絲版本 關閉聊聊視窗*/
+      /* 粉絲版本 關閉聊聊視窗 */
       function handleCloseChat() {
         document.querySelector(".followers-chat-overlay").classList.remove("active");
         handleHideComponent(".followers-chat-overlay");
       }
+
+      /* 24/4/23 updated: Toggle 主播介紹文 */
+      function toggleIntro(element) {
+        const btn = document.querySelector(".toggle-intro-button .material-icons");
+        const ifExpanded = element.classList.contains("expanded");
+        const introEle = document.querySelector(".intro-content");
+
+        if (ifExpanded) {
+          element.classList.remove("expanded");
+          btn.style.transform = "rotate(0deg)";
+          introEle.style.height = "230px";
+        } else {
+          element.classList.add("expanded");
+          btn.style.transform = "rotate(180deg)";
+          introEle.style.height = "unset";
+        }
+      }
+
+      /* 24/4/23 updated: Tab 切換 */
+      document.getElementById("content-id").addEventListener("click", (el) => {
+        const contentId = el.target.id.split("-radio")[0];
+        [...document.querySelectorAll(".tab-content")].forEach((node) => {
+          node.style.display = node.classList.contains(contentId)
+            ? contentId === "gifts"
+              ? "block"
+              : "grid"
+            : "none";
+        });
+      });
+
+      /* 24/4/23 updated: Tab Content 點擊 */
+      function tabClickHandler(el) {
+        let tabContentTimer;
+
+        el.onclick = function (element) {
+          if (element.target.classList.contains("like")) return;
+          if (tabContentTimer) clearTimeout(tabContentTimer);
+          tabContentTimer = setTimeout(function () {
+            const redirectToProductPage = el.id.includes("product");
+            if (redirectToProductPage) {
+              window.location.href = "product-detail.html";
+            } else {
+              showStoryById(el.id);
+            }
+          }, 250);
+        };
+        el.ondblclick = function (element) {
+          if (element.target.classList.contains("like")) return;
+          clearTimeout(tabContentTimer);
+          handleLikeByPost(el.id);
+        };
+      }
+      [...document.querySelectorAll(".product"), ...document.querySelectorAll(".post")].forEach(
+        (el) => tabClickHandler(el)
+      );
+
+      /* 24/4/23 updated: Tab Status*/
+      window.onload = () => {
+        document.getElementById("posts-radio").checked = true;
+
+        [...document.querySelectorAll("label.tab")].forEach((node) =>
+          node.addEventListener("mouseover", (el) => {
+            if (
+              el.target.classList.contains("tab") ||
+              el.target.parentElement?.classList.contains("tab")
+            ) {
+              const tabElement = el.target.classList.contains("tab")
+                ? el.target
+                : el.target.parentElement;
+
+              /* Reset tab checked status */
+              [...document.querySelectorAll("input[type=radio]")].forEach(
+                (node) => (node.checked = false)
+              );
+
+              /* Check hovered tab */
+              document.getElementById(tabElement.htmlFor).checked = true;
+            }
+          })
+        );
+      };
     </script>
   </body>
 </html>

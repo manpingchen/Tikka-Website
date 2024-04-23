@@ -13,6 +13,7 @@
   --primary-pink: #f096b9;
   --secondary-pink: #ffebfa;
   --dark-pink: #e60672;
+  --light-pink: #ffddec;
   --basic-radius: 0.5rem;
   --item-radius: 1rem;
   --pink-gradient: linear-gradient(0deg, var(--dark-pink), #ef99bf);
@@ -2392,7 +2393,7 @@ main.live-on section.right-column div.btns div:not(#revenue-btns) button.active 
 }
 
 main.live-on section.right-column div.slides.light-pink {
-  background: #ffd7e8;
+  background: var(--light-pink);
 }
 main.live-on section.right-column div.slides.light-pink div.btns {
   justify-content: space-between;
@@ -5971,7 +5972,7 @@ main.product-detail ul.tabs {
   background: #f19ec2;
   box-shadow: 0 2px 2px #99999959;
   padding: 10px 50px;
-  margin: 0 auto 50px;
+  margin: 0 auto 10px;
   gap: 120px;
   position: sticky;
   top: 130px;
@@ -7150,12 +7151,20 @@ main.streamer-profile {
   width: 100%;
   overflow: hidden;
   padding: 0;
+  margin-bottom: 100px;
+  padding-bottom: 62px !important;
 }
 
 @media screen and (max-width: 989px) {
   main.streamer-profile {
     top: 70px;
-    padding-bottom: 20px !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 130px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main.streamer-profile {
     margin-bottom: 20px;
   }
 }
@@ -7174,7 +7183,7 @@ main.streamer-profile section.header {
   position: relative;
   height: 340px;
   background: lightgray;
-  border-bottom: 18px solid #ffddec;
+  border-bottom: 18px solid var(--light-pink);
   background-size: cover;
   background-position: center;
 }
@@ -7382,6 +7391,23 @@ main.streamer-profile div.posts .post .post-info .author {
   width: 85px;
 }
 
+@media screen and (max-width: 990px) {
+  main.streamer-profile div.posts,
+  main.streamer-profile div.products {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  main.streamer-profile div.gifts .gift-list {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main.streamer-profile div.posts .post .post-info .author {
+    width: 60px;
+  }
+}
+
 main.streamer-profile div.posts .post .post-info .likes {
   gap: 0.25rem;
 }
@@ -7560,6 +7586,8 @@ main.streamer-profile section.footer-actions {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  padding: 1rem;
+  background: var(--light-pink);
 }
 
 @media screen and (max-width: 768px) {
@@ -7576,8 +7604,8 @@ main.streamer-profile section.footer-actions button {
   box-shadow: 0 2px 10px #999;
 }
 
-main.streamer-profile section.footer-actions button img {
-  filter: invert(0.589) sepia(20) contrast(250%) hue-rotate(293deg);
+main.streamer-profile section.footer-actions button:not(:nth-child(2)) img {
+  filter: invert(0.6) sepia(81) contrast(358%) hue-rotate(283deg) brightness(0.9);
 }
 
 main.streamer-profile section.footer-actions button:hover {
@@ -7586,8 +7614,24 @@ main.streamer-profile section.footer-actions button:hover {
   filter: none;
 }
 
-main.streamer-profile section.footer-actions button:hover img {
+main.streamer-profile section.footer-actions button:not(:nth-child(2)):hover img {
   filter: none;
+}
+
+main.streamer-profile section.footer-actions button:nth-child(2) img.hover {
+  display: none;
+}
+
+main.streamer-profile section.footer-actions button:nth-child(2) img.default {
+  display: block;
+}
+
+main.streamer-profile section.footer-actions button:nth-child(2):hover img.hover {
+  display: block;
+}
+
+main.streamer-profile section.footer-actions button:nth-child(2):hover img.default {
+  display: none;
 }
 
 div.overlay.full-width {
@@ -8002,14 +8046,14 @@ main.streamer-profile .gift-button-wrap-bottom {
   height: 10px;
   left: 0;
   top: -40px;
-  background: #ffdeed;
+  background: var(--light-pink);
 }
 
 main.streamer-profile .gift-button-wrap-bottom .half-circle {
   width: 80px;
   height: 35px;
   border-radius: 0 0 50% 50% / 0 0 100% 100%;
-  border: 10px solid #ffdeed;
+  border: 10px solid var(--light-pink);
   border-top: 0;
   background: var(--secondary-pink);
   margin: 0 auto;
@@ -8480,6 +8524,7 @@ div.overlay.event-detail-overlay button.close img {
   position: fixed;
   align-items: center;
   justify-content: center;
+  background-color: black;
 }
 
 .before-live .default-live-img img {
@@ -10126,4 +10171,47 @@ button.copy-url {
 
 .copied-sign.show {
   opacity: 1;
+}
+
+.fixed-button {
+  position: fixed;
+  bottom: 5rem;
+  right: 2rem;
+  width: 6rem;
+  height: 6rem;
+  z-index: 999;
+}
+
+.fixed-button img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fixed-button.go-top {
+  bottom: 2rem;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  background-image: url("../images/go-top.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.fixed-button.go-top:hover {
+  background-image: url("../images/go-top-pink.svg");
+}
+
+@media screen and (max-width: 480px) {
+  .fixed-button {
+    bottom: 11rem;
+    right: 1rem;
+    width: 5rem;
+    height: 5rem;
+  }
+  .fixed-button.go-top {
+    bottom: 8rem;
+    right: 1rem;
+  }
 }

@@ -497,15 +497,7 @@ function switchTotalByCurrency(id, parentId) {
     id === "nt-dollar" ? "NT." + ntDollarValue : pointValue;
 }
 
-/* 追蹤按鈕文字 */
-// function handleFollow(element) {
-//   [...document.querySelectorAll(`.${[...element.classList].join(".")}`)].map((node) => {
-//     node.classList.toggle("pink");
-
-//     const followed = node.classList.contains("pink");
-//     node.children[(id = "follow-text")].innerText = followed ? "已追蹤" : "追蹤";
-//   });
-// }
+/* Like / Follow */
 
 function handleFollow(element) {
   if (element.classList.contains("pink")) {
@@ -514,6 +506,25 @@ function handleFollow(element) {
   } else {
     element.classList.add("pink");
     element.querySelector(".follow-text").innerText = "已追蹤";
+  }
+}
+
+function handleLike(element) {
+  if (element.classList.contains("pink")) {
+    element.classList.remove("pink");
+  } else {
+    element.classList.add("pink");
+  }
+}
+
+function handleLikeByPost(postId) {
+  const element = document.getElementById(postId);
+  const likeEle = element.querySelector(".like-button");
+
+  if (likeEle.classList.contains("pink")) {
+    likeEle.classList.remove("pink");
+  } else {
+    likeEle.classList.add("pink");
   }
 }
 
@@ -631,4 +642,12 @@ function buildAvatar() {
 function handleShowCompetitionDetail(competitionId, overlayClassName) {
   handleShowComponent(overlayClassName);
   document.querySelector(overlayClassName).dataset.id = competitionId;
+}
+
+function scrollToTop() {
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
 }

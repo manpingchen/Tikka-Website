@@ -1,0 +1,96 @@
+.glide-tab {
+  --primary-color: #c01f5d;
+  --secondary-color: #ffbece;
+  --height: 2.5rem;
+  --icon-wrap-height: 2.6rem;
+  --radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.glide-tab .tabs {
+  display: flex;
+  position: relative;
+  background-color: var(--secondary-color);
+  color: white;
+}
+.glide-tab .tabs * {
+  z-index: 2;
+}
+
+.glide-tab input[type="radio"] {
+  display: none;
+}
+
+.glide-tab .tab {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: var(--height);
+  width: calc(100% / 3);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s ease-in;
+}
+
+.glide-tab .tab span:not(.icon) {
+  flex: 1;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+
+.glide-tab .tab span.icon {
+  border-radius: var(--radius);
+  width: var(--icon-wrap-height);
+  height: var(--icon-wrap-height);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glide-tab .tab span.icon img {
+  filter: brightness(10);
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width: 660px) {
+  .glide-tab .tab[for="radio-1"] span.icon {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.glide-tab input[type="radio"]:checked + label span.icon {
+  background: linear-gradient(#fff, #c5c5c5) !important;
+}
+
+.glide-tab input[type="radio"]:checked + label span.icon img {
+  filter: unset;
+}
+
+.glide-tab input[id="posts-radio"]:checked ~ .glider {
+  transform: translateX(0);
+}
+
+.glide-tab input[id="products-radio"]:checked ~ .glider {
+  transform: translateX(100%);
+}
+
+.glide-tab input[id="gifts-radio"]:checked ~ .glider {
+  transform: translateX(200%);
+}
+
+.glide-tab .glider {
+  position: absolute;
+  display: flex;
+  height: var(--height);
+  width: calc(100% / 3);
+  background: linear-gradient(0deg, #e60672, #ef99bf) !important;
+  z-index: 1;
+  transition: 0.25s ease-out;
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+}
