@@ -9,6 +9,16 @@
   /* transition: 0.3s all; */
 }
 
+:root {
+  --primary-pink: #f096b9;
+  --secondary-pink: #ffebfa;
+  --dark-pink: #e60672;
+  --basic-radius: 0.5rem;
+  --item-radius: 1rem;
+  --pink-gradient: linear-gradient(0deg, var(--dark-pink), #ef99bf);
+  --mobile-largest-width: 480px;
+}
+
 .material-icons {
   font-family: "Material Icons" !important;
 }
@@ -279,7 +289,7 @@ div.img-wrap img {
 }
 
 .pink-gradient-bg {
-  background: linear-gradient(0deg, #e60672, #ef99bf) !important;
+  background: var(--pink-gradient) !important;
   color: #fff !important;
 }
 
@@ -314,7 +324,7 @@ div.img-wrap img {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
   .topup-steps ul li {
     flex-direction: column;
     padding: 0 4px;
@@ -427,7 +437,7 @@ div.img-wrap img {
   min-width: 130px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
   .topup .login-section a {
     justify-content: center;
   }
@@ -467,7 +477,7 @@ div.img-wrap img {
 }
 
 .topup .method-options .options button {
-  border-radius: 0.5rem;
+  border-radius: var(--basic-radius);
 }
 
 .topup .method-options .options button:hover {
@@ -497,7 +507,6 @@ form.invoice-info-field {
 }
 
 form.invoice-info-field div.flex-row {
-  /* margin-top: 1rem; */
   display: flex;
   gap: 1rem;
   width: 100%;
@@ -505,7 +514,7 @@ form.invoice-info-field div.flex-row {
 
 form.invoice-info-field label,
 form.invoice-info-field input {
-  border-radius: 0.5rem;
+  border-radius: var(--basic-radius);
   padding: 1rem 1.5rem;
   border-width: 1px;
   border-style: solid;
@@ -547,7 +556,7 @@ div.invoice-info-field div.flex-row {
 
 div.invoice-info-field label,
 div.invoice-info-field input {
-  border-radius: 0.5rem;
+  border-radius: var(--basic-radius);
   padding: 1rem 1.5rem;
   border-width: 1px;
   border-style: solid;
@@ -813,7 +822,7 @@ main.index section.live .live-list ul li span.count {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
   div.ranking-slides-wrap div#ranking-slides {
     margin: 20px auto;
   }
@@ -899,7 +908,7 @@ main.index div#ranking-slides li.glide__slide:hover div.img-wrap img {
   transform: scale(1.2);
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
   main.index div.ranking-slides-wrap {
     margin-bottom: 20px;
   }
@@ -1236,7 +1245,7 @@ a.white-gradient {
 button.white-gradient:hover,
 a.white-gradient:hover {
   color: #fff;
-  background: linear-gradient(0deg, #e60672, #ef99bf);
+  background: var(--pink-gradient);
 }
 
 button.white-gradient img,
@@ -1250,7 +1259,7 @@ a.white-gradient:hover img {
 }
 
 .error-msg {
-  color: #e60672;
+  color: var(--dark-pink);
   text-align: center;
   margin: 0 auto 1.5rem;
   font-size: 0.875rem;
@@ -2075,7 +2084,7 @@ main.live-on section.left-column div.sticker-footer button.sumbit-btn {
   background: linear-gradient(rgb(224, 224, 224), #fff, #fff, #aaa);
   font-size: 0.87rem;
   padding: 0.5rem 1rem;
-  color: #e60672;
+  color: var(--dark-pink);
   height: 30px;
   width: 80px;
   margin: 0 auto;
@@ -2725,16 +2734,6 @@ div.overlay.rewards div.reward-item span.name {
   border-radius: 0;
 }
 
-/* main.live-on div.reward-item span.point,
-div.overlay.rewards div.reward-item span.point {
-  align-items: center;
-  gap: 10px;
-  width: 100%;
-  padding: 0 10px 5px 24px;
-  background: url("../images/coin.png") no-repeat 2px -5px;
-  background-size: 33%;
-} */
-
 div.reward-item span.point {
   font-size: 0.7rem;
   color: #e50370;
@@ -3087,18 +3086,6 @@ div.followers-chat-overlay div.title div.avatar-wrapper {
   border-width: 2px;
   margin-right: 0.5rem;
 }
-/* 
-div.followers-chat-overlay.streamer-authenticated.overlay.full-width {
-  width: 70% !important;
-  right: 0;
-  left: unset !important;
-  -webkit-border-top-left-radius: 0 !important;
-  -webkit-border-top-right-radius: 0 !important;
-  -moz-border-radius-topleft: 0 !important;
-  -moz-border-radius-topright: 0 !important;
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 0 !important;
-} */
 
 @media screen and (min-width: 1200px) {
   div.followers-chat-overlay.streamer-authenticated.overlay.full-width {
@@ -3564,7 +3551,7 @@ main.account ul.opions {
 main.account ul.opions li.logout input {
   border: 0;
   background: none;
-  color: #e60672;
+  color: var(--dark-pink);
   padding: 0;
   margin: 0 !important;
 }
@@ -3578,7 +3565,7 @@ main.account ul.opions li.logout div.logout-wrap {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  color: #e60672;
+  color: var(--dark-pink);
   font-size: 1.1rem;
   text-decoration: none;
   position: relative;
@@ -3595,7 +3582,7 @@ main.account ul.opions li.logout div.logout-wrap span.just-style {
   position: absolute;
   width: 100%;
   height: 1px;
-  background: #e60672;
+  background: var(--dark-pink);
   bottom: 0;
 }
 
@@ -3607,7 +3594,7 @@ main.account ul.opions li.logout div.logout-wrap span.just-style::after {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #e60672;
+  background: var(--dark-pink);
   display: block;
   bottom: -5px;
   left: 0;
@@ -4623,9 +4610,9 @@ div.product-item a.img-wrap:hover img {
   width: 400px;
   border-radius: 40px;
   height: 42px;
-  border: 1px solid #e60672;
+  border: 1px solidvar(--dark-pink);
   align-self: center;
-  color: #e60672;
+  color: var(--dark-pink);
   margin-bottom: 2rem;
   justify-content: space-between;
 }
@@ -4636,7 +4623,7 @@ main.follow .search-container {
 
 .search-container input[type="text"] {
   border: none;
-  color: #e60672;
+  color: var(--dark-pink);
   padding: 10px 20px;
   width: calc(100% - 100px);
   -webkit-border-top-left-radius: 40px;
@@ -4648,7 +4635,7 @@ main.follow .search-container {
 }
 
 .search-container input::placeholder {
-  color: #e60672;
+  color: var(--dark-pink);
 }
 
 .search-container button {
@@ -4658,7 +4645,7 @@ main.follow .search-container {
   border-radius: 0;
   height: 40px;
   width: 45px;
-  color: #e60672;
+  color: var(--dark-pink);
 }
 
 .search-container button[type="submit"],
@@ -4669,7 +4656,7 @@ main.follow .search-container {
   -moz-border-radius-bottomright: 40px;
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
-  background: #e60672;
+  background: var(--dark-pink);
   color: #fff;
   transition: 0.4s;
 }
@@ -4882,7 +4869,7 @@ section.category button.slick-arrow .material-icons {
   filter: contrast(1.5);
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
   body.search main.follow {
     margin-bottom: 0;
   }
@@ -5771,7 +5758,7 @@ main.live-on div.mobile-only.frame-top-bar ul.revenue-list .value {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
   main.live-on ul.viewer-list {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -5983,14 +5970,13 @@ div#rewards-overlay div.send-gift {
 main.product-detail ul.tabs {
   background: #f19ec2;
   box-shadow: 0 2px 2px #99999959;
-  border-radius: 50px;
   padding: 10px 50px;
-  width: max-content;
   margin: 0 auto 50px;
   gap: 120px;
   position: sticky;
   top: 130px;
   z-index: 5;
+  justify-content: center;
 }
 
 main.product-detail ul.tabs li a {
@@ -6024,7 +6010,7 @@ main.product-detail ul.tabs li:hover a::before {
 div.product-summary {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 20px;
   gap: 60px;
   margin-bottom: 50px;
@@ -6033,6 +6019,7 @@ div.product-summary {
 
 div.product-summary div.summary {
   gap: 10px;
+  margin-top: 2rem;
 }
 
 div.product-summary div.summary h3 {
@@ -6047,7 +6034,7 @@ main.product-detail.sold-out div.product-summary div.summary p.stock {
 
 div.product-summary div.summary p.cost,
 div.product-summary div.summary p.stock {
-  color: #e60672;
+  color: var(--dark-pink);
 }
 
 div.product-summary div.summary p.stock .sold-out-text {
@@ -6312,7 +6299,6 @@ main.product-detail .arrow-right {
 #product-scale div.content,
 #product-notice div.content,
 #purchase-notice div.content {
-  min-height: 500px;
   width: 100%;
   padding: 1rem;
 }
@@ -6508,7 +6494,6 @@ main.my-favourite button.follow-btn:hover {
     padding: 0.75rem 1.5rem;
     width: 100%;
     justify-content: space-between;
-    border-radius: 0;
     position: fixed;
     left: 0;
     top: 71px;
@@ -7008,7 +6993,7 @@ form.adjust-item-count button.reduce {
 
 main.purchase .payment-options button.active,
 div.purchase-overlay .payment-options button.active {
-  background: linear-gradient(0deg, #e60672, #ef99bf) !important;
+  background: var(--pink-gradient) !important;
   color: #fff !important;
 }
 
@@ -7032,6 +7017,7 @@ div.purchase-overlay .payment-options h4 {
 form.adjust-item-count button.add span.material-symbols-outlined,
 form.adjust-item-count button.reduce span.material-symbols-outlined {
   font-size: 20px;
+  color: rgb(82, 82, 82);
 }
 
 main.purchase .check-item-count,
@@ -7137,8 +7123,8 @@ div.purchase-overlay .check-item-count p.point {
 
   form.adjust-item-count button.add,
   form.adjust-item-count button.reduce {
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     display: inline-block;
   }
 
@@ -7158,24 +7144,22 @@ div.purchase-overlay .check-item-count p.point {
 
 main.streamer-profile {
   border: 0;
-  background: #ffebfa;
+  background: var(--secondary-pink);
   max-width: none;
   width: 100%;
-  top: 90px;
   overflow: hidden;
-  margin-bottom: 150px;
+  padding: 0;
 }
 
 @media screen and (max-width: 989px) {
   main.streamer-profile {
     top: 70px;
+    padding-bottom: 20px !important;
     margin-bottom: 20px;
   }
 }
 
 main.streamer-profile > section {
-  width: 90%;
-  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -7187,8 +7171,11 @@ main.streamer-profile > section {
 
 main.streamer-profile section.header {
   position: relative;
-  height: 400px;
-  max-width: 1100px;
+  height: 340px;
+  background: lightgray;
+  border-bottom: 18px solid #ffddec;
+  background-size: cover;
+  background-position: center;
 }
 
 main.streamer-profile section.header > div.flex-row {
@@ -7202,6 +7189,8 @@ main.streamer-profile section.header > div.flex-row {
 main.streamer-profile section.header div.avatar-wrapper {
   width: 200px;
   height: 200px;
+  background: lightgray;
+  border-width: 3px;
 }
 
 main.streamer-profile section.header div.avatar-container {
@@ -7250,28 +7239,179 @@ main.streamer-profile section.header div.info h5 button img {
   left: 1px;
 }
 
-main.streamer-profile section.header div.round-bg {
-  position: absolute;
-  width: 100%;
-  padding-top: 100%;
-  bottom: 0;
-  background: #f29ec2;
-  border: 10px solid #fff;
-  box-shadow: 0 5px 15px #555;
-  border-radius: 50%;
-  z-index: -1;
+main.streamer-profile div.posts,
+main.streamer-profile div.products {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-bottom: 5rem;
+  padding: 0 0.75rem;
 }
 
-main.streamer-profile section.list {
+main.streamer-profile div.posts .post,
+main.streamer-profile div.products .product {
+  border-radius: var(--basic-radius);
+  overflow: hidden;
+  background: var(--primary-pink);
+  display: flex;
+  flex-direction: column;
+}
+
+main.streamer-profile div.gifts .gift-list {
+  background: transparent;
+  border-radius: var(--basic-radius);
+  overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 1rem;
   margin-bottom: 5rem;
+  padding: 0 0.75rem;
+}
+
+main.streamer-profile div.gifts .gift-list .img-wrap {
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding-top: 100%;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+main.streamer-profile div.gifts .gift-summary {
+  background-color: white;
+  width: 250px;
+  border-radius: 50px;
+  margin: 0.5rem auto 1rem;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+  box-shadow: 0 2px 5px gray;
+  color: var(--dark-pink);
+  letter-spacing: 0.1em;
+}
+
+main.streamer-profile div.gifts .gift-summary span {
+  background: var(--pink-gradient);
+  color: white;
+  padding: 0.25rem 1rem;
+  margin: 0.25rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 3px #ddd;
+}
+
+main.streamer-profile div.gifts .gift span.name {
+  background: none;
+  color: #e9558f;
+  padding: 0;
+  text-align: center;
+  line-height: 1.5rem;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+main.streamer-profile div.gifts .gift span.count {
+  padding: 0.2rem 0.5rem;
+  background: #e9558f;
+  color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  display: block;
+  width: 60px;
+  margin: 0 auto;
+}
+
+main.streamer-profile div.posts .post p.content {
+  color: white;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.6em;
+  flex: 1;
+}
+
+main.streamer-profile div.products .product p.content {
+  color: white;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.6em;
+  flex: 1;
+}
+
+main.streamer-profile div.posts .post .post-info,
+main.streamer-profile div.products .product .product-info {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: space-between;
+  color: white;
+}
+
+main.streamer-profile div.posts .post .post-info > *,
+main.streamer-profile div.products .product .product-info > * {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.125rem;
+  font-size: 0.875rem;
+}
+
+main.streamer-profile div.posts .post .post-info .avatar-wrapper {
+  border: 0;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-position: center;
+}
+
+main.streamer-profile div.posts .post .post-info .author {
+  width: 85px;
+}
+
+main.streamer-profile div.posts .post .post-info .likes {
+  gap: 0.25rem;
+}
+
+main.streamer-profile div.posts .post .post-info .likes button,
+main.streamer-profile div.products .product .product-info .likes button {
+  padding: 0;
+  border-radius: unset;
+}
+
+main.streamer-profile div.posts .post .post-info .likes button.pink img,
+main.streamer-profile div.products .product .product-info .likes button.pink img {
+  filter: unset;
+}
+
+main.streamer-profile div.posts .post .post-info .likes button:not(.pink) img,
+main.streamer-profile div.products .product .product-info .likes button:not(.pink) img {
+  filter: brightness(10);
 }
 
 @media screen and (max-width: 768px) {
-  main.streamer-profile section.list {
-    gap: 0.25rem;
+  main.streamer-profile div.posts,
+  main.streamer-profile div.products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  main.streamer-profile div.gifts .gift-list {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
     margin-bottom: 2rem;
   }
 }
@@ -7285,32 +7425,12 @@ main.streamer-profile div.video-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
-  border: 5px solid #fff;
   cursor: pointer;
 }
 
-main.streamer-profile div.img-wrap img,
-main.streamer-profile div.video-wrap video {
-  position: absolute;
-  display: block;
-  top: 0;
-  height: 100%;
-}
-
-main.streamer-profile div.video-wrap video {
-  width: 100%;
-}
-
-main.streamer-profile div.video-wrap::before {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 100%;
-  width: 30%;
-  background: url("../images/play-icon2.svg") center center no-repeat;
-  top: 0;
-  z-index: 2;
+main.streamer-profile div.img-wrap {
+  background-position: center;
+  background-size: cover;
 }
 
 main.streamer-profile section.header div.info .performance-data {
@@ -7389,29 +7509,33 @@ button.gift-button img {
 
 main.streamer-profile section.intro {
   text-align: center;
-  margin-top: 50px;
+  background: var(--primary-pink);
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
 main.streamer-profile section.intro button.toggle-intro-button span {
-  color: #f7b5d3;
-  font-size: 2rem;
-}
-
-main.streamer-profile section.intro button.toggle-intro-button:disabled span {
-  color: #ddd;
+  color: #fff;
+  font-size: 2.5rem;
+  transition: 0.2s;
 }
 
 main.streamer-profile section.intro div.intro-content {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   min-width: 300px;
-  font-size: 1rem;
-  color: #555555;
-  height: 300px;
+  font-size: 1.2rem;
+  color: #fff;
+  height: 230px;
   overflow: auto;
   line-height: 1.9em;
   transition: 0.2s height;
   padding-right: 10px;
+  transition: 2s;
 }
 
 main.streamer-profile section.intro div.intro-content ul {
@@ -7423,32 +7547,12 @@ main.streamer-profile section.intro div.intro-content ul li {
   list-style: square outside !important;
   margin-left: 20px;
   width: fit-content;
+  font-size: 1.2rem;
 }
 
 main.streamer-profile section.intro div.intro-content p {
   margin-bottom: 1rem;
-}
-
-main.streamer-profile section.menus {
-  background: url("../images/curve-bg.svg") no-repeat center center;
-  margin-bottom: 2rem;
-}
-
-main.streamer-profile section.menus ul {
-  align-items: center;
-  justify-content: center;
-  padding: 20px 90px;
-}
-
-main.streamer-profile section.menus ul li:not(:first-child) button {
-  border-left: 1px solid #fff;
-}
-main.streamer-profile section.menus ul li button {
-  color: #fff;
-  border-radius: 0;
-  width: 190px;
   font-size: 1.2rem;
-  text-shadow: 0 1px 2px #555;
 }
 
 main.streamer-profile section.footer-actions {
@@ -7460,12 +7564,6 @@ main.streamer-profile section.footer-actions {
 @media screen and (max-width: 768px) {
   main.streamer-profile section.footer-actions {
     gap: 0.5rem;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  main.streamer-profile section.footer-actions {
-    /* flex-direction: column !important; */
   }
 }
 
@@ -7883,21 +7981,53 @@ div.streamer-profile-overlay#gift-full-overlay .content img.gift-img {
   width: 100%;
 }
 
+main.streamer-profile .gift-button-wrap {
+  padding: 10px;
+  margin: 0 auto;
+  width: max-content;
+  position: relative;
+  top: -50px;
+  width: 100px;
+  height: 50px;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  border: 3px solid #fff;
+  border-bottom: 0;
+  background: var(--secondary-pink);
+  z-index: 9;
+}
+
+main.streamer-profile .gift-button-wrap-bottom {
+  position: relative;
+  height: 10px;
+  left: 0;
+  top: -40px;
+  background: #ffdeed;
+}
+
+main.streamer-profile .gift-button-wrap-bottom .half-circle {
+  width: 80px;
+  height: 35px;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  border: 10px solid #ffdeed;
+  border-top: 0;
+  background: var(--secondary-pink);
+  margin: 0 auto;
+}
+
+main.streamer-profile button.gift-button {
+  bottom: unset;
+  left: unset;
+  position: relative;
+}
+
 @media screen and (max-width: 768px) {
   main.streamer-profile section.header {
     height: max-content;
-    padding-bottom: 80px;
-  }
-
-  main.streamer-profile section.header div.round-bg {
-    width: 210%;
-    padding-top: 210%;
-    left: -55%;
   }
 
   main.streamer-profile section.header > div.flex-row {
     width: 100%;
-    padding-top: 0;
+    padding: 3rem 0;
   }
 
   main.streamer-profile section.header div.avatar-wrapper {
@@ -7925,23 +8055,6 @@ div.streamer-profile-overlay#gift-full-overlay .content img.gift-img {
     padding-left: 40px;
   }
 
-  main.streamer-profile section.menus {
-    background: #e63483;
-  }
-
-  main.streamer-profile section.menus ul {
-    padding: 0 !important;
-    flex-wrap: wrap;
-  }
-
-  main.streamer-profile section.menus ul li button {
-    width: 150px !important;
-  }
-
-  main.streamer-profile section.menus ul li:not(:first-child) button {
-    border-left: none !important;
-  }
-
   main.streamer-profile section.header div.info .performance-data {
     height: 20px;
   }
@@ -7961,17 +8074,6 @@ div.streamer-profile-overlay#gift-full-overlay .content img.gift-img {
     width: 50px;
     height: 50px;
     left: -3px;
-  }
-
-  main.streamer-profile button.gift-button {
-    height: 60px;
-    width: 60px;
-    bottom: -30px;
-    left: calc(50% - 30px);
-  }
-
-  main.streamer-profile section.intro {
-    margin-top: 20px;
   }
 
   div.full-width.overlay.rewards div.reward-item span.point {
@@ -9170,10 +9272,6 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   width: 95%;
 }
 
-#products-slides li {
-  padding: 1rem 0;
-}
-
 .products.list li img.top-tag {
   position: absolute;
   top: -5px;
@@ -9205,8 +9303,21 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   align-items: stretch;
 }
 
+#products-slides .slick-list,
+#ranking-products-slides .slick-list {
+  padding: 0 20% 0 0 !important;
+}
+
 #products-slides .slick-slide {
   height: unset;
+  padding: 0;
+  border-radius: var(--item-radius);
+}
+
+#products-slides div.product-item {
+  padding-bottom: 0;
+  height: 0;
+  padding-top: 100%;
 }
 
 #products-slides li button.add-to-cart img {
@@ -9227,9 +9338,23 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
 }
 
 #products-slides li button.add-to-cart {
-  top: 0;
+  top: 10px;
+  right: 10px;
   min-height: 24px;
   min-width: 24px;
+}
+
+#products-slides li div.product-item p {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+#products-slides li span.name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
 #products-slides li span.point {
@@ -9242,10 +9367,14 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 1rem;
 }
 
 #products-slides div.img-wrap img {
-  height: 100px;
+  width: 64%;
+  min-width: 100px;
+  position: relative;
 }
 
 .product-types {
@@ -9275,11 +9404,26 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
 @media screen and (max-width: 480px) {
   .product-types .list {
     grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+  }
+
+  #products-slides div.img-wrap {
+    width: 80px;
+    height: 80px;
+  }
+
+  #products-slides div.img-wrap img {
+    width: 100%;
+    height: auto;
+  }
+
+  #products-slides li span.name {
+    padding-bottom: 0.5rem;
   }
 }
 
 .product-types .list li .img-wrap {
-  border-radius: 10px;
+  border-radius: var(--item-radius);
   overflow: hidden;
   padding-top: 100%;
   position: relative;
@@ -9314,10 +9458,6 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
 }
 
 @media screen and (max-width: 768px) {
-  .product-types .list {
-    padding: 1rem;
-  }
-
   .slides-container ul {
     display: flex;
     flex-direction: row;
@@ -9338,13 +9478,19 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
     flex-shrink: 0;
     padding-left: 1rem;
   }
+
   #ranking-slides li {
     width: 60%;
   }
+
   #products-slides li,
   #popular-products-slides li,
   #ranking-products-slides li {
     width: 35%;
+  }
+
+  #products-slides li {
+    border-radius: var(--item-radius);
   }
 }
 
@@ -9566,7 +9712,7 @@ div.overlay p.title-text.light-pink img {
   height: 30px;
   background: white;
   border-radius: 40px;
-  color: #e60672;
+  color: var(--dark-pink);
   font-size: 0.8rem;
   line-height: 30px;
   padding: 0;
@@ -9576,7 +9722,7 @@ div.overlay p.title-text.light-pink img {
 }
 
 .followers-overlay ul.followers-list button.chat-button:hover {
-  background: #e60672;
+  background: var(--dark-pink);
   color: white;
 }
 
@@ -9612,7 +9758,7 @@ div.overlay p.title-text.light-pink img {
 
 .sticker-footer button#buy-button:hover,
 .sticker-footer button#send-button:hover {
-  background: linear-gradient(0deg, #e60672, #ef99bf) !important;
+  background: linear-gradient(0deg, var(--dark-pink), #ef99bf) !important;
   color: #fff;
 }
 
@@ -9967,7 +10113,7 @@ button.copy-url {
 
 .copied-sign {
   top: -2rem;
-  border-radius: 0.5rem;
+  border-radius: var(--basic-radius);
   background: rgba(153, 153, 153, 0.8);
   color: white;
   text-align: center;
