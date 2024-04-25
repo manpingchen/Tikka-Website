@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 36 36">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_命名漸層_15);
+        filter: url(#drop-shadow-1);
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+    </style>
+    <linearGradient id="_命名漸層_15" data-name="未命名漸層 15" x1="16.01" y1="29.93" x2="16.01" y2="1.93" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e5006e"/>
+      <stop offset=".46" stop-color="#e85298"/>
+      <stop offset=".57" stop-color="#e95a9c"/>
+      <stop offset=".75" stop-color="#eb73aa"/>
+      <stop offset=".98" stop-color="#f09ac0"/>
+      <stop offset="1" stop-color="#f19ec2"/>
+    </linearGradient>
+    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="1.63" dy="1.63"/>
+      <feGaussianBlur result="blur" stdDeviation="1.09"/>
+      <feFlood flood-color="#000" flood-opacity=".5"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Layer_1" data-name="Layer 1"/>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="_層_1" data-name="圖層 1">
+      <g>
+        <rect class="cls-1" x="2.01" y="1.93" width="28" height="28" rx="14" ry="14"/>
+        <path class="cls-2" d="M11.79,16.62c2.35,2.38,4.7,4.77,7.06,7.15,.88,.9,2.26-.48,1.38-1.38-2.13-2.15-4.25-4.31-6.37-6.46,2.12-2.15,4.25-4.31,6.37-6.46,.88-.9-.5-2.28-1.38-1.38-2.35,2.38-4.7,4.77-7.06,7.15-.37,.38-.37,1,0,1.38Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

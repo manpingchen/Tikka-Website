@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 37 37">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_命名漸層_59);
+        filter: url(#drop-shadow-1);
+        mix-blend-mode: soft-light;
+      }
+
+      .cls-2 {
+        fill: url(#_命名漸層_59-2);
+        filter: url(#drop-shadow-2);
+        mix-blend-mode: hard-light;
+      }
+
+      .cls-3 {
+        fill: #d6226d;
+        stroke: #d6226d;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4 {
+        isolation: isolate;
+      }
+    </style>
+    <linearGradient id="_命名漸層_59" data-name="未命名漸層 59" x1="16.68" y1="30.33" x2="16.68" y2="2.33" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8e888b"/>
+      <stop offset=".02" stop-color="#979194"/>
+      <stop offset=".12" stop-color="#bab6b8"/>
+      <stop offset=".22" stop-color="#d5d3d4"/>
+      <stop offset=".31" stop-color="#e9e8e8"/>
+      <stop offset=".41" stop-color="#f5f4f4"/>
+      <stop offset=".5" stop-color="#f9f9f9"/>
+      <stop offset="1" stop-color="#eae7e3"/>
+      <stop offset="1" stop-color="#f0eeeb"/>
+    </linearGradient>
+    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="1.86" dy="1.86"/>
+      <feGaussianBlur result="blur" stdDeviation="1.24"/>
+      <feFlood flood-color="#000" flood-opacity=".5"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="_命名漸層_59-2" data-name="未命名漸層 59" x1="16.68" y1="30.33" x2="16.68" y2="2.33" xlink:href="#_命名漸層_59"/>
+    <filter id="drop-shadow-2" filterUnits="userSpaceOnUse">
+      <feOffset dx="1.86" dy="1.86"/>
+      <feGaussianBlur result="blur-2" stdDeviation="1.24"/>
+      <feFlood flood-color="#000" flood-opacity=".5"/>
+      <feComposite in2="blur-2" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-4">
+    <g id="Layer_1" data-name="Layer 1"/>
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="_層_1" data-name="圖層 1">
+        <g>
+          <rect class="cls-1" x="2.68" y="2.33" width="28" height="28" rx="14" ry="14"/>
+          <rect class="cls-2" x="2.68" y="2.33" width="28" height="28" rx="14" ry="14"/>
+          <path class="cls-3" d="M12.46,17.02c2.35,2.38,4.7,4.77,7.06,7.15,.88,.9,2.26-.48,1.38-1.38-2.13-2.15-4.25-4.31-6.37-6.46,2.12-2.15,4.25-4.31,6.37-6.46,.88-.9-.5-2.28-1.38-1.38-2.35,2.38-4.7,4.77-7.06,7.15-.37,.38-.37,1,0,1.38Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
