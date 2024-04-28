@@ -500,12 +500,21 @@ function switchTotalByCurrency(id, parentId) {
 /* Like / Follow */
 
 function handleFollow(element) {
+  const innerText = element.querySelector(".follow-text")?.innerText;
   if (element.classList.contains("pink")) {
-    element.querySelector(".follow-text").innerText = "追蹤";
+    if (innerText) innerText = "追蹤";
     element.classList.remove("pink");
   } else {
     element.classList.add("pink");
-    element.querySelector(".follow-text").innerText = "已追蹤";
+    if (innerText) innerText = "已追蹤";
+  }
+}
+
+function handleFollowByFocusBtn(element) {
+  if (element.classList.contains("pink")) {
+    element.classList.remove("pink");
+  } else {
+    element.classList.add("pink");
   }
 }
 

@@ -163,11 +163,8 @@
           <div class="info flex-column">
             <h5 class="flex-row">
               <span class="profile-name ellipsis">呆呆萌萌小愛</span>
-              <button type="button" class="follow-icon">
-                <!-- followed -->
+              <button type="button" class="follow-icon" onclick="handleFollow(this)">
                 <img src="images/heart-round-pink.svg" alt="heart icon" />
-                <!-- unfollowed -->
-                <img src="images/heart-round.svg" style="display: none" alt="heart icon" />
               </button>
             </h5>
             <div class="performance-data flex-row followers" onclick="handleOpenFansList()">
@@ -515,7 +512,7 @@
         <button class="button-like" onclick="handleChat()">
           <img src="images/dialog-icon.svg" alt="聊聊" /> 聊聊
         </button>
-        <button class="button-like">
+        <button class="button-like focus-btn" onclick="handleFollowByFocusBtn(this)">
           <img src="images/follow-white.svg" alt="關注" class="hover" />
           <img src="images/follow.svg" alt="關注" class="default" /> 關注
         </button>
@@ -1411,7 +1408,7 @@
         if (ifExpanded) {
           element.classList.remove("expanded");
           btn.style.transform = "rotate(0deg)";
-          introEle.style.height = "230px";
+          introEle.style.height = window.innerWidth < 1200 ? "230px" : "540px";
         } else {
           element.classList.add("expanded");
           btn.style.transform = "rotate(180deg)";

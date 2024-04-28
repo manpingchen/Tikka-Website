@@ -18,6 +18,7 @@
   --item-radius: 1rem;
   --pink-gradient: linear-gradient(0deg, var(--dark-pink), #ef99bf);
   --mobile-largest-width: 480px;
+  --btn-pink-gradient: linear-gradient(#ffc1db, #ff398c, #f03282) !important;
 }
 
 .material-icons {
@@ -1113,7 +1114,7 @@ a.live-item span.count {
 }
 
 span.live-chip.pink {
-  background: linear-gradient(#ffc1db, #ff398c, #f03282) !important;
+  background: var(--btn-pink-gradient);
 }
 section.live .live-list ul li span.count {
   right: 25px;
@@ -2365,7 +2366,7 @@ main.live-on section.right-column div.btns button {
   font-size: 0.875rem;
   padding: 5px;
   color: #fff;
-  background: linear-gradient(#ffc1db, #ff398c, #f03282);
+  background: var(--btn-pink-gradient);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -2609,7 +2610,7 @@ div.rewards.overlay div.btns button {
   font-size: 0.875rem;
   padding: 5px 10px;
   color: #fff;
-  background: linear-gradient(#ffc1db, #ff398c, #f03282);
+  background: var(--btn-pink-gradient);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -6413,7 +6414,7 @@ main.search button.follow-btn {
 
 main.product-detail .senders button.follow-btn.pink,
 main.my-favourite button.follow-btn.pink {
-  background: linear-gradient(#ffc1db, #ff398c, #f03282);
+  background: var(--btn-pink-gradient);
 }
 
 main.product-detail .senders button.follow-btn img,
@@ -6552,7 +6553,7 @@ main.my-favourite button.follow-btn:hover {
 }
 
 .button-like {
-  background: linear-gradient(#ffc1db, #ff398c, #f03282);
+  background: var(--btn-pink-gradient);
   font-size: 0.875rem;
   padding: 0.5rem 1.5rem;
   color: #fff;
@@ -6816,7 +6817,7 @@ div.purchase-overlay .select-wrapper select {
   font-size: 1.2rem;
   padding: 5px;
   color: #fff;
-  background: linear-gradient(#ffc1db, #ff398c, #f03282);
+  background: var(--btn-pink-gradient);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -7155,11 +7156,17 @@ main.streamer-profile {
   padding-bottom: 62px !important;
 }
 
-@media screen and (max-width: 989px) {
+@media screen and (min-width: 811px) {
   main.streamer-profile {
     top: 70px;
     padding-bottom: 0 !important;
     margin-bottom: 130px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 810px) {
+  main.streamer-profile {
+    margin-bottom: 20px;
   }
 }
 
@@ -7234,19 +7241,27 @@ main.streamer-profile section.header div.info h5 span.profile-name {
   width: 150px;
 }
 
-main.streamer-profile section.header div.info h5 button {
+main.streamer-profile section.header div.info h5 button.follow-icon {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   padding: 0;
 }
 
-main.streamer-profile section.header div.info h5 button img {
+main.streamer-profile section.header div.info h5 button.follow-icon img {
   width: 36px;
   height: 36px;
   position: relative;
   top: 1px;
   left: 1px;
+}
+
+main.streamer-profile section.header div.info h5 button.follow-icon.pink img {
+  display: block;
+}
+
+main.streamer-profile section.header div.info h5 button.follow-icon:not(.pink) img {
+  filter: grayscale(1);
 }
 
 main.streamer-profile div.posts,
@@ -7358,6 +7373,12 @@ main.streamer-profile div.products .product p.content {
   font-size: 0.875rem;
   line-height: 1.6em;
   flex: 1;
+}
+@media screen and (min-width: 1200px) {
+  main.streamer-profile div.posts .post p.content,
+  main.streamer-profile div.products .product p.content {
+    font-size: 1.1rem;
+  }
 }
 
 main.streamer-profile div.posts .post .post-info,
@@ -7565,6 +7586,13 @@ main.streamer-profile section.intro div.intro-content {
   transition: 2s;
 }
 
+@media screen and (min-width: 1200px) {
+  main.streamer-profile section.intro div.intro-content {
+    height: 540px;
+    max-width: 860px;
+  }
+}
+
 main.streamer-profile section.intro div.intro-content ul {
   align-items: center;
   gap: 1rem;
@@ -7604,33 +7632,38 @@ main.streamer-profile section.footer-actions button {
   box-shadow: 0 2px 10px #999;
 }
 
-main.streamer-profile section.footer-actions button:not(:nth-child(2)) img {
+main.streamer-profile section.footer-actions button:not(.focus-btn) img {
   filter: invert(0.6) sepia(81) contrast(358%) hue-rotate(283deg) brightness(0.9);
 }
 
-main.streamer-profile section.footer-actions button:hover {
-  background: linear-gradient(#ffc1db, #ff398c, #f03282) !important;
+main.streamer-profile section.footer-actions button:hover,
+main.streamer-profile section.footer-actions button.focus-btn.pink {
+  background: var(--btn-pink-gradient);
   color: #fff;
   filter: none;
 }
 
-main.streamer-profile section.footer-actions button:not(:nth-child(2)):hover img {
+main.streamer-profile section.footer-actions button:not(.focus-btn):hover img {
   filter: none;
 }
 
-main.streamer-profile section.footer-actions button:nth-child(2) img.hover {
+main.streamer-profile section.footer-actions button.focus-btn img.hover,
+main.streamer-profile section.footer-actions button.focus-btn.pink img.default {
   display: none;
 }
 
-main.streamer-profile section.footer-actions button:nth-child(2) img.default {
+main.streamer-profile section.footer-actions button.focus-btn img.default,
+main.streamer-profile section.footer-actions button.focus-btn.pink img.hover {
   display: block;
 }
 
-main.streamer-profile section.footer-actions button:nth-child(2):hover img.hover {
+main.streamer-profile section.footer-actions button.focus-btn:hover img.hover,
+main.streamer-profile section.footer-actions button.focus-btn.pink:hover img.hover {
   display: block;
 }
 
-main.streamer-profile section.footer-actions button:nth-child(2):hover img.default {
+main.streamer-profile section.footer-actions button.focus-btn:hover img.default,
+main.streamer-profile section.footer-actions button.focus-btn.pink:hover img.default {
   display: none;
 }
 
@@ -7934,7 +7967,7 @@ div.full-width.overlay.rewards div.footer button {
 
 div.full-width.overlay.rewards div.footer button:hover {
   color: #fff;
-  background: linear-gradient(#ffc1db, #ff398c, #f03282);
+  background: var(--btn-pink-gradient);
 }
 
 div.full-width.rewards.overlay div.btns button,
@@ -7944,7 +7977,7 @@ div.full-width.overlay.popular-products div.btns button {
   font-size: 0.875rem;
   padding: 5px 10px;
   color: #fff;
-  background: linear-gradient(#ffc1db, #ff398c, #f03282);
+  background: var(--btn-pink-gradient);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -8605,8 +8638,9 @@ div.search-item div.info .name {
   height: 10px;
 }
 
-button.follow-btn.pink {
-  background: linear-gradient(#ffc1db, #ff398c, #f03282) !important;
+button.follow-btn.pink,
+button.focus-btn {
+  background: var(--btn-pink-gradient);
   color: #fff;
 }
 
