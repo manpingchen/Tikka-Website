@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Tikka</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/slideshow.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <!-- Required Core Stylesheet -->
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <div class="site-header__start">
+          <a href="index.html" class="brand"><img src="images/logo.svg" alt="Tikka Logo" /></a>
+        </div>
+        <div class="site-header__middle">
+          <nav class="nav">
+            <button class="nav__toggle" aria-expanded="false" type="button">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="nav__wrapper">
+              <li class="nav__item">
+                <a href="live.html">
+                  <picture>
+                    <source media="(max-width: 989px)" srcset="images/m1.svg" />
+                    <source media="(min-width: 990px)" srcset="images/d1.svg" />
+                    <img src="images/d1.svg" alt="image-text" />
+                  </picture>
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="competition.html">
+                  <picture>
+                    <source media="(max-width: 989px)" srcset="images/m2.svg" />
+                    <source media="(min-width: 990px)" srcset="images/d2.svg" />
+                    <img src="images/d1.svg" alt="image-text" />
+                  </picture>
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="products.html">
+                  <picture>
+                    <source media="(max-width: 989px)" srcset="images/m3.svg" />
+                    <source media="(min-width: 990px)" srcset="images/d3.svg" />
+                    <img src="images/d1.svg" alt="image-text" />
+                  </picture>
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="ranking.html">
+                  <picture>
+                    <source media="(max-width: 989px)" srcset="images/m4.svg" />
+                    <source media="(min-width: 990px)" srcset="images/d4.svg" />
+                    <img src="images/d1.svg" alt="image-text" /> </picture
+                ></a>
+              </li>
+              <li class="nav__item">
+                <a href="topup.html">
+                  <picture>
+                    <source media="(max-width: 989px)" srcset="images/m5.svg" />
+                    <source media="(min-width: 990px)" srcset="images/d5.svg" />
+                    <img src="images/d1.svg" alt="image-text" /> </picture
+                ></a>
+              </li>
+              <li class="nav__item">
+                <a href="search.html">
+                  <picture>
+                    <source media="(max-width: 989px)" srcset="images/m6.svg" />
+                    <source media="(min-width: 990px)" srcset="images/d6.svg" />
+                    <img src="images/d1.svg" alt="image-text" /> </picture
+                ></a>
+              </li>
+              <li class="nav__item">
+                <a href="search-product.html">
+                  <picture>
+                    <source media="(max-width: 989px)" srcset="images/m7.svg" />
+                    <source media="(min-width: 990px)" srcset="images/d7.svg" />
+                    <img src="images/d7.svg" alt="image-text" /> </picture
+                ></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="site-header__end">
+          <a class="button" href="login.html">
+            <span class="icon"><img src="images/login-icon.svg" alt="登入" /></span>
+            <span><img src="images/login-btn.svg" alt="登入" /></span>
+          </a>
+          <a class="button" href="#">
+            <span class="icon">
+              <span class="cart-amount">1</span>
+              <img class="icon" src="images/cart-icon.svg" alt="購物車" />
+            </span>
+            <span><img src="images/cart-btn.svg" alt="購物車" /></span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- MOBILE NAV-->
+    <nav class="end-nav logged-in">
+      <ul class="flex-row">
+        <li>
+          <a href="login.html" class="login-link"><img src="images/m-nav-1.svg" />登入</a>
+          <a href="account.html" class="account-link ellipsis">
+            <span class="avatar-wrapper">
+              <img src="images/s2.jpg" class="avatar" />
+            </span>
+            ALLEN
+          </a>
+        </li>
+        <li>
+          <a href="products.html"><img src="images/m-nav-2.svg" />商品</a>
+        </li>
+        <li>
+          <a href="index.html"><img src="images/m-nav-3.svg" />首頁</a>
+        </li>
+        <li>
+          <a href=""><img src="images/m-nav-4.svg" />客服</a>
+        </li>
+        <li>
+          <a href="#" class="cart">
+            <span class="icon">
+              <span class="cart-amount">1</span>
+            </span>
+            <img src="images/m-nav-5.svg" />購物車</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <!-- Header End -->
+
+    <!--Main-->
+    <main class="streamer-profile">
+      <section class="header">
+        <div class="flex-row">
+          <div class="avatar-container">
+            <span class="live-chip pink">Live</span>
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" class="avatar" alt="name" />
+            </div>
+          </div>
+          <div class="info flex-column">
+            <h5 class="flex-row">
+              <span class="profile-name ellipsis">呆呆萌萌小愛</span>
+              <button type="button" class="follow-icon">
+                <img src="images/heart-round-pink.svg" alt="heart icon" />
+              </button>
+            </h5>
+            <div class="performance-data flex-row rewards">
+              <img src="images/gift-round-pink.svg" alt="gift icon" />
+              <span class="value">999,999,999</span>
+            </div>
+            <div class="performance-data flex-row followers" onclick="handleOpenFansList()">
+              <span class="value">粉絲 99.9K</span>
+            </div>
+          </div>
+        </div>
+        <button class="gift-button" onclick="handleShowComponent('.rewards.overlay')"></button>
+        <div class="round-bg"></div>
+      </section>
+      <section class="intro">
+        <button class="toggle-intro-button toggle-close" disabled onclick="openIntro()">
+          <span class="material-icons">&#xE313;</span>
+        </button>
+        <div class="intro-content">
+          <ul class="flex-column">
+            <li>各大品牌平面、廣告、代言模特兒</li>
+            <li>節目、主持、演員、多部戲劇、電影</li>
+          </ul>
+          <p>
+            自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊。
+          </p>
+          <p>IG: Account1234</p>
+          <p>
+            自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊。
+            自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊。
+            自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊，自我介紹內文區塊。
+          </p>
+        </div>
+        <button class="toggle-intro-button toggle-open" onclick="closeIntro()">
+          <span class="material-icons">&#xE316;</span>
+        </button>
+      </section>
+      <section class="menus">
+        <ul class="flex-row">
+          <li><button onclick="showStoryList()">最新動態</button></li>
+          <li><button onclick="showVideoList()">經典影片</button></li>
+          <li>
+            <button onclick="handleShowComponent('#personal-gifts-overlay')">專屬禮物</button>
+          </li>
+          <li>
+            <button onclick="handleShowComponent('#popular-products-overlay')">熱銷商品</button>
+          </li>
+        </ul>
+      </section>
+      <section class="list images">
+        <div class="list-item" id="story-1" onclick="showStoryById(this.id)">
+          <div class="img-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+        <div class="list-item" id="story-2" onclick="showStoryById(this.id)">
+          <div class="img-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+        <div class="list-item" id="story-3" onclick="showStoryById(this.id)">
+          <div class="img-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+        <div class="list-item" id="story-4" onclick="showStoryById(this.id)">
+          <div class="img-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+        <div class="list-item" id="story-5" onclick="showStoryById(this.id)">
+          <div class="img-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+        <div class="list-item" id="story-6" onclick="showStoryById(this.id)">
+          <div class="img-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="list videos" style="display: none">
+        <div class="list-item" id="video-1" onclick="showVideoById(this.id)">
+          <div class="img-wrap video-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+        <div class="list-item" id="video-2" onclick="showVideoById(this.id)">
+          <div class="img-wrap video-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+        <div class="list-item" id="video-3" onclick="showVideoById(this.id)">
+          <div class="img-wrap video-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+        <div class="list-item" id="video-4" onclick="showVideoById(this.id)">
+          <div class="img-wrap video-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+        <div class="list-item" id="video-5" onclick="showVideoById(this.id)">
+          <div class="img-wrap video-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+        <div class="list-item" id="video-6" onclick="showVideoById(this.id)">
+          <div class="img-wrap video-wrap">
+            <img src="images/s2.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+      <section class="footer-actions flex-row">
+        <button class="button-like" onclick="handleShowComponent('#social-media-shares')">
+          <img src="images/social.svg" alt="" /> 我要分享
+        </button>
+        <button class="button-like"><img src="images/microphone.svg" alt="" /> 觀看直播</button>
+        <button class="button-like" onclick="handleChat()">
+          <img src="images/dialog-icon.svg" alt="" /> 聊聊
+        </button>
+      </section>
+    </main>
+
+    <!--我要分享-->
+    <div
+      class="full-width streamer-profile-overlay social-media-shares overlay"
+      id="social-media-shares"
+    >
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#social-media-shares')">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+        <p class="flex-row title-text light-pink">
+          <img src="images/social.svg" alt="分享" /> 我要分享
+        </p>
+      </div>
+      <div class="content">
+        <ul>
+          <li>
+            <button type="button">
+              <img src="images/line.png" alt="" />
+              LINE
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <img src="images/facebook.svg" alt="" />
+              Facebook
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <img src="images/whatsapp.svg" alt="" />
+              Whatsapp
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <img src="images/x-icon.svg" alt="" />
+              X
+            </button>
+          </li>
+          <li>
+            <button type="button">
+              <img src="images/link.svg" alt="" />
+              複製連結
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--禮物牆-->
+    <div class="full-width streamer-profile-overlay rewards overlay" id="rewards-overlay">
+      <div class="content">
+        <section class="title">
+          <button class="close" onclick="handleHideComponent('.rewards.overlay')">
+            <img src="images/close-icon.svg" alt="close" />
+          </button>
+          <div class="wrapper reward-btns">
+            <div class="btns" id="reward-title-buttons">
+              <button
+                id="reward-gift"
+                type="button"
+                class="active"
+                onclick="handleRewardTitleClick(this.id,'reward-title-buttons')"
+              >
+                <img src="images/gift.svg" alt="" />禮物
+              </button>
+              <button
+                id="reward-product"
+                type="button"
+                onclick="handleRewardTitleClick(this.id,'reward-title-buttons')"
+              >
+                <img src="images/arrow-cart.svg" alt="" />商品
+              </button>
+              <button
+                id="reward-box"
+                type="button"
+                onclick="handleRewardTitleClick(this.id,'reward-title-buttons')"
+              >
+                <img src="images/treasure.svg" alt="" />百寶箱
+              </button>
+            </div>
+          </div>
+
+          <div class="detail-links reward-gift" id="gift-details">
+            <div class="detail-links_content">
+              <a href="#" id="gift-all" onclick="showRewardDetail(this.id, 'gift-details')">All</a>
+              <span class="border"></span>
+              <a href="#" id="gift-popular" onclick="showRewardDetail(this.id, 'gift-details')">
+                熱門
+              </a>
+              <span class="border"></span>
+              <a href="#" id="gift-favourite" onclick="showRewardDetail(this.id, 'gift-details')">
+                女神最愛
+              </a>
+              <span class="border"></span>
+              <a href="#" id="gift-romantic" onclick="showRewardDetail(this.id, 'gift-details')">
+                浪漫禮物
+              </a>
+            </div>
+          </div>
+          <div class="detail-links reward-gift" id="product-details" style="display: none">
+            <div class="detail-links_content">
+              <a href="#" id="product-all" onclick="showRewardDetail(this.id, 'product-details')">
+                All
+              </a>
+              <span class="border"></span>
+              <a
+                href="#"
+                id="product-popular"
+                onclick="showRewardDetail(this.id, 'product-details')"
+              >
+                熱銷
+              </a>
+            </div>
+          </div>
+          <div class="detail-links reward-gift" id="box-details" style="display: none">
+            <div class="detail-links_content">
+              <a href="#" id="box-all" onclick="showRewardDetail(this.id, 'box-details')">All</a>
+            </div>
+          </div>
+        </section>
+        <section class="reward-items-container">
+          <div class="reward-items reward-gift" id="rewards-wall">
+            <!-- <div class="reward-item">
+              <img src="images/diamond.png" alt="" />
+              <span class="flex-row">2740000</span>
+            </div> -->
+          </div>
+          <div class="footer">
+            <div class="send-gift flex-row">
+              <span class="point flex-row">2740000</span>
+              <button id="buy-button" type="button" onclick="handleBuy(this.id)">贈送</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- 捧花不足 -->
+    <div class="full-width streamer-profile-overlay overlay" id="top-up-overlay">
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#top-up-overlay')">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+        <p class="flex-row"><span class="line"></span>捧花不足 <span class="line"></span></p>
+      </div>
+      <div class="content">
+        <a href="topup.html" class="topup-btn"><img src="images/coin.png" />請儲值</a>
+      </div>
+      <div class="footer">
+        <span class="point">59</span>
+      </div>
+    </div>
+
+    <!-- 下方禮物送出框 -->
+    <div class="streamer-profile-overlay overlay gift-sent-overlay" id="gift-sent">
+      <div class="container">
+        <div class="avatar-wrapper">
+          <img src="images/s2.jpg" class="avatar" alt="name" />
+        </div>
+        <div class="info">
+          <span class="name">小愛</span>
+          <div class="gift-name marquee-wall" id="marquee-gift-wall">
+            <span class="gift-text" id="marquee-gift-text"> 送了 名字短的名稱 </span>
+          </div>
+        </div>
+        <div class="gift-img-wrapper">
+          <img src="images/gift2.png" alt="禮物小圖" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 滿版禮物圖 -->
+    <div class="full-width streamer-profile-overlay overlay" id="gift-full-overlay">
+      <div class="content">
+        <img src="images/kisses.png" alt="" class="gift-img" />
+      </div>
+    </div>
+
+    <!-- 專屬禮物 -->
+    <div
+      class="full-width streamer-profile-overlay overlay personal-gifts"
+      id="personal-gifts-overlay"
+    >
+      <div class="content">
+        <section class="title">
+          <button class="close" onclick="handleHideComponent('#personal-gifts-overlay')">
+            <img src="images/close-icon.svg" alt="close" />
+          </button>
+          <div class="wrapper reward-btns">
+            <div class="btns" id="reward-title-buttons">
+              <button id="reward-gift" type="button">
+                <img src="images/gift.svg" alt="" />專屬禮物
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="reward-items-container">
+          <div class="reward-items reward-gift" id="rewards-wall">
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/p1.jpeg" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product5.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/p2.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product4.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/p2.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/p1.jpeg" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/p2.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">禮物名稱</span>
+              <span class="count">X99K</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- 熱銷商品 -->
+    <div
+      class="full-width streamer-profile-overlay overlay popular-products"
+      id="popular-products-overlay"
+    >
+      <div class="content">
+        <section class="title">
+          <button class="close" onclick="handleHideComponent('#popular-products-overlay')">
+            <img src="images/close-icon.svg" alt="close" />
+          </button>
+          <div class="wrapper reward-btns">
+            <div class="btns" id="reward-title-buttons">
+              <button id="reward-gift" type="button">
+                <img src="images/cart-icon.svg" alt="" class="white-svg" />熱銷商品
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="reward-items-container">
+          <div class="reward-items reward-gift" id="rewards-wall">
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">氨基酸洗面乳</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">氨基酸洗面乳</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">氨基酸洗面乳</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">氨基酸洗面乳</span>
+              <span class="count">X99K</span>
+            </div>
+            <div class="reward-item">
+              <div class="img-wrap">
+                <img src="images/product1.png" alt="" />
+              </div>
+              <span class="name">氨基酸洗面乳</span>
+              <span class="count">X99K</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- 滿版經典影片遮罩 -->
+    <div
+      class="overlay full-page highlight-content-overlay not-close-by-backdrop"
+      id="single-video-overlay"
+    >
+      <div class="top-bar">
+        <button class="back" onclick="handleHideComponent('#single-video-overlay')">
+          <span class="material-icons">&#xE5CB;</span>
+        </button>
+        <p>經典影片</p>
+      </div>
+      <div class="header">
+        <div class="img-wrap">
+          <img src="images/s1.jpg" alt="" />
+        </div>
+        <p>可愛小貝最萌</p>
+      </div>
+      <div class="content">
+        <div class="videoDiv">
+          <video id="rtc_media_player" autoplay playsinline controls></video>
+        </div>
+        <div class="video-description">
+          經典影片內容說明，經典影片內容說明經典影片內容說明。經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明。
+        </div>
+        <div class="btn-groups">
+          <button class="followed" onclick="handleFollow()">
+            <img src="images/heart-icon.svg" alt="heart icon" />
+            <span class="value">999</span>
+          </button>
+          <button onclick="handleShowComponent('#rewards-overlay')">
+            <img src="images/gift.svg" alt="gift icon" />
+          </button>
+          <button onclick="handleShowComponent('#social-media-shares')">
+            <img src="images/social.svg" alt="social icon" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 滿版最新動態遮罩 -->
+    <div
+      class="overlay full-page highlight-content-overlay not-close-by-backdrop"
+      id="single-story-overlay"
+    >
+      <div class="top-bar">
+        <button class="back" onclick="handleHideComponent('#single-story-overlay')">
+          <span class="material-icons">&#xE5CB;</span>
+        </button>
+        <p>最新動態</p>
+      </div>
+      <div class="header">
+        <div class="img-wrap">
+          <img src="images/s1.jpg" alt="" />
+        </div>
+        <p>可愛小貝最萌</p>
+      </div>
+      <div class="content">
+        <div class="img-wrap">
+          <img src="images/s2.jpg" alt="" />
+        </div>
+        <div class="video-description">
+          經典影片內容說明，經典影片內容說明經典影片內容說明。經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明，經典影片內容說明經典影片內容說明。
+        </div>
+        <div class="btn-groups">
+          <button class="followed" onclick="handleFollow()">
+            <img src="images/heart-icon.svg" alt="heart icon" />
+            <span class="value">999</span>
+          </button>
+          <button onclick="handleShowComponent('#rewards-overlay')">
+            <img src="images/gift.svg" alt="gift icon" />
+          </button>
+          <button onclick="handleShowComponent('#social-media-shares')">
+            <img src="images/social.svg" alt="social icon" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 粉絲遮罩 -->
+    <div
+      class="overlay streamer-profile-overlay followers-overlay full-width"
+      id="followers-overlay"
+    >
+      <!-- 遮罩標題 -->
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#followers-overlay')">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+        <p class="flex-row title-text light-pink"><img src="images/man.svg" alt="粉絲" /> 粉絲</p>
+      </div>
+
+      <!-- 遮罩內容 -->
+      <div class="content">
+        <!-- Search Bar -->
+        <div id="form" class="search-form">
+          <div class="search-container">
+            <input type="text" placeholder="請輸入關鍵字" name="search" id="search-fans" />
+            <div class="search-controls">
+              <button
+                type="button"
+                class="clear-search-button"
+                onclick="handleClearSearchValue(event, this)"
+              >
+                <span class="material-icons">&#xE5CD;</span>
+              </button>
+              <button type="button" onclick="handleGetFans()" class="search-submit">
+                <span class="material-icons">&#xE8B6;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 粉絲列表 -->
+        <ul class="followers-list" id="followers-list">
+          <!-- 由getFansList()產生-->
+        </ul>
+      </div>
+    </div>
+
+    <!-- 主播權限 聊聊列表遮罩 -->
+    <div
+      class="overlay streamer-profile-overlay full-width followers-chat-list-overlay"
+      id="followers-chat-list"
+    >
+      <!-- 遮罩標題 -->
+      <div class="title flex-row list-title">
+        <button class="close" onclick="handleHideComponent('#followers-chat-list')">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+        <p class="flex-row title-text light-pink">
+          <img src="images/dialog-icon.svg" alt="聊聊" /> 聊聊
+        </p>
+      </div>
+
+      <!-- 遮罩 會員名稱標題 -->
+      <div class="title flex-row chat-title" style="display: none">
+        <button class="clear" onclick="handleClearChat()">清空聊聊</button>
+        <button class="close" onclick="handleCloseStreamerChat()">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+        <div class="flex-row title-text streamer-name fans-authenticated">
+          <div class="avatar-wrapper">
+            <img src="images/s2.jpg" alt="" class="avatar" />
+          </div>
+          <p class="streamer-name ellipsis">主播名稱主播名稱</p>
+        </div>
+
+        <div class="flex-row title-text streamer-name streamer-authenticated">
+          <div class="avatar-wrapper">
+            <img src="images/s2.jpg" alt="" class="avatar" />
+          </div>
+          <p class="streamer-name ellipsis">會員名稱會員名稱</p>
+        </div>
+      </div>
+
+      <!-- 遮罩內容 -->
+      <div class="content">
+        <div class="chat-body" id="follower-chat-items">
+          <div class="chat-item" id="chat-1" onclick="handleOpenChat(this.id)">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <div class="chat-detail">
+              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
+              <span class="chat-summary ellipsis"
+                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+              </span>
+            </div>
+            <div class="chat-date">2/15</div>
+          </div>
+          <div class="chat-item" id="chat-2" onclick="handleOpenChat(this.id)">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <div class="chat-detail">
+              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
+              <span class="chat-summary ellipsis"
+                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+              </span>
+            </div>
+            <div class="chat-date">2/15</div>
+          </div>
+          <div class="chat-item" id="chat-3" onclick="handleOpenChat(this.id)">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <div class="chat-detail">
+              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
+              <span class="chat-summary ellipsis"
+                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+              </span>
+            </div>
+            <div class="chat-date">2/14</div>
+          </div>
+          <div class="chat-item" id="chat-4" onclick="handleOpenChat(this.id)">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <div class="chat-detail">
+              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
+              <span class="chat-summary ellipsis"
+                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+              </span>
+            </div>
+            <div class="chat-date">2/13</div>
+          </div>
+
+          <div class="chat-item" id="chat-5" onclick="handleOpenChat(this.id)">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <div class="chat-detail">
+              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
+              <span class="chat-summary ellipsis"
+                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+              </span>
+            </div>
+            <div class="chat-date">2/12</div>
+          </div>
+
+          <div class="chat-item" id="chat-6" onclick="handleOpenChat(this.id)">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <div class="chat-detail">
+              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
+              <span class="chat-summary ellipsis"
+                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+              </span>
+            </div>
+            <div class="chat-date">2/11</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 私訊聊聊遮罩 -->
+    <div
+      class="overlay streamer-profile-overlay full-width followers-chat-overlay"
+      id="followers-chat-overlay"
+    >
+      <!-- 遮罩標題 -->
+      <div class="title flex-row">
+        <button class="clear" onclick="handleClearChat()">清空聊聊</button>
+        <button class="close" onclick="handleCloseChat()">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+        <div class="flex-row title-text streamer-name fans-authenticated">
+          <div class="avatar-wrapper">
+            <img src="images/s2.jpg" alt="" class="avatar" />
+          </div>
+          <p class="streamer-name ellipsis">主播名稱主播名稱</p>
+        </div>
+
+        <div class="flex-row title-text streamer-name streamer-authenticated">
+          <button class="back" onclick="handleBackToChatList()">
+            <span class="material-icons">&#xE5CB;</span>
+          </button>
+          <div class="avatar-wrapper">
+            <img src="images/s2.jpg" alt="" class="avatar" />
+          </div>
+          <p class="streamer-name ellipsis">會員名稱會員名稱</p>
+        </div>
+      </div>
+
+      <!-- 遮罩內容 -->
+      <div class="content">
+        <div class="chat-body" id="followers-chat-items">
+          <div class="chat-date"><p class="date-value">2022.07.04</p></div>
+          <div class="chat-item">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <span class="chat-content"
+              >＃＃＃第一則＃＃＃對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+            </span>
+          </div>
+          <div class="chat-item my-chat">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <span class="chat-content"
+              >＃＃＃第一則＃＃＃我的聊天文字內容聊天文字內容聊天文字，內容聊天文字內容</span
+            >
+          </div>
+          <div class="chat-item">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <span class="chat-content"
+              >＃＃＃第二則＃＃＃對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
+            </span>
+          </div>
+          <div class="chat-item my-chat">
+            <div class="avatar-wrapper">
+              <img src="images/s2.jpg" alt="" class="avatar" />
+            </div>
+            <span class="chat-content"
+              >＃＃＃第二則＃＃＃我的聊天文字內容聊天文字內容聊天文字，內容聊天文字內容</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="flex-row chat-controls">
+        <div class="chat-field flex-row">
+          <input type="text" placeholder="跟主播聊聊..." id="new-chat-input" />
+        </div>
+        <div class="btns">
+          <button type="button open-overlay" class="face-btn" onclick="handleShowStickers()">
+            <img src="images/face.svg" />
+          </button>
+          <button type="button open-overlay" onclick="handleAddTextToChat()">
+            <img src="images/fat-arrow.svg" alt="送出" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 貼圖遮罩 -->
+    <div
+      class="overlay streamer-profile-overlay full-width sticker-overlay"
+      id="sticker-overlay-mobile"
+    >
+      <div class="title flex-row">
+        <img src="images/my-sticker.svg" alt="我的貼圖" class="title-img" />
+        <button class="close" onclick="handleHideComponent('.sticker-overlay')">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+      </div>
+      <div class="detail-links stickers-details" id="stickers-details">
+        <ul class="stickers-detail-tabs">
+          <li id="all-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
+            <a href="#">All</a>
+          </li>
+          <li id="popular-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
+            <a href="#">熱門</a>
+          </li>
+          <li id="my-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
+            <a href="#">我的貼圖</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="sticker-body" id="all-stickers-list">
+          <button class="sticker-item add-sticker">
+            <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleMarkSticker()">
+              <img src="images/sticker2.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+            <span class="value">230</span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleMarkSticker()">
+              <img src="images/sticker2.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+            <span class="value">230</span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleMarkSticker()">
+              <img src="images/sticker2.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+            <span class="value">230</span>
+          </button>
+        </div>
+        <div class="sticker-body" id="popular-stickers-list" style="display: none">
+          <button class="sticker-item add-sticker">
+            <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleMarkSticker()">
+              <img src="images/sticker.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+            <span class="value">230</span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleMarkSticker()">
+              <img src="images/sticker.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+            <span class="value">230</span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleMarkSticker()">
+              <img src="images/sticker.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+            <span class="value">230</span>
+          </button>
+        </div>
+        <div class="sticker-body" id="my-stickers-list" style="display: none">
+          <button class="sticker-item add-sticker">
+            <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleMarkSticker()">
+              <img src="images/sticker2.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleMarkSticker()">
+              <img src="images/sticker2.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+          </button>
+          <button class="sticker-item flex-column">
+            <span class="img-wrap" onclick="handleMarkSticker()">
+              <img src="images/sticker2.png" alt="" />
+            </span>
+            <span class="sticker-name">貼圖名稱</span>
+          </button>
+        </div>
+      </div>
+      <div class="sticker-footer flex-row">
+        <span class="point flex-row">2740000</span>
+        <button id="buy-button" type="button" onclick="handleHideComponent('.sticker-overlay')">
+          購買
+        </button>
+        <button id="send-button" type="button" onclick="handleAddStickerToChat()">送出</button>
+      </div>
+    </div>
+
+    <!--遮罩backdrop-->
+    <div class="backdrop" style="display: none"></div>
+
+    <footer class="desktop-only">
+      <div class="footer-content flex-row">
+        <div class="flex-row social-icons">
+          <a href="#" class="line-icon social-icon"><img src="images/line.png" alt="line" /></a>
+          <a href="#" class="fb-icon social-icon"><img src="images/fb.png" alt="line" /></a>
+          <a href="#" class="ig-icon social-icon"><img src="images/ig.png" alt="line" /></a>
+        </div>
+        <div class="flex-column">
+          <ul class="flex-row footer-menu">
+            <li>
+              <a href="contact.html">聯絡我們</a>
+            </li>
+            <li>
+              <a href="about.html">關於我們</a>
+            </li>
+            <li>
+              <a href="policy.html">服務條款</a>
+            </li>
+          </ul>
+
+          <p class="copyright">
+            <span>Copyright© 2022 by Tikka版權所有</span>
+            <span>Copyright© 2022 Tikka. All rights reserved.</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/header.js"></script>
+    <script src="js/fakeData.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      /* 共用 */
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      /* 從網址判斷是主播登入或一般使用者 */
+      const streamerId = urlParams.get("streamerId");
+
+      /* 若非主播登入，隱藏僅限主播之元件 */
+      const streamerOnlyEle = document.getElementsByClassName("streamer-authenticated");
+      const fansOnlyEle = document.getElementsByClassName("fans-authenticated");
+      const fansListButton = document.querySelector(".performance-data.followers");
+      if (!streamerId) {
+        new Set(streamerOnlyEle).forEach((node) => {
+          node.style.display = "none";
+        });
+        new Set(fansOnlyEle).forEach((node) => {
+          node.style.display = "inherit";
+        });
+        fansListButton.style.cursor = "initial";
+      } else {
+        new Set(streamerOnlyEle).forEach((node) => {
+          node.style.display = "inherit";
+        });
+        new Set(fansOnlyEle).forEach((node) => {
+          node.style.display = "none";
+        });
+
+        const chatList = document.querySelector("#followers-chat-list");
+        chatList.classList.add("streamer-authenticated");
+      }
+
+      function openIntro() {
+        document.querySelector(".intro-content").style.height = "300px";
+        document.querySelector(".toggle-open").disabled = false;
+        document.querySelector(".toggle-close").disabled = true;
+      }
+      function closeIntro() {
+        document.querySelector(".intro-content").style.height = 0;
+        document.querySelector(".toggle-close").disabled = false;
+        document.querySelector(".toggle-open").disabled = true;
+      }
+      /* 禮物牆顯示 */
+      showRewardDetail();
+
+      function handleShowRewardWall() {
+        document.getElementById("rewards-overlay").style.display = "block";
+        showRewardDetail("gift-all", "gift-details");
+      }
+      // 經典影片
+      function showVideoList() {
+        handleShowComponent(".list.videos", "grid");
+        handleHideComponent(".list.images");
+      }
+
+      // 經典影片
+      function showStoryList() {
+        handleHideComponent(".list.videos");
+        handleShowComponent(".list.images", "grid");
+      }
+
+      // 開啟特定經典影片
+      function showVideoById(id) {
+        console.log({ id });
+        handleShowComponent("#single-video-overlay");
+      }
+
+      // 開啟特定經典影片
+      function showStoryById(id) {
+        console.log({ id });
+        handleShowComponent("#single-story-overlay");
+      }
+
+      // 開啟經典影片
+
+      const videoId = urlParams.get("videoId");
+      if (videoId) {
+        showVideoById(videoId);
+      }
+
+      /*點擊購買按鈕 及 (＊＊＊供示意：顯示 捧花不足遮罩）*/
+      function handleBuy(id) {
+        handleHideComponent("#rewards-overlay");
+        handleShowComponent("#gift-sent", "flex");
+        handleShowComponent("#gift-full-overlay");
+        setTimeout(() => {
+          handleHideComponent("#gift-sent");
+        }, 5000);
+
+        /*設計沒有做到滿版帖圖關閉的環節，先以10秒後關閉*/
+        setTimeout(() => {
+          handleHideComponent("#gift-full-overlay");
+        }, 10000);
+      }
+
+      /* 私訊聊聊按鈕點擊 */
+      function handleChat(followerId) {
+        console.log({ followerId });
+
+        /* 粉絲登入版本 */
+        if (!streamerId) {
+          console.log("粉絲 ");
+          chatElement.classList.add("active");
+          handleShowComponent("#followers-chat-overlay");
+          handleHideComponent("#followers-overlay");
+          /* Backdrop因followers-overlay關閉時一同關閉，*/
+          /* 故下方再次開啟，供關閉私訊聊聊遮罩使用 */
+        }
+        if (streamerId) {
+          handleShowComponent("#followers-chat-list");
+        }
+        handleShowComponent(".backdrop");
+      }
+
+      /*加對話至對話框*/
+      function handleAddTextToChat() {
+        const inputField = document.getElementById("new-chat-input");
+        const chatText = inputField.value;
+
+        if (chatText) {
+          ifChatNeedNewDate();
+
+          /* 加入對話 */
+          const newElement = document.createElement("div");
+          newElement.classList.add("chat-item", "my-chat");
+
+          const avatarElement = buildAvatar();
+
+          const contentElement = document.createElement("span");
+          contentElement.classList.add("chat-content");
+          contentElement.innerHTML = chatText;
+
+          newElement.append(avatarElement);
+          newElement.append(contentElement);
+          document.getElementById("followers-chat-items").appendChild(newElement);
+
+          /* 清除輸入框 */
+          inputField.value = "";
+
+          /* 將對話區塊置底 */
+          locateScrollbar();
+        }
+      }
+
+      /* 清空對話 */
+      function handleClearChat() {
+        const chatBody = (document.getElementById("followers-chat-items").innerHTML = "");
+      }
+
+      /* 開啟貼圖遮罩 */
+      function handleShowStickers() {
+        handleShowComponent(".sticker-overlay");
+        handleHideComponent(".followers-chat-overlay");
+      }
+
+      /* 加貼圖至對話框 */
+      function handleMarkSticker(e) {
+        const previousSelectedStickerNodes = document.querySelectorAll(".selected-sticker");
+        [...previousSelectedStickerNodes].forEach((node) => {
+          node.classList.remove("selected-sticker");
+        });
+
+        event.target.classList.add("selected-sticker");
+      }
+
+      getFansList();
+
+      /* 粉絲列表姓名排列 */
+      function getFansList(array = fans) {
+        const sortedFans = array.sort((a, b) => {
+          const nameA = a.name;
+          const nameB = b.name;
+
+          if (nameA < nameB) return -1;
+          if (nameA > nameB) return 1;
+          return 0;
+        });
+
+        sortedFans.forEach((fan) => {
+          const newElement = document.createElement("li");
+          newElement.classList.add("followers-list_item");
+
+          const contentElement = document.createElement("div");
+          contentElement.classList.add("follower-detail");
+
+          const avatarElement = buildAvatar();
+          const avatarWrapElement = document.createElement("div");
+          avatarWrapElement.classList.add("avatar-wrapper");
+          avatarWrapElement.innerHTML = avatarElement;
+
+          const nameElement = document.createElement("div");
+          nameElement.classList.add("follower-name", "ellipsis");
+          nameElement.innerHTML = fan.name;
+
+          contentElement.append(avatarElement);
+          contentElement.append(nameElement);
+
+          newElement.append(contentElement);
+
+          return document.getElementById("followers-list").appendChild(newElement);
+        });
+      }
+
+      function handleGetFans() {
+        const value = document.getElementById("search-fans").value.toLowerCase();
+        const matchedFans = fans.filter(({ name }) => name.toLowerCase().includes(value));
+        document.getElementById("followers-list").innerHTML = null;
+        getFansList(matchedFans);
+      }
+
+      const chatElement = document.getElementById("followers-chat-overlay");
+
+      if (window.innerWidth >= 1200) {
+        chatElement.classList.add("from-right");
+      }
+
+      /* 主播版本 點擊聊天單一對話列表 */
+      function handleOpenChat(id) {
+        console.log({ chatId: id });
+
+        if (window.innerWidth < 1200) {
+          handleShowComponent("#followers-chat-overlay");
+          chatElement.classList.add("streamer-authenticated", "active");
+          return handleHideComponent("#followers-chat-list");
+        }
+
+        chatElement.classList.add("streamer-authenticated", "active");
+        handleShowComponent("#followers-chat-overlay");
+        handleShowComponent(".chat-title", "flex");
+        handleHideComponent(".list-title");
+
+        setTimeout(() => {
+          const chatList = document.querySelector("#followers-chat-list.streamer-authenticated");
+          chatList.classList.add("chat-content-opened");
+        }, 500);
+      }
+
+      /* 主播版本 從私訊聊聊點擊上一頁 */
+      function handleBackToChatList() {
+        handleHideComponent("#followers-chat-overlay");
+
+        if (window.innerWidth < 1200) {
+          return handleShowComponent("#followers-chat-list");
+        }
+
+        chatElement.classList.remove("streamer-authenticated", "active");
+        handleHideComponent(".chat-title");
+        handleShowComponent(".list-title", "flex");
+
+        const chatList = document.querySelector("#followers-chat-list.streamer-authenticated");
+        chatList.classList.remove("chat-content-opened");
+      }
+
+      /*主播版本 關閉聊聊視窗*/
+
+      function handleCloseStreamerChat() {
+        document.querySelector(".followers-chat-overlay").classList.remove("active");
+        document
+          .querySelector(".followers-chat-list-overlay")
+          .classList.remove("chat-content-opened");
+        handleHideComponent(".followers-chat-overlay");
+        handleHideComponent(".followers-chat-list-overlay");
+      }
+
+      function handleOpenFansList() {
+        if (streamerId) {
+          handleShowComponent("#followers-overlay");
+        }
+      }
+
+      /*粉絲版本 關閉聊聊視窗*/
+      function handleCloseChat() {
+        document.querySelector(".followers-chat-overlay").classList.remove("active");
+        handleHideComponent(".followers-chat-overlay");
+      }
+    </script>
+  </body>
+</html>

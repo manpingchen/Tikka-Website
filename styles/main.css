@@ -632,6 +632,14 @@ main.products.account-page .products-title {
   }
 }
 
+main.products #highlighted-products-slides .slick-list {
+  margin-bottom: 0;
+}
+
+main.products #highlighted-products-slides .slick-dots {
+  bottom: 1rem;
+}
+
 main.index {
   padding-top: 90px;
 }
@@ -4560,7 +4568,22 @@ div.product-item p.name {
   -webkit-box-orient: vertical;
   text-align: center;
   font-size: 0.875rem;
-  height: 38px;
+  height: 35px;
+}
+
+main.products #products-slides li div.product-item p.name {
+  bottom: 16%;
+  height: 34px;
+  line-height: 1.1em;
+  width: 120px;
+}
+
+@media screen and (min-width: 1025px) {
+  main.products #products-slides li div.product-item p.name {
+    bottom: 28px;
+    font-size: 0.85rem;
+    height: 30px;
+  }
 }
 
 div.product-item a.img-wrap {
@@ -9383,9 +9406,10 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   align-items: stretch;
 }
 
+#live-slides .slick-list,
 #products-slides .slick-list,
 #ranking-products-slides .slick-list {
-  padding: 0 20% 0 0 !important;
+  padding: 0 22% 0 0 !important;
 }
 
 #products-slides .slick-slide {
@@ -9398,6 +9422,7 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   padding-bottom: 0;
   height: 0;
   padding-top: 100%;
+  width: 100%;
 }
 
 #products-slides li button.add-to-cart img {
@@ -9443,18 +9468,36 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   display: block;
 }
 
-#products-slides div.img-wrap {
+#products-slides .img-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 1rem;
+  top: 5%;
+  width: 100%;
+  height: 55%;
 }
 
-#products-slides div.img-wrap img {
-  width: 64%;
-  min-width: 100px;
+#products-slides .img-wrap img {
+  height: 100%;
   position: relative;
+}
+
+main.products #products-slides .img-wrap img {
+  height: 60%;
+  position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+  main.index #products-slides .img-wrap {
+    height: 60%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  main.index #products-slides .img-wrap {
+    height: 50%;
+  }
 }
 
 .product-types {
@@ -9485,16 +9528,6 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   .product-types .list {
     grid-template-columns: repeat(2, 1fr);
     padding: 0 1rem;
-  }
-
-  #products-slides div.img-wrap {
-    width: 80px;
-    height: 80px;
-  }
-
-  #products-slides div.img-wrap img {
-    width: 100%;
-    height: auto;
   }
 
   #products-slides li span.name {
