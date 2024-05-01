@@ -194,8 +194,8 @@ function openEventRanking() {
 }
 
 /* handle clear search value */
-function handleClearSearchValue(event, el) {
-  const element = el.parentNode.parentNode.querySelector("input");
+function handleClearSearchValue(inputId) {
+  const element = document.getElementById(inputId);
   element.value = "";
 }
 
@@ -233,6 +233,7 @@ function handleHideComponent(selector) {
       return (node.style.transform = "translate(100%, 0)");
     }
     node.style.transform = "translate(0, 100%)";
+    node.style.display = "none";
   }
 
   if (isSmallOverlay) {
@@ -266,6 +267,7 @@ function handleShowComponent(selector, displayValue = "block", shouldBodyOverflo
 
   if (isNormalOverlay) {
     node.style.transform = "translate(0, 0)";
+    node.style.display = displayValue;
   }
 
   if (isSmallOverlay) {

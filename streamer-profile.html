@@ -588,7 +588,10 @@
               >
                 <img src="images/gift.svg" alt="" />禮物
               </button>
-              <button
+              <!-- 24/05/01 
+                隱藏：因新的頁面（240314_TIKKA網站視覺_主播個人主頁_行動版_O-02.jpg）設計並無顯示以下 
+              -->
+              <!-- <button
                 id="reward-product"
                 type="button"
                 onclick="handleRewardTitleClick(this.id,'reward-title-buttons')"
@@ -601,7 +604,7 @@
                 onclick="handleRewardTitleClick(this.id,'reward-title-buttons')"
               >
                 <img src="images/treasure.svg" alt="" />百寶箱
-              </button>
+              </button> -->
             </div>
           </div>
 
@@ -786,10 +789,18 @@
     >
       <!-- 遮罩標題 -->
       <div class="title flex-row">
+        <button
+          class="prev"
+          id="back-to-fan-list"
+          onclick="handleShowList()"
+          style="display: none"
+        ></button>
         <button class="close" onclick="handleHideComponent('#followers-overlay')">
           <img src="images/close-icon.svg" alt="close" />
         </button>
-        <p class="flex-row title-text light-pink"><img src="images/man.svg" alt="粉絲" /> 粉絲</p>
+        <p id="fan-list-title" class="flex-row title-text light-pink">
+          <img src="images/man.svg" alt="粉絲" /> 粉絲
+        </p>
       </div>
 
       <!-- 遮罩內容 -->
@@ -802,7 +813,7 @@
               <button
                 type="button"
                 class="clear-search-button"
-                onclick="handleClearSearchValue(event, this)"
+                onclick="handleClearSearchValue('search-fans')"
               >
                 <span class="material-icons">&#xE5CD;</span>
               </button>
@@ -837,7 +848,7 @@
 
       <!-- 遮罩 會員名稱標題 -->
       <div class="title flex-row chat-title" style="display: none">
-        <button class="clear" onclick="handleClearChat()">清空聊聊</button>
+        <button class="clear" onclick="handleClearChat()"></button>
         <button class="close" onclick="handleCloseStreamerChat()">
           <img src="images/close-icon.svg" alt="close" />
         </button>
@@ -858,6 +869,24 @@
 
       <!-- 遮罩內容 -->
       <div class="content">
+        <!-- Search Bar -->
+        <div id="form" class="search-form">
+          <div class="search-container">
+            <input type="text" placeholder="請輸入關鍵字" name="search" id="search-fans" />
+            <div class="search-controls">
+              <button
+                type="button"
+                class="clear-search-button"
+                onclick="handleClearSearchValue('search-fans')"
+              >
+                <span class="material-icons">&#xE5CD;</span>
+              </button>
+              <button type="button" onclick="handleGetFans()" class="search-submit">
+                <span class="material-icons">&#xE8B6;</span>
+              </button>
+            </div>
+          </div>
+        </div>
         <div class="chat-body" id="follower-chat-items">
           <div class="chat-item" id="chat-1" onclick="handleOpenChat(this.id)">
             <div class="avatar-wrapper">
@@ -944,7 +973,7 @@
     >
       <!-- 遮罩標題 -->
       <div class="title flex-row">
-        <button class="clear" onclick="handleClearChat()">清空聊聊</button>
+        <button class="clear" onclick="handleClearChat()"></button>
         <button class="close" onclick="handleCloseChat()">
           <img src="images/close-icon.svg" alt="close" />
         </button>
@@ -1210,16 +1239,25 @@
       /*點擊購買按鈕 及 (＊＊＊供示意：顯示 捧花不足遮罩）*/
       function handleBuy(id) {
         handleHideComponent("#rewards-overlay");
-        handleShowComponent("#gift-sent", "flex");
-        handleShowComponent("#gift-full-overlay");
-        setTimeout(() => {
-          handleHideComponent("#gift-sent");
-        }, 5000);
 
-        /*設計沒有做到滿版帖圖關閉的環節，先以10秒後關閉*/
-        setTimeout(() => {
-          handleHideComponent("#gift-full-overlay");
-        }, 10000);
+        /* Demo用，切換下方Boolean可以選擇顯示'(true)捧花不足'或'(false)成功贈送禮物'遮罩 */
+        const ifShowTopUpOverlay = false;
+
+        if (ifShowTopUpOverlay) {
+          handleShowComponent("#gift-sent");
+          handleShowComponent("#gift-full-overlay");
+
+          setTimeout(() => {
+            handleHideComponent("#gift-sent");
+          }, 5000);
+
+          /*設計沒有做到滿版帖圖關閉的環節，先以10秒後關閉*/
+          setTimeout(() => {
+            handleHideComponent("#gift-full-overlay");
+          }, 10000);
+        } else {
+          handleShowComponent("#top-up-overlay");
+        }
       }
 
       /* 私訊聊聊按鈕點擊 */
@@ -1335,6 +1373,15 @@
         const matchedFans = fans.filter(({ name }) => name.toLowerCase().includes(value));
         document.getElementById("followers-list").innerHTML = null;
         getFansList(matchedFans);
+        document.getElementById("back-to-fan-list").style.display = "block";
+        document.getElementById("fan-list-title").style.display = "none";
+      }
+
+      function handleShowList() {
+        getFansList();
+        handleClearSearchValue("search-fans");
+        document.getElementById("back-to-fan-list").style.display = "none";
+        document.getElementById("fan-list-title").style.display = "block";
       }
 
       const chatElement = document.getElementById("followers-chat-overlay");
@@ -1351,9 +1398,10 @@
         }
 
         chatElement.classList.add("streamer-authenticated", "active");
-        handleShowComponent("#followers-chat-overlay");
+        handleShowComponent("#followers-chat-overlay", "block");
         handleShowComponent(".chat-title", "flex");
         handleHideComponent(".list-title");
+        document.getElementsByName("body").style.overflow = "hidden";
 
         setTimeout(() => {
           const chatList = document.querySelector("#followers-chat-list.streamer-authenticated");
@@ -1372,6 +1420,7 @@
         chatElement.classList.remove("streamer-authenticated", "active");
         handleHideComponent(".chat-title");
         handleShowComponent(".list-title", "flex");
+        handleShowComponent(".backdrop"); /* 供聊聊列表使用 */
 
         const chatList = document.querySelector("#followers-chat-list.streamer-authenticated");
         chatList.classList.remove("chat-content-opened");
