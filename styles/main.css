@@ -20,6 +20,7 @@
   --pink-gradient: linear-gradient(0deg, var(--dark-pink), #ef99bf);
   --mobile-largest-width: 480px;
   --btn-pink-gradient: linear-gradient(#ffc1db, #ff398c, #f03282) !important;
+  --pink-text-shadow: 1px 1px 6px #b40081;
 }
 
 .material-icons {
@@ -1874,7 +1875,7 @@ div.overlay.rewards div.detail-links a.active,
 div.overlay.viewer div.detail-links a.active,
 div.overlay.rewards div.detail-links a:hover,
 div.overlay.viewer div.detail-links a:hover {
-  text-shadow: 1px 1px 6px var(--pink-shadow);
+  text-shadow: var(--pink-text-shadow);
 }
 
 main.live-on section.left-column div.profile div.detail-links {
@@ -3152,6 +3153,7 @@ div.followers-chat-overlay div.chat-controls {
   display: flex;
   padding: 10px;
   height: 50px;
+  background: #00000096;
 }
 
 div.followers-chat-overlay div.chat-controls div.chat-field {
@@ -3444,7 +3446,7 @@ div.followers-chat-overlay div.chat-controls button img {
   }
 
   div.followers-chat-overlay div.chat-controls {
-    height: 60px;
+    height: 50px;
   }
 }
 
@@ -5208,7 +5210,7 @@ div.overlay div.title p {
 }
 
 div.overlay.streamer-profile-overlay button.close {
-  top: 1rem !important;
+  top: 0.65rem !important;
   margin: 0;
   padding: 0;
 }
@@ -7235,12 +7237,21 @@ main.streamer-profile {
 @media screen and (min-width: 769px) and (max-width: 810px) {
   main.streamer-profile {
     margin-bottom: 20px;
+    top: 70px;
   }
 }
 
 @media screen and (max-width: 768px) {
   main.streamer-profile {
-    margin-bottom: 20px;
+    margin-bottom: -2.5rem;
+    top: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main.streamer-profile {
+    margin-bottom: -3rem;
+    top: 4rem;
   }
 }
 
@@ -7798,6 +7809,44 @@ div.streamer-profile-overlay.full-width.overlay.personal-gifts
   img {
   width: auto;
   height: 100%;
+}
+
+div#not-live-overlay {
+  height: 200px;
+}
+
+@media screen and (min-width: 481px) {
+  div#not-live-overlay div.title {
+    height: 60px;
+  }
+
+  div#not-live-overlay .content {
+    height: calc(100% - 50px);
+  }
+}
+
+div#sticker-purchased-overlay {
+  height: 150px;
+}
+
+div#not-live-overlay .title p,
+div#sticker-purchased-overlay .title p {
+  text-shadow: var(--pink-text-shadow);
+}
+
+div#not-live-overlay .title .line,
+div#sticker-purchased-overlay .title .line {
+  box-shadow: var(--pink-text-shadow);
+}
+
+div#not-live-overlay .content,
+div#sticker-purchased-overlay .content {
+  display: flex;
+  flex-direction: row;
+  height: calc(100% - 60px);
+  gap: 1rem;
+  color: white;
+  font-size: 1.2rem;
 }
 
 div.full-width.overlay.rewards,
@@ -9794,13 +9843,13 @@ div.overlay p.title-text.light-pink img {
 }
 
 @media screen and (min-width: 1200px) {
-  /* .followers-overlay .content,
+  .followers-overlay .content,
   .followers-chat-overlay .content {
     height: calc(100% - 60px) !important;
-  } */
+  }
 
   .streamer-authenticated#followers-chat-overlay .content {
-    height: calc(100% - 60px) !important;
+    height: calc(100% - 40px) !important;
   }
 
   div.followers-chat-list-overlay div.content {
@@ -9879,7 +9928,7 @@ div.overlay p.title-text.light-pink img {
 }
 
 .sticker-overlay .sticker-footer {
-  background: #00000050;
+  background: #00000096;
   color: white;
   padding: 0 20px;
   justify-content: space-between;

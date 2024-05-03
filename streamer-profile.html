@@ -142,10 +142,10 @@
     </nav>
     <!-- Header End -->
 
-    <!-- 24/4/23 updated: Fixed Buttons -->
-    <a href="live-on.html" class="fixed-button live">
+    <!-- 24/5/4 updated: Click event -->
+    <div class="fixed-button live" onclick="handleLiveBtnClick()">
       <img src="images/live-btn.svg" alt="" />
-    </a>
+    </div>
 
     <div onclick="scrollToTop()" class="fixed-button go-top"></div>
 
@@ -1055,7 +1055,7 @@
     >
       <div class="title flex-row">
         <img src="images/my-sticker.svg" alt="我的貼圖" class="title-img" />
-        <button class="close" onclick="handleHideComponent('.sticker-overlay')">
+        <button class="close" onclick="handleBackToChat()">
           <img src="images/close-icon.svg" alt="close" />
         </button>
       </div>
@@ -1074,25 +1074,22 @@
       </div>
       <div class="content">
         <div class="sticker-body" id="all-stickers-list">
-          <button class="sticker-item add-sticker">
-            <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
-          </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleMarkSticker()">
+            <span class="img-wrap" onclick="handleSelectSticker(this)">
               <img src="images/sticker2.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
             <span class="value">230</span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleMarkSticker()">
+            <span class="img-wrap" onclick="handleSelectSticker(this)">
               <img src="images/sticker2.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
             <span class="value">230</span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleMarkSticker()">
+            <span class="img-wrap" onclick="handleSelectSticker(this)">
               <img src="images/sticker2.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
@@ -1100,25 +1097,22 @@
           </button>
         </div>
         <div class="sticker-body" id="popular-stickers-list" style="display: none">
-          <button class="sticker-item add-sticker">
-            <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
-          </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleMarkSticker()">
+            <span class="img-wrap" onclick="handleSelectSticker(this)">
               <img src="images/sticker.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
             <span class="value">230</span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleMarkSticker()">
+            <span class="img-wrap" onclick="handleSelectSticker(this)">
               <img src="images/sticker.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
             <span class="value">230</span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleMarkSticker()">
+            <span class="img-wrap" onclick="handleSelectSticker(this)">
               <img src="images/sticker.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
@@ -1130,19 +1124,19 @@
             <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleMarkSticker()">
+            <span class="img-wrap" onclick="handleMarkSticker(this)">
               <img src="images/sticker2.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleMarkSticker()">
+            <span class="img-wrap" onclick="handleMarkSticker(this)">
               <img src="images/sticker2.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
           </button>
           <button class="sticker-item flex-column">
-            <span class="img-wrap" onclick="handleMarkSticker()">
+            <span class="img-wrap" onclick="handleMarkSticker(this)">
               <img src="images/sticker2.png" alt="" />
             </span>
             <span class="sticker-name">貼圖名稱</span>
@@ -1151,10 +1145,42 @@
       </div>
       <div class="sticker-footer flex-row">
         <span class="point flex-row">2740000</span>
-        <button id="buy-button" type="button" onclick="handleHideComponent('.sticker-overlay')">
-          購買
-        </button>
+        <button id="buy-button" type="button" onclick="handlePurchaseSticker()">購買</button>
         <button id="send-button" type="button" onclick="handleAddStickerToChat()">送出</button>
+      </div>
+    </div>
+
+    <!-- 24/5/4 updated: 尚未開播 遮罩 -->
+    <div class="overlay streamer-profile-overlay full-width" id="not-live-overlay">
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#not-live-overlay')">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+        <p class="flex-row"><span class="line"></span>尚未開播 <span class="line"></span></p>
+      </div>
+      <div class="content">
+        <img src="images/microphone.svg" alt="mic" width="20" height="auto" />
+        主播已下播 明天等你喔
+      </div>
+    </div>
+
+    <!-- 24/5/4 updated: 貼圖購買成功 遮罩 -->
+    <div class="overlay streamer-profile-overlay full-width" id="sticker-purchased-overlay">
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#sticker-purchased-overlay')">
+          <img src="images/close-icon.svg" alt="close" />
+        </button>
+        <p class="flex-row"><span class="line"></span>購買成功 <span class="line"></span></p>
+      </div>
+      <div class="content">
+        <img
+          src="images/sticker.png"
+          alt="mic"
+          width="50"
+          height="auto"
+          id="purchased-sticker-img"
+        />
+        已為您加入至我的貼圖
       </div>
     </div>
 
@@ -1318,10 +1344,11 @@
       function handleShowStickers() {
         handleShowComponent(".sticker-overlay");
         handleHideComponent(".followers-chat-overlay");
+        handleShowComponent(".backdrop"); /* 供貼圖遮罩使用 */
       }
 
       /* 加貼圖至對話框 */
-      function handleMarkSticker(e) {
+      function handleMarkSticker(thise) {
         const previousSelectedStickerNodes = document.querySelectorAll(".selected-sticker");
         [...previousSelectedStickerNodes].forEach((node) => {
           node.classList.remove("selected-sticker");
@@ -1394,7 +1421,9 @@
         if (window.innerWidth < 1200) {
           handleShowComponent("#followers-chat-overlay");
           chatElement.classList.add("streamer-authenticated", "active");
-          return handleHideComponent("#followers-chat-list");
+          handleHideComponent("#followers-chat-list");
+          handleShowComponent(".backdrop"); /* 供單一對話遮罩用 */
+          return;
         }
 
         chatElement.classList.add("streamer-authenticated", "active");
@@ -1402,6 +1431,7 @@
         handleShowComponent(".chat-title", "flex");
         handleHideComponent(".list-title");
         document.getElementsByName("body").style.overflow = "hidden";
+        handleShowComponent(".backdrop"); /* 供單一對話遮罩用 */
 
         setTimeout(() => {
           const chatList = document.querySelector("#followers-chat-list.streamer-authenticated");
@@ -1528,6 +1558,39 @@
           })
         );
       };
+
+      /* 轉導直播頁面 或 顯示尚未直播遮罩 */
+      function handleLiveBtnClick() {
+        /* ifLiveAvailable 為 Demo 用 */
+        const ifLiveAvailable = false;
+
+        if (ifLiveAvailable) {
+          window.location.href = "live-on.html";
+        } else {
+          handleShowComponent("#not-live-overlay");
+        }
+      }
+
+      /* 貼圖購買 */
+      let stickerSrcToBePurchased;
+
+      function handleSelectSticker(selector) {
+        stickerSrcToBePurchased = selector.children[0].src;
+      }
+
+      function handlePurchaseSticker() {
+        handleHideComponent(".sticker-overlay");
+        document.getElementById("purchased-sticker-img").src = stickerSrcToBePurchased;
+        handleShowComponent("#sticker-purchased-overlay");
+        stickerSrcToBePurchased = undefined;
+      }
+
+      /* 由貼圖遮罩 切換回 聊聊遮罩 */
+      function handleBackToChat() {
+        handleHideComponent(".sticker-overlay");
+        handleShowComponent("#followers-chat-overlay");
+        handleShowComponent(".backdrop"); /* 供聊聊遮罩用 */
+      }
     </script>
   </body>
 </html>
