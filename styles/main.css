@@ -634,6 +634,7 @@ main.products.account-page .products-title {
   }
 }
 
+main.index #main-slides .slick-list,
 main.products #highlighted-products-slides .slick-list {
   margin-bottom: 0;
 }
@@ -672,9 +673,8 @@ main.product-detail {
 }
 
 main.index div.ranking-slides-wrap {
-  padding: 1rem 0;
+  padding: 0;
   position: relative;
-  margin-bottom: 30px;
 }
 
 main.index div.ranking-slides-title ul.lines {
@@ -847,7 +847,8 @@ main.index section.live .live-list ul li span.count {
     top: 0;
     width: 100%;
     overflow: hidden;
-    padding-bottom: 40px !important;
+    padding-bottom: 0 !important;
+    margin-bottom: -66px !important; /* 補回 padding top 的距離 */
   }
   #main-slides,
   #product-slides,
@@ -922,7 +923,7 @@ main.index div#ranking-slides li.glide__slide:hover div.img-wrap img {
 
 @media screen and (max-width: 480px) {
   main.index div.ranking-slides-wrap {
-    margin-bottom: 20px;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -1135,7 +1136,7 @@ section.live .live-list ul li span.count {
 }
 
 #product-slides {
-  margin-top: 40px;
+  margin-top: 1.5rem;
   margin-bottom: 40px;
 }
 @media screen and (max-width: 768px) {
@@ -1150,8 +1151,20 @@ section.live .live-list ul li span.count {
     display: block;
     margin: 0 auto;
   }
+  section.products .products-title a.more img {
+    margin-right: -0.75rem;
+  }
   #products-slides li.glide__slide p > span {
     font-size: 0.875rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  section.live {
+    padding-bottom: 0 !important;
+  }
+  section.products {
+    padding-bottom: 1rem !important;
   }
 }
 
@@ -3171,7 +3184,7 @@ div.followers-chat-overlay div.chat-item {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 1rem;
   width: 100%;
 }
@@ -3275,7 +3288,21 @@ div.chat-date p {
 
 div.followers-chat-overlay div.chat-item.my-chat .chat-content {
   background: #ffbad7;
-  border-radius: 15px 0 15px 15px;
+  border-radius: 10px 0 10px 10px;
+}
+
+div.followers-chat-overlay div.chat-item.sticker-content {
+  gap: 0;
+}
+
+div.followers-chat-overlay div.chat-item.sticker-content .chat-content {
+  background: transparent !important;
+  border-radius: 0;
+  padding: 0 !important;
+}
+
+div.followers-chat-overlay div.chat-item.sticker-content .chat-content img {
+  width: 100px;
 }
 
 div.followers-chat-overlay div.chat-controls .btns {
@@ -3817,6 +3844,10 @@ div.recommend-items {
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+main.ranking div.recommend-item {
+  margin-top: 1rem;
 }
 
 div.recommend-item,
@@ -4559,7 +4590,7 @@ main.products {
 }
 
 section.products {
-  padding-bottom: 30px;
+  padding-bottom: 1rem;
 }
 
 main.products section.mobile-only {
@@ -4600,18 +4631,17 @@ div.product-item p.name {
   display: -webkit-box;
   -webkit-line-clamp: 2; /* number of lines to show */
   line-clamp: 2;
-  width: 120px;
+  width: 110px;
   -webkit-box-orient: vertical;
   text-align: center;
-  font-size: 0.875rem;
+  font-size: 0.785rem;
+  line-height: 1.1em;
   height: 35px;
 }
 
 main.products #products-slides li div.product-item p.name {
   bottom: 16%;
   height: 34px;
-  line-height: 1.1em;
-  width: 120px;
 }
 
 @media screen and (min-width: 1025px) {
@@ -5204,9 +5234,13 @@ div.followers-chat-list-overlay div.content div.chat-date {
 div.overlay div.title p {
   color: #fff;
   align-items: center;
-  gap: 10px;
+  gap: 0.25rem;
   margin: 0 auto;
   font-size: 1.25rem;
+}
+
+div.overlay div.title p.pink {
+  background: var(--btn-pink-gradient);
 }
 
 div.overlay.streamer-profile-overlay button.close {
@@ -5226,6 +5260,10 @@ div.overlay.streamer-profile-overlay div.title button.prev {
 
 div.overlay.streamer-profile-overlay div.title button.prev:hover {
   background-image: url("../images/arrow-round-pink.svg");
+}
+
+div#sticker-overlay-mobile.overlay div.title {
+  height: 60px;
 }
 
 @media screen and (max-width: 480px) {
@@ -5293,6 +5331,8 @@ div.overlay button.back span {
 
 div.overlay button.close > img {
   width: 30px !important;
+  position: relative;
+  top: 7px;
 }
 
 div.overlay button.clear {
@@ -5347,7 +5387,12 @@ div.overlay#top-up-overlay div.content {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100% - 160px);
+  height: calc(100% - 110px);
+}
+
+div.overlay#top-up-overlay div.footer,
+div.overlay#social-media-shares div.footer {
+  height: 50px;
 }
 
 div.overlay#top-up-overlay div.content .topup-btn,
@@ -5388,7 +5433,6 @@ div.overlay#be-vip-overlay div.content p {
 }
 
 div.overlay#top-up-overlay div.footer {
-  height: 80px;
   display: flex;
   align-items: center;
   background: #350c1b52;
@@ -6125,6 +6169,7 @@ main.product-detail div.product-detail-btns button {
   padding: 0.5rem 1.5rem;
   font-size: 1.1rem;
   width: auto;
+  min-width: 120px;
 }
 
 main.product-detail.sold-out .available-if-instock {
@@ -6560,7 +6605,7 @@ main.my-favourite button.follow-btn:hover {
     display: none;
   }
   main.product-detail {
-    margin-bottom: 40px;
+    margin-bottom: -70px;
     width: 100%;
   }
   main.product-detail ul.tabs {
@@ -6642,8 +6687,10 @@ main.my-favourite button.follow-btn:hover {
   height: 14px;
 }
 
-.button-like:hover {
-  filter: contrast(1.9);
+@media (hover: hover) {
+  .button-like:hover {
+    filter: contrast(1.9);
+  }
 }
 
 div.detail-links.glide {
@@ -7364,7 +7411,6 @@ main.streamer-profile div.products .product {
 main.streamer-profile div.gifts .gift-list {
   background: transparent;
   border-radius: var(--basic-radius);
-  overflow: hidden;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 1rem;
@@ -7504,7 +7550,19 @@ main.streamer-profile div.posts .post .post-info .author {
 
 @media screen and (max-width: 480px) {
   main.streamer-profile div.posts .post .post-info .author {
-    width: 60px;
+    width: 83px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  main.streamer-profile div.posts .post .post-info .author {
+    width: 70px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  main.streamer-profile div.posts .post .post-info .author {
+    width: 50px;
   }
 }
 
@@ -7516,6 +7574,7 @@ main.streamer-profile div.posts .post .post-info .likes button,
 main.streamer-profile div.products .product .product-info .likes button {
   padding: 0;
   border-radius: unset;
+  display: flex;
 }
 
 main.streamer-profile div.posts .post .post-info .likes button.pink img,
@@ -7540,6 +7599,12 @@ main.streamer-profile div.products .product .product-info .likes button:not(.pin
     grid-template-columns: repeat(5, 1fr);
     gap: 0.5rem;
     margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  main.streamer-profile div.gifts .gift-list {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   }
 }
 
@@ -7708,6 +7773,7 @@ main.streamer-profile section.footer-actions button {
   color: #d6236c;
   padding: 0.5rem 1rem;
   width: fit-content;
+  min-width: 90px;
   box-shadow: 0 2px 10px #999;
 }
 
@@ -7715,36 +7781,26 @@ main.streamer-profile section.footer-actions button:not(.focus-btn) img {
   filter: invert(0.6) sepia(81) contrast(358%) hue-rotate(283deg) brightness(0.9);
 }
 
-main.streamer-profile section.footer-actions button:hover,
+main.streamer-profile section.footer-actions button.focus-btn.pink:hover,
 main.streamer-profile section.footer-actions button.focus-btn.pink {
   background: var(--btn-pink-gradient);
   color: #fff;
-  filter: none;
 }
 
-main.streamer-profile section.footer-actions button:not(.focus-btn):hover img {
-  filter: none;
-}
-
-main.streamer-profile section.footer-actions button.focus-btn img.hover,
+main.streamer-profile section.footer-actions button.focus-btn:not(.pink) img.hover,
 main.streamer-profile section.footer-actions button.focus-btn.pink img.default {
   display: none;
 }
 
-main.streamer-profile section.footer-actions button.focus-btn img.default,
+main.streamer-profile section.footer-actions button.focus-btn:not(.pink) img.default,
 main.streamer-profile section.footer-actions button.focus-btn.pink img.hover {
   display: block;
 }
 
-main.streamer-profile section.footer-actions button.focus-btn:hover img.hover,
-main.streamer-profile section.footer-actions button.focus-btn.pink:hover img.hover {
-  display: block;
-}
-
-main.streamer-profile section.footer-actions button.focus-btn:hover img.default,
+/* main.streamer-profile section.footer-actions button.focus-btn:not(.pink):hover img.hover,
 main.streamer-profile section.footer-actions button.focus-btn.pink:hover img.default {
-  display: none;
-}
+  display: block;
+} */
 
 div.overlay.full-width {
   width: 100%;
@@ -7771,6 +7827,11 @@ div.overlay.social-media-shares.full-width {
 div.overlay.social-media-shares.streamer-profile-overlay div.title {
   max-width: 900px;
   margin: 0 auto;
+  height: 60px;
+}
+
+div.overlay.social-media-shares.streamer-profile-overlay div.content {
+  height: calc(100% - 60px);
 }
 
 div.overlay.social-media-shares.streamer-profile-overlay div.content ul li button {
@@ -7778,7 +7839,7 @@ div.overlay.social-media-shares.streamer-profile-overlay div.content ul li butto
 }
 
 div.overlay.social-media-shares.streamer-profile-overlay div.content ul li img {
-  width: 80px;
+  width: 60px;
 }
 
 div.overlay.social-media-shares.streamer-profile-overlay button.close {
@@ -7936,11 +7997,14 @@ div.full-width.overlay.popular-products div.reward-items {
 }
 
 @media screen and (max-width: 480px) {
-  div.full-width.overlay.rewards div.reward-items,
   div.full-width.overlay.personal-gifts div.reward-items,
   div.full-width.overlay.popular-products div.reward-items {
-    gap: 1.5rem 0.5rem;
+    gap: 1rem 0.5rem;
     z-index: 1000 !important;
+  }
+
+  div.full-width.overlay.rewards div.reward-items {
+    gap: 0 0.5rem;
   }
 }
 
@@ -8167,10 +8231,16 @@ div.streamer-profile-overlay#gift-full-overlay .content {
   justify-content: flex-end;
 }
 
+div.streamer-profile-overlay#top-up-overlay,
+div.streamer-profile-overlay#social-media-shares {
+  height: 200px;
+}
+
 div.streamer-profile-overlay#top-up-overlay div.title {
   max-width: 900px;
   margin: 0 auto;
 }
+
 div.streamer-profile-overlay#gift-full-overlay .content img.gift-img {
   width: 100%;
 }
@@ -9577,7 +9647,7 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
 }
 
 main.products #products-slides .img-wrap img {
-  height: 60%;
+  height: 50%;
   position: absolute;
 }
 
@@ -9697,6 +9767,30 @@ main.products #products-slides .img-wrap img {
 
   #products-slides li {
     border-radius: var(--item-radius);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #products-slides li,
+  #popular-products-slides li,
+  #ranking-products-slides li {
+    width: 37%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #products-slides li,
+  #popular-products-slides li,
+  #ranking-products-slides li {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #products-slides li,
+  #popular-products-slides li,
+  #ranking-products-slides li {
+    width: 55%;
   }
 }
 
@@ -9843,8 +9937,7 @@ div.overlay p.title-text.light-pink img {
 }
 
 @media screen and (min-width: 1200px) {
-  .followers-overlay .content,
-  .followers-chat-overlay .content {
+  .followers-overlay .content {
     height: calc(100% - 60px) !important;
   }
 
@@ -9965,6 +10058,7 @@ div.overlay p.title-text.light-pink img {
 
 div.sticker-overlay.full-width div.sticker-body {
   grid-template-columns: repeat(8, 1fr);
+  max-height: 300px;
 }
 
 @media screen and (max-width: 990px) {
@@ -10029,7 +10123,7 @@ div.overlay#viewer-overlay-mobile {
 .alarm span.time {
   background: black;
   padding: 0.25rem;
-  width: 30px;
+  min-width: 30px;
   font-size: 0.875rem;
   color: white;
   text-align: center;
@@ -10038,7 +10132,7 @@ div.overlay#viewer-overlay-mobile {
 @media screen and (max-width: 480px) {
   .alarm,
   .alarm p {
-    gap: 0.25rem;
+    gap: 0.125rem;
   }
 
   .alarm img {
@@ -10048,9 +10142,6 @@ div.overlay#viewer-overlay-mobile {
   .alarm p,
   .alarm span.time {
     font-size: 0.75rem;
-  }
-  .alarm span.time {
-    width: 23px;
   }
 }
 

@@ -181,14 +181,14 @@ function openReceiverRanking() {
 function openSenderRanking() {
   handleHideComponent("#receiver-ranking");
   handleHideComponent("#event-ranking");
-  handleShowComponent("#sender-ranking");
+  handleShowComponent("#sender-ranking", "block", false);
   setActiveStatus("ranking-tabs", "sender-tab");
   switchCalendarRanking("sender-day-btn", "sender");
 }
 function openEventRanking() {
   handleHideComponent("#receiver-ranking");
   handleHideComponent("#sender-ranking");
-  handleShowComponent("#event-ranking");
+  handleShowComponent("#event-ranking", "block", false);
   setActiveStatus("ranking-tabs", "event-tab");
   switchCalendarRanking("event-1-btn", "event");
 }
@@ -513,10 +513,15 @@ function handleFollow(element) {
 }
 
 function handleFollowByFocusBtn(element) {
+  const profileFollowEle = document.getElementById("streamer-profile-follow-icon");
   if (element.classList.contains("pink")) {
+    console.log(3);
     element.classList.remove("pink");
+    profileFollowEle.classList.remove("pink");
   } else {
+    console.log(1);
     element.classList.add("pink");
+    profileFollowEle.classList.add("pink");
   }
 }
 

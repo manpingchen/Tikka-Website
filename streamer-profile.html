@@ -163,7 +163,12 @@
           <div class="info flex-column">
             <h5 class="flex-row">
               <span class="profile-name ellipsis">呆呆萌萌小愛</span>
-              <button type="button" class="follow-icon" onclick="handleFollow(this)">
+              <button
+                type="button"
+                class="follow-icon"
+                id="streamer-profile-follow-icon"
+                onclick="handleFollow(this)"
+              >
                 <img src="images/heart-round-pink.svg" alt="heart icon" />
               </button>
             </h5>
@@ -529,10 +534,10 @@
     >
       <div class="title flex-row">
         <button class="close" onclick="handleHideComponent('#social-media-shares')">
-          <img src="images/close-icon.svg" alt="close" />
+          <img src="images/close-icon.png" alt="close" />
         </button>
         <p class="flex-row title-text light-pink">
-          <img src="images/social.svg" alt="分享" /> 我要分享
+          <img src="images/social.svg" alt="分享" /> 分享
         </p>
       </div>
       <div class="content">
@@ -576,7 +581,7 @@
       <div class="content">
         <section class="title">
           <button class="close" onclick="handleHideComponent('.rewards.overlay')">
-            <img src="images/close-icon.svg" alt="close" />
+            <img src="images/close-icon.png" alt="close" />
           </button>
           <div class="wrapper reward-btns">
             <div class="btns" id="reward-title-buttons">
@@ -655,8 +660,8 @@
           </div>
           <div class="footer">
             <div class="send-gift flex-row">
-              <span class="point flex-row">2740000</span>
-              <button id="buy-button" type="button" onclick="handleBuy(this.id)">贈送</button>
+              <span class="point flex-row">2,740,000</span>
+              <button id="buy-button" type="button" onclick="handleBuy(this.id)">送出</button>
             </div>
           </div>
         </section>
@@ -667,7 +672,7 @@
     <div class="full-width streamer-profile-overlay overlay" id="top-up-overlay">
       <div class="title flex-row">
         <button class="close" onclick="handleHideComponent('#top-up-overlay')">
-          <img src="images/close-icon.svg" alt="close" />
+          <img src="images/close-icon.png" alt="close" />
         </button>
         <p class="flex-row"><span class="line"></span>捧花不足 <span class="line"></span></p>
       </div>
@@ -796,7 +801,7 @@
           style="display: none"
         ></button>
         <button class="close" onclick="handleHideComponent('#followers-overlay')">
-          <img src="images/close-icon.svg" alt="close" />
+          <img src="images/close-icon.png" alt="close" />
         </button>
         <p id="fan-list-title" class="flex-row title-text light-pink">
           <img src="images/man.svg" alt="粉絲" /> 粉絲
@@ -839,7 +844,7 @@
       <!-- 遮罩標題 -->
       <div class="title flex-row list-title">
         <button class="close" onclick="handleHideComponent('#followers-chat-list')">
-          <img src="images/close-icon.svg" alt="close" />
+          <img src="images/close-icon.png" alt="close" />
         </button>
         <p class="flex-row title-text light-pink">
           <img src="images/dialog-icon.svg" alt="聊聊" /> 聊聊
@@ -850,7 +855,7 @@
       <div class="title flex-row chat-title" style="display: none">
         <button class="clear" onclick="handleClearChat()"></button>
         <button class="close" onclick="handleCloseStreamerChat()">
-          <img src="images/close-icon.svg" alt="close" />
+          <img src="images/close-icon.png" alt="close" />
         </button>
         <div class="flex-row title-text streamer-name fans-authenticated">
           <div class="avatar-wrapper">
@@ -975,7 +980,7 @@
       <div class="title flex-row">
         <button class="clear" onclick="handleClearChat()"></button>
         <button class="close" onclick="handleCloseChat()">
-          <img src="images/close-icon.svg" alt="close" />
+          <img src="images/close-icon.png" alt="close" />
         </button>
         <div class="flex-row title-text streamer-name fans-authenticated">
           <div class="avatar-wrapper">
@@ -1054,9 +1059,12 @@
       id="sticker-overlay-mobile"
     >
       <div class="title flex-row">
-        <img src="images/my-sticker.svg" alt="我的貼圖" class="title-img" />
+        <p class="flex-row title-text pink">
+          <img src="images/face.png" alt="我的貼圖" class="title-img" />
+          我的貼圖
+        </p>
         <button class="close" onclick="handleBackToChat()">
-          <img src="images/close-icon.svg" alt="close" />
+          <img src="images/close-icon.png" alt="close" />
         </button>
       </div>
       <div class="detail-links stickers-details" id="stickers-details">
@@ -1120,9 +1128,6 @@
           </button>
         </div>
         <div class="sticker-body" id="my-stickers-list" style="display: none">
-          <button class="sticker-item add-sticker">
-            <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
-          </button>
           <button class="sticker-item flex-column">
             <span class="img-wrap" onclick="handleMarkSticker(this)">
               <img src="images/sticker2.png" alt="" />
@@ -1154,7 +1159,7 @@
     <div class="overlay streamer-profile-overlay full-width" id="not-live-overlay">
       <div class="title flex-row">
         <button class="close" onclick="handleHideComponent('#not-live-overlay')">
-          <img src="images/close-icon.svg" alt="close" />
+          <img src="images/close-icon.png" alt="close" />
         </button>
         <p class="flex-row"><span class="line"></span>尚未開播 <span class="line"></span></p>
       </div>
@@ -1168,7 +1173,7 @@
     <div class="overlay streamer-profile-overlay full-width" id="sticker-purchased-overlay">
       <div class="title flex-row">
         <button class="close" onclick="handleHideComponent('#sticker-purchased-overlay')">
-          <img src="images/close-icon.svg" alt="close" />
+          <img src="images/close-icon.png" alt="close" />
         </button>
         <p class="flex-row"><span class="line"></span>購買成功 <span class="line"></span></p>
       </div>
