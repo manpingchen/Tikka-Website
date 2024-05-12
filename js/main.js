@@ -515,11 +515,9 @@ function handleFollow(element) {
 function handleFollowByFocusBtn(element) {
   const profileFollowEle = document.getElementById("streamer-profile-follow-icon");
   if (element.classList.contains("pink")) {
-    console.log(3);
     element.classList.remove("pink");
     profileFollowEle.classList.remove("pink");
   } else {
-    console.log(1);
     element.classList.add("pink");
     profileFollowEle.classList.add("pink");
   }
