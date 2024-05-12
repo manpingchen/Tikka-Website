@@ -1152,7 +1152,7 @@ section.live .live-list ul li span.count {
     margin: 0 auto;
   }
   section.products .products-title a.more img {
-    margin-right: -0.75rem;
+    margin-right: -0.25rem;
   }
   #products-slides li.glide__slide p > span {
     font-size: 0.875rem;
@@ -4587,6 +4587,7 @@ main.products {
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 section.products {
@@ -9742,6 +9743,7 @@ main.products #products-slides .img-wrap img {
     will-change: transform;
     overflow-y: hidden;
     padding-left: 1rem;
+    padding-right: 1rem !important;
     left: initial;
   }
   .slides-container ul::-webkit-scrollbar-track {
