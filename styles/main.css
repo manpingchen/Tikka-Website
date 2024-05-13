@@ -4640,11 +4640,6 @@ div.product-item p.name {
   height: 35px;
 }
 
-main.products #products-slides li div.product-item p.name {
-  bottom: 16%;
-  height: 34px;
-}
-
 @media screen and (min-width: 1025px) {
   main.products #products-slides li div.product-item p.name {
     bottom: 28px;
@@ -9647,8 +9642,24 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   position: relative;
 }
 
+main.products #products-slides li div.product-item {
+  padding-top: unset;
+  position: unset;
+  height: unset;
+}
+
+main.products #products-slides li div.product-item p {
+  height: 100%;
+  width: 110px;
+  position: relative;
+}
+
+main.products #products-slides .img-wrap {
+  position: relative;
+}
+
 main.products #products-slides .img-wrap img {
-  height: 50%;
+  height: 100%;
   position: absolute;
 }
 
