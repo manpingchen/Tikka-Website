@@ -21,6 +21,10 @@
   --mobile-largest-width: 480px;
   --btn-pink-gradient: linear-gradient(#ffc1db, #ff398c, #f03282) !important;
   --pink-text-shadow: 1px 1px 6px #b40081;
+  --pink-dialog-bg: #34142eb3;
+  --chat-control-bg: #13010fc2;
+  --overlay-radius: 1rem;
+  --chat-content-radius: 1rem;
 }
 
 .material-icons {
@@ -3049,7 +3053,7 @@ main.live-on div.frame-bottom-bar.mobile-only button.pink {
 
 div.chat-field {
   gap: 10px;
-  background: rgba(255, 255, 255, 0.9);
+  background: #fef0ff;
   border-radius: 40px;
   padding-left: 15px;
   width: calc(100% - 110px);
@@ -3166,17 +3170,19 @@ div.followers-chat-overlay div.chat-controls {
   display: flex;
   padding: 10px;
   height: 50px;
-  background: #00000096;
+  background: var(--chat-control-bg);
+  justify-content: space-between;
 }
 
 div.followers-chat-overlay div.chat-controls div.chat-field {
   height: 30px;
+  flex: 1;
 }
 
 div.followers-chat-overlay div.chat-body {
   overflow-y: auto;
   width: 100%;
-  padding: 1rem 1rem 0;
+  padding: 0.5rem 0.5rem 0;
   flex: 1;
 }
 
@@ -3194,17 +3200,18 @@ div.followers-chat-overlay div.chat-item.my-chat {
 }
 
 div.followers-chat-overlay div.chat-item .avatar-wrapper {
-  width: 40px;
-  height: 40px;
-  border-width: 2px;
+  width: 30px;
+  height: 30px;
+  border-width: 1.5px;
   flex-shrink: 0;
 }
 
 div.followers-chat-overlay div.chat-item .chat-content {
   background: white;
-  border-radius: 0 15px 15px 15px;
-  padding: 6px 1rem;
-  max-width: 200px;
+  border-radius: 0 var(--chat-content-radius) var(--chat-content-radius) var(--chat-content-radius);
+  padding: 3px 8px;
+  max-width: 176px;
+  line-height: 1.1rem;
 }
 
 div.followers-chat-overlay button.back {
@@ -3288,7 +3295,7 @@ div.chat-date p {
 
 div.followers-chat-overlay div.chat-item.my-chat .chat-content {
   background: #ffbad7;
-  border-radius: 10px 0 10px 10px;
+  border-radius: var(--chat-content-radius) 0 var(--chat-content-radius) var(--chat-content-radius);
 }
 
 div.followers-chat-overlay div.chat-item.sticker-content {
@@ -3313,7 +3320,7 @@ div.followers-chat-overlay div.chat-controls .btns {
 
 div.followers-chat-overlay div.chat-controls button {
   height: 40px;
-  padding: 10px;
+  padding: 5px;
 }
 
 div.followers-chat-overlay div.chat-controls button img {
@@ -3440,7 +3447,7 @@ div.followers-chat-overlay div.chat-controls button img {
     justify-content: center;
   }
   div.chat-controls {
-    gap: 1rem;
+    gap: 0.5rem;
     width: 100%;
   }
   main.live-on div.frame-bottom-bar .btns {
@@ -3469,7 +3476,7 @@ div.followers-chat-overlay div.chat-controls button img {
     padding: 5px;
   }
   div.chat-controls {
-    gap: 0.5rem;
+    gap: 0.25rem;
   }
 
   div.followers-chat-overlay div.chat-controls {
@@ -5068,12 +5075,12 @@ div.overlay {
   height: 300px;
   z-index: 9;
   background: #ff669ec0;
-  -webkit-border-top-left-radius: 30px;
-  -webkit-border-top-right-radius: 30px;
-  -moz-border-radius-topleft: 30px;
-  -moz-border-radius-topright: 30px;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
+  -webkit-border-top-left-radius: var(--overlay-radius);
+  -webkit-border-top-right-radius: var(--overlay-radius);
+  -moz-border-radius-topleft: var(--overlay-radius);
+  -moz-border-radius-topright: var(--overlay-radius);
+  border-top-left-radius: var(--overlay-radius);
+  border-top-right-radius: var(--overlay-radius);
   backdrop-filter: blur(5px);
 
   transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -5101,7 +5108,7 @@ div.overlay.social-media-shares {
   width: 500px;
   height: 400px;
   left: calc(50% - 250px);
-  border-radius: 30px;
+  border-radius: var(--overlay-radius);
   overflow: hidden;
   backdrop-filter: blur(4px);
   position: fixed;
@@ -5271,12 +5278,12 @@ div#sticker-overlay-mobile.overlay div.title {
     left: 0;
     z-index: 999;
     border-radius: 0;
-    -webkit-border-top-left-radius: 30px;
-    -webkit-border-top-right-radius: 30px;
-    -moz-border-radius-topleft: 30px;
-    -moz-border-radius-topright: 30px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+    -webkit-border-top-left-radius: var(--overlay-radius);
+    -webkit-border-top-right-radius: var(--overlay-radius);
+    -moz-border-radius-topleft: var(--overlay-radius);
+    -moz-border-radius-topright: var(--overlay-radius);
+    border-top-left-radius: var(--overlay-radius);
+    border-top-right-radius: var(--overlay-radius);
   }
 
   div.overlay.social-media-shares div.content ul {
@@ -5348,7 +5355,7 @@ div.overlay button.clear:hover {
 }
 
 div.overlay div.content {
-  background: #00000050;
+  background: var(--pink-dialog-bg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6066,12 +6073,12 @@ div#rewards-overlay div.content {
 
 main.live-on div.overlay.rewards {
   border-radius: 0;
-  -webkit-border-top-left-radius: 30px !important;
-  -webkit-border-top-right-radius: 30px !important;
-  -moz-border-radius-topleft: 30px !important;
-  -moz-border-radius-topright: 30px !important;
-  border-top-left-radius: 30px !important;
-  border-top-right-radius: 30px !important;
+  -webkit-border-top-left-radius: var(--overlay-radius) !important;
+  -webkit-border-top-right-radius: var(--overlay-radius) !important;
+  -moz-border-radius-topleft: var(--overlay-radius) !important;
+  -moz-border-radius-topright: var(--overlay-radius) !important;
+  border-top-left-radius: var(--overlay-radius) !important;
+  border-top-right-radius: var(--overlay-radius) !important;
 }
 
 /* 
@@ -7802,12 +7809,12 @@ div.overlay.full-width {
   width: 100%;
   left: 0;
   bottom: 0;
-  -webkit-border-top-left-radius: 30px !important;
-  -webkit-border-top-right-radius: 30px !important;
-  -moz-border-radius-topleft: 30px !important;
-  -moz-border-radius-topright: 30px !important;
-  border-top-left-radius: 30px !important;
-  border-top-right-radius: 30px !important;
+  -webkit-border-top-left-radius: var(--overlay-radius) !important;
+  -webkit-border-top-right-radius: var(--overlay-radius) !important;
+  -moz-border-radius-topleft: var(--overlay-radius) !important;
+  -moz-border-radius-topright: var(--overlay-radius) !important;
+  border-top-left-radius: var(--overlay-radius) !important;
+  border-top-right-radius: var(--overlay-radius) !important;
   border-radius: initial;
   position: fixed;
 }
@@ -8374,12 +8381,12 @@ div.overlay.small.topup {
   background: #ec5a8f !important;
   box-shadow: 0 5px 10px #444;
   border-radius: 0;
-  -webkit-border-top-right-radius: 30px;
-  -webkit-border-bottom-left-radius: 30px;
-  -moz-border-radius-topright: 30px;
-  -moz-border-radius-bottomleft: 30px;
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
+  -webkit-border-top-right-radius: var(--overlay-radius);
+  -webkit-border-bottom-left-radius: var(--overlay-radius);
+  -moz-border-radius-topright: var(--overlay-radius);
+  -moz-border-radius-bottomleft: var(--overlay-radius);
+  border-top-right-radius: var(--overlay-radius);
+  border-bottom-left-radius: var(--overlay-radius);
   overflow: hidden;
 }
 
@@ -8531,7 +8538,7 @@ div.overlay.event-detail-overlay .container {
 div.overlay.event-detail-overlay .content {
   width: 100%;
   background: #fff;
-  border-radius: 30px;
+  border-radius: var(--overlay-radius);
   position: relative;
   padding: 0;
   height: initial;
@@ -8652,10 +8659,15 @@ p.event-time {
 div.overlay.event-detail-overlay button.close {
   border-radius: 50%;
   background: #f29ec2;
+  width: 30px;
+  height: 30px;
+  padding: unset;
 }
 
 div.overlay.event-detail-overlay button.close img {
-  width: 100%;
+  width: 35px !important;
+  top: -1px;
+  right: 1px;
 }
 
 @media screen and (max-width: 480px) {
@@ -8686,7 +8698,17 @@ div.overlay.event-detail-overlay button.close img {
 
   div.overlay.streamer-profile-overlay div.title,
   div.overlay.sticker-overlay div.title {
-    height: 60px;
+    height: 50px !important;
+  }
+
+  div.overlay.streamer-profile-overlay button.clear,
+  div.overlay.sticker-overlay button.clear {
+    top: 0.5rem;
+  }
+
+  div.overlay.streamer-profile-overlay button.close,
+  div.overlay.streamer-profile-overlay button.close {
+    top: 0.25rem !important;
   }
 
   div.overlay.social-media-shares.streamer-profile-overlay div.content {
@@ -10083,6 +10105,13 @@ div.sticker-overlay.full-width div.sticker-body {
 @media screen and (max-width: 768px) {
   div.sticker-overlay.full-width div.sticker-body {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .followers-overlay .content,
+  .followers-chat-overlay .content {
+    height: calc(100% - 100px) !important;
   }
 }
 
