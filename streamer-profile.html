@@ -818,11 +818,11 @@
               <button
                 type="button"
                 class="clear-search-button"
-                onclick="handleClearSearchValue('search-fans')"
+                onclick="handleClearSearchList('search-fans')"
               >
                 <span class="material-icons">&#xE5CD;</span>
               </button>
-              <button type="button" onclick="handleGetFans()" class="search-submit">
+              <button type="button" onclick="handleSearchFans()" class="search-submit">
                 <span class="material-icons">&#xE8B6;</span>
               </button>
             </div>
@@ -831,7 +831,7 @@
 
         <!-- 粉絲列表 -->
         <ul class="followers-list" id="followers-list">
-          <!-- 由getFansList()產生-->
+          <!-- 由getList()產生-->
         </ul>
       </div>
     </div>
@@ -877,97 +877,25 @@
         <!-- Search Bar -->
         <div id="form" class="search-form">
           <div class="search-container">
-            <input type="text" placeholder="請輸入關鍵字" name="search" id="search-fans" />
+            <input type="text" placeholder="請輸入關鍵字" name="search" id="search-chat-list" />
             <div class="search-controls">
               <button
                 type="button"
                 class="clear-search-button"
-                onclick="handleClearSearchValue('search-fans')"
+                onclick="handleClearSearchList('search-chat-list')"
               >
                 <span class="material-icons">&#xE5CD;</span>
               </button>
-              <button type="button" onclick="handleGetFans()" class="search-submit">
+              <button type="button" onclick="handleSearchChats()" class="search-submit">
                 <span class="material-icons">&#xE8B6;</span>
               </button>
             </div>
           </div>
         </div>
-        <div class="chat-body" id="follower-chat-items">
-          <div class="chat-item" id="chat-1" onclick="handleOpenChat(this.id)">
-            <div class="avatar-wrapper">
-              <img src="images/s2.jpg" alt="" class="avatar" />
-            </div>
-            <div class="chat-detail">
-              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
-              <span class="chat-summary ellipsis"
-                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
-              </span>
-            </div>
-            <div class="chat-date">2/15</div>
-          </div>
-          <div class="chat-item" id="chat-2" onclick="handleOpenChat(this.id)">
-            <div class="avatar-wrapper">
-              <img src="images/s2.jpg" alt="" class="avatar" />
-            </div>
-            <div class="chat-detail">
-              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
-              <span class="chat-summary ellipsis"
-                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
-              </span>
-            </div>
-            <div class="chat-date">2/15</div>
-          </div>
-          <div class="chat-item" id="chat-3" onclick="handleOpenChat(this.id)">
-            <div class="avatar-wrapper">
-              <img src="images/s2.jpg" alt="" class="avatar" />
-            </div>
-            <div class="chat-detail">
-              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
-              <span class="chat-summary ellipsis"
-                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
-              </span>
-            </div>
-            <div class="chat-date">2/14</div>
-          </div>
-          <div class="chat-item" id="chat-4" onclick="handleOpenChat(this.id)">
-            <div class="avatar-wrapper">
-              <img src="images/s2.jpg" alt="" class="avatar" />
-            </div>
-            <div class="chat-detail">
-              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
-              <span class="chat-summary ellipsis"
-                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
-              </span>
-            </div>
-            <div class="chat-date">2/13</div>
-          </div>
-
-          <div class="chat-item" id="chat-5" onclick="handleOpenChat(this.id)">
-            <div class="avatar-wrapper">
-              <img src="images/s2.jpg" alt="" class="avatar" />
-            </div>
-            <div class="chat-detail">
-              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
-              <span class="chat-summary ellipsis"
-                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
-              </span>
-            </div>
-            <div class="chat-date">2/12</div>
-          </div>
-
-          <div class="chat-item" id="chat-6" onclick="handleOpenChat(this.id)">
-            <div class="avatar-wrapper">
-              <img src="images/s2.jpg" alt="" class="avatar" />
-            </div>
-            <div class="chat-detail">
-              <p class="name ellipsis">粉絲名稱粉絲名稱粉絲名稱</p>
-              <span class="chat-summary ellipsis"
-                >對方留言訊息對方留言訊息，對方留言訊息對方留言訊息對方留言訊息。對方留言訊息對方留言訊息對方留言訊息。
-              </span>
-            </div>
-            <div class="chat-date">2/11</div>
-          </div>
-        </div>
+        <!-- 粉絲列表 -->
+        <ul class="followers-list" id="follower-chat-items">
+          <!-- 由getList()產生-->
+        </ul>
       </div>
     </div>
 
@@ -1295,13 +1223,14 @@
         if (!streamerId) {
           console.log("粉絲 ");
           chatElement.classList.add("active");
-          handleShowComponent("#followers-chat-overlay");
+          handleShowComponent("#followers-chat-overlay", "flex");
           handleHideComponent("#followers-overlay");
           /* Backdrop因followers-overlay關閉時一同關閉，*/
           /* 故下方再次開啟，供關閉私訊聊聊遮罩使用 */
         }
         if (streamerId) {
-          handleShowComponent("#followers-chat-list");
+          handleShowComponent("#followers-chat-list", "flex");
+          getList(chats, "chats");
         }
         handleShowComponent(".backdrop");
       }
@@ -1358,11 +1287,11 @@
         event.target.classList.add("selected-sticker");
       }
 
-      getFansList();
+      getList();
 
       /* 粉絲列表姓名排列 */
-      function getFansList(array = fans) {
-        const sortedFans = array.sort((a, b) => {
+      function getList(array = fans, listType = "fans") {
+        const sortedList = array.sort((a, b) => {
           const nameA = a.name;
           const nameB = b.name;
 
@@ -1371,7 +1300,7 @@
           return 0;
         });
 
-        sortedFans.forEach((fan) => {
+        sortedList.forEach((item) => {
           const newElement = document.createElement("li");
           newElement.classList.add("followers-list_item");
 
@@ -1383,33 +1312,78 @@
           avatarWrapElement.classList.add("avatar-wrapper");
           avatarWrapElement.innerHTML = avatarElement;
 
+          const infoElement = document.createElement("div");
+          infoElement.classList.add("chat-detail");
+
           const nameElement = document.createElement("div");
-          nameElement.classList.add("follower-name", "ellipsis");
-          nameElement.innerHTML = fan.name;
+          nameElement.classList.add("name", "ellipsis");
+          nameElement.innerHTML = item.name;
+
+          const lastChatElement = document.createElement("div");
+          lastChatElement.classList.add("chat-summary", "ellipsis");
+          lastChatElement.innerHTML = item.lastConversation;
+
+          const lastChatDateElement = document.createElement("div");
+          lastChatDateElement.classList.add("chat-date");
+          lastChatDateElement.innerHTML = item.lastDate;
+
+          infoElement.append(nameElement);
+          infoElement.append(lastChatElement);
 
           contentElement.append(avatarElement);
-          contentElement.append(nameElement);
+          contentElement.append(infoElement);
+          contentElement.append(lastChatDateElement);
+
+          if (listType === "chats") {
+            contentElement.onclick = function (e) {
+              handleOpenChat(item.id);
+            };
+          }
 
           newElement.append(contentElement);
 
-          return document.getElementById("followers-list").appendChild(newElement);
+          if (listType === "fans") {
+            return document.getElementById("followers-list").appendChild(newElement);
+          } else {
+            return document.getElementById("follower-chat-items").append(newElement);
+          }
         });
       }
 
-      function handleGetFans() {
+      function handleSearchFans() {
         const value = document.getElementById("search-fans").value.toLowerCase();
-        const matchedFans = fans.filter(({ name }) => name.toLowerCase().includes(value));
+
+        const matchedItems = fans.filter(({ name }) => name.toLowerCase().includes(value));
         document.getElementById("followers-list").innerHTML = null;
-        getFansList(matchedFans);
+        getList(matchedItems);
+        document.getElementById("back-to-fan-list").style.display = "block";
+        document.getElementById("fan-list-title").style.display = "none";
+      }
+
+      function handleSearchChats() {
+        const value = document.getElementById("search-chat-list").value.toLowerCase();
+
+        const matchedItems = chats.filter(({ name }) => name.toLowerCase().includes(value));
+        document.getElementById("follower-chat-items").innerHTML = null;
+        getList(matchedItems);
         document.getElementById("back-to-fan-list").style.display = "block";
         document.getElementById("fan-list-title").style.display = "none";
       }
 
       function handleShowList() {
-        getFansList();
+        getList();
         handleClearSearchValue("search-fans");
         document.getElementById("back-to-fan-list").style.display = "none";
         document.getElementById("fan-list-title").style.display = "block";
+      }
+
+      function handleClearSearchList(id) {
+        handleClearSearchValue(id);
+        if (id.includes("chat-list")) {
+          getList(chats, "chats");
+        } else {
+          getList;
+        }
       }
 
       const chatElement = document.getElementById("followers-chat-overlay");
@@ -1420,7 +1394,7 @@
         console.log({ chatId: id });
 
         if (window.innerWidth < 1200) {
-          handleShowComponent("#followers-chat-overlay");
+          handleShowComponent("#followers-chat-overlay", "flex");
           chatElement.classList.add("streamer-authenticated", "active");
           handleHideComponent("#followers-chat-list");
           handleShowComponent(".backdrop"); /* 供單一對話遮罩用 */
@@ -1428,10 +1402,10 @@
         }
 
         chatElement.classList.add("streamer-authenticated", "active");
-        handleShowComponent("#followers-chat-overlay", "block");
+        handleShowComponent("#followers-chat-overlay", "flex");
         handleShowComponent(".chat-title", "flex");
         handleHideComponent(".list-title");
-        document.getElementsByName("body").style.overflow = "hidden";
+        document.querySelector("body").style.overflow = "hidden";
         handleShowComponent(".backdrop"); /* 供單一對話遮罩用 */
 
         setTimeout(() => {
@@ -1445,7 +1419,7 @@
         handleHideComponent("#followers-chat-overlay");
 
         if (window.innerWidth < 1200) {
-          return handleShowComponent("#followers-chat-list");
+          return handleShowComponent("#followers-chat-list", "flex");
         }
 
         chatElement.classList.remove("streamer-authenticated", "active");
@@ -1469,7 +1443,7 @@
 
       function handleOpenFansList() {
         if (streamerId) {
-          handleShowComponent("#followers-overlay");
+          handleShowComponent("#followers-overlay", "flex");
         }
       }
 
@@ -1582,14 +1556,14 @@
       function handlePurchaseSticker() {
         handleHideComponent(".sticker-overlay");
         document.getElementById("purchased-sticker-img").src = stickerSrcToBePurchased;
-        handleShowComponent("#sticker-purchased-overlay");
+        handleShowComponent("#sticker-purchased-overlay", "flex");
         stickerSrcToBePurchased = undefined;
       }
 
       /* 由貼圖遮罩 切換回 聊聊遮罩 */
       function handleBackToChat() {
         handleHideComponent(".sticker-overlay");
-        handleShowComponent("#followers-chat-overlay");
+        handleShowComponent("#followers-chat-overlay", "flex");
         handleShowComponent(".backdrop"); /* 供聊聊遮罩用 */
       }
     </script>

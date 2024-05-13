@@ -23,8 +23,8 @@
   --pink-text-shadow: 1px 1px 6px #b40081;
   --pink-dialog-bg: #34142eb3;
   --chat-control-bg: #13010fc2;
-  --overlay-radius: 1rem;
-  --chat-content-radius: 1rem;
+  --overlay-radius: 19px;
+  --chat-content-radius: 9px;
 }
 
 .material-icons {
@@ -3136,6 +3136,10 @@ div.followers-chat-overlay div.title div.avatar-wrapper {
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
   }
+
+  div.followers-chat-overlay div.title div.avatar-wrapper {
+    display: none;
+  }
 }
 
 div.followers-chat-overlay div.title p.streamer-name {
@@ -3222,20 +3226,18 @@ div.followers-chat-overlay button.back {
   div.followers-chat-overlay.streamer-authenticated.overlay.full-width {
     overflow: visible;
     border: 1px solid white;
+    height: calc(60% - 78px) !important;
   }
 
   div.followers-chat-overlay.streamer-authenticated button.close,
   div.followers-chat-overlay.streamer-authenticated button.clear,
-  div.followers-chat-overlay.streamer-authenticated div.avatar-wrapper,
   div.followers-chat-overlay.streamer-authenticated p.streamer-name {
     display: none;
   }
 
   div.streamer-profile-overlay.full-width div.avatar-wrapper {
-    width: 30px;
-    height: 30px;
-    margin-right: 0.5rem;
-    margin-left: 0.5rem;
+    width: 36px;
+    height: 36px;
     border-width: 2px;
   }
 
@@ -3274,8 +3276,9 @@ div.followers-chat-overlay button.back {
   }
 
   div.followers-chat-overlay div.chat-item .chat-content {
-    max-width: 400px;
+    max-width: 310px;
     font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 
@@ -5144,6 +5147,8 @@ div.overlay div.title {
 
 div.followers-chat-list-overlay {
   min-height: 400px;
+  display: flex;
+  flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
@@ -5162,8 +5167,8 @@ div.followers-chat-list-overlay button.close {
 
 div.followers-chat-list-overlay div.content {
   overflow: auto;
-  height: calc(100% - 60px) !important;
   justify-content: flex-start !important;
+  flex: 1;
 }
 
 div.followers-chat-list-overlay div.content div.chat-body {
@@ -5173,28 +5178,28 @@ div.followers-chat-list-overlay div.content div.chat-body {
   flex: 1;
 }
 
-div.followers-chat-list-overlay div.content div.chat-item:nth-child(odd) {
+ul.followers-list > li:nth-child(odd) {
   background-color: #1715156f;
 }
 
-div.followers-chat-list-overlay div.content div.chat-item:nth-child(even) {
+ul.followers-list > li:nth-child(even) {
   background-color: #17151537;
 }
 
-div.followers-chat-list-overlay div.content div.chat-item {
+ul.followers-list .follower-detail {
   padding: 0.5rem 1rem 0.5rem 0.5rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
 }
 
-div.followers-chat-list-overlay div.content div.avatar-wrapper {
+ul.followers-list .follower-detail div.avatar-wrapper {
   width: 50px;
   height: 50px;
   flex-shrink: 0;
 }
 
-div.followers-chat-list-overlay div.content div.chat-detail {
+ul.followers-list .follower-detail div.chat-detail {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -5203,11 +5208,12 @@ div.followers-chat-list-overlay div.content div.chat-detail {
   flex-grow: 1;
 }
 
-div.followers-chat-list-overlay div.content div.chat-detail p.name {
+ul.followers-list .follower-detail div.chat-detail p.name {
   font-size: 1.2rem;
   width: 200px;
 }
-div.followers-chat-list-overlay div.content div.chat-detail .chat-summary {
+
+ul.followers-list .follower-detail div.chat-detail .chat-summary {
   width: 220px;
   font-size: 0.875rem;
   color: lightgray;
@@ -5224,10 +5230,11 @@ div.followers-chat-list-overlay div.content div.chat-detail .chat-summary {
   }
 }
 
-div.followers-chat-list-overlay div.content div.chat-date {
+div.followers-chat-list-overlay div.content div.chat-date,
+.followers-overlay ul.followers-list .follower-detail .chat-date {
   width: 60px;
   color: white;
-  font-size: 1.2rem;
+  font-size: 0.875rem;
   margin-bottom: 0;
   display: flex;
   align-items: center;
@@ -5336,6 +5343,16 @@ div.overlay button.close > img {
   width: 30px !important;
   position: relative;
   top: 7px;
+}
+
+div.overlay.followers-chat-list-overlay button.close > img {
+  top: 2px;
+}
+
+div.followers-chat-overlay .streamer-name button.back {
+  width: 30px;
+  height: 30px !important;
+  margin-right: 4px;
 }
 
 div.overlay button.clear {
@@ -5592,10 +5609,9 @@ div.gift-sent-overlay div.gift-img-wrapper img {
   background: white;
 }
 
-.followers-chat-list-overlay .search-form {
+.search-form {
   margin-top: 1rem;
-  width: 90%;
-  max-width: 900px;
+  width: 95%;
 }
 
 .followers-chat-list-overlay .search-form > div.search-container {
@@ -7862,8 +7878,9 @@ div.streamer-profile-overlay.full-width.overlay.personal-gifts
   justify-content: center;
 }
 
-div.streamer-profile-overlay.full-width.followers-overlay {
+div.streamer-profile-overlay.full-width {
   overflow: hidden;
+  flex-direction: column;
 }
 
 div.streamer-profile-overlay.full-width.overlay.personal-gifts
@@ -7882,10 +7899,6 @@ div#not-live-overlay {
 @media screen and (min-width: 481px) {
   div#not-live-overlay div.title {
     height: 60px;
-  }
-
-  div#not-live-overlay .content {
-    height: calc(100% - 50px);
   }
 }
 
@@ -7907,7 +7920,7 @@ div#not-live-overlay .content,
 div#sticker-purchased-overlay .content {
   display: flex;
   flex-direction: row;
-  height: calc(100% - 60px);
+  flex: 1;
   gap: 1rem;
   color: white;
   font-size: 1.2rem;
@@ -9966,27 +9979,18 @@ div.overlay p.title-text.light-pink img {
 .followers-overlay .content,
 .followers-chat-overlay .content {
   justify-content: flex-start !important;
-  padding: 1rem;
-  height: calc(100% - 110px) !important;
+  flex: 1;
   position: relative;
 }
 
 @media screen and (min-width: 1200px) {
-  .followers-overlay .content {
-    height: calc(100% - 60px) !important;
-  }
-
-  .streamer-authenticated#followers-chat-overlay .content {
-    height: calc(100% - 40px) !important;
-  }
-
   div.followers-chat-list-overlay div.content {
     transition: height 0.2s;
     overflow-x: hidden;
   }
 
   div.followers-chat-list-overlay.streamer-authenticated div.content {
-    height: calc(100% - 50px) !important;
+    flex: 1;
   }
 }
 
@@ -9996,47 +10000,45 @@ div.overlay p.title-text.light-pink img {
 }
 
 .followers-overlay .search-form {
-  width: 100%;
+  width: 95%;
   margin-bottom: 0rem;
-  max-width: 600px;
 }
 
-.followers-overlay .search-form > div.search-container {
+.search-form > div.search-container {
   margin-bottom: 0;
   max-width: none;
   width: 100%;
 }
 
-.followers-overlay ul.followers-list {
+ul.followers-list {
   width: 100%;
   overflow-y: auto;
-  max-width: 800px;
 }
 
-.followers-overlay ul.followers-list > li {
-  margin-bottom: 0.5rem;
+ul.followers-list > li {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.followers-overlay ul.followers-list .follower-detail {
+ul.followers-list .follower-detail {
   gap: 0.5rem;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
-.followers-overlay ul.followers-list .avatar-wrapper {
+ul.followers-list .avatar-wrapper {
   width: 40px;
   height: 40px;
 }
 
-.followers-overlay ul.followers-list .follower-name {
+ul.followers-list .follower-name {
   color: white;
   width: 150px;
 }
 
-.followers-overlay ul.followers-list button.chat-button {
+ul.followers-list button.chat-button {
   width: 90px;
   height: 30px;
   background: white;
@@ -10050,7 +10052,7 @@ div.overlay p.title-text.light-pink img {
   margin-right: 3px;
 }
 
-.followers-overlay ul.followers-list button.chat-button:hover {
+ul.followers-list button.chat-button:hover {
   background: var(--dark-pink);
   color: white;
 }
@@ -10109,9 +10111,14 @@ div.sticker-overlay.full-width div.sticker-body {
 }
 
 @media screen and (max-width: 480px) {
-  .followers-overlay .content,
   .followers-chat-overlay .content {
     height: calc(100% - 100px) !important;
+  }
+
+  #followers-overlay .content {
+    height: calc(100% - 50px) !important;
+    padding: 0;
+    gap: 1rem;
   }
 }
 
