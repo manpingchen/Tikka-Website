@@ -6108,7 +6108,6 @@ main.product-detail ul.tabs {
   padding: 10px 50px;
   margin: 0 auto 10px;
   gap: 120px;
-  position: sticky;
   top: 130px;
   z-index: 5;
   justify-content: center;
@@ -6404,14 +6403,6 @@ main.product-detail .arrow-right {
   animation: fadeIn 0.5s ease-in-out;
 }
 
-#product-intro,
-#product-features,
-#product-scale,
-#product-notice,
-#purchase-notice {
-  margin-bottom: 40px;
-}
-
 #product-intro .main-visuals img {
   width: 100%;
 }
@@ -6421,7 +6412,7 @@ main.product-detail .arrow-right {
 #product-scale h2,
 #product-notice h2,
 #purchase-notice h2 {
-  margin: 0 auto 20px;
+  margin: 0 auto;
   width: 100%;
   font-weight: normal;
   font-size: 1rem;
@@ -6437,11 +6428,9 @@ main.product-detail .arrow-right {
 #product-notice div.content,
 #purchase-notice div.content {
   width: 100%;
-  padding: 1rem;
 }
 
 #product-intro div.content {
-  margin-bottom: 2rem;
 }
 
 main.product-detail .senders .title img {
