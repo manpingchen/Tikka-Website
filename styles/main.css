@@ -1797,7 +1797,9 @@ main.live-on section.left-column div.profile div.name-avatar {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .avatar-wrapper img.avatar {
@@ -3427,13 +3429,13 @@ div.followers-chat-overlay div.chat-controls button img {
   }
 
   main.live-on div.frame-bottom-bar.mobile-only div.chat-field button {
-    padding: 0.5rem;
+    padding: 0.25rem;
     display: flex;
     align-items: center;
   }
 
   main.live-on div.frame-bottom-bar.mobile-only div.chat-field button img {
-    width: 1rem;
+    width: 1.2rem;
     height: auto;
   }
 
@@ -3456,7 +3458,7 @@ div.followers-chat-overlay div.chat-controls button img {
   main.live-on div.frame-bottom-bar .btns {
     display: flex;
     flex-direction: row;
-    gap: 2px;
+    justify-content: space-evenly;
     width: 80px;
   }
   main.live-on div.frame-bottom-bar button img {
@@ -3475,15 +3477,42 @@ div.followers-chat-overlay div.chat-controls button img {
     padding-top: 0%;
     border-radius: 0;
   }
+
+  main.live-on section.live-frame div.frame-bottom-bar.mobile-only div.chat-field {
+    background: rgb(241 241 241 / 50%);
+    padding: 0 1rem;
+  }
+
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-field {
+    flex: 1;
+    width: unset;
+  }
+
   main.live-on div.frame-bottom-bar.mobile-only div.chat-field button {
     padding: 5px;
   }
+
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-field div.flex-row {
+    margin-right: 0;
+    gap: 0;
+  }
+
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-field input {
+    height: 32px;
+  }
+
   div.chat-controls {
     gap: 0.25rem;
+    padding: 0.5rem;
+    height: 50px;
   }
 
   div.followers-chat-overlay div.chat-controls {
     height: 50px;
+  }
+
+  main.live-on div.frame-bottom-bar.mobile-only div.chat-body {
+    bottom: 60px;
   }
 }
 
@@ -3491,20 +3520,9 @@ div.followers-chat-overlay div.chat-controls button img {
   main.live-on div.frame-bottom-bar.mobile-only div.chat-field > .flex-row {
     gap: 0;
   }
-  main.live-on div.frame-bottom-bar.mobile-only div.chat-field {
-    width: 100%;
-  }
+
   main.live-on div.frame-bottom-bar.mobile-only div.chat-body {
     bottom: 90px;
-  }
-  div.chat-controls {
-    flex-direction: column;
-    width: 100%;
-  }
-  main.live-on div.frame-bottom-bar .btns {
-    justify-content: flex-start;
-    width: 100%;
-    gap: 10px;
   }
 }
 
