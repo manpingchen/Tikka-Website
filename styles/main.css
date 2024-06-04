@@ -2605,14 +2605,20 @@ div.overlay.rewards div.content {
 div.overlay.rewards div.reward-items {
   margin: 0;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  grid-template-columns: repeat(8, auto);
   background: #00000075;
   margin-top: 1rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1024px) {
   div.overlay.rewards div.reward-items {
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(5, auto);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  div.overlay.rewards div.reward-items {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 }
 
@@ -2697,10 +2703,14 @@ main.live-on div.reward-item,
 div.full-width.overlay.rewards div.reward-item,
 div.overlay.rewards div.reward-item {
   position: relative;
-  /* overflow: hidden; */
   height: min-content;
   cursor: pointer;
   border-radius: 10px;
+}
+
+div.full-width.overlay.rewards div.reward-item,
+div.overlay.rewards div.reward-item {
+  max-width: 130px;
 }
 
 main.live-on div.reward-item.active,
@@ -5106,6 +5116,10 @@ div.overlay {
 
   transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   overflow: hidden;
+}
+
+div.overlay.coming-soon {
+  height: 400px;
 }
 
 div.overlay:not(.from-right) {
@@ -8039,13 +8053,20 @@ div.full-width.overlay.popular-products.streamer-profile-overlay div.reward-item
 @media screen and (max-width: 768px) {
   div.full-width.overlay.rewards div.reward-items,
   div.full-width.overlay.personal-gifts div.reward-items,
-  div.full-width.overlay.popular-products div.reward-items {
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-  }
-
+  div.full-width.overlay.popular-products div.reward-items,
   div.full-width.overlay.personal-gifts.streamer-profile-overlay div.reward-items,
   div.full-width.overlay.popular-products.streamer-profile-overlay div.reward-items {
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    grid-template-columns: repeat(5, auto);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  div.full-width.overlay.rewards div.reward-items,
+  div.full-width.overlay.personal-gifts div.reward-items,
+  div.full-width.overlay.popular-products div.reward-items,
+  div.full-width.overlay.personal-gifts.streamer-profile-overlay div.reward-items,
+  div.full-width.overlay.popular-products.streamer-profile-overlay div.reward-items {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 }
 
