@@ -26,8 +26,9 @@
   --overlay-radius: 19px;
   --chat-content-radius: 9px;
   --product-card-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-  --original-price-color: #666;
+  --original-price-color: #A0A0A0;
   --discount-price-color: #e6508c;
+  --bottom-border: 1px solid #f5f5f5;
 }
 
 .material-icons {
@@ -303,12 +304,33 @@ a:hover img {
   line-height: 1.1em;
 }
 
-div.img-wrap {
+.img-wrap {
   overflow: hidden;
 }
 
-div.img-wrap img {
+.img-wrap-s {
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  overflow: hidden;
+  position: relative;
+
+  /* centerize the img*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-wrap img {
   display: block;
+}
+
+.img-wrap-s img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: -100%;
+  position: absolute;
 }
 
 .pink-gradient-bg {
