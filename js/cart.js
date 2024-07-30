@@ -9,8 +9,7 @@ function handleAddToCart(element) {
     if (ifProductCustomizable) {
       console.log("open OPTIONS overlay");
     } else {
-      console.log("open ADDED overlay");
-
+      handleShowComponent("#product-added-to-cart", "flex");
       /* update cart*/
       updateCart(productId, 1);
     }

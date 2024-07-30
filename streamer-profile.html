@@ -9,6 +9,7 @@
     />
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/overlay.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
     <link rel="stylesheet" href="styles/glide-tab.css" />
     <link rel="stylesheet" href="styles/header.css" />
@@ -525,15 +526,9 @@
       </section>
     </main>
 
-    <!-- 24/4/23 updated: X icon 我要分享-->
-    <div
-      class="full-width streamer-profile-overlay social-media-shares overlay"
-      id="social-media-shares"
-    >
+    <div class="full-width info-only overlay" id="social-media-shares">
       <div class="title flex-row">
-        <button class="close" onclick="handleHideComponent('#social-media-shares')">
-          <img src="images/close-icon.png" alt="close" />
-        </button>
+        <button class="close" onclick="handleHideComponent('#social-media-shares')"></button>
         <p class="flex-row title-text light-pink">
           <img src="images/social.svg" alt="分享" /> 分享
         </p>
@@ -578,9 +573,7 @@
     <div class="full-width streamer-profile-overlay rewards overlay" id="rewards-overlay">
       <div class="content">
         <section class="title">
-          <button class="close" onclick="handleHideComponent('.rewards.overlay')">
-            <img src="images/close-icon.png" alt="close" />
-          </button>
+          <button class="close" onclick="handleHideComponent('.rewards.overlay')"></button>
           <div class="wrapper reward-btns">
             <div class="btns" id="reward-title-buttons">
               <button
@@ -669,9 +662,7 @@
     <!-- 捧花不足 -->
     <div class="full-width streamer-profile-overlay overlay" id="top-up-overlay">
       <div class="title flex-row">
-        <button class="close" onclick="handleHideComponent('#top-up-overlay')">
-          <img src="images/close-icon.png" alt="close" />
-        </button>
+        <button class="close" onclick="handleHideComponent('#top-up-overlay')"></button>
         <p class="flex-row"><span class="line"></span>捧花不足 <span class="line"></span></p>
       </div>
       <div class="content">
@@ -798,9 +789,7 @@
           onclick="handleShowList()"
           style="display: none"
         ></button>
-        <button class="close" onclick="handleHideComponent('#followers-overlay')">
-          <img src="images/close-icon.png" alt="close" />
-        </button>
+        <button class="close" onclick="handleHideComponent('#followers-overlay')"></button>
         <p id="fan-list-title" class="flex-row title-text light-pink">
           <img src="images/man.svg" alt="粉絲" /> 粉絲
         </p>
@@ -841,9 +830,7 @@
     >
       <!-- 遮罩標題 -->
       <div class="title flex-row list-title">
-        <button class="close" onclick="handleHideComponent('#followers-chat-list')">
-          <img src="images/close-icon.png" alt="close" />
-        </button>
+        <button class="close" onclick="handleHideComponent('#followers-chat-list')"></button>
         <p class="flex-row title-text light-pink">
           <img src="images/dialog-icon.svg" alt="聊聊" /> 聊聊
         </p>
@@ -852,9 +839,7 @@
       <!-- 遮罩 會員名稱標題 -->
       <div class="title flex-row chat-title" style="display: none">
         <button class="clear" onclick="handleClearChat()"></button>
-        <button class="close" onclick="handleCloseStreamerChat()">
-          <img src="images/close-icon.png" alt="close" />
-        </button>
+        <button class="close" onclick="handleCloseStreamerChat()"></button>
         <div class="flex-row title-text streamer-name fans-authenticated">
           <div class="avatar-wrapper">
             <img src="images/s2.jpg" alt="" class="avatar" />
@@ -905,9 +890,7 @@
       <!-- 遮罩標題 -->
       <div class="title flex-row">
         <button class="clear" onclick="handleClearChat()"></button>
-        <button class="close" onclick="handleCloseChat()">
-          <img src="images/close-icon.png" alt="close" />
-        </button>
+        <button class="close" onclick="handleCloseChat()"></button>
         <div class="flex-row title-text streamer-name fans-authenticated">
           <div class="avatar-wrapper">
             <img src="images/s2.jpg" alt="" class="avatar" />
@@ -985,9 +968,7 @@
           <img src="images/face.png" alt="我的貼圖" class="title-img" />
           我的貼圖
         </p>
-        <button class="close" onclick="handleBackToChat()">
-          <img src="images/close-icon.png" alt="close" />
-        </button>
+        <button class="close" onclick="handleBackToChat()"></button>
       </div>
       <div class="detail-links stickers-details" id="stickers-details">
         <ul class="stickers-detail-tabs">
@@ -1080,9 +1061,7 @@
     <!-- 24/5/4 updated: 尚未開播 遮罩 -->
     <div class="overlay streamer-profile-overlay full-width" id="not-live-overlay">
       <div class="title flex-row">
-        <button class="close" onclick="handleHideComponent('#not-live-overlay')">
-          <img src="images/close-icon.png" alt="close" />
-        </button>
+        <button class="close" onclick="handleHideComponent('#not-live-overlay')"></button>
         <p class="flex-row"><span class="line"></span>尚未開播 <span class="line"></span></p>
       </div>
       <div class="content">
@@ -1094,9 +1073,7 @@
     <!-- 24/5/4 updated: 貼圖購買成功 遮罩 -->
     <div class="overlay streamer-profile-overlay full-width" id="sticker-purchased-overlay">
       <div class="title flex-row">
-        <button class="close" onclick="handleHideComponent('#sticker-purchased-overlay')">
-          <img src="images/close-icon.png" alt="close" />
-        </button>
+        <button class="close" onclick="handleHideComponent('#sticker-purchased-overlay')"></button>
         <p class="flex-row"><span class="line"></span>購買成功 <span class="line"></span></p>
       </div>
       <div class="content">

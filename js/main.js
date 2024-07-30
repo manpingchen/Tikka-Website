@@ -226,13 +226,15 @@ function handleHideComponent(selector) {
   const isNormalOverlay = classList.contains("overlay") && !classList.contains("small");
   const isSmallOverlay = classList.contains("small") && classList.contains("overlay");
   const backdrop = document.getElementsByClassName("backdrop")[0];
+  
+  node.classList.remove("show");
 
   if (isNormalOverlay) {
     backdrop.style.display = "none";
     if (classList.contains("from-right")) {
       return (node.style.transform = "translate(100%, 0)");
     }
-    node.style.transform = "translate(0, 100%)";
+    // node.style.transform = "translate(0, 100%)";
     node.style.display = "none";
   }
 
@@ -259,11 +261,7 @@ function handleShowComponent(selector, displayValue = "block", shouldBodyOverflo
 
   const isNormalOverlay = classList.contains("overlay") && !classList.contains("small");
   const isSmallOverlay = classList.contains("small") && classList.contains("overlay");
-  // const isFromRight = classList.contains("from-right");
-
-  // if (isFromRight) {
-  //   return (node.style.transform = "translate(100%, 0)");
-  // }
+  node.classList.add("show");
 
   if (isNormalOverlay) {
     node.style.transform = "translate(0, 0)";

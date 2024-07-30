@@ -1,0 +1,145 @@
+div.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 10000;
+  background: #ff669ec0;
+  -webkit-border-top-left-radius: var(--overlay-radius);
+  -webkit-border-top-right-radius: var(--overlay-radius);
+  -moz-border-radius-topleft: var(--overlay-radius);
+  -moz-border-radius-topright: var(--overlay-radius);
+  border-top-left-radius: var(--overlay-radius);
+  border-top-right-radius: var(--overlay-radius);
+  backdrop-filter: blur(5px);
+
+  /* 由上而下展開 */
+  transform: translate(0, 100%);
+
+  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  overflow: hidden;
+}
+
+div.overlay.from-right {
+  /* 由右而左展開 */
+  transform: translate(100%, 0px);
+}
+
+/* Backdrop */
+
+div.backdrop {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 8;
+  bottom: 0;
+  left: 0;
+}
+
+div.backdrop.gray {
+  background: #000000cc;
+  display: none;
+  z-index: 998;
+}
+
+/* Overlay 顯示 */
+
+div.overlay.show {
+  transform: translate(0, 0);
+}
+
+/* Overlay 標題 */
+
+div.overlay div.title p {
+  font-size: 1rem;
+  color: #fff;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+div.overlay div.title p img {
+  width: 20px;
+}
+
+div.overlay div.title p span.line {
+  width: 30px;
+  height: 3px;
+  border-radius: 1px;
+  background: #fff;
+}
+
+/* 關閉按鈕 */
+
+div.overlay button.close {
+  margin: 0;
+  position: absolute;
+  right: 1rem;
+  top: 0.25rem;
+  height: 3rem;
+  width: 30px;
+  background: url(../images/close-icon.png) no-repeat center center;
+  background-size: 30px 30px;
+}
+
+/* 提醒型遮罩 */
+
+div.overlay.info-only {
+  height: unset;
+  display: flex;
+  flex-direction: column;
+}
+
+div.overlay.info-only.show {
+  transform: translate(0, 0);
+}
+
+div.overlay.info-only button.close {
+  top: 0;
+  right: 0.5rem;
+}
+div.overlay.info-only .title {
+  height: 3rem;
+}
+
+div.overlay.info-only .content {
+  color: white;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+div.overlay.info-only .content img {
+  width: 40px;
+}
+
+/* 分享遮罩 */
+
+div.overlay#social-media-shares div.content ul {
+  padding: 1.5rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+div.overlay#social-media-shares div.content ul li button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+
+  width: 50px;
+  padding: 0;
+  font-size: 0.65rem !important;
+  color: white;
+}
+
+div.overlay#social-media-shares div.content ul li button img {
+  width: 100%;
+  height: 100%;
+}

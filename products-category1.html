@@ -9,6 +9,7 @@
     />
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/overlay.css" />
     <link rel="stylesheet" href="styles/product.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
@@ -398,6 +399,18 @@
       </section>
     </main>
 
+    <div class="overlay full-width info-only" id="product-added-to-cart">
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#product-added-to-cart')"></button>
+        <p class="flex-row"><span class="line"></span>加入購物車<span class="line"></span></p>
+      </div>
+      <div class="content">
+        <img src="images/cart.svg" alt="mic" width="20" height="auto" />
+        商品已為您加入購物車
+      </div>
+    </div>
+
+    <div class="backdrop" style="display: none"></div>
     <footer>
       <div class="footer-content flex-row">
         <div class="flex-row social-icons">
@@ -431,6 +444,7 @@
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
+    <script src="js/includeHtml.js"></script>
     <script src="js/header.js"></script>
     <script src="js/fakeData.js"></script>
     <script src="js/main.js"></script>

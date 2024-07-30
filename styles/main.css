@@ -5112,44 +5112,8 @@ main.about div.highlight div.icons img {
   width: 70px;
 }
 
-div.overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 300px;
-  z-index: 9;
-  background: #ff669ec0;
-  -webkit-border-top-left-radius: var(--overlay-radius);
-  -webkit-border-top-right-radius: var(--overlay-radius);
-  -moz-border-radius-topleft: var(--overlay-radius);
-  -moz-border-radius-topright: var(--overlay-radius);
-  border-top-left-radius: var(--overlay-radius);
-  border-top-right-radius: var(--overlay-radius);
-  backdrop-filter: blur(5px);
-
-  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-  overflow: hidden;
-}
-
 div.overlay.coming-soon {
   height: 400px;
-}
-
-div.overlay:not(.from-right) {
-  transform: translate(0, 100%);
-}
-
-div.overlay.from-right {
-  transform: translate(100%, 0px);
-}
-
-div.backdrop {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  z-index: 8;
-  bottom: 0;
-  left: 0;
 }
 
 div.overlay.social-media-shares {
@@ -5286,14 +5250,6 @@ div.followers-chat-list-overlay div.content div.chat-date,
   justify-content: center;
 }
 
-div.overlay div.title p {
-  color: #fff;
-  align-items: center;
-  gap: 0.25rem;
-  margin: 0 auto;
-  font-size: 1.25rem;
-}
-
 div.overlay div.title p.pink {
   background: var(--btn-pink-gradient);
 }
@@ -5321,52 +5277,6 @@ div#sticker-overlay-mobile.overlay div.title {
   height: 60px;
 }
 
-@media screen and (max-width: 480px) {
-  div.overlay.social-media-shares {
-    position: fixed;
-    width: 100%;
-    height: 200px;
-    bottom: 0;
-    left: 0;
-    z-index: 999;
-    border-radius: 0;
-    -webkit-border-top-left-radius: var(--overlay-radius);
-    -webkit-border-top-right-radius: var(--overlay-radius);
-    -moz-border-radius-topleft: var(--overlay-radius);
-    -moz-border-radius-topright: var(--overlay-radius);
-    border-top-left-radius: var(--overlay-radius);
-    border-top-right-radius: var(--overlay-radius);
-  }
-
-  div.overlay.social-media-shares div.content ul {
-    gap: 16px;
-  }
-
-  div.overlay.social-media-shares div.content ul li button {
-    font-size: 0.75rem !important;
-    width: 50px;
-  }
-
-  div.overlay.social-media-shares div.content ul li img {
-    width: 40px !important;
-  }
-}
-
-div.overlay div.title p span.line {
-  width: 30px;
-  height: 3px;
-  border-radius: 1px;
-  background: #fff;
-}
-
-div.overlay button.close {
-  position: absolute;
-  right: 1rem;
-  padding: 5px;
-  margin: 0;
-  top: 0.25rem;
-}
-
 div.overlay button.back {
   left: 0.5rem;
   width: 36px;
@@ -5382,16 +5292,6 @@ div.overlay button.back {
 div.overlay button.back span {
   font-size: 30px;
   color: #c40761;
-}
-
-div.overlay button.close > img {
-  width: 30px !important;
-  position: relative;
-  top: 7px;
-}
-
-div.overlay.followers-chat-list-overlay button.close > img {
-  top: 2px;
 }
 
 div.followers-chat-overlay .streamer-name button.back {
@@ -8554,12 +8454,6 @@ div.overlay.event-detail-overlay {
   border-radius: 0;
   background: transparent;
   backdrop-filter: none;
-}
-
-div.backdrop.gray {
-  background: #000000cc;
-  display: none;
-  z-index: 998;
 }
 
 div.overlay.event-detail-overlay .container {

@@ -9,6 +9,7 @@
     />
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/overlay.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -537,9 +538,7 @@
           <!-- 敬請期待 -->
           <div class="coming-soon overlay" id="coming-soon">
             <div class="title flex-row">
-              <button class="close" onclick="handleHideComponent('#coming-soon')">
-                <img src="images/close-icon.png" alt="close" />
-              </button>
+              <button class="close" onclick="handleHideComponent('#coming-soon')"></button>
               <p class="flex-row">
                 <span class="line"></span>此功能正在建構中 <span class="line"></span>
               </p>
@@ -553,9 +552,7 @@
           <!-- 捧花不足 -->
           <div class="overlay" id="top-up-overlay">
             <div class="title flex-row">
-              <button class="close" onclick="handleHideComponent('#top-up-overlay')">
-                <img src="images/close-icon.png" alt="close" />
-              </button>
+              <button class="close" onclick="handleHideComponent('#top-up-overlay')"></button>
               <p class="flex-row"><span class="line"></span>捧花不足 <span class="line"></span></p>
             </div>
             <div class="content">
@@ -569,9 +566,7 @@
           <!-- 成為VIP會員視窗 -->
           <div class="overlay" id="be-vip-overlay">
             <div class="title flex-row">
-              <button class="close" onclick="handleHideComponent('#be-vip-overlay')">
-                <img src="images/close-icon.png" alt="close" />
-              </button>
+              <button class="close" onclick="handleHideComponent('#be-vip-overlay')"></button>
             </div>
             <div class="content">
               <p>成為VIP會員即可送出禮物</p>
@@ -582,9 +577,10 @@
           <!-- 手機版禮物牆 -->
           <div class="overlay rewards" id="rewards-overlay-mobile">
             <div class="content">
-              <button class="close" onclick="handleHideComponent('#rewards-overlay-mobile')">
-                <img src="images/close-icon.png" alt="close" />
-              </button>
+              <button
+                class="close"
+                onclick="handleHideComponent('#rewards-overlay-mobile')"
+              ></button>
               <div class="wrapper reward-btns-mobile">
                 <div class="btns" id="reward-title-buttons-mobile">
                   <button
@@ -713,9 +709,7 @@
           <!-- 手機版當日營收 -->
           <div class="overlay revenue" id="revenue-overlay-mobile">
             <div class="title flex-row">
-              <button class="close" onclick="handleCloseRevenueOverlay()">
-                <img src="images/close-icon.png" alt="close" />
-              </button>
+              <button class="close" onclick="handleCloseRevenueOverlay()"></button>
               <p class="flex-row"><img src="images/gift.svg" alt="禮物icon" />送禮物排行榜</p>
             </div>
             <div class="content">
@@ -800,9 +794,10 @@
           <!-- 手機版誰來觀看 -->
           <div class="overlay viewer from-right" id="viewer-overlay-mobile">
             <div class="title flex-column">
-              <button class="close" onclick="handleHideComponent('#viewer-overlay-mobile')">
-                <img src="images/close-icon.png" alt="close" />
-              </button>
+              <button
+                class="close"
+                onclick="handleHideComponent('#viewer-overlay-mobile')"
+              ></button>
               <p class="flex-row"><img src="images/eye.svg" alt="禮物icon" />觀眾席</p>
               <div class="detail-links" id="viewer-tabs">
                 <a href="#" id="general-viewer" onclick="switchViewerList(this.id, 'viewer-tabs')">
@@ -845,14 +840,9 @@
           </div>
 
           <!-- 我要分享遮罩 -->
-          <div
-            class="full-width streamer-profile-overlay social-media-shares overlay"
-            id="social-media-shares"
-          >
+          <div class="full-width info-only overlay" id="social-media-shares">
             <div class="title flex-row">
-              <button class="close" onclick="handleHideComponent('#social-media-shares')">
-                <img src="images/close-icon.png" alt="close" />
-              </button>
+              <button class="close" onclick="handleHideComponent('#social-media-shares')"></button>
               <p class="flex-row title-text light-pink">
                 <img src="images/social.svg" alt="分享" />分享
               </p>
@@ -901,9 +891,7 @@
           <div class="overlay sticker-overlay" id="sticker-overlay-mobile">
             <div class="title flex-row">
               <img src="images/my-sticker.svg" alt="我的貼圖" class="title-img" />
-              <button class="close" onclick="handleHideComponent('.sticker-overlay')">
-                <img src="images/close-icon.png" alt="close" />
-              </button>
+              <button class="close" onclick="handleHideComponent('.sticker-overlay')"></button>
             </div>
             <div class="detail-links stickers-details" id="stickers-details">
               <ul class="stickers-detail-tabs">

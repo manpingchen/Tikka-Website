@@ -9,6 +9,7 @@
     />
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/overlay.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
     <link rel="stylesheet" type="text/css" href="styles/slick.css" />
@@ -351,11 +352,9 @@
       </section>
     </main>
 
-    <div class="social-media-shares overlay" id="social-media-shares" style="display: none">
+    <div class="full-width info-only overlay" id="social-media-shares">
       <div class="title flex-row">
-        <button class="close" onclick="handleHideComponent('#social-media-shares')">
-          <img src="images/close-icon.png" alt="close" />
-        </button>
+        <button class="close" onclick="handleHideComponent('#social-media-shares')"></button>
         <p class="flex-row"><img src="images/social.svg" alt="分享" /> 分享</p>
       </div>
       <div class="content">
