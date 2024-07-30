@@ -440,3 +440,27 @@ const chats = [
     lastDate: "04/12",
   },
 ];
+
+const productOptions = [
+  {
+    name: "顏色",
+    id: "o-1",
+    options: [
+      { name: "黑色", id: "c-1", imgUrl: "images/p2.png", selected: false, unavailable: false },
+      { name: "藍色", id: "c-2", imgUrl: "images/p2.png", selected: true, unavailable: false },
+      { name: "咖啡色", id: "c-3", imgUrl: "images/p2.png", selected: false, unavailable: false },
+      { name: "白色", id: "c-4", imgUrl: "images/p2.png", selected: false, unavailable: true },
+      { name: "莫蘭迪色", id: "c-5", imgUrl: "images/p2.png", selected: false, unavailable: false },
+    ],
+  },
+  {
+    name: "款式",
+    id: "o-2",
+    options: [
+      { name: "圓形", id: "s-1", selected: false, unavailable: true },
+      { name: "正方形", id: "s-2", selected: false, unavailable: false },
+      { name: "五芒星型", id: "s-3", selected: true, unavailable: false },
+      { name: "鑽石愛心型", id: "s-4", selected: false, unavailable: false },
+    ],
+  },
+];

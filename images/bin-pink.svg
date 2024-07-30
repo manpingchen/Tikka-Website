@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 27 27">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e6508c;
+        filter: url(#drop-shadow-1);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="1"/>
+      <feFlood flood-color="#000" flood-opacity=".25"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Layer_1" data-name="Layer 1"/>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="_層1" data-name="圖層1">
+      <g>
+        <rect class="cls-1" x="3.92" y="3.91" width="20" height="20" rx="5" ry="5" transform="translate(27.85 27.82) rotate(-180)"/>
+        <g>
+          <g>
+            <path class="cls-2" d="M10.31,11.92c-.48,0-.85,.42-.79,.89l.95,8.19c.01,.07,.07,.11,.14,.11h6.48c.07,0,.13-.05,.14-.11l.95-8.19c.06-.47-.32-.89-.79-.89h-7.08Zm4.79,1.81c0-.23,.19-.42,.42-.42s.42,.19,.42,.42v5.57c0,.23-.19,.42-.42,.42s-.42-.19-.42-.42v-5.57Zm-1.67,0c0-.23,.19-.42,.42-.42s.42,.19,.42,.42v5.57c0,.23-.19,.42-.42,.42s-.42-.19-.42-.42v-5.57Zm-1.67,0c0-.23,.19-.42,.42-.42s.42,.19,.42,.42v5.57c0,.23-.19,.42-.42,.42s-.42-.19-.42-.42v-5.57Z"/>
+            <path class="cls-2" d="M9.71,8.45l7.7,2.32,1.06,.32s.07,0,.09,0c.02-.01,.05-.03,.06-.07l.07-.22,.12-.4s0-.07,0-.09c-.01-.02-.03-.05-.07-.06l-3.4-1.02-1.96-.59h0l-3.39-1.02s-.03,0-.04,0c-.02,0-.04,0-.06,.02-.02,.01-.05,.03-.06,.07l-.19,.62c-.02,.07,.02,.13,.08,.15Z"/>
+          </g>
+          <path class="cls-2" d="M13.2,7.69l.8,.24,.09-.29c.02-.07,.1-.12,.17-.09l.9,.27s.07,.05,.08,.07c.01,.02,.03,.06,.01,.11l-.09,.29,.8,.24,.09-.29c.07-.25,.05-.51-.08-.74-.12-.23-.33-.4-.58-.47l-.9-.27c-.51-.15-1.06,.14-1.21,.65l-.09,.29Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -432,54 +432,49 @@
       </div>
 
       <div class="options">
-        <div class="option-category">
+        <!-- 下方為靜態HTML做參考，Demo為 cart.js printOverlayOptions()產生之畫面  -->
+        <!-- <div class="option-category" id="o-1">
           <h5>顏色</h5>
           <ul>
-            <li class="selected">
+            <li class="selected" id="c-1" onclick="toggleSelectOption(this)">
               <span class="option-img" style="background-image: url('images/product1.png')"></span>
               <p class="option-name">黑色</p>
             </li>
-            <li class="selected">
+            <li class="selected" id="c-2" onclick="toggleSelectOption(this)">
               <span class="option-img" style="background-image: url('images/product1.png')"></span>
               <p class="option-name">灰色</p>
             </li>
-            <li class="unavailable">
+            <li class="unavailable" id="c-3" onclick="toggleSelectOption(this)">
               <span class="option-img" style="background-image: url('images/product1.png')"></span>
               <p class="option-name">白色</p>
             </li>
-            <li>
+            <li id="c-4" onclick="toggleSelectOption(this)">
               <span class="option-img" style="background-image: url('images/product1.png')"></span>
               <p class="option-name">咖啡色</p>
             </li>
-            <li>
-              <span class="option-img" style="background-image: url('images/product1.png')"></span>
-              <p class="option-name">莫蘭迪粉色</p>
-            </li>
           </ul>
         </div>
-        <div class="option-category">
+        <div class="option-category" id="o-2">
           <h5>款式</h5>
           <ul>
-            <li class="selected">
+            <li class="selected" id="s-1" onclick="toggleSelectOption(this)">
               <p class="option-name">圓型</p>
             </li>
-            <li class="selected">
+            <li class="selected" id="s-2" onclick="toggleSelectOption(this)">
               <p class="option-name">方形</p>
             </li>
-            <li>
+
+            <li id="s-4" class="unavailable" onclick="toggleSelectOption(this)">
               <p class="option-name">長方形</p>
             </li>
-            <li class="unavailable">
-              <p class="option-name">長方形</p>
-            </li>
-            <li>
+            <li id="s-5" onclick="toggleSelectOption(this)">
               <p class="option-name">五芒星型</p>
             </li>
-            <li>
+            <li id="s-6" onclick="toggleSelectOption(this)">
               <p class="option-name">鑽石愛心型</p>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
 
       <div class="actions">
@@ -499,7 +494,9 @@
             <span class="unit">箱</span>
           </div>
         </form>
-        <button class="add-btn button-like">加入購物車</button>
+        <button type="button" class="add-btn button-like" onclick="handleAddToCartWithOptions()">
+          加入購物車
+        </button>
       </div>
     </div>
 
