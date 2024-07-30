@@ -25,6 +25,9 @@
   --chat-control-bg: #13010fc2;
   --overlay-radius: 19px;
   --chat-content-radius: 9px;
+  --product-card-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  --original-price-color: #666;
+  --discount-price-color: #e6508c;
 }
 
 .material-icons {
@@ -286,6 +289,18 @@ a:hover img {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.line-limit {
+  overflow: hidden;
+  text-wrap: wrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  text-align: center;
+  line-height: 1.1em;
 }
 
 div.img-wrap {
@@ -4722,7 +4737,7 @@ button.add-favorite {
 }
 
 button.add-favorite.pink {
-  background-image: url("../images/heart-pink-icon.svg");
+  background-image: url("../images/heart-pink-icon.svg") !important;
 }
 
 div.product-item a.img-wrap:hover img {
@@ -4791,7 +4806,6 @@ main.follow .search-container {
 }
 
 section.category {
-  margin-bottom: 1rem;
   position: relative;
   background: #fef0fb;
 }

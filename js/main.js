@@ -543,10 +543,10 @@ function handleLikeByPost(postId) {
 }
 
 function handleAddFavorite(element) {
-  if (element.classList.contains("pink")) {
-    element.classList.remove("pink");
+  if (element.classList.contains("added")) {
+    element.classList.remove("added");
   } else {
-    element.classList.add("pink");
+    element.classList.add("added");
   }
 }
 

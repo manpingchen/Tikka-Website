@@ -1,0 +1,113 @@
+ul.product-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+
+  padding: 1rem;
+}
+
+li.product {
+  box-shadow: var(--product-card-shadow);
+}
+
+li.product a.img-wrap {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  overflow: hidden;
+
+  /* centerize the img*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+li.product a.img-wrap img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+li.product div.content {
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+li.product h5.name {
+  margin: 0 auto;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 164px; /* 限制最多在20字*/
+}
+
+@media screen and (max-width: 320px) {
+  li.product h5.name {
+    margin: 0 auto;
+    font-size: 0.785rem;
+    max-width: 120px; /* 限制最多在20字*/
+  }
+}
+
+li.product div.price-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+li.product div.price p {
+  font-size: 0.875rem;
+}
+
+@media screen and (max-width: 320px) {
+  li.product div.price p {
+    font-size: 0.785rem;
+  }
+}
+
+li.product div.price p.original {
+  text-decoration: line-through;
+  color: var(--original-price-color);
+}
+
+li.product div.price p.discount {
+  color: var(--discount-price-color);
+}
+
+li.product div.price-actions button {
+  min-width: unset;
+  min-height: unset;
+  width: 30px !important;
+  height: 30px !important;
+  position: unset;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Favorite Button */
+li.product div.price-actions button.add-favorite {
+  background-image: url(../images/heart-pink-outlined.svg);
+  background-size: 20px 20px;
+}
+
+li.product div.price-actions button.add-favorite.added {
+  background-image: url(../images/heart-pink.svg);
+}
+
+/* Cart Button */
+li.product div.price-actions button.add-to-cart {
+  background-image: url(../images/round-cart-outlined.svg);
+  background-size: 24px 24px;
+}
+
+li.product div.price-actions button.add-to-cart:disabled {
+  background-image: url(../images/round-cart-gray.svg);
+}
+
+li.product div.price-actions button.add-to-cart.added {
+  background-image: url(../images/round-cart-pink.svg);
+}
