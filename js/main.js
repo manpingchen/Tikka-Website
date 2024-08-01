@@ -219,18 +219,17 @@ if (backdrop) {
 }
 
 /* 關閉元件 */
-function handleHideComponent(selector) {
+function handleHideComponent(selector, shouldHideBackdrop = true) {
   const node = document.querySelector(selector);
   const classList = node ? node.classList : null;
 
   const isNormalOverlay = classList.contains("overlay") && !classList.contains("small");
   const isSmallOverlay = classList.contains("small") && classList.contains("overlay");
   const backdrop = document.getElementsByClassName("backdrop")[0];
-  
+
   node.classList.remove("show");
 
   if (isNormalOverlay) {
-    backdrop.style.display = "none";
     if (classList.contains("from-right")) {
       return (node.style.transform = "translate(100%, 0)");
     }
@@ -246,9 +245,11 @@ function handleHideComponent(selector) {
     node.style.display = "none";
   }
 
-  body.style.overflow = "auto";
+  if (shouldHideBackdrop) {
+    body.style.overflow = "auto";
+  }
 
-  if (backdrop) {
+  if (shouldHideBackdrop && backdrop && isNormalOverlay) {
     backdrop.style.display = "none";
   }
 }

@@ -447,7 +447,7 @@ const productOptions = [
     id: "o-1",
     options: [
       { name: "黑色", id: "c-1", imgUrl: "images/p2.png", selected: false, unavailable: false },
-      { name: "藍色", id: "c-2", imgUrl: "images/p2.png", selected: true, unavailable: false },
+      { name: "藍色", id: "c-2", imgUrl: "images/p2.png", selected: false, unavailable: false },
       { name: "咖啡色", id: "c-3", imgUrl: "images/p2.png", selected: false, unavailable: false },
       { name: "白色", id: "c-4", imgUrl: "images/p2.png", selected: false, unavailable: true },
       { name: "莫蘭迪色", id: "c-5", imgUrl: "images/p2.png", selected: false, unavailable: false },

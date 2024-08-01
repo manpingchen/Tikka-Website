@@ -414,6 +414,21 @@
       </div>
     </div>
 
+    <!-- 商品選項未選擇 提醒遮罩  1/8/2024 -->
+    <div class="overlay full-width info-only" id="product-options-missing">
+      <div class="title flex-row">
+        <button
+          class="close"
+          onclick="handleHideComponent('#product-options-missing', false)"
+        ></button>
+        <p class="flex-row"><span class="line"></span>商品選項未選擇<span class="line"></span></p>
+      </div>
+      <div class="content">
+        <img src="images/form-check.svg" alt="form-check" width="20" height="auto" />
+        請選擇所有商品選項
+      </div>
+    </div>
+
     <!-- 商品選項遮罩  8/2024 -->
     <div class="overlay full-width white-bg" id="product-options">
       <button class="close" onclick="handleHideComponent('#product-options')"></button>
@@ -431,16 +446,16 @@
         </div>
       </div>
 
-      <div class="options">
-        <!-- 下方為靜態HTML做參考，Demo為 cart.js printOverlayOptions()產生之畫面  -->
-        <!-- <div class="option-category" id="o-1">
+      <!-- 下方為靜態HTML做參考，無預設選項狀態 -->
+      <div class="options blank">
+        <div class="option-category" id="o-1">
           <h5>顏色</h5>
           <ul>
-            <li class="selected" id="c-1" onclick="toggleSelectOption(this)">
+            <li class="" id="c-1" onclick="toggleSelectOption(this)">
               <span class="option-img" style="background-image: url('images/product1.png')"></span>
               <p class="option-name">黑色</p>
             </li>
-            <li class="selected" id="c-2" onclick="toggleSelectOption(this)">
+            <li class="" id="c-2" onclick="toggleSelectOption(this)">
               <span class="option-img" style="background-image: url('images/product1.png')"></span>
               <p class="option-name">灰色</p>
             </li>
@@ -457,10 +472,10 @@
         <div class="option-category" id="o-2">
           <h5>款式</h5>
           <ul>
-            <li class="selected" id="s-1" onclick="toggleSelectOption(this)">
+            <li class="" id="s-1" onclick="toggleSelectOption(this)">
               <p class="option-name">圓型</p>
             </li>
-            <li class="selected" id="s-2" onclick="toggleSelectOption(this)">
+            <li class="" id="s-2" onclick="toggleSelectOption(this)">
               <p class="option-name">方形</p>
             </li>
 
@@ -474,7 +489,7 @@
               <p class="option-name">鑽石愛心型</p>
             </li>
           </ul>
-        </div> -->
+        </div>
       </div>
 
       <div class="actions">

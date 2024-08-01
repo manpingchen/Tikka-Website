@@ -234,4 +234,13 @@ div.overlay#product-options form button.reduce:disabled span {
 
 div.overlay#product-options button.add-btn {
   margin: 1rem;
+  width: auto;
+}
+
+div.overlay#product-options button.add-btn.gray {
+  background: var(--btn-gray-gradient);
+}
+
+div.overlay#product-options-missing {
+  z-index: 10001;
 }

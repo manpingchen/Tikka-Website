@@ -15,69 +15,39 @@ function handleAddToCart(element) {
 
   if (ifProductCustomizable) {
     handleShowComponent("#product-options", "flex");
-    printOverlayOptions();
     productIdForOptionsOverlay = productId;
     document.getElementsByClassName("backdrop")[0].classList.add("gray");
   }
 }
 
-function printOverlayOptions() {
-  productOptions.forEach(({ id, name, options }) => {
-    /* 建立選項分類容器 div */
-    const optionCateEle = document.createElement("div");
-    optionCateEle.classList.add("option-category");
-    optionCateEle.id = id;
-
-    /* 建立選項名稱容器 h5 */
-    const optionCateNameEle = document.createElement("h5");
-    optionCateNameEle.innerHTML = name;
-    optionCateEle.append(optionCateNameEle);
-
-    /* 建立選項列表容器 ul, li */
-    const optionListEle = document.createElement("ul");
-
-    options.forEach(({ id, name, selected, unavailable, imgUrl }) => {
-      const optionEle = document.createElement("li");
-      optionEle.id = id;
-
-      if (selected) optionEle.classList.add("selected");
-      if (unavailable) {
-        optionEle.classList.add("unavailable");
-      } else {
-        optionEle.onclick = function () {
-          toggleSelectOption(optionEle);
-        };
-      }
-
-      if (imgUrl) {
-        const optionImgEle = document.createElement("span");
-        optionImgEle.classList.add("option-img");
-        optionImgEle.style.backgroundImage = "url(" + imgUrl + ")";
-        optionEle.append(optionImgEle);
-      }
-
-      const optionNameEle = document.createElement("p");
-      optionNameEle.innerText = name;
-      optionEle.append(optionNameEle);
-
-      optionListEle.append(optionEle);
-    });
-    optionCateEle.append(optionListEle);
-
-    document.getElementsByClassName("options")[0].append(optionCateEle);
-  });
+function checkOptionOverlayBtnDisableStatus() {
+  const ifOptionsMissing = checkIfOptionsMissing();
+  if (ifOptionsMissing) {
+    document.querySelector("#product-options button.add-btn").classList.add("gray");
+  } else {
+    document.querySelector("#product-options button.add-btn").classList.remove("gray");
+  }
 }
 
 function handleAddToCartWithOptions() {
   const valueInput = document.getElementsByClassName("quantity")[0];
-
   const options = [...document.querySelectorAll(".option-category")];
+  const ifOptionsMissing = checkIfOptionsMissing();
+
+  if (ifOptionsMissing) return handleShowComponent("#product-options-missing", "flex");
+
   const selectedOptions = options.reduce((obj, option) => {
     obj[option.id] = Array.from(option.querySelectorAll("li.selected")).map(({ id }) => id);
     return obj;
   }, {});
+
   updateCart(productIdForOptionsOverlay, valueInput.value, selectedOptions);
   handleHideComponent("#product-options");
+}
+
+function checkIfOptionsMissing() {
+  const options = [...document.querySelectorAll(".option-category")];
+  return options.find((option) => option.querySelectorAll("li.selected").length === 0);
 }
 
 function updateCart(productId, amount, options) {
@@ -111,5 +81,7 @@ function validQuantity(value, max) {
 function toggleSelectOption(option) {
   const classList = option.classList;
   if (classList.contains("unavailable")) return;
+
   classList.contains("selected") ? classList.remove("selected") : classList.add("selected");
+  checkOptionOverlayBtnDisableStatus();
 }

@@ -20,6 +20,7 @@
   --pink-gradient: linear-gradient(0deg, var(--dark-pink), #ef99bf);
   --mobile-largest-width: 480px;
   --btn-pink-gradient: linear-gradient(#ffc1db, #ff398c, #f03282) !important;
+  --btn-gray-gradient: linear-gradient(#fbfbfb, #dcdcdc, #c5c5c5, #a1a1a1);
   --pink-text-shadow: 1px 1px 6px #b40081;
   --pink-dialog-bg: #34142eb3;
   --chat-control-bg: #13010fc2;
