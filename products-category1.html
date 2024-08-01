@@ -492,6 +492,52 @@
         </div>
       </div>
 
+      <!-- 下方為靜態HTML做參考，有預設選項狀態 -->
+      <div class="options default-options" style="display: none">
+        <div class="option-category" id="o-1">
+          <h5>顏色</h5>
+          <ul>
+            <li class="selected" id="c-1" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">黑色</p>
+            </li>
+            <li class="" id="c-2" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">灰色</p>
+            </li>
+            <li class="unavailable" id="c-3" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">白色</p>
+            </li>
+            <li id="c-4" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">咖啡色</p>
+            </li>
+          </ul>
+        </div>
+        <div class="option-category" id="o-2">
+          <h5>款式</h5>
+          <ul>
+            <li class="selected" id="s-1" onclick="toggleSelectOption(this)">
+              <p class="option-name">圓型</p>
+            </li>
+            <li class="" id="s-2" onclick="toggleSelectOption(this)">
+              <p class="option-name">方形</p>
+            </li>
+
+            <li id="s-4" class="unavailable" onclick="toggleSelectOption(this)">
+              <p class="option-name">長方形</p>
+            </li>
+            <li id="s-5" onclick="toggleSelectOption(this)">
+              <p class="option-name">五芒星型</p>
+            </li>
+            <li id="s-6" onclick="toggleSelectOption(this)">
+              <p class="option-name">鑽石愛心型</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <div class="actions">
         <form action="javascript:void(0);" class="adjust-item-count">
           <div class="quantity-label">
