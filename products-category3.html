@@ -251,7 +251,7 @@
       <!-- 商品資訊更新 31/7/2024 -->
       <section class="product-list-container">
         <ul class="product-list">
-          <!-- 無選項可選之傷品 -->
+          <!-- 無選項可選之商品 -->
           <li id="product-1" class="product">
             <a href="product-detail.html" class="img-wrap-s">
               <img src="images/p2.png" alt="" />
@@ -280,7 +280,7 @@
               </div>
             </div>
           </li>
-          <!-- 有選項可選之傷品：class 新增 'customizable' -->
+          <!-- 有選項可選之商品：class 新增 'customizable' -->
           <li id="product-2" class="product customizable">
             <a href="product-detail.html" class="img-wrap-s">
               <img src="images/product2.png" alt="" />
@@ -309,7 +309,7 @@
               </div>
             </div>
           </li>
-          <!-- 完售之傷品：add-to-cart button 'disabled' -->
+          <!-- 完售之商品：add-to-cart button 'disabled' -->
           <li id="product-3" class="product">
             <a href="product-detail.html" class="img-wrap-s">
               <img src="images/product3.png" alt="" />
@@ -339,7 +339,7 @@
               </div>
             </div>
           </li>
-          <!-- 已加入最愛之傷品：add-to-favorite button class 新增 'added' -->
+          <!-- 已加入最愛之商品：add-to-favorite button class 新增 'added' -->
           <li id="product-4" class="product">
             <a href="product-detail.html" class="img-wrap-s">
               <img src="images/p2.png" alt="" />
@@ -448,7 +448,8 @@
 
       <!-- 下方為靜態HTML做參考，無預設選項狀態 -->
       <div class="options blank">
-        <div class="option-category" id="o-1">
+        <!-- Demo 產出畫面為 cart.js 中的 printOverlayOptions() -->
+        <!-- <div class="option-category" id="o-1">
           <h5>顏色</h5>
           <ul>
             <li class="" id="c-1" onclick="toggleSelectOption(this)">
@@ -489,11 +490,11 @@
               <p class="option-name">鑽石愛心型</p>
             </li>
           </ul>
-        </div>
+        </div> -->
       </div>
 
       <!-- 下方為靜態HTML做參考，有預設選項狀態 -->
-      <div class="options default-options" style="display: none">
+      <!-- <div class="options default-options" style="display: none">
         <div class="option-category" id="o-1">
           <h5>顏色</h5>
           <ul>
@@ -536,7 +537,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
 
       <div class="actions">
         <form action="javascript:void(0);" class="adjust-item-count">
@@ -596,6 +597,7 @@
     ></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script src="js/header.js"></script>
+    <script src="helpers/sortByLength.js"></script>
     <script src="js/fakeData.js"></script>
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>

@@ -459,8 +459,8 @@ const productOptions = [
     options: [
       { name: "圓形", id: "s-1", selected: false, unavailable: true },
       { name: "正方形", id: "s-2", selected: false, unavailable: false },
-      { name: "五芒星型", id: "s-3", selected: true, unavailable: false },
       { name: "鑽石愛心型", id: "s-4", selected: false, unavailable: false },
+      { name: "五芒星型", id: "s-3", selected: false, unavailable: false },
     ],
   },
 ];
