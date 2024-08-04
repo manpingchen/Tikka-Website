@@ -9,11 +9,17 @@
     />
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/overlay.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
+    <link rel="stylesheet" href="styles/product.css" />
     <link rel="stylesheet" type="text/css" href="styles/slick.css" />
     <!-- Required Core Stylesheet -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
   </head>
   <body>
     <!-- Header Start -->
@@ -136,6 +142,8 @@
         </li>
       </ul>
     </nav>
+
+    <div onclick="scrollToTop()" class="fixed-button go-top"></div>
     <!-- Header End -->
 
     <!--Main-->
@@ -241,161 +249,325 @@
           <img src="images/p-title-3.svg" alt="標題" />
         </div>
         <div class="products-list-container">
+          <!-- 商品項目版型更新 Aug 2024 -->
           <ul>
-            <li>
-              <div class="product-item">
-                <button
-                  type="button"
-                  class="add-favorite"
-                  id="favorite"
-                  onclick="handleAddFavorite(this)"
-                ></button>
-                <a href="product-detail.html" class="img-wrap">
-                  <img src="images/p2.png" alt="" />
-                </a>
-                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
-                <p class="price">$990</p>
+            <!-- 無選項可選之商品 -->
+            <li id="product-1" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/p2.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱商品名稱商品</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-product-1"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-product-1"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
-              <div class="product-item">
-                <button
-                  type="button"
-                  class="add-favorite"
-                  id="favorite2"
-                  onclick="handleAddFavorite(this)"
-                ></button>
-                <a href="product-detail.html" class="img-wrap">
-                  <img src="images/p2.png" alt="" />
-                </a>
-                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
-                <p class="price">$990</p>
+            <!-- 有選項可選之商品：class 新增 'customizable' -->
+            <li id="product-2" class="product customizable">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product2.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  有選項可選之商品名稱商品商品名稱商品名稱商品
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-product-2"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-product-2"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
-              <div class="product-item">
-                <button
-                  type="button"
-                  class="add-favorite"
-                  id="favorite3"
-                  onclick="handleAddFavorite(this)"
-                ></button>
-                <a href="product-detail.html" class="img-wrap">
-                  <img src="images/p2.png" alt="" />
-                </a>
-                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
-                <p class="price">$990</p>
+            <!-- 完售之商品：add-to-cart button 'disabled' -->
+            <li id="product-3" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product3.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱商品名稱商品</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-product-3"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-product-3"
+                      disabled
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
-              <div class="product-item">
-                <button
-                  type="button"
-                  class="add-favorite"
-                  id="favorite4"
-                  onclick="handleAddFavorite(this)"
-                ></button>
-                <a href="product-detail.html" class="img-wrap">
-                  <img src="images/p2.png" alt="" />
-                </a>
-                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
-                <p class="price">$990</p>
+            <!-- 已加入最愛之商品：add-to-favorite button class 新增 'added' -->
+            <li id="product-4" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/p2.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱（已加入最愛）</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite added"
+                      id="add-favorite-product-4"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-product-4"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
-              <div class="product-item">
-                <button
-                  type="button"
-                  class="add-favorite"
-                  id="follow"
-                  onclick="handleAddFavorite(this)"
-                ></button>
-                <a href="product-detail.html" class="img-wrap">
-                  <img src="images/p2.png" alt="" />
-                </a>
-                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
-                <p class="price">$990</p>
-              </div>
-            </li>
-            <li>
-              <div class="product-item">
-                <button
-                  type="button"
-                  class="add-favorite"
-                  id="follow"
-                  onclick="handleAddFavorite(this)"
-                ></button>
-                <a href="product-detail.html" class="img-wrap">
-                  <img src="images/p2.png" alt="" />
-                </a>
-                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
-                <p class="price">$990</p>
-              </div>
-            </li>
-            <li>
-              <div class="product-item">
-                <button
-                  type="button"
-                  class="add-favorite"
-                  id="follow"
-                  onclick="handleAddFavorite(this)"
-                ></button>
-                <a href="product-detail.html" class="img-wrap">
-                  <img src="images/p2.png" alt="" />
-                </a>
-                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
-                <p class="price">$990</p>
-              </div>
-            </li>
-            <li>
-              <div class="product-item">
-                <button
-                  type="button"
-                  class="add-favorite"
-                  id="follow"
-                  onclick="handleAddFavorite(this)"
-                ></button>
-                <a href="product-detail.html" class="img-wrap">
-                  <img src="images/p2.png" alt="" />
-                </a>
-                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
-                <p class="price">$990</p>
-              </div>
-            </li>
-            <li>
-              <div class="product-item">
-                <button
-                  type="button"
-                  class="add-favorite"
-                  id="follow"
-                  onclick="handleAddFavorite(this)"
-                ></button>
-                <a href="product-detail.html" class="img-wrap">
-                  <img src="images/p2.png" alt="" />
-                </a>
-                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
-                <p class="price">$990</p>
-              </div>
-            </li>
-            <li>
-              <div class="product-item">
-                <button
-                  type="button"
-                  class="add-favorite"
-                  id="follow"
-                  onclick="handleAddFavorite(this)"
-                ></button>
-                <a href="product-detail.html" class="img-wrap">
-                  <img src="images/p2.png" alt="" />
-                </a>
-                <p class="name">商品名稱商品名稱商品名稱商品名稱</p>
-                <p class="price">$990</p>
+
+            <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+            <li id="product-5" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product5.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  商品名稱商品名稱商品商品名稱（已加入購物車）
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-product-5"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart added"
+                      id="add-to-cart-product-5"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
               </div>
             </li>
           </ul>
         </div>
       </section>
     </main>
+
+    <!-- 商品加入購物車 提醒遮罩 Aug 2024 -->
+    <div class="overlay full-width info-only" id="product-added-to-cart">
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#product-added-to-cart')"></button>
+        <p class="flex-row"><span class="line"></span>加入購物車<span class="line"></span></p>
+      </div>
+      <div class="content">
+        <img src="images/cart.svg" alt="mic" width="20" height="auto" />
+        商品已為您加入購物車
+      </div>
+    </div>
+
+    <!-- 商品選項未選擇 提醒遮罩 Aug 2024 -->
+    <div class="overlay full-width info-only" id="product-options-missing">
+      <div class="title flex-row">
+        <button
+          class="close"
+          onclick="handleHideComponent('#product-options-missing', false)"
+        ></button>
+        <p class="flex-row"><span class="line"></span>商品選項未選擇<span class="line"></span></p>
+      </div>
+      <div class="content">
+        <img src="images/form-check.svg" alt="form-check" width="20" height="auto" />
+        請選擇所有商品選項
+      </div>
+    </div>
+
+    <!-- 商品選項遮罩  Aug 2024 -->
+    <div class="overlay full-width white-bg" id="product-options">
+      <button class="close" onclick="handleHideComponent('#product-options')"></button>
+
+      <div class="product-info">
+        <div class="img-wrap-s">
+          <img src="images/p2.png" width="100" height="100" alt="商品圖" />
+        </div>
+        <div class="status">
+          <div class="price">
+            <p class="discount">NT$2,280</p>
+            <p class="original">NT$4,280</p>
+          </div>
+          <p class="stocking">庫存數量：7</p>
+        </div>
+      </div>
+
+      <!-- 下方為靜態HTML做參考，無預設選項狀態 -->
+      <div class="options blank">
+        <!-- Demo 產出畫面為 cart.js 中的 printOverlayOptions() -->
+        <!-- <div class="option-category" id="o-1">
+          <h5>顏色</h5>
+          <ul>
+            <li class="" id="c-1" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">黑色</p>
+            </li>
+            <li class="" id="c-2" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">灰色</p>
+            </li>
+            <li class="unavailable" id="c-3" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">白色</p>
+            </li>
+            <li id="c-4" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">咖啡色</p>
+            </li>
+          </ul>
+        </div>
+        <div class="option-category" id="o-2">
+          <h5>款式</h5>
+          <ul>
+            <li class="" id="s-1" onclick="toggleSelectOption(this)">
+              <p class="option-name">圓型</p>
+            </li>
+            <li class="" id="s-2" onclick="toggleSelectOption(this)">
+              <p class="option-name">方形</p>
+            </li>
+
+            <li id="s-4" class="unavailable" onclick="toggleSelectOption(this)">
+              <p class="option-name">長方形</p>
+            </li>
+            <li id="s-5" onclick="toggleSelectOption(this)">
+              <p class="option-name">五芒星型</p>
+            </li>
+            <li id="s-6" onclick="toggleSelectOption(this)">
+              <p class="option-name">鑽石愛心型</p>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+
+      <!-- 下方為靜態HTML做參考，有預設選項狀態 -->
+      <!-- <div class="options default-options" style="display: none">
+        <div class="option-category" id="o-1">
+          <h5>顏色</h5>
+          <ul>
+            <li class="selected" id="c-1" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">黑色</p>
+            </li>
+            <li class="" id="c-2" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">灰色</p>
+            </li>
+            <li class="unavailable" id="c-3" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">白色</p>
+            </li>
+            <li id="c-4" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">咖啡色</p>
+            </li>
+          </ul>
+        </div>
+        <div class="option-category" id="o-2">
+          <h5>款式</h5>
+          <ul>
+            <li class="selected" id="s-1" onclick="toggleSelectOption(this)">
+              <p class="option-name">圓型</p>
+            </li>
+            <li class="" id="s-2" onclick="toggleSelectOption(this)">
+              <p class="option-name">方形</p>
+            </li>
+
+            <li id="s-4" class="unavailable" onclick="toggleSelectOption(this)">
+              <p class="option-name">長方形</p>
+            </li>
+            <li id="s-5" onclick="toggleSelectOption(this)">
+              <p class="option-name">五芒星型</p>
+            </li>
+            <li id="s-6" onclick="toggleSelectOption(this)">
+              <p class="option-name">鑽石愛心型</p>
+            </li>
+          </ul>
+        </div>
+      </div> -->
+
+      <div class="actions">
+        <form action="javascript:void(0);" class="adjust-item-count">
+          <div class="quantity-label">
+            <h5>數量</h5>
+            <span class="quantity-reach-max" style="display: none">已達到購買上限</span>
+          </div>
+          <div class="quantity-adjust">
+            <button class="add" onclick="adjustQuantity('add')">
+              <span class="material-symbols-outlined"> change_history </span>
+            </button>
+            <input type="number" min="0" id="quantity" class="quantity" value="3" max="7" />
+            <button class="reduce" onclick="adjustQuantity('reduce')">
+              <span class="material-symbols-outlined"> change_history </span>
+            </button>
+            <span class="unit">箱</span>
+          </div>
+        </form>
+        <button type="button" class="add-btn button-like" onclick="handleAddToCartWithOptions()">
+          加入購物車
+        </button>
+      </div>
+    </div>
+
+    <div class="backdrop" style="display: none"></div>
 
     <footer>
       <div class="footer-content flex-row">
@@ -429,36 +601,15 @@
       integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
       crossorigin="anonymous"
     ></script>
+    <script src="config/slideConfig.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script src="js/header.js"></script>
+    <script src="helpers/sortByLength.js"></script>
+    <script src="js/fakeData.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
     <script>
-      $("#highlighted-products-slides").slick({
-        infinite: true,
-        dots: true,
-      });
-
-      $("#products-slides").slick({
-        slidesToShow: 5,
-        slidesToScroll: 5,
-        infinite: true,
-        responsive: [
-          {
-            breakpoint: 767,
-            settings: "unslick",
-          },
-        ],
-      });
-
-      function setActiveClass(classId) {
-        [...document.querySelectorAll("#products-detail-tabs .glide__slide")].map((node) =>
-          node.classList.remove("active")
-        );
-
-        document.querySelectorAll(`.${classId}`).forEach((el) => {
-          el.classList.add("active");
-        });
-      }
+      $("#highlighted-products-slides").slick(highlightSlideConfig);
     </script>
   </body>
 </html>

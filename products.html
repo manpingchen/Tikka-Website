@@ -1349,6 +1349,7 @@
       integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
       crossorigin="anonymous"
     ></script>
+    <script src="config/slideConfig.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script src="js/header.js"></script>
     <script src="helpers/sortByLength.js"></script>
@@ -1356,74 +1357,13 @@
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
     <script>
-      $("#highlighted-products-slides").slick({
-        infinite: true,
-        dots: true,
-      });
+      $("#highlighted-products-slides").slick(highlightSlideConfig);
 
-      $("#products-slides").slick({
-        slidesToShow: 5,
-        slidesToScroll: 5,
-        infinite: true,
-        responsive: [
-          {
-            breakpoint: 1200,
-            settings: {
-              slidesToShow: 3,
-            },
-          },
-          {
-            breakpoint: 767,
-            settings: "unslick",
-          },
-        ],
-      });
+      $("#products-slides").slick(productListSlideConfig);
 
-      $("#ranking-products-slides").slick({
-        slidesToShow: 5,
-        slidesToScroll: 5,
-        infinite: true,
-        responsive: [
-          {
-            breakpoint: 1200,
-            settings: {
-              slidesToShow: 3,
-            },
-          },
-          {
-            breakpoint: 767,
-            settings: "unslick",
-          },
-        ],
-      });
+      $("#ranking-products-slides").slick(productListSlideConfig);
 
-      $("#popular-products-slides").slick({
-        slidesToShow: 5,
-        slidesToScroll: 5,
-        infinite: true,
-        responsive: [
-          {
-            breakpoint: 1200,
-            settings: {
-              slidesToShow: 3,
-            },
-          },
-          {
-            breakpoint: 767,
-            settings: "unslick",
-          },
-        ],
-      });
-
-      function setActiveClass(classId) {
-        [...document.querySelectorAll("#products-detail-tabs .glide__slide")].map((node) =>
-          node.classList.remove("active")
-        );
-
-        document.querySelectorAll(`.${classId}`).forEach((el) => {
-          el.classList.add("active");
-        });
-      }
+      $("#popular-products-slides").slick(productListSlideConfig);
 
       const deadline = "2023-04-28";
 

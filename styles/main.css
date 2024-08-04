@@ -4815,7 +4815,7 @@ main.follow .search-container {
 section.category {
   position: relative;
   background: #fef0fb;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 section.category > ul {
