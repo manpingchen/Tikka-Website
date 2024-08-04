@@ -1,7 +1,10 @@
 /* 開啟商品選項之商品Id */
 let productIdForOptionsOverlay;
 const productQuantityInput = document.getElementsByClassName("quantity")[0];
-let productQuantity = productQuantityInput.value;
+let productQuantity;
+if (productQuantityInput) {
+  productQuantity = productQuantityInput.value;
+}
 
 function handleAddToCart(element) {
   const productId = element.id.split("add-to-cart-")[1];
@@ -9,6 +12,8 @@ function handleAddToCart(element) {
   const ifProductCustomizable = document
     .getElementById(productId)
     .classList.contains("customizable");
+
+  document.getElementsByClassName("backdrop")[0].classList.remove("gray");
 
   if (!ifProductInCart && !ifProductCustomizable) {
     handleShowComponent("#product-added-to-cart", "flex");

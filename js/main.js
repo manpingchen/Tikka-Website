@@ -281,7 +281,11 @@ function handleShowComponent(selector, displayValue = "block", shouldBodyOverflo
   }
 
   /* 如果元件為遮罩，則同步開啟backdrop，做為關閉遮罩之點擊範圍 */
-  if (classList.contains("overlay") && !classList.contains("full-page")) {
+  if (
+    shouldBodyOverflowHidden &&
+    classList.contains("overlay") &&
+    !classList.contains("full-page")
+  ) {
     handleShowComponent(".backdrop");
   }
 }

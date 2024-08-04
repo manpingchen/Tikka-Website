@@ -1,3 +1,8 @@
+section.products.list .slides-container {
+  border-bottom: 10px solid #efefef;
+  padding-bottom: 1rem;
+}
+
 ul.product-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -8,6 +13,7 @@ ul.product-list {
 
 li.product {
   box-shadow: var(--product-card-shadow);
+  min-width: 150px;
 }
 
 li.product div.content {
@@ -243,4 +249,40 @@ div.overlay#product-options button.add-btn.gray {
 
 div.overlay#product-options-missing {
   z-index: 10001;
+}
+
+/* 可滑動商品列表 */
+#live-slides .slick-list,
+#products-slides .slick-list,
+#ranking-products-slides .slick-list,
+#popular-products-slides .slick-list {
+  padding: 0 22% 0 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .products-list-container {
+    padding: 0.5rem;
+  }
+
+  .slides-container ul {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    will-change: transform;
+    overflow-y: hidden;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem !important;
+  }
+
+  .slides-container ul::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .slides-container li {
+    max-width: none !important;
+    width: 200px;
+    flex-shrink: 0;
+    padding-left: 1rem;
+  }
 }
