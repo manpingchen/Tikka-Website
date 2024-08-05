@@ -262,6 +262,11 @@ form.adjust-item-count .unit {
   color: var(--discount-price-color);
 }
 
+main.product-detail .summary form.adjust-item-count .adjustment {
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 form input[type="number"] {
   width: 40px;
   font-size: 1rem;
