@@ -6099,40 +6099,47 @@ div.product-summary {
   flex-direction: row;
   align-items: flex-start;
   margin-top: 20px;
-  gap: 60px;
   margin-bottom: 50px;
 }
 
 div.product-summary div.summary {
-  gap: 10px;
-  margin-top: 2rem;
+  gap: 0.5rem;
 }
 
 div.product-summary div.summary h3 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
-div.product-summary div.summary p,
-main.product-detail.sold-out div.product-summary div.summary p.stock {
-  font-size: 1.3rem;
-  color: #aaa;
+
+main.product-detail div.product-summary div.summary .price {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
-div.product-summary div.summary p.cost,
-div.product-summary div.summary p.stock {
-  color: var(--dark-pink);
+main.product-detail div.product-summary div.summary .price .discount {
+  font-size: 1.6rem;
 }
 
-div.product-summary div.summary p.stock .sold-out-text {
-  display: none;
+div.product-summary div.summary p.options {
+  font-size: 1rem;
+  color: var(--original-price-color);
+}
+div.product-summary div.summary p.stock,
+div.product-summary div.summary p.sold {
+  color: var(--discount-price-color);
 }
 
-main.product-detail.sold-out div.product-summary div.summary p.stock .value {
-  display: none;
+div.product-summary div.summary p.sold {
+  margin-bottom: 0.5rem;
 }
 
-main.product-detail.sold-out div.product-summary div.summary p.stock .sold-out-text {
-  display: inline-block;
+div.product-summary div.summary .button-actions {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
 }
 
 main.product-detail div.product-detail-btns a.button-like,
@@ -6143,10 +6150,27 @@ main.product-detail div.product-detail-btns button {
   min-width: 120px;
 }
 
+/* 單一商品頁面 Sold Out 狀態 */
 main.product-detail.sold-out .available-if-instock {
   pointer-events: none !important;
   cursor: not-allowed !important;
   background: linear-gradient(#e2e2e2, #a8a8a8, #535353) !important;
+}
+
+main.product-detail.sold-out button.add.available-if-instock,
+main.product-detail.sold-out button.reduce.available-if-instock {
+  background: unset !important;
+  border-color: var(--original-price-color);
+  color: var(--original-price-color);
+}
+
+main.product-detail.sold-out form .unit,
+main.product-detail.sold-out form input.quantity {
+  color: var(--original-price-color) !important;
+}
+
+main.product-detail.sold-out form .sold-out-text {
+  display: block !important;
 }
 
 div.product-summary div.summary button.add-btn {
@@ -6156,7 +6180,7 @@ div.product-summary div.summary button.add-btn {
   height: 40px;
   padding: 0rem 1rem;
   width: 140px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   font-size: 1.1rem;
 }
 
@@ -6194,6 +6218,7 @@ section.product-slides {
 
 .product-slides div.img-wrap-s {
   overflow: hidden;
+  background: white;
 }
 
 .current-image {
@@ -6520,13 +6545,9 @@ main.my-favourite button.follow-btn:hover {
   .next-list {
     height: auto;
     gap: 10px;
-    /* bottom: -35%; */
   }
 
   .next-list li.img-wrap {
-    /* width: 100%;
-    height: 0;
-    padding-top: 30%;*/
     position: relative;
   }
 
@@ -6536,12 +6557,14 @@ main.my-favourite button.follow-btn:hover {
   }
 
   div.product-summary div.summary {
-    width: 100%;
+    width: -webkit-fill-available;
+    margin: 0.5rem 1rem 2rem;
   }
 
   div.product-summary div.summary button.add-btn {
-    width: 200px;
-    margin: 20px auto 0;
+    margin: 20px 0 0;
+    padding: 0 1.5rem;
+    width: fit-content;
   }
 }
 
@@ -7024,41 +7047,6 @@ div.purchase-overlay .cart-item .img-wrap img {
   gap: 1rem;
 }
 
-form.adjust-item-count input[type="number"] {
-  border: none;
-  background: none;
-  font-weight: bold;
-  font-size: 1.4rem;
-  text-align: center;
-  width: 50px;
-  margin: 0;
-  -moz-appearance: textfield;
-}
-
-form.adjust-item-count .unit {
-  padding-left: 0.25rem;
-  font-size: 1rem;
-  color: #e9528e;
-}
-
-form.adjust-item-count input[type="number"]::-webkit-outer-spin-button,
-form.adjust-item-count input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-
-form.adjust-item-count button.add,
-form.adjust-item-count button.reduce {
-  border: 1px solid #000;
-  border-radius: 0;
-  padding: 0px;
-  width: 36px;
-  height: 36px;
-}
-
-form.adjust-item-count button.reduce {
-  transform: rotate(180deg);
-}
-
 main.purchase .payment-options button.active,
 div.purchase-overlay .payment-options button.active {
   background: var(--pink-gradient) !important;
@@ -7080,12 +7068,6 @@ main.purchase .payment-options h4,
 div.purchase-overlay .payment-options p,
 div.purchase-overlay .payment-options h4 {
   color: #d6236c;
-}
-
-form.adjust-item-count button.add span.material-symbols-outlined,
-form.adjust-item-count button.reduce span.material-symbols-outlined {
-  font-size: 20px;
-  color: rgb(82, 82, 82);
 }
 
 main.purchase .check-item-count,
@@ -7187,26 +7169,6 @@ div.purchase-overlay .check-item-count p.point {
   main.purchase .item-info div {
     width: 150px;
     gap: 0.5rem;
-  }
-
-  form.adjust-item-count button.add,
-  form.adjust-item-count button.reduce {
-    width: 35px;
-    height: 35px;
-    display: inline-block;
-  }
-
-  form.adjust-item-count button.add span.material-symbols-outlined,
-  form.adjust-item-count button.reduce span.material-symbols-outlined {
-    font-size: 1rem;
-  }
-
-  form.adjust-item-count input[type="number"] {
-    width: 40px;
-    font-size: 1rem;
-  }
-  form.adjust-item-count button .material-symbols-outlined {
-    font-size: 18px;
   }
 }
 

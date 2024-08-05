@@ -1,9 +1,9 @@
 /* 開啟商品選項之商品Id */
 let productIdForOptionsOverlay;
-const productQuantityInput = document.getElementsByClassName("quantity")[0];
+const productQuantityInput = document.querySelector("form .quantity");
 let productQuantity;
 if (productQuantityInput) {
-  productQuantity = productQuantityInput.value;
+  productQuantity = Number(productQuantityInput.value);
 }
 
 function handleAddToCart(element) {
@@ -125,7 +125,7 @@ function updateCart(productId, amount, options) {
   document.getElementById("add-to-cart-" + productId).classList.add("added");
 }
 
-function adjustQuantity(actionType) {
+function adjustQuantity(actionType, isAdjustInOverlay = true) {
   let max = 7;
 
   actionType === "add" ? productQuantity++ : productQuantity--;
@@ -134,7 +134,7 @@ function adjustQuantity(actionType) {
   document.getElementsByClassName("reduce")[0].disabled = productQuantity === 0 ? true : false;
   document.getElementsByClassName("add")[0].disabled = productQuantity === max ? true : false;
 
-  checkOptionOverlayBtnDisableStatus();
+  if (isAdjustInOverlay) checkOptionOverlayBtnDisableStatus();
   validQuantity(max);
 }
 

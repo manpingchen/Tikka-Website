@@ -216,25 +216,74 @@ div.overlay#product-options .actions .quantity-label h5 {
   line-height: 1.25rem;
 }
 
-div.overlay#product-options .actions .quantity-reach-max {
+form .quantity-reach-max {
   color: var(--dark-pink);
+  margin-top: 0.25rem;
+  display: block;
+}
+
+form .sold-out-text {
+  color: var(--original-price-color);
+  margin-top: 0.25rem;
+  display: block;
+}
+
+div.overlay#product-options form .quantity-reach-max {
   font-size: 0.75rem;
 }
 
-div.overlay#product-options form button.add,
-div.overlay#product-options form button.reduce {
+form button.add,
+form button.reduce {
   border-radius: 0.25rem;
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  display: inline-block;
+  border: 1px solid #000;
 }
 
-div.overlay#product-options form button.add:disabled,
-div.overlay#product-options form button.reduce:disabled {
+form.adjust-item-count button.reduce {
+  transform: rotate(180deg);
+}
+
+form button.add:disabled,
+form button.reduce:disabled {
   border-color: var(--original-price-color);
 }
 
-div.overlay#product-options form button.add:disabled span,
-div.overlay#product-options form button.reduce:disabled span {
+form button.add span.material-symbols-outlined,
+form button.reduce span.material-symbols-outlined {
+  font-size: 1rem;
+}
+
+form.adjust-item-count .unit {
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  color: var(--discount-price-color);
+}
+
+form input[type="number"] {
+  width: 40px;
+  font-size: 1rem;
+}
+
+form.adjust-item-count input[type="number"]::-webkit-outer-spin-button,
+form.adjust-item-count input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+form.adjust-item-count input[type="number"] {
+  border: none;
+  background: none;
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-align: center;
+  width: 50px;
+  margin: 0;
+  -moz-appearance: textfield;
+}
+
+button.add:disabled span,
+button.reduce:disabled span {
   color: var(--original-price-color);
 }
 

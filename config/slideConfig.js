@@ -36,3 +36,20 @@ const homeDesktopPadOnlySlideConfig = (slidesToShow) => ({
     },
   ],
 });
+
+const productDetailMainPicSlideConfig = {
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: ".product-nav",
+};
+
+const productNavSlideConfig = {
+  slidesToShow: 4.5,
+  slidesToScroll: 4.5,
+  asNavFor: ".product-zoom-in",
+  focusOnSelect: true,
+  arrows: false,
+  infinite: false,
+};

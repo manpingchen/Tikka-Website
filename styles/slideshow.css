@@ -183,16 +183,14 @@ button.glide__bullet--active {
     width: 180px;
     height: 180px;
   }
-  .desktop-only ul,
-  .mobile-scroll-drag ul {
+  .desktop-only ul {
     overflow-x: auto;
     gap: 5px;
     padding-left: 13%;
     touch-action: auto;
   }
 
-  .desktop-only,
-  .mobile-scroll-drag {
+  .desktop-only {
     cursor: grab;
     overflow: auto !important;
     position: relative;
@@ -200,8 +198,7 @@ button.glide__bullet--active {
   }
 
   .desktop-only ul::-webkit-scrollbar,
-  .slides-container ul::-webkit-scrollbar,
-  .mobile-scroll-drag ul::-webkit-scrollbar {
+  .slides-container ul::-webkit-scrollbar {
     width: 5px;
     height: 0px;
   }
