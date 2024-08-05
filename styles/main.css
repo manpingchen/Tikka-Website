@@ -2384,7 +2384,7 @@ main.live-on div.videoDiv {
 
 main.live-on div.videoDiv video {
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
 }
 
 main.live-on div.gift-mission {
@@ -6192,20 +6192,8 @@ section.product-slides {
   position: relative;
 }
 
-section.product-slides .slick-slide img {
-  width: 100%;
-  height: auto;
-  top: 0;
-  position: absolute;
-}
-
-.product-slides > div.img-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 24px;
+.product-slides div.img-wrap-s {
   overflow: hidden;
-  box-shadow: 0 0 3px #ddd;
 }
 
 .current-image {
@@ -6506,7 +6494,7 @@ main.my-favourite button.follow-btn:hover {
 
 @media screen and (max-width: 768px) {
   main.product-detail {
-    padding-top: 100px;
+    padding-top: 116px;
   }
   main.product-detail ul.tabs {
     gap: 20px;
@@ -6595,8 +6583,7 @@ main.my-favourite button.follow-btn:hover {
   }
 
   div.product-summary {
-    width: 90%;
-    margin: 2rem auto;
+    margin: 0 auto;
   }
 
   #product-intro h2,

@@ -197,7 +197,6 @@ button.glide__bullet--active {
     overflow: auto !important;
     position: relative;
     width: calc(100% + 2rem) !important;
-    left: -2rem;
   }
 
   .desktop-only ul::-webkit-scrollbar,
