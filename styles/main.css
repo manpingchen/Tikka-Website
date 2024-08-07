@@ -850,7 +850,12 @@ main.index section.live .live-list ul li span.count {
   top: 0;
   height: 110%;
 }
-
+@media screen and (min-width: 1100px) {
+  .go-top {
+    right: 50% !important;
+    margin-right: -520px;
+  }
+}
 @media screen and (min-width: 769px) {
   main {
     width: 90%;
