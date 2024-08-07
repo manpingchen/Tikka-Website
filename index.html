@@ -349,7 +349,7 @@
       <section class="live">
         <div class="live-title">
           <img src="images/live.svg" alt="熱門直播標題" />
-          <a href="live.html"><img src="images/more.svg" alt="看更多" /></a>
+          <a href="live.html"><img src="images/see-more.svg" alt="看更多" /></a>
         </div>
 
         <div class="live-list desktop-only slides-container">
@@ -681,168 +681,276 @@
         </div>
         <div class="slides-container">
           <ul id="products-slides">
-            <li>
-              <div
-                class="product-item"
-                id="product-1"
-                onclick="location.href = `product-detail.html?id=${this.id}`"
-              >
-                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
-                  <img src="images/cart-icon.svg" />
-                </button>
-                <div class="img-wrap">
-                  <img
-                    src="https://files.tikka.tw/product/4309cb29999d4c23b599bfb87d7bde6a.png"
-                    alt="img1"
-                  />
+            <li id="p-product-1" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/p2.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱商品名稱商品</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-p-product-1"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-p-product-1"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
                 </div>
-                <p>
-                  <span class="name">線雕緊緻精華噴霧</span>
-                  <span class="point"><span class="value">$15,000</span></span>
-                </p>
               </div>
             </li>
-            <li>
-              <div
-                class="product-item"
-                id="product-2"
-                onclick="location.href = `product-detail.html?id=${this.id}`"
-              >
-                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
-                  <img src="images/cart-icon.svg" />
-                </button>
-                <div class="img-wrap">
-                  <img
-                    src="https://files.tikka.tw/product/86211aa33a6141a2a09fb687bfd01e09.png"
-                    alt="img1"
-                  />
+            <!-- 有選項可選之商品：class 新增 'customizable' -->
+            <li id="p-product-2" class="product customizable">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product2.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  有選項可選之商品名稱商品商品名稱商品名稱商品
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-p-product-2"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-p-product-2"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
                 </div>
-                <p>
-                  <span class="name">線雕緊緻精華噴霧</span>
-                  <span class="point"><span class="value">$15,000</span></span>
-                </p>
               </div>
             </li>
-            <li>
-              <div
-                class="product-item"
-                id="product-3"
-                onclick="location.href = `product-detail.html?id=${this.id}`"
-              >
-                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
-                  <img src="images/cart-icon.svg" />
-                </button>
-                <div class="img-wrap">
-                  <img
-                    src="https://files.tikka.tw/product/4309cb29999d4c23b599bfb87d7bde6a.png"
-                    alt="img1"
-                  />
+            <!-- 完售之商品：add-to-cart button 'disabled' -->
+            <li id="r-product-3" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product3.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱商品名稱商品</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-r-product-3"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-r-product-3"
+                      disabled
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
                 </div>
-                <p>
-                  <span class="name">線雕緊緻精華噴霧</span>
-                  <span class="point"><span class="value">$15,000</span></span>
-                </p>
               </div>
             </li>
-            <li>
-              <div
-                class="product-item"
-                id="product-4"
-                onclick="location.href = `product-detail.html?id=${this.id}`"
-              >
-                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
-                  <img src="images/cart-icon.svg" />
-                </button>
-                <div class="img-wrap">
-                  <img
-                    src="https://files.tikka.tw/product/86211aa33a6141a2a09fb687bfd01e09.png"
-                    alt="img1"
-                  />
+            <!-- 已加入最愛之商品：add-to-favorite button class 新增 'added' -->
+            <li id="p-product-4" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/p2.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱（已加入最愛）</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite added"
+                      id="add-favorite-p-product-4"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-p-product-4"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
                 </div>
-                <p>
-                  <span class="name">線雕緊緻精華噴霧</span>
-                  <span class="point"><span class="value">$15,000</span></span>
-                </p>
               </div>
             </li>
-            <li>
-              <div
-                class="product-item"
-                id="product-5"
-                onclick="location.href = `product-detail.html?id=${this.id}`"
-              >
-                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
-                  <img src="images/cart-icon.svg" />
-                </button>
-                <div class="img-wrap"><img src="images/p2.png" alt="img1" /></div>
-                <p>
-                  <span class="name">線雕緊緻精華噴霧</span>
-                  <span class="point"><span class="value">$15,000</span></span>
-                </p>
+            <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+            <li id="p-product-5" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product5.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  商品名稱商品名稱商品商品名稱（已加入購物車）
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-p-product-5"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart added"
+                      id="add-to-cart-p-product-5"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
-              <div
-                class="product-item"
-                id="product-6"
-                onclick="location.href = `product-detail.html?id=${this.id}`"
-              >
-                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
-                  <img src="images/cart-icon.svg" />
-                </button>
-                <div class="img-wrap"><img src="images/p2.png" alt="img1" /></div>
-                <p>
-                  <span class="name">線雕緊緻精華噴霧</span>
-                  <span class="point"><span class="value">$15,000</span></span>
-                </p>
+            <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+            <li id="p-product-6" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product5.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  商品名稱商品名稱商品商品名稱（已加入購物車）
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-p-product-6"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart added"
+                      id="add-to-cart-p-product-6"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
-              <div
-                class="product-item"
-                id="product-7"
-                onclick="location.href = `product-detail.html?id=${this.id}`"
-              >
-                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
-                  <img src="images/cart-icon.svg" />
-                </button>
-                <div class="img-wrap"><img src="images/p2.png" alt="img1" /></div>
-                <p>
-                  <span class="name">線雕緊緻精華噴霧</span>
-                  <span class="point"><span class="value">$15,000</span></span>
-                </p>
+            <!-- 完售之商品：add-to-cart button 'disabled' -->
+            <li id="r-product-7" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product3.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱商品名稱商品</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-r-product-7"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-r-product-7"
+                      disabled
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
-              <div
-                class="product-item"
-                id="product-8"
-                onclick="location.href = `product-detail.html?id=${this.id}`"
-              >
-                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
-                  <img src="images/cart-icon.svg" />
-                </button>
-                <div class="img-wrap"><img src="images/p2.png" alt="img1" /></div>
-                <p>
-                  <span class="name">線雕緊緻精華噴霧</span>
-                  <span class="point"><span class="value">$15,000</span></span>
-                </p>
+            <!-- 有選項可選之商品：class 新增 'customizable' -->
+            <li id="p-product-8" class="product customizable">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product2.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  有選項可選之商品名稱商品商品名稱商品名稱商品
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-p-product-8"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-p-product-8"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
-              <div
-                class="product-item"
-                id="product-9"
-                onclick="location.href = `product-detail.html?id=${this.id}`"
-              >
-                <button type="button" class="add-to-cart" onclick="handleAddProductToCart(this)">
-                  <img src="images/cart-icon.svg" />
-                </button>
-                <div class="img-wrap"><img src="images/p2.png" alt="img1" /></div>
-                <p>
-                  <span class="name">線雕緊緻精華噴霧</span>
-                  <span class="point"><span class="value">$15,000</span></span>
-                </p>
+            <!-- 有選項可選之商品：class 新增 'customizable' -->
+            <li id="p-product-9" class="product customizable">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product2.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  有選項可選之商品名稱商品商品名稱商品名稱商品
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-p-product-9"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-p-product-9"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
               </div>
             </li>
           </ul>
