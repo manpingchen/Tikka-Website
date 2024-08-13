@@ -47,7 +47,7 @@ const productDetailMainPicSlideConfig = {
 
 const productNavSlideConfig = {
   slidesToShow: 4.5,
-  slidesToScroll: 4.5,
+  slidesToScroll: 1,
   asNavFor: ".product-zoom-in",
   focusOnSelect: true,
   arrows: false,

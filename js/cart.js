@@ -126,10 +126,9 @@ function updateCart(productId, amount, options) {
 }
 
 function adjustQuantity(actionType, isAdjustInOverlay = true) {
-  let max = 7;
-
   actionType === "add" ? productQuantity++ : productQuantity--;
   productQuantityInput.value = productQuantity;
+  const max = Number(productQuantityInput.max);
 
   document.getElementsByClassName("reduce")[0].disabled = productQuantity === 0 ? true : false;
   document.getElementsByClassName("add")[0].disabled = productQuantity === max ? true : false;

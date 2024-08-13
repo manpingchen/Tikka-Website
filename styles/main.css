@@ -6105,6 +6105,7 @@ div.product-summary {
   align-items: flex-start;
   margin-top: 20px;
   margin-bottom: 50px;
+  gap: 2rem;
 }
 
 div.product-summary div.summary {
@@ -6535,6 +6536,7 @@ main.my-favourite button.follow-btn:hover {
   div.product-summary {
     flex-direction: column;
     padding-bottom: 0;
+    gap: 0;
   }
   section.product-slides {
     width: 100%;

@@ -145,12 +145,12 @@
     </nav>
 
     <!-- Header End -->
-    
+
     <div onclick="scrollToTop()" class="fixed-button go-top"></div>
     <!--Main-->
 
     <!-- classname: sold-out，為缺貨狀態用，如非缺貨狀態，可拿掉-->
-    <main class="product-detail sold-out">
+    <main class="product-detail">
       <ul class="tabs flex-row">
         <li>
           <a
@@ -225,12 +225,20 @@
           <ul class="product-nav">
             <li>
               <div class="img-wrap-s">
-                <img src="images/product2.png" alt="" class="image-of-list" />
+                <img
+                  id="img-1"
+                  onclick="handleUpdateDetail(this)"
+                  src="images/product2.png"
+                  alt=""
+                  class="image-of-list"
+                />
               </div>
             </li>
             <li>
               <div class="img-wrap-s">
                 <img
+                  id="img-2"
+                  onclick="handleUpdateDetail(this)"
                   src="https://files.tikka.tw/product/a14e5ce3b5b24e548e341b84cc54ae66.png"
                   alt=""
                   class="image-of-list"
@@ -240,6 +248,8 @@
             <li>
               <div class="img-wrap-s">
                 <img
+                  id="img-3"
+                  onclick="handleUpdateDetail(this)"
                   src="https://files.tikka.tw/product/e3586c0e0c0d441fbc5d4455dba4e530.png"
                   alt=""
                   class="image-of-list"
@@ -248,17 +258,31 @@
             </li>
             <li>
               <div class="img-wrap-s">
-                <img src="images/product5.png" alt="" class="image-of-list" />
-              </div>
-            </li>
-            <li>
-              <div class="img-wrap-s">
-                <img src="images/product6.png" alt="" class="image-of-list" />
+                <img
+                  id="img-4"
+                  onclick="handleUpdateDetail(this)"
+                  src="images/product5.png"
+                  alt=""
+                  class="image-of-list"
+                />
               </div>
             </li>
             <li>
               <div class="img-wrap-s">
                 <img
+                  id="img-5"
+                  onclick="handleUpdateDetail(this)"
+                  src="images/product6.png"
+                  alt=""
+                  class="image-of-list"
+                />
+              </div>
+            </li>
+            <li>
+              <div class="img-wrap-s">
+                <img
+                  id="img-6"
+                  onclick="handleUpdateDetail(this)"
                   src="https://files.tikka.tw/product/e3586c0e0c0d441fbc5d4455dba4e530.png"
                   alt=""
                   class="image-of-list"
@@ -272,8 +296,8 @@
           <p class="options"><span class="quantity">3</span>商品選項</p>
           <h3>Moiskin基礎保養套組</h3>
           <div class="price">
-            <p class="discount">$5,980</p>
-            <p class="original">$5,980</p>
+            <p class="discount">NT$5,980</p>
+            <p class="original">NT$5,980</p>
           </div>
           <p class="stock">
             庫存數量：
@@ -449,6 +473,81 @@
           );
           document.querySelector("form.adjust-item-count").style.display = "none";
         }
+      }
+
+      const fakeImgData = [
+        {
+          id: "img-1",
+          name: "Moiskin基礎保養套組",
+          originalPrice: "5,980",
+          discountPrice: "5,980",
+          stock: "7",
+          sold: "6.7萬",
+        },
+        {
+          id: "img-2",
+          name: "商品圖片 2",
+          originalPrice: "3,300",
+          discountPrice: "2,200",
+          stock: "19",
+          sold: "3萬",
+        },
+        {
+          id: "img-3",
+          name: "商品圖片 3",
+          originalPrice: "3,300",
+          discountPrice: "2,200",
+          stock: "29",
+          sold: "12萬",
+        },
+        {
+          id: "img-4",
+          name: "商品圖片 4",
+          originalPrice: "4,300",
+          discountPrice: "2,500",
+          stock: "1",
+          sold: "9.3萬",
+        },
+        {
+          id: "img-5",
+          name: "商品圖片 5",
+          originalPrice: "4,500",
+          discountPrice: "2,600",
+          stock: "12",
+          sold: "3萬",
+        },
+        {
+          id: "img-6",
+          name: "商品圖片 6",
+          originalPrice: "4,600",
+          discountPrice: "4,100",
+          stock: "3",
+          sold: "8萬",
+        },
+      ];
+
+      function handleUpdateDetail(imgEle) {
+        const imgId = imgEle.id;
+        const name = fakeImgData.find(({ id }) => imgId === id).name;
+        const originalPrice = fakeImgData.find(({ id }) => imgId === id).originalPrice;
+        const discountPrice = fakeImgData.find(({ id }) => imgId === id).discountPrice;
+        const stock = fakeImgData.find(({ id }) => imgId === id).stock;
+        const sold = fakeImgData.find(({ id }) => imgId === id).sold;
+        document.querySelector(".summary h3").innerText = name;
+        document.querySelector(".summary .price .original").innerText = "NT$" + originalPrice;
+        document.querySelector(".summary .price .discount").innerText = "NT$" + discountPrice;
+        document.querySelector(".stock .value").innerText = stock;
+        document.querySelector(".sold .value").innerText = sold;
+
+        /* 數量調整功能同步 */
+        document.querySelector(".adjustment input.quantity").max = stock;
+        /* 數量值調回預設 */
+        document.querySelector(".adjustment input.quantity").value = 3;
+        document.querySelector(".adjustment button.add").disabled = false;
+        document.querySelector(".adjustment button.reduce").disabled = false;
+
+        /* 售出狀態更新 */
+        document.querySelector(".quantity-reach-max").style.display = false;
       }
     </script>
   </body>
