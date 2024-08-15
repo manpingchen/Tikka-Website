@@ -219,7 +219,7 @@ function handleUpdateDetail(imgEle) {
   }
 }
 
-function handleAddToCartInProductDetailSummary() {
+function handleAddToCartInProductDetailSummary({ ifBuyNow = false }) {
   const id = document.querySelector(".summary").id;
   const productDataFromImgClick = fakeProductOptionsData.find(({ productId }) => productId === id);
   const ifProductCustomizable = document
@@ -229,6 +229,10 @@ function handleAddToCartInProductDetailSummary() {
   if (!ifProductCustomizable) {
     handleShowComponent("#product-added-to-cart", "flex");
     updateCart(id, 1, null, false);
+
+    if (ifBuyNow) {
+      window.location.href = "purchase.html";
+    }
   }
 
   if (ifProductCustomizable) {
@@ -274,4 +278,19 @@ function adjustQuantityInProductDetailPageOverlay(actionType) {
     .forEach((node) => {
       node.style.display = productQuantity === max ? "block" : "none";
     });
+}
+
+/* 購物車所有商品 */
+
+function adjustQuantityFromCart(element, actionType) {
+  const itemId = element.closest(".cart-item").id;
+  const selectorName = `form[name="${itemId}"]`;
+  const productQuantityInput = document.querySelector(`${selectorName} input.quantity`);
+  const value = actionType === "add" ? productQuantityInput.value++ : productQuantityInput.value--;
+  const max = Number(productQuantityInput.max);
+
+  document.querySelector(`${selectorName} button.reduce`).disabled = value === 1 ? true : false;
+  document.querySelector(`${selectorName} button.add`).disabled = value === max - 1 ? true : false;
+  document.querySelector(`${selectorName} .quantity-reach-max`).innerText =
+    value === max - 1 ? "已達購買上限" : "";
 }

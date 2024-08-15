@@ -149,7 +149,7 @@
     <div onclick="scrollToTop()" class="fixed-button go-top"></div>
     <!--Main-->
 
-    <!-- Aug 2024: classlist: 缺貨狀態時會增加 'sold-out'；促銷狀態時 'promo' -->
+    <!-- Aug 2024: classlist: 缺貨狀態時會增加 'sold-out' -->
     <main class="product-detail">
       <ul class="tabs flex-row">
         <li>
@@ -296,6 +296,7 @@
         <div class="summary flex-column customizable" id="product-1">
           <p class="options"><span class="quantity">3</span>商品選項</p>
           <h3>Moiskin基礎保養套組</h3>
+          <!--促銷狀態時 classlist 增加 'promo' -->
           <div class="price">
             <p class="discount">NT$5,980</p>
             <p class="original">NT$5,980</p>
@@ -332,13 +333,13 @@
             <button
               id="add-to-cart-product-1"
               class="add-btn button-like available-if-instock"
-              onclick="handleAddToCartInProductDetailSummary(this)"
+              onclick="handleAddToCartInProductDetailSummary()"
             >
               加入購物車
             </button>
             <button
               class="add-btn button-like available-if-instock"
-              onclick="location.href='purchase.html'"
+              onclick="handleAddToCartInProductDetailSummary({ifBuyNow: true})"
             >
               立即搶購
             </button>

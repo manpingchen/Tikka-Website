@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
+    <link rel="stylesheet" href="styles/product.css" />
     <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
 
     <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
@@ -152,86 +153,87 @@
       </div>
       <div class="cart-items flex-column">
         <div class="cart-item flex-row" id="item1">
-          <div class="img-wrap">
-            <img src="images/product1.png" alt="產品圖片" />
-          </div>
-          <div class="item-info flex-column">
-            <h3>Moiskin長效賦活精華液</h3>
+          <div class="actions flex-column">
+            <input type="checkbox" name="item1" id="check-item1" />
             <button class="remove">
               <img src="images/bin.svg" />
             </button>
-            <p class="description">
-              選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
-              選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
+          </div>
+          <div class="img-wrap-s" style="background-image: url('images/product1.png')"></div>
+          <div class="item-info flex-column">
+            <h3 class="ellipsis">Moiskin長效賦活精華液</h3>
+            <div class="custom-select">
+              <span class="line"></span>
+              <span class="arrow"></span>
+              <select name="item1" id="select-item1">
+                <option value="1">黑色-圓形</option>
+                <option value="1">白色-方形</option>
+              </select>
+            </div>
+            <p class="stock">
+              庫存數量：
+              <span class="value">7</span>
             </p>
-            <form action="javascript:void(0);" class="adjust-item-count">
-              <p class="cost">NT.1,280</p>
-              <div class="flex-row">
-                <button class="add" onclick="addOneItemToCart('item1')">
+            <div class="price promo">
+              <p class="discount">NT$5,980</p>
+              <p class="original">NT$5,980</p>
+            </div>
+
+            <form action="javascript:void(0);" class="adjust-item-count" name="item1">
+              <div class="quantity-adjust">
+                <button class="add" onclick="adjustQuantityFromCart(this, 'add')">
                   <span class="material-symbols-outlined"> change_history </span>
                 </button>
-                <input type="number" min="0" class="quantity" value="3" />
-                <button class="reduce" onclick="removeOneItemToCart('item1')">
+                <input type="number" min="0" id="quantity" class="quantity" value="3" max="7" />
+                <button class="reduce" onclick="adjustQuantityFromCart(this,'reduce')">
                   <span class="material-symbols-outlined"> change_history </span>
                 </button>
-                <span class="unit">個</span>
+                <span class="unit">箱</span>
               </div>
+              <span class="quantity-reach-max"></span>
             </form>
           </div>
         </div>
-        <div class="cart-item flex-row" id="item2">
-          <div class="img-wrap">
-            <img src="images/product2.png" alt="產品圖片" />
-          </div>
-          <div class="item-info flex-column">
-            <h3>Moiskin長效賦活精華液</h3>
+        <div class="cart-item flex-row sold-out" id="item2">
+          <div class="actions flex-column">
+            <input type="checkbox" name="item1" id="check-item2" />
             <button class="remove">
               <img src="images/bin.svg" />
             </button>
-            <p class="description">
-              選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
-              選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
-            </p>
-            <form action="javascript:void(0);" class="adjust-item-count">
-              <p class="cost">NT.1,280</p>
-              <div class="flex-row">
-                <button class="add" onclick="addOneItemToCart('item2')">
-                  <span class="material-symbols-outlined"> change_history </span>
-                </button>
-                <input type="number" min="0" class="quantity" value="3" />
-                <button class="reduce" onclick="removeOneItemToCart('item2')">
-                  <span class="material-symbols-outlined"> change_history </span>
-                </button>
-                <span class="unit">個</span>
-              </div>
-            </form>
           </div>
-        </div>
-        <div class="cart-item flex-row" id="item3">
-          <div class="img-wrap">
-            <img src="images/product3.png" alt="產品圖片" />
-          </div>
+          <div class="img-wrap-s" style="background-image: url('images/product1.png')"></div>
           <div class="item-info flex-column">
-            <h3>Moiskin長效賦活精華液</h3>
-            <button class="remove">
-              <img src="images/bin.svg" />
-            </button>
-            <p class="description">
-              選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
-              選項說明文案選項說明文案，選項說明文案選項說明文案，選項說明文案選項說明文案選項說明文案。
+            <h3 class="ellipsis">Moiskin長效賦活精華液</h3>
+            <div class="custom-select">
+              <span class="line"></span>
+              <span class="arrow"></span>
+              <select name="item1" id="select-item2">
+                <option value="1">黑色-圓形</option>
+                <option value="1">白色-方形</option>
+              </select>
+            </div>
+            <p class="stock">
+              庫存數量：
+              <span class="value">0</span>
             </p>
-            <form action="javascript:void(0);" class="adjust-item-count">
-              <p class="cost">NT.1,280</p>
-              <div class="flex-row">
-                <button class="add" onclick="addOneItemToCart('item3')">
+            <div class="price promo">
+              <p class="discount">NT$5,980</p>
+              <p class="original">NT$5,980</p>
+            </div>
+
+            <form action="javascript:void(0);" class="adjust-item-count" name="item2">
+              <div class="quantity-adjust">
+                <button class="add" onclick="adjustQuantityFromCart(this, 'add')" disabled>
                   <span class="material-symbols-outlined"> change_history </span>
                 </button>
-                <input type="number" min="0" class="quantity" value="3" />
-                <button class="reduce" onclick="removeOneItemToCart('item3')">
+                <input type="number" min="0" id="quantity" class="quantity" value="3" max="12" />
+                <button class="reduce" onclick="adjustQuantityFromCart(this,'reduce')" disabled>
                   <span class="material-symbols-outlined"> change_history </span>
                 </button>
-                <span class="unit">個</span>
+                <span class="unit">箱</span>
               </div>
+              <span class="quantity-reach-max" style="display: none"></span>
+              <span class="sold-out-text">已完售，請選擇其他選項</span>
             </form>
           </div>
         </div>
@@ -273,5 +275,7 @@
     </footer>
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/fakeData.js"></script>
   </body>
 </html>

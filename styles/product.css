@@ -347,18 +347,15 @@ div.overlay#product-options-missing {
 }
 
 /* 商品介紹頁遮罩之促銷狀態 */
+
+.status.promo .price .original,
+.price.promo .original,
 #product-options.promo .price .original {
   display: block;
 }
 
+.status:not(.promo) .price .original,
+.price:not(.promo) .original,
 #product-options:not(.promo) .price .original {
-  display: none;
-}
-
-main.promo .price .original {
-  display: block;
-}
-
-main:not(.promo) .price .original {
   display: none;
 }
