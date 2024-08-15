@@ -149,7 +149,7 @@
     <div onclick="scrollToTop()" class="fixed-button go-top"></div>
     <!--Main-->
 
-    <!-- classname: sold-out，為缺貨狀態用，如非缺貨狀態，可拿掉-->
+    <!-- Aug 2024: classlist: 缺貨狀態時會增加 'sold-out'；促銷狀態時 'promo' -->
     <main class="product-detail">
       <ul class="tabs flex-row">
         <li>
@@ -426,7 +426,8 @@
         </ul>
       </div>
     </div>
-    <!-- 商品選項遮罩  Aug 2024 -->
+    <!-- 商品選項遮罩  -->
+    <!-- Aug 2024: classlist: 促銷狀態時 'promo' -->
     <div class="overlay full-width white-bg" id="product-options">
       <button class="close" onclick="handleHideComponent('#product-options')"></button>
 

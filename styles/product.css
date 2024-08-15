@@ -345,3 +345,20 @@ div.overlay#product-options-missing {
     padding-left: 1rem;
   }
 }
+
+/* 商品介紹頁遮罩之促銷狀態 */
+#product-options.promo .price .original {
+  display: block;
+}
+
+#product-options:not(.promo) .price .original {
+  display: none;
+}
+
+main.promo .price .original {
+  display: block;
+}
+
+main:not(.promo) .price .original {
+  display: none;
+}

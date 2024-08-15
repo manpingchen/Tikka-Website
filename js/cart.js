@@ -34,7 +34,7 @@ function printOverlayOptions(ifFromProductDetailPage = false, productDataFromImg
   /* 清除原先畫面，避免下方重複繪製 */
   containerEle.innerHTML = null;
 
-  /* 商品狀態、價格與庫存在此更新 */
+  /* 商品狀態、價格與庫存可在此更新 */
   if (productDataFromImgClick) {
     console.log({ productDataFromImgClick });
     document.querySelector("#product-options .price .discount").innerText =
@@ -48,7 +48,7 @@ function printOverlayOptions(ifFromProductDetailPage = false, productDataFromImg
       productDataFromImgClick.stock;
   }
 
-  /* productOptions 於 fakeData.js  */
+  /* 商品選項在此更新，Demo假資料為 productOptions 於 fakeData.js  */
   productOptions.forEach(({ id, name, options }) => {
     /* 建立選項分類容器 div */
     const optionCateEle = document.createElement("div");
