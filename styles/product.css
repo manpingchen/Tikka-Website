@@ -297,8 +297,13 @@ div.overlay#product-options button.add-btn {
   width: auto;
 }
 
+button.add-btn.gray {
+  background: var(--btn-gray-gradient) !important;
+  pointer-events: none;
+}
+
 div.overlay#product-options button.add-btn.gray {
-  background: var(--btn-gray-gradient);
+  pointer-events: unset;
 }
 
 div.overlay#product-options-missing {

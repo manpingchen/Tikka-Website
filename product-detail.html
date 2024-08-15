@@ -292,7 +292,8 @@
           </ul>
         </section>
 
-        <div class="summary flex-column" id="item1">
+        <!-- Aug 2024 更新, 若有選項的商品，則在classlist 增加 customizable -->
+        <div class="summary flex-column customizable" id="product-1">
           <p class="options"><span class="quantity">3</span>商品選項</p>
           <h3>Moiskin基礎保養套組</h3>
           <div class="price">
@@ -301,20 +302,24 @@
           </div>
           <p class="stock">
             庫存數量：
-            <span class="value">9</span>
+            <span class="value">7</span>
           </p>
           <p class="sold">
             已售出：
             <span class="value">6.7萬</span>
           </p>
 
-          <form action="javascript:void(0);" class="adjust-item-count">
+          <form action="javascript:void(0);" class="adjust-item-count" name="product-1">
             <div class="flex-row adjustment">
               <button class="add available-if-instock" onclick="adjustQuantity('add', false)">
                 <span class="material-symbols-outlined"> change_history </span>
               </button>
-              <input type="number" min="0" id="quantity" class="quantity" value="3" max="7" />
-              <button class="reduce available-if-instock" onclick="adjustQuantity('reduce', false)">
+              <input type="number" min="1" id="quantity" class="quantity" value="1" max="7" />
+              <button
+                class="reduce available-if-instock"
+                onclick="adjustQuantity('reduce',false)"
+                disabled
+              >
                 <span class="material-symbols-outlined"> change_history </span>
               </button>
               <span class="unit">箱</span>
@@ -323,7 +328,14 @@
             <span class="sold-out-text" style="display: none">已售完</span>
           </form>
           <div class="button-actions">
-            <button class="add-btn button-like available-if-instock">加入購物車</button>
+            <!-- 按鈕id：'add-to-cart' + '-' + '商品id', 如，'add-to-cart' + '-' + 'product-1' -->
+            <button
+              id="add-to-cart-product-1"
+              class="add-btn button-like available-if-instock"
+              onclick="handleAddToCartInProductDetailSummary(this)"
+            >
+              加入購物車
+            </button>
             <button
               class="add-btn button-like available-if-instock"
               onclick="location.href='purchase.html'"
@@ -414,6 +426,155 @@
         </ul>
       </div>
     </div>
+    <!-- 商品選項遮罩  Aug 2024 -->
+    <div class="overlay full-width white-bg" id="product-options">
+      <button class="close" onclick="handleHideComponent('#product-options')"></button>
+
+      <div class="product-info">
+        <div class="img-wrap-s">
+          <img src="images/p2.png" width="100" height="100" alt="商品圖" />
+        </div>
+        <div class="status">
+          <div class="price">
+            <p class="discount">NT$2,280</p>
+            <p class="original">NT$4,280</p>
+          </div>
+          <p class="stocking">庫存數量：7</p>
+        </div>
+      </div>
+
+      <!-- 下方為靜態HTML做參考，無預設選項狀態 -->
+      <div class="options blank">
+        <!-- Demo 產出畫面為 cart.js 中的 printOverlayOptions() -->
+        <!-- <div class="option-category" id="o-1">
+          <h5>顏色</h5>
+          <ul>
+            <li class="" id="c-1" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">黑色</p>
+            </li>
+            <li class="" id="c-2" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">灰色</p>
+            </li>
+            <li class="unavailable" id="c-3" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">白色</p>
+            </li>
+            <li id="c-4" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">咖啡色</p>
+            </li>
+          </ul>
+        </div>
+        <div class="option-category" id="o-2">
+          <h5>款式</h5>
+          <ul>
+            <li class="" id="s-1" onclick="toggleSelectOption(this)">
+              <p class="option-name">圓型</p>
+            </li>
+            <li class="" id="s-2" onclick="toggleSelectOption(this)">
+              <p class="option-name">方形</p>
+            </li>
+
+            <li id="s-4" class="unavailable" onclick="toggleSelectOption(this)">
+              <p class="option-name">長方形</p>
+            </li>
+            <li id="s-5" onclick="toggleSelectOption(this)">
+              <p class="option-name">五芒星型</p>
+            </li>
+            <li id="s-6" onclick="toggleSelectOption(this)">
+              <p class="option-name">鑽石愛心型</p>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+
+      <!-- 下方為靜態HTML做參考，有預設選項狀態 -->
+      <!-- <div class="options default-options" style="display: none">
+        <div class="option-category" id="o-1">
+          <h5>顏色</h5>
+          <ul>
+            <li class="selected" id="c-1" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">黑色</p>
+            </li>
+            <li class="" id="c-2" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">灰色</p>
+            </li>
+            <li class="unavailable" id="c-3" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">白色</p>
+            </li>
+            <li id="c-4" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">咖啡色</p>
+            </li>
+          </ul>
+        </div>
+        <div class="option-category" id="o-2">
+          <h5>款式</h5>
+          <ul>
+            <li class="selected" id="s-1" onclick="toggleSelectOption(this)">
+              <p class="option-name">圓型</p>
+            </li>
+            <li class="" id="s-2" onclick="toggleSelectOption(this)">
+              <p class="option-name">方形</p>
+            </li>
+
+            <li id="s-4" class="unavailable" onclick="toggleSelectOption(this)">
+              <p class="option-name">長方形</p>
+            </li>
+            <li id="s-5" onclick="toggleSelectOption(this)">
+              <p class="option-name">五芒星型</p>
+            </li>
+            <li id="s-6" onclick="toggleSelectOption(this)">
+              <p class="option-name">鑽石愛心型</p>
+            </li>
+          </ul>
+        </div>
+      </div> -->
+
+      <div class="actions">
+        <form action="javascript:void(0);" class="adjust-item-count">
+          <div class="quantity-label">
+            <h5>數量</h5>
+            <span class="quantity-reach-max" style="display: none">已達到購買上限</span>
+          </div>
+          <div class="quantity-adjust">
+            <button class="add" onclick="adjustQuantityInProductDetailPageOverlay('add')">
+              <span class="material-symbols-outlined"> change_history </span>
+            </button>
+            <input type="number" min="1" id="quantity" class="quantity" value="1" max="7" />
+            <button class="reduce" onclick="adjustQuantityInProductDetailPageOverlay('reduce')">
+              <span class="material-symbols-outlined"> change_history </span>
+            </button>
+            <span class="unit">箱</span>
+          </div>
+        </form>
+        <button
+          type="button"
+          class="add-btn button-like"
+          onclick="handleAddToCartViaProductOptionOverlay()"
+        >
+          加入購物車
+        </button>
+      </div>
+    </div>
+
+    <!-- 商品加入購物車 提醒遮罩 Aug 2024 -->
+    <div class="overlay full-width info-only" id="product-added-to-cart">
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#product-added-to-cart')"></button>
+        <p class="flex-row"><span class="line"></span>加入購物車<span class="line"></span></p>
+      </div>
+      <div class="content">
+        <img src="images/cart.svg" alt="mic" width="20" height="auto" />
+        商品已為您加入購物車
+      </div>
+    </div>
+
     <div class="backdrop" style="display: none"></div>
 
     <footer>
@@ -460,95 +621,6 @@
     <script>
       $(".product-zoom-in").slick(productDetailMainPicSlideConfig);
       $(".product-nav").slick(productNavSlideConfig);
-
-      /* 如產品售完，關閉按鈕功能 */
-      function disableBtnsIfSoldOut() {
-        const ifSoldOut = document
-          .querySelector("main.product-detail")
-          .classList.value.includes("sold-out");
-
-        if (ifSoldOut) {
-          [...document.querySelectorAll(".available-if-instock")].forEach(
-            (node) => (node.disabled = true)
-          );
-          document.querySelector("form.adjust-item-count").style.display = "none";
-        }
-      }
-
-      const fakeImgData = [
-        {
-          id: "img-1",
-          name: "Moiskin基礎保養套組",
-          originalPrice: "5,980",
-          discountPrice: "5,980",
-          stock: "7",
-          sold: "6.7萬",
-        },
-        {
-          id: "img-2",
-          name: "商品圖片 2",
-          originalPrice: "3,300",
-          discountPrice: "2,200",
-          stock: "19",
-          sold: "3萬",
-        },
-        {
-          id: "img-3",
-          name: "商品圖片 3",
-          originalPrice: "3,300",
-          discountPrice: "2,200",
-          stock: "29",
-          sold: "12萬",
-        },
-        {
-          id: "img-4",
-          name: "商品圖片 4",
-          originalPrice: "4,300",
-          discountPrice: "2,500",
-          stock: "1",
-          sold: "9.3萬",
-        },
-        {
-          id: "img-5",
-          name: "商品圖片 5",
-          originalPrice: "4,500",
-          discountPrice: "2,600",
-          stock: "12",
-          sold: "3萬",
-        },
-        {
-          id: "img-6",
-          name: "商品圖片 6",
-          originalPrice: "4,600",
-          discountPrice: "4,100",
-          stock: "3",
-          sold: "8萬",
-        },
-      ];
-
-      function handleUpdateDetail(imgEle) {
-        const imgId = imgEle.id;
-        const name = fakeImgData.find(({ id }) => imgId === id).name;
-        const originalPrice = fakeImgData.find(({ id }) => imgId === id).originalPrice;
-        const discountPrice = fakeImgData.find(({ id }) => imgId === id).discountPrice;
-        const stock = fakeImgData.find(({ id }) => imgId === id).stock;
-        const sold = fakeImgData.find(({ id }) => imgId === id).sold;
-        document.querySelector(".summary h3").innerText = name;
-        document.querySelector(".summary .price .original").innerText = "NT$" + originalPrice;
-        document.querySelector(".summary .price .discount").innerText = "NT$" + discountPrice;
-        document.querySelector(".stock .value").innerText = stock;
-        document.querySelector(".sold .value").innerText = sold;
-
-        /* 數量調整功能同步 */
-        document.querySelector(".adjustment input.quantity").max = stock;
-        /* 數量值調回預設 */
-        document.querySelector(".adjustment input.quantity").value = 3;
-        document.querySelector(".adjustment button.add").disabled = false;
-        document.querySelector(".adjustment button.reduce").disabled = false;
-
-        /* 售出狀態更新 */
-        document.querySelector(".quantity-reach-max").style.display = false;
-      }
     </script>
   </body>
 </html>
