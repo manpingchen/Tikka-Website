@@ -6179,6 +6179,11 @@ main.product-detail.sold-out form .sold-out-text {
   display: block !important;
 }
 
+main.purchase form .sold-out-text,
+main.purchase form .quantity-reach-max {
+  font-size: 0.785rem;
+}
+
 div.product-summary div.summary button.add-btn {
   color: #fff;
   background: linear-gradient(#ffa9cd, #ff237f);
@@ -6715,11 +6720,31 @@ main.purchase .cart-items {
 
 main.purchase .cart-item,
 div.purchase-overlay .cart-item,
-div.form-wrapper {
+div.form-wrapper,
+main.purchase div.summary {
   padding: 2rem 2rem 2rem 3rem;
   background: #fff5fc;
   gap: 40px;
   border-radius: 20px;
+}
+
+main.purchase div.summary {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main.purchase div.summary .select-all,
+main.purchase div.summary p.summary-total {
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+main.purchase div.summary p.summary-total {
+  color: var(--discount-price-color);
 }
 
 div.purchase-overlay .cart-item {
@@ -7170,8 +7195,8 @@ div.purchase-overlay .check-item-count p.point {
   }
 
   main.purchase .item-info div {
-    width: 150px;
     gap: 0.5rem;
+    flex-wrap: wrap;
   }
 }
 
@@ -9092,7 +9117,7 @@ main.purchase .cart-item p {
 }
 
 main.purchase .cart-item .price .discount {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: var(--discount-price-color);
 }
 
@@ -9129,12 +9154,17 @@ main.purchase .cart-item .custom-select .arrow {
   border-color: black transparent transparent transparent;
 }
 
-main.purchase .cart-item .actions input[type="checkbox"] {
+main.purchase input[type="checkbox"] {
   width: 26px;
   height: 26px;
   accent-color: var(--discount-price-color);
   border-radius: 4px;
   border: 1px solid gray;
+}
+
+main.purchase .cart-item.sold-out input[type="checkbox"] {
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 main.purchase .cart-item .img-wrap-s {
@@ -9145,6 +9175,7 @@ main.purchase .cart-item .img-wrap-s {
   border-radius: 0.5rem;
   background-size: cover;
   background-position: center;
+  background-color: white;
 }
 
 main.purchase .cart-item .quantity-reach-max {

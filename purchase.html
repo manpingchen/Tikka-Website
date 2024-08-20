@@ -142,6 +142,8 @@
         </li>
       </ul>
     </nav>
+
+    <div onclick="scrollToTop()" class="fixed-button go-top"></div>
     <!-- Header End -->
 
     <!--Main-->
@@ -238,6 +240,13 @@
           </div>
         </div>
       </div>
+      <div class="summary">
+        <div class="select-all flex-row">
+          <input type="checkbox" name="select-all" id="select-all" onclick="selectAll(this)" />
+          <label for="select-all">全選</label>
+        </div>
+        <p class="summary-total">選購商品總金額<span class="value">NT$2,280</span></p>
+      </div>
       <div class="flex-row justify-center gap-1 mt-1 btns-group">
         <button class="pink-gradient-bg" onclick="location.href='products.html'">繼續購物</button>
         <button class="pink-gradient-bg" onclick="location.href='purchase-customer-detail.html'">
@@ -277,5 +286,15 @@
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/fakeData.js"></script>
+    <script>
+      function selectAll(element) {
+        const checkedOrNot = element.checked;
+        document
+          .querySelectorAll(".cart-item:not(.sold-out) input[type=checkbox]")
+          .forEach((node) => {
+            node.checked = checkedOrNot;
+          });
+      }
+    </script>
   </body>
 </html>
