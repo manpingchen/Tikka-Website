@@ -29,7 +29,11 @@ function handleAddToCart(element) {
   }
 }
 
-function printOverlayOptions(ifFromProductDetailPage = false, productDataFromImgClick) {
+function printOverlayOptions(
+  ifFromProductDetailPage = false,
+  productDataFromImgClick,
+  ifBuyNow = false
+) {
   const containerEle = document.querySelector("#product-options .options");
   /* 清除原先畫面，避免下方重複繪製 */
   containerEle.innerHTML = null;
@@ -94,6 +98,13 @@ function printOverlayOptions(ifFromProductDetailPage = false, productDataFromImg
     optionCateEle.append(optionListEle);
     containerEle.append(optionCateEle);
   });
+
+  /* 立即搶購按鈕文字 */
+  const actionBtn = document.querySelector("div#product-options button.add-btn");
+  actionBtn.innerText = ifBuyNow ? "立即搶購" : "加入購物車";
+  actionBtn.onclick = ifBuyNow
+    ? () => (window.location = "purchase.html")
+    : handleAddToCartViaProductOptionOverlay();
 
   /* 同步 遮罩內數量調整按鈕 與 遮罩外數量調整按鈕 */
   if (ifFromProductDetailPage) {
@@ -238,7 +249,7 @@ function handleAddToCartInProductDetailSummary({ ifBuyNow = false }) {
   if (ifProductCustomizable) {
     handleShowComponent("#product-options", "flex");
     productIdForOptionsOverlay = id;
-    printOverlayOptions(true, productDataFromImgClick);
+    printOverlayOptions(true, productDataFromImgClick, true);
 
     document
       .querySelectorAll(`form[name="${productIdForOptionsOverlay}"] input.quantity`)
