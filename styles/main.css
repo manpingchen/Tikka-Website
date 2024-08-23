@@ -6734,6 +6734,7 @@ main.purchase div.summary {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-top: 1rem;
 }
 
 main.purchase div.summary .select-all,
