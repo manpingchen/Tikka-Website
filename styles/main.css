@@ -560,6 +560,10 @@ form.invoice-info-field {
   margin-top: 1rem;
 }
 
+main.purchase form.invoice-info-field {
+  margin-top: unset;
+}
+
 form.invoice-info-field div.flex-row {
   display: flex;
   gap: 1rem;
@@ -600,7 +604,7 @@ form.invoice-info-field span#invoice-info-tips {
   width: 100%;
   margin-top: 1rem;
 }
-/*new*/
+
 div.invoice-info-field div.flex-row {
   /* margin-top: 1rem; */
   display: flex;
@@ -6779,6 +6783,7 @@ main.purchase .btns-group button.gray-gradient-bg:not(.active):hover {
 main.purchase .receipt-options .options {
   flex-wrap: wrap;
   display: grid;
+  gap: 1rem;
   grid-template-columns: repeat(4, 1fr);
 }
 
@@ -6788,8 +6793,8 @@ main.purchase .receipt-options .options {
   }
 }
 
-main.purchase form.invoice-info-field .input-field,
-div.purchase-overlay form.invoice-info-field .input-field {
+main.purchase form.invoice-info-field .input-wrapper,
+div.purchase-overlay form.invoice-info-field .input-w {
   border: 1px solid #999 !important;
   padding: 1rem 1.5rem;
   background: #fff;
@@ -6797,7 +6802,11 @@ div.purchase-overlay form.invoice-info-field .input-field {
   margin-top: 0;
 }
 
-main.purchase form.invoice-info-field .input-field label,
+main.purchase form.invoice-info-field .input-wrapper {
+  padding: 0.5rem 20px;
+}
+
+main.purchase form.invoice-info-field .input-wrapper label,
 div.purchase-overlay form.invoice-info-field .input-field label {
   background: none !important;
   border: none !important;
@@ -6805,6 +6814,14 @@ div.purchase-overlay form.invoice-info-field .input-field label {
   color: #999 !important;
   width: auto !important;
   padding: 0 !important;
+}
+
+main.purchase form.invoice-info-field .input-wrapper label {
+  color: black !important;
+  flex-shrink: 0;
+}
+main.purchase form.invoice-info-field .input-field input[type="email"] {
+  width: 100% !important;
 }
 main.purchase form.invoice-info-field .input-field label::after,
 div.purchase-overlay form.invoice-info-field .input-field label::after {
@@ -6834,6 +6851,13 @@ div.form-wrapper button[type="submit"] {
   }
   div.form-wrapper button[type="submit"] {
     padding: 0.5rem 1.5rem;
+  }
+  main.purchase .receipt-options .options {
+    width: max-content;
+  }
+  main.purchase .receipt-options .options button {
+    padding: 0.5rem 2rem;
+    width: fit-content;
   }
 }
 
@@ -6865,6 +6889,10 @@ div.purchase-overlay .receipt-options .options button.active {
   margin-bottom: 1rem;
   display: flex;
   align-items: baseline;
+}
+
+.customer-detail .input-wrapper label {
+  flex-shrink: 0;
 }
 
 div.purchase-overlay .select-wrappers {
@@ -6915,6 +6943,20 @@ div.purchase-overlay .select-wrapper select {
   box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
+  height: 35px;
+}
+
+main.purchase .select-wrapper .custom-select {
+  position: relative;
+}
+main.purchase .select-wrapper .custom-select .line {
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: 35px;
+  background: #000;
+  top: 0;
+  right: 40px;
 }
 
 .customer-detail .input-wrapper input,

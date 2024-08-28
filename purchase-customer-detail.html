@@ -143,6 +143,8 @@
     </nav>
     <!-- Header End -->
 
+    <div onclick="scrollToTop()" class="fixed-button go-top"></div>
+
     <!--Main-->
     <main class="purchase">
       <div class="cart-titles mb-1">
@@ -153,15 +155,21 @@
       <div class="form-wrapper mb-1">
         <div class="flex-column select-wrapper">
           <label for="payment-method">付款方式</label>
-          <select name="payment-method" id="payment-method">
-            <option value="">NewbePay藍新金流</option>
-          </select>
+          <div class="custom-select">
+            <select name="payment-method" id="payment-method">
+              <option value="">NewbePay藍新金流</option>
+            </select>
+            <span class="line"></span>
+          </div>
         </div>
         <div class="flex-column select-wrapper">
           <label for="delivery-method">配送方式</label>
-          <select name="delivery-method" id="delivery-method">
-            <option value="">宅配</option>
-          </select>
+          <div class="custom-select">
+            <select name="delivery-method" id="delivery-method">
+              <option value="">宅配</option>
+            </select>
+            <span class="line"></span>
+          </div>
         </div>
         <form action="javascript:void(0);" class="customer-detail mb-1">
           <div class="input-wrapper">
@@ -176,36 +184,34 @@
             <label for="mail">收件人mail：</label>
             <input type="text" name="mail" id="mail" placeholder="請輸入文字..." />
           </div>
-          <div class="flex-row">
-            <div class="input-wrapper">
-              <label for="city-county">縣市：</label>
-              <input type="text" name="city-county" id="city-county" placeholder="請輸入文字..." />
-            </div>
-            <div class="input-wrapper">
-              <label for="address2">鄉鎮市區：</label>
-              <input type="text" name="address2" id="address2" placeholder="請輸入文字..." />
-            </div>
-          </div>
           <div class="input-wrapper">
             <label for="delivery-address">收件地址：</label>
             <textarea
               type="text"
               name="delivery-address"
+              rows="4"
               id="delivery-address"
               placeholder="請輸入文字..."
             ></textarea>
           </div>
           <div class="input-wrapper">
-            <label for="note">備註（可不填）：</label>
-            <textarea type="text" name="note" id="note" placeholder="請輸入文字..."></textarea>
+            <label for="note">備註(可不填)：</label>
+            <textarea
+              type="text"
+              rows="4"
+              name="note"
+              id="note"
+              placeholder="請輸入文字..."
+            ></textarea>
           </div>
           <div class="input-wrapper">
             <label for="coupon">主播推薦碼：</label>
+
             <input type="text" name="coupon" id="coupon" placeholder="請輸入文字..." />
           </div>
         </form>
       </div>
-      <div class="form-wrapper receipt-options flex-column mb-1">
+      <div class="form-wrapper receipt-options flex-column mb-1 customer-detail">
         <h4>電子發票</h4>
         <div class="options flex-row gap-1" id="invoice-types">
           <button
@@ -242,34 +248,28 @@
           </button>
         </div>
         <form class="invoice-info-field">
-          <div class="flex-row input-field">
-            <label for="invoice-info-input" class="">Email</label>
-            <input id="invoice-info-input" placeholder="請輸入文字..." />
+          <div class="input-wrapper">
+            <label for="email" class="">Email：</label>
+            <textarea
+              type="email"
+              name="email"
+              rows="4"
+              id="email"
+              placeholder="請輸入文字..."
+            ></textarea>
           </div>
           <span id="invoice-info-tips" style="display: none"></span>
         </form>
       </div>
       <div class="form-wrapper payment-options flex-column">
-        <div class="flex-row full-width justify-space-between">
-          <h4>結帳方式</h4>
-          <div class="flex-row gap-1 btns-group" id="payment-option-buttons">
-            <button
-              class="gray-gradient-bg active"
-              id="nt-dollar"
-              onclick="switchTotalByCurrency(this.id, 'payment-option-buttons')"
-            >
-              台幣
-            </button>
-          </div>
-        </div>
         <div class="price-calculation full-width">
           <div class="delivery-fee flex-row justify-space-between">
             <p class="flex-row gap-1">運費<span class="fee-applied">（未達最低消費門檻）</span></p>
-            <p class="cost">NT.<span class="value">80</span></p>
+            <p class="cost">NT$<span class="value">80</span></p>
           </div>
           <div class="total-price flex-row justify-space-between">
             <p class="flex-row gap-1">購物車總金額</p>
-            <p class="cost"><span class="value" id="total-value">640,000</span></p>
+            <p class="cost">NT$<span class="value" id="total-value">640,000</span></p>
           </div>
         </div>
       </div>
@@ -312,7 +312,6 @@
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
     <script>
-      switchTotalByCurrency("nt-dollar");
       handleOptionClick("einvoice", "invoice-types");
     </script>
   </body>
