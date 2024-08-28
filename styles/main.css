@@ -6975,8 +6975,18 @@ div.form-wrapper .detail p {
   width: auto;
 }
 
-div.form-wrapper .detail p.label {
-  width: 120px;
+main.purchase .cart-item,
+main.purchase div.form-wrapper p {
+  line-height: 1.5rem;
+  letter-spacing: 0.025rem;
+}
+
+main.purchase div.form-wrapper p {
+  font-size: 0.875rem;
+}
+
+main.purchase .cart-item p.option {
+  width: 200px;
 }
 
 div.purchase-overlay .detail,
@@ -7049,10 +7059,6 @@ div.purchase-overlay .cart-item .img-wrap img {
 .cart-item .item-info p.description {
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
 }
 @media screen and (max-width: 768px) {
   div.purchase-overlay .cart-item .item-info {
@@ -7139,18 +7145,12 @@ div.purchase-overlay .check-item-count p.point {
   }
 
   main.purchase .item-info {
-    gap: 1rem;
     height: initial;
-    gap: 10px;
+    gap: 0.25rem;
   }
 
   main.purchase .item-info p.description {
     font-size: 0.85rem;
-  }
-
-  main.purchase .item-info p.cost,
-  main.purchase .item-info p.point {
-    font-size: 0.875rem;
   }
 
   main.purchase .cart-item .img-wrap {
@@ -9125,11 +9125,11 @@ main.purchase .cart-item .price .discount {
 main.purchase .cart-item .custom-select {
   width: 100%;
   position: relative;
-  height: 36px;
+  height: 32px;
   background: white;
   border-radius: 0.4rem;
   border: 1px solid #000;
-  line-height: 34px;
+  line-height: 32px;
   padding-left: 8px;
 }
 
@@ -9140,16 +9140,17 @@ main.purchase .cart-item.sold-out .custom-select {
 
 main.purchase .cart-item .custom-select p {
   color: black;
+  font-size: 0.875rem;
 }
 
 main.purchase .cart-item.sold-out .custom-select p {
-  color: gray
+  color: gray;
 }
 
 main.purchase .cart-item .custom-select .line {
   display: block;
   position: absolute;
-  height: 36px;
+  height: 30px;
   width: 1px;
   background: black;
   right: 2rem;
@@ -10481,5 +10482,25 @@ button.copy-url {
   .fixed-button.go-top {
     bottom: 8rem;
     right: 1rem;
+  }
+  main.purchase {
+    margin-bottom: -140px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  main.purchase .cart-item .img-wrap-s {
+    width: 70px;
+    height: 70px;
+  }
+  main.purchase .item-info h3 {
+    font-size: 1rem;
+  }
+
+  main.purchase .cart-item p {
+    font-size: 0.875rem;
+  }
+  main.purchase .cart-item .price .discount {
+    font-size: 1rem;
   }
 }
