@@ -101,10 +101,12 @@ function printOverlayOptions(
 
   /* 立即搶購按鈕文字 */
   const actionBtn = document.querySelector("div#product-options button.add-btn");
-  actionBtn.innerText = ifBuyNow ? "立即搶購" : "加入購物車";
-  actionBtn.onclick = ifBuyNow
-    ? () => (window.location = "purchase.html")
-    : handleAddToCartViaProductOptionOverlay();
+  if (ifBuyNow) {
+    actionBtn.innerText = "立即搶購";
+    actionBtn.onclick = () => (window.location = "purchase.html");
+  } else {
+    actionBtn.onclick = () => handleAddToCartViaProductOptionOverlay();
+  }
 
   /* 同步 遮罩內數量調整按鈕 與 遮罩外數量調整按鈕 */
   if (ifFromProductDetailPage) {
@@ -304,4 +306,13 @@ function adjustQuantityFromCart(element, actionType) {
   document.querySelector(`${selectorName} button.add`).disabled = value === max - 1 ? true : false;
   document.querySelector(`${selectorName} .quantity-reach-max`).innerText =
     value === max - 1 ? "已達購買上限" : "";
+}
+
+function changeOptionsFromCart(element) {
+  const productId = element.id.split("add-to-cart-")[1];
+  console.log({ id: productId });
+  handleShowComponent("#product-options", "flex");
+  productIdForOptionsOverlay = productId;
+  printOverlayOptions();
+  document.getElementsByClassName("backdrop")[0].classList.add("gray");
 }

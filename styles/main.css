@@ -9126,14 +9126,24 @@ main.purchase .cart-item .custom-select {
   width: 100%;
   position: relative;
   height: 36px;
+  background: white;
+  border-radius: 0.4rem;
+  border: 1px solid #000;
+  line-height: 34px;
+  padding-left: 8px;
 }
 
-main.purchase .cart-item select {
-  padding: 0.5rem;
-  width: 100%;
-  border-radius: 0.5rem;
-  appearance: none;
-  -webkit-appearance: none;
+main.purchase .cart-item.sold-out .custom-select {
+  background: #f0f0f0;
+  color: lightgray;
+}
+
+main.purchase .cart-item .custom-select p {
+  color: black;
+}
+
+main.purchase .cart-item.sold-out .custom-select p {
+  color: gray
 }
 
 main.purchase .cart-item .custom-select .line {
