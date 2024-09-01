@@ -43,6 +43,13 @@ li.product h5.name {
   max-width: 164px; /* 限制最多在20字*/
 }
 
+@media screen and (min-width: 1200px) {
+  li.product h5.name {
+    max-width: 175px;
+    font-size: 0.95rem;
+  }
+}
+
 @media screen and (max-width: 320px) {
   li.product h5.name {
     margin: 0 auto;
