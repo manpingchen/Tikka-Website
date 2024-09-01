@@ -1,6 +1,6 @@
 const productListSlideConfig = {
-  slidesToShow: 5,
-  slidesToScroll: 5,
+  slidesToShow: 4,
+  slidesToScroll: 4,
   infinite: true,
   responsive: [
     {

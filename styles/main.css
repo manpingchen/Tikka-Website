@@ -9618,6 +9618,14 @@ main.purchase .cart-item form button.reduce {
   width: 95%;
 }
 
+@media screen and (min-width: 1200px) {
+  .products.list li,
+  #products-slides li {
+    width: 195px !important;
+    margin-left: 12px;
+  }
+}
+
 .products.list li img.top-tag {
   position: absolute;
   top: -5px;
