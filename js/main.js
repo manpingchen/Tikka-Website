@@ -208,6 +208,7 @@ if (backdrop) {
   backdrop.addEventListener("click", () => {
     [...overlays].forEach((node) => {
       const classList = node ? node.classList : null;
+      if (classList.contains("show")) node.style.display = "none";
       if (classList.contains("from-right")) {
         return (node.style.transform = "translate(100%, 0)");
       }
@@ -234,6 +235,7 @@ function handleHideComponent(selector, shouldHideBackdrop = true) {
       return (node.style.transform = "translate(100%, 0)");
     }
     // node.style.transform = "translate(0, 100%)";
+    console.log(1);
     node.style.display = "none";
   }
 

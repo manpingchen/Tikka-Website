@@ -290,11 +290,12 @@
               </div>
             </li>
           </ul>
+          <p class="options desktop-only"><span class="quantity">3</span>商品選項</p>
         </section>
 
         <!-- Aug 2024 更新, 若有選項的商品，則在classlist 增加 customizable -->
         <div class="summary flex-column customizable" id="product-1">
-          <p class="options"><span class="quantity">3</span>商品選項</p>
+          <p class="options mobile-only"><span class="quantity">3</span>商品選項</p>
           <h3>Moiskin基礎保養套組</h3>
           <!--促銷狀態時 classlist 增加 'promo' -->
           <div class="price promo">
@@ -347,7 +348,7 @@
 
           <!-- 電腦版 -->
           <div
-            class="custom-select desktop-only mt-1"
+            class="custom-select desktop-only mt-1 product-options-select"
             id="add-to-cart-product-1"
             onclick="handleAddToCartInProductDetailSummary({ifBuyNow: false})"
           >

@@ -50,6 +50,14 @@ const productNavSlideConfig = {
   slidesToScroll: 1,
   asNavFor: ".product-zoom-in",
   focusOnSelect: true,
-  arrows: false,
+  arrows: true,
   infinite: false,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        arrows: false,
+      },
+    },
+  ],
 };

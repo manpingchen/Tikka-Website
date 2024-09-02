@@ -182,5 +182,6 @@ div.overlay#product-options div.actions {
   div.overlay#product-options {
     position: fixed;
     width: 400px;
+    border-radius: 0.8rem !important;
   }
 }

@@ -6,6 +6,8 @@ if (productQuantityInput) {
   productQuantity = Number(productQuantityInput.value);
 }
 
+let clickedThumbnailInProductDetailGallery;
+
 function handleAddToCart(element) {
   const productId = element.id.split("add-to-cart-")[1];
   const ifProductInCart = element.classList.contains("added");
@@ -40,6 +42,7 @@ function printOverlayOptions(
 
   /* 商品狀態、價格與庫存可在此更新 */
   if (productDataFromImgClick) {
+    // 有點擊小圖時，帶入點擊的產品資料
     console.log({ productDataFromImgClick });
     document.querySelector("#product-options .price .discount").innerText =
       "NT$" + productDataFromImgClick.discountPrice;
@@ -50,6 +53,18 @@ function printOverlayOptions(
     document.querySelector("#product-options form").name = productDataFromImgClick.productId;
     document.querySelector("#product-options form input.quantity").max =
       productDataFromImgClick.stock;
+  } else {
+    // 沒有點擊小圖時，帶入第一張預設產品資料
+    const defaultProduct = document.querySelector(".summary");
+    document.querySelector("#product-options .price .discount").innerText =
+      "NT$" + defaultProduct.querySelector(".price .discount").innerText;
+    document.querySelector("#product-options .price .original").innerText =
+      "NT$" + defaultProduct.querySelector(".price .original").innerText;
+    document.querySelector("#product-options .stocking").innerText =
+      "庫存數量：" + defaultProduct.querySelector(".stock").innerText;
+    document.querySelector("#product-options form").name = defaultProduct.id;
+    document.querySelector("#product-options form input.quantity").max =
+      defaultProduct.querySelector(".stock").innerText;
   }
 
   /* 商品選項在此更新，Demo假資料為 productOptions 於 fakeData.js  */
@@ -190,6 +205,7 @@ function validQuantity(max) {
 /* 商品介紹頁使用，Demo用之假資料 fakeData.js 中 fakeProductOptionsData */
 function handleUpdateDetail(imgEle) {
   productQuantity = 1;
+  clickedThumbnailInProductDetailGallery = imgEle;
 
   const imgId = imgEle.id;
   const productId = fakeProductOptionsData.find(({ id }) => imgId === id).productId;
@@ -251,7 +267,11 @@ function handleAddToCartInProductDetailSummary({ ifBuyNow = false }) {
   if (ifProductCustomizable) {
     handleShowComponent("#product-options", "flex");
     productIdForOptionsOverlay = id;
-    printOverlayOptions(true, productDataFromImgClick, true);
+    printOverlayOptions(
+      true,
+      !clickedThumbnailInProductDetailGallery ? null : productDataFromImgClick,
+      ifBuyNow
+    );
 
     document
       .querySelectorAll(`form[name="${productIdForOptionsOverlay}"] input.quantity`)
@@ -259,6 +279,26 @@ function handleAddToCartInProductDetailSummary({ ifBuyNow = false }) {
         node.value = productQuantity;
       });
     document.getElementsByClassName("backdrop")[0].classList.add("gray");
+
+    if (window.innerWidth > 1200) {
+      setProductOptionsOverlay();
+    }
+  }
+}
+
+// 電腦版 商品介紹頁 選擇所有商品選項之下拉選單 點擊後展開選項遮罩功能
+function setProductOptionsOverlay() {
+  // position setting
+  const dropdown = document.querySelector(".product-options-select").getBoundingClientRect();
+  const overlay = document.querySelector("#product-options");
+  const windowHeight = window.innerHeight;
+
+  if (windowHeight - dropdown.height - dropdown.top > 340) {
+    overlay.style.top = dropdown.top - 10 + "px";
+    overlay.style.left = dropdown.left + "px";
+  } else {
+    overlay.style.bottom = 10 + "px";
+    overlay.style.left = dropdown.left + "px";
   }
 }
 

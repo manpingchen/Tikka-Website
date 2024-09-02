@@ -6118,6 +6118,16 @@ div.product-summary {
   gap: 2rem;
 }
 
+@media screen and (min-width: 1200px) {
+  div.product-summary {
+    align-items: center;
+  }
+  div.product-summary p.options {
+    color: gray;
+    font-size: 0.875rem;
+  }
+}
+
 div.product-summary div.summary {
   gap: 0.5rem;
 }
@@ -9176,7 +9186,7 @@ main.product-detail .custom-select {
   position: relative;
   height: 32px;
   background: white;
-  border-radius: 0.4rem;
+  border-radius: 0.5rem;
   border: 1px solid #000;
   line-height: 32px;
   padding-left: 8px;
