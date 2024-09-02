@@ -166,7 +166,7 @@ div.overlay#product-options button.close {
 }
 
 @media screen and (min-width: 1200px) {
-  div.overlay#product-options button.close {
+  div.overlay#product-options > button.close {
     background: url(../images/arrow-grey.svg) center center no-repeat;
     border-radius: 50%;
     width: 20px;

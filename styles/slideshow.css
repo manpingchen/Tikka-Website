@@ -190,7 +190,7 @@ button.glide__bullet--active {
     touch-action: auto;
   }
 
-  .desktop-only {
+  .glide.desktop-only {
     cursor: grab;
     overflow: auto !important;
     position: relative;
