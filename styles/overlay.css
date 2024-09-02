@@ -177,3 +177,10 @@ div.overlay#product-options div.actions {
   align-items: center;
   flex-direction: column;
 }
+
+@media screen and (min-width: 1200px) {
+  div.overlay#product-options {
+    position: fixed;
+    width: 400px;
+  }
+}

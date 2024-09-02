@@ -352,6 +352,12 @@ a.more {
   color: #fff !important;
 }
 
+@media screen and (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
 /*Topup*/
 
 .topup section {
@@ -9164,7 +9170,8 @@ main.purchase .cart-item .price .discount {
   color: var(--discount-price-color);
 }
 
-main.purchase .cart-item .custom-select {
+main.purchase .cart-item .custom-select,
+main.product-detail .custom-select {
   width: 100%;
   position: relative;
   height: 32px;
@@ -9189,7 +9196,8 @@ main.purchase .cart-item.sold-out .custom-select p {
   color: gray;
 }
 
-main.purchase .cart-item .custom-select .line {
+main.purchase .cart-item .custom-select .line,
+main.product-detail .custom-select .line {
   display: block;
   position: absolute;
   height: 30px;
@@ -9198,7 +9206,8 @@ main.purchase .cart-item .custom-select .line {
   right: 2rem;
 }
 
-main.purchase .cart-item .custom-select .arrow {
+main.purchase .cart-item .custom-select .arrow,
+main.product-detail .custom-select .arrow {
   position: absolute;
   top: 14px;
   right: 10px;

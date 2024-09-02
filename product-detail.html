@@ -297,7 +297,7 @@
           <p class="options"><span class="quantity">3</span>商品選項</p>
           <h3>Moiskin基礎保養套組</h3>
           <!--促銷狀態時 classlist 增加 'promo' -->
-          <div class="price">
+          <div class="price promo">
             <p class="discount">NT$5,980</p>
             <p class="original">NT$5,980</p>
           </div>
@@ -333,7 +333,7 @@
             <button
               id="add-to-cart-product-1"
               class="add-btn button-like available-if-instock"
-              onclick="handleAddToCartInProductDetailSummary()"
+              onclick="handleAddToCartInProductDetailSummary({ifBuyNow: false})"
             >
               加入購物車
             </button>
@@ -343,6 +343,17 @@
             >
               立即搶購
             </button>
+          </div>
+
+          <!-- 電腦版 -->
+          <div
+            class="custom-select desktop-only mt-1"
+            id="add-to-cart-product-1"
+            onclick="handleAddToCartInProductDetailSummary({ifBuyNow: false})"
+          >
+            <span class="line"></span>
+            <span class="arrow"></span>
+            <p>請選擇所有商品選項</p>
           </div>
         </div>
       </div>
