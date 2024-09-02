@@ -165,6 +165,21 @@ div.overlay#product-options button.close {
   right: -5px;
 }
 
+@media screen and (min-width: 1200px) {
+  div.overlay#product-options button.close {
+    background: url(../images/arrow-grey.svg) center center no-repeat;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #b1b1b1;
+    background-size: 40%;
+    padding: 0px;
+    transform: rotate(90deg);
+    right: 5px;
+    top: 5px;
+  }
+}
+
 div.overlay#product-options div.options {
   max-height: 340px;
   overflow: scroll;

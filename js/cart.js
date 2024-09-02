@@ -61,7 +61,7 @@ function printOverlayOptions(
     document.querySelector("#product-options .price .original").innerText =
       "NT$" + defaultProduct.querySelector(".price .original").innerText;
     document.querySelector("#product-options .stocking").innerText =
-      "庫存數量：" + defaultProduct.querySelector(".stock").innerText;
+      "庫存數量：" + defaultProduct.querySelector(".stock .value").innerText;
     document.querySelector("#product-options form").name = defaultProduct.id;
     document.querySelector("#product-options form input.quantity").max =
       defaultProduct.querySelector(".stock").innerText;
