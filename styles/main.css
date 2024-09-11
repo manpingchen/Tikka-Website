@@ -6750,14 +6750,14 @@ main.purchase .cart-items {
 main.purchase .cart-item,
 div.purchase-overlay .cart-item,
 div.form-wrapper,
-main.purchase div.summary {
+main.purchase div.cart-summary {
   padding: 2rem 2rem 2rem 3rem;
   background: #fff5fc;
   gap: 40px;
   border-radius: 20px;
 }
 
-main.purchase div.summary {
+main.purchase div.cart-summary {
   padding: 2rem 1rem;
   display: flex;
   flex-direction: row;
@@ -6766,7 +6766,25 @@ main.purchase div.summary {
   margin-top: 1rem;
 }
 
-main.purchase div.summary .select-all,
+@media screen and (min-width: 768px) {
+  main.purchase div.cart-summary {
+    padding: 2rem 2rem 2rem 3rem;
+  }
+
+  main.purchase .cart-item .img-wrap-s {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+main.purchase .btns-group {
+  background: #fff5fc;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+}
+
+main.purchase div.cart-summary .select-all,
 main.purchase div.summary p.summary-total {
   gap: 0.5rem;
   display: flex;
@@ -7152,6 +7170,11 @@ div.purchase-overlay .cart-item .img-wrap img {
   display: flex;
   flex-direction: row;
   gap: 1rem;
+}
+
+.cart-item.sold-out input.quantity,
+.cart-item.sold-out span.unit {
+  color: #aaa;
 }
 
 main.purchase .payment-options button.active,
@@ -9258,6 +9281,13 @@ main.purchase .cart-item .img-wrap-s {
   background-size: cover;
   background-position: center;
   background-color: white;
+}
+
+@media screen and (min-width: 768px) {
+  main.purchase .cart-item .img-wrap-s {
+    width: 220px;
+    height: 220px;
+  }
 }
 
 main.purchase .cart-item .quantity-reach-max {

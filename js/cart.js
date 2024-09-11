@@ -132,6 +132,79 @@ function printOverlayOptions(
   checkOptionOverlayBtnDisableStatus();
 }
 
+function printCartItemOverlayOptions(productId, ifSoldOut) {
+  const containerEle = document.querySelector("#product-options .options");
+  /* 清除原先畫面，避免下方重複繪製 */
+  containerEle.innerHTML = null;
+
+  const selector = ".cart-item" + "#" + productId;
+
+  const productInfo = document.querySelector(selector);
+
+  document.querySelector("#product-options .price .discount").innerText =
+    "NT$" + productInfo.querySelector(".price .discount").innerText;
+  document.querySelector("#product-options .price .original").innerText =
+    "NT$" + productInfo.querySelector(".price .original").innerText;
+  document.querySelector("#product-options .stocking").innerText =
+    "庫存數量：" + productInfo.querySelector(".stock .value").innerText;
+  document.querySelector("#product-options form").name = productId;
+  document.querySelector("#product-options form input.quantity").max =
+    productInfo.querySelector(".stock .value").innerText;
+  document.querySelector("#product-options form input.quantity").value = ifSoldOut
+    ? 1
+    : productInfo.querySelector("input.quantity").value;
+
+  /* 商品選項在此更新，Demo假資料為 productOptions 於 fakeData.js  */
+  productOptions.forEach(({ id, name, options }) => {
+    /* 建立選項分類容器 div */
+    const optionCateEle = document.createElement("div");
+    optionCateEle.classList.add("option-category");
+    optionCateEle.id = id;
+
+    /* 建立選項名稱容器 h5 */
+    const optionCateNameEle = document.createElement("h5");
+    optionCateNameEle.innerHTML = name;
+    optionCateEle.append(optionCateNameEle);
+    /* 建立選項列表容器 ul, li */
+    const optionListEle = document.createElement("ul");
+
+    /* 選項文字排列 */
+    const sortedOptions = sortByLength(options, "name");
+
+    sortedOptions.forEach(({ id, name, selected, unavailable, imgUrl }) => {
+      const optionEle = document.createElement("li");
+      optionEle.id = id;
+
+      if (selected) optionEle.classList.add("selected");
+      if (unavailable) {
+        optionEle.classList.add("unavailable");
+      } else {
+        optionEle.onclick = function () {
+          toggleSelectOption(optionEle);
+        };
+      }
+
+      if (imgUrl) {
+        const optionImgEle = document.createElement("span");
+        optionImgEle.classList.add("option-img");
+        optionImgEle.style.backgroundImage = "url(" + imgUrl + ")";
+        optionEle.append(optionImgEle);
+      }
+
+      const optionNameEle = document.createElement("p");
+      optionNameEle.innerText = name;
+      optionEle.append(optionNameEle);
+
+      optionListEle.append(optionEle);
+    });
+    optionCateEle.append(optionListEle);
+    containerEle.append(optionCateEle);
+  });
+
+  /* 決定加入購物車按鈕是否disabled */
+  checkOptionOverlayBtnDisableStatus();
+}
+
 function checkOptionOverlayBtnDisableStatus() {
   const ifOptionsMissing = checkIfOptionsMissing();
   if (ifOptionsMissing || productQuantity === 0) {
@@ -355,9 +428,19 @@ function adjustQuantityFromCart(element, actionType) {
 
 function changeOptionsFromCart(element) {
   const productId = element.id.split("add-to-cart-")[1];
-  console.log({ id: productId });
+  const ifSoldOut = document
+    .querySelector(".cart-item" + "#" + productId)
+    .classList.contains("sold-out");
+
+  console.log({ ifSoldOut, id: productId });
+
   handleShowComponent("#product-options", "flex");
+
   productIdForOptionsOverlay = productId;
-  printOverlayOptions();
+  printCartItemOverlayOptions(productId, ifSoldOut);
   document.getElementsByClassName("backdrop")[0].classList.add("gray");
+
+  if (window.innerWidth > 1200) {
+    setProductOptionsOverlay();
+  }
 }
