@@ -70,7 +70,7 @@ div.overlay div.title p img {
 
 div.overlay div.title p span.line {
   width: 30px;
-  height: 3px;
+  height: 1px;
   border-radius: 1px;
   background: #fff;
 }
@@ -198,5 +198,23 @@ div.overlay#product-options div.actions {
     position: fixed;
     width: 400px;
     border-radius: 0.8rem !important;
+  }
+}
+
+/* sold-out */
+@media screen and (min-width: 768px) {
+  div.overlay#sold-out-overlay {
+    position: fixed;
+    width: 300px;
+    height: 170px;
+    border-radius: 0.8rem !important;
+    left: calc(50% - 150px);
+    top: calc(50% - 85px);
+    transform: unset !important;
+  }
+
+  div.overlay#sold-out-overlay .content {
+    flex-direction: column;
+    gap: 1rem;
   }
 }

@@ -677,6 +677,9 @@
     <script>
       $(".product-zoom-in").slick(productDetailMainPicSlideConfig);
       $(".product-nav").slick(productNavSlideConfig);
+
+      const ifSoldOut = document.querySelector(".product-detail").classList.contains("sold-out");
+      document.querySelector("#sold-out-overlay").style.display = ifSoldOut ? "flex" : "none";
     </script>
   </body>
 </html>
