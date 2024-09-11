@@ -254,6 +254,11 @@ function handleAddToCartInProductDetailSummary({ ifBuyNow = false }) {
   const ifProductCustomizable = document
     .querySelector(".summary")
     .classList.contains("customizable");
+  const ifSoldOut = document.querySelector(".product-detail").classList.contains("sold-out");
+
+  if (ifSoldOut) {
+    return handleShowComponent("#sold-out-overlay", "flex");
+  }
 
   if (!ifProductCustomizable) {
     handleShowComponent("#product-added-to-cart", "flex");

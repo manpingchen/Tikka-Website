@@ -150,7 +150,7 @@
     <!--Main-->
 
     <!-- Aug 2024: classlist: 缺貨狀態時會增加 'sold-out' -->
-    <main class="product-detail">
+    <main class="product-detail sold-out">
       <ul class="tabs flex-row">
         <li>
           <a
@@ -576,20 +576,20 @@
         </button>
       </div>
 
-         <!-- 商品選項未選擇 提醒遮罩 電腦版 -->
-    <div class="overlay full-width info-only desktop-only" id="product-options-missing">
-      <div class="title flex-row">
-        <button
-          class="close"
-          onclick="handleHideComponent('#product-options-missing', false)"
-        ></button>
-        <p class="flex-row"><span class="line"></span>商品選項未選擇<span class="line"></span></p>
+      <!-- 商品選項未選擇 提醒遮罩 電腦版 -->
+      <div class="overlay full-width info-only desktop-only" id="product-options-missing">
+        <div class="title flex-row">
+          <button
+            class="close"
+            onclick="handleHideComponent('#product-options-missing', false)"
+          ></button>
+          <p class="flex-row"><span class="line"></span>商品選項未選擇<span class="line"></span></p>
+        </div>
+        <div class="content">
+          <img src="images/form-check.svg" alt="form-check" width="20" height="auto" />
+          請選擇所有商品選項
+        </div>
       </div>
-      <div class="content">
-        <img src="images/form-check.svg" alt="form-check" width="20" height="auto" />
-        請選擇所有商品選項
-      </div>
-    </div>
     </div>
 
     <!-- 商品加入購物車 提醒遮罩-->
@@ -601,6 +601,18 @@
       <div class="content">
         <img src="images/cart.svg" alt="mic" width="20" height="auto" />
         商品已為您加入購物車
+      </div>
+    </div>
+
+    <!-- 商品已完售 提醒遮罩-->
+    <div class="overlay full-width info-only" id="sold-out-overlay">
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#sold-out-overlay')"></button>
+        <p class="flex-row"><span class="line"></span>商品已完售<span class="line"></span></p>
+      </div>
+      <div class="content">
+        <img src="images/stocking.svg" alt="mic" width="20" height="auto" />
+        正在為您補貨中，請耐心等候
       </div>
     </div>
 

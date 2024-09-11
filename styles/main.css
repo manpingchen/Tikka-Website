@@ -6190,6 +6190,10 @@ main.product-detail.sold-out button.reduce.available-if-instock {
   color: var(--original-price-color);
 }
 
+main.product-detail.sold-out button.add-btn.available-if-instock {
+  pointer-events: unset !important;
+}
+
 main.product-detail.sold-out form .unit,
 main.product-detail.sold-out form input.quantity {
   color: var(--original-price-color) !important;
@@ -6605,6 +6609,11 @@ main.my-favourite button.follow-btn:hover {
     display: block;
     margin: 0 -1rem;
   }
+
+  main.product-detail .mobile-only.options {
+    margin: unset;
+  }
+
   main.product-detail .desktop-only {
     display: none;
   }
