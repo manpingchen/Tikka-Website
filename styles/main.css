@@ -7007,6 +7007,7 @@ main.purchase .select-wrapper .custom-select .line {
   border: 0;
   font-size: 1rem;
   padding: 0.5rem;
+  flex: 1;
 }
 
 .customer-detail .input-wrapper input::placeholder,
@@ -7064,6 +7065,96 @@ main.purchase .cart-item,
 main.purchase div.form-wrapper p {
   line-height: 1.5rem;
   letter-spacing: 0.025rem;
+}
+
+@media screen and (min-width: 1024px) {
+  main.purchase .customer-detail-wrapper {
+    flex-direction: row !important;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 2rem 1rem;
+  }
+
+  main.purchase .payment-select-wrapper {
+    flex: 1;
+  }
+
+  main.purchase .payment-select-wrapper select {
+    margin-bottom: 0;
+  }
+
+  main.purchase .customer-detail-wrapper > form {
+    width: 100%;
+  }
+
+  main.purchase .receipt-options .options {
+    width: 700px;
+  }
+
+  main.purchase .receipt-options .options button {
+    width: 150px;
+    padding: 0.5rem;
+  }
+  main.purchase textarea#email {
+    height: 36px;
+  }
+  main.purchase .payment-options,
+  main.purchase .receipt-options {
+    padding: 1rem 2rem;
+    gap: 0.5rem;
+  }
+  main.purchase div.form-wrapper.payment-options p {
+    font-size: 1.1rem;
+  }
+
+  main.check-purchase .cart-item .item-info {
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+  main.check-purchase .cart-item .item-info p.description {
+    margin-bottom: 1rem;
+    overflow: hidden;
+    text-wrap: wrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    line-height: 1.4em;
+  }
+
+  main.check-purchase div.actions-wrapper {
+    padding: 0 0 0.5rem;
+  }
+
+  main.check-purchase div.actions-wrapper .btns-group {
+    padding: 0.5rem 1rem 0;
+  }
+
+  main.check-purchase div.actions-wrapper p.note {
+    margin-bottom: 1rem;
+    font-size: 0.785rem;
+    line-height: 1.4em;
+    color: black;
+  }
+}
+
+main.purchase .receipt-options h4 {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  font-size: 0.875rem;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+main.purchase .receipt-options h4::before,
+main.purchase .receipt-options h4::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 1px;
+  background: #000;
 }
 
 main.purchase div.form-wrapper p {

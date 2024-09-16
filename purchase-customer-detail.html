@@ -152,8 +152,8 @@
           <img src="images/pen.svg" alt="購物車商品標題圖" />訂購人資訊
         </h1>
       </div>
-      <div class="form-wrapper mb-1">
-        <div class="flex-column select-wrapper">
+      <div class="form-wrapper customer-detail-wrapper mb-1">
+        <div class="flex-column select-wrapper payment-select-wrapper">
           <label for="payment-method">付款方式</label>
           <div class="custom-select">
             <select name="payment-method" id="payment-method">
@@ -162,7 +162,7 @@
             <span class="line"></span>
           </div>
         </div>
-        <div class="flex-column select-wrapper">
+        <div class="flex-column select-wrapper payment-select-wrapper">
           <label for="delivery-method">配送方式</label>
           <div class="custom-select">
             <select name="delivery-method" id="delivery-method">
@@ -171,7 +171,7 @@
             <span class="line"></span>
           </div>
         </div>
-        <form action="javascript:void(0);" class="customer-detail mb-1">
+        <form action="javascript:void(0);" class="customer-detail">
           <div class="input-wrapper">
             <label for="name">收件人姓名：</label>
             <input type="text" name="name" id="name" placeholder="請輸入文字..." />
@@ -313,6 +313,10 @@
     <script src="js/main.js"></script>
     <script>
       handleOptionClick("einvoice", "invoice-types");
+      function getEmailTexareaRow() {
+        document.querySelector("textarea#email").rows = window.innerWidth >= 1024 ? 1 : 4;
+      }
+      getEmailTexareaRow();
     </script>
   </body>
 </html>
