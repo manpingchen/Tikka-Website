@@ -7393,6 +7393,11 @@ main.streamer-profile {
   padding-bottom: 62px !important;
 }
 
+main.streamer-profile .tab-content {
+  height: 500px;
+  overflow-y: scroll;
+}
+
 @media screen and (min-width: 811px) {
   main.streamer-profile {
     top: 70px;
@@ -7419,6 +7424,11 @@ main.streamer-profile {
   main.streamer-profile {
     margin-bottom: -3rem;
     top: 4rem;
+  }
+
+  main.streamer-profile .tab-content {
+    height: 700px;
+    max-height: calc(100vh - 100px - 80px - 40px); /* deduct the nav, header and tab-bar*/
   }
 }
 
@@ -7526,6 +7536,7 @@ main.streamer-profile div.products .product {
   background: var(--primary-pink);
   display: flex;
   flex-direction: column;
+  height: max-content;
 }
 
 main.streamer-profile div.gifts .gift-list {
@@ -7605,7 +7616,13 @@ main.streamer-profile div.posts .post p.content {
   margin: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.6em;
-  flex: 1;
+  height: 80px;
+}
+
+@media screen and (max-width: 480px) {
+  main.streamer-profile div.posts .post p.content {
+    height: 40px;
+  }
 }
 
 main.streamer-profile div.products .product p.content {
@@ -7657,10 +7674,14 @@ main.streamer-profile div.posts .post .post-info .author {
   width: 85px;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1200px) {
   main.streamer-profile div.posts,
   main.streamer-profile div.products {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  main.streamer-profile div.posts .post,
+  main.streamer-profile div.products .product {
   }
 
   main.streamer-profile div.gifts .gift-list {
@@ -7738,6 +7759,8 @@ main.streamer-profile div.video-wrap {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background-color: white;
+  background-repeat: no-repeat;
 }
 
 main.streamer-profile div.img-wrap {
