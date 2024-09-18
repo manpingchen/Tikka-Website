@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="styles/slideshow.css" />
     <link rel="stylesheet" href="styles/glide-tab.css" />
     <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/product.css" />
+    <link rel="stylesheet" type="text/css" href="styles/slick.css" />
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
 
@@ -356,103 +359,194 @@
         </div>
 
         <!-- 商品 -->
-        <div class="products tab-content" id="products" style="display: none">
-          <div class="product" id="product-1">
-            <div class="img-wrap" style="background-image: url('images/p1.jpeg')"></div>
-            <!--max:9字-->
-            <p class="content ellipsis">商品名稱商品名稱商品名稱</p>
-            <div class="product-info">
-              <p class="ellipsis">$1,999</p>
-              <div class="likes">
-                <button class="like-button pink" type="button" onclick="handleLike(this)">
-                  <img
-                    class="like"
-                    src="images/heart-pink-icon.svg"
-                    alt="like"
-                    width="20"
-                    height="20"
-                  />
-                </button>
+        <ul
+          class="products tab-content products-list-container"
+          id="products"
+          style="display: none"
+        >
+          <!-- 無選項可選之商品 -->
+          <li id="product-1" class="product">
+            <a href="product-detail.html" class="img-wrap-s">
+              <img src="images/p2.png" alt="" />
+            </a>
+            <div class="content">
+              <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱商品名稱商品</h5>
+              <div class="price-actions">
+                <!--促銷狀態時 classlist 增加 'promo' -->
+                <div class="price promo">
+                  <p class="original">$5,980</p>
+                  <p class="discount">$5,980</p>
+                </div>
+                <div class="actions">
+                  <button
+                    type="button"
+                    class="add-favorite"
+                    id="add-favorite-product-1"
+                    onclick="handleAddFavorite(this)"
+                  ></button>
+                  <button
+                    type="button"
+                    class="add-to-cart"
+                    id="add-to-cart-product-1"
+                    onclick="handleAddToCart(this)"
+                  ></button>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="product" id="product-2">
-            <div class="img-wrap" style="background-image: url('images/product2.jpeg')"></div>
-            <!--max:9字-->
-            <p class="content ellipsis">商品名稱商品名稱商品名稱</p>
-            <div class="product-info">
-              <p class="ellipsis">$1,999</p>
-              <div class="likes">
-                <button class="like-button pink" type="button" onclick="handleLike(this)">
-                  <img
-                    class="like"
-                    src="images/heart-pink-icon.svg"
-                    alt="like"
-                    width="20"
-                    height="20"
-                  />
-                </button>
+          </li>
+          <!-- 有選項可選之商品：class 新增 'customizable' -->
+          <li id="product-2" class="product customizable">
+            <a href="product-detail.html" class="img-wrap-s">
+              <img src="images/product2.png" alt="" />
+            </a>
+            <div class="content">
+              <h5 class="name ellipsis line-limit">有選項可選之商品名稱商品商品名稱商品名稱商品</h5>
+              <div class="price-actions">
+                <!--促銷狀態時 classlist 增加 'promo' -->
+                <div class="price promo">
+                  <p class="original">$5,980</p>
+                  <p class="discount">$5,980</p>
+                </div>
+                <div class="actions">
+                  <button
+                    type="button"
+                    class="add-favorite"
+                    id="add-favorite-product-2"
+                    onclick="handleAddFavorite(this)"
+                  ></button>
+                  <button
+                    type="button"
+                    class="add-to-cart"
+                    id="add-to-cart-product-2"
+                    onclick="handleAddToCart(this)"
+                  ></button>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="product" id="product-3">
-            <div class="img-wrap" style="background-image: url('images/product3.png')"></div>
-            <!--max:9字-->
-            <p class="content ellipsis">商品名稱商品名稱商品名稱</p>
-            <div class="product-info">
-              <p class="ellipsis">$1,999</p>
-              <div class="likes">
-                <button class="like-button pink" type="button" onclick="handleLike(this)">
-                  <img
-                    class="like"
-                    src="images/heart-pink-icon.svg"
-                    alt="like"
-                    width="20"
-                    height="20"
-                  />
-                </button>
+          </li>
+          <!-- 完售之商品：add-to-cart button 'disabled' -->
+          <li id="product-3" class="product">
+            <a href="product-detail.html" class="img-wrap-s">
+              <img src="images/product3.png" alt="" />
+            </a>
+            <div class="content">
+              <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱商品名稱商品</h5>
+              <div class="price-actions">
+                <!--促銷狀態時 classlist 增加 'promo' -->
+                <div class="price promo">
+                  <p class="original">$5,980</p>
+                  <p class="discount">$5,980</p>
+                </div>
+                <div class="actions">
+                  <button
+                    type="button"
+                    class="add-favorite"
+                    id="add-favorite-product-3"
+                    onclick="handleAddFavorite(this)"
+                  ></button>
+                  <button
+                    type="button"
+                    class="add-to-cart"
+                    id="add-to-cart-product-3"
+                    disabled
+                    onclick="handleAddToCart(this)"
+                  ></button>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="product" id="product-4">
-            <div class="img-wrap" style="background-image: url('images/product4.png')"></div>
-            <!--max:9字-->
-            <p class="content ellipsis">商品名稱商品名稱商品名稱</p>
-            <div class="product-info">
-              <p class="ellipsis">$3,999</p>
-              <div class="likes">
-                <button class="like-button pink" type="button" onclick="handleLike(this)">
-                  <img
-                    class="like"
-                    src="images/heart-pink-icon.svg"
-                    alt="like"
-                    width="20"
-                    height="20"
-                  />
-                </button>
+          </li>
+          <!-- 已加入最愛之商品：add-to-favorite button class 新增 'added' -->
+          <li id="product-4" class="product">
+            <a href="product-detail.html" class="img-wrap-s">
+              <img src="images/p2.png" alt="" />
+            </a>
+            <div class="content">
+              <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱（已加入最愛）</h5>
+              <div class="price-actions">
+                <!--促銷狀態時 classlist 增加 'promo' -->
+                <div class="price promo">
+                  <p class="original">$5,980</p>
+                  <p class="discount">$5,980</p>
+                </div>
+                <div class="actions">
+                  <button
+                    type="button"
+                    class="add-favorite added"
+                    id="add-favorite-product-4"
+                    onclick="handleAddFavorite(this)"
+                  ></button>
+                  <button
+                    type="button"
+                    class="add-to-cart"
+                    id="add-to-cart-product-4"
+                    onclick="handleAddToCart(this)"
+                  ></button>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="product" id="product-5">
-            <div class="img-wrap" style="background-image: url('images/product5.png')"></div>
-            <!--max:9字-->
-            <p class="content ellipsis">商品名稱商品名稱商品名稱</p>
-            <div class="product-info">
-              <p class="ellipsis">$3,999</p>
-              <div class="likes">
-                <button class="like-button pink" type="button" onclick="handleLike(this)">
-                  <img
-                    class="like"
-                    src="images/heart-pink-icon.svg"
-                    alt="like"
-                    width="20"
-                    height="20"
-                  />
-                </button>
+          </li>
+
+          <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+          <li id="product-5" class="product">
+            <a href="product-detail.html" class="img-wrap-s">
+              <img src="images/product5.png" alt="" />
+            </a>
+            <div class="content">
+              <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱（已加入購物車）</h5>
+              <div class="price-actions">
+                <!--促銷狀態時 classlist 增加 'promo' -->
+                <div class="price promo">
+                  <p class="original">$5,980</p>
+                  <p class="discount">$5,980</p>
+                </div>
+                <div class="actions">
+                  <button
+                    type="button"
+                    class="add-favorite"
+                    id="add-favorite-product-5"
+                    onclick="handleAddFavorite(this)"
+                  ></button>
+                  <button
+                    type="button"
+                    class="add-to-cart added"
+                    id="add-to-cart-product-5"
+                    onclick="handleAddToCart(this)"
+                  ></button>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </li>
+          <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+          <li id="product-6" class="product">
+            <a href="product-detail.html" class="img-wrap-s">
+              <img src="images/product5.png" alt="" />
+            </a>
+            <div class="content">
+              <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱（已加入購物車）</h5>
+              <div class="price-actions">
+                <!--促銷狀態時 classlist 增加 'promo' -->
+                <div class="price promo">
+                  <p class="original">$5,980</p>
+                  <p class="discount">$5,980</p>
+                </div>
+                <div class="actions">
+                  <button
+                    type="button"
+                    class="add-favorite"
+                    id="add-favorite-product-6"
+                    onclick="handleAddFavorite(this)"
+                  ></button>
+                  <button
+                    type="button"
+                    class="add-to-cart added"
+                    id="add-to-cart-product-6"
+                    onclick="handleAddToCart(this)"
+                  ></button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
 
         <!-- 禮物牆 -->
         <div class="gifts tab-content" id="gifts" style="display: none">
@@ -1120,7 +1214,9 @@
     </footer>
     <script src="js/header.js"></script>
     <script src="js/fakeData.js"></script>
+    <script src="helpers/sortByLength.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
     <script>
       /* 共用 */
       const queryString = window.location.search;
@@ -1457,7 +1553,7 @@
         });
       });
 
-      /* 24/4/23 updated: Tab Content 點擊 */
+      /* Tab Content 點擊 */
       function tabClickHandler(el) {
         let tabContentTimer;
 
@@ -1465,10 +1561,7 @@
           if (element.target.classList.contains("like")) return;
           if (tabContentTimer) clearTimeout(tabContentTimer);
           tabContentTimer = setTimeout(function () {
-            const redirectToProductPage = el.id.includes("product");
-            if (redirectToProductPage) {
-              window.location.href = "product-detail.html";
-            } else {
+            if (!el.id.includes("product")) {
               showStoryById(el.id);
             }
           }, 250);

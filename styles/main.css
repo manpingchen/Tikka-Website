@@ -7398,6 +7398,10 @@ main.streamer-profile .tab-content {
   overflow-y: scroll;
 }
 
+main.streamer-profile .tab-content.products ul {
+  width: 100%;
+}
+
 @media screen and (min-width: 811px) {
   main.streamer-profile {
     top: 70px;
@@ -7521,22 +7525,26 @@ main.streamer-profile section.header div.info h5 button.follow-icon:not(.pink) i
 }
 
 main.streamer-profile div.posts,
-main.streamer-profile div.products {
+main.streamer-profile ul.products {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
   margin-bottom: 5rem;
-  padding: 0 0.75rem;
+  padding: 1rem 0.75rem;
 }
 
 main.streamer-profile div.posts .post,
-main.streamer-profile div.products .product {
+main.streamer-profile ul.products .product {
   border-radius: var(--basic-radius);
   overflow: hidden;
   background: var(--primary-pink);
   display: flex;
   flex-direction: column;
   height: max-content;
+}
+
+main.streamer-profile ul.products .product {
+  background: white;
 }
 
 main.streamer-profile div.gifts .gift-list {
@@ -7625,7 +7633,7 @@ main.streamer-profile div.posts .post p.content {
   }
 }
 
-main.streamer-profile div.products .product p.content {
+main.streamer-profile ul.products .product p.content {
   color: white;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -7638,13 +7646,13 @@ main.streamer-profile div.products .product p.content {
 }
 @media screen and (min-width: 1200px) {
   main.streamer-profile div.posts .post p.content,
-  main.streamer-profile div.products .product p.content {
+  main.streamer-profile ul.products .product p.content {
     font-size: 1.1rem;
   }
 }
 
 main.streamer-profile div.posts .post .post-info,
-main.streamer-profile div.products .product .product-info {
+main.streamer-profile ul.products .product .product-info {
   margin: 0.5rem;
   display: flex;
   flex-direction: row;
@@ -7654,7 +7662,7 @@ main.streamer-profile div.products .product .product-info {
 }
 
 main.streamer-profile div.posts .post .post-info > *,
-main.streamer-profile div.products .product .product-info > * {
+main.streamer-profile ul.products .product .product-info > * {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -7676,12 +7684,12 @@ main.streamer-profile div.posts .post .post-info .author {
 
 @media screen and (max-width: 1200px) {
   main.streamer-profile div.posts,
-  main.streamer-profile div.products {
+  main.streamer-profile ul.products {
     grid-template-columns: repeat(4, 1fr);
   }
 
   main.streamer-profile div.posts .post,
-  main.streamer-profile div.products .product {
+  main.streamer-profile ul.products .product {
   }
 
   main.streamer-profile div.gifts .gift-list {
@@ -7712,25 +7720,25 @@ main.streamer-profile div.posts .post .post-info .likes {
 }
 
 main.streamer-profile div.posts .post .post-info .likes button,
-main.streamer-profile div.products .product .product-info .likes button {
+main.streamer-profile ul.products .product .product-info .likes button {
   padding: 0;
   border-radius: unset;
   display: flex;
 }
 
 main.streamer-profile div.posts .post .post-info .likes button.pink img,
-main.streamer-profile div.products .product .product-info .likes button.pink img {
+main.streamer-profile ul.products .product .product-info .likes button.pink img {
   filter: unset;
 }
 
 main.streamer-profile div.posts .post .post-info .likes button:not(.pink) img,
-main.streamer-profile div.products .product .product-info .likes button:not(.pink) img {
+main.streamer-profile ul.products .product .product-info .likes button:not(.pink) img {
   filter: brightness(10);
 }
 
 @media screen and (max-width: 768px) {
   main.streamer-profile div.posts,
-  main.streamer-profile div.products {
+  main.streamer-profile ul.products {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
     margin-bottom: 2rem;
