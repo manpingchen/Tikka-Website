@@ -16,10 +16,14 @@
     <link rel="stylesheet" href="styles/product.css" />
     <link rel="stylesheet" type="text/css" href="styles/slick.css" />
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
 
     <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
   </head>
   <body>
     <!-- Header Start -->
@@ -1152,7 +1156,7 @@
       </div>
     </div>
 
-    <!-- 24/5/4 updated: 尚未開播 遮罩 -->
+    <!-- 尚未開播 遮罩 -->
     <div class="overlay streamer-profile-overlay full-width" id="not-live-overlay">
       <div class="title flex-row">
         <button class="close" onclick="handleHideComponent('#not-live-overlay')"></button>
@@ -1164,7 +1168,7 @@
       </div>
     </div>
 
-    <!-- 24/5/4 updated: 貼圖購買成功 遮罩 -->
+    <!-- 貼圖購買成功 遮罩 -->
     <div class="overlay streamer-profile-overlay full-width" id="sticker-purchased-overlay">
       <div class="title flex-row">
         <button class="close" onclick="handleHideComponent('#sticker-purchased-overlay')"></button>
@@ -1179,6 +1183,170 @@
           id="purchased-sticker-img"
         />
         已為您加入至我的貼圖
+      </div>
+    </div>
+
+    <!-- 商品加入購物車 提醒遮罩 -->
+    <div class="overlay full-width info-only" id="product-added-to-cart">
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#product-added-to-cart')"></button>
+        <p class="flex-row"><span class="line"></span>加入購物車<span class="line"></span></p>
+      </div>
+      <div class="content">
+        <img src="images/cart.svg" alt="mic" width="20" height="auto" />
+        商品已為您加入購物車
+      </div>
+    </div>
+
+    <!-- 商品選項未選擇 提醒遮罩 -->
+    <div class="overlay full-width info-only" id="product-options-missing">
+      <div class="title flex-row">
+        <button
+          class="close"
+          onclick="handleHideComponent('#product-options-missing', false)"
+        ></button>
+        <p class="flex-row"><span class="line"></span>商品選項未選擇<span class="line"></span></p>
+      </div>
+      <div class="content">
+        <img src="images/form-check.svg" alt="form-check" width="20" height="auto" />
+        請選擇所有商品選項
+      </div>
+    </div>
+
+    <!-- 商品選項遮罩 -->
+    <div class="overlay full-width white-bg" id="product-options">
+      <button class="close" onclick="handleHideComponent('#product-options')"></button>
+
+      <div class="product-info">
+        <div class="img-wrap-s">
+          <img src="images/p2.png" width="100" height="100" alt="商品圖" />
+        </div>
+        <div class="status">
+          <div class="price">
+            <p class="discount">NT$2,280</p>
+            <p class="original">NT$4,280</p>
+          </div>
+          <p class="stocking">庫存數量：7</p>
+        </div>
+      </div>
+
+      <!-- 下方為靜態HTML做參考，無預設選項狀態 -->
+      <div class="options blank">
+        <!-- Demo 產出畫面為 cart.js 中的 printOverlayOptions() -->
+        <!-- <div class="option-category" id="o-1">
+          <h5>顏色</h5>
+          <ul>
+            <li class="" id="c-1" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">黑色</p>
+            </li>
+            <li class="" id="c-2" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">灰色</p>
+            </li>
+            <li class="unavailable" id="c-3" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">白色</p>
+            </li>
+            <li id="c-4" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">咖啡色</p>
+            </li>
+          </ul>
+        </div>
+        <div class="option-category" id="o-2">
+          <h5>款式</h5>
+          <ul>
+            <li class="" id="s-1" onclick="toggleSelectOption(this)">
+              <p class="option-name">圓型</p>
+            </li>
+            <li class="" id="s-2" onclick="toggleSelectOption(this)">
+              <p class="option-name">方形</p>
+            </li>
+
+            <li id="s-4" class="unavailable" onclick="toggleSelectOption(this)">
+              <p class="option-name">長方形</p>
+            </li>
+            <li id="s-5" onclick="toggleSelectOption(this)">
+              <p class="option-name">五芒星型</p>
+            </li>
+            <li id="s-6" onclick="toggleSelectOption(this)">
+              <p class="option-name">鑽石愛心型</p>
+            </li>
+          </ul>
+        </div> -->
+      </div>
+
+      <!-- 下方為靜態HTML做參考，有預設選項狀態 -->
+      <!-- <div class="options default-options" style="display: none">
+        <div class="option-category" id="o-1">
+          <h5>顏色</h5>
+          <ul>
+            <li class="selected" id="c-1" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">黑色</p>
+            </li>
+            <li class="" id="c-2" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">灰色</p>
+            </li>
+            <li class="unavailable" id="c-3" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">白色</p>
+            </li>
+            <li id="c-4" onclick="toggleSelectOption(this)">
+              <span class="option-img" style="background-image: url('images/product1.png')"></span>
+              <p class="option-name">咖啡色</p>
+            </li>
+          </ul>
+        </div>
+        <div class="option-category" id="o-2">
+          <h5>款式</h5>
+          <ul>
+            <li class="selected" id="s-1" onclick="toggleSelectOption(this)">
+              <p class="option-name">圓型</p>
+            </li>
+            <li class="" id="s-2" onclick="toggleSelectOption(this)">
+              <p class="option-name">方形</p>
+            </li>
+
+            <li id="s-4" class="unavailable" onclick="toggleSelectOption(this)">
+              <p class="option-name">長方形</p>
+            </li>
+            <li id="s-5" onclick="toggleSelectOption(this)">
+              <p class="option-name">五芒星型</p>
+            </li>
+            <li id="s-6" onclick="toggleSelectOption(this)">
+              <p class="option-name">鑽石愛心型</p>
+            </li>
+          </ul>
+        </div>
+      </div> -->
+
+      <div class="actions">
+        <form action="javascript:void(0);" class="adjust-item-count">
+          <div class="quantity-label">
+            <h5>數量</h5>
+            <span class="quantity-reach-max" style="display: none">已達到購買上限</span>
+          </div>
+          <div class="quantity-adjust">
+            <button class="add" onclick="adjustQuantity('add')">
+              <span class="material-symbols-outlined"> change_history </span>
+            </button>
+            <input type="number" min="0" id="quantity" class="quantity" value="3" max="7" />
+            <button class="reduce" onclick="adjustQuantity('reduce')">
+              <span class="material-symbols-outlined"> change_history </span>
+            </button>
+            <span class="unit">箱</span>
+          </div>
+        </form>
+        <button
+          type="button"
+          class="add-btn button-like"
+          onclick="handleAddToCartViaProductOptionOverlay()"
+        >
+          加入購物車
+        </button>
       </div>
     </div>
 

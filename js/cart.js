@@ -40,6 +40,8 @@ function printOverlayOptions(
   /* 清除原先畫面，避免下方重複繪製 */
   containerEle.innerHTML = null;
 
+  console.log(productIdForOptionsOverlay);
+
   /* 商品狀態、價格與庫存可在此更新 */
   if (productDataFromImgClick) {
     // 有點擊小圖時，帶入點擊的產品資料
@@ -54,17 +56,29 @@ function printOverlayOptions(
     document.querySelector("#product-options form input.quantity").max =
       productDataFromImgClick.stock;
   } else {
-    // 沒有點擊小圖時，帶入第一張預設產品資料
-    const defaultProduct = document.querySelector(".summary");
-    document.querySelector("#product-options .price .discount").innerText =
-      "NT$" + defaultProduct.querySelector(".price .discount").innerText;
-    document.querySelector("#product-options .price .original").innerText =
-      "NT$" + defaultProduct.querySelector(".price .original").innerText;
-    document.querySelector("#product-options .stocking").innerText =
-      "庫存數量：" + defaultProduct.querySelector(".stock .value").innerText;
-    document.querySelector("#product-options form").name = defaultProduct.id;
-    document.querySelector("#product-options form input.quantity").max =
-      defaultProduct.querySelector(".stock").innerText;
+    
+    // 沒有點擊商品小圖，且有商品資訊可從頁面上取得時
+    const ifProductHasFullSummary = document.querySelector(".summary");
+    
+    if (ifProductHasFullSummary) {
+      // 帶入第一張預設產品資料
+      document.querySelector("#product-options .price .discount").innerText =
+        "NT$" + defaultProduct.querySelector(".price .discount").innerText;
+      document.querySelector("#product-options .price .original").innerText =
+        "NT$" + defaultProduct.querySelector(".price .original").innerText;
+      document.querySelector("#product-options .stocking").innerText =
+        "庫存數量：" + defaultProduct.querySelector(".stock .value").innerText;
+      document.querySelector("#product-options form").name = defaultProduct.id;
+      document.querySelector("#product-options form input.quantity").max =
+        defaultProduct.querySelector(".stock").innerText;
+    } else {
+      // 從商品列表中點擊圓形加入購物車icon時
+      const defaultProduct = document.querySelector("#" + productIdForOptionsOverlay);
+      document.querySelector("#product-options .price .discount").innerText =
+        "NT$" + defaultProduct.querySelector(".price .discount").innerText;
+      document.querySelector("#product-options .price .original").innerText =
+        "NT$" + defaultProduct.querySelector(".price .original").innerText;
+    }
   }
 
   /* 商品選項在此更新，Demo假資料為 productOptions 於 fakeData.js  */
