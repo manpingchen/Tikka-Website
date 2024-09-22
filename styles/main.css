@@ -22,7 +22,8 @@
   --btn-pink-gradient: linear-gradient(#ffc1db, #ff398c, #f03282) !important;
   --btn-gray-gradient: linear-gradient(#fbfbfb, #dcdcdc, #c5c5c5, #a1a1a1);
   --pink-text-shadow: 1px 1px 6px #b40081;
-  --pink-dialog-bg: #34142eb3;
+  --pink-dialog-bg: #2a0f1cb6;
+  --pink-dialog-footer-bg: #8f37617a;
   --chat-control-bg: #13010fd9;
   --overlay-radius: 19px;
   --chat-content-radius: 9px;
@@ -2345,7 +2346,7 @@ button.sticker-item:hover img {
 }
 
 button.sticker-item:not(.add-sticker) {
-  background: #fff;
+  background: #ffffff72;
   cursor: pointer;
   border-radius: 0;
 }
@@ -2778,6 +2779,10 @@ div.overlay.rewards div.reward-item {
 div.full-width.overlay.rewards div.reward-item,
 div.overlay.rewards div.reward-item {
   max-width: 130px;
+}
+
+div.reward-item .img-wrap {
+  background-color: rgb(0 0 0 / 30%) !important;
 }
 
 main.live-on div.reward-item.active,
@@ -5294,6 +5299,11 @@ div.overlay.streamer-profile-overlay div.title button.prev {
 
 div.overlay.streamer-profile-overlay div.title button.prev:hover {
   background-image: url("../images/arrow-round-pink.svg");
+}
+
+div.overlay.streamer-profile-overlay.rewards div.footer,
+div.overlay.streamer-profile-overlay div.sticker-footer {
+  background: var(--pink-dialog-footer-bg) !important;
 }
 
 div#sticker-overlay-mobile.overlay div.title {
@@ -8102,7 +8112,7 @@ div.full-width.overlay.popular-products div.content section.title {
 div.full-width.overlay.rewards div.content section.reward-items-container,
 div.full-width.overlay.personal-gifts div.content section.reward-items-container,
 div.full-width.overlay.popular-products div.content section.reward-items-container {
-  background: #ce9db1a1;
+  background: #86415da1;
   width: 100%;
   max-width: none;
   height: calc(100% - 80px);
@@ -8177,7 +8187,7 @@ div.full-width.overlay.popular-products.streamer-profile-overlay div.reward-item
   div.full-width.overlay.popular-products div.reward-items,
   div.full-width.overlay.personal-gifts.streamer-profile-overlay div.reward-items,
   div.full-width.overlay.popular-products.streamer-profile-overlay div.reward-items {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   }
 }
 
