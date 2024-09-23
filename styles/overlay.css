@@ -153,6 +153,7 @@ div.overlay#social-media-shares div.content ul li button img {
 div.overlay#product-options {
   flex-direction: column;
   justify-content: space-between;
+  width: 400px;
 
   max-height: 500px;
   height: fit-content;
@@ -198,6 +199,12 @@ div.overlay#product-options div.actions {
     position: fixed;
     width: 400px;
     border-radius: 0.8rem !important;
+  }
+
+  div.overlay#product-options:not(.product-detail) {
+    position: fixed;
+    width: 100%;
+    border-radius: 0.8rem 0.8rem 0 0 !important;
   }
 }
 
