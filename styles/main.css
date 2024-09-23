@@ -1187,7 +1187,8 @@ span.live-chip {
   left: 25px;
   padding: 0.2rem 0.5rem;
   text-align: center;
-  background: linear-gradient(#d5d5d5, #555555);
+  background: linear-gradient(#eee,#eee, #eee, #aaa);
+  color: gray !important;
 }
 
 a.live-item span.live-chip {
@@ -1201,6 +1202,7 @@ a.live-item span.count {
 
 span.live-chip.pink {
   background: var(--btn-pink-gradient);
+  color: white !important;
 }
 section.live .live-list ul li span.count {
   right: 25px;
