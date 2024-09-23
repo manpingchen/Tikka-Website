@@ -7404,7 +7404,8 @@ main.streamer-profile {
 }
 
 main.streamer-profile .tab-content {
-  height: 500px;
+  max-height: 500px;
+  height: fit-content;
   overflow-y: scroll;
 }
 
@@ -7417,6 +7418,11 @@ main.streamer-profile .tab-content.products ul {
     top: 70px;
     padding-bottom: 0 !important;
     margin-bottom: 130px;
+  }
+
+  main.streamer-profile .tab-content {
+    max-height: 800px;
+    height: fit-content;
   }
 }
 
@@ -7584,7 +7590,7 @@ main.streamer-profile div.gifts .gift-summary {
   background-color: white;
   width: 250px;
   border-radius: 50px;
-  margin: 0.5rem auto 1rem;
+  margin: 1.5rem auto;
   font-size: 1rem;
   text-align: center;
   padding: 0.5rem;
@@ -7634,7 +7640,7 @@ main.streamer-profile div.posts .post p.content {
   margin: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.6em;
-  height: 80px;
+  height: 70px;
 }
 
 @media screen and (max-width: 480px) {
