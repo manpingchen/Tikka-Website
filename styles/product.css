@@ -333,7 +333,8 @@ div.overlay#product-options-missing {
 #live-slides .slick-list,
 #products-slides .slick-list,
 #ranking-products-slides .slick-list,
-#popular-products-slides .slick-list {
+#popular-products-slides .slick-list,
+#popular-posts .slick-list {
   padding: 0 22% 0 0 !important;
 }
 
@@ -374,7 +375,7 @@ div.overlay#product-options-missing {
     background: transparent;
   }
 
-  .slides-container li {
+  .slides-container li:not(.post) {
     max-width: none !important;
     width: 200px;
     flex-shrink: 0;
