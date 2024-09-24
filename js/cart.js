@@ -56,10 +56,9 @@ function printOverlayOptions(
     document.querySelector("#product-options form input.quantity").max =
       productDataFromImgClick.stock;
   } else {
-    
     // 沒有點擊商品小圖，且有商品資訊可從頁面上取得時
     const ifProductHasFullSummary = document.querySelector(".summary");
-    
+
     if (ifProductHasFullSummary) {
       // 帶入第一張預設產品資料
       document.querySelector("#product-options .price .discount").innerText =
@@ -241,7 +240,11 @@ function handleAddToCartViaProductOptionOverlay() {
     return obj;
   }, {});
 
-  updateCart(productIdForOptionsOverlay, valueInput.value, selectedOptions);
+  const ifAddFromProductCard = !document
+    .querySelector("#product-options")
+    .classList.contains("product-detail");
+
+  updateCart(productIdForOptionsOverlay, valueInput.value, selectedOptions, ifAddFromProductCard);
   handleHideComponent("#product-options");
 }
 

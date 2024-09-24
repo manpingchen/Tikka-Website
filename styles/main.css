@@ -1067,7 +1067,8 @@ section.popular-posts .title img,
 @media screen and (max-width: 480px) {
   section.live .live-title img,
   section.products .products-title img,
-  .ranking-slides-title img {
+  .ranking-slides-title img,
+  section.popular-posts .title img {
     height: 36px;
   }
 
@@ -1239,9 +1240,6 @@ section.live .live-list ul li span.count {
 }
 
 @media screen and (max-width: 480px) {
-  section.live {
-    padding-bottom: 0 !important;
-  }
   section.products {
     padding-bottom: 0.5rem !important;
   }
@@ -7649,7 +7647,7 @@ li.post p.content {
   margin: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.6em;
-  height: 70px;
+  height: 60px;
 }
 
 @media screen and (max-width: 480px) {
@@ -7726,7 +7724,6 @@ main.streamer-profile div.posts .post .post-info .author {
 @media screen and (max-width: 480px) {
   .post p.content {
     font-size: 0.875rem;
-
   }
   main.streamer-profile div.posts .post .post-info .author,
   ul.posts .post .post-info .author {
@@ -7737,8 +7734,8 @@ main.streamer-profile div.posts .post .post-info .author {
   ul.posts .post .post-info > * {
     font-size: 0.75rem;
   }
-  main.streamer-profile div.posts .post .post-info .avatar-wrapper, 
-  ul.posts .post .post-info .avatar-wrapper{
+  main.streamer-profile div.posts .post .post-info .avatar-wrapper,
+  ul.posts .post .post-info .avatar-wrapper {
     width: 20px;
     height: 20px;
   }

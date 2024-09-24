@@ -351,7 +351,7 @@
       <section class="live">
         <div class="live-title">
           <img src="images/live.svg" alt="熱門直播標題" />
-          <a href="live.html"><img src="images/see-more.svg" alt="看更多" /></a>
+          <a href="live.html"><img src="images/see-more-new.png" alt="看更多" /></a>
         </div>
 
         <div class="live-list slides-container">
@@ -443,8 +443,8 @@
 
       <section class="popular-posts">
         <div class="title">
-          <img src="images/p-title-5.svg" alt="熱門動態" />
-          <a href="popular-products.html"><img src="images/see-more.svg" alt="看更多" /></a>
+          <img src="images/popular-post-title.svg" alt="熱門動態" />
+          <a href="popular-products.html"><img src="images/see-more-new.png" alt="看更多" /></a>
         </div>
         <div class="slides-container">
           <ul id="popular-posts" class="posts">
@@ -828,7 +828,7 @@
       <section class="products">
         <div class="products-title">
           <img src="images/products.svg" alt="熱銷商品標題" />
-          <a href="products.html"><img src="images/see-more.svg" alt="看更多" /></a>
+          <a href="products.html"><img src="images/see-more-new.png" alt="看更多" /></a>
         </div>
         <div class="slides-container">
           <ul id="products-slides">
@@ -1111,7 +1111,6 @@
       <section class="products list">
         <div class="products-title">
           <img src="images/p-title-5.svg" alt="熱銷排行榜標題" />
-          <a href="popular-products.html"><img src="images/see-more.svg" alt="看更多" /></a>
         </div>
         <div class="slides-container">
           <ul id="ranking-products-slides">
@@ -1390,6 +1389,658 @@
                       type="button"
                       class="add-to-cart"
                       id="add-to-cart-r-product-9"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="products list">
+        <div class="products-title">
+          <img src="images/p-title-4.svg" alt="每日新發現標題" />
+        </div>
+        <div class="products-list-container mobile-only">
+          <!-- 行動版：一排兩個 共六個-->
+          <ul>
+            <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+            <li id="n-product-1" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product5.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  商品名稱商品名稱商品商品名稱（已加入購物車）
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-n-product-1"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart added"
+                      id="add-to-cart-n-product-1"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入最愛之商品：add-to-favorite button class 新增 'added' -->
+            <li id="n-product-4" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/p2.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱（已加入最愛）</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite added"
+                      id="add-favorite-n-product-4"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-n-product-4"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 完售之商品：add-to-cart button 'disabled' -->
+            <li id="n-product-3" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product3.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱商品名稱商品</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-n-product-3"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-n-product-3"
+                      disabled
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入最愛之商品：add-to-favorite button class 新增 'added' -->
+            <li id="n-product-6" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/p2.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱（已加入最愛）</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite added"
+                      id="add-favorite-n-product-6"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-n-product-6"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+            <li id="n-product-7" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product5.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  商品名稱商品名稱商品商品名稱（已加入購物車）
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-n-product-7"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart added"
+                      id="add-to-cart-n-product-7"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+            <li id="n-product-8" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product5.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  商品名稱商品名稱商品商品名稱（已加入購物車）
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-n-product-8"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart added"
+                      id="add-to-cart-n-product-8"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="products-list-container desktop-only">
+          <!-- 電腦版：一排五個 共十五個-->
+          <ul>
+            <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+            <li id="n-product-1" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product5.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  商品名稱商品名稱商品商品名稱（已加入購物車）
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-n-product-1"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart added"
+                      id="add-to-cart-n-product-1"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入最愛之商品：add-to-favorite button class 新增 'added' -->
+            <li id="n-product-4" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/p2.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱（已加入最愛）</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite added"
+                      id="add-favorite-n-product-4"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-n-product-4"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 完售之商品：add-to-cart button 'disabled' -->
+            <li id="n-product-3" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product3.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱商品名稱商品</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-n-product-3"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-n-product-3"
+                      disabled
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入最愛之商品：add-to-favorite button class 新增 'added' -->
+            <li id="n-product-6" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/p2.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱（已加入最愛）</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite added"
+                      id="add-favorite-n-product-6"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-n-product-6"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+            <li id="n-product-7" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product5.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  商品名稱商品名稱商品商品名稱（已加入購物車）
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-n-product-7"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart added"
+                      id="add-to-cart-n-product-7"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+            <li id="n-product-8" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product5.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  商品名稱商品名稱商品商品名稱（已加入購物車）
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-n-product-8"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart added"
+                      id="add-to-cart-n-product-8"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+            <li id="n-product-2" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product5.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  商品名稱商品名稱商品商品名稱（已加入購物車）
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-n-product-2"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart added"
+                      id="add-to-cart-n-product-2"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入最愛之商品：add-to-favorite button class 新增 'added' -->
+            <li id="n-product-9" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/p2.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱（已加入最愛）</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite added"
+                      id="add-favorite-n-product-9"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-n-product-9"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 完售之商品：add-to-cart button 'disabled' -->
+            <li id="n-product-10" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product3.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱商品名稱商品</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-n-product-10"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-n-product-10"
+                      disabled
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入最愛之商品：add-to-favorite button class 新增 'added' -->
+            <li id="n-product-11" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/p2.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">商品名稱商品名稱商品商品名稱（已加入最愛）</h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite added"
+                      id="add-favorite-n-product-11"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart"
+                      id="add-to-cart-n-product-11"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+            <li id="n-product-12" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product5.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  商品名稱商品名稱商品商品名稱（已加入購物車）
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-n-product-12"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart added"
+                      id="add-to-cart-n-product-12"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+            <li id="n-product-13" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product5.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  商品名稱商品名稱商品商品名稱（已加入購物車）
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-n-product-13"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart added"
+                      id="add-to-cart-n-product-13"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+            <li id="n-product-14" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product5.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  商品名稱商品名稱商品商品名稱（已加入購物車）
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-n-product-14"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart added"
+                      id="add-to-cart-n-product-14"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+            <li id="n-product-15" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product5.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  商品名稱商品名稱商品商品名稱（已加入購物車）
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-n-product-15"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart added"
+                      id="add-to-cart-n-product-15"
+                      onclick="handleAddToCart(this)"
+                    ></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- 已加入購物車之商品：add-to-cart button class 新增 'added' -->
+            <li id="n-product-16" class="product">
+              <a href="product-detail.html" class="img-wrap-s">
+                <img src="images/product5.png" alt="" />
+              </a>
+              <div class="content">
+                <h5 class="name ellipsis line-limit">
+                  商品名稱商品名稱商品商品名稱（已加入購物車）
+                </h5>
+                <div class="price-actions">
+                  <div class="price">
+                    <p class="original">$5,980</p>
+                    <p class="discount">$5,980</p>
+                  </div>
+                  <div class="actions">
+                    <button
+                      type="button"
+                      class="add-favorite"
+                      id="add-favorite-n-product-16"
+                      onclick="handleAddFavorite(this)"
+                    ></button>
+                    <button
+                      type="button"
+                      class="add-to-cart added"
+                      id="add-to-cart-n-product-16"
                       onclick="handleAddToCart(this)"
                     ></button>
                   </div>

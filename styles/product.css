@@ -1,8 +1,3 @@
-section.products.list .slides-container {
-  border-bottom: 10px solid #efefef;
-  padding-bottom: 1rem;
-}
-
 ul.product-list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -375,7 +370,7 @@ div.overlay#product-options-missing {
     background: transparent;
   }
 
-  .slides-container li:not(.post) {
+  .slides-container li:not(.post):not(.product) {
     max-width: none !important;
     width: 200px;
     flex-shrink: 0;
