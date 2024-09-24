@@ -153,7 +153,7 @@ div.overlay#social-media-shares div.content ul li button img {
 div.overlay#product-options {
   flex-direction: column;
   justify-content: space-between;
-  width: 400px;
+  width: 100%;
 
   max-height: 500px;
   height: fit-content;

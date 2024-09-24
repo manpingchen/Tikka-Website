@@ -5597,6 +5597,11 @@ div.gift-sent-overlay div.gift-img-wrapper img {
   width: 95%;
 }
 
+main.search .search-form {
+  max-width: 800px;
+  margin:1rem auto
+}
+
 .followers-chat-list-overlay .search-form > div.search-container {
   margin-bottom: 0;
   width: 100%;
@@ -10451,6 +10456,7 @@ div.overlay#viewer-overlay-mobile {
 .product-search-list {
   grid-template-columns: repeat(5, 1fr);
   justify-items: stretch;
+  gap: 0.75rem;
 }
 
 @media screen and (max-width: 990px) {
