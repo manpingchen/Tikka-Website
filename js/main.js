@@ -313,6 +313,7 @@ function showRewardDetail(id = "gift-all", parentId = "gift-details") {
 
   setActiveStatus(parentId, id);
 
+  const ifProductWall = parentId === "product-details";
   const containerId = parentId.includes("mobile") ? "rewards-wall-mobile" : "rewards-wall";
   const containerElement = document.getElementById(containerId);
   containerElement.innerHTML = "";
@@ -320,6 +321,7 @@ function showRewardDetail(id = "gift-all", parentId = "gift-details") {
   data().forEach((item, i) => {
     const newElement = document.createElement("div");
     newElement.classList.add("reward-item");
+    if (ifProductWall) newElement.classList.add("product-item");
     newElement.id = data()[i].name + i;
 
     const imgWrapElement = document.createElement("div");

@@ -91,8 +91,8 @@ const vipGifts = [
 
 const allProducts = [
   { value: "888888", name: "氨基酸精華噴霧露", imgUrl: "images/product1.png" },
-  { value: "888888", name: "氨基酸精華噴霧露", imgUrl: "images/product1.png" },
-  { value: "888888", name: "氨基酸精華噴霧露", imgUrl: "images/product1.png" },
+  { value: "888888", name: "氨基酸精華噴霧露", imgUrl: "images/product2.png" },
+  { value: "888888", name: "氨基酸精華噴霧露", imgUrl: "images/product2.jpeg" },
   { value: "888888", name: "氨基酸精華噴霧露", imgUrl: "images/product1.png" },
   { value: "888888", name: "氨基酸精華噴霧露", imgUrl: "images/product1.png" },
   { value: "888888", name: "氨基酸精華噴霧露", imgUrl: "images/product1.png" },
@@ -106,8 +106,8 @@ const allProducts = [
 
 const popularProducts = [
   { value: "888888", name: "氨基酸洗面乳", imgUrl: "images/product1.png" },
-  { value: "888888", name: "氨基酸洗面乳", imgUrl: "images/product1.png" },
-  { value: "888888", name: "氨基酸洗面乳", imgUrl: "images/product1.png" },
+  { value: "888888", name: "氨基酸洗面乳", imgUrl: "images/product2.png" },
+  { value: "888888", name: "氨基酸洗面乳", imgUrl: "images/product2.jpeg" },
   { value: "888888", name: "氨基酸洗面乳", imgUrl: "images/product1.png" },
   { value: "888888", name: "氨基酸洗面乳", imgUrl: "images/product1.png" },
   { value: "888888", name: "氨基酸洗面乳", imgUrl: "images/product1.png" },
