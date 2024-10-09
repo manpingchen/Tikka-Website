@@ -442,9 +442,9 @@
         <button
           class="pink-gradient-bg topup-btn flex-row"
           type="button"
-          onclick="handleShowComponent('#topup-successful')"
+          onclick="showTopUpReminder()"
         >
-          <img src="images/coin.png" alt="金幣圖示" />儲值
+          <img src="images/coin.png" alt="金幣圖示" />儲值GO
         </button>
       </section>
 
@@ -467,61 +467,102 @@
         </div>
         <div class="footer"></div>
       </div>
-
-      <!-- 儲值失敗遮罩 -->
-      <div class="overlay small topup" id="topup-failed" style="display: none">
-        <div class="header">
-          <img src="images/logo.svg" alt="logo" class="white-svg" />
-          <button class="close-button" onclick="handleHideComponent('#topup-failed')">
-            <img src="images/close-icon.png" alt="close-icon" />
-          </button>
-        </div>
-        <h4>請重新儲值</h4>
-        <div class="content">
-          <div class="highlight button-like pink-gradient-bg">
-            <img src="images/coin.png" alt="" /> 儲值失敗
-          </div>
-        </div>
-        <div class="footer"></div>
-      </div>
-
-      <!-- 交易成功 遮罩 -->
-      <div class="overlay small topup" id="trade-successful">
-        <div class="header">
-          <img src="images/logo.svg" alt="logo" class="white-svg" />
-          <button class="close-button" onclick="handleHideComponent('#trade-successful')">
-            <img src="images/close-icon.png" alt="close-icon" />
-          </button>
-        </div>
-        <h4>恭喜交易成功</h4>
-        <div class="content">
-          <div
-            class="highlight button-like pink-gradient-bg"
-            onclick="handleHideComponent('#trade-successful')"
-          >
-            <img src="images/coin.png" alt="" /> 交易完成
-          </div>
-        </div>
-        <div class="footer"><p>將於確認付款後匯入點數</p></div>
-      </div>
-
-      <!-- 儲值前登入會員 遮罩 -->
-      <div class="overlay small topup" id="login-to-trade" style="display: none">
-        <div class="header">
-          <img src="images/logo.svg" alt="logo" class="white-svg" />
-          <button class="close-button" onclick="handleHideComponent('#login-to-trade')">
-            <img src="images/close-icon.png" alt="close-icon" />
-          </button>
-        </div>
-        <h4>儲值前請先登入會員</h4>
-        <div class="content">
-          <div class="highlight button-like pink-gradient-bg">登入會員</div>
-        </div>
-        <div class="footer"></div>
-      </div>
-
-      <div class="backdrop"></div>
     </main>
+
+    <!-- 儲值失敗遮罩 -->
+    <div class="overlay small topup" id="topup-failed" style="display: none">
+      <div class="header">
+        <img src="images/logo.svg" alt="logo" class="white-svg" />
+        <button class="close-button" onclick="handleHideComponent('#topup-failed')">
+          <img src="images/close-icon.png" alt="close-icon" />
+        </button>
+      </div>
+      <h4>請重新儲值</h4>
+      <div class="content">
+        <div class="highlight button-like pink-gradient-bg">
+          <img src="images/coin.png" alt="" /> 儲值失敗
+        </div>
+      </div>
+      <div class="footer"></div>
+    </div>
+
+    <!-- 交易成功 遮罩 -->
+    <div class="overlay small topup" id="trade-successful" style="display: none">
+      <div class="header">
+        <img src="images/logo.svg" alt="logo" class="white-svg" />
+        <button class="close-button" onclick="handleHideComponent('#trade-successful')">
+          <img src="images/close-icon.png" alt="close-icon" />
+        </button>
+      </div>
+      <h4>恭喜交易成功</h4>
+      <div class="content">
+        <div
+          class="highlight button-like pink-gradient-bg"
+          onclick="handleHideComponent('#trade-successful')"
+        >
+          <img src="images/coin.png" alt="" /> 交易完成
+        </div>
+      </div>
+      <div class="footer"><p>將於確認付款後匯入點數</p></div>
+    </div>
+
+    <!-- 儲值前登入會員 遮罩 -->
+    <div class="overlay small topup" id="login-to-trade" style="display: none">
+      <div class="header">
+        <img src="images/logo.svg" alt="logo" class="white-svg" />
+        <button class="close-button" onclick="handleHideComponent('#login-to-trade')">
+          <img src="images/close-icon.png" alt="close-icon" />
+        </button>
+      </div>
+      <h4>儲值前請先登入會員</h4>
+      <div class="content">
+        <div class="highlight button-like pink-gradient-bg">登入會員</div>
+      </div>
+      <div class="footer"></div>
+    </div>
+
+    <!-- 儲值交易提醒遮罩 -->
+    <div class="overlay text topup" id="topup-reminder" style="display: none">
+      <div class="header">
+        <img src="images/logo.svg" alt="logo" class="white-svg" />
+        <button class="close-button" onclick="hideTopUpReminder('#topup-reminder')">
+          <img src="images/close-icon.png" alt="close-icon" />
+        </button>
+      </div>
+      <h4>儲值交易提醒</h4>
+      <div class="content">
+        <ul>
+          <li>
+            TIKKA（以下簡稱本平台）歡迎您使用
+            本公司儲值服務，為了確保您的個人權益，使用本系統前，請您閱讀本平台以下的聲明並確認同意，使用者視為已明確了解：
+          </li>
+          <li>
+            使用者知悉於本平台進行直播之直播主（以下簡稱直播主），僅係利用本平台之網路空間，進行個人表演，本平台無法也從未事先審核直播主之行為，因此直播主於直播期間或私下所為之行為、言論皆屬於個人立場，與本平台無涉。
+          </li>
+          <li>
+            除儲值點數之兌換或使用發生問題外，使用者與直播主間之所有行為、交易、擔保與情感糾紛及因此所產生之賠償，皆係存在於使用者與直播主間，本平台不參與其中，使用者應事前充分評估後再進行消費及贈送。
+          </li>
+          <li>
+            使用者同意本平台有保留修改本聲明之權利，如有變更，將公佈於本平台網站上，不另行通知。
+          </li>
+          <li>
+            您明確瞭解並同意，若是要在TIKKA服務中使用特定功能（例送禮、兌換商品等），使用TIKKA以外平台所購買的捧花，述不承認，如有違反前述規定，TIKKA有權凍結或刪除您的帳號，您將無法再透過您的帳號來取得您所有的資料，以及您帳號中的捧花幣亦或是要求退款。
+          </li>
+          <li>如有更多疑問請至服務條款 ( "https://www.tikka. tw/main/law") 以查看更多。</li>
+        </ul>
+      </div>
+      <div class="footer">
+        <div
+          class="highlight button-like pink-gradient-bg"
+          onclick="hideTopUpReminder('#topup-reminder')"
+        >
+          我同意
+        </div>
+      </div>
+    </div>
+
+    <div class="backdrop"></div>
+
     <footer>
       <div class="footer-content flex-row">
         <div class="flex-row social-icons">
@@ -590,6 +631,15 @@
               break;
           }
         }
+      }
+
+      function showTopUpReminder() {
+        handleShowComponent("#topup-reminder", "block", true);
+        document.querySelector(".backdrop").classList.add("gray");
+      }
+      function hideTopUpReminder() {
+        handleHideComponent("#topup-reminder");
+        document.querySelector(".backdrop").classList.remove("gray");
       }
     </script>
   </body>
