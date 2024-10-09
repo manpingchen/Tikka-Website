@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="37.13" height="14.71" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 37.13 14.71">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: url(#_命名漸層_50);
+      }
+    </style>
+    <linearGradient id="_命名漸層_50" data-name="未命名漸層 50" x1="18.57" y1="14.71" x2="18.57" y2="0" gradientTransform="matrix(1, 0, 0, 1, 0, 0)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c8006e"/>
+      <stop offset=".4" stop-color="#e9528e"/>
+      <stop offset=".47" stop-color="#e95a94"/>
+      <stop offset=".59" stop-color="#ec73a4"/>
+      <stop offset=".74" stop-color="#f09abf"/>
+      <stop offset=".75" stop-color="#f19ec2"/>
+      <stop offset="1" stop-color="#ffebf5"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_1" data-name="Layer 1"/>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="links">
+      <g>
+        <rect class="cls-2" x="0" y="0" width="37.13" height="14.71" rx="7.35" ry="7.35"/>
+        <g>
+          <path class="cls-1" d="M11.7,11.49h-2.92c-.63,0-.95-.3-.95-.9V3.62c0-.34,.2-.52,.6-.52s.62,.17,.62,.52v5.99c0,.52,.25,.77,.75,.77h1.96c.29,0,.43,.19,.43,.57,0,.35-.16,.53-.49,.53Z"/>
+          <path class="cls-1" d="M15.52,11.7c-.4,0-.6-.18-.6-.55V3.62c0-.35,.2-.53,.6-.53s.58,.17,.58,.52v7.55c0,.36-.19,.54-.58,.54Z"/>
+          <path class="cls-1" d="M23.43,3.86l-1.71,7.35c-.09,.33-.32,.49-.71,.49s-.61-.16-.7-.49l-1.72-7.35c-.01-.07-.02-.13-.02-.17,0-.18,.06-.33,.19-.44,.13-.1,.28-.15,.46-.15,.29,0,.47,.16,.55,.48l1.24,5.17,1.24-5.17c.08-.32,.28-.48,.59-.48,.18,0,.33,.05,.44,.16,.11,.11,.17,.25,.17,.42,0,.05,0,.11-.02,.18Z"/>
+          <path class="cls-1" d="M29.42,11.49h-3.16c-.25,0-.47-.08-.64-.24-.19-.16-.28-.35-.28-.59V4.14c0-.25,.09-.45,.27-.6,.17-.16,.39-.24,.64-.24h3.09c.33,0,.49,.18,.49,.54s-.16,.56-.48,.56h-2.07c-.49,0-.73,.25-.73,.74v1.43h2.42c.32,0,.48,.19,.48,.56s-.16,.55-.47,.55h-2.43v1.99c0,.49,.26,.74,.77,.74h2.08c.32,0,.48,.18,.48,.55s-.16,.54-.47,.54Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
