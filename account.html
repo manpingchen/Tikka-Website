@@ -136,7 +136,9 @@
     <main class="account">
       <div class="upload">
         <label class="custom-input-field" for="avatarInput">
-          <img id="uploadedImage" src="" alt="avatar image" />
+          <span class="uploaded-image-wrapper">
+            <img id="uploadedImage" src="" alt="avatar image" />
+          </span>
           <input
             type="file"
             id="avatarInput"
@@ -278,11 +280,14 @@
     <script>
       function uploadImageHandler(evt) {
         const [file] = avatarInput.files;
+        const imageWrapper = document.querySelector(".uploaded-image-wrapper");
         if (file) {
+          imageWrapper.style.display = "flex";
           uploadedImage.src = URL.createObjectURL(file);
           uploadedImage.style.display = "block";
           imgPlaceholder.innerText = "";
         } else {
+          imageWrapper.style.display = "none";
           uploadedImage.style.display = "none";
           imgPlaceholder.innerText = "上傳照片";
         }

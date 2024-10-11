@@ -3690,7 +3690,7 @@ div.upload .custom-input-field span.placeholder {
   justify-content: center;
 }
 
-div.upload .custom-input-field img#uploadedImage {
+.uploaded-image-wrapper {
   position: absolute;
   left: 8%;
   top: 8%;
@@ -3699,6 +3699,22 @@ div.upload .custom-input-field img#uploadedImage {
   height: 80%;
   z-index: 1;
   display: none;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+div.upload .custom-input-field img#uploadedImage {
+  position: relative;
+  width: 100%;
+  height: auto;
+  /* left: 8%;
+  top: 8%;
+  border-radius: 50%;
+  width: 82%;
+  height: 80%;
+  z-index: 1;
+  display: none; */
 }
 
 div.upload .custom-input-field span.grey-round {
