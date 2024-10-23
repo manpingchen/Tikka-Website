@@ -7701,6 +7701,10 @@ li.post p.content {
   height: 60px;
 }
 
+ul#popular-posts li.post a {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 480px) {
   main.streamer-profile div.posts .post p.content,
   li.post p.content {

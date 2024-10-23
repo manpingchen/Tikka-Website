@@ -544,7 +544,7 @@
               <div class="img-wrap" style="background-image: url('images/s5.jpg')"></div>
               <!--max:22字-->
               <p class="content">貼文打字貼文打字，貼文打字貼文打字貼文打字。</p>
-              <div class="post-info">
+              <div class="post-info" onclick="handleLikeByPost(this)">
                 <div class="post-author">
                   <div class="avatar-wrapper" style="background-image: url('images/s1.jpg')"></div>
                   <p class="author ellipsis">呆呆萌萌小愛</p>
@@ -2283,6 +2283,24 @@
       $("#ranking-products-slides").slick(homeDesktopPadOnlySlideConfig(4));
 
       $("#popular-posts").slick(homeDesktopPadOnlySlideConfig(4));
+
+      window.onload = function () {
+        [...document.querySelectorAll(".post")].forEach((el) => {
+          var timer;
+          el.onclick = function () {
+            if (timer) {
+              clearTimeout(timer);
+            }
+            timer = setTimeout(function () {
+              window.location.href = "streamer-profile.html";
+            }, 250);
+          };
+          el.ondblclick = function () {
+            clearTimeout(timer);
+            handleLikeByPost(el.id);
+          };
+        });
+      };
     </script>
   </body>
 </html>
