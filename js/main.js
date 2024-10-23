@@ -199,6 +199,17 @@ function handleClearSearchValue(inputId) {
   element.value = "";
 }
 
+const searchInput = document.querySelector("#search-input");
+const searchContainer = document.querySelector(".search-container");
+
+searchInput.addEventListener("focus", () => {
+  searchContainer.style.borderWidth = "3px";
+});
+
+searchInput.addEventListener("blur", () => {
+  searchContainer.style.borderWidth = "1px";
+});
+
 // 遮罩以外點擊
 const backdrop = document.querySelector(".backdrop");
 const overlays = document.querySelectorAll(".overlay:not(.not-close-by-backdrop)");
