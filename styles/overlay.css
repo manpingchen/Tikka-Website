@@ -406,7 +406,7 @@ div.overlay.event-detail-overlay {
   height: 100%;
   width: 930px;
   left: calc(50% - 465px);
-  z-index: 999;
+  z-index: 100000;
   overflow-y: hidden;
   border-radius: 0;
   background: transparent;

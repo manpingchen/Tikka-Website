@@ -8644,10 +8644,11 @@ p.event-time {
 
 div.overlay.event-detail-overlay button.close {
   border-radius: 50%;
-  background: #f29ec2;
-  width: 30px;
-  height: 30px;
+  background-color: #f29ec2;
+  width: 26px;
+  height: 26px;
   padding: unset;
+  background-position: -1px -1px;
 }
 
 div.overlay.event-detail-overlay button.close img {
