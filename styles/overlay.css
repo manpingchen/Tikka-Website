@@ -3,7 +3,7 @@ div.overlay {
   bottom: 0;
   width: 100%;
   height: 200px;
-  z-index: 10000;
+  z-index: 1000000;
   background: #ff669ec0;
   -webkit-border-top-left-radius: var(--overlay-radius);
   -webkit-border-top-right-radius: var(--overlay-radius);

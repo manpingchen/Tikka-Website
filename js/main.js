@@ -247,8 +247,6 @@ function handleHideComponent(selector, shouldHideBackdrop = true) {
     if (classList.contains("from-right")) {
       return (node.style.transform = "translate(100%, 0)");
     }
-    // node.style.transform = "translate(0, 100%)";
-    console.log(1);
     node.style.display = "none";
   }
 
@@ -301,6 +299,7 @@ function handleShowComponent(selector, displayValue = "block", shouldBodyOverflo
     classList.contains("overlay") &&
     !classList.contains("full-page")
   ) {
+    console.log("backdrop");
     handleShowComponent(".backdrop");
   }
 }
@@ -388,11 +387,22 @@ function handleBuy(id) {
   handleHideComponent("#gift-full-overlay");
   handleHideComponent(".rewards.overlay");
 
-  handleShowComponent("#purchase-overlay", "block", false);
-
   // 開啟當次送出之禮物動畫
   setTimeout(() => {
-    handleShowPurchaseAnimation();
+    const ifProductListActive = document
+      .querySelector("#reward-product")
+      .classList.contains("active");
+
+    const ifMobileProductListActive = document
+      .querySelector("#reward-product-mobile")
+      .classList.contains("active");
+
+    if (ifProductListActive || ifMobileProductListActive) {
+      handleShowComponent("#purchase-overlay", "block", true);
+    }
+    if (!ifProductListActive && !ifMobileProductListActive) {
+      handleShowPurchaseAnimation();
+    }
   }, 500);
 }
 
