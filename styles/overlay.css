@@ -1,3 +1,8 @@
+:root {
+  --backdrop-z-index: 9999;
+  --overlay-z-index: 10000;
+}
+
 div.overlay {
   position: absolute;
   bottom: 0;
@@ -35,7 +40,7 @@ div.backdrop {
   position: fixed;
   height: 100%;
   width: 100%;
-  z-index: 999999;
+  z-index: var(--backdrop-z-index);
   bottom: 0;
   left: 0;
 }
@@ -543,4 +548,8 @@ div.overlay.event-detail-overlay .sticker-item span.point img {
   width: auto;
   margin-left: -13px;
   margin-right: -5px;
+}
+
+div.streamer-profile-overlay.full-width {
+  z-index: var(--overlay-z-index) !important;
 }

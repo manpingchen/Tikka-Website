@@ -8474,10 +8474,6 @@ div.streamer-profile-overlay#gift-full-overlay {
   z-index: 10;
 }
 
-div.streamer-profile-overlay.full-width {
-  z-index: 10000 !important;
-}
-
 @media screen and (max-width: 480px) {
   div.streamer-profile-overlay.full-width.rewards {
     min-height: 400px;
