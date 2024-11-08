@@ -5533,7 +5533,7 @@ div.overlay div.content p.coming-soon-text {
 
 div.gift-sent-overlay {
   position: absolute;
-  bottom: 60px;
+  bottom: 160px;
   width: 300px;
   left: calc(50% - 150px);
   height: 60px;
@@ -8464,8 +8464,6 @@ div.full-width.overlay.rewards div.reward-item.active span.point {
   color: #e50370;
 }
 
-
-
 @media screen and (max-width: 480px) {
   div.streamer-profile-overlay.full-width.rewards {
     min-height: 400px;
@@ -8492,7 +8490,7 @@ div.streamer-profile-overlay#top-up-overlay div.title {
 }
 
 div.streamer-profile-overlay#gift-full-overlay .content img.gift-img {
-  width: 100%;
+  height: 100%;
 }
 
 main.streamer-profile .gift-button-wrap {
@@ -8603,7 +8601,6 @@ main.streamer-profile button.gift-button {
     width: auto;
   }
 }
-
 
 div.streamer-profile-overlay#top-up-overlay div.footer > span.point {
   max-width: 900px;
