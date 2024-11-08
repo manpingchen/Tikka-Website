@@ -5440,7 +5440,7 @@ div.overlay#top-up-overlay div.content {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100% - 110px);
+  height: calc(100% - 130px);
 }
 
 div.overlay#top-up-overlay div.footer,
