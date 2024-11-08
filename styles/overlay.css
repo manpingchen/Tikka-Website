@@ -553,3 +553,22 @@ div.overlay.event-detail-overlay .sticker-item span.point img {
 div.streamer-profile-overlay.full-width {
   z-index: var(--overlay-z-index) !important;
 }
+
+/*主播個人頁 滿版禮物圖*/
+
+div.streamer-profile-overlay#gift-full-overlay,
+div.streamer-profile-overlay#gift-full-overlay .content {
+  background: transparent;
+}
+
+div.streamer-profile-overlay#gift-full-overlay {
+  height: 100% !important;
+  position: fixed;
+  display: none;
+  top: 0;
+}
+
+div.streamer-profile-overlay#gift-sent {
+  position: fixed;
+  z-index: calc(var(--overlay-z-index) + 1) !important;
+}

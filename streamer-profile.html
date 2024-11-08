@@ -772,7 +772,7 @@
     </div>
 
     <!-- 下方禮物送出框 -->
-    <div class="streamer-profile-overlay overlay gift-sent-overlay" id="gift-sent">
+    <div class="streamer-profile-overlay gift-sent-overlay" id="gift-sent">
       <div class="container">
         <div class="avatar-wrapper">
           <img src="images/s2.jpg" class="avatar" alt="name" />
@@ -790,7 +790,7 @@
     </div>
 
     <!-- 滿版禮物圖 -->
-    <div class="full-width streamer-profile-overlay overlay" id="gift-full-overlay">
+    <div class="full-width streamer-profile-overlay" id="gift-full-overlay">
       <div class="content">
         <img src="images/kisses.png" alt="" class="gift-img" />
       </div>
@@ -1434,24 +1434,21 @@
       function handleBuy(id) {
         handleHideComponent("#rewards-overlay");
 
-        /* Demo用，切換下方Boolean可以選擇顯示'(true)捧花不足'或'(false)成功贈送禮物'遮罩 */
-        const ifShowTopUpOverlay = false;
+        const ifShowTopUpOverlay = true;
 
-        if (ifShowTopUpOverlay) {
-          handleShowComponent("#gift-sent");
-          handleShowComponent("#gift-full-overlay");
+        if (ifShowTopUpOverlay) return handleShowComponent("#top-up-overlay");
 
-          setTimeout(() => {
-            handleHideComponent("#gift-sent");
-          }, 5000);
+        handleShowComponent("#gift-sent");
+        handleShowComponent("#gift-full-overlay");
 
-          /*設計沒有做到滿版帖圖關閉的環節，先以10秒後關閉*/
-          setTimeout(() => {
-            handleHideComponent("#gift-full-overlay");
-          }, 10000);
-        } else {
-          handleShowComponent("#top-up-overlay");
-        }
+        setTimeout(() => {
+          handleHideComponent("#gift-sent");
+        }, 5000);
+
+        /*設計沒有做到滿版帖圖關閉的環節，先以10秒後關閉*/
+        setTimeout(() => {
+          handleHideComponent("#gift-full-overlay");
+        }, 10000);
       }
 
       /* 私訊聊聊按鈕點擊 */
