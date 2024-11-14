@@ -5824,7 +5824,8 @@ main.live-on div.badge img {
 
 #people-slides ul li.glide__slide div.badge,
 #people-slides ul li.glide__slide div.badge {
-  background: #c2c2c2;
+  background: rgb(139, 139, 139);
+  border: 1px solid #fff;
 }
 
 #people-slides ul li.glide__slide.first div.badge,
