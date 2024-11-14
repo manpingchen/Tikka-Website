@@ -566,6 +566,7 @@ div.streamer-profile-overlay#gift-full-overlay {
   position: fixed;
   display: none;
   top: 0;
+  backdrop-filter: blur(10px);
 }
 
 div.streamer-profile-overlay#gift-sent {
