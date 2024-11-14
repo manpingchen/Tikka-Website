@@ -5822,6 +5822,11 @@ main.live-on div.badge img {
   width: 13px;
 }
 
+#people-slides ul li.glide__slide div.badge,
+#people-slides ul li.glide__slide div.badge {
+  background: #c2c2c2;
+}
+
 #people-slides ul li.glide__slide.first div.badge,
 #people-slides ul li.glide__slide.second div.badge {
   background: #ea629f;
