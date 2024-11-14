@@ -2561,9 +2561,9 @@ main.live-on div.slides-list ul.glide__slides li {
   margin-bottom: 2px;
 }
 
-main.live-on div.slides-list ul.glide__slides li div.img-wrap {
+main.live-on div.slides-list ul.glide__slides li div.avatar-wrapper {
   position: relative;
-  padding-top: 100%;
+  padding-top: calc(100% - 6px);
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -2571,7 +2571,7 @@ main.live-on div.slides-list ul.glide__slides li div.img-wrap {
   justify-content: center;
 }
 
-main.live-on div.slides-list ul.glide__slides li div.img-wrap img {
+main.live-on div.slides-list ul.glide__slides li div.avatar-wrapper img {
   height: 100%;
   display: block;
   position: absolute;
@@ -5875,7 +5875,7 @@ main.live-on div.mobile-only.frame-top-bar ul.revenue-list {
   width: 160px;
 }
 
-main.live-on div.mobile-only.frame-top-bar ul.revenue-list > li div.img-wrap {
+main.live-on div.mobile-only.frame-top-bar ul.revenue-list > li div.avatar-wrapper {
   width: 36px;
   height: 36px;
   top: -5px;
@@ -5886,7 +5886,7 @@ main.live-on div.mobile-only.frame-top-bar ul.revenue-list > li .badge {
   left: -2px;
   width: 20px;
   height: 20px;
-  top: -10px;
+  top: -12px;
   border: none;
 }
 
@@ -5899,7 +5899,7 @@ main.live-on div.mobile-only.frame-top-bar ul.revenue-list .value {
   position: absolute;
   color: #e9528e;
   width: 90%;
-  bottom: 0px;
+  bottom: -7px;
   left: 5%;
   font-size: 0.7rem;
   padding: 2px 5px;
@@ -5952,8 +5952,8 @@ main.live-on ul.viewer-list > li {
   position: relative;
 }
 
-main.live-on ul.revenue-list > li div.img-wrap,
-main.live-on ul.viewer-list > li div.img-wrap {
+main.live-on ul.revenue-list > li div.avatar-wrapper,
+main.live-on ul.viewer-list > li div.avatar-wrapper {
   border-radius: 50%;
   width: 70px;
   height: 70px;
@@ -5966,19 +5966,19 @@ main.live-on ul.viewer-list > li div.img-wrap {
   margin: 0 auto 0.5rem;
 }
 
-main.live-on ul.viewer-list > li div.img-wrap {
+main.live-on ul.viewer-list > li div.avatar-wrapper {
   width: 50px;
   height: 50px;
   border: 1px solid #fff;
 }
 
-main.live-on ul.revenue-list > li div.img-wrap img,
+/* main.live-on ul.revenue-list > li div.img-wrap img,
 main.live-on ul.viewer-list > li div.img-wrap img {
   position: absolute;
   height: 100%;
   width: auto;
   top: 0;
-}
+} */
 
 main.live-on ul.revenue-list > li .name,
 main.live-on ul.viewer-list > li .name {

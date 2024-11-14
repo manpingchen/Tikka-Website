@@ -136,66 +136,114 @@ const boxGifts = [
 
 /* 追蹤最愛 及 熱推主播 */
 const following = [
-  { name: "99k", imgUrl: "images/s3.jpg" },
+  { name: "99k", imgUrl: "https://files.tikka.tw/streamer/0fd67089a16944ba989b3aa247734f35_.png" },
   { name: "98k", imgUrl: "images/s3.jpg" },
-  { name: "97k", imgUrl: "images/s3.jpg" },
-  { name: "96k", imgUrl: "images/s3.jpg" },
-  { name: "95k", imgUrl: "images/s3.jpg" },
+  { name: "97k", imgUrl: "https://files.tikka.tw/streamer/6c36204b8d7c4dcdbd646714af850894_.png" },
+  { name: "96k", imgUrl: "https://files.tikka.tw/streamer/ea6fd2b899364c158d1ea414c7ec9a16_.png" },
+  { name: "95k", imgUrl: "https://files.tikka.tw/streamer/f51fb23ca96a4c51ac48e8ffe62920b8_.png" },
   { name: "94k", imgUrl: "images/s3.jpg" },
   { name: "93k", imgUrl: "images/s3.jpg" },
-  { name: "92k", imgUrl: "images/s3.jpg" },
+  { name: "92k", imgUrl: "https://files.tikka.tw/streamer/f51fb23ca96a4c51ac48e8ffe62920b8_.png" },
   { name: "91k", imgUrl: "images/s3.jpg" },
 ];
 
 const popular = [
-  { name: "99k", imgUrl: "images/s2.jpg" },
-  { name: "98k", imgUrl: "images/s2.jpg" },
+  { name: "99k", imgUrl: "https://files.tikka.tw/streamer/ea6fd2b899364c158d1ea414c7ec9a16_.png" },
+  { name: "98k", imgUrl: "https://files.tikka.tw/streamer/0fd67089a16944ba989b3aa247734f35_.png" },
   { name: "97k", imgUrl: "images/s2.jpg" },
-  { name: "96k", imgUrl: "images/s2.jpg" },
+  { name: "96k", imgUrl: "https://files.tikka.tw/streamer/f51fb23ca96a4c51ac48e8ffe62920b8_.png" },
   { name: "95k", imgUrl: "images/s2.jpg" },
   { name: "94k", imgUrl: "images/s2.jpg" },
-  { name: "93k", imgUrl: "images/s2.jpg" },
+  { name: "93k", imgUrl: "https://files.tikka.tw/streamer/ea6fd2b899364c158d1ea414c7ec9a16_.png" },
   { name: "92k", imgUrl: "images/s2.jpg" },
-  { name: "91k", imgUrl: "images/s2.jpg" },
+  { name: "91k", imgUrl: "https://files.tikka.tw/streamer/6c36204b8d7c4dcdbd646714af850894_.png" },
 ];
 
 /* 誰來觀看 */
 const generalViewers = [
+  {
+    name: "觀看者姓名",
+    imgUrl: "https://files.tikka.tw/streamer/ea6fd2b899364c158d1ea414c7ec9a16_.png",
+  },
+  { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
+  { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
+  {
+    name: "觀看者姓名",
+    imgUrl: "https://files.tikka.tw/streamer/6c36204b8d7c4dcdbd646714af850894_.png",
+  },
+  {
+    name: "觀看者姓名",
+    imgUrl: "https://files.tikka.tw/streamer/0fd67089a16944ba989b3aa247734f35_.png",
+  },
   { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
   { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
   { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
+  {
+    name: "觀看者姓名",
+    imgUrl: "https://files.tikka.tw/streamer/0fd67089a16944ba989b3aa247734f35_.png",
+  },
   { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
+  {
+    name: "觀看者姓名",
+    imgUrl: "https://files.tikka.tw/streamer/ea6fd2b899364c158d1ea414c7ec9a16_.png",
+  },
   { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
+  {
+    name: "觀看者姓名",
+    imgUrl: "https://files.tikka.tw/streamer/0fd67089a16944ba989b3aa247734f35_.png",
+  },
   { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
-  { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
-  { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
-  { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
-  { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
-  { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
-  { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
-  { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
-  { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
-  { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
+  {
+    name: "觀看者姓名",
+    imgUrl: "https://files.tikka.tw/streamer/0fd67089a16944ba989b3aa247734f35_.png",
+  },
   { name: "觀看者姓名", imgUrl: "images/s3.jpg" },
 ];
 
 const vipViewers = [
   { name: "VIP姓名", imgUrl: "images/s2.jpg" },
+  {
+    name: "VIP姓名",
+    imgUrl: "https://files.tikka.tw/streamer/ea6fd2b899364c158d1ea414c7ec9a16_.png",
+  },
+  { name: "VIP姓名", imgUrl: "images/s2.jpg" },
+  {
+    name: "VIP姓名",
+    imgUrl: "https://files.tikka.tw/streamer/0fd67089a16944ba989b3aa247734f35_.png",
+  },
+  { name: "VIP姓名", imgUrl: "images/s2.jpg" },
+  {
+    name: "VIP姓名",
+    imgUrl: "https://files.tikka.tw/streamer/f51fb23ca96a4c51ac48e8ffe62920b8_.png",
+  },
+  {
+    name: "VIP姓名",
+    imgUrl: "https://files.tikka.tw/streamer/ea6fd2b899364c158d1ea414c7ec9a16_.png",
+  },
   { name: "VIP姓名", imgUrl: "images/s2.jpg" },
   { name: "VIP姓名", imgUrl: "images/s2.jpg" },
+  {
+    name: "VIP姓名",
+    imgUrl: "https://files.tikka.tw/streamer/0fd67089a16944ba989b3aa247734f35_.png",
+  },
+  {
+    name: "VIP姓名",
+    imgUrl: "https://files.tikka.tw/streamer/f51fb23ca96a4c51ac48e8ffe62920b8_.png",
+  },
   { name: "VIP姓名", imgUrl: "images/s2.jpg" },
+  {
+    name: "VIP姓名",
+    imgUrl: "https://files.tikka.tw/streamer/0fd67089a16944ba989b3aa247734f35_.png",
+  },
   { name: "VIP姓名", imgUrl: "images/s2.jpg" },
-  { name: "VIP姓名", imgUrl: "images/s2.jpg" },
-  { name: "VIP姓名", imgUrl: "images/s2.jpg" },
-  { name: "VIP姓名", imgUrl: "images/s2.jpg" },
-  { name: "VIP姓名", imgUrl: "images/s2.jpg" },
-  { name: "VIP姓名", imgUrl: "images/s2.jpg" },
-  { name: "VIP姓名", imgUrl: "images/s2.jpg" },
-  { name: "VIP姓名", imgUrl: "images/s2.jpg" },
-  { name: "VIP姓名", imgUrl: "images/s2.jpg" },
-  { name: "VIP姓名", imgUrl: "images/s2.jpg" },
-  { name: "VIP姓名", imgUrl: "images/s2.jpg" },
-  { name: "VIP姓名", imgUrl: "images/s2.jpg" },
+  {
+    name: "VIP姓名",
+    imgUrl: "https://files.tikka.tw/streamer/0fd67089a16944ba989b3aa247734f35_.png",
+  },
+  {
+    name: "VIP姓名",
+    imgUrl: "https://files.tikka.tw/streamer/f51fb23ca96a4c51ac48e8ffe62920b8_.png",
+  },
 ];
 
 /* 榜單 */
