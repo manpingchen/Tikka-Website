@@ -811,8 +811,8 @@ main.index section.live .live-list ul li p.live-info {
   bottom: 0;
 }
 main.index section.live .live-list ul li span.live-chip {
-  left: 10px;
-  top: 10px;
+  left: 6px;
+  top: 6px;
 }
 main.index section.live .live-list ul li span.count {
   top: initial;
@@ -891,7 +891,7 @@ main.index section.live .live-list ul li span.count {
   main.index section.live .live-list ul li,
   main.index section.popular-posts ul.posts li.post {
     padding: 0;
-    width: 47%;
+    width: 43%;
     flex-shrink: 0;
   }
   main.index section.live .live-list ul li p.live-info {
@@ -900,8 +900,8 @@ main.index section.live .live-list ul li span.count {
     bottom: 0;
   }
   main.index section.live .live-list ul li span.live-chip {
-    left: 10px;
-    top: 10px;
+    left: 6px;
+    top: 6px;
   }
 }
 
@@ -912,10 +912,11 @@ main.index section.live .live-list ul li span.count {
     height: 40px;
   }
   section.live .live-title,
+  section.popular-posts .title,
   section.products .products-title,
   .ranking-slides-title {
     padding: 0.5rem !important;
-    margin-bottom: 0 !important;
+    margin-bottom: 0.5 !important;
   }
 }
 
@@ -1224,7 +1225,7 @@ section.live .live-list ul li span.count {
   section.live,
   section.products {
     position: relative;
-    padding-bottom: 0.5rem !important;
+    padding-bottom: 1rem !important;
   }
 
   section.live .live-title a img,
@@ -9612,11 +9613,11 @@ main.purchase .cart-item form button.reduce {
 }
 
 #live-slides li {
-  margin: 2px;
+  margin: 0.2rem;
 }
 
 #popular-posts li {
-  margin: 2px;
+  margin: 0.2rem;
 }
 
 .products.list li,
