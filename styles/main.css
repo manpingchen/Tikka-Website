@@ -3707,15 +3707,9 @@ div.upload .custom-input-field span.placeholder {
 
 div.upload .custom-input-field img#uploadedImage {
   position: relative;
-  width: 100%;
-  height: auto;
-  /* left: 8%;
-  top: 8%;
-  border-radius: 50%;
-  width: 82%;
-  height: 80%;
-  z-index: 1;
-  display: none; */
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
 }
 
 div.upload .custom-input-field span.grey-round {
