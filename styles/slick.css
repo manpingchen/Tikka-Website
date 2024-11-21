@@ -91,7 +91,8 @@
   pointer-events: none;
 }
 .slick-initialized .slick-slide {
-  display: block;
+  display: flex;
+  justify-content: center;
   overflow: hidden;
 }
 .slick-loading .slick-slide {
@@ -241,11 +242,7 @@
   #product-slides .slick-slide a img,
   #product-slides .slick-slide a picture,
   #highlighted-products-slides .slick-slide a picture {
-    display: flex;
-    height: 100%;
-    width: auto;
-    align-items: center;
-    justify-content: center;
+   object-fit: cover;
   }
 }
 
@@ -264,5 +261,50 @@
   .product-nav.mobile-scroll-drag li {
     width: 21%;
     padding: 0.5rem 0.25rem;
+  }
+}
+
+/* 優化：避免第一次載入，尺寸改變導致畫面跳動 */
+
+#main-slides .slide a img,
+#highlighted-products-slides a img,
+#product-slides .slick-slide a img {
+  height: 550px;
+}
+
+#ranking-slides li {
+  width: 367px;
+}
+
+#popular-posts li,
+#live-slides li {
+  width: 208.6px;
+}
+
+.products.list li,
+#products-slides li {
+  width: 197.4px;
+}
+#main-slides > .slide:not(:first-child),
+#highlighted-products-slides > .slide:not(:first-child) {
+  display: none;
+}
+
+@media screen and (min-width: 481px) {
+  #popular-posts > li:not(:first-child),
+  #product-slides > li:not(:first-child),
+  #products-slides > li:not(:first-child),
+  #live-slides > li:not(:first-child),
+  #ranking-slides > li:not(:first-child),
+  #ranking-products-slides > li:not(:first-child) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #main-slides .slide a img,
+  #highlighted-products-slides a img,
+  #product-slides .slick-slide a img {
+    height: 100vw;
   }
 }

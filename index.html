@@ -148,7 +148,7 @@
     <!--Main-->
     <main class="index">
       <section id="main-slides">
-        <div>
+        <div class="slide">
           <a href="competition.html?id=1">
             <picture>
               <source
@@ -168,7 +168,7 @@
             </picture>
           </a>
         </div>
-        <div>
+        <div class="slide">
           <a href="competition.html?id=2">
             <picture>
               <source
@@ -188,7 +188,7 @@
             </picture>
           </a>
         </div>
-        <div>
+        <div class="slide">
           <a href="competition.html?id=3">
             <picture>
               <source
@@ -208,7 +208,7 @@
             </picture>
           </a>
         </div>
-        <div>
+        <div class="slide">
           <a href="competition.html?id=4">
             <picture>
               <source
@@ -228,7 +228,7 @@
             </picture>
           </a>
         </div>
-        <div>
+        <div class="slide">
           <a href="competition.html?id=5">
             <picture>
               <source
@@ -2270,21 +2270,15 @@
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
     <script>
-      $("#main-slides").slick(highlightSlideConfig);
+      $(window).on("load", function () {
+        $("#main-slides").slick(highlightSlideConfig);
+        $("#product-slides").slick(highlightSlideConfig);
+        $("#ranking-slides").slick(homeDesktopPadOnlySlideConfig(3));
+        $("#live-slides").slick(homeDesktopPadOnlySlideConfig(4));
+        $("#products-slides").slick(homeDesktopPadOnlySlideConfig(4));
+        $("#ranking-products-slides").slick(homeDesktopPadOnlySlideConfig(4));
+        $("#popular-posts").slick(homeDesktopPadOnlySlideConfig(4));
 
-      $("#product-slides").slick(highlightSlideConfig);
-
-      $("#ranking-slides").slick(homeDesktopPadOnlySlideConfig(3));
-
-      $("#live-slides").slick(homeDesktopPadOnlySlideConfig(4));
-
-      $("#products-slides").slick(homeDesktopPadOnlySlideConfig(4));
-
-      $("#ranking-products-slides").slick(homeDesktopPadOnlySlideConfig(4));
-
-      $("#popular-posts").slick(homeDesktopPadOnlySlideConfig(4));
-
-      window.onload = function () {
         [...document.querySelectorAll(".post")].forEach((el) => {
           var timer;
           el.onclick = function () {
@@ -2300,7 +2294,7 @@
             handleLikeByPost(el.id);
           };
         });
-      };
+      });
     </script>
   </body>
 </html>
