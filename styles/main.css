@@ -5821,10 +5821,10 @@ main.live-on div.badge img {
 #people-slides ul li.glide__slide div.badge {
   background: rgb(139, 139, 139);
   border: 1px solid #fff;
+  cursor: pointer;
 }
 
-#people-slides ul li.glide__slide.first div.badge,
-#people-slides ul li.glide__slide.second div.badge {
+#people-slides ul li.glide__slide div.badge.pink {
   background: #ea629f;
 }
 

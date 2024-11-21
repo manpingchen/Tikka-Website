@@ -1957,6 +1957,19 @@
           badgeWrapElement.append(badgeImgElement);
           newElement.append(badgeWrapElement, imgWrapElement, nameElement);
           containerElement.appendChild(newElement);
+
+          /* 追蹤按鈕 class 改變 */
+          
+          badgeWrapElement.addEventListener("click", (e) => {
+            const tagName = e.target.tagName;
+            const ifFollowed = e.target.classList.contains("pink");
+            if (tagName === "DIV") {
+              e.target.classList.toggle("pink");
+            }
+            if (tagName === "IMG") {
+              e.target.parentNode.classList.toggle("pink");
+            }
+          });
         });
 
         influencerSlides();
