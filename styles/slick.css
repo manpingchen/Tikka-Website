@@ -91,9 +91,8 @@
   pointer-events: none;
 }
 .slick-initialized .slick-slide {
-  display: flex;
-  justify-content: center;
   overflow: hidden;
+  display: block;
 }
 .slick-loading .slick-slide {
   visibility: hidden;
