@@ -462,6 +462,8 @@ a.more {
 
 .topup .login-section .logged-in div.img-wrap img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .topup .login-section .logged-in div.my-flower {
@@ -4030,6 +4032,8 @@ div.search-item:not(.product-item) > div.img-wrap {
 div.recommend-item > div.img-wrap img,
 div.search-item:not(.product-item) > div.img-wrap img {
   height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 div.recommend-item div.info,

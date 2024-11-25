@@ -184,6 +184,7 @@
 
 .site-header__end a span.icon img {
   height: 100%;
+  filter: none;
 }
 
 .site-header__end a span.icon span.cart-amount {
@@ -252,6 +253,7 @@
 
 .site-header__end .logged-in a {
   text-decoration: none;
+  margin-right: 4px;
 }
 
 .site-header__end .username {
