@@ -241,7 +241,7 @@
   #product-slides .slick-slide a img,
   #product-slides .slick-slide a picture,
   #highlighted-products-slides .slick-slide a picture {
-   object-fit: cover;
+    object-fit: cover;
   }
 }
 
@@ -272,15 +272,18 @@
 }
 
 #ranking-slides li {
-  width: 367px;
+  width: 56%;
 }
 
 #popular-posts li,
 #live-slides li {
-  width: 208.6px;
+  width: 42%;
 }
 
-.products.list li,
+.products.list li {
+  flex: 1;
+}
+
 #products-slides li {
   width: 197.4px;
 }
