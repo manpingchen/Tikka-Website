@@ -2388,12 +2388,19 @@ main.live-on .iframe {
   border: none;
 }
 
+main.live-on .iframe-wrap {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  resize: both;
+  overflow: hidden;
+}
+
 main.live-on iframe {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 main.live-on div.videoDiv {
@@ -8744,6 +8751,8 @@ div.overlay.event-detail-overlay button.close img {
 
 .before-live .default-live-img img {
   height: 100vh;
+  width: 100%;
+  object-fit: cover;
 }
 
 div.img-wrap-with-live-chip {
