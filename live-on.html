@@ -477,7 +477,7 @@
                   <button
                     type="button open-overlay"
                     class="face-btn"
-                    onclick="handleShowComponent('.sticker-overlay')"
+                    onclick="handleShowComponent('.sticker-overlay', 'flex')"
                   >
                     <img src="images/face.svg" />
                   </button>
@@ -1959,7 +1959,7 @@
           containerElement.appendChild(newElement);
 
           /* 追蹤按鈕 class 改變 */
-          
+
           badgeWrapElement.addEventListener("click", (e) => {
             const tagName = e.target.tagName;
             const ifFollowed = e.target.classList.contains("pink");
