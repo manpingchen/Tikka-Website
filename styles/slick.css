@@ -243,6 +243,12 @@
   #highlighted-products-slides .slick-slide a picture {
     object-fit: cover;
   }
+
+  #product-slides .slick-slide a img,
+  #product-slides .slick-slide a picture,
+  #highlighted-products-slides .slick-slide a picture {
+    height: 100%;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -268,7 +274,7 @@
 #main-slides .slide a img,
 #highlighted-products-slides a img,
 #product-slides .slick-slide a img {
-  height: 550px;
+  object-fit: cover;
 }
 
 #ranking-slides li {
