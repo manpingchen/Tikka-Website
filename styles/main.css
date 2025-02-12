@@ -2120,6 +2120,10 @@ div.chat-item span.chat-content {
   line-height: 23px;
 }
 
+div.chat-item.sticker-content .chat-content img {
+  width: 140px;
+}
+
 div.chat-body span.chat-name {
   color: #e9528e;
   height: 20px;
@@ -9891,24 +9895,22 @@ main.products #products-slides .img-wrap img {
   }
 } */
 
+section.products-highlight {
+  padding-bottom: 1rem;
+}
+
 section.products-highlight a.img-wrap {
   width: 100%;
   max-width: 1100px;
   position: relative;
-  padding-top: 50%;
-  height: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 0;
   overflow: hidden;
   margin-bottom: 1rem;
+  display: block;
 }
 
 section.products-highlight a.img-wrap img {
-  height: 100%;
-  position: absolute;
-  top: 0;
+  object-fit: cover;
+  width: 100%;
 }
 
 section.products-highlight a.img-wrap:hover img {
