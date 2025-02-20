@@ -220,49 +220,44 @@ const body = document.querySelector("body");
 if (backdrop) {
   backdrop.addEventListener("click", () => {
     [...overlays].forEach((node) => {
-      const classList = node ? node.classList : null;
-      if (classList.contains("show")) node.style.display = "none";
-      if (classList.contains("from-right")) {
-        return (node.style.transform = "translate(100%, 0)");
-      }
-      node.style.transform = "translate(0, 100%)";
+      overlayClose(node);
     });
     backdrop.style.display = "none";
-    body.style.overflow = "auto";
+    backdrop.classList.remove("gray");
+    body.style["overflow-y"] = "auto";
   });
+}
+
+/* 遮罩關閉功能 */
+function overlayClose(node) {
+  const classList = node.classList;
+  const isNormalOverlay = classList.contains("overlay") || classList.contains("info-only");
+  const isSmallOverlay = classList.contains("small") && classList.contains("overlay");
+  /* 先以滑動效果退場 */
+  if (isNormalOverlay) {
+    const fromRight = classList.contains("from-right");
+    node.style.transform = fromRight ? "translate(100%, 0)" : "translate(0, 100%)";
+  }
+  if (isSmallOverlay) node.style.transform = "translate(0, 100vh)";
+
+  /* 再移除顯示css display */
+  setTimeout(() => {
+    node.style.display = "none";
+  }, 100);
 }
 
 /* 關閉元件 */
 function handleHideComponent(selector, shouldHideBackdrop = true) {
   const node = document.querySelector(selector);
-  const classList = node ? node.classList : null;
-
-  const isNormalOverlay = classList.contains("overlay") && !classList.contains("small");
-  const isSmallOverlay = classList.contains("small") && classList.contains("overlay");
-  const backdrop = document.getElementsByClassName("backdrop")[0];
-
-  node.classList.remove("show");
-
-  if (isNormalOverlay) {
-    if (classList.contains("from-right")) {
-      return (node.style.transform = "translate(100%, 0)");
-    }
-    node.style.display = "none";
+  if (!node) {
+    console.error(`Element ${selector} not found.`);
+    return;
   }
 
-  if (isSmallOverlay) {
-    node.style.transform = "translate(0, 100vh)";
-  }
-
-  if (!isSmallOverlay && !isNormalOverlay) {
-    node.style.display = "none";
-  }
+  overlayClose(node);
 
   if (shouldHideBackdrop) {
-    body.style.overflow = "auto";
-  }
-
-  if (shouldHideBackdrop && backdrop && isNormalOverlay) {
+    document.body.style.overflow = "auto";
     backdrop.style.display = "none";
   }
 }
@@ -270,38 +265,33 @@ function handleHideComponent(selector, shouldHideBackdrop = true) {
 /* 開啟元件 */
 function handleShowComponent(selector, displayValue = "block", shouldBodyOverflowHidden = true) {
   const node = document.querySelector(selector);
-
-  const classList = node ? node.classList : null;
-
-  const isNormalOverlay = classList.contains("overlay") && !classList.contains("small");
-  const isSmallOverlay = classList.contains("small") && classList.contains("overlay");
-  node.classList.add("show");
-
-  if (isNormalOverlay) {
-    node.style.transform = "translate(0, 0)";
-    node.style.display = displayValue;
+  if (!node) {
+    console.error(`Element ${selector} not found.`);
+    return;
   }
 
-  if (isSmallOverlay) {
-    node.style.display = displayValue;
-  }
+  const classList = node.classList;
+  const isNormalOverlay = classList.contains("overlay") || classList.contains("info-only");
 
-  if (!isSmallOverlay && !isNormalOverlay) {
-    node.style.display = displayValue;
-  }
-  if (shouldBodyOverflowHidden) {
-    body.style.overflow = "hidden";
-  }
+  /* 先確保元件套用css display */
+  node.style.display = displayValue;
+  /* 再以滑動效果出場 */
+  setTimeout(() => {
+    if (isNormalOverlay) node.style.transform = "translate(0, 0)";
+  }, 50);
+
+  if (shouldBodyOverflowHidden) document.body.style.overflow = "hidden";
 
   /* 如果元件為遮罩，則同步開啟backdrop，做為關閉遮罩之點擊範圍 */
-  if (
-    shouldBodyOverflowHidden &&
-    classList.contains("overlay") &&
-    !classList.contains("full-page")
-  ) {
-    console.log("backdrop");
-    handleShowComponent(".backdrop");
-  }
+  setTimeout(() => {
+    if (
+      shouldBodyOverflowHidden &&
+      classList.contains("overlay") &&
+      !classList.contains("full-page")
+    ) {
+      handleShowComponent(".backdrop");
+    }
+  }, 150);
 }
 
 /* 切換 禮物牆 all 及 熱門 */
