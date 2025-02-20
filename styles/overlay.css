@@ -573,3 +573,20 @@ div.streamer-profile-overlay#gift-sent {
   position: fixed;
   z-index: calc(var(--overlay-z-index) + 1) !important;
 }
+
+@media screen and (min-width: 600px) {
+  div.overlay.info-only {
+    position: fixed;
+    width: 300px;
+    height: 200px;
+    border-radius: var(--overlay-radius);
+    left: calc(50% - 150px);
+    bottom: calc(50% - 100px);
+    transform: translate(0, 100vh);
+  }
+
+  div.overlay.info-only .content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
