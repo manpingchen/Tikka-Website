@@ -10,6 +10,7 @@
     <title>Tikka</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/overlay.css" />
     <link rel="stylesheet" href="styles/slideshow.css" />
     <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
 
@@ -156,8 +157,9 @@
         <div class="flex-column select-wrapper payment-select-wrapper">
           <label for="payment-method">付款方式</label>
           <div class="custom-select">
-            <select name="payment-method" id="payment-method">
-              <option value="">NewbePay藍新金流</option>
+            <select name="payment-method" id="payment-method" required>
+              <option value="">請選擇</option>
+              <option value="NewbePay">NewbePay藍新金流</option>
             </select>
             <span class="line"></span>
           </div>
@@ -165,33 +167,34 @@
         <div class="flex-column select-wrapper payment-select-wrapper">
           <label for="delivery-method">配送方式</label>
           <div class="custom-select">
-            <select name="delivery-method" id="delivery-method">
-              <option value="">宅配</option>
+            <select name="delivery-method" id="delivery-method" required>
+              <option value="">請選擇</option>
+              <option value="home-delivery">宅配</option>
             </select>
             <span class="line"></span>
           </div>
         </div>
-        <form action="javascript:void(0);" class="customer-detail">
+        <form action="/purchase-customer-detail.html" method="post" class="customer-detail">
           <div class="input-wrapper">
             <label for="name">收件人姓名：</label>
-            <input type="text" name="name" id="name" placeholder="請輸入文字..." />
+            <input type="text" name="name" id="name" required placeholder="請輸入文字..." />
           </div>
           <div class="input-wrapper">
             <label for="phone">收件人電話：</label>
-            <input type="text" name="phone" id="phone" placeholder="請輸入文字..." />
+            <input type="text" name="phone" id="phone" required placeholder="請輸入文字..." />
           </div>
           <div class="input-wrapper">
-            <label for="mail">收件人mail：</label>
-            <input type="text" name="mail" id="mail" placeholder="請輸入文字..." />
+            <label for="email">收件人mail：</label>
+            <input type="text" name="email" id="email" required placeholder="請輸入文字..." />
           </div>
           <div class="input-wrapper">
             <label for="delivery-address">收件地址：</label>
             <textarea
-              type="text"
               name="delivery-address"
               rows="4"
               id="delivery-address"
               placeholder="請輸入文字..."
+              required
             ></textarea>
           </div>
           <div class="input-wrapper">
@@ -205,8 +208,7 @@
             ></textarea>
           </div>
           <div class="input-wrapper">
-            <label for="coupon">主播推薦碼：</label>
-
+            <label for="coupon">主播推薦碼(可不填)：</label>
             <input type="text" name="coupon" id="coupon" placeholder="請輸入文字..." />
           </div>
         </form>
@@ -216,7 +218,7 @@
         <div class="options flex-row gap-1" id="invoice-types">
           <button
             type="button"
-            class="outlined secondary"
+            class="outlined secondary active"
             id="einvoice"
             onclick="handleOptionClick(this.id, 'invoice-types')"
           >
@@ -225,7 +227,7 @@
           <button
             type="button"
             class="outlined secondary"
-            id="tax-id-number"
+            id="uniform-invoice"
             onclick="handleOptionClick(this.id, 'invoice-types')"
           >
             統一編號
@@ -241,7 +243,7 @@
           <button
             type="button"
             class="outlined secondary"
-            id="carrier-barcode"
+            id="barcode"
             onclick="handleOptionClick(this.id, 'invoice-types')"
           >
             載具條碼
@@ -249,14 +251,9 @@
         </div>
         <form class="invoice-info-field">
           <div class="input-wrapper">
-            <label for="email" class="">Email：</label>
-            <textarea
-              type="email"
-              name="email"
-              rows="4"
-              id="email"
-              placeholder="請輸入文字..."
-            ></textarea>
+            <label for="invoice-email" class="">Email：</label>
+            <textarea name="invoice-email" id="invoice-email" placeholder="請輸入文字...">
+            </textarea>
           </div>
           <span id="invoice-info-tips" style="display: none"></span>
         </form>
@@ -264,22 +261,42 @@
       <div class="form-wrapper payment-options flex-column">
         <div class="price-calculation full-width">
           <div class="delivery-fee flex-row justify-space-between">
-            <p class="flex-row gap-1">運費<span class="fee-applied">（未達最低消費門檻）</span></p>
-            <p class="cost">NT$<span class="value">80</span></p>
+            <p class="flex-row">運費<span class="fee-applied">(未達最低消費門檻)</span></p>
+            <p class="cost">NT.<span class="value">80</span></p>
           </div>
           <div class="total-price flex-row justify-space-between">
             <p class="flex-row gap-1">購物車總金額</p>
-            <p class="cost">NT$<span class="value" id="total-value">640,000</span></p>
+            <p class="cost">NT.<span class="value" id="total-value">640,000</span></p>
           </div>
         </div>
       </div>
       <div class="flex-row justify-center gap-1 mt-1 btns-group">
-        <button class="pink-gradient-bg" onclick="location.href='purchase.html'">上一步</button>
-        <button class="pink-gradient-bg" onclick="location.href='check-purchase-detail.html'">
-          送出訂單
+        <button
+          class="pink-gradient-bg"
+          type="button"
+          onclick="window.location.href='purchase.html'"
+        >
+          上一步
         </button>
+        <button class="pink-gradient-bg disabled" id="submit-button" type="button">送出訂單</button>
       </div>
     </main>
+
+    <!-- 資訊未正確填寫 提醒遮罩 -->
+    <div class="overlay full-width info-only" id="required-info-missing">
+      <div class="title flex-row">
+        <button
+          class="close"
+          onclick="handleHideComponent('#required-info-missing', false)"
+        ></button>
+        <p class="flex-row"><span class="line"></span>資訊未正確填寫<span class="line"></span></p>
+      </div>
+      <div class="content">
+        <img src="images/pen-write.svg" alt="form-check" width="20" height="auto" />
+        請正確選擇與填寫必填欄位
+      </div>
+    </div>
+    <div class="backdrop" style="display: none"></div>
 
     <footer>
       <div class="footer-content flex-row">
@@ -311,12 +328,89 @@
 
     <script src="js/header.js"></script>
     <script src="js/main.js"></script>
+    <script src="helpers/formValueValidations.js"></script>
     <script>
-      handleOptionClick("einvoice", "invoice-types");
-      function getEmailTexareaRow() {
-        document.querySelector("textarea#email").rows = window.innerWidth >= 1024 ? 1 : 4;
+      // 預設發票預設為電子發票
+      let invoiceType = handleOptionClick("einvoice", "invoice-types");
+
+      // 表單送出驗證
+      const submitBtn = document.getElementById("submit-button");
+      submitBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        let isValid = dataValidation();
+
+        if (!isValid) return handleShowComponent("#required-info-missing", "flex");
+
+        window.location.href = "check-purchase-detail.html";
+      });
+
+      function dataValidation() {
+        let isValid = true;
+
+        // 驗證訂購人資訊必填欄位
+        let requiredFields = [
+          { id: "payment-method", message: "請選擇付款方式" },
+          { id: "delivery-method", message: "請選擇配送方式" },
+          { id: "email", message: "請輸入 Email", validate: isEmailValid },
+          { id: "name", message: "請輸入收件人姓名" },
+          { id: "phone", message: "請輸入收件人電話", validate: isPhoneValid },
+          { id: "delivery-address", message: "請輸入收件地址" },
+        ];
+
+        requiredFields.forEach(({ id, message, validate }) => {
+          let input = document.getElementById(id);
+          const value = input?.value.trim() || "";
+
+          if (!value) {
+            // console.log({ label: id, message });
+            isValid = false;
+          }
+
+          // 驗證email與電話格式
+          if (validate && value && !validate(id)) {
+            isValid = false;
+          }
+        });
+
+        // 發票類型驗證
+        const invoiceType = document.querySelector("#invoice-types button.active")?.innerText;
+        const invoiceMap = {
+          電子發票: "email-address",
+          載具條碼: "barcode-number",
+          統一編號: "uniform-number",
+          愛心捐贈: "donation-number",
+        };
+
+        const getInputValue = (id) => document.getElementById(id)?.value.trim() || "";
+
+        if (invoiceType && invoiceMap[invoiceType]) {
+          const invoiceInput = getInputValue(invoiceMap[invoiceType]);
+
+          if (!invoiceInput) {
+            // console.log({ label: invoiceMap[invoiceType], message: "請輸入發票資訊" });
+            isValid = false;
+          }
+
+          if (invoiceType === "電子發票" && !isEmailValid(invoiceMap[invoiceType])) {
+            isValid = false;
+          }
+        }
+
+        // 更新按鈕狀態
+        submitBtn.classList.toggle("disabled", !isValid);
+
+        return isValid;
       }
-      getEmailTexareaRow();
+
+      // 監聽表單欄位輸入變化
+      document.querySelectorAll("input, textarea, select").forEach((element) => {
+        element.addEventListener("change", dataValidation);
+      });
+
+      document.querySelectorAll("#invoice-types button").forEach((button) => {
+        button.addEventListener("click", dataValidation);
+      });
     </script>
   </body>
 </html>

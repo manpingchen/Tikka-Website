@@ -256,7 +256,7 @@ function handleHideComponent(selector, shouldHideBackdrop = true) {
 
   overlayClose(node);
 
-  if (shouldHideBackdrop) {
+  if (shouldHideBackdrop && backdrop) {
     document.body.style.overflow = "auto";
     backdrop.style.display = "none";
   }
@@ -482,28 +482,41 @@ function handleOptionClick(id, parentId) {
 
     handleShowComponent(".invoice-info-field", "block", false);
     const labelElement = document.querySelector(".invoice-info-field label");
+    const textareaElement = document.querySelector(".invoice-info-field textarea");
     const tipElement = document.querySelector("#invoice-info-tips");
+    textareaElement.value = "";
 
     switch (type) {
       case "電子發票":
         labelElement.innerHTML = "Email";
+        labelElement.for = "email-address";
+        textareaElement.id = "email-address";
+        textareaElement.name = "email-address";
         handleHideComponent("#invoice-info-tips");
-        break;
+        return type;
       case "愛心捐贈":
         labelElement.innerHTML = "愛心碼";
+        labelElement.for = "donation-number";
+        textareaElement.id = "donation-number";
+        textareaElement.name = "donation-number";
         handleShowComponent("#invoice-info-tips", "block", false);
         tipElement.innerHTML = "＊若為愛心捐贈電子發票，則無發退換貨。";
-
-        break;
+        return type;
       case "統一編號":
         labelElement.innerHTML = type;
+        labelElement.for = "uniform-number";
+        textareaElement.id = "uniform-number";
+        textareaElement.name = "uniform-number";
         handleHideComponent("#invoice-info-tips");
-        break;
+        return type;
       case "載具條碼":
         labelElement.innerHTML = type;
+        labelElement.for = "barcode-number";
+        textareaElement.id = "barcode-number";
+        textareaElement.name = "barcode-number";
         handleShowComponent("#invoice-info-tips", "block", false);
         tipElement.innerHTML = "＊若使用載具發票，請在輸入文字最前方加入／*";
-        break;
+        return type;
       default:
         break;
     }

@@ -7249,7 +7249,7 @@ main.purchase .receipt-options h4::after {
 }
 
 main.purchase div.form-wrapper p {
-  font-size: 0.875rem;
+  font-size: 1.1rem;
 }
 
 main.purchase .cart-item p.option {
@@ -7380,7 +7380,7 @@ main.purchase .payment-options p,
 main.purchase .payment-options h4,
 div.purchase-overlay .payment-options p,
 div.purchase-overlay .payment-options h4 {
-  color: #d6236c;
+  color: #fe559b;
 }
 
 main.purchase .check-item-count,
@@ -7465,6 +7465,7 @@ div.purchase-overlay .check-item-count p.point {
   .customer-detail .input-wrapper textarea {
     font-size: 0.875rem;
     padding: 0 0.5rem;
+    width: inherit;
   }
 
   main.purchase .item-info div {

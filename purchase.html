@@ -543,7 +543,7 @@
       </div>
     </div>
 
-    <!-- 商品未選擇 提醒遮罩 -->
+    <!-- 結帳商品未選擇 提醒遮罩 -->
     <div class="overlay full-width info-only" id="item-missing">
       <div class="title flex-row">
         <button class="close" onclick="handleHideComponent('#item-missing', false)"></button>
@@ -628,7 +628,7 @@
           return handleShowComponent("#item-missing", "flex");
         }
 
-        location.href = "purchase-customer-detail.html";
+        window.location.href = "purchase-customer-detail.html";
       }
     </script>
   </body>
