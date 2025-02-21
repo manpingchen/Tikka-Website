@@ -488,14 +488,14 @@ function handleOptionClick(id, parentId) {
 
     switch (type) {
       case "電子發票":
-        labelElement.innerHTML = "Email";
+        labelElement.innerHTML = "Email：";
         labelElement.for = "email-address";
         textareaElement.id = "email-address";
         textareaElement.name = "email-address";
         handleHideComponent("#invoice-info-tips");
         return type;
       case "愛心捐贈":
-        labelElement.innerHTML = "愛心碼";
+        labelElement.innerHTML = "愛心碼：";
         labelElement.for = "donation-number";
         textareaElement.id = "donation-number";
         textareaElement.name = "donation-number";
@@ -503,14 +503,14 @@ function handleOptionClick(id, parentId) {
         tipElement.innerHTML = "＊若為愛心捐贈電子發票，則無發退換貨。";
         return type;
       case "統一編號":
-        labelElement.innerHTML = type;
+        labelElement.innerHTML = type + "：";
         labelElement.for = "uniform-number";
         textareaElement.id = "uniform-number";
         textareaElement.name = "uniform-number";
         handleHideComponent("#invoice-info-tips");
         return type;
       case "載具條碼":
-        labelElement.innerHTML = type;
+        labelElement.innerHTML = type + "：";
         labelElement.for = "barcode-number";
         textareaElement.id = "barcode-number";
         textareaElement.name = "barcode-number";

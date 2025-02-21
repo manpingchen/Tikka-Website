@@ -6978,6 +6978,12 @@ div.form-wrapper button[type="submit"] {
   padding: 0.5rem 2.5rem;
 }
 
+main.purchase .receipt-options .options button,
+div.purchase-overlay .receipt-options .options button,
+div.purchase-overlay .payment-options button {
+  border-radius: 20px;
+}
+
 @media screen and (max-width: 480px) {
   div.purchase-overlay .receipt-options .options button,
   div.purchase-overlay .payment-options button {
@@ -7007,7 +7013,7 @@ div.purchase-overlay .receipt-options .options button.active {
   font-size: 1rem;
   background: #fff1fb;
   border-radius: 20px;
-  padding: 1rem;
+  padding: 1rem 3rem;
 }
 
 .cart-titles h1 img {
@@ -7163,7 +7169,7 @@ main.purchase div.form-wrapper p {
     flex-direction: row !important;
     display: flex;
     flex-wrap: wrap;
-    padding: 2rem 2rem 1rem;
+    padding: 2rem 3rem 1rem;
   }
 
   main.purchase .payment-select-wrapper {
@@ -7186,12 +7192,19 @@ main.purchase div.form-wrapper p {
     width: 150px;
     padding: 0.5rem;
   }
-  main.purchase textarea#email {
+
+  main.purchase form.invoice-info-field .input-wrapper {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  main.purchase .invoice-info-field textarea {
     height: 36px;
   }
   main.purchase .payment-options,
   main.purchase .receipt-options {
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
     gap: 0.5rem;
   }
   main.purchase div.form-wrapper.payment-options p {
@@ -7404,6 +7417,11 @@ div.purchase-overlay .check-item-count p.point {
     margin-bottom: 0;
     padding-top: 100px;
   }
+
+  .cart-titles h1 {
+    padding: 1rem;
+  }
+
   main.purchase .cart-item,
   div.form-wrapper {
     padding: 1rem;
