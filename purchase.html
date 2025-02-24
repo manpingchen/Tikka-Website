@@ -554,6 +554,37 @@
         請選擇欲結帳商品
       </div>
     </div>
+
+    <!-- 商品移出購物車 提醒遮罩 -->
+    <div class="overlay full-width info-only" id="item-removed">
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#item-removed')"></button>
+        <p class="flex-row"><span class="line"></span>移出購物車<span class="line"></span></p>
+      </div>
+      <div class="content flex-column">
+        <div class="confirm-removal">
+          <img src="images/cart-arrow-out.svg" alt="form-check" width="20" height="auto" />
+          <p>
+            確定要將此商品移出購物車？ <br />
+            『<span class="item-name ellipsis">Moiskin長效賦活精華液</span>』
+          </p>
+        </div>
+        <button type="button" class="confirm" onclick="confirmRemove()">好</button>
+      </div>
+    </div>
+
+    <!-- 商品移出購物車 確認遮罩 -->
+    <div class="overlay full-width info-only" id="item-removed-confirmed">
+      <div class="title flex-row">
+        <button class="close" onclick="handleHideComponent('#item-removed-confirmed')"></button>
+        <p class="flex-row"><span class="line"></span>移出購物車<span class="line"></span></p>
+      </div>
+      <div class="content">
+        <img src="images/cart-arrow-out.svg" alt="form-check" width="20" height="auto" />
+        商品已移出購物車
+      </div>
+    </div>
+
     <div class="backdrop" style="display: none"></div>
 
     <footer>
@@ -591,6 +622,7 @@
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
     <script>
+      let itemIdToBeRemoved;
       document.addEventListener("click", checkIfHasItemSelected);
       checkIfHasItemSelected();
 
@@ -619,6 +651,13 @@
 
       function handleRemoveItem(itemId) {
         console.log(itemId);
+        handleShowComponent("#item-removed", "flex");
+      }
+
+      function confirmRemove() {
+        console.log({ itemIdToBeRemoved });
+        handleHideComponent("#item-removed", false);
+        handleShowComponent("#item-removed-confirmed", "flex");
       }
 
       function handlePurchaseItems() {

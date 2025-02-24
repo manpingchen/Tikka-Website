@@ -123,6 +123,36 @@ div.overlay.info-only .content {
   flex-grow: 1;
 }
 
+div.overlay.info-only .content .confirm-removal {
+  width: 270px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  div.overlay.info-only .content .confirm-removal {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  div.overlay.info-only#item-removed {
+    height: 240px;
+  }
+
+  div.overlay.info-only#item-removed .content {
+    padding-bottom: 20px;
+  }
+}
+
+div.overlay.info-only .content button.confirm {
+  padding: 0.25rem 1.5rem;
+  border: 1px solid white;
+  background: #ff99c3;
+  color: white;
+}
+
 div.overlay.info-only .content img {
   width: 40px;
 }
