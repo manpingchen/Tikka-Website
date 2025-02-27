@@ -179,36 +179,119 @@
         </div>
 
         <div class="chat-sticker-wrap">
-          <div class="chat-sticker" id="sticker-panel">
-            <div class="sticker-title"><img src="images/my-sticker.svg" alt="我的貼圖" /></div>
-            <div class="sticker-body">
-              <button class="sticker-item add-sticker">
-                <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
-              </button>
-              <button class="sticker-item" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker.png" alt="" /></span>
-              </button>
-              <button class="sticker-item" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker2.png" alt="" /></span>
-              </button>
-              <button class="sticker-item" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker.png" alt="" /> </span>
-              </button>
-              <button class="sticker-item" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker2.png" alt="" /> </span>
-              </button>
-              <button class="sticker-item" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker.png" alt="" /></span>
-              </button>
-              <button class="sticker-item" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker2.png" alt="" /></span>
-              </button>
-              <button class="sticker-item" onclick="handleAddStickerToChat()">
-                <span class="img-wrap"> <img src="images/sticker.png" alt="" /> </span>
-              </button>
+          <div class="chat-sticker overlay sticker-overlay" id="sticker-panel">
+            <div class="sticker-title">
+              <img src="images/my-sticker.png" alt="我的貼圖" class="title-img" />
+              <button class="close" onclick="handleHideComponent('#sticker-panel')"></button>
             </div>
-            <div class="sticker-footer">
-              <button type="button" class="sumbit-btn" onclick="handleCloseStickerPanel()">
+            <div class="detail-links stickers-details" id="stickers-details">
+              <ul class="stickers-detail-tabs">
+                <li id="all-stickers" onclick="showStickersDetail(this.id)">
+                  <a href="#">All</a>
+                </li>
+                <li id="popular-stickers" onclick="showStickersDetail(this.id)">
+                  <a href="#">熱門</a>
+                </li>
+                <li id="my-stickers" onclick="showStickersDetail(this.id)">
+                  <a href="#">我的貼圖</a>
+                </li>
+              </ul>
+            </div>
+            <div class="content">
+              <div class="sticker-body" id="all-stickers-list">
+                <button class="sticker-item flex-column" onclick="handleSelectSticker(this)">
+                  <span class="img-wrap">
+                    <img src="images/sticker3.png" alt="" />
+                  </span>
+                  <span class="sticker-name">薯條貼圖</span>
+                  <span class="value">555</span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleSelectSticker(this)">
+                  <span class="img-wrap">
+                    <img src="images/sticker2.png" alt="" />
+                  </span>
+                  <span class="sticker-name">貼圖名稱</span>
+                  <span class="value">230</span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleSelectSticker(this)">
+                  <span class="img-wrap">
+                    <img src="images/sticker.png" alt="" />
+                  </span>
+                  <span class="sticker-name">藍瘦香菇</span>
+                  <span class="value">155</span>
+                </button>
+              </div>
+              <div class="sticker-body" id="popular-stickers-list" style="display: none">
+                <button class="sticker-item flex-column" onclick="handleSelectSticker(this)">
+                  <span class="img-wrap">
+                    <img src="images/sticker2.png" alt="" />
+                  </span>
+                  <span class="sticker-name">貼圖名稱</span>
+                  <span class="value">230</span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleSelectSticker(this)">
+                  <span class="img-wrap">
+                    <img src="images/sticker2.png" alt="" />
+                  </span>
+                  <span class="sticker-name">貼圖名稱</span>
+                  <span class="value">230</span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleSelectSticker(this)">
+                  <span class="img-wrap">
+                    <img src="images/sticker2.png" alt="" />
+                  </span>
+                  <span class="sticker-name">貼圖名稱</span>
+                  <span class="value">230</span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleSelectSticker(this)">
+                  <span class="img-wrap">
+                    <img src="images/sticker2.png" alt="" />
+                  </span>
+                  <span class="sticker-name">貼圖名稱</span>
+                  <span class="value">230</span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleSelectSticker(this)">
+                  <span class="img-wrap">
+                    <img src="images/sticker2.png" alt="" />
+                  </span>
+                  <span class="sticker-name">貼圖名稱</span>
+                  <span class="value">230</span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleSelectSticker(this)">
+                  <span class="img-wrap">
+                    <img src="images/sticker2.png" alt="" />
+                  </span>
+                  <span class="sticker-name">貼圖名稱</span>
+                  <span class="value">230</span>
+                </button>
+              </div>
+              <div class="sticker-body" id="my-stickers-list" style="display: none">
+                <button class="sticker-item flex-column" onclick="handleSelectSticker(this)">
+                  <span class="img-wrap">
+                    <img src="images/sticker.png" alt="" />
+                  </span>
+                  <span class="sticker-name">貼圖名稱</span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleSelectSticker(this)">
+                  <span class="img-wrap">
+                    <img src="images/sticker.png" alt="" />
+                  </span>
+                  <span class="sticker-name">貼圖名稱</span>
+                </button>
+                <button class="sticker-item flex-column" onclick="handleSelectSticker(this)">
+                  <span class="img-wrap">
+                    <img src="images/sticker.png" alt="" />
+                  </span>
+                  <span class="sticker-name">貼圖名稱</span>
+                </button>
+              </div>
+            </div>
+            <div class="sticker-footer flex-row">
+              <span class="point flex-row">987,654,239</span>
+              <button id="buy-button" type="button" onclick="addPurchasedStickerToMyStickerList()">
+                購買
+              </button>
+              <button id="send-button" type="button" onclick="addStickerToChat()">
                 送出
               </button>
             </div>
@@ -303,7 +386,11 @@
             </div>
             <div class="chat-footer">
               <input type="text" id="new-chat-input-desktop" placeholder="請輸入文字..." />
-              <button type="button" class="face-btn" onclick="handleOpenStickerPanel()">
+              <button
+                type="button"
+                class="face-btn"
+                onclick="handleShowComponent('#sticker-panel', 'block', false)"
+              >
                 <img src="images/face.svg" />
               </button>
               <button type="submit" class="sent-btn" onclick="handleAddTextToChat('desktop')">
@@ -872,18 +959,18 @@
           <!-- 手機版貼圖遮罩 -->
           <div class="overlay sticker-overlay" id="sticker-overlay-mobile">
             <div class="title flex-row">
-              <img src="images/my-sticker.svg" alt="我的貼圖" class="title-img" />
+              <img src="images/my-sticker.png" alt="我的貼圖" class="title-img" />
               <button class="close" onclick="handleHideComponent('.sticker-overlay')"></button>
             </div>
             <div class="detail-links stickers-details" id="stickers-details">
               <ul class="stickers-detail-tabs">
-                <li id="all-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
+                <li id="all-stickers" onclick="showStickersDetail(this.id)">
                   <a href="#">All</a>
                 </li>
-                <li id="popular-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
+                <li id="popular-stickers" onclick="showStickersDetail(this.id)">
                   <a href="#">熱門</a>
                 </li>
-                <li id="my-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
+                <li id="my-stickers" onclick="showStickersDetail(this.id)">
                   <a href="#">我的貼圖</a>
                 </li>
               </ul>
@@ -1747,6 +1834,7 @@
     <script src="js/header.js"></script>
     <script src="js/fakeData.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/chat.js"></script>
     <script>
       /* 追蹤按鈕文字 */
       function handleFollow() {
@@ -1792,7 +1880,7 @@
 
         document.getElementById("chat-items-mobile").appendChild(newElement);
         document.getElementById("chat-items-desktop").appendChild(clonedNewElement);
-        handleCloseStickerPanel();
+        handleHideComponent("#sticker-panel");
         handleHideComponent(".sticker-overlay");
         locateScrollbar();
       }

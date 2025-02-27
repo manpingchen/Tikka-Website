@@ -1070,13 +1070,13 @@
       </div>
       <div class="detail-links stickers-details" id="stickers-details">
         <ul class="stickers-detail-tabs">
-          <li id="all-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
+          <li id="all-stickers" onclick="showStickersDetail(this.id)">
             <a href="#">All</a>
           </li>
-          <li id="popular-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
+          <li id="popular-stickers" onclick="showStickersDetail(this.id)">
             <a href="#">熱門</a>
           </li>
-          <li id="my-stickers" onclick="showStickersDetail(this.id, 'stickers-details')">
+          <li id="my-stickers" onclick="showStickersDetail(this.id)">
             <a href="#">我的貼圖</a>
           </li>
         </ul>
@@ -1385,6 +1385,7 @@
     <script src="helpers/sortByLength.js"></script>
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
+    <script src="js/chat.js"></script>
     <script>
       /* 共用 */
       const queryString = window.location.search;
@@ -1779,19 +1780,19 @@
         }
       }
 
-      /* 貼圖購買 */
-      let stickerSrcToBePurchased;
+      // /* 貼圖購買 */
+      // let stickerSrcToBePurchased;
 
-      function handleSelectSticker(selector) {
-        stickerSrcToBePurchased = selector.children[0].src;
-      }
+      // function handleSelectSticker(selector) {
+      //   stickerSrcToBePurchased = selector.children[0].src;
+      // }
 
-      function handlePurchaseSticker() {
-        handleHideComponent(".sticker-overlay");
-        document.getElementById("purchased-sticker-img").src = stickerSrcToBePurchased;
-        handleShowComponent("#sticker-purchased-overlay", "flex");
-        stickerSrcToBePurchased = undefined;
-      }
+      // function handlePurchaseSticker() {
+      //   handleHideComponent(".sticker-overlay");
+      //   document.getElementById("purchased-sticker-img").src = stickerSrcToBePurchased;
+      //   handleShowComponent("#sticker-purchased-overlay", "flex");
+      //   stickerSrcToBePurchased = undefined;
+      // }
 
       /* 由貼圖遮罩 切換回 聊聊遮罩 */
       function handleBackToChat() {

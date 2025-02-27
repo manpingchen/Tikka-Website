@@ -8,14 +8,6 @@ function setActiveStatus(parentId, activeElementId) {
   activeElement.classList.add("active");
 }
 
-/* 直播畫面 對話貼圖區塊控制 */
-function handleOpenStickerPanel() {
-  document.getElementById("sticker-panel").classList.add("show-from-left-side");
-}
-function handleCloseStickerPanel() {
-  document.getElementById("sticker-panel").classList.remove("show-from-left-side");
-}
-
 /* 直播畫面 確保聊天視窗滾輪對齊最下方 */
 function locateScrollbar() {
   const allChatBody = document.querySelectorAll(".chat-body");
@@ -601,76 +593,6 @@ function handleAddProductToCart(target) {
 }
 
 ///////////// 貼圖、對話相關功能 ///////////
-/* 切換貼圖列表 */
-function showStickersDetail(tabId, tabParentId) {
-  [...document.querySelectorAll(".sticker-body")].map((node) => {
-    node.style.display = "none";
-  });
-
-  setActiveStatus(tabParentId, tabId);
-  const selector = "#" + tabId + "-list";
-  handleShowComponent(selector, "grid");
-
-  const buyButton = document.querySelector(".sticker-footer #buy-button");
-  const sendButton = document.querySelector(".sticker-footer #send-button");
-
-  if (tabId === "my-stickers") {
-    buyButton.style.display = "none";
-    sendButton.style.display = "block";
-  } else {
-    buyButton.style.display = "block";
-    sendButton.style.display = "none";
-  }
-}
-
-/* 加貼圖至對話框 */
-function handleAddStickerToChat() {
-  const imgElement = document.getElementsByClassName("selected-sticker")[0].outerHTML;
-
-  if (imgElement) {
-    ifChatNeedNewDate();
-
-    const newElement = document.createElement("div");
-    newElement.classList.add("chat-item", "sticker-content", "my-chat");
-
-    const avatarElement = buildAvatar();
-
-    const contentElement = document.createElement("span");
-    contentElement.classList.add("chat-content");
-    contentElement.innerHTML = imgElement;
-
-    newElement.append(avatarElement);
-    newElement.append(contentElement);
-
-    document.getElementById("followers-chat-items").appendChild(newElement);
-    handleHideComponent(".sticker-overlay");
-    handleShowComponent("#followers-chat-overlay");
-    locateScrollbar();
-  }
-}
-
-/* 確認對話是否需加入日期分割元件 */
-function ifChatNeedNewDate() {
-  const allDates = document.querySelectorAll(".date-value");
-  const datesArray = [...allDates];
-  const date = new Date();
-  const today = date.getFullYear() + "." + (date.getMonth() + 1) + "." + date.getDate();
-
-  const isNewDate = datesArray.filter(({ innerText }) => innerText === today).length === 0;
-
-  if (!isNewDate) return false;
-
-  const dateElement = document.createElement("div");
-  dateElement.classList.add("chat-date");
-  const dateValueElement = document.createElement("p");
-  dateValueElement.classList.add("date-value");
-  dateValueElement.innerHTML = today;
-
-  dateElement.append(dateValueElement);
-
-  const chatBox = document.querySelector("#followers-chat-overlay .chat-body");
-  return chatBox.appendChild(dateElement);
-}
 
 /* 建立Avatar */
 function buildAvatar() {

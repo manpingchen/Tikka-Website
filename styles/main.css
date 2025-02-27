@@ -2064,14 +2064,13 @@ main.live-on section.left-column div.chat {
 }
 
 main.live-on section.left-column div.chat-sticker {
-  height: 100%;
   position: absolute;
-  top: 0;
+  bottom: 0;
+  left: 0;
   background: #000013;
   width: 100%;
   z-index: 2;
-  left: -100%;
-  transition: left 0.3;
+  transform: translate(0, 100%);
 }
 
 main.live-on section.left-column div.chat-title,
@@ -2086,13 +2085,22 @@ main.live-on section.left-column div.sticker-title {
   height: 60px;
 }
 
+main.live-on section.left-column div.sticker-title {
+  justify-content: space-between;
+}
+
+main.live-on section.left-column div.sticker-title,
+main.live-on section.left-column div.stickers-details,
+main.live-on section.left-column div.sticker-footer {
+  background: #343343 !important;
+}
+
 main.live-on section.left-column div.chat-title img {
   width: 25px;
 }
 
 main.live-on section.left-column div.sticker-title img {
-  width: 120px;
-  margin: 0 auto;
+  width: 90px;
 }
 
 main.live-on section.left-column div.chat-body,
@@ -2100,6 +2108,11 @@ main.live-on section.left-column div.sticker-body {
   padding: 1rem;
   height: calc(100% - 120px);
   overflow-y: auto;
+}
+
+main.live-on section.left-column div.sticker-body {
+  height: unset;
+  padding: 0;
 }
 
 main.live-on section.left-column div.chat-item {
@@ -2110,6 +2123,22 @@ main.live-on section.left-column div.chat-item.sticker-content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+main.live-on section.left-column div.sticker-body .sticker-item {
+  margin-bottom: 40px;
+}
+
+main.live-on section.left-column div.sticker-body .sticker-item .sticker-name {
+  margin-top: 50px;
+}
+
+main.live-on section.left-column div.sticker-body#my-stickers-list .sticker-item {
+  margin-bottom: 30px;
+}
+
+main.live-on section.left-column div.sticker-body#my-stickers-list .sticker-item .sticker-name {
+  margin-top: 30px;
 }
 
 div.chat-item span {
@@ -2227,6 +2256,11 @@ div.sticker-overlay {
   flex-direction: column;
 }
 
+.desktop-only div.sticker-overlay {
+  max-height: unset;
+  height: 80% !important;
+}
+
 div.sticker-overlay div.title {
   height: 50px;
 }
@@ -2258,11 +2292,11 @@ div.sticker-overlay ul.stickers-detail-tabs li a {
 }
 
 div.sticker-overlay ul.stickers-detail-tabs li.active a {
-  text-shadow: 1px 2px 3px #c70c65;
+  text-shadow: 0px 5px 5px #c70c65;
 }
 
 div.sticker-overlay div.content {
-  padding: 10px;
+  padding: 10px 0 10px 10px;
   overflow: auto;
   height: calc(100% - 150px) !important;
   justify-content: flex-start !important;
@@ -2287,33 +2321,29 @@ div.sticker-overlay div.sticker-body button.add-sticker.sticker-item .img-wrap i
 div.sticker-overlay div.sticker-body .sticker-item {
   border-radius: 10px;
   border: 2px solid #fff;
-  margin-bottom: 70px;
-}
-
-div.sticker-overlay div.sticker-body#my-stickers-list .sticker-item .sticker-name {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 div.sticker-overlay div.sticker-body .sticker-item .img-wrap img {
-  height: auto;
+  height: 100%;
   width: 100% !important;
+  object-fit: cover;
 }
 
 div.sticker-overlay div.sticker-body .sticker-item .sticker-name {
-  margin-top: 70px;
+  margin-top: 60px;
   color: #fff;
   font-size: 1rem;
-  margin-bottom: 0.25rem;
 }
 
 div.sticker-overlay div.sticker-body .sticker-item .value {
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.785rem;
   background: url(../images/coin.png) no-repeat left center;
-  background-size: 30px;
+  background-size: 33px;
   width: 70px;
   margin: 0 auto;
-  padding-left: 13px;
+  padding-left: 7px;
 }
 
 div.sticker-overlay div.sticker-footer {
@@ -2332,8 +2362,9 @@ div.sticker-overlay div.sticker-footer {
   position: relative;
 }
 
-button.sticker-item:hover {
-  box-shadow: 0 0 1px 3px #e50dbb;
+div.sticker-overlay div.sticker-body .sticker-item:hover,
+div.sticker-overlay div.sticker-body .sticker-item.selected {
+  border-color: #e50dbb;
   filter: none;
 }
 
@@ -2348,11 +2379,13 @@ button.sticker-item:hover img {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   top: 0;
 }
 
 .sticker-item .img-wrap img {
   height: 100%;
+  border-radius: 6px;
 }
 
 button.sticker-item:not(.add-sticker) {
@@ -2779,6 +2812,7 @@ div.reward-items {
   padding: 0.75rem;
   height: 385px;
   overflow-y: scroll;
+  overflow-x: hidden;
   align-content: baseline;
 }
 main.live-on div.reward-items.hide {
@@ -5641,10 +5675,6 @@ div.gift-sent-overlay div.gift-img-wrapper img {
 
 .hide {
   display: none;
-}
-
-.show-from-left-side {
-  left: 0 !important;
 }
 
 .search-form > div.search-container {
@@ -10164,8 +10194,8 @@ ul.followers-list button.chat-button:hover {
 
 .sticker-footer button#buy-button,
 .sticker-footer button#send-button {
-  width: 90px;
-  font-size: 0.875rem;
+  width: 70px;
+  font-size: 1rem;
   padding: 5px;
   color: #d6236c;
   background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
