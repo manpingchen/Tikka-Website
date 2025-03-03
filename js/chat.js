@@ -56,10 +56,6 @@ function addPurchasedStickerToMyStickerList() {
     stickerAddedToMyStickers.removeChild(valueElement);
   }
 
-  // 清除舊的 onclick 事件
-  stickerAddedToMyStickers.onclick = null;
-  stickerAddedToMyStickers.classList.remove("selected");
-
   // 加入我的貼圖清單
   myStickerListElement.appendChild(stickerAddedToMyStickers);
 
@@ -151,6 +147,9 @@ function addStickerToChat() {
 
   document.querySelector(".chat-body").appendChild(newElement);
   locateScrollbar();
+
+  // 先清除所有選擇狀態
+  resetSelectedSticker();
 }
 
 /* 確認對話是否需加入日期分割元件 */
