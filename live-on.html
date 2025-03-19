@@ -556,7 +556,7 @@
                   <button
                     type="button open-overlay"
                     class="face-btn"
-                    onclick="handleShowComponent('.sticker-overlay', 'flex')"
+                    onclick="handleShowComponent('#sticker-overlay-mobile', 'flex')"
                   >
                     <img src="images/face.svg" />
                   </button>
@@ -956,19 +956,13 @@
             </div>
             <div class="detail-links stickers-details" id="stickers-details">
               <ul class="stickers-detail-tabs">
-                <li id="all-stickers" onclick="showStickersDetail(this.id)">
-                  <a href="#">All</a>
-                </li>
-                <li id="popular-stickers" onclick="showStickersDetail(this.id)">
-                  <a href="#">熱門</a>
-                </li>
-                <li id="my-stickers" onclick="showStickersDetail(this.id)">
-                  <a href="#">我的貼圖</a>
-                </li>
+                <li id="m-all-stickers" onclick="showStickersDetail(this.id)">All</li>
+                <li id="m-popular-stickers" onclick="showStickersDetail(this.id)">熱門</li>
+                <li id="m-my-stickers" onclick="showStickersDetail(this.id)">我的貼圖</li>
               </ul>
             </div>
             <div class="content">
-              <div class="sticker-body" id="all-stickers-list">
+              <div class="sticker-body" id="m-all-stickers-list">
                 <button class="sticker-item add-sticker">
                   <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
                 </button>
@@ -1062,20 +1056,20 @@
                   <span class="value">230</span>
                 </button>
               </div>
-              <div class="sticker-body" id="popular-stickers-list" style="display: none">
+              <div class="sticker-body" id="m-popular-stickers-list" style="display: none">
                 <button class="sticker-item add-sticker">
                   <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
                 </button>
                 <button class="sticker-item flex-column">
                   <span class="img-wrap" onclick="handleAddStickerToChat()">
-                    <img src="images/sticker2.png" alt="" />
+                    <img src="images/sticker.png" alt="" />
                   </span>
                   <span class="sticker-name">貼圖名稱</span>
                   <span class="value">230</span>
                 </button>
                 <button class="sticker-item flex-column">
                   <span class="img-wrap" onclick="handleAddStickerToChat()">
-                    <img src="images/sticker2.png" alt="" />
+                    <img src="images/sticker.png" alt="" />
                   </span>
                   <span class="sticker-name">貼圖名稱</span>
                   <span class="value">230</span>
@@ -1156,7 +1150,7 @@
                   <span class="value">230</span>
                 </button>
               </div>
-              <div class="sticker-body" id="my-stickers-list" style="display: none">
+              <div class="sticker-body" id="m-my-stickers-list" style="display: none">
                 <button class="sticker-item add-sticker">
                   <span class="img-wrap"><img src="images/add-icon.svg" alt="加貼圖" /></span>
                 </button>
@@ -1180,15 +1174,17 @@
                 </button>
               </div>
             </div>
+
             <div class="sticker-footer flex-row">
-              <span class="point flex-row">2740000</span>
+              <span class="point flex-row">987,654,239</span>
               <button
-                id="buy-button"
+                id="m-buy-button"
                 type="button"
-                onclick="handleHideComponent('.sticker-overlay')"
+                onclick="addPurchasedStickerToMyStickerList(true)"
               >
                 購買
               </button>
+              <button id="m-send-button" type="button" onclick="addStickerToChat()">送出</button>
             </div>
           </div>
 

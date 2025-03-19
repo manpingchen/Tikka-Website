@@ -2282,6 +2282,7 @@ div.sticker-overlay ul.stickers-detail-tabs {
 }
 div.sticker-overlay ul.stickers-detail-tabs li {
   cursor: pointer;
+  color: #fff;
 }
 
 div.sticker-overlay ul.stickers-detail-tabs li:not(:first-child) {
@@ -2306,6 +2307,10 @@ div.sticker-overlay div.content {
   justify-content: flex-start !important;
 }
 
+div.sticker-overlay#sticker-overlay-mobile div.content {
+  padding: 10px;
+}
+
 div.sticker-overlay div.sticker-body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2319,7 +2324,9 @@ div.sticker-overlay div.sticker-body button.add-sticker {
 }
 
 div.sticker-overlay div.sticker-body button.add-sticker.sticker-item .img-wrap img {
-  width: 40px !important;
+  object-fit: contain;
+  width: 50% !important;
+  height: 50% !important;
 }
 
 div.sticker-overlay div.sticker-body .sticker-item {
@@ -10183,7 +10190,8 @@ ul.followers-list button.chat-button:hover {
   justify-content: space-between;
 }
 
-.sticker-overlay .sticker-footer #send-button {
+.sticker-overlay .sticker-footer #send-button ,
+.sticker-overlay .sticker-footer #m-send-button {
   display: none;
 }
 
@@ -10198,7 +10206,9 @@ ul.followers-list button.chat-button:hover {
 }
 
 .sticker-footer button#buy-button,
-.sticker-footer button#send-button {
+.sticker-footer button#send-button,
+.sticker-footer button#m-buy-button,
+.sticker-footer button#m-send-button {
   width: 70px;
   font-size: 1rem;
   padding: 5px;
@@ -10207,7 +10217,9 @@ ul.followers-list button.chat-button:hover {
 }
 
 .sticker-footer button#buy-button:hover,
-.sticker-footer button#send-button:hover {
+.sticker-footer button#send-button:hover,
+.sticker-footer button#m-buy-button:hover,
+.sticker-footer button#m-send-button:hover {
   background: linear-gradient(0deg, var(--dark-pink), #ef99bf) !important;
   color: #fff;
 }

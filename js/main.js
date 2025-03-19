@@ -256,6 +256,7 @@ function handleHideComponent(selector, shouldHideBackdrop = true) {
 
 /* 開啟元件 */
 function handleShowComponent(selector, displayValue = "block", shouldBodyOverflowHidden = true) {
+  
   const node = document.querySelector(selector);
   if (!node) {
     console.error(`Element ${selector} not found.`);
