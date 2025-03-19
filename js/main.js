@@ -477,7 +477,7 @@ function handleOptionClick(id, parentId) {
     const textareaElement = document.querySelector(".invoice-info-field textarea");
     const tipElement = document.querySelector("#invoice-info-tips");
     textareaElement.value = "";
-
+    
     switch (type) {
       case "電子發票":
         labelElement.innerHTML = "Email：";
@@ -485,8 +485,10 @@ function handleOptionClick(id, parentId) {
         textareaElement.id = "email-address";
         textareaElement.name = "email-address";
         handleHideComponent("#invoice-info-tips");
+        handleHideComponent(".uniform-number-form");
         return type;
       case "愛心捐贈":
+        handleHideComponent(".uniform-number-form");
         labelElement.innerHTML = "愛心碼：";
         labelElement.for = "donation-number";
         textareaElement.id = "donation-number";
@@ -495,13 +497,15 @@ function handleOptionClick(id, parentId) {
         tipElement.innerHTML = "＊若為愛心捐贈電子發票，則無發退換貨。";
         return type;
       case "統一編號":
-        labelElement.innerHTML = type + "：";
-        labelElement.for = "uniform-number";
-        textareaElement.id = "uniform-number";
-        textareaElement.name = "uniform-number";
+        labelElement.innerHTML = "Email：";
+        labelElement.for = "email-address";
+        textareaElement.id = "email-address";
+        textareaElement.name = "email-address";
         handleHideComponent("#invoice-info-tips");
+        handleShowComponent(".uniform-number-form", "block", false);
         return type;
       case "載具條碼":
+        handleHideComponent(".uniform-number-form");
         labelElement.innerHTML = type + "：";
         labelElement.for = "barcode-number";
         textareaElement.id = "barcode-number";

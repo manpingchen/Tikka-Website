@@ -6968,6 +6968,7 @@ div.purchase-overlay form.invoice-info-field .input-w {
 
 main.purchase form.invoice-info-field .input-wrapper {
   padding: 0.5rem 20px;
+  margin-bottom: unset;
 }
 
 main.purchase form.invoice-info-field .input-wrapper label,
