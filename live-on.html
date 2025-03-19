@@ -952,13 +952,16 @@
           <div class="overlay sticker-overlay" id="sticker-overlay-mobile">
             <div class="title flex-row">
               <img src="images/my-sticker.png" alt="我的貼圖" class="title-img" />
-              <button class="close" onclick="handleHideComponent('.sticker-overlay')"></button>
+              <button
+                class="close"
+                onclick="handleHideComponent('#sticker-overlay-mobile')"
+              ></button>
             </div>
             <div class="detail-links stickers-details" id="stickers-details">
               <ul class="stickers-detail-tabs">
-                <li id="m-all-stickers" onclick="showStickersDetail(this.id)">All</li>
-                <li id="m-popular-stickers" onclick="showStickersDetail(this.id)">熱門</li>
-                <li id="m-my-stickers" onclick="showStickersDetail(this.id)">我的貼圖</li>
+                <li id="m-all-stickers" onclick="showStickersDetail(this.id, true)">All</li>
+                <li id="m-popular-stickers" onclick="showStickersDetail(this.id, true)">熱門</li>
+                <li id="m-my-stickers" onclick="showStickersDetail(this.id, true)">我的貼圖</li>
               </ul>
             </div>
             <div class="content">

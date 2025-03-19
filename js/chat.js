@@ -35,12 +35,12 @@ function handlePurchaseSticker() {
 }
 
 function addPurchasedStickerToMyStickerList(ifMobile = false) {
-  const myStickerListElement = !ifMobile
-    ? document.getElementById("my-stickers-list")
-    : document.getElementById("m-my-stickers-list");
-  const allStickersListElement = !ifMobile
-    ? document.getElementById("all-stickers-list")
-    : document.getElementById("m-all-stickers-list");
+  const myStickerListElement = ifMobile
+    ? document.getElementById("m-my-stickers-list")
+    : document.getElementById("my-stickers-list");
+  const allStickersListElement = ifMobile
+    ? document.getElementById("m-all-stickers-list")
+    : document.getElementById("all-stickers-list");
 
   // 確保有選擇貼圖
   if (!stickerSelected) {
@@ -65,9 +65,9 @@ function addPurchasedStickerToMyStickerList(ifMobile = false) {
 
   // 顯示我的貼圖清單
   if (ifMobile) {
-    showStickersDetail("m-my-stickers", ifMobile);
+    showStickersDetail("m-my-stickers", true);
   } else {
-    showStickersDetail("my-stickers");
+    showStickersDetail("my-stickers", false);
   }
 
   // 重置選擇的貼圖
@@ -75,30 +75,26 @@ function addPurchasedStickerToMyStickerList(ifMobile = false) {
 }
 
 /* 切換貼圖列表 */
-function showStickersDetail(tabId, ifMobile = false) {
+function showStickersDetail(tabId, ifMobile) {
   [...document.querySelectorAll(".sticker-body")].map((node) => {
     node.style.display = "none";
   });
-
-  console.log({ tabId });
 
   setActiveStatus("stickers-details", tabId);
   const selector = "#" + tabId + "-list";
   handleShowComponent(selector, "grid");
 
-  const buyButton = !ifMobile
-    ? document.querySelector(".sticker-footer #buy-button")
-    : document.querySelector(".sticker-footer #m-buy-button");
-  const sendButton = !ifMobile
-    ? document.querySelector(".sticker-footer #send-button")
-    : document.querySelector(".sticker-footer #m-send-button");
+  const buyButton = ifMobile
+    ? document.querySelector(".sticker-footer #m-buy-button")
+    : document.querySelector(".sticker-footer #buy-button");
+  const sendButton = ifMobile
+    ? document.querySelector(".sticker-footer #m-send-button")
+    : document.querySelector(".sticker-footer #send-button");
 
   if (tabId === "my-stickers" || tabId === "m-my-stickers") {
-    console.log(1, sendButton);
     buyButton.style.display = "none";
     sendButton.style.display = "grid";
   } else {
-    console.log(2);
     buyButton.style.display = "grid";
     sendButton.style.display = "none";
   }
