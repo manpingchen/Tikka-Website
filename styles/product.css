@@ -399,5 +399,5 @@ div.overlay#product-options-missing {
 .status:not(.promo) .price .original,
 .price:not(.promo) .original,
 #product-options:not(.promo) .price .original {
-  display: none;
+  /* display: none; */
 }
