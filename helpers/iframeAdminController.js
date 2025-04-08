@@ -1,4 +1,4 @@
-function iframeDisplayController(ifHide) {
+function ifHideGiftAdminIframe(ifHide) {
   const iframe = document.getElementById("giftAdmin");
   if (ifHide) {
     iframe.style.display = "none";
