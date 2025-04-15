@@ -1,86 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 43 38.4">
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 43 38.4">
   <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
   <defs>
     <style>
       .st0 {
-        fill: url(#linear-gradient2);
+        fill: #fff;
       }
 
       .st1 {
-        fill: url(#linear-gradient1);
-      }
-
-      .st2 {
-        fill: url(#linear-gradient9);
-      }
-
-      .st3 {
-        fill: url(#linear-gradient3);
-      }
-
-      .st4 {
-        fill: url(#linear-gradient6);
-      }
-
-      .st5 {
-        fill: url(#linear-gradient8);
-      }
-
-      .st6 {
-        fill: url(#linear-gradient7);
-      }
-
-      .st7 {
-        fill: url(#linear-gradient5);
-      }
-
-      .st8 {
-        fill: url(#linear-gradient4);
-      }
-
-      .st9 {
-        fill: url(#linear-gradient10);
-      }
-
-      .st10 {
-        fill: url(#linear-gradient);
-      }
-
-      .st11 {
-        fill: #fff;
+        fill: #f9b653;
       }
     </style>
-    <linearGradient id="linear-gradient" x1=".4" y1="24.9" x2="20.8" y2="24.9" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#f9b653"/>
-      <stop offset="1" stop-color="#f9e0ac"/>
-    </linearGradient>
-    <linearGradient id="linear-gradient1" x1="35.8" y1="0" x2="35.8" y2="0" xlink:href="#linear-gradient"/>
-    <linearGradient id="linear-gradient2" x1="22.2" y1="24.9" x2="42.6" y2="24.9" xlink:href="#linear-gradient"/>
-    <linearGradient id="linear-gradient3" x1="43" y1="11.8" x2="43" y2="11.8" xlink:href="#linear-gradient"/>
-    <linearGradient id="linear-gradient4" x1="22" y1="5.5" x2="35.4" y2="5.5" xlink:href="#linear-gradient"/>
-    <linearGradient id="linear-gradient5" x1=".3" y1="5.9" x2="12.7" y2="5.9" xlink:href="#linear-gradient"/>
-    <linearGradient id="linear-gradient6" x1="31" y1="5.9" x2="42.7" y2="5.9" xlink:href="#linear-gradient"/>
-    <linearGradient id="linear-gradient7" x1="43" y1="11.8" x2="43" y2="11.8" xlink:href="#linear-gradient"/>
-    <linearGradient id="linear-gradient8" x1="7.6" y1="5.5" x2="21" y2="5.5" xlink:href="#linear-gradient"/>
-    <linearGradient id="linear-gradient9" x1="14.3" y1="6" x2="29.4" y2="6" xlink:href="#linear-gradient"/>
-    <linearGradient id="linear-gradient10" x1="14" y1="25.3" x2="29.7" y2="25.3" xlink:href="#linear-gradient"/>
   </defs>
   <g id="b">
     <g id="c">
       <g>
-        <polygon class="st10" points=".4 12.3 2.2 14.6 20.8 37.6 13.1 12.3 .4 12.3"/>
+        <polygon class="st1" points=".4 12.3 2.2 14.6 20.8 37.6 13.1 12.3 .4 12.3"/>
         <polygon class="st1" points="35.8 0 35.8 0 35.8 0 35.8 0"/>
-        <polygon class="st0" points="22.2 37.5 40.8 14.6 42.6 12.3 30.6 12.3 22.2 37.5"/>
-        <polygon class="st3" points="43 11.8 43 11.8 43 11.8 43 11.8"/>
-        <polygon class="st8" points="35.4 0 22 0 30.2 11 35.4 0"/>
-        <polygon class="st7" points="6.9 .4 .3 11.3 12.7 11.3 6.9 .4"/>
-        <polygon class="st4" points="42.7 11.3 36.1 .4 31 11.3 42.7 11.3"/>
-        <polygon class="st6" points="43 11.8 43 11.8 43 11.8 43 11.8"/>
-        <polygon class="st5" points="21 0 7.6 0 13.5 11 21 0"/>
-        <polygon class="st2" points="21.5 .7 14.3 11.3 29.4 11.3 21.5 .7"/>
-        <path class="st11" d="M43,11.8h0l-.3-.5h-11.7L36.1.4,35.8,0h-.5l-5.1,11L22,0h-1l-7.5,11L7.6,0h-.5l-.2.4,5.8,10.9H.3l-.3.5.4.5h12.8l7.7,25.3.7.8.7-.9,8.4-25.2h12l.4-.5h0ZM21.5.7l7.9,10.6h-15.2L21.5.7ZM21.5,37.1l-7.5-24.8h15.8s-8.2,24.8-8.2,24.8Z"/>
-        <polygon class="st9" points="21.5 38.4 29.7 12.3 14 12.3 21.5 38.4"/>
+        <polygon class="st1" points="22.2 37.5 40.8 14.6 42.6 12.3 30.6 12.3 22.2 37.5"/>
+        <polygon class="st1" points="43 11.8 43 11.8 43 11.8 43 11.8"/>
+        <polygon class="st1" points="35.4 0 22 0 30.2 11 35.4 0"/>
+        <polygon class="st1" points="6.9 .4 .3 11.3 12.7 11.3 6.9 .4"/>
+        <polygon class="st1" points="42.7 11.3 36.1 .4 31 11.3 42.7 11.3"/>
+        <polygon class="st1" points="43 11.8 43 11.8 43 11.8 43 11.8"/>
+        <polygon class="st1" points="21 0 7.6 0 13.5 11 21 0"/>
+        <polygon class="st1" points="21.5 .7 14.3 11.3 29.4 11.3 21.5 .7"/>
+        <path class="st0" d="M43,11.8h0l-.3-.5h-11.7L36.1.4,35.8,0h-.5l-5.1,11L22,0h-1l-7.5,11L7.6,0h-.5l-.2.4,5.8,10.9H.3l-.3.5.4.5h12.8l7.7,25.3.7.8.7-.9,8.4-25.2h12l.4-.5h-.1ZM21.5.7l7.9,10.6h-15.2L21.5.7ZM21.5,37.1l-7.5-24.8h15.8l-8.2,24.8h0Z"/>
+        <polygon class="st1" points="21.5 38.4 29.7 12.3 14 12.3 21.5 38.4"/>
       </g>
     </g>
   </g>

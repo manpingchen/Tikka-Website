@@ -100,7 +100,7 @@ li.product div.price-actions button.add-favorite {
 }
 
 li.product div.price-actions button.add-favorite.added {
-  background-image: url(../images/heart-pink.svg);
+  background-image: url(../images/heart-pink-icon.svg);
 }
 
 /* Cart Button */
