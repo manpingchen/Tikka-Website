@@ -185,7 +185,7 @@
 }
 
 .slick-dots li.slick-active button:before {
-  color: #e9538e;
+  color: var(--orange-honey);
 }
 .slick-dots li button:before {
   font-family: "slick";
@@ -201,7 +201,7 @@
   color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-shadow: 0 0 4px rgb(93, 93, 93);
+  text-shadow: 0 0 4px rgba(146, 146, 146, 0.503);
 }
 
 #main-slides .slick-slide a,

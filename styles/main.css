@@ -10,28 +10,36 @@
 }
 
 :root {
-  --primary-pink: #f096b9;
-  --secondary-pink: #ffebfa;
-  --dark-pink: #e60672;
-  --search-bar-pink: #d85d8d;
-  --light-pink: #ffddec;
+  --primary-color: #f9e0ac;
+  --secondary-color: #f6e6c3;
+  --dark-honey: #f5d184;
+  --orange-honey: #f9b653;
+  --search-bar-honey: #f9e0ac;
+  --light-honey: #feecc6;
+  --lightest-honey: #fff7e7;
   --basic-radius: 0.5rem;
   --item-radius: 1rem;
-  --pink-shadow: #e000a0;
-  --pink-gradient: linear-gradient(0deg, var(--dark-pink), #ef99bf);
+  --honey-shadow: #e0bd72;
+  --card-background: #f7d18b;
+  --honey-gradient: linear-gradient(0deg, var(--orange-honey), var(--primary-color));
   --mobile-largest-width: 480px;
-  --btn-pink-gradient: linear-gradient(#ffc1db, #ff398c, #f03282) !important;
+  --btn-honey-gradient: linear-gradient(
+    var(--light-honey),
+    var(--orange-honey),
+    var(--dark-honey)
+  ) !important;
   --btn-gray-gradient: linear-gradient(#fbfbfb, #dcdcdc, #c5c5c5, #a1a1a1);
-  --pink-text-shadow: 1px 1px 6px #b40081;
-  --pink-dialog-bg: #2a0f1cb6;
+  --pink-text-shadow: 1px 1px 6px var(--honey-shadow);
+  --honey-dialog-bg: #13101e99;
   --pink-dialog-footer-bg: #8f37617a;
   --chat-control-bg: #13010fd9;
   --overlay-radius: 19px;
   --chat-content-radius: 9px;
   --product-card-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   --original-price-color: #a0a0a0;
-  --discount-price-color: #e6508c;
+  --discount-price-color: #e65654;
   --bottom-border: 1px solid #f5f5f5;
+  --error-msg: rgb(215, 101, 66);
 }
 
 .material-icons {
@@ -82,7 +90,7 @@ main {
 }
 
 footer {
-  background: #f19ec2;
+  background: var(--dark-honey);
   padding: 1rem 0;
   color: #fff;
   font-size: 0.8rem;
@@ -199,15 +207,15 @@ button.small {
 }
 
 button.confirm {
-  background: #ffeaf3;
-  color: #df216d;
+  background: var(--lightest-honey);
+  color: var(--orange-honey);
   border: 0;
   display: block;
   margin-bottom: 1rem;
 }
 
 button.confirm:hover {
-  background: #ff8dbf;
+  background: var(--dark-honey);
   color: #fff;
 }
 
@@ -224,9 +232,9 @@ button.outlined {
 }
 
 button.outlined:hover {
-  background: #ffeaf3;
-  color: #df216d;
-  border: 1px solid #e9528e;
+  background: var(--lightest-honey);
+  color: var(--orange-honey);
+  border: 1px solid var(--orange-honey);
 }
 
 a {
@@ -235,7 +243,7 @@ a {
 }
 
 a:hover img {
-  filter: contrast(1.9);
+  filter: contrast(1.2);
 }
 
 a.more {
@@ -325,11 +333,7 @@ a.more {
   padding-top: 100%;
   overflow: hidden;
   position: relative;
-
-  /* centerize the img*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
 }
 
 .img-wrap img {
@@ -338,14 +342,15 @@ a.more {
 
 .img-wrap-s img {
   display: block;
-  width: 100%;
-  height: auto;
-  margin-top: -100%;
   position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .pink-gradient-bg {
-  background: var(--pink-gradient) !important;
+  background: var(--honey-gradient) !important;
   color: #fff !important;
 }
 
@@ -714,7 +719,7 @@ main.index {
 }
 
 main.index section.news {
-  background: #ffe6ee;
+  background: var(--light-honey);
   padding: 1.4rem;
   line-height: 1.5em;
   margin-bottom: 1rem;
@@ -851,7 +856,7 @@ main.index section.live .live-list ul li span.count {
 
   left: 30%;
   border-radius: 10px;
-  box-shadow: 0 0 10px #e50370;
+  box-shadow: 0 0 10px var(--honey-shadow);
   border: 1px solid #fff;
   display: flex;
   align-items: center;
@@ -1271,7 +1276,7 @@ main.member.login h2 {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
-  color: #df216d;
+  color: var(--orange-honey);
   font-size: 1.5rem;
   align-items: center;
   justify-content: center;
@@ -1280,7 +1285,7 @@ main.member.login h2 {
 main.member.login h2 {
   font-size: 1rem;
   padding: 0.5rem 1rem;
-  background: #ffeaf3;
+  background: var(--lightest-honey);
   width: 300px;
   border-radius: 50px;
   margin-bottom: 1rem;
@@ -1328,7 +1333,7 @@ main.member p.note {
 
 button.white-gradient,
 a.white-gradient {
-  color: #df216d;
+  color: var(--orange-honey);
   background: linear-gradient(#fff, #fff, #fff, #ddd);
   border-radius: 40px;
   height: 40px;
@@ -1348,7 +1353,7 @@ a.white-gradient {
 button.white-gradient:hover,
 a.white-gradient:hover {
   color: #fff;
-  background: var(--pink-gradient);
+  background: var(--honey-gradient);
 }
 
 button.white-gradient img,
@@ -1362,7 +1367,7 @@ a.white-gradient:hover img {
 }
 
 .error-msg {
-  color: var(--dark-pink);
+  color: var(--error-msg);
   text-align: center;
   margin: 0 auto 1.5rem;
   font-size: 0.875rem;
@@ -1422,7 +1427,7 @@ form.register a.form-action {
 
 form.login a.form-action:hover,
 form.register a.form-action:hover {
-  color: #f03282;
+  color: var(--orange-honey);
 }
 
 form div.radio-group {
@@ -2224,7 +2229,7 @@ main.live-on section.left-column div.sticker-footer button.sumbit-btn {
   background: linear-gradient(rgb(224, 224, 224), #fff, #fff, #aaa);
   font-size: 0.87rem;
   padding: 0.5rem 1rem;
-  color: var(--dark-pink);
+  color: var(--dark-honey);
   height: 30px;
   width: 80px;
   margin: 0 auto;
@@ -2526,7 +2531,7 @@ main.live-on section.right-column div.btns button {
   font-size: 0.875rem;
   padding: 5px;
   color: #fff;
-  background: var(--btn-pink-gradient);
+  background: var(--btn-honey-gradient);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -2776,7 +2781,7 @@ div.rewards.overlay div.btns button {
   font-size: 0.875rem;
   padding: 5px 10px;
   color: #fff;
-  background: var(--btn-pink-gradient);
+  background: var(--btn-honey-gradient);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -3815,7 +3820,7 @@ main.account ul.opions {
 main.account ul.opions li.logout input {
   border: 0;
   background: none;
-  color: var(--dark-pink);
+  color: var(--dark-honey);
   padding: 0;
   margin: 0 !important;
 }
@@ -3829,7 +3834,7 @@ main.account ul.opions li.logout div.logout-wrap {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  color: var(--dark-pink);
+  color: var(--dark-honey);
   font-size: 1.1rem;
   text-decoration: none;
   position: relative;
@@ -3846,7 +3851,7 @@ main.account ul.opions li.logout div.logout-wrap span.just-style {
   position: absolute;
   width: 100%;
   height: 1px;
-  background: var(--dark-pink);
+  background: var(--dark-honey);
   bottom: 0;
 }
 
@@ -3858,7 +3863,7 @@ main.account ul.opions li.logout div.logout-wrap span.just-style::after {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--dark-pink);
+  background: var(--dark-honey);
   display: block;
   bottom: -5px;
   left: 0;
@@ -4859,9 +4864,9 @@ div.product-item a.img-wrap:hover img {
   width: 400px;
   border-radius: 40px;
   height: 42px;
-  border: 1px solid var(--search-bar-pink);
+  border: 1px solid var(--search-bar-honey);
   align-self: center;
-  color: var(--search-bar-pink);
+  color: var(--search-bar-honey);
   margin-bottom: 2rem;
   justify-content: space-between;
 }
@@ -4872,7 +4877,7 @@ main.follow .search-container {
 
 .search-container input[type="text"] {
   border: none;
-  color: var(--search-bar-pink);
+  color: var(--search-bar-honey);
   padding: 0 20px;
   font-size: 1.25rem;
   width: calc(100% - 100px);
@@ -4889,7 +4894,7 @@ main.follow .search-container {
 }
 
 .search-container input::placeholder {
-  color: var(--search-bar-pink);
+  color: var(--search-bar-honey);
 }
 
 .search-container button[type="submit"] span,
@@ -4904,7 +4909,7 @@ main.follow .search-container {
   border-radius: 0;
   height: 100%;
   width: 45px;
-  color: var(--search-bar-pink);
+  color: var(--search-bar-honey);
 }
 
 .search-container button[type="submit"],
@@ -4915,7 +4920,7 @@ main.follow .search-container {
   -moz-border-radius-bottomright: 40px;
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
-  background: var(--search-bar-pink);
+  background: var(--search-bar-honey);
   color: #fff;
   transition: 0.4s;
   width: 55px;
@@ -5385,7 +5390,7 @@ div.followers-chat-list-overlay div.content div.chat-date,
 }
 
 div.overlay div.title p.pink {
-  background: var(--btn-pink-gradient);
+  background: var(--btn-honey-gradient);
 }
 
 div.overlay.streamer-profile-overlay button.close {
@@ -5456,7 +5461,7 @@ div.overlay button.clear:hover {
 }
 
 div.overlay div.content {
-  background: var(--pink-dialog-bg);
+  background: var(--honey-dialog-bg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6665,7 +6670,7 @@ main.search button.follow-btn {
 
 main.product-detail .senders button.follow-btn.pink,
 main.my-favourite button.follow-btn.pink {
-  background: var(--btn-pink-gradient);
+  background: var(--btn-honey-gradient);
 }
 
 main.product-detail .senders button.follow-btn img,
@@ -6807,7 +6812,7 @@ main.my-favourite button.follow-btn:hover {
 }
 
 .button-like {
-  background: var(--btn-pink-gradient);
+  background: var(--btn-honey-gradient);
   font-size: 0.875rem;
   padding: 0.5rem 1.5rem;
   color: #fff;
@@ -7163,7 +7168,7 @@ main.purchase .select-wrapper .custom-select .line {
   font-size: 1.2rem;
   padding: 5px;
   color: #fff;
-  background: var(--btn-pink-gradient);
+  background: var(--btn-honey-gradient);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -7416,7 +7421,7 @@ div.purchase-overlay .cart-item .img-wrap img {
 
 main.purchase .payment-options button.active,
 div.purchase-overlay .payment-options button.active {
-  background: var(--pink-gradient) !important;
+  background: var(--honey-gradient) !important;
   color: #fff !important;
 }
 
@@ -7536,7 +7541,7 @@ div.purchase-overlay .check-item-count p.point {
 
 main.streamer-profile {
   border: 0;
-  background: var(--secondary-pink);
+  background: var(--secondary-color);
   max-width: none;
   width: 100%;
   overflow: hidden;
@@ -7696,7 +7701,7 @@ main.streamer-profile ul.products .product,
 ul.posts li.post {
   border-radius: var(--basic-radius);
   overflow: hidden;
-  background: var(--primary-pink);
+  background: var(--card-background);
   display: flex;
   flex-direction: column;
   height: max-content;
@@ -7738,12 +7743,12 @@ main.streamer-profile div.gifts .gift-summary {
   text-align: center;
   padding: 0.5rem;
   box-shadow: 0 2px 5px gray;
-  color: var(--dark-pink);
+  color: var(--dark-honey);
   letter-spacing: 0.1em;
 }
 
 main.streamer-profile div.gifts .gift-summary span {
-  background: var(--pink-gradient);
+  background: var(--honey-gradient);
   color: white;
   padding: 0.25rem 1rem;
   margin: 0.25rem;
@@ -8040,7 +8045,7 @@ button.gift-button img {
 
 main.streamer-profile section.intro {
   text-align: center;
-  background: var(--primary-pink);
+  background: var(--primary-color);
   border-top: 3px solid white;
   border-bottom: 3px solid white;
   padding-top: 2rem;
@@ -8122,7 +8127,7 @@ main.streamer-profile section.footer-actions button:not(.focus-btn) img {
 
 main.streamer-profile section.footer-actions button.focus-btn.pink:hover,
 main.streamer-profile section.footer-actions button.focus-btn.pink {
-  background: var(--btn-pink-gradient);
+  background: var(--btn-honey-gradient);
   color: #fff;
 }
 
@@ -8491,7 +8496,7 @@ div.full-width.overlay.rewards div.footer button {
 
 div.full-width.overlay.rewards div.footer button:hover {
   color: #fff;
-  background: var(--btn-pink-gradient);
+  background: var(--btn-honey-gradient);
 }
 
 div.full-width.rewards.overlay div.btns button,
@@ -8501,7 +8506,7 @@ div.full-width.overlay.popular-products div.btns button {
   font-size: 0.875rem;
   padding: 5px 10px;
   color: #fff;
-  background: var(--btn-pink-gradient);
+  background: var(--btn-honey-gradient);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -8586,7 +8591,7 @@ main.streamer-profile .gift-button-wrap {
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
   border: 3px solid #fff;
   border-bottom: 0;
-  background: var(--secondary-pink);
+  background: var(--secondary-color);
   z-index: 9;
 }
 
@@ -8604,7 +8609,7 @@ main.streamer-profile .gift-button-wrap-bottom .half-circle {
   border-radius: 0 0 50% 50% / 0 0 100% 100%;
   border: 10px solid var(--light-pink);
   border-top: 0;
-  background: var(--secondary-pink);
+  background: var(--secondary-color);
   margin: 0 auto;
 }
 
@@ -8901,7 +8906,7 @@ div.search-item div.info .name {
 
 button.follow-btn.pink,
 button.focus-btn {
-  background: var(--btn-pink-gradient);
+  background: var(--btn-honey-gradient);
   color: #fff;
 }
 
@@ -9919,7 +9924,7 @@ main.products #products-slides .img-wrap img {
 }
 
 .product-types .list li a:hover p {
-  color: #e9538e;
+  color: var(--orange-honey);
 }
 
 .product-types .list li .img-wrap img,
@@ -9931,7 +9936,8 @@ main.products #products-slides .img-wrap img {
 
 .product-types .list p {
   line-height: 1.5em;
-  color: #f19ec2;
+  margin-top: 0.5rem;
+  color: var(--honey-shadow);
 }
 
 @media screen and (max-width: 768px) {
@@ -10169,7 +10175,7 @@ ul.followers-list button.chat-button {
   height: 30px;
   background: white;
   border-radius: 40px;
-  color: var(--dark-pink);
+  color: var(--dark-honey);
   font-size: 0.8rem;
   line-height: 30px;
   padding: 0;
@@ -10179,7 +10185,7 @@ ul.followers-list button.chat-button {
 }
 
 ul.followers-list button.chat-button:hover {
-  background: var(--dark-pink);
+  background: var(--dark-honey);
   color: white;
 }
 
@@ -10190,7 +10196,7 @@ ul.followers-list button.chat-button:hover {
   justify-content: space-between;
 }
 
-.sticker-overlay .sticker-footer #send-button ,
+.sticker-overlay .sticker-footer #send-button,
 .sticker-overlay .sticker-footer #m-send-button {
   display: none;
 }
@@ -10220,7 +10226,7 @@ ul.followers-list button.chat-button:hover {
 .sticker-footer button#send-button:hover,
 .sticker-footer button#m-buy-button:hover,
 .sticker-footer button#m-send-button:hover {
-  background: linear-gradient(0deg, var(--dark-pink), #ef99bf) !important;
+  background: linear-gradient(0deg, var(--dark-honey), #ef99bf) !important;
   color: #fff;
 }
 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" width="15.22" height="13.79" viewBox="0 0 15.22 13.79">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="_圖層_1" data-name="圖層 1">
+    <g>
+      <polygon class="cls-1" points=".03 4.38 .7 5.22 7.33 13.49 4.61 4.41 .03 4.38"/>
+      <polygon class="cls-1" points="7.82 13.47 14.51 5.28 15.18 4.45 10.87 4.43 7.82 13.47"/>
+      <polygon class="cls-1" points="12.61 .05 7.82 .02 10.75 3.98 12.61 .05"/>
+      <polygon class="cls-1" points="2.4 .15 0 4.05 4.45 4.07 2.4 .15"/>
+      <polygon class="cls-1" points="15.22 4.12 12.86 .2 11.01 4.1 15.22 4.12"/>
+      <polygon class="cls-1" points="7.45 .02 2.65 0 4.73 3.95 7.45 .02"/>
+      <polygon class="cls-1" points="10.46 4.09 7.63 .28 5.01 4.07 10.46 4.09"/>
+      <polygon class="cls-1" points="4.91 4.41 7.57 13.79 10.56 4.43 4.91 4.41"/>
+    </g>
+  </g>
+</svg>

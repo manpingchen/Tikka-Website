@@ -191,8 +191,8 @@ div.overlay#product-options .options ul li {
 }
 
 div.overlay#product-options .options ul li.selected {
-  border: 1px solid var(--dark-pink);
-  color: var(--dark-pink);
+  border: 1px solid var(--orange-honey);
+  color: var(--orange-honey);
 }
 
 div.overlay#product-options .options ul li.unavailable {
@@ -235,7 +235,7 @@ div.overlay#product-options .actions .quantity-label h5 {
 }
 
 form .quantity-reach-max {
-  color: var(--dark-pink);
+  color: var(--dark-honey);
   margin-top: 0.25rem;
   display: block;
 }
