@@ -1,1 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 161.5 38.01"><defs><style>.e{fill:#f19ec2;}.f{fill:#e9528e;}.g{clip-rule:evenodd;fill:none;}.h{clip-path:url(#d);}</style><clipPath id="d"><polygon class="g" points="161.5 13.82 0 13.82 0 0 160.97 0 161.5 13.82"/></clipPath></defs><g id="a"/><g id="b"><g id="c"><g><g class="h"><g><path class="f" d="M.14,23.35S.54-12.88,17.85,4.83c17.31,17.71,2.82,16.1,2.82,16.1L.14,23.35Z"/><path class="f" d="M161.66,23.35s-.4-36.23-17.71-18.52c-17.31,17.71-2.82,16.1-2.82,16.1l20.53,2.42Z"/></g></g><path class="e" d="M128.06,38.01H32.44c-4.16,0-7.88-2.57-9.35-6.46L9.05,0H153.53l-16.29,31.99c-1.59,3.65-5.19,6.02-9.17,6.02Z"/></g></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 161.5 38">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: #f59d40;
+      }
+
+      .st2 {
+        fill: #f3d296;
+      }
+
+      .st3 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <polygon class="st0" points="161.5 13.8 0 13.8 0 0 161 0 161.5 13.8"/>
+    </clipPath>
+  </defs>
+  <g id="b">
+    <g id="c">
+      <g>
+        <g class="st3">
+          <g>
+            <path class="st1" d="M.1,23.3S.5-12.9,17.9,4.8c17.3,17.7,2.8,16.1,2.8,16.1L.1,23.3Z"/>
+            <path class="st1" d="M161.7,23.3s-.4-36.2-17.7-18.5-2.8,16.1-2.8,16.1l20.5,2.4Z"/>
+          </g>
+        </g>
+        <path class="st2" d="M128.1,38H32.4c-4.2,0-7.9-2.6-9.4-6.5L9.1,0h144.5l-16.3,32c-1.6,3.6-5.2,6-9.2,6h0Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
