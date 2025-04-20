@@ -28,6 +28,8 @@
     var(--orange-honey),
     var(--dark-honey)
   ) !important;
+  --active-honey-gradient: linear-gradient(#ffd98a, #ff9800) !important;
+  --secondary-honey-gradient: linear-gradient(var(--lightest-honey), var(--dark-honey)) !important;
   --btn-gray-gradient: linear-gradient(#fbfbfb, #dcdcdc, #c5c5c5, #a1a1a1);
   --pink-text-shadow: 1px 1px 6px var(--honey-shadow);
   --honey-dialog-bg: #13101e99;
@@ -40,6 +42,10 @@
   --discount-price-color: #e65654;
   --bottom-border: 1px solid #f5f5f5;
   --error-msg: rgb(215, 101, 66);
+  --golden-color: #ceaa62;
+  --dark-golden-color: #a27100;
+  --darkest-golden-color: rgb(105, 78, 15);
+  --transparent-honey-bg: #f7d18b44;
 }
 
 .material-icons {
@@ -472,10 +478,10 @@ a.more {
 }
 
 .topup .login-section .logged-in div.my-flower {
-  background-color: #f19ec2;
+  background-color: var(--orange-honey);
   border-radius: 14px;
   height: 50px;
-  border: 2px solid #f19ec2;
+  border: 2px solid var(--orange-honey);
   font-size: 1.2rem;
 }
 
@@ -515,7 +521,7 @@ a.more {
 .topup .login-section a span {
   width: 40px;
   height: 40px;
-  color: #e9528e;
+  color: var(--orange-honey);
   border-radius: 50%;
   box-shadow: 0 0 10px rgb(138, 138, 138);
   line-height: 40px;
@@ -556,7 +562,7 @@ a.more {
 }
 
 .topup .method-options .options button.active {
-  background: #ef99bf !important;
+  background: var(--orange-honey) !important;
   color: #fff !important;
   border: 1px solid #fff !important;
   box-shadow: 0 0 5px #aaa;
@@ -568,7 +574,8 @@ a.more {
 }
 
 .topup .amount-options li button.active {
-  filter: contrast(1.9);
+  filter: contrast(1.3);
+  font-style: bold;
 }
 
 form.invoice-info-field {
@@ -594,7 +601,7 @@ form.invoice-info-field input {
 }
 
 form.invoice-info-field label {
-  background: #ef99bf !important;
+  background: var(--orange-honey) !important;
   color: #fff !important;
   border-color: #fff !important;
   box-shadow: 0 0 5px #aaa;
@@ -1481,7 +1488,7 @@ main.topup {
 }
 
 .topup section h4 {
-  color: #e23a80;
+  color: var(--orange-honey);
   display: flex;
   align-items: center;
   gap: 5px;
@@ -1495,7 +1502,7 @@ main.topup {
   display: inline-block;
   width: 1rem;
   height: 2px;
-  background: #e23a80;
+  background: var(--orange-honey);
 }
 
 .topup .amount-options ul {
@@ -1508,7 +1515,7 @@ main.topup {
   position: relative;
   margin-top: 0;
   border-radius: 50px;
-  background: linear-gradient(0deg, #c40761, #c77e9f);
+  background: var(--active-honey-gradient);
   box-shadow: 0 0 10px rgb(147, 147, 147);
   margin-bottom: 15px;
 }
@@ -1848,7 +1855,7 @@ main.live-on section.left-column div.profile {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: #fea7cb;
+  background: var(--primary-color);
   padding: 1rem;
   color: #fff;
   padding-bottom: 80px;
@@ -1872,7 +1879,7 @@ main.live-on section.left-column div.profile div.name-avatar {
   position: relative;
   overflow: hidden;
   display: block;
-  box-shadow: 0 0 10px #55555575;
+  box-shadow: 0 0 5px var(--honey-shadow);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1929,9 +1936,9 @@ main.live-on section.left-column div.detail-links a,
 main.live-on section.right-column div.detail-links a,
 div.overlay.rewards div.detail-links a,
 div.overlay.viewer div.detail-links a {
-  color: #fff;
+  color: var(--dark-golden-color);
   text-decoration: none;
-  text-shadow: 0 2px 2px #2a2a2a55;
+  /* text-shadow: 0 2px 2px #2a2a2a55; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1973,7 +1980,7 @@ div.overlay.rewards div.detail-links a.active,
 div.overlay.viewer div.detail-links a.active,
 div.overlay.rewards div.detail-links a:hover,
 div.overlay.viewer div.detail-links a:hover {
-  text-shadow: var(--pink-text-shadow);
+  text-shadow: var(--honey-shadow);
 }
 
 main.live-on section.left-column div.profile div.detail-links {
@@ -2012,40 +2019,33 @@ main.live-on section.left-column div.profile div.btns button {
   width: 90px;
   font-size: 0.875rem;
   padding: 5px;
-  color: #d6236c;
-  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
+  background: var(--btn-honey-gradient);
+  color: #fff;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 5px;
   box-shadow: 0 2px 2px #2a2a2a55;
+  margin: 0;
 }
 
 main.live-on section.left-column div.profile div.btns button.follow-btn {
-  background: #623f5a !important;
+  background: var(--golden-color);
   color: #fff;
 }
 
-main.live-on section.left-column div.profile div.btns button:hover {
-  background: linear-gradient(#ffb4d3, #ffb4d3, #ffb4d3, #da6c9a) !important;
-  color: #d6236c;
-}
-
-main.live-on section.left-column div.profile div.btns button:hover img {
-  filter: invert(0.589) sepia(20) contrast(250%) hue-rotate(293deg);
-}
-
 main.live-on button:hover {
-  filter: contrast(1.9);
+  filter: contrast(1.3);
+}
+
+main.live-on section.left-column div.profile div.btns button.follow-btn:hover {
+  background: var(--orange-honey) !important;
+  filter: unset !important;
 }
 
 main.live-on section.left-column div.profile div.btns button img {
   height: 16px;
-}
-
-main.live-on section.left-column div.profile div.btns button:not(.follow-btn) img {
-  filter: invert(0.589) sepia(20) contrast(250%) hue-rotate(293deg);
 }
 
 .chat-sticker-wrap {
@@ -2159,7 +2159,7 @@ div.chat-item.sticker-content .chat-content img {
 }
 
 div.chat-body span.chat-name {
-  color: #e9528e;
+  color: var(--dark-honey);
   height: 20px;
   display: inline-flex;
   align-items: baseline;
@@ -2179,7 +2179,7 @@ div.chat-body span.chat-name .vip-icon {
 
 div.chat-body span.chat-name .admin-icon {
   border-radius: 50%;
-  background: #c40761;
+  background: var(--golden-color);
   color: white;
 }
 
@@ -2302,7 +2302,7 @@ div.sticker-overlay ul.stickers-detail-tabs li a {
 
 div.sticker-overlay ul.stickers-detail-tabs li.active a,
 div.sticker-overlay ul.stickers-detail-tabs li.active {
-  text-shadow: 0px 5px 5px #c70c65;
+  text-shadow: 0px 5px 5px var(--honey-shadow);
 }
 
 div.sticker-overlay div.content {
@@ -2380,7 +2380,7 @@ div.sticker-overlay div.sticker-footer {
 
 div.sticker-overlay div.sticker-body .sticker-item:hover,
 div.sticker-overlay div.sticker-body .sticker-item.selected {
-  border-color: #e50dbb;
+  border-color: var(--dark-honey);
   filter: none;
 }
 
@@ -2514,7 +2514,7 @@ main.live-on div.gift-mission a.mission span {
 main.live-on section.right-column div.slides {
   border-radius: 20px;
   padding: 1rem;
-  background: #fea7cb;
+  background: var(--light-honey);
   margin-bottom: 1rem;
   height: 170px;
 }
@@ -2530,27 +2530,28 @@ main.live-on section.right-column div.btns button {
   width: 100px;
   font-size: 0.875rem;
   padding: 5px;
-  color: #fff;
-  background: var(--btn-honey-gradient);
+  color: var(--dark-golden-color);
+  background: var(--secondary-honey-gradient);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 5px;
   box-shadow: 0 2px 2px #2a2a2a55;
-  color: #d6216d;
-  background: linear-gradient(#ffffff, #ffe1f4, #ff87c8);
 }
 
 main.live-on section.right-column div.btns button:hover,
-main.live-on section.right-column div.btns button.active {
+main.live-on section.right-column div.btns button.active,
+main.live-on section.right-column div.slides.light-pink div.btns button:hover,
+main.live-on section.right-column div.slides.light-pink div.btns button.active {
   filter: none !important;
-  background: linear-gradient(#ffa9cd, #ff237f);
+  background: var(--active-honey-gradient);
   color: #fff;
 }
 
-main.live-on section.right-column div.btns div:not(#revenue-btns) button img {
-  filter: invert(0.6) sepia(3) contrast(180%) hue-rotate(289deg) saturate(1.8);
+main.live-on section.right-column div.btns div:not(#revenue-btns) button img,
+div.rewards div.btns button:not(.active) img {
+  filter: invert(0.6) sepia(1) contrast(300%) hue-rotate(2deg);
 }
 
 main.live-on section.right-column div.btns div:not(#revenue-btns) button:hover img,
@@ -2559,7 +2560,7 @@ main.live-on section.right-column div.btns div:not(#revenue-btns) button.active 
 }
 
 main.live-on section.right-column div.slides.light-pink {
-  background: var(--light-pink);
+  background: var(--lightest-honey);
 }
 main.live-on section.right-column div.slides.light-pink div.btns {
   justify-content: space-between;
@@ -2568,27 +2569,18 @@ main.live-on section.right-column div.slides div.btns div.flex-row {
   gap: 10px;
 }
 
-main.live-on section.right-column div.slides.light-pink div.btns button {
-  color: #d6216d;
-  width: 80px;
-  background: linear-gradient(#ffffff, #ffe1f4, #ff87c8);
-}
-
-main.live-on section.right-column div.slides.light-pink div.btns button:hover,
-main.live-on section.right-column div.slides.light-pink div.btns button.active {
-  background: linear-gradient(#ffa9cd, #ff237f);
-  color: #fff;
-  filter: none;
-}
-
 main.live-on section.right-column div.slides.light-pink div.btns button:hover img,
 main.live-on section.right-column div.slides.light-pink div.btns button.active img {
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1) !important;
 }
 
 main.live-on section.right-column div.btns button img {
   width: auto;
   height: 14px;
+}
+
+main.live-on section.right-column div.btns button#vip-btn img {
+  filter: invert(0.2) sepia(1) contrast(220%) hue-rotate(3deg);
 }
 
 main.live-on section.right-column div.slides button.icon,
@@ -2607,6 +2599,14 @@ main.live-on section.right-column div.btns button.icon:hover img {
   width: 20px;
   height: 20px;
   filter: invert(0.5) sepia(34) contrast(302%) hue-rotate(246deg) !important;
+}
+
+main.live-on section.right-column div.btns button.icon.reload {
+  filter: unset !important;
+}
+
+main.live-on section.right-column div.btns button.icon.reload img {
+  filter: invert(0.5) sepia(34) contrast(200%) hue-rotate(6deg) !important;
 }
 
 main.live-on div.slides-list {
@@ -2662,7 +2662,7 @@ main.live-on div.slides-list .glide__arrow button {
 }
 
 main.live-on div.slides-list .glide__arrow span.material-icons {
-  color: #ff2682;
+  color: var(--honey-shadow);
   font-size: 2rem;
 }
 
@@ -2678,7 +2678,7 @@ main.live-on div.rewards,
 div.overlay.rewards {
   border-radius: 20px;
   padding: 1rem;
-  background: #fea7cb;
+  background: var(--light-honey);
   height: calc(100% - 370px) !important;
 }
 
@@ -2703,7 +2703,7 @@ main.live-on div.overlay.revenue,
 main.live-on div.overlay.viewer {
   padding: 0 !important;
   height: 400px;
-  background: #ff94bbd8;
+  background: var(--primary-color);
   backdrop-filter: blur(4px);
 }
 
@@ -2809,10 +2809,6 @@ div.rewards div.btns button:not(.active) {
   filter: none;
 }
 
-div.rewards div.btns button:not(.active) img {
-  filter: invert(0.589) sepia(20) contrast(250%) hue-rotate(293deg);
-}
-
 div.rewards div.btns button:not(.active):hover img {
   filter: none;
 }
@@ -2822,7 +2818,7 @@ div.reward-items {
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
   margin-top: 1rem;
-  background: #ffc1db;
+  background: var(--primary-color);
   margin-left: -1rem;
   margin-right: -1rem;
   padding: 0.75rem;
@@ -2856,8 +2852,8 @@ div.reward-item .img-wrap {
 main.live-on div.reward-item.active,
 div.full-width.overlay.rewards div.reward-item.active,
 div.overlay.rewards div.reward-item.active {
-  background: linear-gradient(#55323e, #582e2e, #ffb4d3);
-  box-shadow: 0 0 2px 2px #db4e8675;
+  background: var(--golden-color);
+  box-shadow: 0 0 2px var(--honey-shadow);
 }
 
 main.live-on div.reward-item .img-wrap,
@@ -2876,10 +2872,13 @@ div.overlay.rewards div.reward-item .img-wrap {
   justify-content: center;
 }
 
+main.live-on div.reward-item.active .img-wrap,
+div.full-width.overlay.rewards div.reward-item.active .img-wrap,
+div.overlay.rewards div.reward-item.active .img-wrap,
 main.live-on div.reward-item:hover .img-wrap,
 div.full-width.overlay.rewards div.reward-item:hover .img-wrap,
 div.overlay.rewards div.reward-item:hover .img-wrap {
-  border-color: var(--pink-shadow);
+  border-color: var(--honey-shadow);
 }
 
 main.live-on div.reward-item .img-wrap {
@@ -2919,7 +2918,7 @@ main.live-on div.reward-item span.name,
 div.full-width.overlay.rewards div.reward-item span.name,
 div.overlay.rewards div.reward-item span.name {
   width: 100%;
-  color: #e50370;
+  color: var(--darkest-golden-color);
   font-size: 0.75rem;
   background: none;
   padding: 0.5rem 0 0;
@@ -2933,7 +2932,7 @@ div.overlay.rewards div.reward-item span.name {
 
 div.reward-item span.point {
   font-size: 0.7rem;
-  color: #e50370;
+  color: var(--darkest-golden-color);
   background: url(../images/coin.png) no-repeat 2px -7px;
   background-size: 30px;
   width: 80px;
@@ -2950,7 +2949,7 @@ main.live-on div.send-gift,
 div.overlay.rewards div.send-gift {
   margin-top: 0.5rem;
   height: 40px;
-  color: #fff;
+  color: var(--dark-golden-color);
   text-shadow: 0 2px 2px #2a2a2a55;
   gap: 10px;
   justify-content: space-between;
@@ -2978,10 +2977,10 @@ main.live-on div.buy-sticker {
 
 main.live-on div.send-gift button,
 div.overlay.rewards div.send-gift button {
-  color: #d6216d;
+  color: #fff;
   width: 80px;
   padding: 5px 10px;
-  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
+  background: var(--btn-honey-gradient);
   box-shadow: 0 2px 2px #2a2a2a55;
 }
 
@@ -3004,7 +3003,7 @@ main.live-on div.frame-top-bar {
 
 main.live-on div.frame-top-bar span.value {
   height: 25px;
-  background: #ff6fab4c;
+  background: var(--transparent-honey-bg);
   border-radius: 13px;
   line-height: 25px;
   color: #fff;
@@ -3017,7 +3016,7 @@ main.live-on div.frame-top-bar span.value {
 main.live-on div.frame-top-bar span.icon {
   width: 30px;
   height: 30px;
-  background: #f75193;
+  background: var(--orange-honey);
   padding: 5px;
   border-radius: 50%;
   z-index: 2;
@@ -3075,6 +3074,7 @@ main.live-on div.frame-bottom-bar button.icon {
 main.live-on div.frame-bottom-bar button img {
   width: 20px;
   height: 20px;
+  filter: brightness(1000);
 }
 
 main.live-on .mobile-only {
@@ -3114,7 +3114,7 @@ main.live-on div.profile.mobile-only div.avatar-wrapper {
 
 main.live-on div.profile.mobile-only span.name {
   border-radius: 30px;
-  background: #ff83bb8d;
+  background: var(--transparent-honey-bg);
   color: #fff;
   text-shadow: 0 2px 2px #2a2a2a55;
   margin-left: -20px;
@@ -3164,10 +3164,10 @@ main.live-on div.frame-top-bar.mobile-only .viewer-tab .value {
   margin: 0 auto;
   padding: 0;
   border-radius: 50%;
-  background: #ffb4d3;
+  background: var(--lightest-honey);
   line-height: 36px;
   text-align: center;
-  color: #d6236c;
+  color: var(--dark-golden-color);
   font-size: 0.7rem;
   font-weight: bold;
   text-shadow: none;
@@ -3208,12 +3208,17 @@ main.live-on div.frame-bottom-bar.mobile-only {
 }
 
 main.live-on div.frame-bottom-bar.mobile-only button.pink {
-  background: radial-gradient(#ffcfe4, #f03282, #c1145c);
+  background: radial-gradient(
+    var(--light-honey),
+    var(--primary-color),
+    var(--orange-honey),
+    #ff9800
+  );
 }
 
 div.chat-field {
   gap: 10px;
-  background: #fef0ff;
+  background: var(--lightest-honey);
   border-radius: 40px;
   padding-left: 15px;
   width: calc(100% - 110px);
@@ -3457,7 +3462,7 @@ div.chat-date p {
 }
 
 div.followers-chat-overlay div.chat-item.my-chat .chat-content {
-  background: #ffbad7;
+  background: var(--primary-color);
   border-radius: var(--chat-content-radius) 0 var(--chat-content-radius) var(--chat-content-radius);
 }
 
@@ -5260,6 +5265,10 @@ div.overlay.coming-soon {
   height: 400px;
 }
 
+div.overlay.coming-soon .content img {
+  width: 50%;
+}
+
 div.overlay.social-media-shares {
   width: 500px;
   height: 400px;
@@ -5419,7 +5428,7 @@ div.overlay.streamer-profile-overlay div.title button.prev:hover {
 
 div.overlay.streamer-profile-overlay.rewards div.footer,
 div.overlay.streamer-profile-overlay div.sticker-footer {
-  background: var(--pink-dialog-footer-bg) !important;
+  background: var(--lightest-honey) !important;
 }
 
 div#sticker-overlay-mobile.overlay div.title {
@@ -5539,13 +5548,13 @@ div.overlay#be-vip-overlay div.content .topup-btn img {
 div.overlay#top-up-overlay div.content .topup-btn:hover,
 div.overlay#be-vip-overlay div.content .topup-btn:hover {
   color: #fff;
-  background: linear-gradient(#ffa9cd, #ff237f);
+  background: var(--honey-gradient);
   filter: none;
 }
 
 div.overlay#be-vip-overlay div.content p {
   color: white;
-  text-shadow: 0 0 7px #c40761;
+  text-shadow: 0 0 7px var(--dark-golden-color);
   letter-spacing: 0.15rem;
   font-size: 1.5rem;
 }
@@ -5584,8 +5593,8 @@ div.overlay div.content p.coming-soon-text {
   font-size: 1.2rem;
   letter-spacing: 0.4rem;
   padding: 5px;
-  color: #d6236c;
-  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
+  color: var(--dark-golden-color);
+  background: var(--secondary-honey-gradient);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -5617,7 +5626,7 @@ div.gift-sent-overlay .container {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  background: #c73572a7;
+  background: var(--transparent-honey-bg);
   border-radius: 50px;
   color: #fff !important;
 }
@@ -5656,7 +5665,7 @@ div.gift-sent-overlay marquee {
   height: auto;
   padding: 0;
   font-size: 0.875rem;
-  text-shadow: 0 2px 4px #ff5fa2a7;
+  text-shadow: 0 2px 4px var(--honey-shadow);
 }
 
 .marquee-wall {
@@ -5751,8 +5760,8 @@ main.live-on div.overlay.viewer .title > p {
   width: auto;
   font-size: 0.875rem;
   padding: 5px 15px;
-  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
-  color: #d6236c;
+  background: var(--secondary-honey-gradient);
+  color: var(--dark-golden-color);
   filter: none;
   display: flex;
   flex-direction: row;
@@ -5815,18 +5824,20 @@ main.live-on section.right-column .glide__arrow {
 #people-slides ul li.glide__slide,
 #slides-revenue ul li.glide__slide {
   padding-top: 10px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 #people-slides ul li.glide__slide .value,
 #slides-revenue ul li.glide__slide .value {
   position: absolute;
-  color: #d6236c;
+  color: var(--dark-golden-color);
   width: 80%;
   bottom: 40px;
   left: 10%;
   font-size: 0.7rem;
   padding: 0.2rem;
-  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
+  background: var(--honey-gradient);
   border-radius: 40px;
   text-align: center;
   overflow: hidden;
@@ -5891,15 +5902,15 @@ main.live-on div.badge img {
 }
 
 #people-slides ul li.glide__slide div.badge.pink {
-  background: #ea629f;
+  background: var(--discount-price-color);
 }
 
 #people-slides .glide__arrow span.material-icons {
-  color: #fff;
+  color: var(--honey-shadow);
 }
 
 #people-slides ul li.glide__slide div.name {
-  color: #fff;
+  color: var(--honey-dialog-bg);
   text-align: center;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -5958,13 +5969,13 @@ main.live-on div.mobile-only.frame-top-bar ul.revenue-list > li .badge img {
 
 main.live-on div.mobile-only.frame-top-bar ul.revenue-list .value {
   position: absolute;
-  color: #e9528e;
+  color: var(--dark-golden-color);
   width: 90%;
-  bottom: -7px;
+  bottom: -3px;
   left: 5%;
   font-size: 0.7rem;
   padding: 2px 5px;
-  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
+  background: var(--honey-gradient);
   border-radius: 40px;
   text-align: center;
   overflow: hidden;
@@ -6870,7 +6881,7 @@ div.detail-links.glide div.glide__arrow {
   left: -10%;
 }
 div.detail-links.glide div.glide__arrow .material-icons {
-  color: #fff;
+  color: var(--honey-shadow);
 }
 
 div.detail-links.glide div.glide__arrow button.prev {
@@ -6886,7 +6897,7 @@ div.purchase-overlay .cart-item,
 div.form-wrapper,
 main.purchase div.cart-summary {
   padding: 2rem 2rem 2rem 3rem;
-  background: #fff5fc;
+  background: var(--lightest-honey);
   gap: 40px;
   border-radius: 20px;
 }
@@ -6912,7 +6923,7 @@ main.purchase div.cart-summary {
 }
 
 main.purchase .btns-group {
-  background: #fff5fc;
+  background: var(--lightest-honey);
   gap: 1rem;
   padding: 1rem 2rem;
   border-radius: 20px;
@@ -6920,7 +6931,7 @@ main.purchase .btns-group {
 
 main.purchase .btns-group button.disabled,
 main.purchase .btns-group button.disabled:hover {
-  filter: grayscale(1) brightness(1.4) contrast(1.3) !important;
+  background: var(--btn-gray-gradient) !important;
 }
 
 main.purchase div.cart-summary .select-all,
@@ -6955,7 +6966,7 @@ main.purchase .btns-group button {
 }
 
 main.purchase .btns-group button:not(.gray-gradient-bg):hover {
-  filter: contrast(1.9);
+  filter: contrast(1.2);
 }
 
 main.purchase .btns-group button.gray-gradient-bg:not(.active):hover {
@@ -7053,14 +7064,14 @@ div.purchase-overlay .payment-options button {
 main.purchase .receipt-options .options button.active,
 div.purchase-overlay .receipt-options .options button.active {
   border-color: #fff;
-  background: #ef99bf;
+  background: var(--orange-honey);
   color: #fff;
 }
 
 .cart-titles h1 {
-  color: #e9528e;
+  color: var(--orange-honey);
   font-size: 1rem;
-  background: #fff1fb;
+  background: var(--lightest-honey);
   border-radius: 20px;
   padding: 1rem 3rem;
 }
@@ -7399,7 +7410,7 @@ div.purchase-overlay .cart-item .img-wrap img {
 }
 .cart-item .item-info p.cost,
 .cart-item .item-info p.point {
-  color: #e9528e;
+  color: var(--orange-honey);
   font-size: 1rem;
   margin-bottom: 0.5rem;
 }
@@ -7442,7 +7453,7 @@ main.purchase .payment-options p,
 main.purchase .payment-options h4,
 div.purchase-overlay .payment-options p,
 div.purchase-overlay .payment-options h4 {
-  color: #fe559b;
+  color: var(--orange-honey);
 }
 
 main.purchase .check-item-count,
@@ -7543,7 +7554,7 @@ div.purchase-overlay .check-item-count p.point {
 
 main.streamer-profile {
   border: 0;
-  background: var(--secondary-color);
+  background: var(--lightest-honey);
   max-width: none;
   width: 100%;
   overflow: hidden;
@@ -8025,8 +8036,8 @@ main.streamer-profile section.header div.info .performance-data.rewards span.val
 
 button.gift-button {
   padding: 0;
-  width: 80px;
-  height: 80px;
+  width: 77px;
+  height: 77px;
   display: block;
   position: absolute;
   bottom: -40px;
@@ -8047,7 +8058,7 @@ button.gift-button img {
 
 main.streamer-profile section.intro {
   text-align: center;
-  background: var(--primary-color);
+  background: var(--card-background);
   border-top: 3px solid white;
   border-bottom: 3px solid white;
   padding-top: 2rem;
@@ -8115,16 +8126,16 @@ main.streamer-profile section.footer-actions {
 }
 
 main.streamer-profile section.footer-actions button {
-  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
-  color: #d6236c;
+  background: linear-gradient(var(--lightest-honey), var(--lightest-honey), var(--primary-color));
+  color: var(--orange-honey);
   padding: 0.5rem 1rem;
   width: fit-content;
   min-width: 90px;
-  box-shadow: 0 2px 10px #999;
+  box-shadow: 0 2px 10px var(--honey-shadow);
 }
 
 main.streamer-profile section.footer-actions button:not(.focus-btn) img {
-  filter: invert(0.6) sepia(81) contrast(358%) hue-rotate(283deg) brightness(0.9);
+  /* filter: invert(0.6) sepia(81) contrast(358%) hue-rotate(283deg) brightness(0.9); */
 }
 
 main.streamer-profile section.footer-actions button.focus-btn.pink:hover,
@@ -8193,7 +8204,7 @@ div.overlay.social-media-shares.streamer-profile-overlay button.close {
 }
 
 div.streamer-profile-overlay div.reward-items {
-  background: #fff3f8;
+  background: #fffaf3;
 }
 
 div.streamer-profile-overlay.full-width.overlay.personal-gifts
@@ -8297,7 +8308,7 @@ div.full-width.overlay.popular-products div.content section.title {
 div.full-width.overlay.rewards div.content section.reward-items-container,
 div.full-width.overlay.personal-gifts div.content section.reward-items-container,
 div.full-width.overlay.popular-products div.content section.reward-items-container {
-  background: #86415da1;
+  background: var(--honey-dialog-bg);
   width: 100%;
   max-width: none;
   height: calc(100% - 80px);
@@ -8315,12 +8326,12 @@ div.full-width.overlay.popular-products div.content section.reward-items-contain
 
 div.full-width.overlay.personal-gifts,
 div.full-width.overlay.popular-products {
-  background: #ffdcffd6;
+  background: #f9f3eed6;
 }
 
 div.full-width.overlay.personal-gifts div.content section.reward-items-container,
 div.full-width.overlay.popular-products div.content section.reward-items-container {
-  background: #fffaffd6;
+  background: #fffcfad6;
   overflow-y: scroll;
 }
 
@@ -8353,7 +8364,7 @@ div.full-width.overlay.popular-products div.reward-items {
 
 div.full-width.overlay.personal-gifts.streamer-profile-overlay div.reward-items-container,
 div.full-width.overlay.popular-products.streamer-profile-overlay div.reward-items-container {
-  background: #ffc1db;
+  background: var(--light-honey);
 }
 
 @media screen and (max-width: 768px) {
@@ -8396,7 +8407,7 @@ div.full-width.overlay.popular-products div.reward-items div.reward-item img {
 div.full-width.overlay.personal-gifts div.reward-items div.reward-item span.name,
 div.full-width.overlay.popular-products div.reward-items div.reward-item span.name {
   background: none;
-  color: #e9558f;
+  color: var(--dark-golden-color);
   padding: 0;
   text-align: center;
   line-height: 1.5rem;
@@ -8411,7 +8422,7 @@ div.full-width.overlay.popular-products div.reward-items div.reward-item span.na
 div.full-width.overlay.personal-gifts div.reward-items div.reward-item span.count,
 div.full-width.overlay.popular-products div.reward-items div.reward-item span.count {
   padding: 0.2rem 0.5rem;
-  background: #e9558f;
+  background: var(--orange-honey);
   color: #fff;
   text-align: center;
   border-radius: 20px;
@@ -8486,8 +8497,8 @@ div.full-width.overlay.rewards div.footer button {
   width: 90px;
   font-size: 0.875rem;
   padding: 5px;
-  color: #d6236c;
-  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
+  color: white;
+  background: var(--btn-honey-gradient);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -8550,7 +8561,7 @@ div.full-width.overlay.rewards div.reward-item span.point {
 
 div.full-width.overlay.rewards div.reward-item.active span.name,
 div.full-width.overlay.rewards div.reward-item.active span.point {
-  color: #e50370;
+  color: var(--orange-honey);
 }
 
 @media screen and (max-width: 480px) {
@@ -8697,10 +8708,6 @@ div.streamer-profile-overlay#top-up-overlay div.footer > span.point {
   width: 100%;
 }
 
-.white-svg {
-  filter: brightness(0) invert(1) !important;
-}
-
 p.event-time {
   text-align: center;
   color: #555;
@@ -8713,13 +8720,9 @@ p.event-time {
   top: 3px;
 }
 
-.pink-color {
-  color: #f566a1;
-}
-
 div.overlay.event-detail-overlay button.close {
   border-radius: 50%;
-  background-color: #f29ec2;
+  background-color: var(--card-background);
   width: 26px;
   height: 26px;
   padding: unset;
@@ -8963,7 +8966,7 @@ button.focus-btn {
 .confirm-screen h1 {
   font-size: 4.5em;
   margin-bottom: 1rem;
-  color: #e9538e;
+  color: var(--orange-honey);
 }
 
 .confirm-screen h2 {
@@ -9041,7 +9044,7 @@ div.overlay.highlight-content-overlay div.top-bar {
   justify-content: space-between;
   padding: 0.5rem;
   position: relative;
-  background: #ff669e;
+  background: var(--primary-color);
   height: 50px;
 }
 
@@ -9240,10 +9243,11 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   background-image: url("../images/bin.svg");
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: 12px;
 }
 
 .cart-item button.remove:hover {
-  background-color: #df216d;
+  background-color: var(--orange-honey);
   background-image: url("../images/bin-white.svg");
   background-size: 12px;
 }
@@ -9443,7 +9447,7 @@ main.purchase .cart-item form button.reduce {
 }
 
 .account-orders .desktop-only.orders .order .order-items .order-item {
-  border-top: 1px solid #ec90b7;
+  border-top: 1px solid var(--light-honey);
   padding: 1rem 3rem;
 }
 
@@ -9561,15 +9565,15 @@ main.purchase .cart-item form button.reduce {
   justify-content: space-between;
   flex-direction: row;
   display: flex;
-  border-top: 1px solid #f19ec2;
+  border-top: 1px solid var(--light-honey);
 }
 
 .account-orders .desktop-only.orders .order.expanded .header {
-  border-bottom: 1px solid #f19ec2;
+  border-bottom: 1px solid var(--light-honey);
 }
 
 .account-orders .desktop-only.orders .order .order-info {
-  background: #f29ec2;
+  background: var(--light-honey);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9607,7 +9611,7 @@ main.purchase .cart-item form button.reduce {
 
 .account-orders .desktop-only.orders .order .order-info li span.value {
   width: 100%;
-  background: #fffbfe;
+  background: #fffefb;
   color: #777;
   text-align: center;
   padding: 0.5rem 0;
@@ -9622,15 +9626,15 @@ main.purchase .cart-item form button.reduce {
 }
 
 .account-orders .orders.desktop-only .order-content > *:nth-child(2n) {
-  background: #fff6ff;
+  background: #fffefb;
 }
 
 .account-orders .orders.desktop-only .order:not(.expanded) .order-content .order-items {
-  background: #fffbfe;
+  background: #fffefb;
 }
 
 .account-orders .orders.desktop-only .order.expanded .order-content .order-item:nth-child(2n) {
-  background: #fffbfe;
+  background: #fffefb;
 }
 
 .account-orders .orders.mobile-only button.order-action {
@@ -9679,7 +9683,7 @@ main.purchase .cart-item form button.reduce {
 .account-orders .desktop-only.orders .order.expanded .order-customer,
 .account-orders .desktop-only.orders .order.expanded .order-reference,
 .account-orders .desktop-only.orders .order.expanded .order-receipt {
-  background: #fffbfe;
+  background: #fffefb;
   padding: 0.5rem 3rem;
   border: none;
 }
@@ -9819,7 +9823,7 @@ main.purchase .cart-item form button.reduce {
 }
 
 #products-slides li span.point {
-  color: #e9538e;
+  color: var(--orange-honey);
   text-align: center;
   display: block;
 }
@@ -10086,17 +10090,13 @@ div.overlay p.title-text {
 }
 
 div.overlay p.title-text.light-pink {
-  color: #d6216d;
-  background: linear-gradient(#ffffff, #ffe1f4, #ff87c8);
+  color: var(--orange-honey);
+  background: var(--secondary-honey-gradient);
 }
 
 div.overlay p.title-text img {
   width: auto !important;
   height: 14px !important;
-}
-
-div.overlay p.title-text.light-pink img {
-  filter: invert(0.6) sepia(3) contrast(180%) hue-rotate(289deg) saturate(1.8);
 }
 
 /* Followers Overlay Only */
@@ -10193,8 +10193,7 @@ ul.followers-list button.chat-button:hover {
 }
 
 .sticker-overlay .sticker-footer {
-  background: #00000096;
-  color: white;
+  color: var(--dark-golden-color);
   padding: 0 20px;
   justify-content: space-between;
 }
@@ -10221,16 +10220,8 @@ ul.followers-list button.chat-button:hover {
   width: 70px;
   font-size: 1rem;
   padding: 5px;
-  color: #d6236c;
-  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
-}
-
-.sticker-footer button#buy-button:hover,
-.sticker-footer button#send-button:hover,
-.sticker-footer button#m-buy-button:hover,
-.sticker-footer button#m-send-button:hover {
-  background: linear-gradient(0deg, var(--dark-honey), #ef99bf) !important;
   color: #fff;
+  background: var(--btn-honey-gradient);
 }
 
 div.sticker-overlay.full-width div.sticker-body {

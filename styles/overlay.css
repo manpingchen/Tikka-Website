@@ -159,6 +159,10 @@ div.overlay.info-only .content img {
 
 /* 分享遮罩 */
 
+div.overlay#social-media-shares {
+  min-width: fit-content;
+}
+
 div.overlay#social-media-shares div.content ul {
   padding: 1.5rem 0.5rem;
   display: flex;
@@ -336,10 +340,10 @@ div.overlay.text div.header button.close-button img {
 }
 div.overlay.small.topup h4,
 div.overlay.text h4 {
-  background: #ffd4e8;
+  background: var(--lightest-honey);
   padding: 1rem;
   text-align: center;
-  color: #e23a80;
+  color: var(--orange-honey);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -354,7 +358,7 @@ div.overlay.text h4::after {
   display: inline-block;
   width: 1rem;
   height: 2px;
-  background: #e23a80;
+  background: var(--orange-honey);
 }
 div.overlay.small div.content {
   background: #faedf3;
@@ -362,7 +366,7 @@ div.overlay.small div.content {
 }
 
 div.overlay.text div.content {
-  background: #faedf3;
+  background: #fffcf8;
   height: calc(100% - 200px);
   overflow: auto;
   padding: 1rem;
@@ -400,7 +404,7 @@ div.overlay.small.topup div.content div.highlight img {
 div.overlay.small.topup div.footer,
 div.overlay.text div.footer {
   height: 60px;
-  background: #ffd4e8;
+  background: var(--lightest-honey);
   width: 100%;
   display: flex;
   align-items: center;
@@ -409,7 +413,7 @@ div.overlay.text div.footer {
 
 div.overlay.text div.footer {
   height: 90px;
-  border-bottom: 20px solid #f5bed2;
+  border-bottom: 20px solid var(--light-honey);
 }
 
 div.overlay.small.topup div.footer p,
@@ -482,7 +486,7 @@ div.overlay.event-detail-overlay .content {
   position: relative;
   padding: 0;
   height: initial;
-  border: 10px solid #f0abca;
+  border: 10px solid var(--primary-color);
   display: inline-block;
 }
 

@@ -1,6 +1,4 @@
 .glide-tab {
-  --primary-color: #c01f5d;
-  --secondary-color: #ffbece;
   --height: 3rem;
   --icon-wrap-height: 2.6rem;
   --radius: 0.5rem;
@@ -9,7 +7,7 @@
 .glide-tab .tabs {
   display: flex;
   position: relative;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: white;
 }
 .glide-tab .tabs * {
@@ -87,7 +85,7 @@
   display: flex;
   height: var(--height);
   width: calc(100% / 3);
-  background: linear-gradient(0deg, #e60672, #ef99bf) !important;
+  background: var(--active-honey-gradient);
   z-index: 1;
   transition: 0.25s ease-out;
   border-top-left-radius: var(--radius);

@@ -23,12 +23,12 @@
   </head>
   <body>
     <!---2025/4/8 iframe function demo, 呼叫 iframeDisplayController(ifHide) 切換css模式 -->
-    <div style="position: absolute; right: 0; z-index: 10009; color: white; padding: 1rem">
-      <!-- 隱藏 giftAdmin -->
-      <p onclick="ifHideGiftAdminIframe(true)">Hide iframe</p>
-      <!-- 於頁面最上方顯示 giftAdmin：z-index: 9999 -->
-      <p onclick="ifHideGiftAdminIframe(false)">Show iframe</p>
-    </div>
+    <!-- <div style="position: absolute; right: 0; z-index: 10009; color: white; padding: 1rem"> -->
+    <!-- 隱藏 giftAdmin -->
+    <!-- <p onclick="ifHideGiftAdminIframe(true)">Hide iframe</p> -->
+    <!-- 於頁面最上方顯示 giftAdmin：z-index: 9999 -->
+    <!-- <p onclick="ifHideGiftAdminIframe(false)">Show iframe</p> -->
+    <!-- </div> -->
 
     <!-- Header Start -->
     <header class="site-header">
@@ -174,16 +174,16 @@
             </button>
           </div>
           <div class="detail-links">
-            <a href="#"><img src="images/man.svg" alt="man icon" />粉絲</a>
+            <a><img src="images/man.svg" alt="man icon" />粉絲</a>
             <span class="border"></span>
-            <a href="#"><img src="images/gift.svg" alt="gift icon" />禮物貢獻榜</a>
+            <a><img src="images/gift.svg" alt="gift icon" />禮物貢獻榜</a>
           </div>
         </div>
         <div class="gift-mission">
-          <a href="#" class="gift" onclick="handleShowComponent('#coming-soon')">
+          <a class="gift" onclick="handleShowComponent('#coming-soon')">
             <img src="images/diamond.png" alt="" /><span>每日領取</span>
           </a>
-          <a href="#" class="mission" onclick="handleShowComponent('#coming-soon')">
+          <a class="mission" onclick="handleShowComponent('#coming-soon')">
             <img src="images/mission.svg" alt="" /><span>活動任務</span>
           </a>
         </div>
@@ -700,40 +700,30 @@
               </div>
 
               <div class="detail-links reward-gift" id="gift-details-mobile">
-                <a
-                  href="#"
-                  id="gift-all-mobile"
-                  onclick="showRewardDetail(this.id, 'gift-details-mobile')"
+                <a id="gift-all-mobile" onclick="showRewardDetail(this.id, 'gift-details-mobile')"
                   >All</a
                 >
                 <span class="border"></span>
                 <a
-                  href="#"
                   id="gift-popular-mobile"
                   onclick="showRewardDetail(this.id, 'gift-details-mobile')"
                   >熱門</a
                 >
                 <span class="border"></span>
                 <a
-                  href="#"
                   id="gift-favourite-mobile"
                   onclick="showRewardDetail(this.id, 'gift-details-mobile')"
                   >女神最愛</a
                 >
                 <span class="border"></span>
                 <a
-                  href="#"
                   id="gift-romantic-mobile"
                   onclick="showRewardDetail(this.id, 'gift-details-mobile')"
                 >
                   浪漫禮物
                 </a>
                 <span class="border"></span>
-                <a
-                  href="#"
-                  id="gift-vip-mobile"
-                  onclick="showRewardDetail(this.id, 'gift-details-mobile')"
-                >
+                <a id="gift-vip-mobile" onclick="showRewardDetail(this.id, 'gift-details-mobile')">
                   VIP
                 </a>
               </div>
@@ -744,24 +734,19 @@
                 style="display: none"
               >
                 <a
-                  href="#"
                   id="product-all-mobile"
                   onclick="showRewardDetail(this.id, 'product-details-mobile')"
                   >All</a
                 >
                 <span class="border"></span>
                 <a
-                  href="#"
                   id="product-popular-mobile"
                   onclick="showRewardDetail(this.id, 'product-details-mobile')"
                   >熱銷</a
                 >
               </div>
               <div class="detail-links reward-gift" id="box-details-mobile" style="display: none">
-                <a
-                  href="#"
-                  id="box-all-mobile"
-                  onclick="showRewardDetail(this.id, 'box-details-mobile')"
+                <a id="box-all-mobile" onclick="showRewardDetail(this.id, 'box-details-mobile')"
                   >All</a
                 >
               </div>
@@ -873,13 +858,11 @@
               ></button>
               <p class="flex-row"><img src="images/eye.svg" alt="禮物icon" />觀眾席</p>
               <div class="detail-links" id="viewer-tabs">
-                <a href="#" id="general-viewer" onclick="switchViewerList(this.id, 'viewer-tabs')">
+                <a id="general-viewer" onclick="switchViewerList(this.id, 'viewer-tabs')">
                   小觀眾
                 </a>
                 <span class="border"></span>
-                <a href="#" id="vip-viewer" onclick="switchViewerList(this.id, 'viewer-tabs')"
-                  >VIP</a
-                >
+                <a id="vip-viewer" onclick="switchViewerList(this.id, 'viewer-tabs')">VIP</a>
               </div>
             </div>
             <div class="content">
@@ -1276,7 +1259,9 @@
                 <img src="images/star.svg" />VIP
               </button>
             </div>
-            <button type="button" class="icon"><img src="images/reload.svg" alt="reload" /></button>
+            <button type="button" class="icon reload">
+              <img src="images/reload.svg" alt="reload" />
+            </button>
           </div>
           <div class="slides-list glide" id="slides-revenue">
             <div class="glide__track" data-glide-el="track">
@@ -1393,37 +1378,25 @@
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__list glide__slides" id="products-detail-tabs">
                 <li class="glide__slide p1-btn">
-                  <a href="#" id="gift-all" onclick="showRewardDetail(this.id, 'gift-details')">
-                    All
-                  </a>
+                  <a id="gift-all" onclick="showRewardDetail(this.id, 'gift-details')"> All </a>
                 </li>
                 <li class="glide__slide p2-btn">
-                  <a href="#" id="gift-popular" onclick="showRewardDetail(this.id, 'gift-details')">
+                  <a id="gift-popular" onclick="showRewardDetail(this.id, 'gift-details')">
                     熱門
                   </a>
                 </li>
                 <li class="glide__slide p3-btn">
-                  <a
-                    href="#"
-                    id="gift-favourite"
-                    onclick="showRewardDetail(this.id, 'gift-details')"
-                  >
+                  <a id="gift-favourite" onclick="showRewardDetail(this.id, 'gift-details')">
                     女神最愛
                   </a>
                 </li>
                 <li class="glide__slide p4-btn">
-                  <a
-                    href="#"
-                    id="gift-romantic"
-                    onclick="showRewardDetail(this.id, 'gift-details')"
-                  >
+                  <a id="gift-romantic" onclick="showRewardDetail(this.id, 'gift-details')">
                     浪漫禮物
                   </a>
                 </li>
                 <li class="glide__slide p4-btn">
-                  <a href="#" id="gift-vip" onclick="showRewardDetail(this.id, 'gift-details')">
-                    VIP
-                  </a>
+                  <a id="gift-vip" onclick="showRewardDetail(this.id, 'gift-details')"> VIP </a>
                 </li>
               </ul>
             </div>
@@ -1471,9 +1444,7 @@
             <div class="glide__track" data-glide-el="track">
               <ul class="glide__list glide__slides" id="products-detail-tabs">
                 <li class="glide__slide p1-btn">
-                  <a href="#" id="box-all" onclick="showRewardDetail(this.id, 'product-details')"
-                    >All</a
-                  >
+                  <a id="box-all" onclick="showRewardDetail(this.id, 'product-details')">All</a>
                 </li>
               </ul>
             </div>

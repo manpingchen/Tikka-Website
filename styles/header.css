@@ -6,6 +6,12 @@
   height: 50px;
 }
 
+@media screen and (min-width: 990px) and (max-width: 1200px) {
+  .brand img {
+    height: 37px;
+  }
+}
+
 .brand:hover img {
   filter: none;
 }
@@ -101,8 +107,7 @@
     width: 50%;
   }
 }
-
-@media (min-width: 990px) {
+@media (min-width: 1201px) {
   .nav__wrapper {
     display: flex;
     gap: 1rem;
@@ -177,6 +182,16 @@
 
 .nav__item a img:hover {
   filter: contrast(1.4);
+}
+
+@media screen and (min-width: 990px) and (max-width: 1200px) {
+  .nav__wrapper {
+    display: flex;
+    gap: 0.25rem;
+  }
+  .nav__item a img {
+    height: 28px;
+  }
 }
 
 .site-header__end a span.icon {

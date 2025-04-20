@@ -1,1 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 46.92 46.92"><defs><style>.g{fill:url(#d);}.h{fill:#e9528e;}.i{fill:#ffd7f5;}.j{fill:#fff;stroke:#fff;stroke-miterlimit:10;stroke-width:.77px;}.k{filter:url(#e);}</style><linearGradient id="d" x1="14977.22" y1="5489.4" x2="15009.64" y2="5489.4" gradientTransform="translate(5061.27 15174.06) rotate(-128.5)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ebebeb"/><stop offset="1" stop-color="#fafafa"/></linearGradient><filter id="e" filterUnits="userSpaceOnUse"><feOffset dx="1.44" dy="1.44"/><feGaussianBlur result="f" stdDeviation="1.44"/><feFlood flood-color="#000" flood-opacity=".5"/><feComposite in2="f" operator="in"/><feComposite in="SourceGraphic"/></filter></defs><g id="a"/><g id="b"><g id="c"><g><g><path class="j" d="M44.76,14.18c-1.14-2.69-2.77-5.11-4.84-7.18-2.07-2.07-4.49-3.7-7.18-4.84-2.79-1.18-5.74-1.78-8.79-1.78-4.04,0-8,1.08-11.46,3.12-3.32,1.96-6.1,4.74-8.05,8.07l.33,.19C8.75,4.98,16.08,.77,23.94,.77c12.25,0,22.21,9.96,22.21,22.21s-9.89,22.14-22.08,22.21v.39c3-.02,5.92-.61,8.67-1.78,2.69-1.14,5.11-2.77,7.18-4.84,2.07-2.07,3.7-4.49,4.84-7.18,1.18-2.79,1.78-5.74,1.78-8.79s-.6-6.01-1.78-8.79Z"/><path class="j" d="M2.7,22.98c0-3.58,.9-7.11,2.62-10.23l-2-1.16c-.91,1.64-1.62,3.38-2.11,5.19-.55,2.01-.82,4.1-.82,6.2,0,3.18,.62,6.27,1.85,9.17,1.19,2.81,2.89,5.32,5.05,7.49,2.16,2.16,4.68,3.86,7.49,5.05,2.77,1.17,5.7,1.79,8.72,1.85v-2.32c-11.51-.24-20.79-9.67-20.79-21.24Z"/></g><g><circle class="g" cx="23.87" cy="23.06" r="16.21"/><circle class="i" cx="23.87" cy="23.06" r="15.68"/></g><g class="k"><circle class="h" cx="24.5" cy="16.57" r="5.99" transform="translate(3.41 37.31) rotate(-78.58)"/><path class="h" d="M24.5,24.18c-1.75,0-3.38-.52-4.76-1.4-1.67,2.42-2.76,6.09-2.82,10.22h15.14c-.06-4.13-1.14-7.8-2.81-10.22-1.37,.88-3,1.4-4.76,1.4Z"/></g></g></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 46.9 46.9" style="enable-background:new 0 0 46.9 46.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:0.77;stroke-miterlimit:10;}
+	.st1{fill:url(#SVGID_1_);}
+	.st2{fill:#F9DFCA;}
+	.st3{fill:#FF932C;}
+</style>
+<g id="a">
+</g>
+<g id="b">
+	<g id="c">
+		<g>
+			<g>
+				<path class="st0" d="M44.8,14.2C43.6,11.5,42,9.1,39.9,7s-4.5-3.7-7.2-4.8C29.9,1,27,0.4,23.9,0.4c-4,0-8,1.1-11.5,3.1
+					c-3.3,2-6.1,4.7-8.1,8.1l0.3,0.2c4-6.8,11.3-11,19.2-11c12.3,0,22.2,10,22.2,22.2s-9.9,22.1-22.1,22.2v0.4c3,0,5.9-0.6,8.7-1.8
+					c2.7-1.1,5.1-2.8,7.2-4.8s3.7-4.5,4.8-7.2c1.2-2.8,1.8-5.7,1.8-8.8S45.9,17,44.8,14.2L44.8,14.2z"/>
+				<path class="st0" d="M2.7,23c0-3.6,0.9-7.1,2.6-10.2l-2-1.2c-0.9,1.6-1.6,3.4-2.1,5.2c-0.6,2-0.8,4.1-0.8,6.2
+					c0,3.2,0.6,6.3,1.8,9.2c1.2,2.8,2.9,5.3,5.1,7.5c2.2,2.2,4.7,3.9,7.5,5c2.8,1.2,5.7,1.8,8.7,1.8v-2.3C12,44,2.7,34.5,2.7,23
+					L2.7,23z"/>
+			</g>
+			<g>
+				
+					<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="13626.2432" y1="-5373.0425" x2="13658.665" y2="-5373.0425" gradientTransform="matrix(-0.6225 -0.7826 -0.7826 0.6225 4311.3369 14044.335)">
+					<stop  offset="0" style="stop-color:#EBEBEB"/>
+					<stop  offset="1" style="stop-color:#FAFAFA"/>
+				</linearGradient>
+				<circle class="st1" cx="23.9" cy="23.1" r="16.2"/>
+				<circle class="st2" cx="23.9" cy="23.1" r="15.7"/>
+			</g>
+			<g>
+				<circle class="st3" cx="24.5" cy="16.6" r="6"/>
+				<path class="st3" d="M24.5,24.2c-1.8,0-3.4-0.5-4.8-1.4c-1.7,2.4-2.8,6.1-2.8,10.2h15.1c-0.1-4.1-1.1-7.8-2.8-10.2
+					C27.9,23.7,26.3,24.2,24.5,24.2L24.5,24.2z"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

@@ -1,1 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.75 27.03"><defs><style>.d{fill:#e9528e;}</style></defs><g id="a"/><g id="b"><g id="c"><g><rect class="d" y="25.88" width="23.72" height="1.15"/><polygon class="d" points=".45 25.34 2.06 20.32 5.04 22.76 .45 25.34"/><path class="d" d="M2.29,19.79s3.12-5.06,5.23-7.71l4.34,3.49s-5.09,6.03-6.39,6.92l-3.17-2.7Z"/><polygon class="d" points="16.88 0 24.75 0 12.18 15.07 7.81 11.67 16.88 0"/></g></g></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24.8 27" style="enable-background:new 0 0 24.8 27;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F9B653;}
+</style>
+<g id="a">
+</g>
+<g id="b">
+	<g id="c">
+		<g>
+			<rect y="25.9" class="st0" width="23.7" height="1.1"/>
+			<polygon class="st0" points="0.4,25.3 2.1,20.3 5,22.8 			"/>
+			<path class="st0" d="M2.3,19.8c0,0,3.1-5.1,5.2-7.7l4.3,3.5c0,0-5.1,6-6.4,6.9L2.3,19.8L2.3,19.8z"/>
+			<polygon class="st0" points="16.9,0 24.8,0 12.2,15.1 7.8,11.7 			"/>
+		</g>
+	</g>
+</g>
+</svg>
