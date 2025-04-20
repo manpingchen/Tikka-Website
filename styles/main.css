@@ -23,11 +23,7 @@
   --card-background: #f7d18b;
   --honey-gradient: linear-gradient(0deg, var(--orange-honey), var(--primary-color));
   --mobile-largest-width: 480px;
-  --btn-honey-gradient: linear-gradient(
-    var(--light-honey),
-    var(--orange-honey),
-    var(--dark-honey)
-  ) !important;
+  --btn-honey-gradient: linear-gradient(var(--light-honey), #ea9211, #fcac2c) !important;
   --active-honey-gradient: linear-gradient(#ffd98a, #ff9800) !important;
   --secondary-honey-gradient: linear-gradient(var(--lightest-honey), var(--dark-honey)) !important;
   --btn-gray-gradient: linear-gradient(#fbfbfb, #dcdcdc, #c5c5c5, #a1a1a1);
@@ -1901,7 +1897,7 @@ main.live-on div.profile div.avatar-wrapper {
 
 main.live-on section.left-column div.profile div.name-avatar div.profile-info p {
   font-size: 1.2rem;
-  text-shadow: 0 2px 2px #2a2a2a55;
+  text-shadow: 0 1px 2px #2a2a2a55;
 }
 
 main.live-on section.left-column div.profile div.name-avatar div.profile-info p.name {
@@ -1991,7 +1987,6 @@ main.live-on section.left-column div.profile div.detail-links {
 
 main.live-on section.left-column div.profile div.detail-links a img {
   height: 20px;
-  filter: drop-shadow(0 0 2px #2a2a2a55);
   padding-right: 8px;
 }
 
@@ -2275,7 +2270,7 @@ div.sticker-overlay div.title button.close {
 }
 
 div.sticker-overlay div.title img.title-img {
-  width: 140px;
+  width: 100px;
 }
 
 div.sticker-overlay ul.stickers-detail-tabs {
@@ -2287,7 +2282,7 @@ div.sticker-overlay ul.stickers-detail-tabs {
 }
 div.sticker-overlay ul.stickers-detail-tabs li {
   cursor: pointer;
-  color: #fff;
+  color: var(--dark-golden-color)
 }
 
 div.sticker-overlay ul.stickers-detail-tabs li:not(:first-child) {
@@ -2729,6 +2724,7 @@ div.overlay.rewards div.content {
 
 .iframe div.overlay.rewards div.content {
   height: 100%;
+  background: var(--card-background);
 }
 
 .iframe div.overlay.rewards div.send-gift {
@@ -2798,14 +2794,23 @@ div.rewards div.btns button.active,
 div.rewards div.btns button.active:hover,
 div.rewards div.btns button:not(.active):hover {
   color: #fff;
-  background: linear-gradient(#ffa9cd, #ff237f);
   filter: none;
   display: flex;
 }
 
+div.rewards div.btns button.active img,
+div.rewards div.btns button.active:hover img,
+div.rewards div.btns button:not(.active):hover img {
+  filter: brightness(100);
+}
+
+div.rewards div.btns button#reward-gift-mobile:not(.active) img {
+  filter: unset;
+}
+
 div.rewards div.btns button:not(.active) {
-  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
-  color: #d6236c;
+  background: var(--secondary-honey-gradient);
+  color: var(--dark-golden-color);
   filter: none;
 }
 
@@ -3028,7 +3033,7 @@ main.live-on div.frame-top-bar span.icon {
 main.live-on div.frame-top-bar span.icon img {
   width: 16px;
   margin: 2px;
-  filter: drop-shadow(0 2px 2px rgba(61, 61, 61, 0.665));
+  filter: brightness(100);
 }
 
 main.live-on div.frame-top-bar div.revenue-tab {
@@ -5524,11 +5529,11 @@ div.overlay#social-media-shares div.footer {
 
 div.overlay#top-up-overlay div.content .topup-btn,
 div.overlay#be-vip-overlay div.content .topup-btn {
-  color: #d6216d;
+  color: white;
   width: 140px;
   border-radius: 50px;
   padding: 0 10px;
-  background: linear-gradient(#ffffff, #ffffff, #ffffff, #ffb4d3);
+  background: var(--btn-honey-gradient);
   box-shadow: 0 2px 2px #2a2a2a55;
   font-size: 1.3rem;
   letter-spacing: 0.2rem;
@@ -5779,10 +5784,11 @@ main.live-on div.overlay.viewer .title > p {
   width: 100px;
 }
 
-main.live-on div.overlay.revenue .title > p img,
+main.live-on div.overlay.revenue .title > p img {
+  width: 16px;
+}
+
 main.live-on div.overlay.viewer .title > p img {
-  filter: invert(0.589) sepia(20) contrast(250%) hue-rotate(293deg)
-    drop-shadow(0 1px 1px rgba(188, 188, 188, 0.3));
   width: 16px;
 }
 
@@ -5925,7 +5931,6 @@ div.overlay.viewer div.content {
   overflow: scroll;
   padding: 1rem;
   justify-content: initial;
-  height: calc(100% - 40px);
 }
 
 div.overlay.viewer div.content {
@@ -7771,7 +7776,7 @@ main.streamer-profile div.gifts .gift-summary span {
 
 main.streamer-profile div.gifts .gift span.name {
   background: none;
-  color: #e9558f;
+  color: var(--orange-honey);
   padding: 0;
   text-align: center;
   line-height: 1.5rem;
@@ -7782,7 +7787,7 @@ main.streamer-profile div.gifts .gift span.name {
 
 main.streamer-profile div.gifts .gift span.count {
   padding: 0.2rem 0.5rem;
-  background: #e9558f;
+  background: var(--orange-honey);
   color: #fff;
   text-align: center;
   border-radius: 20px;
@@ -9075,7 +9080,7 @@ div.overlay.highlight-content-overlay div.header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: #ff669ec0;
+  background: var(--orange-honey);
   gap: 1rem;
   padding: 1rem;
 }
@@ -9161,14 +9166,10 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button:not(:las
   padding-right: 10px;
 }
 
-div.overlay.highlight-content-overlay div.content div.btn-groups button.followed img
-  /* ,div.overlay.highlight-content-overlay div.content div.btn-groups button:hover img */ {
-  filter: invert(0.6) sepia(3) contrast(180%) hue-rotate(289deg) saturate(1.8);
-}
-
 div.overlay.highlight-content-overlay div.content div.btn-groups button:not(:first-child) {
   padding-left: 10px;
 }
+
 div.overlay.highlight-content-overlay div.content div.btn-groups button {
   padding: 0.25rem;
   font-size: 0.75rem;
@@ -9181,6 +9182,13 @@ div.overlay.highlight-content-overlay div.content div.btn-groups button {
 
 div.overlay.highlight-content-overlay div.content div.btn-groups button img {
   width: 14px;
+  filter: brightness(100);
+}
+
+
+div.overlay.highlight-content-overlay div.content div.btn-groups button.followed img {
+  width: 14px;
+  filter: unset;
 }
 
 .search-page-overlay {
@@ -10222,6 +10230,7 @@ ul.followers-list button.chat-button:hover {
   padding: 5px;
   color: #fff;
   background: var(--btn-honey-gradient);
+  box-shadow: 0 0 5px var(--dark-golden-color);
 }
 
 div.sticker-overlay.full-width div.sticker-body {
